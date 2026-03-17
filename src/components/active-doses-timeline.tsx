@@ -463,7 +463,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
 
                 {/* Interactive Graph Container */}
                 <div 
-                  className="relative cursor-crosshair bg-muted/30 rounded-lg p-4"
+                  className="relative cursor-crosshair bg-muted/30 rounded-lg p-4 pl-12"
                   onMouseMove={(e) => handleGraphMouseMove(dose.id, e, dose.timings, dose.doseTime)}
                   onMouseLeave={() => handleGraphMouseLeave(dose.id)}
                 >
@@ -511,22 +511,21 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                   </div>
 
                   {/* Intensity curve - larger */}
-                  <svg viewBox="0 0 100 50" className="w-full h-24 mt-2">
+                  <svg 
+                    viewBox="0 0 100 50" 
+                    preserveAspectRatio="none"
+                    className="w-full h-28 mt-2"
+                  >
                     {/* Grid lines */}
-                    <line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" strokeWidth="0.2" className="text-muted-foreground/30" />
-                    <line x1="0" y1="25" x2="100" y2="25" stroke="currentColor" strokeWidth="0.2" className="text-muted-foreground/30" />
-                    <line x1="0" y1="40" x2="100" y2="40" stroke="currentColor" strokeWidth="0.2" className="text-muted-foreground/30" />
-                    
-                    {/* Intensity labels */}
-                    <text x="2" y="8" className="fill-muted-foreground text-[3px]">100%</text>
-                    <text x="2" y="23" className="fill-muted-foreground text-[3px]">50%</text>
-                    <text x="2" y="38" className="fill-muted-foreground text-[3px]">0%</text>
+                    <line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" strokeWidth="0.3" className="text-muted-foreground/30" />
+                    <line x1="0" y1="25" x2="100" y2="25" stroke="currentColor" strokeWidth="0.3" className="text-muted-foreground/30" />
+                    <line x1="0" y1="40" x2="100" y2="40" stroke="currentColor" strokeWidth="0.3" className="text-muted-foreground/30" />
                     
                     {/* Generate smooth curve path */}
                     <path
                       d={(() => {
                         const points: string[] = []
-                        for (let i = 0; i <= 100; i += 2) {
+                        for (let i = 0; i <= 100; i += 1) {
                           const x = i
                           const intensity = getIntensityAtProgress(i, dose.timings)
                           const y = 40 - (intensity * 0.3)
@@ -536,7 +535,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       })()}
                       fill="none"
                       stroke="url(#curveGradient)"
-                      strokeWidth="2"
+                      strokeWidth="0.8"
                       strokeLinecap="round"
                     />
                     
@@ -553,15 +552,22 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                     {/* Current position marker */}
                     {dose.status.phase !== 'not_started' && dose.status.phase !== 'ended' && (
                       <circle
-                        cx={Math.min(98, Math.max(2, dose.status.overallProgress))}
+                        cx={Math.min(99, Math.max(1, dose.status.overallProgress))}
                         cy={40 - (getIntensityAtProgress(dose.status.overallProgress, dose.timings) * 0.3)}
-                        r="3"
+                        r="1.5"
                         fill="white"
                         stroke="#a855f7"
-                        strokeWidth="2"
+                        strokeWidth="0.8"
                       />
                     )}
                   </svg>
+
+                  {/* Y-axis labels */}
+                  <div className="absolute left-2 top-[68px] h-28 flex flex-col justify-between text-xs text-muted-foreground pointer-events-none">
+                    <span>100%</span>
+                    <span>50%</span>
+                    <span>0%</span>
+                  </div>
 
                   {/* Time markers */}
                   <div className="relative h-5 mt-2 border-t border-muted-foreground/20 pt-1">
