@@ -407,8 +407,8 @@ export default function Home() {
               <Image 
                 src="logo.png" 
                 alt="Drugucopia Logo" 
-                width={36} 
-                height={36}
+                width={72} 
+                height={72}
                 className="rounded-lg"
               />
               <span className="font-bold text-lg">Drugucopia</span>
