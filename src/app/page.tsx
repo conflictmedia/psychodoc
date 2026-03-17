@@ -36,6 +36,7 @@ import { ThemeToggle } from '@/components/theme-toggle'
 import { DoseLoggerModal } from '@/components/dose-logger-modal'
 import { DoseHistory } from '@/components/dose-history'
 import { DoseStats } from '@/components/dose-stats'
+import { ActiveDosesTimeline } from '@/components/active-doses-timeline'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Badge } from '@/components/ui/badge'
@@ -407,8 +408,8 @@ export default function Home() {
               <Image 
                 src="logo.png" 
                 alt="Drugucopia Logo" 
-                width={72} 
-                height={72}
+                width={36} 
+                height={36}
                 className="rounded-lg"
               />
               <span className="font-bold text-lg">Drugucopia</span>
@@ -521,6 +522,7 @@ export default function Home() {
           {currentView === 'dose-log' ? (
             /* Dose Log View */
             <div className="space-y-6">
+              <ActiveDosesTimeline refreshTrigger={doseRefreshTrigger} />
               <DoseStats refreshTrigger={doseRefreshTrigger} />
               <DoseHistory refreshTrigger={doseRefreshTrigger} />
             </div>
