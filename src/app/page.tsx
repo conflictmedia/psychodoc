@@ -405,7 +405,7 @@ export default function Home() {
           <div className="p-4 border-b">
             <div className="flex items-center gap-2">
               <Image 
-                src="/logo.png" 
+                src="logo.png" 
                 alt="Drugucopia Logo" 
                 width={36} 
                 height={36}

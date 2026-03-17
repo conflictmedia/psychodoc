@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   keywords: ["psychoactive", "substances", "documentation", "harm reduction", "drug information"],
   authors: [{ name: "conflictmedia @ conflict@cocaine.ninja" }],
   icons: {
-    icon: "/logo.png",
+    icon: "logo.png",
   },
 };
 
