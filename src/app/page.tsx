@@ -13,6 +13,7 @@ import {
   Leaf, 
   Pill, 
   Ghost,
+  Brain,
   ChevronRight,
   AlertTriangle,
   Clock,
@@ -56,7 +57,8 @@ const categoryIcons: Record<SubstanceCategory, React.ElementType> = {
   empathogens: Heart,
   cannabinoids: Leaf,
   opioids: Pill,
-  deliriants: Ghost
+  deliriants: Ghost,
+  nootropics: Brain
 }
 
 const categoryColors: Record<SubstanceCategory, string> = {
@@ -67,7 +69,8 @@ const categoryColors: Record<SubstanceCategory, string> = {
   empathogens: 'text-pink-500 bg-pink-500/10 border-pink-500/20',
   cannabinoids: 'text-green-500 bg-green-500/10 border-green-500/20',
   opioids: 'text-red-500 bg-red-500/10 border-red-500/20',
-  deliriants: 'text-slate-500 bg-slate-500/10 border-slate-500/20'
+  deliriants: 'text-slate-500 bg-slate-500/10 border-slate-500/20',
+  nootropics: 'text-teal-500 bg-teal-500/10 border-teal-500/20'
 }
 
 const riskLevelColors = {
