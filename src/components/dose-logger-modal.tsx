@@ -35,6 +35,7 @@ interface DoseLoggerModalProps {
   preselectedSubstanceId?: string
   preselectedSubstanceName?: string
   preselectedCategory?: string
+  preselectedRoute?: string
 }
 
 const moodOptions: ComboboxOption[] = [
@@ -72,6 +73,7 @@ export function DoseLoggerModal({
   preselectedSubstanceId,
   preselectedSubstanceName,
   preselectedCategory,
+  preselectedRoute,
 }: DoseLoggerModalProps) {
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -82,7 +84,7 @@ export function DoseLoggerModal({
   const [category, setCategory] = useState(preselectedCategory || '')
   const [amount, setAmount] = useState('')
   const [unit, setUnit] = useState('mg')
-  const [route, setRoute] = useState('Oral')
+  const [route, setRoute] = useState(preselectedRoute || 'Oral')
   const [timestamp, setTimestamp] = useState(format(new Date(), "yyyy-MM-dd'T'HH:mm"))
   const [notes, setNotes] = useState('')
   const [mood, setMood] = useState('')

@@ -1,0 +1,527 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Monte Carlo Pi Estimation — Dart Visualization</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #0f1117;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
+  background: linear-gradient(90deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+canvas {
+  border: 2px solid #2a2d3a;
+  border-radius: 12px;
+  background: #161822;
+  box-shadow: 0 0 40px rgba(96, 165, 250, 0.05);
+}
+
+.panel {
+  background: #1a1d2e;
+  border: 1px solid #2a2d3a;
+  border-radius: 12px;
+  padding: 24px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.pi-display {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #1e2140, #1a1d2e);
+  border: 1px solid #2e3252;
+  border-radius: 10px;
+}
+
+.pi-display .label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.pi-display .value {
+  font-size: 2.8rem;
+  font-weight: 700;
+  font-family: 'Courier New', monospace;
+  color: #60a5fa;
+  margin: 6px 0;
+}
+
+.pi-display .actual {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.pi-display .actual span {
+  color: #a78bfa;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.stat-box {
+  background: #161822;
+  border: 1px solid #2a2d3a;
+  border-radius: 8px;
+  padding: 12px;
+  text-align: center;
+}
+
+.stat-box .stat-label {
+  font-size: 0.7rem;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.stat-box .stat-value {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.stat-box.inside .stat-value { color: #34d399; }
+.stat-box.outside .stat-value { color: #f87171; }
+.stat-box.total .stat-value { color: #60a5fa; }
+.stat-box.error .stat-value { color: #fbbf24; }
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+button:hover { transform: translateY(-1px); }
+button:active { transform: translateY(0); }
+
+.btn-start {
+  background: linear-gradient(135deg, #3b82f6, #6366f1);
+  color: white;
+}
+.btn-start:hover { box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4); }
+
+.btn-burst {
+  background: linear-gradient(135deg, #8b5cf6, #a855f7);
+  color: white;
+}
+.btn-burst:hover { box-shadow: 0 4px 20px rgba(139, 92, 246, 0.4); }
+
+.btn-reset {
+  background: #2a2d3a;
+  color: #aaa;
+}
+.btn-reset:hover { background: #3a3d4a; }
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+}
+.btn-row button { flex: 1; }
+
+.speed-control {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.speed-control label {
+  font-size: 0.8rem;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  background: #2a2d3a;
+  border-radius: 3px;
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  background: #6366f1;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.convergence-chart {
+  background: #161822;
+  border: 1px solid #2a2d3a;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.formula {
+  text-align: center;
+  padding: 14px;
+  background: #161822;
+  border: 1px solid #2a2d3a;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  color: #999;
+  line-height: 1.6;
+}
+
+.formula em {
+  color: #a78bfa;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.8rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.legend-dot.inside { background: #34d399; }
+.legend-dot.outside { background: #f87171; }
+</style>
+</head>
+<body>
+
+<h1>🎯 Monte Carlo Pi Estimation</h1>
+<p class="subtitle">Throw random darts to approximate the value of π</p>
+
+<div class="container">
+  <!-- Canvas -->
+  <div style="display:flex; flex-direction:column; gap:10px; align-items:center;">
+    <canvas id="dartBoard" width="520" height="520"></canvas>
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot inside"></div> Inside circle</div>
+      <div class="legend-item"><div class="legend-dot outside"></div> Outside circle</div>
+    </div>
+  </div>
+
+  <!-- Panel -->
+  <div class="panel">
+    <div class="pi-display">
+      <div class="label">Estimated π</div>
+      <div class="value" id="piValue">—</div>
+      <div class="actual">Actual: <span>3.14159265...</span></div>
+    </div>
+
+    <div class="stats">
+      <div class="stat-box inside">
+        <div class="stat-label">Inside</div>
+        <div class="stat-value" id="insideCount">0</div>
+      </div>
+      <div class="stat-box outside">
+        <div class="stat-label">Outside</div>
+        <div class="stat-value" id="outsideCount">0</div>
+      </div>
+      <div class="stat-box total">
+        <div class="stat-label">Total</div>
+        <div class="stat-value" id="totalCount">0</div>
+      </div>
+      <div class="stat-box error">
+        <div class="stat-label">Error %</div>
+        <div class="stat-value" id="errorValue">—</div>
+      </div>
+    </div>
+
+    <canvas id="convergenceChart" class="convergence-chart" width="272" height="100"></canvas>
+
+    <div class="controls">
+      <button class="btn-start" id="btnToggle" onclick="toggleSimulation()">▶ Start</button>
+      <div class="btn-row">
+        <button class="btn-burst" onclick="throwBurst(100)">+100</button>
+        <button class="btn-burst" onclick="throwBurst(1000)">+1,000</button>
+        <button class="btn-burst" onclick="throwBurst(10000)">+10,000</button>
+      </div>
+      <div class="speed-control">
+        <label>
+          <span>Speed</span>
+          <span id="speedLabel">10 darts/frame</span>
+        </label>
+        <input type="range" id="speedSlider" min="1" max="100" value="10" oninput="updateSpeed()">
+      </div>
+      <button class="btn-reset" onclick="resetSimulation()">↺ Reset</button>
+    </div>
+
+    <div class="formula">
+      <em>π ≈ 4 × (points inside circle / total points)</em><br>
+      Circle area = πr² &nbsp;|&nbsp; Square area = (2r)² = 4r²<br>
+      Ratio = π/4
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── SETUP ──────────────────────────────────────────────
+const canvas = document.getElementById('dartBoard');
+const ctx = canvas.getContext('2d');
+const chartCanvas = document.getElementById('convergenceChart');
+const chartCtx = chartCanvas.getContext('2d');
+
+const W = canvas.width;
+const H = canvas.height;
+const CX = W / 2;
+const CY = H / 2;
+const RADIUS = (W - 40) / 2;   // circle radius in pixels
+const PAD = 20;
+
+let insideCount = 0;
+let outsideCount = 0;
+let totalCount = 0;
+let running = false;
+let animId = null;
+let dartsPerFrame = 10;
+let piHistory = [];          // for convergence chart
+const MAX_HISTORY = 200;
+
+// Offscreen canvas for accumulated dots (perf optimisation)
+const dotCanvas = document.createElement('canvas');
+dotCanvas.width = W;
+dotCanvas.height = H;
+const dotCtx = dotCanvas.getContext('2d');
+
+// ─── DRAWING HELPERS ────────────────────────────────────
+function drawBoard() {
+  ctx.clearRect(0, 0, W, H);
+
+  // Draw accumulated dots
+  ctx.drawImage(dotCanvas, 0, 0);
+
+  // Square border
+  ctx.strokeStyle = '#3a3f55';
+  ctx.lineWidth = 2;
+  ctx.strokeRect(PAD, PAD, W - 2 * PAD, H - 2 * PAD);
+
+  // Circle
+  ctx.beginPath();
+  ctx.arc(CX, CY, RADIUS, 0, Math.PI * 2);
+  ctx.strokeStyle = 'rgba(96, 165, 250, 0.5)';
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // Crosshair
+  ctx.strokeStyle = 'rgba(255,255,255,0.06)';
+  ctx.lineWidth = 1;
+  ctx.beginPath();
+  ctx.moveTo(CX, PAD);  ctx.lineTo(CX, H - PAD);
+  ctx.moveTo(PAD, CY);  ctx.lineTo(W - PAD, CY);
+  ctx.stroke();
+}
+
+function drawDot(px, py, inside) {
+  dotCtx.beginPath();
+  dotCtx.arc(px, py, 1.5, 0, Math.PI * 2);
+  dotCtx.fillStyle = inside
+    ? 'rgba(52, 211, 153, 0.7)'    // green
+    : 'rgba(248, 113, 113, 0.6)';  // red
+  dotCtx.fill();
+}
+
+// ─── CONVERGENCE CHART ──────────────────────────────────
+function drawConvergenceChart() {
+  const cW = chartCanvas.width;
+  const cH = chartCanvas.height;
+  chartCtx.clearRect(0, 0, cW, cH);
+
+  // Background
+  chartCtx.fillStyle = '#161822';
+  chartCtx.fillRect(0, 0, cW, cH);
+
+  if (piHistory.length < 2) return;
+
+  // Actual pi line
+  const piY = cH / 2;
+  chartCtx.strokeStyle = 'rgba(167, 139, 250, 0.3)';
+  chartCtx.lineWidth = 1;
+  chartCtx.setLineDash([4, 4]);
+  chartCtx.beginPath();
+  chartCtx.moveTo(0, piY);
+  chartCtx.lineTo(cW, piY);
+  chartCtx.stroke();
+  chartCtx.setLineDash([]);
+
+  // Label
+  chartCtx.fillStyle = '#666';
+  chartCtx.font = '10px monospace';
+  chartCtx.fillText('π', 4, piY - 4);
+
+  // Determine y range: center on pi, at least ±0.5
+  const minRange = 0.5;
+  let yMin = Math.PI - minRange;
+  let yMax = Math.PI + minRange;
+  for (const v of piHistory) {
+    if (v < yMin) yMin = v - 0.1;
+    if (v > yMax) yMax = v + 0.1;
+  }
+
+  const mapY = v => cH - ((v - yMin) / (yMax - yMin)) * cH;
+  const stepX = cW / (MAX_HISTORY - 1);
+
+  // Draw line
+  chartCtx.beginPath();
+  chartCtx.strokeStyle = '#60a5fa';
+  chartCtx.lineWidth = 1.5;
+  const startIdx = Math.max(0, piHistory.length - MAX_HISTORY);
+  for (let i = startIdx; i < piHistory.length; i++) {
+    const x = (i - startIdx) * stepX;
+    const y = mapY(piHistory[i]);
+    if (i === startIdx) chartCtx.moveTo(x, y);
+    else chartCtx.lineTo(x, y);
+  }
+  chartCtx.stroke();
+}
+
+// ─── SIMULATION LOGIC ───────────────────────────────────
+function throwDart() {
+  // Random point in [-1, 1] × [-1, 1]
+  const rx = Math.random() * 2 - 1;
+  const ry = Math.random() * 2 - 1;
+  const inside = (rx * rx + ry * ry) <= 1;
+
+  // Convert to pixel coords
+  const px = CX + rx * RADIUS;
+  const py = CY + ry * RADIUS;
+
+  drawDot(px, py, inside);
+
+  if (inside) insideCount++;
+  else outsideCount++;
+  totalCount++;
+}
+
+function throwBurst(n) {
+  for (let i = 0; i < n; i++) throwDart();
+  recordHistory();
+  updateUI();
+  drawBoard();
+  drawConvergenceChart();
+}
+
+function recordHistory() {
+  if (totalCount > 0) {
+    piHistory.push(4 * insideCount / totalCount);
+  }
+}
+
+function updateUI() {
+  const piEst = totalCount > 0 ? (4 * insideCount / totalCount) : 0;
+  const error = totalCount > 0 ? Math.abs((piEst - Math.PI) / Math.PI * 100) : 0;
+
+  document.getElementById('piValue').textContent =
+    totalCount > 0 ? piEst.toFixed(6) : '—';
+  document.getElementById('insideCount').textContent = insideCount.toLocaleString();
+  document.getElementById('outsideCount').textContent = outsideCount.toLocaleString();
+  document.getElementById('totalCount').textContent = totalCount.toLocaleString();
+  document.getElementById('errorValue').textContent =
+    totalCount > 0 ? error.toFixed(4) + '%' : '—';
+}
+
+// ─── ANIMATION LOOP ─────────────────────────────────────
+function animate() {
+  for (let i = 0; i < dartsPerFrame; i++) throwDart();
+  recordHistory();
+  updateUI();
+  drawBoard();
+  drawConvergenceChart();
+  if (running) animId = requestAnimationFrame(animate);
+}
+
+function toggleSimulation() {
+  running = !running;
+  const btn = document.getElementById('btnToggle');
+  if (running) {
+    btn.textContent = '⏸ Pause';
+    animate();
+  } else {
+    btn.textContent = '▶ Resume';
+    cancelAnimationFrame(animId);
+  }
+}
+
+function resetSimulation() {
+  running = false;
+  cancelAnimationFrame(animId);
+  document.getElementById('btnToggle').textContent = '▶ Start';
+  insideCount = 0;
+  outsideCount = 0;
+  totalCount = 0;
+  piHistory = [];
+  dotCtx.clearRect(0, 0, W, H);
+  updateUI();
+  drawBoard();
+  drawConvergenceChart();
+}
+
+function updateSpeed() {
+  dartsPerFrame = parseInt(document.getElementById('speedSlider').value);
+  document.getElementById('speedLabel').textContent = dartsPerFrame + ' darts/frame';
+}
+
+// ─── INIT ───────────────────────────────────────────────
+drawBoard();
+drawConvergenceChart();
+</script>
+</body>
+</html>
