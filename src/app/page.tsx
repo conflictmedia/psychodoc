@@ -402,7 +402,7 @@ export default function Home() {
         </header>
 
         {/* Content */}
-        <main className="container py-6 lg:py-10">
+        <main className="container mx-auto py-6 lg:py-10">
           <div className="grid gap-6 lg:grid-cols-3">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-6">
@@ -735,7 +735,7 @@ export default function Home() {
         </header>
 
         {/* Content */}
-        <main className="flex-1 p-4 lg:p-6 max-w-screen-xl mx-auto w-full">
+        <main className="container mx-auto py-6 pg:py-10 px-4 lg:px-6">
           {currentView === 'dose-log' ? (
             /* Dose Log View */
             <div className="space-y-6">
