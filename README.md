@@ -4,7 +4,7 @@ Recreational substance information repository and locally stored dose logger
 
 ## Features
 
-- 118 different substances
+- 117 different substances
 - Dosing and Duration info for multiple routes of administration
 - Dose logger with graphs that stores all the information in localStorage on your own browser
 - Export to CSV to backup or migrate your dose history
