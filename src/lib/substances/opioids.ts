@@ -6,14 +6,14 @@ export const opioids: Substance[] = [
   {
       id: 'heroin',
       name: 'Heroin',
-      commonNames: ['H', 'Dope', 'Smack', 'Junk', 'Horse', 'Brown'],
+      commonNames: ['H', 'Dope', 'Smack', 'Junk', 'Horse', 'Brown', 'China White', 'Tar'],
       category: 'opioids',
       class: 'Opioid',
-      description: 'Heroin (diacetylmorphine) is an opioid drug derived from morphine, which comes from the opium poppy. It acts primarily on mu-opioid receptors, producing intense euphoria, pain relief, and sedation. Heroin is highly addictive and carries significant risks of overdose, particularly given its variable purity and presence of adulterants like fentanyl. The opioid epidemic has made heroin and other opioids a major public health crisis.',
+      description: 'Heroin (diacetylmorphine) is a semi-synthetic opioid derived from morphine. It acts primarily on mu-opioid receptors, producing intense euphoria, pain relief, and sedation. Heroin is highly addictive and carries significant risks of overdose, particularly given its variable purity and the prevalence of fentanyl as an adulterant in modern supplies.',
       effects: {
-        positive: ['Intense euphoria', 'Powerful pain relief', 'Deep relaxation', 'Relief from anxiety and stress', 'Warm sensation throughout body'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Itching', 'Nausea'],
-        negative: ['Extreme addiction potential', 'Respiratory depression (overdose risk)', 'Risk of death from overdose', 'Severe withdrawal symptoms', 'Risk of infectious disease from injection', 'Social and financial destruction', 'Cognitive impairment with chronic use']
+        positive: ['Intense euphoria (rush)', 'Powerful pain relief', 'Deep relaxation', 'Anxiety suppression', 'Dream-like state (nodding)'],
+        neutral: ['Sedation', 'Pupil constriction (pinpoint pupils)', 'Constipation', 'Itching (histamine release)', 'Nausea'],
+        negative: ['High addiction potential', 'Respiratory depression (fatal overdose risk)', 'Severe withdrawal', 'Collapsed veins (IV use)', 'Infection risk', 'Hormonal imbalance']
       },
       dosage: {
         threshold: '5-10mg',
@@ -22,424 +22,168 @@ export const opioids: Substance[] = [
         strong: '40-60mg',
         heavy: '60mg+'
       },
-      duration: {
-        onset: 'Seconds (IV), 5-10min (snorted)',
-        comeup: '1-5 minutes',
-        peak: '15-30 minutes',
-        offset: '2-4 hours',
-        total: '4-6 hours'
-      },
-    routeData: {
-      Intravenous: {
-          dosage: {
-              threshold: '3-5mg',
-              light: '5-10mg',
-              common: '10-20mg',
-              strong: '20-35mg',
-              heavy: '35mg+'
-          },
-          duration: {
-              onset: '5-15 seconds',
-              comeup: '30-90 seconds',
-              peak: '5-15 minutes',
-              offset: '1-3 hours',
-              total: '3-5 hours'
-          },
-          notes: 'Very rapid onset. Highest addiction potential. Extreme overdose risk. 100% bioavailability.'
-      },
-      Insufflation: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-20mg',
-              common: '20-40mg',
-              strong: '40-60mg',
-              heavy: '60mg+'
-          },
-          duration: {
-              onset: '5-10 minutes',
-              comeup: '10-20 minutes',
-              peak: '15-30 minutes',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Common recreational route. Still very high addiction potential. Bioavailability ~50%.'
-      },
-      Smoking: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-20mg',
-              common: '20-40mg',
-              strong: '40-60mg',
-              heavy: '60mg+'
-          },
-          duration: {
-              onset: '5-15 seconds',
-              comeup: '30-90 seconds',
-              peak: '10-20 minutes',
-              offset: '1-2 hours',
-              total: '2-4 hours'
-          },
-          notes: 'Very rapid onset. High addiction potential. \'Chasing the dragon.\''
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '3-6mg',
-              light: '6-12mg',
-              common: '12-24mg',
-              strong: '24-36mg',
-              heavy: '36mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '15-30 minutes',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Medical administration route. Slower onset than IV but sustained effect.'
-      }
-  },
-      interactions: ['Benzodiazepines (extremely dangerous)', 'Alcohol (dangerous)', 'Other opioids', 'Stimulants', 'Antihistamines'],
+      routeData: {
+        Intravenous: {
+            dosage: {
+                threshold: '3-5mg',
+                light: '5-10mg',
+                common: '10-20mg',
+                strong: '20-30mg',
+                heavy: '30mg+'
+            },
+            duration: {
+                onset: '5-20 seconds',
+                comeup: '30-90 seconds',
+                peak: '5-15 minutes',
+                offset: '1-3 hours',
+                total: '3-5 hours'
+            },
+            notes: 'Pure diamorphine dosages listed. Street heroin purity varies wildly (often 10-50%). Fentanyl presence changes lethal dose significantly.'
+        },
+        Insufflation: {
+            dosage: {
+                threshold: '5-10mg',
+                light: '15-30mg',
+                common: '30-50mg',
+                strong: '50-75mg',
+                heavy: '75mg+'
+            },
+            duration: {
+                onset: '2-5 minutes',
+                comeup: '10-20 minutes',
+                peak: '30-45 minutes',
+                offset: '3-5 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Snorting. Bioavailability is lower than IV (~40-50%). "Cheese" or "Monkey Water" methods used for tar.'
+        },
+        Smoking: {
+            dosage: {
+                threshold: '5-10mg',
+                light: '15-25mg',
+                common: '25-50mg',
+                strong: '50-75mg',
+                heavy: '75mg+'
+            },
+            duration: {
+                onset: '5-15 seconds',
+                comeup: '1-2 minutes',
+                peak: '5-15 minutes',
+                offset: '1-2 hours',
+                total: '2-4 hours'
+            },
+            notes: 'Vaporizing on foil ("Chasing the dragon"). Intense rush but shorter duration than snorting.'
+        },
+        Intramuscular: {
+            dosage: {
+                threshold: '3-6mg',
+                light: '6-12mg',
+                common: '12-24mg',
+                strong: '24-36mg',
+                heavy: '36mg+'
+            },
+            duration: {
+                onset: '5-10 minutes',
+                comeup: '15-30 minutes',
+                peak: '30-60 minutes',
+                offset: '2-4 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Skin popping. High risk of abscesses and infection (wound botulism).'
+        }
+    },
+      interactions: ['Benzodiazepines (deadly combo)', 'Alcohol', 'Other opioids', 'Stimulants ("Speedball" - increases strain on heart)', 'Antihistamines'],
       harmReduction: [
-        'Never use alone - have someone who can call for help',
+        'Never use alone; use the "Never Use Alone" hotline if necessary',
         'Always have naloxone (Narcan) available',
-        'Test substances for fentanyl',
-        'Never combine with benzodiazepines or alcohol',
-        'Use sterile equipment',
-        'Start with small amounts due to variable purity',
-        'Consider medication-assisted treatment (methadone, buprenorphine)',
-        'Seek help for addiction'
+        'Test all substances for fentanyl/xylazine',
+        'Rotate injection sites to prevent vein collapse',
+        'Use new, sterile equipment every time',
+        'Start with a small test shot',
+        'Recovery is possible; seek medication-assisted treatment (methadone/buprenorphine)'
       ],
-      legality: 'Illegal in all countries. Schedule I controlled substance with severe penalties for possession, distribution, and manufacture.',
+      legality: 'Illegal in almost all jurisdictions. Schedule I in the US.',
       chemistry: {
         formula: 'C21H23NO5',
         molecularWeight: '369.41 g/mol',
         class: 'Semi-synthetic opioid'
       },
-      history: 'Heroin was first synthesized in 1874 and was originally marketed as a non-addictive morphine substitute. It was used medicinally before its addictive properties were fully understood. It has been illegal for non-medical use in most countries since the early 20th century.',
-      routes: ['Intravenous', 'Insufflation', 'Smoking', 'Intramuscular'],
-      afterEffects: 'Severe withdrawal symptoms begin within 6-24 hours and peak at 2-3 days. Post-acute withdrawal can last months.',
+      history: 'Synthesized in 1874. Bayer marketed it in 1898 as a non-addictive morphine substitute and cough suppressant. It was criminalized in the US in 1924.',
+      routes: ['Intravenous', 'Insufflation', 'Smoking', 'Intramuscular', 'Rectal'],
+      afterEffects: 'Dopamine depletion, rebound pain, and severe withdrawal symptoms (flu-like symptoms, restless legs, vomiting) starting 6-12 hours after last dose.',
       riskLevel: 'very-high',
       aliases: ['diacetylmorphine', 'diamorphine']
     },
   {
       id: 'kratom',
       name: 'Kratom',
-      commonNames: ['Mitragyna speciosa', 'Kratom', 'Kray', 'Thang', 'Ketum'],
+      commonNames: ['Mitragyna speciosa', 'Kratom', 'Biak', 'Ketum', 'Tea'],
       category: 'opioids',
-      class: 'Opioid-like',
-      description: 'Kratom (Mitragyna speciosa) is a tropical tree native to Southeast Asia whose leaves contain psychoactive compounds, primarily mitragynine and 7-hydroxymitragynine. At low doses, kratom has stimulant effects; at higher doses, it has opioid-like effects. It acts on mu, delta, and kappa opioid receptors, though with a different profile than traditional opioids. Kratom has gained popularity as a natural pain reliever and for managing opioid withdrawal, though its safety profile and potential for dependence remain debated.',
+      class: 'Atypical Opioid',
+      description: 'Kratom is a tropical tree native to Southeast Asia. Its leaves contain mitragynine and 7-hydroxymitragynine, which act as partial agonists at the mu-opioid receptor. It exhibits a unique dose-dependent effect profile: stimulating at low doses and sedating/opioid-like at higher doses.',
       effects: {
-        positive: ['Pain relief', 'Energy and focus (low doses)', 'Anxiety relief', 'Mood elevation', 'Opioid withdrawal relief', 'Relaxation (higher doses)'],
-        neutral: ['Altered perception', 'Appetite suppression', 'Sweating', 'Itching'],
-        negative: ['Nausea and vomiting', 'Constipation', 'Dependence with regular use', 'Withdrawal symptoms', 'Dizziness', 'Respiratory depression at very high doses', 'Potential liver toxicity']
+        positive: ['Pain relief', 'Energy and focus (low doses)', 'Mood elevation', 'Anxiety relief', 'Opioid withdrawal mitigation', 'Sedation (high doses)'],
+        neutral: ['Appetite suppression', 'Pupil constriction', 'Dry mouth'],
+        negative: ['Nausea and vomiting ("the wobbles")', 'Constipation', 'Dehydration', 'Dizziness', 'Dependence with daily use', 'Liver stress (rare)']
       },
       dosage: {
         threshold: '1-2g',
         light: '2-4g',
-        common: '4-8g',
-        strong: '8-15g',
-        heavy: '15g+'
+        common: '3-6g',
+        strong: '6-10g',
+        heavy: '10g+'
       },
-      duration: {
-        onset: '10-20 minutes',
-        comeup: '20-40 minutes',
-        peak: '1-2 hours',
-        offset: '2-4 hours',
-        total: '4-6 hours'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '1-2g',
-              light: '2-4g',
-              common: '4-8g',
-              strong: '8-15g',
-              heavy: '15g'
-          },
-          duration: {
-              onset: '10-20 minutes',
-              comeup: '20-40 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Most common route for this substance.'
-      }
-  },
-      interactions: ['Other opioids', 'Benzodiazepines', 'Alcohol', 'Antidepressants', 'Stimulants'],
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '1-2g',
+                light: '2-4g',
+                common: '3-6g',
+                strong: '6-10g',
+                heavy: '10g+'
+            },
+            duration: {
+                onset: '20-40 minutes',
+                comeup: '30-60 minutes',
+                peak: '1.5-2.5 hours',
+                offset: '2-4 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Powder washed down with water ("toss and wash"), capsules, or brewed as tea. Extracts are significantly more potent.'
+        }
+    },
+      interactions: ['Alcohol', 'Benzodiazepines', 'Other opioids', 'Stimulants', 'Modafinil (risk of seizure)'],
       harmReduction: [
-        'Start with low doses to assess sensitivity',
-        'Avoid daily use to prevent dependence',
-        'Take breaks to maintain effectiveness',
-        'Do not combine with other depressants',
-        'Be aware of strain differences (red, white, green)',
-        'Stay hydrated',
-        'Monitor for signs of dependence',
-        'Do not drive while impaired'
+        'Stay very hydrated',
+        'Avoid daily use to prevent tolerance and dependence',
+        'Rotate strains to potentially reduce tolerance buildup',
+        'Be cautious with extracts (high addiction potential)',
+        'Source from lab-tested vendors to avoid heavy metals/salmonella',
+        'High doses often lead to unpleasant nausea (wobbles)'
       ],
-      legality: 'Legal in most US states but regulated in some. Banned in several countries and some US states. FDA has issued warnings but no federal ban.',
+      legality: 'Legal in most US states; banned in some states (AL, AR, IN, RI, VT, WI) and various countries. "Grey market" status.',
       chemistry: {
-        formula: 'C22H31NO6 (mitragynine)',
-        molecularWeight: '398.49 g/mol',
+        formula: 'C23H30N2O4 (Mitragynine)',
+        molecularWeight: '398.5 g/mol',
         class: 'Indole alkaloid'
       },
-      history: 'Kratom has been used traditionally in Southeast Asia for centuries as a stimulant for laborers and as a remedy for various ailments. It gained popularity in the West in the 2000s as a natural supplement and opioid alternative.',
-      routes: ['Oral (powder, capsules, tea)', 'Chewing fresh leaves'],
-      afterEffects: 'Mild afterglow possible. Withdrawal symptoms can occur with regular use.',
+      history: 'Used traditionally in Thailand and Malaysia for centuries by laborers to combat fatigue and opium addiction. Introduced to the West recently as an alternative medicine.',
+      routes: ['Oral'],
+      afterEffects: 'Mild lethargy or irritability. Withdrawal symptoms resemble mild opioid withdrawal (runny nose, restless legs, insomnia).',
       riskLevel: 'moderate',
-      aliases: ['mitragynine', 'Mitragyna speciosa']
+      aliases: ['mitragyna speciosa']
     },
-
-    // ==================== RESEARCH CHEMICALS ====================
-
-    // Hallucinogenic Research Chemicals,
   {
       id: 'morphine',
       name: 'Morphine',
-      commonNames: ['MS Contin', 'Kadian', 'Avinza', 'Roxanol'],
+      commonNames: ['MS Contin', 'Kadian', 'Roxanol', 'Statex'],
       category: 'opioids',
       class: 'Opioid Analgesic',
-      description: 'Morphine is a potent opiate analgesic drug derived from the opium poppy plant. It acts directly on the central nervous system to relieve pain and is considered the gold standard for opioid analgesics. Morphine works primarily by binding to and activating the μ-opioid receptor in the brain, spinal cord, and gastrointestinal tract. It has a long history of medical use and remains one of the most effective pain medications available.',
+      description: 'Morphine is the primary active alkaloid found in the opium poppy. It is the gold standard against which other opioids are measured. It acts directly on the central nervous system to relieve pain. Oral bioavailability is relatively poor due to first-pass metabolism, making IV/IM routes significantly more potent.',
       effects: {
-        positive: ['Powerful pain relief', 'Euphoria and sense of well-being', 'Relaxation and calmness', 'Relief from anxiety', 'Cough suppression'],
-        neutral: ['Sedation and drowsiness', 'Pupil constriction (miosis)', 'Constipation', 'Itching', 'Dry mouth'],
-        negative: ['Respiratory depression', 'Nausea and vomiting', 'High addiction potential', 'Tolerance development', 'Overdose risk', 'Withdrawal symptoms']
-      },
-      dosage: {
-        threshold: '5-10mg (oral)',
-        light: '10-20mg (oral)',
-        common: '20-50mg (oral)',
-        strong: '50-100mg (oral)',
-        heavy: '100mg+ (oral)'
-      },
-      duration: {
-        onset: '20-40 minutes (oral)',
-        comeup: '30-60 minutes',
-        peak: '1-2 hours',
-        offset: '2-4 hours',
-        total: '4-6 hours'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-20mg',
-              common: '20-50mg',
-              strong: '50-100mg',
-              heavy: '100mg+'
-          },
-          duration: {
-              onset: '20-40 minutes',
-              comeup: '30-60 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'First-pass metabolism reduces bioavailability (~30%). Used for moderate to severe pain.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '2-5mg',
-              light: '5-10mg',
-              common: '10-20mg',
-              strong: '20-40mg',
-              heavy: '40mg+'
-          },
-          duration: {
-              onset: '30-60 seconds',
-              comeup: '1-5 minutes',
-              peak: '5-15 minutes',
-              offset: '1-3 hours',
-              total: '3-5 hours'
-          },
-          notes: 'Medical use. Immediate onset. 100% bioavailability. Risk of histamine release.'
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '3-8mg',
-              light: '8-15mg',
-              common: '15-30mg',
-              strong: '30-50mg',
-              heavy: '50mg+'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '30-60 minutes',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Medical route. Slower onset than IV. Sustained effect.'
-      },
-      Rectal: {
-          dosage: {
-              threshold: '3.5-7mg',
-              light: '7-14mg',
-              common: '14-35mg',
-              strong: '35-70mg',
-              heavy: '70mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Higher bioavailability than oral. Faster onset. Less first-pass metabolism.'
-      },
-      Epidural: {
-          dosage: {
-              threshold: '2.5-5mg',
-              light: '5-10mg',
-              common: '10-25mg',
-              strong: '25-50mg',
-              heavy: '50mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Medical anesthesia. Regional pain relief.'
-      }
-  },
-      interactions: ['Benzodiazepines (dangerous)', 'Alcohol (dangerous)', 'Other opioids', 'MAOIs', 'Anticholinergics', 'Muscle relaxants'],
-      harmReduction: [
-        'Never use alone - have naloxone available',
-        'Start with the lowest effective dose',
-        'Never mix with benzodiazepines or alcohol',
-        'Be aware of tolerance changes after periods of abstinence',
-        'Use sterile equipment if injecting',
-        'Do not crush or dissolve extended-release formulations',
-        'Seek help if experiencing breathing problems'
-      ],
-      legality: 'Prescription only. Schedule II controlled substance in the US. Strictly controlled internationally.',
-      chemistry: {
-        formula: 'C17H19NO3',
-        molecularWeight: '285.34 g/mol',
-        class: 'Phenanthrene opioid'
-      },
-      history: 'Morphine was first isolated from opium in 1804 by Friedrich Sertürner. It was named after Morpheus, the Greek god of dreams. It became widely used during the American Civil War and has been a cornerstone of pain management since.',
-      routes: ['Oral', 'Intravenous', 'Intramuscular', 'Subcutaneous', 'Rectal', 'Epidural'],
-      afterEffects: 'Sedation and constipation can persist. Withdrawal symptoms begin 6-12 hours after last dose and peak at 48-72 hours.',
-      riskLevel: 'high',
-      aliases: ['morphium', 'morpha', 'MSIR']
-    },
-  {
-      id: 'codeine',
-      name: 'Codeine',
-      commonNames: ['Tylenol #3', 'Promethazine with Codeine', 'Lean', 'Sizzurp', 'Purple Drank'],
-      category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Codeine is a naturally occurring opiate and prodrug of morphine, found in the opium poppy. It is metabolized to morphine in the liver by the enzyme CYP2D6. Codeine is considered a weak opioid compared to morphine and is commonly prescribed for mild to moderate pain and as a cough suppressant. Approximately 10% of the population are poor metabolizers who get little effect from codeine.',
-      effects: {
-        positive: ['Mild pain relief', 'Cough suppression', 'Mild euphoria', 'Relaxation', 'Sleepiness'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Itching', 'Dry mouth'],
-        negative: ['Nausea and vomiting', 'Respiratory depression at high doses', 'Addiction potential', 'Tolerance development', 'Withdrawal symptoms']
-      },
-      dosage: {
-        threshold: '15-30mg',
-        light: '30-60mg',
-        common: '60-120mg',
-        strong: '120-200mg',
-        heavy: '200mg+'
-      },
-      duration: {
-        onset: '20-40 minutes (oral)',
-        comeup: '40-60 minutes',
-        peak: '1-2 hours',
-        offset: '2-4 hours',
-        total: '4-6 hours'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '15-30mg',
-              light: '30-60mg',
-              common: '60-120mg',
-              strong: '120-200mg',
-              heavy: '200mg+'
-          },
-          duration: {
-              onset: '20-40 minutes',
-              comeup: '40-60 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Prodrug converted to morphine by CYP2D6. Poor metabolizers get little effect. Ultra-rapid metabolizers at overdose risk.'
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '9-18mg',
-              light: '18-36mg',
-              common: '36-72mg',
-              strong: '72-120mg',
-              heavy: '120mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Medical administration route. Slower onset than IV but sustained effect.'
-      },
-      Rectal: {
-          dosage: {
-              threshold: '10.5-21mg',
-              light: '21-42mg',
-              common: '42-84mg',
-              strong: '84-140mg',
-              heavy: '140mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Higher bioavailability than oral. Faster onset. Less first-pass metabolism.'
-      }
-  },
-      interactions: ['Alcohol', 'Benzodiazepines', 'Other opioids', 'MAOIs', 'CYP2D6 inhibitors', 'CYP2D6 inducers'],
-      harmReduction: [
-        'Do not exceed recommended doses',
-        'Avoid mixing with alcohol or other depressants',
-        'Be aware of individual metabolism differences',
-        'Do not use for long periods to avoid dependence',
-        'Have naloxone available for overdose reversal',
-        'Do not breastfeed while taking codeine'
-      ],
-      legality: 'Prescription only in most countries. Schedule II-V depending on formulation. Available over-the-counter in some countries in low doses.',
-      chemistry: {
-        formula: 'C18H21NO3',
-        molecularWeight: '299.36 g/mol',
-        class: 'Phenanthrene opioid'
-      },
-      history: 'Codeine was first isolated in 1832 by Pierre Robiquet. It has been used medically for over 150 years and remains one of the most commonly prescribed opioids worldwide.',
-      routes: ['Oral', 'Intramuscular', 'Subcutaneous', 'Rectal'],
-      afterEffects: 'Constipation and drowsiness. Withdrawal symptoms similar to other opioids but generally milder.',
-      riskLevel: 'moderate',
-      aliases: ['methylmorphine', '3-methylmorphine']
-    },
-  {
-      id: 'oxycodone',
-      name: 'Oxycodone',
-      commonNames: ['OxyContin', 'Percocet', 'Roxicodone', 'Oxy', 'Hillbilly Heroin'],
-      category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Oxycodone is a semi-synthetic opioid derived from thebaine, an alkaloid found in the opium poppy. It is a potent analgesic used for moderate to severe pain. Oxycodone acts on the central nervous system through μ-opioid receptor agonism and has become one of the most prescribed and abused opioids, playing a significant role in the opioid epidemic.',
-      effects: {
-        positive: ['Strong pain relief', 'Euphoria', 'Relaxation', 'Anxiety relief', 'Sense of well-being'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Itching', 'Dry mouth', 'Sweating'],
-        negative: ['Respiratory depression', 'Nausea and vomiting', 'High addiction potential', 'Overdose risk', 'Withdrawal symptoms', 'Hormonal imbalances with chronic use']
+        positive: ['Strong pain relief', 'Euphoria', 'Physical relaxation', 'Anxiolysis', 'Sedation'],
+        neutral: ['Itching (high histamine release)', 'Constipation', 'Pupil constriction', 'Urinary retention'],
+        negative: ['Respiratory depression', 'Nausea/Vomiting', 'Addiction', 'Low blood pressure', 'Confusion']
       },
       dosage: {
         threshold: '5-10mg (oral)',
@@ -448,182 +192,277 @@ export const opioids: Substance[] = [
         strong: '40-80mg (oral)',
         heavy: '80mg+ (oral)'
       },
-      duration: {
-        onset: '10-30 minutes (oral)',
-        comeup: '30-60 minutes',
-        peak: '1-2 hours',
-        offset: '2-4 hours',
-        total: '4-6 hours (immediate release)'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-20mg',
-              common: '20-40mg',
-              strong: '40-80mg',
-              heavy: '80mg+'
-          },
-          duration: {
-              onset: '10-30 minutes',
-              comeup: '30-60 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'High oral bioavailability (~60-80%). Extended-release forms last 12 hours. Do not crush ER tablets.'
-      },
-      Intranasal: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-15mg',
-              common: '15-30mg',
-              strong: '30-50mg',
-              heavy: '50mg+'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '30-60 minutes',
-              offset: '2-3 hours',
-              total: '3-5 hours'
-          },
-          notes: 'Crushed tablets. Higher abuse potential. Faster onset than oral.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '2-5mg',
-              light: '5-10mg',
-              common: '10-20mg',
-              strong: '20-35mg',
-              heavy: '35mg+'
-          },
-          duration: {
-              onset: '30-60 seconds',
-              comeup: '1-5 minutes',
-              peak: '5-15 minutes',
-              offset: '1-3 hours',
-              total: '3-5 hours'
-          },
-          notes: 'Very high overdose risk. Crushed ER tablets contain all dose at once. High addiction potential.'
-      },
-      Rectal: {
-          dosage: {
-              threshold: '3.5-7mg',
-              light: '7-14mg',
-              common: '14-28mg',
-              strong: '28-56mg',
-              heavy: '56mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours (immediate release)'
-          },
-          notes: 'Higher bioavailability than oral. Faster onset. Less first-pass metabolism.'
-      }
-  },
-      interactions: ['Alcohol (dangerous)', 'Benzodiazepines (dangerous)', 'Other opioids', 'MAOIs', 'Anticholinergics', 'CNS depressants'],
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '5-10mg',
+                light: '10-20mg',
+                common: '20-40mg',
+                strong: '40-80mg',
+                heavy: '80mg+'
+            },
+            duration: {
+                onset: '30-60 minutes',
+                comeup: '60-90 minutes',
+                peak: '2-3 hours',
+                offset: '2-4 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Bioavailability ~30%. Extended release (MS Contin) lasts 8-12 hours.'
+        },
+        Intravenous: {
+            dosage: {
+                threshold: '1-3mg',
+                light: '3-5mg',
+                common: '5-10mg',
+                strong: '10-20mg',
+                heavy: '20mg+'
+            },
+            duration: {
+                onset: '30-60 seconds',
+                comeup: '2-5 minutes',
+                peak: '10-20 minutes',
+                offset: '2-3 hours',
+                total: '3-4 hours'
+            },
+            notes: 'Medical standard. Significant histamine rush ("pins and needles"). 100% bioavailability.'
+        },
+        Rectal: {
+            dosage: {
+                threshold: '3-5mg',
+                light: '5-10mg',
+                common: '10-20mg',
+                strong: '20-40mg',
+                heavy: '40mg+'
+            },
+            duration: {
+                onset: '10-20 minutes',
+                comeup: '20-30 minutes',
+                peak: '1-2 hours',
+                offset: '3-4 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Boofing. Bypasses some first-pass metabolism; stronger than oral.'
+        }
+    },
+      interactions: ['Benzodiazepines', 'Alcohol', 'MAOIs', 'Gabapentinoids', 'Antihistamines (potentiate sedation)'],
       harmReduction: [
-        'Never use alone - have naloxone available',
-        'Do not crush or snort extended-release tablets',
-        'Start with low doses if opioid-naive',
-        'Never mix with benzodiazepines or alcohol',
-        'Be aware that tolerance decreases quickly with abstinence',
-        'Do not share prescriptions with others',
-        'Seek treatment if struggling with dependence'
+        'Do not crush extended-release pills (danger of rapid overdose)',
+        'Significant histamine release can cause dangerous swelling in sensitive individuals',
+        'Have naloxone available',
+        'Never mix with alcohol or benzos'
       ],
-      legality: 'Prescription only. Schedule II controlled substance in the US. Strictly controlled internationally.',
+      legality: 'Prescription only. Schedule II in the US.',
+      chemistry: {
+        formula: 'C17H19NO3',
+        molecularWeight: '285.34 g/mol',
+        class: 'Natural Opiate (Phenanthrene)'
+      },
+      history: 'Isolated in 1804 by Friedrich Sertürner, named after Morpheus, the Greek god of dreams. Widespread use began with the invention of the hypodermic needle in 1853.',
+      routes: ['Oral', 'Intravenous', 'Intramuscular', 'Rectal', 'Subcutaneous'],
+      afterEffects: 'Constipation, "opioid hangover," lethargy.',
+      riskLevel: 'high',
+      aliases: ['morphium']
+    },
+  {
+      id: 'codeine',
+      name: 'Codeine',
+      commonNames: ['Tylenol 3', 'Lean', 'Sizzurp', 'Codine', 'Cody'],
+      category: 'opioids',
+      class: 'Opiate Prodrug',
+      description: 'Codeine is a naturally occurring opiate used for mild pain and cough suppression. It is a prodrug, meaning it must be metabolized by the liver enzyme CYP2D6 into morphine to be active. Genetic differences in this enzyme mean some people get no effect, while "ultra-rapid metabolizers" may overdose on standard doses.',
+      effects: {
+        positive: ['Mild euphoria', 'Relaxation', 'Cough suppression', 'Pain relief', 'Warmth'],
+        neutral: ['Itching (very common)', 'Sedation', 'Constipation', 'Dry mouth'],
+        negative: ['Nausea', 'Dizziness', 'Urinary retention', 'Dysphoria at high doses (histamine reaction)']
+      },
+      dosage: {
+        threshold: '15-30mg',
+        light: '30-60mg',
+        common: '60-120mg',
+        strong: '120-200mg',
+        heavy: '200mg+ (Ceiling effect)'
+      },
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '15-30mg',
+                light: '30-60mg',
+                common: '60-120mg',
+                strong: '120-200mg',
+                heavy: '200mg+'
+            },
+            duration: {
+                onset: '30-45 minutes',
+                comeup: '45-60 minutes',
+                peak: '1-2 hours',
+                offset: '2-3 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Ceiling effect around 400mg where more drug adds side effects but no euphoria.'
+        }
+    },
+      interactions: ['Alcohol', 'Benzodiazepines', 'CYP2D6 inhibitors (SSRI, etc.) block effects', 'Promethazine (potentiates sedation)'],
+      harmReduction: [
+        'Cold Water Extraction (CWE) is mandatory if using pills containing acetaminophen/paracetamol to prevent liver failure',
+        'Start low to check for allergy/enzyme deficiency',
+        'High doses cause extreme itching/hives',
+        'Do not mix with alcohol'
+      ],
+      legality: 'Prescription only in US (Schedule II/III/V depending on formulation). OTC in UK/Canada/Australia (though regulations are tightening).',
+      chemistry: {
+        formula: 'C18H21NO3',
+        molecularWeight: '299.36 g/mol',
+        class: 'Natural Opiate'
+      },
+      history: 'Isolated in 1832. Commonly used in cough syrups and mild pain relievers worldwide.',
+      routes: ['Oral'],
+      afterEffects: 'Mild lethargy, constipation.',
+      riskLevel: 'moderate',
+      aliases: ['3-methylmorphine']
+    },
+  {
+      id: 'oxycodone',
+      name: 'Oxycodone',
+      commonNames: ['OxyContin', 'Percocet', 'Roxicodone', 'Roxy', 'Blues', '30s'],
+      category: 'opioids',
+      class: 'Semi-synthetic Opioid',
+      description: 'Oxycodone is a potent semi-synthetic opioid derived from thebaine. It has high oral bioavailability compared to morphine, making it extremely effective (and addictive) orally. It produces a stimulating, clear-headed euphoria compared to the "heavier" sedation of morphine or hydrocodone.',
+      effects: {
+        positive: ['Strong euphoria', 'Energetic relaxation', 'Pain relief', 'Social lubrication', 'Anxiety relief'],
+        neutral: ['Itching', 'Sweating', 'Pupil constriction', 'Dry mouth'],
+        negative: ['Nausea', 'Respiratory depression', 'Severe addiction', 'Irritability ("Opioid Rage")', 'Withdrawal']
+      },
+      dosage: {
+        threshold: '2.5-5mg',
+        light: '5-10mg',
+        common: '10-25mg',
+        strong: '25-40mg',
+        heavy: '40mg+'
+      },
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '2.5-5mg',
+                light: '5-10mg',
+                common: '10-25mg',
+                strong: '25-40mg',
+                heavy: '40mg+'
+            },
+            duration: {
+                onset: '20-40 minutes',
+                comeup: '40-60 minutes',
+                peak: '1.5-2.5 hours',
+                offset: '2-4 hours',
+                total: '4-6 hours'
+            },
+            notes: 'High oral bioavailability (~60-87%). OxyContin is extended release (12hr) but abuse usually involves crushing it.'
+        },
+        Insufflation: {
+            dosage: {
+                threshold: '2.5-5mg',
+                light: '5-10mg',
+                common: '10-20mg',
+                strong: '20-40mg',
+                heavy: '40mg+'
+            },
+            duration: {
+                onset: '2-5 minutes',
+                comeup: '10-15 minutes',
+                peak: '30-60 minutes',
+                offset: '2-3 hours',
+                total: '3-5 hours'
+            },
+            notes: 'Snorting crushed pills. Faster onset but lower bioavailability than oral. High burn.'
+        }
+    },
+      interactions: ['Alcohol', 'Benzodiazepines', 'CYP3A4 inhibitors (grapefruit juice potentiates)', 'Other depressants'],
+      harmReduction: [
+        'Street "Oxy" pills (M30s) are frequently pressed fentanyl - ALWAYS test',
+        'Do not snort pills containing acetaminophen (Percocet)',
+        'Perform Cold Water Extraction (CWE) if acetaminophen is present for oral high doses',
+        'Tolerance builds rapidly'
+      ],
+      legality: 'Prescription only. Schedule II in the US.',
       chemistry: {
         formula: 'C18H21NO4',
-        molecularWeight: '315.36 g/mol',
-        class: 'Semi-synthetic opioid'
+        molecularWeight: '315.37 g/mol',
+        class: 'Thebaine-derivative'
       },
-      history: 'Oxycodone was first developed in 1916 in Germany. OxyContin, an extended-release formulation, was introduced in 1996 and became a major factor in the opioid crisis due to aggressive marketing and widespread diversion.',
-      routes: ['Oral', 'Intranasal', 'Intravenous', 'Rectal'],
-      afterEffects: 'Sedation and constipation. Withdrawal begins within 6-12 hours and can last a week or more.',
+      history: 'Synthesized in 1916. OxyContin marketing in the late 90s is often cited as a catalyst for the US opioid epidemic.',
+      routes: ['Oral', 'Insufflation', 'Intravenous (dangerous due to pill binders)'],
+      afterEffects: 'Irritability, craving, depression.',
       riskLevel: 'high',
-      aliases: ['dihydrohydroxycodeinone', 'oxicon']
+      aliases: ['dihydrohydroxycodeinone']
     },
   {
       id: 'hydrocodone',
       name: 'Hydrocodone',
       commonNames: ['Vicodin', 'Norco', 'Lortab', 'Hydros', 'Vikes'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Hydrocodone is a semi-synthetic opioid derived from codeine. It is used to treat moderate to severe pain and is often combined with acetaminophen or ibuprofen. Hydrocodone is metabolized to hydromorphone and acts primarily on μ-opioid receptors. It was the most prescribed opioid in the United States for many years.',
+      class: 'Semi-synthetic Opioid',
+      description: 'Hydrocodone is a semi-synthetic opioid derived from codeine. It is almost always formulated with acetaminophen (paracetamol) in the US. It is roughly equivalent in strength to morphine orally, but slightly weaker than oxycodone. It tends to be more sedating than oxycodone.',
       effects: {
-        positive: ['Pain relief', 'Euphoria', 'Relaxation', 'Cough suppression', 'Anxiety reduction'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Itching', 'Dizziness'],
-        negative: ['Respiratory depression', 'Nausea and vomiting', 'Addiction potential', 'Liver damage from acetaminophen combo', 'Overdose risk']
+        positive: ['Euphoria', 'Pain relief', 'Relaxation', 'Cough suppression', 'Warm fuzzy feeling'],
+        neutral: ['Sedation', 'Itching', 'Pupil constriction'],
+        negative: ['Nausea', 'Respiratory depression', 'Liver damage (from acetaminophen)', 'Dependence', 'Constipation']
       },
       dosage: {
-        threshold: '5-10mg',
-        light: '10-15mg',
-        common: '15-30mg',
-        strong: '30-50mg',
-        heavy: '50mg+'
+        threshold: '5mg',
+        light: '5-10mg',
+        common: '10-20mg',
+        strong: '20-30mg',
+        heavy: '30mg+'
       },
-      duration: {
-        onset: '20-40 minutes (oral)',
-        comeup: '30-60 minutes',
-        peak: '1-2 hours',
-        offset: '2-4 hours',
-        total: '4-6 hours'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-15mg',
-              common: '15-30mg',
-              strong: '30-50mg',
-              heavy: '50mg'
-          },
-          duration: {
-              onset: '20-40 minutes (oral)',
-              comeup: '30-60 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Most common route for this substance.'
-      }
-  },
-      interactions: ['Alcohol', 'Benzodiazepines', 'Other opioids', 'MAOIs', 'Acetaminophen overdose risk', 'CNS depressants'],
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '5mg',
+                light: '5-10mg',
+                common: '10-20mg',
+                strong: '20-30mg',
+                heavy: '30mg+'
+            },
+            duration: {
+                onset: '20-40 minutes',
+                comeup: '45-60 minutes',
+                peak: '1.5-2.5 hours',
+                offset: '2-3 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Usually combined with Acetaminophen. CWE required for doses >1000mg APAP.'
+        }
+    },
+      interactions: ['Alcohol (double liver toxicity risk)', 'Benzodiazepines', 'Antihistamines'],
       harmReduction: [
-        'Be aware of acetaminophen content in combination products',
-        'Never exceed 4g acetaminophen per day',
-        'Have naloxone available',
-        'Avoid mixing with other depressants',
-        'Do not crush extended-release formulations',
-        'Seek help for dependence'
+        'Acetaminophen toxicity is the main risk - do not exceed 4000mg APAP/day',
+        'Perform Cold Water Extraction (CWE) for recreational doses',
+        'Do not snort (acetaminophen damages nasal cartilage and blocks absorption)',
+        'Have naloxone available'
       ],
-      legality: 'Prescription only. Schedule II controlled substance in the US.',
+      legality: 'Prescription only. Rescheduled to Schedule II in the US (formerly Schedule III).',
       chemistry: {
         formula: 'C18H21NO3',
         molecularWeight: '299.36 g/mol',
-        class: 'Semi-synthetic opioid'
+        class: 'Codeine-derivative'
       },
-      history: 'Hydrocodone was first synthesized in Germany in 1920. It became widely prescribed in the US and was the most prescribed medication in the country for several years.',
+      history: 'Synthesized in 1920. One of the most prescribed drugs in US history.',
       routes: ['Oral'],
-      afterEffects: 'Constipation, drowsiness. Withdrawal similar to other opioids.',
+      afterEffects: 'Grogginess, irritability.',
       riskLevel: 'high',
-      aliases: ['dihydrocodeinone', 'hydrocon']
+      aliases: ['dihydrocodeinone']
     },
   {
       id: 'hydromorphone',
       name: 'Hydromorphone',
-      commonNames: ['Dilaudid', 'Exalgo', 'Palladone', 'Dilles', 'Dust'],
+      commonNames: ['Dilaudid', 'Dillies', 'Shields', 'H-Bomb'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Hydromorphone is a potent semi-synthetic opioid derived from morphine. It is approximately 5-7 times more potent than morphine and is used for moderate to severe pain. Hydromorphone acts as a μ-opioid receptor agonist and is known for its rapid onset and relatively short duration of action.',
+      class: 'Semi-synthetic Opioid',
+      description: 'Hydromorphone is a ketone derivative of morphine. It is significantly more potent than morphine (5-8x). It is known for a very intense "rush" when injected, but has poor oral bioavailability, leading to a large discrepancy between oral and IV dosages.',
       effects: {
-        positive: ['Very potent pain relief', 'Intense euphoria', 'Strong relaxation', 'Rapid onset'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Itching', 'Sweating'],
-        negative: ['Respiratory depression', 'High overdose risk', 'Severe addiction potential', 'Nausea and vomiting', 'Withdrawal symptoms']
+        positive: ['Intense euphoric rush (IV)', 'Strong pain relief', 'Sedation', 'Anxiolysis'],
+        neutral: ['Nodding', 'Pupil constriction'],
+        negative: ['Severe respiratory depression', 'Nausea', 'High overdose risk', 'Short duration (compulsive redosing)']
       },
       dosage: {
         threshold: '1-2mg (oral)',
@@ -632,1145 +471,794 @@ export const opioids: Substance[] = [
         strong: '8-16mg (oral)',
         heavy: '16mg+ (oral)'
       },
-      duration: {
-        onset: '15-30 minutes (oral)',
-        comeup: '30-45 minutes',
-        peak: '1-2 hours',
-        offset: '2-3 hours',
-        total: '3-4 hours'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '1-2mg',
-              light: '2-4mg',
-              common: '4-8mg',
-              strong: '8-16mg',
-              heavy: '16mg'
-          },
-          duration: {
-              onset: '15-30 minutes (oral)',
-              comeup: '30-45 minutes',
-              peak: '1-2 hours',
-              offset: '2-3 hours',
-              total: '3-4 hours'
-          },
-          notes: 'Most common route for this substance.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '0.4-0.8mg',
-              light: '0.8-1.6mg',
-              common: '1.6-3.2mg',
-              strong: '3.2-6.4mg',
-              heavy: '6.4mg'
-          },
-          duration: {
-              onset: '10-30 seconds',
-              comeup: '1-5 minutes',
-              peak: '1-2 hours',
-              offset: '1-2 hours',
-              total: '2-3 hours'
-          },
-          notes: 'Immediate onset. 100% bioavailability. Very high risk. Requires sterile technique.'
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '0.6-1.2mg',
-              light: '1.2-2.4mg',
-              common: '2.4-4.8mg',
-              strong: '4.8-9.6mg',
-              heavy: '9.6mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-3 hours',
-              total: '3-4 hours'
-          },
-          notes: 'Medical administration route. Slower onset than IV but sustained effect.'
-      },
-      Rectal: {
-          dosage: {
-              threshold: '0.7-1.4mg',
-              light: '1.4-2.8mg',
-              common: '2.8-5.6mg',
-              strong: '5.6-11.2mg',
-              heavy: '11.2mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-3 hours',
-              total: '3-4 hours'
-          },
-          notes: 'Higher bioavailability than oral. Faster onset. Less first-pass metabolism.'
-      }
-  },
-      interactions: ['Alcohol', 'Benzodiazepines', 'Other opioids', 'MAOIs', 'CNS depressants'],
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '1-2mg',
+                light: '2-4mg',
+                common: '4-8mg',
+                strong: '8-16mg',
+                heavy: '16mg+'
+            },
+            duration: {
+                onset: '30-45 minutes',
+                comeup: '45-60 minutes',
+                peak: '1-2 hours',
+                offset: '2-3 hours',
+                total: '3-5 hours'
+            },
+            notes: 'Low bioavailability (~30-50%). Effects are much weaker than IV.'
+        },
+        Intravenous: {
+            dosage: {
+                threshold: '0.25-0.5mg',
+                light: '0.5-1mg',
+                common: '1-2mg',
+                strong: '2-4mg',
+                heavy: '4mg+'
+            },
+            duration: {
+                onset: '10-30 seconds',
+                comeup: '1-2 minutes',
+                peak: '5-15 minutes',
+                offset: '1-2 hours',
+                total: '2-3 hours'
+            },
+            notes: 'EXTREME CAUTION. The "rush" is famous but short-lived. High overdose risk.'
+        },
+        Insufflation: {
+             dosage: {
+                threshold: '1-2mg',
+                light: '2-4mg',
+                common: '4-6mg',
+                strong: '6-8mg',
+                heavy: '8mg+'
+            },
+            duration: {
+                onset: '5-10 minutes',
+                comeup: '10-20 minutes',
+                peak: '30-60 minutes',
+                offset: '2-3 hours',
+                total: '3-5 hours'
+            },
+            notes: 'Better bioavailability than oral (~50-60%).'
+        }
+    },
+      interactions: ['Benzodiazepines', 'Alcohol', 'Other opioids'],
       harmReduction: [
-        'Extremely potent - start with very low doses',
-        'Always have naloxone available',
-        'Never mix with other depressants',
-        'High overdose risk - use extreme caution',
-        'Be aware of potency differences from other opioids',
-        'Use sterile equipment if injecting'
+        'Measure IV doses very carefully - milligram precision matters',
+        'Pills contain binders bad for veins - use micron filters',
+        'Tolerance rises fast',
+        'Never use alone'
       ],
-      legality: 'Prescription only. Schedule II controlled substance in the US.',
+      legality: 'Prescription only. Schedule II in the US.',
       chemistry: {
         formula: 'C17H19NO3',
         molecularWeight: '285.34 g/mol',
-        class: 'Semi-synthetic opioid'
+        class: 'Morphinone-derivative'
       },
-      history: 'Hydromorphone was first synthesized in Germany in 1924. It has been used medically since the 1920s and remains an important analgesic for severe pain.',
-      routes: ['Oral', 'Intravenous', 'Intramuscular', 'Subcutaneous', 'Rectal'],
-      afterEffects: 'Rapid return to baseline but with high craving potential. Withdrawal can be intense.',
+      history: 'Patented in 1923. Preferred in hospital settings for severe acute pain due to rapid onset.',
+      routes: ['Oral', 'Intravenous', 'Insufflation', 'Rectal'],
+      afterEffects: 'Strong cravings due to short duration.',
       riskLevel: 'very-high',
       aliases: ['dihydromorphinone']
     },
   {
       id: 'oxymorphone',
       name: 'Oxymorphone',
-      commonNames: ['Opana', 'Numorphan', 'Omo', 'Blue Heaven'],
+      commonNames: ['Opana', 'Stop Signs', 'O-Bomb', 'Blues'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Oxymorphone is a potent semi-synthetic opioid analgesic derived from thebaine. It is approximately 10 times more potent than morphine and is used for moderate to severe pain. Oxymorphone has poor oral bioavailability but is highly potent when administered parenterally.',
+      class: 'Semi-synthetic Opioid',
+      description: 'Oxymorphone is a highly potent opioid analgesic. Like hydromorphone, it has low oral bioavailability (~10%) but is incredibly potent when snorted or injected. It is often considered one of the most euphoric opioids, leading to extremely high abuse potential.',
       effects: {
-        positive: ['Extremely potent pain relief', 'Intense euphoria', 'Strong relaxation', 'Rapid onset'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Sweating'],
-        negative: ['Severe respiratory depression', 'High overdose risk', 'Very high addiction potential', 'Nausea and vomiting', 'Dangerous withdrawal']
+        positive: ['Overwhelming euphoria', 'Heavy sedation', 'Pain elimination', 'Dream-like state'],
+        neutral: ['Itching', 'Nodding'],
+        negative: ['Severe respiratory depression', 'Rapid tolerance', 'Severe withdrawal', 'Nausea/Vomiting']
       },
       dosage: {
-        threshold: '5-10mg (oral), 0.5-1mg (IV)',
-        light: '10-20mg (oral)',
-        common: '20-40mg (oral)',
-        strong: '40-60mg (oral)',
-        heavy: '60mg+ (oral)'
+        threshold: '5mg (oral)',
+        light: '5-10mg (oral)',
+        common: '10-20mg (oral)',
+        strong: '20-30mg (oral)',
+        heavy: '30mg+ (oral)'
       },
-      duration: {
-        onset: '30-60 minutes (oral)',
-        comeup: '45-90 minutes',
-        peak: '1-2 hours',
-        offset: '2-4 hours',
-        total: '4-6 hours'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '5-10mg (oral), 0.5-1mg (IV)',
-              light: '10-20mg',
-              common: '20-40mg',
-              strong: '40-60mg',
-              heavy: '60mg'
-          },
-          duration: {
-              onset: '30-60 minutes (oral)',
-              comeup: '45-90 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Most common route for this substance.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '5-10mg (oral), 0.5-1mg (IV)',
-              light: '4-8mg',
-              common: '8-16mg',
-              strong: '16-24mg',
-              heavy: '24mg'
-          },
-          duration: {
-              onset: '10-30 seconds',
-              comeup: '1-5 minutes',
-              peak: '1-2 hours',
-              offset: '1-2 hours',
-              total: '2-3 hours'
-          },
-          notes: 'Immediate onset. 100% bioavailability. Very high risk. Requires sterile technique.'
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '5-10mg (oral), 0.5-1mg (IV)',
-              light: '6-12mg',
-              common: '12-24mg',
-              strong: '24-36mg',
-              heavy: '36mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Medical administration route. Slower onset than IV but sustained effect.'
-      },
-      Rectal: {
-          dosage: {
-              threshold: '5-10mg (oral), 0.5-1mg (IV)',
-              light: '7-14mg',
-              common: '14-28mg',
-              strong: '28-42mg',
-              heavy: '42mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Higher bioavailability than oral. Faster onset. Less first-pass metabolism.'
-      }
-  },
-      interactions: ['Alcohol (dangerous - causes rapid release)', 'Benzodiazepines', 'Other opioids', 'MAOIs', 'CNS depressants'],
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '5mg',
+                light: '5-10mg',
+                common: '10-20mg',
+                strong: '20-30mg',
+                heavy: '30mg+'
+            },
+            duration: {
+                onset: '30-60 minutes',
+                comeup: '60-90 minutes',
+                peak: '1.5-2.5 hours',
+                offset: '3-5 hours',
+                total: '4-7 hours'
+            },
+            notes: 'Very inefficient route (~10% bioavailability). Taking with a high-fat meal can dangerously increase absorption.'
+        },
+        Insufflation: {
+            dosage: {
+                threshold: '1-2mg',
+                light: '2-5mg',
+                common: '5-10mg',
+                strong: '10-15mg',
+                heavy: '15mg+'
+            },
+            duration: {
+                onset: '5-10 minutes',
+                comeup: '15-20 minutes',
+                peak: '45-90 minutes',
+                offset: '3-4 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Primary route of abuse. ~40% bioavailability (4x stronger than oral). Silicone coating on new pills makes this difficult.'
+        }
+    },
+      interactions: ['Alcohol (DOSE DUMPING RISK with ER pills)', 'Benzodiazepines', 'Other opioids'],
       harmReduction: [
-        'Extremely potent - use extreme caution',
-        'Never consume with alcohol - can cause dose dumping',
-        'Always have naloxone available',
-        'Do not crush extended-release tablets',
-        'High overdose potential',
-        'Seek immediate help if breathing problems occur'
+        'Do not consume alcohol with Opana ER (can cause rapid release of entire dose)',
+        'Snorting is significantly more potent than swallowing - adjust dose accordingly',
+        'Silicosis risk from snorting reformatted pills',
+        'High overdose risk'
       ],
-      legality: 'Prescription only. Schedule II controlled substance in the US.',
+      legality: 'Prescription only. Schedule II in the US.',
       chemistry: {
         formula: 'C17H19NO4',
-        molecularWeight: '301.33 g/mol',
-        class: 'Semi-synthetic opioid'
+        molecularWeight: '301.34 g/mol',
+        class: 'Morphinone-derivative'
       },
-      history: 'Oxymorphone was developed in Germany in 1914. It has been used medically for decades but became more prominent with the opioid crisis.',
-      routes: ['Oral', 'Intravenous', 'Intramuscular', 'Subcutaneous', 'Rectal'],
-      afterEffects: 'Intense sedation. Withdrawal can be severe.',
+      history: 'Developed in 1914. Gained popularity in the 2000s/2010s as an alternative to OxyContin.',
+      routes: ['Oral', 'Insufflation', 'Intravenous'],
+      afterEffects: 'Severe withdrawal and depression.',
       riskLevel: 'very-high',
       aliases: ['14-hydroxydihydromorphinone']
     },
   {
       id: 'methadone',
       name: 'Methadone',
-      commonNames: ['Dolophine', 'Methadose', 'Diskets', 'Done', 'Fizzies'],
+      commonNames: ['Dolophine', 'Methadose', 'Done', 'Juice'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Methadone is a synthetic opioid used for pain management and opioid dependence treatment. It has a long half-life (24-36 hours) making it suitable for maintenance therapy. Methadone acts as a μ-opioid receptor agonist and NMDA receptor antagonist, giving it unique properties among opioids.',
+      class: 'Synthetic Opioid',
+      description: 'Methadone is a synthetic opioid used for pain and opioid maintenance therapy (OMT). It has an extremely long half-life (24-60 hours). It prevents withdrawal and blocks the euphoric effects of other opioids. Recreational use is dangerous due to the delay between ingestion and peak effect, leading to "stacking" doses and overdose.',
       effects: {
-        positive: ['Long-lasting pain relief', 'Prevents opioid withdrawal', 'Blocks euphoria from other opioids at maintenance doses', 'Mood stabilization'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Sweating', 'QT interval prolongation'],
-        negative: ['Respiratory depression', 'Cardiac arrhythmia risk', 'Addiction potential', 'Very long withdrawal', 'Overdose risk due to long half-life']
+        positive: ['Pain relief', 'Withdrawal prevention', 'Mood stability', 'Sedation'],
+        neutral: ['Sweating (profuse)', 'Constipation', 'Weight gain', 'Libido loss'],
+        negative: ['Respiratory depression', 'QT Prolongation (heart rhythm issues)', 'Fatal overdose from accumulation', 'Extremely long withdrawal']
       },
       dosage: {
-        threshold: '5-10mg',
-        light: '10-20mg',
-        common: '20-40mg',
-        strong: '40-60mg',
-        heavy: '60mg+'
+        threshold: '5mg',
+        light: '5-10mg',
+        common: '10-20mg',
+        strong: '20-40mg',
+        heavy: '40mg+'
       },
-      duration: {
-        onset: '30-60 minutes (oral)',
-        comeup: '1-2 hours',
-        peak: '2-4 hours',
-        offset: '12-24 hours',
-        total: '24-36 hours (analgesia), up to 48+ hours (withdrawal prevention)'
-      },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-20mg',
-              common: '20-40mg',
-              strong: '40-60mg',
-              heavy: '60mg+'
-          },
-          duration: {
-              onset: '30-60 minutes',
-              comeup: '1-2 hours',
-              peak: '2-4 hours',
-              offset: '12-24 hours',
-              total: '24-36 hours'
-          },
-          notes: 'Primary route. Very long half-life. Accumulates with regular dosing. Used for maintenance and pain.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '2-5mg',
-              light: '5-10mg',
-              common: '10-20mg',
-              strong: '20-30mg',
-              heavy: '30mg+'
-          },
-          duration: {
-              onset: '30-60 seconds',
-              comeup: '1-5 minutes',
-              peak: '15-30 minutes',
-              offset: '6-18 hours',
-              total: '18-30 hours'
-          },
-          notes: 'Medical use only. Risk of QT prolongation. Long half-life complicates dosing.'
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '3-6mg',
-              light: '6-12mg',
-              common: '12-24mg',
-              strong: '24-36mg',
-              heavy: '36mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '2-4 hours',
-              offset: '12-24 hours',
-              total: '24-36 hours (analgesia), up to 48+ hours (withdrawal prevention)'
-          },
-          notes: 'Medical administration route. Slower onset than IV but sustained effect.'
-      }
-  },
-      interactions: ['Many medications affect methadone levels', 'CYP450 inhibitors/inducers', 'Benzodiazepines (dangerous)', 'Alcohol', 'Other opioids', 'QT-prolonging medications'],
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '5mg',
+                light: '5-10mg',
+                common: '10-20mg',
+                strong: '20-40mg',
+                heavy: '40mg+'
+            },
+            duration: {
+                onset: '30-60 minutes',
+                comeup: '1-3 hours',
+                peak: '3-5 hours',
+                offset: '12-24 hours',
+                total: '24 hours+'
+            },
+            notes: 'High oral bioavailability. Danger: Respiratory depression lasts longer than analgesia.'
+        }
+    },
+      interactions: ['Benzodiazepines (Very common cause of death)', 'Alcohol', 'QT-prolonging drugs', 'Grapefruit juice'],
       harmReduction: [
-        'Take only as prescribed - accumulation can cause delayed overdose',
-        'Do not mix with benzodiazepines or alcohol',
-        'Be aware that effects can last much longer than other opioids',
-        'Have regular ECG monitoring for QT prolongation',
-        'Never adjust dose without medical supervision',
-        'Have naloxone available'
+        'Do not redose if you don\'t feel it - peak is delayed',
+        'Accumulates in body - dose that is safe on day 1 may overdose on day 3',
+        'Store safely away from children (red liquid looks like juice)',
+        'Withdrawal lasts a month or more - taper slowly'
       ],
-      legality: 'Prescription only. Schedule II controlled substance in the US. Highly regulated for opioid treatment programs.',
+      legality: 'Prescription only. Schedule II. Tightly regulated via clinics for addiction treatment.',
       chemistry: {
         formula: 'C21H27NO',
-        molecularWeight: '309.44 g/mol',
-        class: 'Synthetic opioid'
+        molecularWeight: '309.45 g/mol',
+        class: 'Diphenylheptane'
       },
-      history: 'Methadone was developed in Germany in 1937 and was introduced to the US in 1947. It became widely used for opioid maintenance therapy starting in the 1960s.',
-      routes: ['Oral', 'Intravenous', 'Intramuscular'],
-      afterEffects: 'Long duration means effects persist. Withdrawal can last weeks and is often more prolonged than other opioids.',
+      history: 'Synthesized in Germany (1937) during WWII due to opium shortages. Introduced to US in 1947.',
+      routes: ['Oral', 'Intravenous (rare)'],
+      afterEffects: 'Prolonged grogginess.',
       riskLevel: 'high',
-      aliases: ['amidone', 'dolophine']
+      aliases: ['amidone']
     },
   {
       id: 'fentanyl',
       name: 'Fentanyl',
-      commonNames: ['Duragesic', 'Sublimaze', 'China White', 'Apache', 'Dance Fever'],
+      commonNames: ['Duragesic', 'China White', 'Fent', 'Blues', 'M30s'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Fentanyl is a potent synthetic opioid approximately 50-100 times more potent than morphine. It is used medically for anesthesia and severe pain management. Illicitly manufactured fentanyl has become a major cause of opioid overdose deaths. Fentanyl acts as a μ-opioid receptor agonist with rapid onset and short duration.',
+      class: 'Synthetic Opioid',
+      description: 'Fentanyl is a synthetic opioid ~50-100x stronger than morphine. It is used medically for anesthesia and breakthrough cancer pain. Illicit fentanyl (often pressed into fake pills) is the primary driver of overdose deaths. It has a rapid onset and short duration, but high lipid solubility allows it to store in fat with chronic use.',
       effects: {
-        positive: ['Extremely potent pain relief', 'Intense euphoria', 'Strong sedation', 'Rapid onset'],
-        neutral: ['Pupil constriction', 'Sedation', 'Constipation', 'Sweating'],
-        negative: ['Severe respiratory depression', 'Very high overdose risk', 'High addiction potential', 'Nausea and vomiting', 'Chest wall rigidity (chest wall syndrome)']
+        positive: ['Overwhelming sedation', 'Pain elimination', 'Rush (IV/Smoked)'],
+        neutral: ['Nodding', 'Amnesia'],
+        negative: ['Instant respiratory arrest', 'Chest wall rigidity ("Wooden Chest" - makes CPR difficult)', 'Cardiac arrest', 'Death']
       },
       dosage: {
-        threshold: '25-50μg',
-        light: '50-100μg',
-        common: '100-250μg',
-        strong: '250-500μg',
-        heavy: '500μg+'
+        threshold: '10-25μg (micrograms)',
+        light: '25-50μg',
+        common: '50-100μg',
+        strong: '100-150μg',
+        heavy: '150μg+ (Lethal for non-tolerant)'
       },
-      duration: {
-        onset: '1-2 minutes (IV), 5-15 minutes (transdermal)',
-        comeup: '5-15 minutes',
-        peak: '15-30 minutes',
-        offset: '30-60 minutes',
-        total: '1-2 hours (IV), 72 hours (patch)'
-      },
-    routeData: {
-      Transdermal: {
-          dosage: {
-              threshold: '12μg/hr',
-              light: '12-25μg/hr',
-              common: '25-50μg/hr',
-              strong: '50-75μg/hr',
-              heavy: '75μg/hr+'
-          },
-          duration: {
-              onset: '6-12 hours',
-              comeup: '12-24 hours',
-              peak: '24-48 hours',
-              offset: '12-24 hours',
-              total: '72 hours'
-          },
-          notes: 'Patch for chronic pain. Slow onset. Sustained release over 72 hours.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '15-25μg',
-              light: '25-50μg',
-              common: '50-100μg',
-              strong: '100-200μg',
-              heavy: '200μg+'
-          },
-          duration: {
-              onset: '30-60 seconds',
-              comeup: '1-3 minutes',
-              peak: '5-15 minutes',
-              offset: '30-60 minutes',
-              total: '1-2 hours'
-          },
-          notes: 'Medical anesthesia. MICROGRAM dosing. Very high overdose risk.'
-      },
-      Intranasal: {
-          dosage: {
-              threshold: '25-50μg',
-              light: '50-100μg',
-              common: '100-200μg',
-              strong: '200-300μg',
-              heavy: '300μg+'
-          },
-          duration: {
-              onset: '2-5 minutes',
-              comeup: '5-15 minutes',
-              peak: '15-30 minutes',
-              offset: '30-90 minutes',
-              total: '1-2 hours'
-          },
-          notes: 'Nasal spray. Rapid onset. High abuse potential in illicit form.'
-      },
-      Sublingual: {
-          dosage: {
-              threshold: '21.3-42.5μg',
-              light: '42.5-85μg',
-              common: '85-212.5μg',
-              strong: '212.5-425μg',
-              heavy: '425μg'
-          },
-          duration: {
-              onset: '10-20 minutes',
-              comeup: '20-40 minutes',
-              peak: '15-30 minutes',
-              offset: '30-60 minutes',
-              total: '1-2 hours (IV), 72 hours (patch)'
-          },
-          notes: 'Faster onset than oral. Good bioavailability. Held under tongue.'
-      },
-      Buccal: {
-          dosage: {
-              threshold: '50-100μg',
-              light: '100-200μg',
-              common: '200-400μg',
-              strong: '400-600μg',
-              heavy: '600μg+'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '30-60 minutes',
-              offset: '1-3 hours',
-              total: '2-4 hours'
-          },
-          notes: 'Lozenges for breakthrough cancer pain. Very rapid onset for non-injectable route.'
-      },
-      Smoking: {
-          dosage: {
-              threshold: '12.5-25μg',
-              light: '25-50μg',
-              common: '50-125μg',
-              strong: '125-250μg',
-              heavy: '250μg'
-          },
-          duration: {
-              onset: '5-15 seconds',
-              comeup: '30-90 seconds',
-              peak: '8-15 minutes',
-              offset: '15-30 minutes',
-              total: '1-2 hours'
-          },
-          notes: 'Very rapid onset. Shorter duration. Higher addiction potential.'
-      }
-  },
-      interactions: ['All CNS depressants are dangerous', 'Benzodiazepines', 'Alcohol', 'Other opioids', 'MAOIs', 'CYP3A4 inhibitors'],
+      routeData: {
+        Intravenous: {
+            dosage: {
+                threshold: '10-25μg',
+                light: '25-50μg',
+                common: '50-100μg',
+                strong: '100μg+',
+                heavy: 'Varies'
+            },
+            duration: {
+                onset: 'Immediate',
+                comeup: '10-30 seconds',
+                peak: '2-5 minutes',
+                offset: '30-60 minutes',
+                total: '1-1.5 hours'
+            },
+            notes: 'Microgram dosing is essential. Street powder is impossible to dose safely without volumetric dilution.'
+        },
+        Smoking: {
+             dosage: {
+                threshold: '10-25μg',
+                light: '25-50μg',
+                common: '50-75μg',
+                strong: '75μg+',
+                heavy: 'Varies'
+            },
+            duration: {
+                onset: 'Seconds',
+                comeup: '1-2 minutes',
+                peak: '5-10 minutes',
+                offset: '30-45 minutes',
+                total: '1 hour'
+            },
+            notes: 'Smoking "Dirty 30s" on foil. Very high urge to redose.'
+        },
+        Transdermal: {
+             dosage: {
+                threshold: '12μg/hr',
+                light: '12-25μg/hr',
+                common: '25-50μg/hr',
+                strong: '50-100μg/hr',
+                heavy: '100μg/hr+'
+            },
+            duration: {
+                onset: '6-12 hours',
+                comeup: '12-24 hours',
+                peak: '24-72 hours',
+                offset: '12-24 hours',
+                total: '72 hours'
+            },
+            notes: 'Patches (Duragesic). Do not cut or heat patches (heat causes rapid overdose).'
+        }
+    },
+      interactions: ['Everything. Any depressant significantly increases death risk.'],
       harmReduction: [
-        'EXTREMELY potent - micrograms can be fatal',
-        'Always have multiple doses of naloxone available',
-        'Test substances with fentanyl test strips',
+        'ASSUME ALL STREET DRUGS CONTAIN FENTANYL',
+        'Use Fentanyl Test Strips',
+        'Carry multiple doses of Narcan (fentanyl often requires 2-3+ doses)',
         'Never use alone',
-        'Start with tiny amounts if substance may contain fentanyl',
-        'Do not handle powder - can absorb through skin',
-        'Call emergency services immediately if overdose suspected'
+        'Wooden Chest Syndrome can prevent breathing even if conscious - requires paralysis/ventilation in hospital'
       ],
-      legality: 'Prescription only. Schedule II controlled substance in the US. Illicit manufacture and distribution carries severe penalties.',
+      legality: 'Schedule II (medical) / Schedule I (analogues).',
       chemistry: {
         formula: 'C22H28N2O',
         molecularWeight: '336.47 g/mol',
-        class: 'Synthetic opioid (piperidine derivative)'
+        class: 'Phenylpiperidine'
       },
-      history: 'Fentanyl was first synthesized in 1960 by Janssen Pharmaceuticals. It became widely used medically and later became a major public health concern when illicitly manufactured fentanyl began appearing in street drugs.',
-      routes: ['Transdermal (patch)', 'Intravenous', 'Intranasal', 'Sublingual', 'Buccal', 'Smoking'],
-      afterEffects: 'Short duration but intense. High risk of fatal overdose.',
+      history: 'Synthesized by Paul Janssen in 1960. Adopted for anesthesia.',
+      routes: ['IV', 'Transdermal', 'Transmucosal (lollipop)', 'Smoking', 'Insufflation'],
+      afterEffects: 'Rapid withdrawal onset.',
       riskLevel: 'very-high',
-      aliases: ['N-(1-phenethyl-4-piperidinyl)-N-phenylpropanamide']
+      aliases: ['sublimaze']
     },
   {
       id: 'carfentanil',
       name: 'Carfentanil',
-      commonNames: ['Carfent', 'Drop Dead', 'Serial Killer'],
+      commonNames: ['Wildnil', 'Drop Dead'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Carfentanil is an extremely potent synthetic opioid, approximately 10,000 times more potent than morphine and 100 times more potent than fentanyl. It is used primarily as a large animal tranquilizer for elephants and other large mammals. Carfentanil has been found as an adulterant in illicit drugs and has caused numerous overdose deaths.',
+      class: 'Synthetic Opioid',
+      description: 'Carfentanil is an analogue of fentanyl with an analgesic potency 10,000 times that of morphine. It is intended only for large animal use (elephants, rhinos). It is a chemical weapon candidate and an extremely lethal adulterant in street drugs.',
       effects: {
-        positive: ['Extremely potent analgesia (in veterinary use)'],
-        neutral: ['Rapid onset', 'Potent sedation'],
-        negative: ['EXTREME overdose risk', 'Respiratory depression', 'Fatal at microgram doses', 'Naloxone often requires multiple doses']
+        positive: ['None for humans'],
+        neutral: ['Unconsciousness'],
+        negative: ['Immediate Death']
       },
       dosage: {
-        threshold: '1-5μg',
-        light: '5-10μg',
-        common: 'Not applicable - too dangerous for human use',
-        strong: 'Not applicable',
-        heavy: 'Not applicable'
+        threshold: 'Unknown (sub-microgram)',
+        light: 'Unknown',
+        common: 'DO NOT USE',
+        strong: 'Death',
+        heavy: 'Death'
       },
-      duration: {
-        onset: 'Minutes',
-        comeup: 'Very rapid',
-        peak: 'Variable',
-        offset: 'Hours',
-        total: 'Variable'
+      routeData: {
+          Intravenous: {
+            dosage: { threshold: '1μg (Lethal)', light: '1μg', common: '1μg', strong: '1μg', heavy: '1μg' },
+            duration: { onset: 'Immediate', comeup: 'N/A', peak: 'N/A', offset: 'N/A', total: 'N/A' },
+            notes: 'Active at nanogram levels. An amount smaller than a grain of salt is fatal.'
+          }
       },
-      interactions: ['All CNS depressants are extremely dangerous', 'Alcohol', 'Benzodiazepines', 'Other opioids'],
+      interactions: ['Everything'],
       harmReduction: [
-        'EXTREMELY DANGEROUS - microgram doses can be fatal',
-        'Avoid any substance that may contain carfentanil',
-        'Multiple naloxone doses often required for overdose reversal',
-        'Never use alone',
-        'Test all substances',
-        'Seek immediate medical attention for any suspected exposure',
-        'Do not handle - can absorb through skin'
+        'If suspected, evacuate area (can be absorbed through skin or inhaled)',
+        'Hazmat required for cleanup',
+        'Requires massive doses of Naloxone (Renaloxone) to reverse'
       ],
-      legality: 'Schedule II controlled substance in the US. Not approved for human use. Strictly regulated.',
+      legality: 'Schedule II (Veterinary only).',
       chemistry: {
         formula: 'C24H30N2O3',
         molecularWeight: '394.51 g/mol',
-        class: 'Synthetic opioid (piperidine derivative)'
+        class: 'Phenylpiperidine'
       },
-      history: 'Carfentanil was first synthesized in 1974 by Janssen Pharmaceuticals. It has been used to cut heroin and other drugs, leading to numerous overdose deaths.',
-      routes: ['Not intended for human use'],
-      afterEffects: 'Prolonged sedation. High fatality rate.',
+      history: 'Synthesized in 1974. Used to tranquilize elephants. Linked to the 2002 Moscow theater hostage crisis gas.',
+      routes: ['N/A'],
+      afterEffects: 'Death or permanent brain damage from hypoxia.',
       riskLevel: 'very-high',
-      aliases: ['methyl 1-(2-phenylethyl)-4-(N-phenylpropanamido)piperidine-4-carboxylate']
+      aliases: ['4-carbo-methoxyfentanyl']
     },
   {
       id: 'acetylfentanyl',
       name: 'Acetylfentanyl',
-      commonNames: ['Acetyl', 'Acetylfent'],
+      commonNames: ['Acetyl'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Acetylfentanyl is a synthetic opioid analgesic that is an analog of fentanyl. It is approximately 5-15 times more potent than heroin and has appeared as a novel psychoactive substance. Acetylfentanyl has been associated with numerous overdose deaths and is often sold as heroin or mixed with other opioids.',
+      class: 'Synthetic Opioid',
+      description: 'Acetylfentanyl is a fentanyl analogue that is ~15x stronger than morphine (weaker than fentanyl, stronger than heroin). It is a common designer drug/adulterant.',
       effects: {
-        positive: ['Potent pain relief', 'Euphoria', 'Sedation'],
-        neutral: ['Pupil constriction', 'Constipation', 'Sweating'],
-        negative: ['High overdose risk', 'Respiratory depression', 'Addiction potential', 'Often mislabeled in illicit market']
+        positive: ['Euphoria', 'Sedation', 'Pain relief'],
+        neutral: ['Nodding'],
+        negative: ['Respiratory depression', 'Overdose', 'Addiction']
       },
       dosage: {
-        threshold: '10-25μg',
-        light: '25-50μg',
-        common: '50-150μg',
-        strong: '150-300μg',
-        heavy: '300μg+'
+        threshold: '100-200μg',
+        light: '200-500μg',
+        common: '500-1000μg (1mg)',
+        strong: '1-2mg',
+        heavy: '2mg+'
       },
-      duration: {
-        onset: 'Rapid',
-        comeup: 'Minutes',
-        peak: '30-60 minutes',
-        offset: '1-2 hours',
-        total: '2-4 hours'
+      routeData: {
+        Insufflation: {
+             dosage: {
+                threshold: '100μg',
+                light: '200-500μg',
+                common: '500-1000μg',
+                strong: '1-2mg',
+                heavy: '2mg+'
+            },
+            duration: {
+                onset: '2-5 minutes',
+                comeup: '5-10 minutes',
+                peak: '30-45 minutes',
+                offset: '1-2 hours',
+                total: '2-3 hours'
+            },
+            notes: 'Designer drug often sold as "Synthetic Heroin".'
+        }
       },
-    routeData: {
-      Intranasal: {
-          dosage: {
-              threshold: '7-17.5μg',
-              light: '17.5-35μg',
-              common: '35-105μg',
-              strong: '105-210μg',
-              heavy: '210μg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '26-51 minutes',
-              offset: '1-2 hours',
-              total: '2-3 hours'
-          },
-          notes: 'Similar to insufflation. Nasal spray delivery.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '4-10μg',
-              light: '10-20μg',
-              common: '20-60μg',
-              strong: '60-120μg',
-              heavy: '120μg'
-          },
-          duration: {
-              onset: '10-30 seconds',
-              comeup: '1-5 minutes',
-              peak: '15-30 minutes',
-              offset: '1-2 hours',
-              total: '1-2 hours'
-          },
-          notes: 'Immediate onset. 100% bioavailability. Very high risk. Requires sterile technique.'
-      },
-      Smoking: {
-          dosage: {
-              threshold: '5-12.5μg',
-              light: '12.5-25μg',
-              common: '25-75μg',
-              strong: '75-150μg',
-              heavy: '150μg'
-          },
-          duration: {
-              onset: '5-15 seconds',
-              comeup: '30-90 seconds',
-              peak: '15-30 minutes',
-              offset: '1-2 hours',
-              total: '1-2 hours'
-          },
-          notes: 'Very rapid onset. Shorter duration. Higher addiction potential.'
-      }
-  },
-      interactions: ['All CNS depressants', 'Benzodiazepines', 'Alcohol', 'Other opioids'],
+      interactions: ['All depressants'],
       harmReduction: [
-        'Extremely potent - use extreme caution',
-        'Always have naloxone available',
-        'Never use alone',
-        'Test substances when possible',
-        'Start with very small amounts',
-        'May require multiple naloxone doses for reversal'
+        'Treat as Fentanyl',
+        'Volumetric dosing required',
+        'Test strips may cross-react but not guarantee detection'
       ],
-      legality: 'Schedule I controlled substance in the US. Not approved for medical use.',
+      legality: 'Schedule I in US.',
       chemistry: {
-        formula: 'C23H30N2O2',
-        molecularWeight: '366.50 g/mol',
-        class: 'Synthetic opioid'
+        formula: 'C21H26N2O',
+        molecularWeight: '322.45 g/mol',
+        class: 'Phenylpiperidine'
       },
-      history: 'Acetylfentanyl was first synthesized in the 1960s but was not used medically. It emerged as a drug of abuse in 2013.',
-      routes: ['Intranasal', 'Intravenous', 'Smoking'],
-      afterEffects: 'Similar to fentanyl but shorter duration.',
+      history: 'Discovered in same series as fentanyl. Surfaced on illicit market around 2013.',
+      routes: ['IV', 'Insufflation', 'Smoking'],
+      afterEffects: 'Similar to fentanyl.',
       riskLevel: 'very-high',
-      aliases: ['N-(1-phenethyl-4-piperidinyl)-N-phenylacetamide']
+      aliases: ['desmethylfentanyl']
     },
   {
       id: 'buprenorphine',
       name: 'Buprenorphine',
-      commonNames: ['Suboxone', 'Subutex', 'Bupe', 'Temgesic', 'Buprenex'],
+      commonNames: ['Suboxone', 'Subutex', 'Bupe', 'Subs', 'Strips'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Buprenorphine is a semi-synthetic opioid derived from thebaine. It is a partial μ-opioid receptor agonist with high receptor affinity, meaning it can block the effects of other opioids. This property makes it useful for opioid maintenance therapy and pain management. It has a ceiling effect on respiratory depression, making it safer than full agonists.',
+      class: 'Partial Opioid Agonist',
+      description: 'Buprenorphine is a partial agonist at the mu-opioid receptor. It binds extremely tightly to the receptor but activates it less than full agonists (like heroin/methadone). This creates a "ceiling effect" on respiratory depression, making it safer. It is used to treat addiction and pain.',
       effects: {
-        positive: ['Pain relief', 'Prevents opioid withdrawal', 'Blocks effects of other opioids', 'Mood stabilization', 'Lower overdose risk than full agonists'],
-        neutral: ['Pupil constriction', 'Constipation', 'Sedation', 'Sweating'],
-        negative: ['Can precipitate withdrawal in opioid-dependent individuals', 'Addiction potential (lower than full agonists)', 'Headache', 'Nausea']
+        positive: ['Pain relief', 'Mood lift', 'Blocks withdrawal', 'Blocks other opioids'],
+        neutral: ['Constipation', 'Insomnia', 'Sweating'],
+        negative: ['Precipitated Withdrawal (if taken too soon after full agonists)', 'Nausea', 'Dependence']
       },
       dosage: {
-        threshold: '0.5-1mg',
-        light: '1-2mg',
-        common: '2-8mg (maintenance)',
-        strong: '8-16mg',
-        heavy: '16-32mg'
+        threshold: '0.1-0.2mg',
+        light: '0.2-0.5mg',
+        common: '0.5-2mg (Pain/Recreational)',
+        strong: '2-8mg (Maintenance)',
+        heavy: '8mg+ (Maintenance)'
       },
-      duration: {
-        onset: '15-30 minutes (sublingual)',
-        comeup: '30-60 minutes',
-        peak: '1-2 hours',
-        offset: '6-12 hours',
-        total: '24-48 hours'
-      },
-    routeData: {
-      Sublingual: {
-          dosage: {
-              threshold: '0.5-1mg',
-              light: '1-2mg',
-              common: '2-8mg',
-              strong: '8-16mg',
-              heavy: '16-32mg'
-          },
-          duration: {
-              onset: '15-30 minutes',
-              comeup: '30-60 minutes',
-              peak: '1-2 hours',
-              offset: '6-12 hours',
-              total: '24-48 hours'
-          },
-          notes: 'Primary route for Suboxone/Subutex. Long duration due to high receptor affinity. Wait until in withdrawal to avoid precipitated withdrawal.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '0.2-0.4mg',
-              light: '0.4-0.8mg',
-              common: '0.8-2mg',
-              strong: '2-4mg',
-              heavy: '4mg+'
-          },
-          duration: {
-              onset: '30-60 seconds',
-              comeup: '1-5 minutes',
-              peak: '15-30 minutes',
-              offset: '4-8 hours',
-              total: '12-24 hours'
-          },
-          notes: 'Medical use. Suboxone contains naloxone - do not inject. Subutex can be injected but high risk.'
-      },
-      Transdermal: {
-          dosage: {
-              threshold: '5μg/hr',
-              light: '5-10μg/hr',
-              common: '10-20μg/hr',
-              strong: '20μg/hr',
-              heavy: '20μg/hr+'
-          },
-          duration: {
-              onset: '12-24 hours',
-              comeup: '24-48 hours',
-              peak: '48-72 hours',
-              offset: '24-48 hours',
-              total: '7 days'
-          },
-          notes: 'Butrans patch. 7-day duration. Slow onset. Used for chronic pain.'
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '0.3-0.6mg',
-              light: '0.6-1.2mg',
-              common: '1.2-4.8mg',
-              strong: '4.8-9.6mg',
-              heavy: '9.6-19.2mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1-2 hours',
-              offset: '6-12 hours',
-              total: '24-48 hours'
-          },
-          notes: 'Medical administration route. Slower onset than IV but sustained effect.'
-      }
-  },
-      interactions: ['Other opioids (can block or cause withdrawal)', 'Benzodiazepines (still dangerous)', 'Alcohol', 'CYP3A4 inhibitors/inducers'],
+      routeData: {
+        Sublingual: {
+            dosage: {
+                threshold: '0.1mg',
+                light: '0.2-0.5mg',
+                common: '0.5-2mg',
+                strong: '4-8mg',
+                heavy: '8mg+'
+            },
+            duration: {
+                onset: '30-60 minutes',
+                comeup: '60-90 minutes',
+                peak: '2-4 hours',
+                offset: '12-24 hours',
+                total: '24-72 hours'
+            },
+            notes: 'High affinity means it rips other opioids off receptors. If dependent on heroin/fentanyl, taking this too soon causes "Precipitated Withdrawal" (hellish instant withdrawal).'
+        }
+    },
+      interactions: ['Benzodiazepines (respiratory depression risk still exists)', 'Alcohol', 'Full Agonist Opioids (blocked by bupe)'],
       harmReduction: [
-        'Wait until in moderate withdrawal before first dose to avoid precipitated withdrawal',
-        'Can still overdose when combined with other depressants',
-        'Do not inject Suboxone (contains naloxone)',
-        'Have naloxone available',
-        'Follow medical guidance for tapering',
-        'Do not mix with benzodiazepines'
+        'WAIT until in moderate withdrawal (COWS score > 12) before induction',
+        'Spit out saliva after holding strip (reduces nausea/headache)',
+        'Less overdose risk than methadone but difficult to get high on if tolerant',
+        'Naloxone in Suboxone is inactive sublingually; it is there to prevent injection'
       ],
-      legality: 'Prescription only. Schedule III controlled substance in the US. DATA-2000 waiver required to prescribe for opioid dependence.',
+      legality: 'Prescription only. Schedule III in US.',
       chemistry: {
         formula: 'C29H41NO4',
         molecularWeight: '467.64 g/mol',
-        class: 'Semi-synthetic opioid (thebaine derivative)'
+        class: 'Thebaine-derivative'
       },
-      history: 'Buprenorphine was first synthesized in 1969 and marketed as an analgesic. It was approved for opioid dependence treatment in the US in 2002.',
-      routes: ['Sublingual', 'Intravenous (medical)', 'Transdermal (pain)', 'Implant'],
-      afterEffects: 'Long duration of action. Milder withdrawal than full agonists.',
+      history: 'Synthesized in 1966. Approved for addiction in 2002.',
+      routes: ['Sublingual', 'Transdermal (Butrans)', 'Buccal', 'IV (Buprenex)'],
+      afterEffects: 'Long half-life means withdrawal is delayed but prolonged.',
       riskLevel: 'moderate',
-      aliases: ['21-cyclopropyl-7-[(1S)-1-hydroxy-1,2,2-trimethylpropyl]-6,14-endo-ethano-6,7,8,14-tetrahydrooripavine']
+      aliases: ['suboxone']
     },
   {
       id: 'tramadol',
       name: 'Tramadol',
-      commonNames: ['Ultram', 'Tramal', 'Ultracet', 'Trammies', 'Trams'],
+      commonNames: ['Ultram', 'Tramal', 'Tram'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Tramadol is a synthetic opioid analgesic that acts as a weak μ-opioid receptor agonist and also inhibits the reuptake of serotonin and norepinephrine. It is used for moderate pain and has a lower abuse potential than traditional opioids, though dependence and addiction still occur. Tramadol is metabolized to O-desmethyltramadol, which is significantly more potent.',
+      class: 'Atypical Opioid',
+      description: 'Tramadol is a weak opioid agonist that also acts as an SNRI (Serotonin-Norepinephrine Reuptake Inhibitor). It metabolizes into O-DSMT (which is the stronger opioid). Because of the SNRI activity, it lowers the seizure threshold.',
       effects: {
-        positive: ['Pain relief', 'Mild euphoria', 'Energy boost', 'Mood elevation', 'Less respiratory depression than other opioids'],
-        neutral: ['Sedation or stimulation depending on dose', 'Sweating', 'Pupil constriction'],
-        negative: ['Seizure risk at high doses', 'Serotonin syndrome risk', 'Addiction potential', 'Nausea and vomiting', 'Withdrawal symptoms']
+        positive: ['Mood lift', 'Pain relief', 'Stimulation/Energy'],
+        neutral: ['Sweating', 'Dry mouth'],
+        negative: ['Seizures (doses >400mg)', 'Nausea', 'Serotonin Syndrome', 'Dizziness']
       },
       dosage: {
-        threshold: '50-75mg',
-        light: '75-150mg',
-        common: '150-300mg',
-        strong: '300-400mg',
-        heavy: '400mg+ (high seizure risk)'
+        threshold: '50mg',
+        light: '50-100mg',
+        common: '100-200mg',
+        strong: '200-300mg',
+        heavy: '300-400mg (Seizure Risk)'
       },
-      duration: {
-        onset: '30-60 minutes (oral)',
-        comeup: '45-90 minutes',
-        peak: '2-3 hours',
-        offset: '3-6 hours',
-        total: '6-8 hours'
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '50mg',
+                light: '50-100mg',
+                common: '100-200mg',
+                strong: '200-300mg',
+                heavy: '350mg+'
+            },
+            duration: {
+                onset: '30-60 minutes',
+                comeup: '60-90 minutes',
+                peak: '2-4 hours',
+                offset: '4-6 hours',
+                total: '6-9 hours'
+            },
+            notes: 'Prodrug. Genetic poor metabolizers get little effect.'
+        }
       },
-      interactions: ['SSRIs/SNRIs (serotonin syndrome risk)', 'MAOIs', 'Tricyclic antidepressants', 'Benzodiazepines', 'Alcohol', 'Other opioids', 'Warfarin'],
+      interactions: ['SSRIs/MAOIs (Serotonin Syndrome)', 'Stimulants (Seizures)', 'Alcohol', 'MDMA'],
       harmReduction: [
-        'Do not exceed 400mg per day due to seizure risk',
-        'Avoid if taking antidepressants',
-        'Be aware of seizure risk at high doses',
-        'Do not mix with other serotonergic drugs',
-        'Have naloxone available',
-        'Lower abuse potential than other opioids but still addictive'
+        'NEVER exceed 400mg in 24 hours (Seizure risk)',
+        'Do not mix with antidepressants',
+        'If you feel "zaps" or tremors, stop immediately',
+        'Addiction involves both opioid and SNRI withdrawal'
       ],
-      legality: 'Prescription only. Schedule IV controlled substance in the US.',
+      legality: 'Prescription only. Schedule IV in US.',
       chemistry: {
         formula: 'C16H25NO2',
-        molecularWeight: '263.37 g/mol',
-        class: 'Synthetic opioid (codone analog)'
+        molecularWeight: '263.38 g/mol',
+        class: 'Cyclohexanol'
       },
-      history: 'Tramadol was developed in Germany in the 1970s and has been used medically since 1977. It became popular due to its perceived lower abuse potential.',
-      routes: ['Oral', 'Intravenous', 'Intramuscular', 'Rectal'],
-      afterEffects: 'Possible stimulation or sedation. Withdrawal includes both opioid and antidepressant-like symptoms.',
+      history: 'Developed by Grünenthal in 1962.',
+      routes: ['Oral'],
+      afterEffects: 'Depression, "Brain zaps" on withdrawal.',
       riskLevel: 'moderate',
-      aliases: ['(+/-)-cis-2-[(dimethylamino)methyl]-1-(3-methoxyphenyl)cyclohexanol']
+      aliases: ['ultram']
     },
   {
       id: 'o-desmethyltramadol',
       name: 'O-Desmethyltramadol',
-      commonNames: ['O-DSMT', 'Desmetramadol', 'OMPT'],
+      commonNames: ['O-DSMT', 'O-M'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'O-Desmethyltramadol (O-DSMT) is the primary active metabolite of tramadol. It is a significantly more potent μ-opioid receptor agonist than tramadol itself, with approximately 200 times the affinity for μ-opioid receptors. O-DSMT has appeared as a research chemical and novel psychoactive substance.',
+      class: 'Opioid',
+      description: 'O-DSMT is the active metabolite of Tramadol. It is responsible for the opioid effects of Tramadol but lacks the SNRI (serotonin) activity. This makes it a more potent "traditional" opioid with less seizure risk, often sold as a Research Chemical.',
       effects: {
-        positive: ['Potent pain relief', 'Euphoria', 'Relaxation'],
-        neutral: ['Sedation', 'Pupil constriction', 'Sweating'],
-        negative: ['Respiratory depression', 'Addiction potential', 'Nausea', 'Overdose risk', 'Seizure risk (lower than tramadol)']
+        positive: ['Warm euphoria', 'Pain relief', 'Relaxation', 'Long duration'],
+        neutral: ['Itching', 'Nodding'],
+        negative: ['Nausea', 'Constipation', 'Addiction', 'Respiratory depression']
       },
       dosage: {
-        threshold: '25-50mg',
-        light: '50-100mg',
-        common: '100-200mg',
-        strong: '200-300mg',
-        heavy: '300mg+'
+        threshold: '10-20mg',
+        light: '20-40mg',
+        common: '40-80mg',
+        strong: '80-120mg',
+        heavy: '120mg+'
       },
-      duration: {
-        onset: '30-60 minutes (oral)',
-        comeup: '45-90 minutes',
-        peak: '2-3 hours',
-        offset: '3-5 hours',
-        total: '5-7 hours'
+      routeData: {
+        Oral: {
+            dosage: {
+                threshold: '10-20mg',
+                light: '20-40mg',
+                common: '40-80mg',
+                strong: '80-120mg',
+                heavy: '120mg+'
+            },
+            duration: {
+                onset: '30-45 minutes',
+                comeup: '45-90 minutes',
+                peak: '2-4 hours',
+                offset: '4-6 hours',
+                total: '8-10 hours'
+            },
+            notes: 'Significantly stronger than Tramadol. Long legs (duration).'
+        }
       },
-      interactions: ['Other opioids', 'Benzodiazepines', 'Alcohol', 'CNS depressants'],
+      interactions: ['Benzodiazepines', 'Alcohol', 'Other opioids'],
       harmReduction: [
-        'More potent than tramadol - use with caution',
-        'Have naloxone available',
-        'Do not mix with other depressants',
-        'Start with low doses',
-        'Avoid if opioid-naive'
+        'Though safer than Tramadol re: seizures, it is a potent full agonist opioid',
+        'Addiction potential is higher than Tramadol',
+        'Boofing (rectal) is reported to be very effective'
       ],
-      legality: 'Unscheduled at US federal level. May be prosecuted under Federal Analogue Act as tramadol analog. Controlled in some jurisdictions. Not approved for medical use.',
+      legality: 'Gray area (Analogue Act) in US. Not scheduled federally but illegal for human consumption.',
       chemistry: {
         formula: 'C15H23NO2',
         molecularWeight: '249.35 g/mol',
-        class: 'Synthetic opioid'
+        class: 'Cyclohexanol'
       },
-      history: 'O-DSMT was identified as tramadol\'s active metabolite in the 1990s. It began appearing as a research chemical in the 2010s.',
-      routes: ['Oral'],
-      afterEffects: 'Similar to tramadol but without serotonergic effects.',
+      history: 'Identified as main metabolite of Tramadol. Entered RC market ~2010s.',
+      routes: ['Oral', 'Rectal', 'Insufflation'],
+      afterEffects: 'Standard opioid hangover.',
       riskLevel: 'moderate',
-      aliases: ['desmetramadol', 'O-DSMT']
+      aliases: ['desmetramadol']
     },
   {
       id: 'tapentadol',
       name: 'Tapentadol',
       commonNames: ['Nucynta', 'Palexia', 'Taps'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Tapentadol is a synthetic opioid analgesic with dual mechanism of action: μ-opioid receptor agonism and norepinephrine reuptake inhibition. It is used for moderate to severe pain and has similar efficacy to oxycodone but with potentially improved gastrointestinal tolerability.',
+      class: 'Atypical Opioid',
+      description: 'Tapentadol is chemically similar to Tramadol but acts as both a mu-opioid agonist and a Norepinephrine Reuptake Inhibitor (NRI). It does NOT affect serotonin significantly, reducing seizure/interaction risks compared to Tramadol. It is roughly between Tramadol and Oxycodone in potency.',
       effects: {
-        positive: ['Pain relief', 'Mood elevation', 'Less nausea than traditional opioids', 'Dual mechanism pain relief'],
-        neutral: ['Sedation', 'Sweating', 'Pupil constriction'],
-        negative: ['Addiction potential', 'Respiratory depression', 'Serotonin syndrome risk', 'Headache', 'Dizziness']
+        positive: ['Pain relief', 'Euphoria', 'Dreamy state'],
+        neutral: ['Visual hallucinations (at high doses)', 'Confusion', 'Dizziness'],
+        negative: ['Delirium (high doses)', 'Nausea', 'Respiratory depression', 'Agitation']
       },
       dosage: {
         threshold: '25-50mg',
-        light: '50-100mg',
-        common: '100-200mg',
-        strong: '200-350mg',
-        heavy: '350mg+'
+        light: '50-75mg',
+        common: '75-150mg',
+        strong: '150-250mg',
+        heavy: '250mg+'
       },
-      duration: {
-        onset: '30-60 minutes (oral)',
-        comeup: '45-90 minutes',
-        peak: '1-2 hours',
-        offset: '2-4 hours',
-        total: '4-6 hours'
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '25-50mg',
+                light: '50-75mg',
+                common: '75-150mg',
+                strong: '150-250mg',
+                heavy: '250mg+'
+            },
+            duration: {
+                onset: '30-45 minutes',
+                comeup: '45-60 minutes',
+                peak: '1.5-2.5 hours',
+                offset: '3-4 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Hallucinations/Shadow people common at heavy doses (NRI effect).'
+        }
       },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '25-50mg',
-              light: '50-100mg',
-              common: '100-200mg',
-              strong: '200-350mg',
-              heavy: '350mg'
-          },
-          duration: {
-              onset: '30-60 minutes (oral)',
-              comeup: '45-90 minutes',
-              peak: '1-2 hours',
-              offset: '2-4 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Most common route for this substance.'
-      }
-  },
-      interactions: ['SSRIs/SNRIs', 'MAOIs', 'Other opioids', 'Benzodiazepines', 'Alcohol'],
+      interactions: ['MAOIs', 'Alcohol', 'Benzodiazepines'],
       harmReduction: [
-        'Have naloxone available',
-        'Do not mix with antidepressants',
-        'Be aware of dual mechanism - affects withdrawal profile',
-        'Do not exceed prescribed doses',
-        'Avoid combining with other depressants'
+        'Do not crush ER pills',
+        'High doses can feel deliriant/dysphoric',
+        'Less nausea than morphine'
       ],
-      legality: 'Prescription only. Schedule II controlled substance in the US.',
+      legality: 'Prescription only. Schedule II in US.',
       chemistry: {
         formula: 'C14H23NO',
         molecularWeight: '221.34 g/mol',
-        class: 'Synthetic opioid'
+        class: 'Benzenoid'
       },
-      history: 'Tapentadol was developed by Grünenthal and approved in the US in 2008. It was designed to have improved tolerability over traditional opioids.',
+      history: 'Approved in 2008.',
       routes: ['Oral'],
-      afterEffects: 'Similar to other opioids but with additional norepinephrine-related effects.',
-      riskLevel: 'high',
-      aliases: ['3-[(1R,2R)-2-(dimethylamino)-1-hydroxypropyl]phenol']
+      afterEffects: 'Grogginess, mild depression.',
+      riskLevel: 'moderate',
+      aliases: ['nucynta']
     },
   {
       id: 'desomorphine',
       name: 'Desomorphine',
-      commonNames: ['Krokodil', 'Crocodil', 'Russian Magic', 'Zombie Drug'],
+      commonNames: ['Krokodil', 'Crocodil'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Desomorphine is a synthetic opioid derived from morphine, approximately 8-10 times more potent than morphine with rapid onset. It gained notoriety as "Krokodil" when illicitly synthesized from codeine in Russia, often containing dangerous impurities that cause severe tissue damage, gangrene, and death. The name comes from the green, scaly appearance of skin at injection sites.',
+      class: 'Semi-synthetic Opioid',
+      description: 'Desomorphine itself is a potent opioid (8-10x morphine) with very rapid onset and short duration. However, it is infamous for "Krokodil," a crude homemade version made from codeine, iodine, and red phosphorus. The impurities cause severe tissue necrosis, gangrene, and scale-like skin damage.',
       effects: {
-        positive: ['Potent pain relief', 'Intense euphoria', 'Rapid onset'],
-        neutral: ['Short duration requiring frequent redosing', 'Sedation'],
-        negative: ['SEVERE tissue damage from impurities', 'Gangrene and limb loss', 'High addiction potential', 'Severe withdrawal', 'Organ damage', 'Death from infections or overdose']
+        positive: ['Intense rush', 'Euphoria (short lived)'],
+        neutral: ['Sedation'],
+        negative: ['SEVERE TISSUE NECROSIS', 'Gangrene', 'Rotting flesh', 'Bone infection', 'Amputation', 'Death']
       },
       dosage: {
-        threshold: '1-2mg',
-        light: '2-5mg',
-        common: '5-10mg',
-        strong: '10-20mg',
-        heavy: '20mg+'
+        threshold: '0.5-1mg',
+        light: '1-2mg',
+        common: '2-4mg',
+        strong: '4-6mg',
+        heavy: '6mg+'
       },
-      duration: {
-        onset: 'Very rapid (IV)',
-        comeup: 'Minutes',
-        peak: '15-30 minutes',
-        offset: '30-60 minutes',
-        total: '1-2 hours'
+      routeData: {
+        Intravenous: {
+            dosage: {
+                threshold: '0.5mg',
+                light: '1-2mg',
+                common: '2-4mg',
+                strong: '4-6mg',
+                heavy: '6mg+'
+            },
+            duration: {
+                onset: 'Immediate',
+                comeup: 'Seconds',
+                peak: '10-20 minutes',
+                offset: '45-60 minutes',
+                total: '1-1.5 hours'
+            },
+            notes: 'Short duration drives compulsive redosing. "Krokodil" users often die within 2 years of first use due to tissue damage.'
+        }
       },
-      interactions: ['All CNS depressants', 'Benzodiazepines', 'Alcohol', 'Other opioids'],
+      interactions: ['Anything'],
       harmReduction: [
-        'EXTREMELY DANGEROUS - homemade versions contain toxic impurities',
-        'Causes severe tissue necrosis and gangrene',
-        'Seek immediate medical help if you have used',
-        'Short duration leads to compulsive redosing',
-        'High overdose risk',
-        'Contaminants cause permanent damage',
-        'Professional treatment is essential'
+        'DO NOT USE KROKODIL',
+        'Pure desomorphine is pharmacologically safe-ish, but street Krokodil is a death sentence',
+        'If used, seek immediate medical attention for skin lesions'
       ],
-      legality: 'Schedule I controlled substance in the US. No accepted medical use in most countries.',
+      legality: 'Schedule I in US.',
       chemistry: {
         formula: 'C17H21NO2',
         molecularWeight: '271.35 g/mol',
-        class: 'Semi-synthetic opioid'
+        class: 'Morphinan'
       },
-      history: 'Desomorphine was first synthesized in 1932 in Switzerland. It was used briefly in Switzerland under the brand name Permonid. The illicit "Krokodil" phenomenon emerged in Russia around 2002.',
-      routes: ['Intravenous (illicit production extremely dangerous)'],
-      afterEffects: 'Severe tissue damage, infections, and extremely high addiction liability.',
+      history: 'Synthesized 1932. Krokodil epidemic began in Russia ~2003.',
+      routes: ['IV'],
+      afterEffects: 'Physical destruction.',
       riskLevel: 'very-high',
-      aliases: ['dihydrodesoxymorphine', 'Permonid']
+      aliases: ['dihydrodesoxymorphine']
     },
   {
       id: 'dihydrocodeine',
       name: 'Dihydrocodeine',
-      commonNames: ['DF-118', 'DHC', 'Contugesic', 'Drocode'],
+      commonNames: ['DHC', 'DF-118'],
       category: 'opioids',
-      class: 'Opioid Analgesic',
-      description: 'Dihydrocodeine is a semi-synthetic opioid analgesic developed in Germany in 1908. It is used for moderate to severe pain and as a cough suppressant. Dihydrocodeine is approximately twice as potent as codeine and has a longer duration of action.',
+      class: 'Semi-synthetic Opioid',
+      description: 'Dihydrocodeine is approximately 1.5-2x stronger than codeine. It is active itself, but some is also metabolized into dihydromorphine. It provides better pain relief than codeine with slightly fewer histamine side effects.',
       effects: {
-        positive: ['Pain relief', 'Cough suppression', 'Mild euphoria', 'Relaxation'],
-        neutral: ['Sedation', 'Pupil constriction', 'Constipation', 'Dizziness'],
-        negative: ['Nausea and vomiting', 'Addiction potential', 'Respiratory depression at high doses', 'Withdrawal symptoms']
+        positive: ['Euphoria', 'Relaxation', 'Pain relief', 'Warmth'],
+        neutral: ['Itching', 'Constipation'],
+        negative: ['Nausea', 'Dizziness']
       },
       dosage: {
-        threshold: '15-30mg',
-        light: '30-60mg',
-        common: '60-120mg',
-        strong: '120-200mg',
-        heavy: '200mg+'
+        threshold: '10-20mg',
+        light: '20-40mg',
+        common: '40-80mg',
+        strong: '80-150mg',
+        heavy: '150mg+'
       },
-      duration: {
-        onset: '30-45 minutes (oral)',
-        comeup: '45-90 minutes',
-        peak: '1.5-2 hours',
-        offset: '3-5 hours',
-        total: '4-6 hours'
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '10-20mg',
+                light: '20-40mg',
+                common: '40-80mg',
+                strong: '80-150mg',
+                heavy: '150mg+'
+            },
+            duration: {
+                onset: '30-45 minutes',
+                comeup: '45-60 minutes',
+                peak: '1.5-2 hours',
+                offset: '2-3 hours',
+                total: '4-6 hours'
+            },
+            notes: 'Popular in UK/Japan.'
+        }
       },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '15-30mg',
-              light: '30-60mg',
-              common: '60-120mg',
-              strong: '120-200mg',
-              heavy: '200mg'
-          },
-          duration: {
-              onset: '30-45 minutes (oral)',
-              comeup: '45-90 minutes',
-              peak: '1.5-2 hours',
-              offset: '3-5 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Most common route for this substance.'
-      },
-      Intramuscular: {
-          dosage: {
-              threshold: '9-18mg',
-              light: '18-36mg',
-              common: '36-72mg',
-              strong: '72-120mg',
-              heavy: '120mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1.5-2 hours',
-              offset: '3-5 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Medical administration route. Slower onset than IV but sustained effect.'
-      },
-      Rectal: {
-          dosage: {
-              threshold: '10.5-21mg',
-              light: '21-42mg',
-              common: '42-84mg',
-              strong: '84-140mg',
-              heavy: '140mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '15-30 minutes',
-              peak: '1.5-2 hours',
-              offset: '3-5 hours',
-              total: '4-6 hours'
-          },
-          notes: 'Higher bioavailability than oral. Faster onset. Less first-pass metabolism.'
-      }
-  },
-      interactions: ['Alcohol', 'Benzodiazepines', 'Other opioids', 'MAOIs', 'CNS depressants'],
+      interactions: ['Alcohol', 'Benzodiazepines'],
       harmReduction: [
-        'Do not exceed prescribed doses',
-        'Avoid mixing with other depressants',
-        'Have naloxone available',
-        'Be aware of addiction potential',
-        'Do not crush extended-release formulations'
+        'CWE required if pills contain paracetamol',
+        'Less ceiling effect than codeine but side effects still mount high'
       ],
-      legality: 'Prescription only. Schedule II/V depending on formulation in the US.',
+      legality: 'Schedule II in US (rarely prescribed). OTC in some countries.',
       chemistry: {
         formula: 'C18H23NO3',
         molecularWeight: '301.38 g/mol',
-        class: 'Semi-synthetic opioid'
+        class: 'Codeine-derivative'
       },
-      history: 'Dihydrocodeine was first synthesized in Germany in 1908. It has been used medically for over a century.',
-      routes: ['Oral', 'Intramuscular', 'Subcutaneous', 'Rectal'],
-      afterEffects: 'Similar to codeine but longer lasting.',
+      history: 'Developed in 1908.',
+      routes: ['Oral'],
+      afterEffects: 'Mild hangover.',
       riskLevel: 'moderate',
-      aliases: ['DHC', 'drocode']
+      aliases: ['drocode']
     },
   {
       id: 'tianeptine',
       name: 'Tianeptine',
-      commonNames: ['Coaxil', 'Stablon', 'Tianaa', 'ZaZa', 'Gas Station Heroin'],
+      commonNames: ['Tianaa', 'Zaza', 'Coaxil', 'Stablon', 'Gas Station Heroin'],
       category: 'opioids',
-      class: 'Atypical Antidepressant/Opioid',
-      description: 'Tianeptine is an atypical antidepressant with opioid receptor activity. At therapeutic doses it acts primarily as an antidepressant, but at higher doses it acts as a μ-opioid receptor agonist. It has gained notoriety in some regions as a drug of abuse, particularly in areas where it is sold over-the-counter or in gas stations.',
+      class: 'Atypical Antidepressant',
+      description: 'Tianeptine is a tricyclic antidepressant used in Europe/Asia. At high doses (far exceeding therapeutic levels), it acts as a full mu-opioid agonist. It causes rapid tolerance and has a very short duration, leading to severe addiction and a notoriously difficult withdrawal that combines opioid symptoms with antidepressant discontinuation symptoms.',
       effects: {
-        positive: ['Antidepressant effects at therapeutic doses', 'Opioid-like euphoria at high doses', 'Anxiolytic effects', 'Pain relief'],
-        neutral: ['Sedation', 'Changes in mood'],
-        negative: ['High addiction potential at recreational doses', 'Withdrawal similar to opioids', 'Tolerance develops rapidly', 'Overdose risk', 'Seizures at high doses']
+        positive: ['Euphoria', 'Anxiolysis', 'Mood lift'],
+        neutral: ['Nodding', 'Slurring'],
+        negative: ['Severe Withdrawal', 'Nausea', 'Rapid Tolerance', 'Vein damage (caustic)', 'Edema (swelling)']
       },
       dosage: {
-        threshold: '12.5-25mg',
+        threshold: '12.5mg (Therapeutic)',
         light: '25-50mg',
-        common: '50-100mg (recreational)',
-        strong: '100-200mg',
-        heavy: '200mg+'
+        common: '50-100mg',
+        strong: '100-250mg',
+        heavy: '250mg+ (Users reach grams/day)'
       },
-      duration: {
-        onset: '15-30 minutes (oral)',
-        comeup: '30-60 minutes',
-        peak: '1-2 hours',
-        offset: '2-3 hours',
-        total: '3-4 hours'
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '12.5mg',
+                light: '25-50mg',
+                common: '50-100mg',
+                strong: '100-300mg',
+                heavy: '300mg+'
+            },
+            duration: {
+                onset: '15-30 minutes',
+                comeup: '15-30 minutes',
+                peak: '1-1.5 hours',
+                offset: '1-2 hours',
+                total: '2-3 hours'
+            },
+            notes: 'Short duration forces users to dose every 2-3 hours, waking up at night to dose.'
+        }
       },
-    routeData: {
-      Oral: {
-          dosage: {
-              threshold: '12.5-25mg',
-              light: '25-50mg',
-              common: '50-100mg',
-              strong: '100-200mg',
-              heavy: '200mg'
-          },
-          duration: {
-              onset: '15-30 minutes (oral)',
-              comeup: '30-60 minutes',
-              peak: '1-2 hours',
-              offset: '2-3 hours',
-              total: '3-4 hours'
-          },
-          notes: 'Most common route for this substance.'
-      },
-      Insufflation: {
-          dosage: {
-              threshold: '8.8-17.5mg',
-              light: '17.5-35mg',
-              common: '35-70mg',
-              strong: '70-140mg',
-              heavy: '140mg'
-          },
-          duration: {
-              onset: '5-15 minutes',
-              comeup: '10-30 minutes',
-              peak: '1-2 hours',
-              offset: '2-3 hours',
-              total: '2-3 hours'
-          },
-          notes: 'Faster onset than oral. Nasal irritation possible with repeated use.'
-      },
-      Intravenous: {
-          dosage: {
-              threshold: '5-10mg',
-              light: '10-20mg',
-              common: '20-40mg',
-              strong: '40-80mg',
-              heavy: '80mg'
-          },
-          duration: {
-              onset: '10-30 seconds',
-              comeup: '1-5 minutes',
-              peak: '1-2 hours',
-              offset: '1-2 hours',
-              total: '2-3 hours'
-          },
-          notes: 'Immediate onset. 100% bioavailability. Very high risk. Requires sterile technique.'
-      }
-  },
-      interactions: ['MAOIs', 'SSRIs', 'Benzodiazepines', 'Alcohol', 'Other opioids'],
+      interactions: ['Alcohol', 'Opioids', 'Antidepressants'],
       harmReduction: [
-        'Avoid recreational use - rapid tolerance and dependence',
-        'Withdrawal can be severe',
-        'Do not combine with other opioids',
-        'Be aware of dose escalation risk',
-        'Have naloxone available',
-        'Seek professional help for addiction'
+        'Avoid recreational use - addiction potential is extremely high',
+        'Do not inject (caustic - causes abscesses/necrosis)',
+        'Withdrawal requires medical supervision',
+        'Sold deceptively as "supplements"'
       ],
-      legality: 'Prescription only in some countries. Not FDA approved in the US. Scheduled in some states. Sold as supplement in some areas.',
+      legality: 'Unscheduled federally in US (though banned in several states like AL, GA, MS, etc.). Prescription in EU.',
       chemistry: {
         formula: 'C21H25ClN2O4S',
-        molecularWeight: '436.96 g/mol',
-        class: 'Tricyclic antidepressant derivative'
+        molecularWeight: '436.95 g/mol',
+        class: 'Tricyclic'
       },
-      history: 'Tianeptine was developed in France and has been used as an antidepressant since the 1980s. Abuse potential became recognized in the 2000s.',
-      routes: ['Oral', 'Insufflation', 'Intravenous (dangerous)'],
-      afterEffects: 'Withdrawal symptoms similar to opioids. Rapid tolerance development.',
+      history: 'Patented in 1960s France. Emerged as US gas station drug ~2015.',
+      routes: ['Oral'],
+      afterEffects: 'Depression, severe rebound anxiety.',
       riskLevel: 'high',
-      aliases: ['Tianaa', 'ZaZa Red']
+      aliases: ['stablon']
     },
-
-    // ============================================
-    // DEPRESSANTS - Gabapentinoids & Others
-    // ============================================
 ];
+
