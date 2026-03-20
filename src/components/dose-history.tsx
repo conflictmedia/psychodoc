@@ -17,6 +17,7 @@ import {
 } from 'lucide-react'
 import { categoryColors } from '@/lib/substance-index'
 import { useToast } from '@/hooks/use-toast'
+import { notifyDoseChange } from './active-doses-timeline'
 
 const firebaseConfig = {
   apiKey: "AIzaSyApN_Tnp0lphwjpYV3RFuCJD9sJqKhnppA",
@@ -217,6 +218,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
             // Last write wins: fully replace local with remote
             localStorage.setItem(STORAGE_KEY, JSON.stringify(sorted))
             setDoses(sorted)
+            notifyDoseChange()
             
             // Update our version tracker to match what we received
             localVersionRef.current = remoteVersion
@@ -283,6 +285,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       const updated = doses.filter(d => d.id !== id)
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
       setDoses(updated)
+      notifyDoseChange()
       
       await pushToSync(updated)
 

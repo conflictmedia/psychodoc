@@ -57,6 +57,15 @@ interface ActiveDosesTimelineProps {
 
 const STORAGE_KEY = 'drugucopia-dose-logs'
 
+// Custom event name for same-tab localStorage mutations
+const DOSE_CHANGE_EVENT = 'drugucopia-dose-change'
+
+// Utility: dispatch custom event after any localStorage write to STORAGE_KEY
+// Call this from DoseHistory (or any component) after writing to localStorage
+export function notifyDoseChange() {
+  window.dispatchEvent(new CustomEvent(DOSE_CHANGE_EVENT))
+}
+
 function parseDurationToMinutes(durationStr: string): number {
   if (!durationStr) return 0
   
@@ -269,33 +278,80 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   const [, setTick] = useState(0)
   const [tooltip, setTooltip] = useState<{ [key: string]: TooltipData }>({})
   const [expandedDose, setExpandedDose] = useState<string | null>(null)
+  
+  // Track the last known serialized state to avoid unnecessary re-renders
+  const lastKnownDataRef = useRef<string>('')
 
+  // Core function to read localStorage and update state only if data changed
+  const readAndUpdateDoses = useCallback(() => {
+    try {
+      const stored = localStorage.getItem(STORAGE_KEY) || '[]'
+      
+      // Skip update if data hasn't changed
+      if (stored === lastKnownDataRef.current) return
+      lastKnownDataRef.current = stored
+      
+      const logs: DoseLog[] = JSON.parse(stored)
+      const sorted = logs.sort((a, b) => 
+        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+      )
+      setDoses(sorted)
+    } catch (error) {
+      console.error('Error loading dose logs:', error)
+      setDoses([])
+    }
+  }, [])
+
+  // Initial load
+  useEffect(() => {
+    readAndUpdateDoses()
+    setLoading(false)
+  }, [readAndUpdateDoses])
+
+  // React to refreshTrigger from parent
+  useEffect(() => {
+    readAndUpdateDoses()
+  }, [refreshTrigger, readAndUpdateDoses])
+
+  // Listen for same-tab dose changes (custom event)
+  useEffect(() => {
+    const handleDoseChange = () => {
+      readAndUpdateDoses()
+    }
+
+    window.addEventListener(DOSE_CHANGE_EVENT, handleDoseChange)
+    return () => window.removeEventListener(DOSE_CHANGE_EVENT, handleDoseChange)
+  }, [readAndUpdateDoses])
+
+  // Listen for cross-tab localStorage changes
+  useEffect(() => {
+    const handleStorageChange = (e: StorageEvent) => {
+      if (e.key === STORAGE_KEY) {
+        readAndUpdateDoses()
+      }
+    }
+
+    window.addEventListener('storage', handleStorageChange)
+    return () => window.removeEventListener('storage', handleStorageChange)
+  }, [readAndUpdateDoses])
+
+  // Poll localStorage for sync-driven changes (Firebase onSnapshot writes
+  // to localStorage from within the same tab, which doesn't fire 'storage')
+  useEffect(() => {
+    const pollInterval = setInterval(() => {
+      readAndUpdateDoses()
+    }, 2000) // Check every 2 seconds
+
+    return () => clearInterval(pollInterval)
+  }, [readAndUpdateDoses])
+
+  // Tick for phase progress animation (every 60s)
   useEffect(() => {
     const interval = setInterval(() => {
       setTick(t => t + 1)
     }, 60000)
     return () => clearInterval(interval)
   }, [])
-
-  const fetchDoses = () => {
-    setLoading(true)
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY)
-      const logs = stored ? JSON.parse(stored) : []
-      setDoses(logs.sort((a: DoseLog, b: DoseLog) => 
-        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-      ))
-    } catch (error) {
-      console.error('Error loading dose logs:', error)
-      setDoses([])
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  useEffect(() => {
-    fetchDoses()
-  }, [refreshTrigger])
 
   const activeDoses = useMemo(() => {
     return doses
@@ -315,8 +371,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
       .filter(dose => {
         if (dose.status.phase !== 'ended') return true
         
-        // Hide doses that ended more than 12 hours ago
-        // so the active list stays clean and uncluttered
         const now = new Date()
         const elapsedMinutes = (now.getTime() - dose.doseTime.getTime()) / (1000 * 60)
         return (elapsedMinutes - dose.timings.totalDuration) < 12 * 60
@@ -552,7 +606,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                   </div>
                 </div>
 
-                {/* Only render the graph logic if the dose has not ended */}
                 {dose.status.phase !== 'ended' && (
                   <div className="relative w-full overflow-hidden">
                     <svg 
