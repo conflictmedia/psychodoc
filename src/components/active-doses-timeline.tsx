@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { format, addMinutes, addHours } from 'date-fns'
 import { 
   Card, 
@@ -10,7 +10,6 @@ import {
   CardTitle 
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { 
   Activity, 
   Timer, 
@@ -227,12 +226,12 @@ function formatMinutes(minutes: number): string {
 }
 
 const phaseColors = {
-  not_started: { bg: 'bg-slate-500', text: 'text-slate-400', fill: 'bg-slate-500/30', border: 'border-slate-500/50' },
-  onset: { bg: 'bg-blue-500', text: 'text-blue-400', fill: 'bg-blue-500/30', border: 'border-blue-500/50' },
-  comeup: { bg: 'bg-amber-500', text: 'text-amber-400', fill: 'bg-amber-500/30', border: 'border-amber-500/50' },
-  peak: { bg: 'bg-purple-500', text: 'text-purple-400', fill: 'bg-purple-500/30', border: 'border-purple-500/50' },
-  offset: { bg: 'bg-cyan-500', text: 'text-cyan-400', fill: 'bg-cyan-500/30', border: 'border-cyan-500/50' },
-  ended: { bg: 'bg-gray-500', text: 'text-gray-400', fill: 'bg-gray-500/30', border: 'border-gray-500/50' }
+  not_started: { bg: 'bg-slate-500', text: 'text-slate-400', fill: 'bg-slate-500/20', border: 'border-slate-500/30', gradient: 'from-slate-500/30 to-slate-500/10' },
+  onset: { bg: 'bg-blue-500', text: 'text-blue-400', fill: 'bg-blue-500/20', border: 'border-blue-500/30', gradient: 'from-blue-500/30 to-blue-500/5' },
+  comeup: { bg: 'bg-amber-500', text: 'text-amber-400', fill: 'bg-amber-500/20', border: 'border-amber-500/30', gradient: 'from-amber-500/30 to-amber-500/5' },
+  peak: { bg: 'bg-purple-500', text: 'text-purple-400', fill: 'bg-purple-500/20', border: 'border-purple-500/30', gradient: 'from-purple-500/30 to-purple-500/5' },
+  offset: { bg: 'bg-cyan-500', text: 'text-cyan-400', fill: 'bg-cyan-500/20', border: 'border-cyan-500/30', gradient: 'from-cyan-500/30 to-cyan-500/5' },
+  ended: { bg: 'bg-gray-500', text: 'text-gray-400', fill: 'bg-gray-500/20', border: 'border-gray-500/30', gradient: 'from-gray-500/30 to-gray-500/5' }
 }
 
 const phaseIcons = {
@@ -258,7 +257,18 @@ interface TooltipData {
   phaseTime: string
   absoluteTime: Date
   intensity: number
+  progress: number
 }
+
+// SVG dimensions for the graph
+const SVG_WIDTH = 400
+const SVG_HEIGHT = 100
+const PADDING_LEFT = 38
+const PADDING_RIGHT = 10
+const PADDING_TOP = 18  // extra top room for phase labels
+const PADDING_BOTTOM = 16
+const GRAPH_WIDTH = SVG_WIDTH - PADDING_LEFT - PADDING_RIGHT
+const GRAPH_HEIGHT = SVG_HEIGHT - PADDING_TOP - PADDING_BOTTOM
 
 export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps) {
   const [doses, setDoses] = useState<DoseLog[]>([])
@@ -320,20 +330,29 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
   }
 
-  // Calculate intensity at a given point (0-100% of total duration)
+  // Calculate intensity at a given point using a smooth pharmacokinetic curve
   const getIntensityAtProgress = (progress: number, timings: PhaseTimings): number => {
     const minutes = (progress / 100) * timings.totalDuration
     
     if (minutes <= timings.onsetEnd) {
-      return 10
+      if (timings.onsetEnd === 0) return 5
+      const t = minutes / timings.onsetEnd
+      return 5 + 10 * (1 - Math.cos(t * Math.PI / 2))
     } else if (minutes <= timings.comeupEnd) {
-      const comeupProgress = (minutes - timings.onsetEnd) / (timings.comeupEnd - timings.onsetEnd)
-      return 10 + comeupProgress * 70
+      const comeupDuration = timings.comeupEnd - timings.onsetEnd
+      if (comeupDuration === 0) return 50
+      const t = (minutes - timings.onsetEnd) / comeupDuration
+      return 15 + 77 * (1 - Math.cos(t * Math.PI / 2))
     } else if (minutes <= timings.peakEnd) {
-      return 80 + Math.sin((minutes - timings.comeupEnd) / (timings.peakEnd - timings.comeupEnd) * Math.PI) * 15
+      const peakDuration = timings.peakEnd - timings.comeupEnd
+      if (peakDuration === 0) return 95
+      const t = (minutes - timings.comeupEnd) / peakDuration
+      return 92 + 8 * Math.sin(t * Math.PI) * 0.5 + 4
     } else {
-      const offsetProgress = (minutes - timings.peakEnd) / (timings.offsetEnd - timings.peakEnd)
-      return 80 * (1 - offsetProgress)
+      const offsetDuration = timings.offsetEnd - timings.peakEnd
+      if (offsetDuration === 0) return 0
+      const t = (minutes - timings.peakEnd) / offsetDuration
+      return 92 * Math.pow(1 - t, 1.5)
     }
   }
 
@@ -347,39 +366,99 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return 'Offset'
   }
 
-  // Handle graph interaction
-  const handleGraphMouseMove = (doseId: string, e: React.MouseEvent<HTMLDivElement>, timings: PhaseTimings, doseTime: Date) => {
-    const rect = e.currentTarget.getBoundingClientRect()
-    const x = e.clientX - rect.left
-    const progress = Math.max(0, Math.min(100, (x / rect.width) * 100))
-    
-    const minutesFromDose = (progress / 100) * timings.totalDuration
-    const phase = getPhaseAtProgress(progress, timings)
-    const intensity = getIntensityAtProgress(progress, timings)
-    const absoluteTime = addMinutes(doseTime, minutesFromDose)
-    
-    setTooltip(prev => ({
-      ...prev,
-      [doseId]: {
-        phase,
-        phaseTime: formatMinutes(minutesFromDose),
-        absoluteTime,
-        intensity
-      }
-    }))
+  // Convert progress (0-100) to SVG x coordinate
+  const progressToX = (progress: number): number => {
+    return PADDING_LEFT + (progress / 100) * GRAPH_WIDTH
   }
 
-  const handleGraphMouseLeave = (doseId: string) => {
+  // Convert intensity (0-100) to SVG y coordinate
+  const intensityToY = (intensity: number): number => {
+    return PADDING_TOP + GRAPH_HEIGHT - (intensity / 100) * GRAPH_HEIGHT
+  }
+
+  // Generate smooth SVG path for the intensity curve using bezier curves
+  const generateCurvePath = (timings: PhaseTimings): string => {
+    const points: { x: number; y: number }[] = []
+    const numPoints = 100
+    
+    for (let i = 0; i <= numPoints; i++) {
+      const progress = (i / numPoints) * 100
+      const intensity = getIntensityAtProgress(progress, timings)
+      points.push({
+        x: progressToX(progress),
+        y: intensityToY(intensity)
+      })
+    }
+    
+    let path = `M ${points[0].x.toFixed(2)},${points[0].y.toFixed(2)}`
+    
+    for (let i = 1; i < points.length; i++) {
+      const curr = points[i]
+      const next = points[i + 1]
+      
+      if (next) {
+        const cpX = curr.x
+        const cpY = curr.y
+        const endX = (curr.x + next.x) / 2
+        const endY = (curr.y + next.y) / 2
+        path += ` Q ${cpX.toFixed(2)},${cpY.toFixed(2)} ${endX.toFixed(2)},${endY.toFixed(2)}`
+      } else {
+        path += ` L ${curr.x.toFixed(2)},${curr.y.toFixed(2)}`
+      }
+    }
+    
+    return path
+  }
+
+  // Generate filled area path
+  const generateAreaPath = (timings: PhaseTimings): string => {
+    const curvePath = generateCurvePath(timings)
+    const endX = progressToX(100)
+    const startX = progressToX(0)
+    const bottomY = PADDING_TOP + GRAPH_HEIGHT
+    
+    return `${curvePath} L ${endX.toFixed(2)},${bottomY.toFixed(2)} L ${startX.toFixed(2)},${bottomY.toFixed(2)} Z`
+  }
+
+  // rAF ref to throttle mouse events
+  const rafRef = useRef<number | null>(null)
+
+  // Handle graph interaction - throttled via requestAnimationFrame for responsiveness
+  const handleGraphMouseMove = useCallback((doseId: string, e: React.MouseEvent<SVGSVGElement>, timings: PhaseTimings, doseTime: Date) => {
+    if (rafRef.current !== null) return
+    const clientX = e.clientX
+    const rect = e.currentTarget.getBoundingClientRect()
+    rafRef.current = requestAnimationFrame(() => {
+      rafRef.current = null
+      const x = clientX - rect.left
+      const svgX = (x / rect.width) * SVG_WIDTH
+      const progress = Math.max(0, Math.min(100, ((svgX - PADDING_LEFT) / GRAPH_WIDTH) * 100))
+      const minutesFromDose = (progress / 100) * timings.totalDuration
+      const phase = getPhaseAtProgress(progress, timings)
+      const intensity = getIntensityAtProgress(progress, timings)
+      const absoluteTime = addMinutes(doseTime, minutesFromDose)
+      setTooltip(prev => ({
+        ...prev,
+        [doseId]: { phase, phaseTime: formatMinutes(minutesFromDose), absoluteTime, intensity, progress }
+      }))
+    })
+  }, [])
+
+  const handleGraphMouseLeave = useCallback((doseId: string) => {
+    if (rafRef.current !== null) {
+      cancelAnimationFrame(rafRef.current)
+      rafRef.current = null
+    }
     setTooltip(prev => {
       const newTooltip = { ...prev }
       delete newTooltip[doseId]
       return newTooltip
     })
-  }
+  }, [])
 
   // Generate time markers for the graph
-  const generateTimeMarkers = (timings: PhaseTimings, doseTime: Date) => {
-    const markers = []
+  const generateTimeMarkers = (timings: PhaseTimings, doseTime: Date): { progress: number; time: Date; label: string }[] => {
+    const markers: { progress: number; time: Date; label: string }[] = []
     const totalHours = timings.totalDuration / 60
     const interval = totalHours > 8 ? 2 : 1
     
@@ -394,6 +473,23 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
       }
     }
     return markers
+  }
+
+  // Generate phase boundary lines
+  const generatePhaseBoundaries = (timings: PhaseTimings): { x: number; phase: string }[] => {
+    const boundaries: { x: number; phase: string }[] = []
+    
+    if (timings.onsetEnd > 0) {
+      boundaries.push({ x: progressToX((timings.onsetEnd / timings.totalDuration) * 100), phase: 'onset' })
+    }
+    if (timings.comeupEnd > timings.onsetEnd) {
+      boundaries.push({ x: progressToX((timings.comeupEnd / timings.totalDuration) * 100), phase: 'comeup' })
+    }
+    if (timings.peakEnd > timings.comeupEnd) {
+      boundaries.push({ x: progressToX((timings.peakEnd / timings.totalDuration) * 100), phase: 'peak' })
+    }
+    
+    return boundaries
   }
 
   if (loading) {
@@ -427,24 +523,30 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
             const colors = phaseColors[dose.status.phase]
             const PhaseIcon = phaseIcons[dose.status.phase]
             const timeMarkers = generateTimeMarkers(dose.timings, dose.doseTime)
+            const phaseBoundaries = generatePhaseBoundaries(dose.timings)
             const isExpanded = expandedDose === dose.id
             const currentTooltip = tooltip[dose.id]
+            const curvePath = generateCurvePath(dose.timings)
+            const areaPath = generateAreaPath(dose.timings)
+            
+            const currentX = progressToX(dose.status.overallProgress)
+            const currentIntensity = getIntensityAtProgress(dose.status.overallProgress, dose.timings)
+            const currentY = intensityToY(currentIntensity)
             
             return (
               <div 
                 key={dose.id} 
-                className="rounded-lg border p-4 space-y-3"
+                className="rounded-lg border border-border/50 bg-gradient-to-br from-background to-muted/20 p-4 space-y-4"
               >
-                {/* Header */}
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <span className="font-medium">{dose.substanceName}</span>
+                    <span className="font-semibold text-foreground">{dose.substanceName}</span>
                     {dose.category && dose.category !== 'unknown' && (
                       <Badge variant="outline" className={getCategoryColor(dose.category)}>
                         {dose.category}
                       </Badge>
                     )}
-                    <Badge className={`${colors.bg} text-white text-xs`}>
+                    <Badge className={`${colors.bg} text-white text-xs shadow-sm`}>
                       <PhaseIcon className="h-3 w-3 mr-1" />
                       {dose.status.phase === 'not_started' ? 'Upcoming' : 
                        dose.status.phase.charAt(0).toUpperCase() + dose.status.phase.slice(1)}
@@ -461,143 +563,230 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                   </div>
                 </div>
 
-                {/* Interactive Graph Container */}
-                <div 
-                  className="relative cursor-crosshair bg-muted/30 rounded-lg p-4 pl-12"
-                  onMouseMove={(e) => handleGraphMouseMove(dose.id, e, dose.timings, dose.doseTime)}
-                  onMouseLeave={() => handleGraphMouseLeave(dose.id)}
-                >
-                  {/* Phase sections bar */}
-                  <div className="h-12 rounded-lg overflow-hidden relative flex mb-2">
-                    {/* Onset */}
-                    <div 
-                      className={`${phaseColors.onset.fill} ${phaseColors.onset.border} border-r transition-all duration-150`}
-                      style={{ width: `${(dose.timings.onsetEnd / dose.timings.totalDuration) * 100}%` }}
-                    />
-                    
-                    {/* Comeup */}
-                    <div 
-                      className={`${phaseColors.comeup.fill} ${phaseColors.comeup.border} border-r transition-all duration-150`}
-                      style={{ width: `${((dose.timings.comeupEnd - dose.timings.onsetEnd) / dose.timings.totalDuration) * 100}%` }}
-                    />
-                    
-                    {/* Peak */}
-                    <div 
-                      className={`${phaseColors.peak.fill} ${phaseColors.peak.border} border-r transition-all duration-150`}
-                      style={{ width: `${((dose.timings.peakEnd - dose.timings.comeupEnd) / dose.timings.totalDuration) * 100}%` }}
-                    />
-                    
-                    {/* Offset */}
-                    <div 
-                      className={`${phaseColors.offset.fill} transition-all duration-150`}
-                      style={{ width: `${((dose.timings.offsetEnd - dose.timings.peakEnd) / dose.timings.totalDuration) * 100}%` }}
-                    />
-
-                    {/* Current position line */}
-                    {dose.status.phase !== 'not_started' && dose.status.phase !== 'ended' && (
-                      <div 
-                        className="absolute top-0 bottom-0 w-1 bg-white rounded z-10 shadow-lg"
-                        style={{ left: `${Math.min(99, dose.status.overallProgress)}%` }}
-                      />
-                    )}
-                  </div>
-
-                  {/* Phase labels */}
-                  <div className="flex text-xs font-medium mb-3">
-                    <span style={{ width: `${(dose.timings.onsetEnd / dose.timings.totalDuration) * 100}%` }} className="text-center text-blue-400">Onset</span>
-                    <span style={{ width: `${((dose.timings.comeupEnd - dose.timings.onsetEnd) / dose.timings.totalDuration) * 100}%` }} className="text-center text-amber-400">Comeup</span>
-                    <span style={{ width: `${((dose.timings.peakEnd - dose.timings.comeupEnd) / dose.timings.totalDuration) * 100}%` }} className="text-center text-purple-400">Peak</span>
-                    <span style={{ width: `${((dose.timings.offsetEnd - dose.timings.peakEnd) / dose.timings.totalDuration) * 100}%` }} className="text-center text-cyan-400">Offset</span>
-                  </div>
-
-                  {/* Intensity curve - larger */}
-                  <div className="relative mt-2">
-                    <svg 
-                      viewBox="0 0 100 50" 
-                      preserveAspectRatio="none"
-                      className="w-full h-28"
-                    >
-                      {/* Grid lines */}
-                      <line x1="0" y1="10" x2="100" y2="10" stroke="currentColor" strokeWidth="0.3" className="text-muted-foreground/30" />
-                      <line x1="0" y1="25" x2="100" y2="25" stroke="currentColor" strokeWidth="0.3" className="text-muted-foreground/30" />
-                      <line x1="0" y1="40" x2="100" y2="40" stroke="currentColor" strokeWidth="0.3" className="text-muted-foreground/30" />
+                <div className="relative">
+                  <svg 
+                    viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
+                    className="w-full h-auto cursor-crosshair"
+                    preserveAspectRatio="xMidYMid meet"
+                    onMouseMove={(e) => handleGraphMouseMove(dose.id, e, dose.timings, dose.doseTime)}
+                    onMouseLeave={() => handleGraphMouseLeave(dose.id)}
+                  >
+                    <defs>
+                      <linearGradient id={`areaGradient-${dose.id}`} x1="0%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" />
+                        <stop offset="50%" stopColor="#8b5cf6" stopOpacity="0.2" />
+                        <stop offset="100%" stopColor="#6366f1" stopOpacity="0.05" />
+                      </linearGradient>
                       
-                      {/* Generate smooth curve path */}
-                      <path
-                        d={(() => {
-                          const points: string[] = []
-                          for (let i = 0; i <= 100; i += 1) {
-                            const x = i
-                            const intensity = getIntensityAtProgress(i, dose.timings)
-                            const y = 40 - (intensity * 0.3)
-                            points.push(`${i === 0 ? 'M' : 'L'} ${x.toFixed(1)},${y.toFixed(1)}`)
-                          }
-                          return points.join(' ')
-                        })()}
-                        fill="none"
-                        stroke="url(#curveGradient)"
-                        strokeWidth="0.8"
-                        strokeLinecap="round"
-                      />
+                      <linearGradient id={`curveGradient-${dose.id}`} x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stopColor="#3b82f6" />
+                        <stop offset="25%" stopColor="#f59e0b" />
+                        <stop offset="50%" stopColor="#a855f7" />
+                        <stop offset="75%" stopColor="#a855f7" />
+                        <stop offset="100%" stopColor="#06b6d4" />
+                      </linearGradient>
                       
-                      {/* Gradient definition */}
-                      <defs>
-                        <linearGradient id="curveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                          <stop offset="0%" stopColor="#3b82f6" />
-                          <stop offset="30%" stopColor="#f59e0b" />
-                          <stop offset="60%" stopColor="#a855f7" />
-                          <stop offset="100%" stopColor="#06b6d4" />
-                        </linearGradient>
-                      </defs>
-                    </svg>
+                      <filter id={`glow-${dose.id}`} x="-20%" y="-20%" width="140%" height="140%">
+                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feMerge>
+                          <feMergeNode in="coloredBlur"/>
+                          <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                      </filter>
+                      
+                      <filter id={`dropshadow-${dose.id}`} x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#a855f7" floodOpacity="0.5"/>
+                      </filter>
+                    </defs>
                     
-                    {/* Current position marker - using div instead of SVG circle to avoid distortion */}
-                    {dose.status.phase !== 'not_started' && dose.status.phase !== 'ended' && (
-                      <div 
-                        className="absolute w-3 h-3 bg-white rounded-full border-2 border-purple-500 shadow-lg pointer-events-none"
-                        style={{ 
-                          left: `${Math.min(99, dose.status.overallProgress)}%`,
-                          top: `${100 - getIntensityAtProgress(dose.status.overallProgress, dose.timings)}%`,
-                          transform: 'translate(-50%, -50%)'
-                        }}
+                    <g opacity="0.15">
+                      <rect
+                        x={PADDING_LEFT}
+                        y={PADDING_TOP}
+                        width={(dose.timings.onsetEnd / dose.timings.totalDuration) * GRAPH_WIDTH}
+                        height={GRAPH_HEIGHT}
+                        fill="#3b82f6"
                       />
-                    )}
-                  </div>
-
-                  {/* Y-axis labels */}
-                  <div className="absolute left-2 top-[68px] h-28 flex flex-col justify-between text-xs text-muted-foreground pointer-events-none">
-                    <span>100%</span>
-                    <span>50%</span>
-                    <span>0%</span>
-                  </div>
-
-                  {/* Time markers */}
-                  <div className="relative h-5 mt-2 border-t border-muted-foreground/20 pt-1">
-                    {timeMarkers.map((marker, i) => (
-                      <span 
-                        key={i} 
-                        className="absolute text-xs text-muted-foreground transform -translate-x-1/2"
-                        style={{ left: `${marker.progress}%` }}
-                      >
-                        {marker.label}
-                      </span>
+                      <rect
+                        x={progressToX((dose.timings.onsetEnd / dose.timings.totalDuration) * 100)}
+                        y={PADDING_TOP}
+                        width={((dose.timings.comeupEnd - dose.timings.onsetEnd) / dose.timings.totalDuration) * GRAPH_WIDTH}
+                        height={GRAPH_HEIGHT}
+                        fill="#f59e0b"
+                      />
+                      <rect
+                        x={progressToX((dose.timings.comeupEnd / dose.timings.totalDuration) * 100)}
+                        y={PADDING_TOP}
+                        width={((dose.timings.peakEnd - dose.timings.comeupEnd) / dose.timings.totalDuration) * GRAPH_WIDTH}
+                        height={GRAPH_HEIGHT}
+                        fill="#a855f7"
+                      />
+                      <rect
+                        x={progressToX((dose.timings.peakEnd / dose.timings.totalDuration) * 100)}
+                        y={PADDING_TOP}
+                        width={((dose.timings.offsetEnd - dose.timings.peakEnd) / dose.timings.totalDuration) * GRAPH_WIDTH}
+                        height={GRAPH_HEIGHT}
+                        fill="#06b6d4"
+                      />
+                    </g>
+                    
+                    <g className="text-muted-foreground/20" stroke="currentColor" strokeWidth="0.5">
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP} strokeDasharray="2,2" />
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.25} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.25} strokeDasharray="2,2" />
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.5} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.5} strokeDasharray="2,2" />
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.75} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.75} strokeDasharray="2,2" />
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT} />
+                    </g>
+                    
+                    {phaseBoundaries.map((boundary, i) => (
+                      <line
+                        key={i}
+                        x1={boundary.x}
+                        y1={PADDING_TOP}
+                        x2={boundary.x}
+                        y2={PADDING_TOP + GRAPH_HEIGHT}
+                        stroke="currentColor"
+                        strokeWidth="1"
+                        strokeDasharray="4,2"
+                        className="text-muted-foreground/30"
+                      />
                     ))}
-                  </div>
-
-                  {/* Tooltip - positioned inside the graph container */}
+                    
+                    <path
+                      d={areaPath}
+                      fill={`url(#areaGradient-${dose.id})`}
+                    />
+                    
+                    <path
+                      d={curvePath}
+                      fill="none"
+                      stroke={`url(#curveGradient-${dose.id})`}
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      filter={`url(#glow-${dose.id})`}
+                    />
+                    
+                    <g className="text-[9px] fill-muted-foreground">
+                      <text x={PADDING_LEFT - 5} y={PADDING_TOP + 3} textAnchor="end">100</text>
+                      <text x={PADDING_LEFT - 5} y={PADDING_TOP + GRAPH_HEIGHT * 0.5 + 3} textAnchor="end">50</text>
+                      <text x={PADDING_LEFT - 5} y={PADDING_TOP + GRAPH_HEIGHT + 3} textAnchor="end">0</text>
+                    </g>
+                    
+                    {/* Time markers along the bottom axis */}
+                    <g className="text-[9px] fill-muted-foreground">
+                      {timeMarkers.map((marker, i) => {
+                        const x = progressToX(marker.progress)
+                        return (
+                          <text 
+                            key={i} 
+                            x={x} 
+                            y={SVG_HEIGHT - 2}
+                            textAnchor="middle"
+                          >
+                            {marker.label}
+                          </text>
+                        )
+                      })}
+                    </g>
+                    
+                    {/* Phase labels - rendered inside the top of each phase band */}
+                    {[
+                      { name: 'Onset', startProgress: 0, endProgress: (dose.timings.onsetEnd / dose.timings.totalDuration) * 100, color: '#60a5fa' },
+                      { name: 'Comeup', startProgress: (dose.timings.onsetEnd / dose.timings.totalDuration) * 100, endProgress: (dose.timings.comeupEnd / dose.timings.totalDuration) * 100, color: '#fbbf24' },
+                      { name: 'Peak', startProgress: (dose.timings.comeupEnd / dose.timings.totalDuration) * 100, endProgress: (dose.timings.peakEnd / dose.timings.totalDuration) * 100, color: '#c084fc' },
+                      { name: 'Offset', startProgress: (dose.timings.peakEnd / dose.timings.totalDuration) * 100, endProgress: 100, color: '#22d3ee' }
+                    ].map((label, i) => {
+                      const pixelWidth = ((label.endProgress - label.startProgress) / 100) * GRAPH_WIDTH
+                      if (pixelWidth < 20) return null
+                      const centerX = progressToX((label.startProgress + label.endProgress) / 2)
+                      // Abbreviate if narrow
+                      const name = pixelWidth < 38 ? label.name.slice(0, 2) : label.name
+                      return (
+                        <text
+                          key={i}
+                          x={centerX}
+                          y={PADDING_TOP + 8}
+                          textAnchor="middle"
+                          fontSize="8"
+                          fontWeight="600"
+                          fill={label.color}
+                          opacity="0.85"
+                        >
+                          {name}
+                        </text>
+                      )
+                    })}
+                    
+                    {dose.status.phase !== 'not_started' && dose.status.phase !== 'ended' && (
+                      <g>
+                        <line
+                          x1={currentX}
+                          y1={PADDING_TOP}
+                          x2={currentX}
+                          y2={PADDING_TOP + GRAPH_HEIGHT}
+                          stroke="#a855f7"
+                          strokeWidth="1.5"
+                          strokeDasharray="4,2"
+                          opacity="0.6"
+                        />
+                        
+                        <circle
+                          cx={currentX}
+                          cy={currentY}
+                          r="5"
+                          fill="#a855f7"
+                          stroke="#fff"
+                          strokeWidth="2"
+                          filter={`url(#dropshadow-${dose.id})`}
+                          className="animate-pulse"
+                        />
+                        
+                        <circle
+                          cx={currentX}
+                          cy={currentY}
+                          r="3"
+                          fill="#fff"
+                          opacity="0.8"
+                        />
+                      </g>
+                    )}
+                    
+                    {currentTooltip && (
+                      <line
+                        x1={progressToX(currentTooltip.progress)}
+                        y1={PADDING_TOP}
+                        x2={progressToX(currentTooltip.progress)}
+                        y2={PADDING_TOP + GRAPH_HEIGHT}
+                        stroke="#fff"
+                        strokeWidth="1"
+                        strokeDasharray="3,3"
+                        opacity="0.5"
+                      />
+                    )}
+                  </svg>
+                  
                   {currentTooltip && (
-                    <div className="mt-3 p-3 bg-muted/80 rounded-lg text-sm border">
-                      <div className="flex items-center justify-between gap-6">
-                        <div>
-                          <span className="font-medium">{currentTooltip.phase}</span>
-                          <span className="text-muted-foreground ml-2">{currentTooltip.phaseTime} from dose</span>
+                    <div className="mt-3 p-3 bg-gradient-to-r from-muted/80 to-muted/40 rounded-lg text-sm border border-border/50 backdrop-blur-sm">
+                      <div className="flex items-center justify-between gap-4 flex-wrap">
+                        <div className="flex items-center gap-2">
+                          <span className={`font-semibold ${
+                            currentTooltip.phase === 'Onset' ? 'text-blue-400' :
+                            currentTooltip.phase === 'Comeup' ? 'text-amber-400' :
+                            currentTooltip.phase === 'Peak' ? 'text-purple-400' : 'text-cyan-400'
+                          }`}>
+                            {currentTooltip.phase}
+                          </span>
+                          <span className="text-muted-foreground">
+                            {currentTooltip.phaseTime} from dose
+                          </span>
                         </div>
                         <div className="flex items-center gap-4">
-                          <span className="text-muted-foreground">
-                            <Clock className="h-3 w-3 inline mr-1" />
+                          <span className="text-muted-foreground flex items-center gap-1">
+                            <Clock className="h-3 w-3" />
                             {format(currentTooltip.absoluteTime, 'h:mm a')}
                           </span>
-                          <span className="text-purple-400 font-medium">
+                          <span className="font-medium text-purple-400">
                             {Math.round(currentTooltip.intensity)}% intensity
                           </span>
                         </div>
@@ -606,12 +795,11 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                   )}
                 </div>
 
-                {/* Quick Stats */}
-                <div className="flex items-center justify-between text-sm pt-2 border-t">
+                <div className="flex items-center justify-between text-sm pt-2 border-t border-border/50">
                   <div className="flex items-center gap-4">
                     {dose.status.phase !== 'not_started' && dose.status.phase !== 'ended' && (
                       <>
-                        <span className={`${colors.text}`}>
+                        <span className={`${colors.text} font-medium`}>
                           <Timer className="h-3 w-3 inline mr-1" />
                           {formatMinutes(dose.status.totalRemaining)} remaining
                         </span>
@@ -633,16 +821,15 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                     </span>
                     <button 
                       onClick={() => setExpandedDose(isExpanded ? null : dose.id)}
-                      className="p-1 hover:bg-muted rounded"
+                      className="p-1 hover:bg-muted/50 rounded transition-colors"
                     >
                       {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                     </button>
                   </div>
                 </div>
 
-                {/* Expanded Details */}
                 {isExpanded && (
-                  <div className="pt-3 border-t space-y-3">
+                  <div className="pt-3 border-t border-border/50 space-y-3">
                     <div className="grid grid-cols-4 gap-2 text-center text-xs">
                       {[
                         { label: 'Onset', time: dose.duration?.onset, color: phaseColors.onset },
@@ -650,16 +837,16 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         { label: 'Peak', time: dose.duration?.peak, color: phaseColors.peak },
                         { label: 'Offset', time: dose.duration?.offset, color: phaseColors.offset },
                       ].map((phase) => (
-                        <div key={phase.label} className={`p-2 rounded-lg ${phase.color.fill}`}>
-                          <div className={`font-medium ${phase.color.text}`}>{phase.label}</div>
-                          <div className="mt-0.5">{phase.time || '—'}</div>
+                        <div key={phase.label} className={`p-2.5 rounded-lg ${phase.color.fill} border ${phase.color.border}`}>
+                          <div className={`font-semibold ${phase.color.text}`}>{phase.label}</div>
+                          <div className="mt-0.5 text-foreground">{phase.time || '—'}</div>
                         </div>
                       ))}
                     </div>
                     
-                    <div className="text-xs text-muted-foreground flex items-center gap-1">
-                      <Info className="h-3 w-3" />
-                      {phaseDescriptions[dose.status.phase]}
+                    <div className="text-xs text-muted-foreground flex items-center gap-1.5 bg-muted/30 p-2 rounded">
+                      <Info className="h-3.5 w-3.5 flex-shrink-0" />
+                      <span>{phaseDescriptions[dose.status.phase]}</span>
                     </div>
                   </div>
                 )}
