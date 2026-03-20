@@ -35,7 +35,6 @@ const hashRoomName = async (roomName: string, password: string) => {
   return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 32);
 };
 
-// Initialize Firebase once outside the component
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
@@ -127,9 +126,10 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   // Refs for background syncing
   const cryptoKeyRef = useRef<CryptoKey | null>(null)
   const activeRoomRef = useRef<string | null>(null)
-  const hashedRoomRef = useRef<string | null>(null) // Stores the hashed ID for Firebase Docs
-  const deviceIdRef = useRef(Math.random().toString(36).substring(2, 15)) // Unique ID to ignore self-echoes
+  const hashedRoomRef = useRef<string | null>(null)
+  const deviceIdRef = useRef(Math.random().toString(36).substring(2, 15))
   const unsubscribeRef = useRef<(() => void) | null>(null)
+  const localVersionRef = useRef<number>(0)
 
   // Load initial local data
   const fetchDoses = () => {
@@ -142,7 +142,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       )
       setDoses(sorted)
       
-      // If a new dose was added (refreshTrigger changed), push it to sync
       if (syncStatus === 'synced') {
         pushToSync(sorted)
       }
@@ -154,7 +153,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     }
   }
 
-  // Trigger re-fetch when external component adds a dose
   useEffect(() => {
     fetchDoses()
   }, [refreshTrigger])
@@ -186,15 +184,12 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
 
     setSyncStatus('connecting')
     try {
-      // Derive key and save to ref
       cryptoKeyRef.current = await deriveKey(pass, rId)
       activeRoomRef.current = rId
 
-      // Generate the hashed room ID for Firebase
       const hashedRoomId = await hashRoomName(rId, pass)
       hashedRoomRef.current = hashedRoomId
 
-      // Save credentials for next visit
       localStorage.setItem(SYNC_AUTH_KEY, JSON.stringify({ savedRoom: rId, savedPass: pass }))
 
       const docRef = doc(db, 'secure_rooms', hashedRoomId)
@@ -205,49 +200,36 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
           // Ignore updates that WE just pushed
           if (remoteData.sourceDevice === deviceIdRef.current) return
 
-          try {
-            // Decrypt remote data
-            const decryptedDoses: DoseLog[] = await decryptData(remoteData.encrypted, cryptoKeyRef.current!)
-            
-            // --- MERGE LOGIC ---
-            // Merge previously existing offline doses with the incoming synced doses
-            const currentLocal: DoseLog[] = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-            const mergedMap = new Map<string, DoseLog>()
-            
-            // 1. Prioritize remote doses
-            decryptedDoses.forEach(d => mergedMap.set(d.id, d))
-            
-            // 2. Add local doses that aren't in remote (from before sync was enabled)
-            let hasNewLocalData = false
-            currentLocal.forEach(d => {
-              if (!mergedMap.has(d.id)) {
-                mergedMap.set(d.id, d)
-                hasNewLocalData = true
-              }
-            })
+          // Only accept remote data if its version is newer than our last push
+          const remoteVersion = remoteData.version || 0
+          if (remoteVersion <= localVersionRef.current) return
 
-            const finalDoses = Array.from(mergedMap.values()).sort((a, b) => 
+          try {
+            const remoteDoses: DoseLog[] = await decryptData(
+              remoteData.encrypted,
+              cryptoKeyRef.current!
+            )
+
+            const sorted = remoteDoses.sort((a, b) => 
               new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
             )
 
-            // Save the merged data locally
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(finalDoses))
-            setDoses(finalDoses)
-
-            // If we found local data that the room didn't have, push the merged result back!
-            if (hasNewLocalData) {
-              pushToSync(finalDoses, hashedRoomId)
-            }
+            // Last write wins: fully replace local with remote
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(sorted))
+            setDoses(sorted)
             
+            // Update our version tracker to match what we received
+            localVersionRef.current = remoteVersion
+
             toast({ title: 'Data Synced', description: 'Received updates from another device.' })
           } catch (e) {
             setSyncStatus('error')
             toast({ title: 'Decryption Failed', description: 'Wrong password or corrupt data.', variant: 'destructive' })
           }
         } else {
-          // Room is empty. Push our local data to start the room.
+          // Room is empty — push our local data to initialize it
           const currentLocal = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-          if (currentLocal.length > 0) pushToSync(currentLocal, hashedRoomId)
+          if (currentLocal.length > 0) pushToSync(currentLocal)
         }
       })
 
@@ -265,6 +247,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     cryptoKeyRef.current = null
     activeRoomRef.current = null
     hashedRoomRef.current = null
+    localVersionRef.current = 0
     localStorage.removeItem(SYNC_AUTH_KEY)
     setSyncStatus('idle')
     setRoomId('')
@@ -272,15 +255,18 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     toast({ title: 'Sync Disconnected', description: 'Data will only save locally.' })
   }
 
-  const pushToSync = async (latestDoses: DoseLog[], targetHashId = hashedRoomRef.current) => {
-    // Only proceed if we have the encryption key and a hashed room ID
-    if (!cryptoKeyRef.current || !targetHashId) return
+  const pushToSync = async (latestDoses: DoseLog[]) => {
+    if (!cryptoKeyRef.current || !hashedRoomRef.current) return
 
     try {
+      const now = Date.now()
+      localVersionRef.current = now
+
       const encrypted = await encryptData(latestDoses, cryptoKeyRef.current)
-      await setDoc(doc(db, 'secure_rooms', targetHashId), {
+      await setDoc(doc(db, 'secure_rooms', hashedRoomRef.current), {
         encrypted,
         sourceDevice: deviceIdRef.current,
+        version: now,
         timestamp: serverTimestamp()
       })
     } catch (e) {
@@ -298,7 +284,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
       setDoses(updated)
       
-      // Push deletion to synced devices
       await pushToSync(updated)
 
       toast({ title: 'Dose deleted', description: 'The dose log has been removed' })
@@ -389,7 +374,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         </div>
       </CardHeader>
 
-      {/* SYNC PANEL */}
       {showSyncPanel && (
         <div className="px-6 pb-4">
           <div className="bg-muted p-4 rounded-lg border">
