@@ -464,7 +464,7 @@ export default function Home() {
                     variant="secondary" 
                     size="sm" 
                     className="w-full sm:w-auto"
-                    onClick={() => window.open('github.com/conflictmedia/drugucopia/issues/new', '_blank')}
+                    onClick={() => window.open('https://github.com/conflictmedia/drugucopia/issues/new', '_blank')}
                   >
                     <Github className="mr-2 h-4 w-4" />
                     Incorrect info? Submit a issue on GitHub
@@ -682,7 +682,7 @@ export default function Home() {
               variant="outline" 
               size="sm" 
               className="w-full text-xs bg-background"
-              onClick={() => window.open('github.com/conflictmedia/drugucopia/issues/new', '_blank')}
+              onClick={() => window.open('https://github.com/conflictmedia/drugucopia/issues/new', '_blank')}
             >
               <Github className="mr-2 h-3 w-3" />
               Feedback/Issues
