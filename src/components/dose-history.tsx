@@ -23,7 +23,7 @@ import {
   Loader2,
   Timer
 } from 'lucide-react'
-import { categoryColors } from '@/lib/substances-data'
+import { categoryColors } from '@/lib/substance-index'
 import { useToast } from '@/hooks/use-toast'
 
 interface DoseLog {
