@@ -1,190 +1,165 @@
 ---
-name: New Substance Request
+name: "\U0001F9EA New Substance Request"
 about: Propose a new substance to be added to the database
-title: "[New Substance]: "
-labels: new_substance, review needed
-assignees: ''
-
+title: "[New Substance]: <substance_name>"
+labels: new_substance, review_needed
+assignees: ""
 ---
 
-## Substance Overview
+<!--
+  ⚠️ AUTOMATION NOTICE ⚠️
+  This template is parsed by automation. Please follow these rules:
 
-**Substance ID** (lowercase, no spaces):
-<!-- e.g., nicotine, lsd, caffeine -->
+  1. Do NOT remove or rename any ### headings
+  2. Do NOT remove or modify the field labels (text before the colon)
+  3. Place your values AFTER the colon on the same line
+  4. For list fields, use one item per line starting with "- "
+  5. For route-specific data, copy the ENTIRE route block for each route
+  6. Use "N/A" for fields that don't apply — do NOT leave them blank
+  7. Do NOT add extra headings or restructure the template
+-->
 
-**Display Name**:
-<!-- e.g., Nicotine, LSD, Caffeine -->
+### substance_id
 
-**Common Names / Street Names** (comma-separated):
-<!-- e.g., Tobacco, Cigs, Vape, Juul, Snus, Dip -->
+<!-- lowercase, no spaces, alphanumeric + hyphens only (e.g., nicotine, lsd-25, 2c-b) -->
 
-**Category**:
-<!-- Choose one: stimulants, depressants, psychedelics, dissociatives, empathogens, cannabinoids, opioids, nootropics, deliriants, other -->
+### substance_name
 
-**Chemical Class**:
+<!-- Display name (e.g., Nicotine, LSD, Caffeine) -->
+
+### common_names
+
+<!-- One per line -->
+
+-
+-
+
+### category
+
+<!-- ONE of: stimulants | depressants | psychedelics | dissociatives | empathogens | cannabinoids | opioids | nootropics | deliriants | other -->
+
+### chemical_class
+
 <!-- e.g., Alkaloid, Tryptamine, Phenethylamine, Benzodiazepine -->
 
-**Aliases** (IUPAC or alternate chemical names, comma-separated):
-<!-- e.g., 3-(1-methyl-2-pyrrolidinyl)pyridine -->
+### aliases
 
----
+<!-- Alternate chemical/IUPAC names, one per line -->
 
-## Description
-<!-- A concise, objective pharmacological description of the substance. Include mechanism of action if known. -->
+-
 
+### description
 
-(write description here)
+<!-- A single paragraph. No line breaks. -->
 
+### effects_positive
 
-## Effects
+-
+-
 
-### Positive Effects
-<!-- List each effect on its own line, prefixed with a dash -->
-- 
-- 
-- 
-- 
+### effects_neutral
 
-### Neutral Effects
-<!-- List each effect on its own line, prefixed with a dash -->
-- 
-- 
-- 
+-
+-
 
-### Negative Effects
-<!-- List each effect on its own line, prefixed with a dash -->
-- 
-- 
-- 
-- 
+### effects_negative
 
----
+-
+-
 
-## General Dosage (if not route-specific)
-<!-- Provide approximate absorbed/effective doses. Write "N/A" for any tier that doesn't apply. -->
+### dosage_general_threshold
 
-| Tier       | Dosage         |
-|------------|----------------|
-| Threshold  |                |
-| Light      |                |
-| Common     |                |
-| Strong     |                |
-| Heavy      |                |
+### dosage_general_light
 
----
+### dosage_general_common
 
-## Routes of Administration
-<!-- List all applicable routes, comma-separated -->
-<!-- e.g., Inhalation, Buccal, Transdermal, Nasal, Oral, Insufflation, Sublingual, Intravenous -->
-(insert routes here)
+### dosage_general_strong
 
----
+### dosage_general_heavy
 
-## Route-Specific Data
-<!-- Copy and fill out the block below for EACH route of administration. Delete unused blocks. -->
+### routes
 
-### Route: <!-- e.g., Smoking, Oral, Transdermal, Insufflation -->
+<!-- All applicable routes, one per line (e.g., Inhalation, Oral, Transdermal, Insufflation, Sublingual, Buccal, Intravenous, Intramuscular, Rectal, Nasal) -->
 
-**Dosage**
+-
+-
 
-| Tier       | Dosage         |
-|------------|----------------|
-| Threshold  |                |
-| Light      |                |
-| Common     |                |
-| Strong     |                |
-| Heavy      |                |
+<!--
+  ========================
+  ROUTE-SPECIFIC DATA
+  ========================
+  Copy the entire block below (from "### route_start" to "### route_end")
+  for EACH route. Fill in all fields. Use "N/A" if not applicable.
+-->
 
-**Duration**
+### route_start
 
-| Phase      | Duration       |
-|------------|----------------|
-| Onset      |                |
-| Come-up    |                |
-| Peak       |                |
-| Offset     |                |
-| Total      |                |
+route_name:dosage_threshold:dosage_light:dosage_common:dosage_strong:
+dosage_heavy:duration_onset:duration_comeup:duration_peak:duration_offset:
+duration_total:route_notes:
 
-**Notes**:
-<!-- Any route-specific notes, bioavailability info, or practical context -->
+### route_end
 
-(insert notes here)
+<!-- COPY ABOVE BLOCK FOR ADDITIONAL ROUTES -->
 
-<!-- ======================= -->
-<!-- COPY THE BLOCK ABOVE FOR ADDITIONAL ROUTES -->
-<!-- ======================= -->
+### interactions
 
----
+<!-- One per line. Use parentheses for context. -->
 
-## Interactions
-<!-- List known drug interactions, each on its own line. Include brief context in parentheses if helpful. -->
-- 
-- 
-- 
+-
+-
 
----
+### harm_reduction
 
-## Harm Reduction Tips
-<!-- List practical safety advice, each on its own line -->
-- 
-- 
-- 
-- 
+<!-- One per line -->
 
----
+-
+-
 
-## After Effects
-<!-- Describe residual/afterglow/withdrawal effects -->
+### after_effects
 
----
+<!-- Single line or short paragraph -->
 
-## Risk Level
-<!-- Choose one: low, moderate, high, extreme -->
+### risk_level
 
+<!-- ONE of: low | moderate | high | extreme -->
 
----
+### chemistry_formula
 
-## Chemistry
+<!-- e.g., C10H14N2 -->
 
-| Property         | Value          |
-|------------------|----------------|
-| Formula          |                |
-| Molecular Weight |                |
-| Chemical Class   |                |
+### chemistry_molecular_weight
 
----
+<!-- e.g., 162.23 g/mol -->
 
-## Legality
-<!-- Describe general legal status. Mention notable jurisdictions if relevant. -->
+### chemistry_class
 
+<!-- e.g., Pyridine, Indole -->
 
+### legality
 
----
+<!-- Single line or short paragraph -->
 
-## History
-<!-- Brief historical context: origin, discovery, cultural significance -->
+### history
 
----
+<!-- Single line or short paragraph -->
 
-## Sources / References
-<!-- Link to any references used (PsychonautWiki, PubChem, Erowid, academic papers, etc.) -->
-- 
-- 
-- 
+### sources
 
----
+<!-- Reference URLs or citations, one per line -->
 
-## Checklist
+-
+-
 
-Please confirm the following before submitting:
+### checklist
 
-- [ ] I have searched existing issues/substances to confirm this is not a duplicate
-- [ ] All dosage information comes from reputable harm-reduction or pharmacological sources
-- [ ] Effects, interactions, and harm reduction tips are written objectively and without promoting use
-- [ ] I have filled out at least one route-specific data block with dosage and duration
+<!-- Replace [ ] with [x] to confirm -->
+
+- [ ] I have searched existing issues/substances to confirm this is not a
+      duplicate
+- [ ] All dosage information comes from reputable harm-reduction or
+      pharmacological sources
+- [ ] Effects, interactions, and harm reduction tips are written objectively
+- [ ] I have filled out at least one complete route-specific data block
 - [ ] I understand this will be reviewed and may be edited before inclusion
 
----
-
-## Additional Notes
-<!-- Anything else reviewers should know? Optional. -->
