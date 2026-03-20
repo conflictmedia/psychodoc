@@ -1128,5 +1128,392 @@ export const stimulants: Substance[] = [
       afterEffects: 'Mild lethargy.',
       riskLevel: 'moderate',
       aliases: ['3-fluorophenmetrazine']
+    },
+  {
+      id: 'dextroamphetamine',
+      name: 'Dextroamphetamine',
+      commonNames: ['Dexedrine', 'Dex', 'Zenzedi'],
+      category: 'stimulants',
+      class: 'Phenethylamine',
+      description: 'The dextrorotatory enantiomer of amphetamine. It is the dominant active ingredient in Adderall. It is responsible for the potent CNS stimulation, focus, and euphoria associated with amphetamine, with slightly fewer physical side effects (jitteriness) than levoamphetamine.',
+      effects: {
+        positive: ['High focus', 'Motivation', 'Euphoria', 'Confidence'],
+        neutral: ['Pupil dilation', 'Dry mouth'],
+        negative: ['Insomnia', 'Anxiety', 'Appetite suppression', 'Vasoconstriction']
+      },
+      dosage: {
+        threshold: '2.5-5mg',
+        light: '5-10mg',
+        common: '15-30mg',
+        strong: '30-50mg',
+        heavy: '50mg+'
+      },
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '2.5mg',
+                light: '5-10mg',
+                common: '15-30mg',
+                strong: '30-50mg',
+                heavy: '50mg+'
+            },
+            duration: {
+                onset: '30-60 minutes',
+                comeup: '60 minutes',
+                peak: '2-4 hours',
+                offset: '4-6 hours',
+                total: '6-10 hours'
+            },
+            notes: 'Cleaner headspace than racemic amphetamine (speed).'
+        }
+    },
+      interactions: ['MAOIs (Dangerous)', 'Acidic foods (reduces effect)', 'Alcohol'],
+      harmReduction: [
+        'Stay hydrated',
+        'Eat before dosing (suppresses appetite strongly)',
+        'Monitor heart rate'
+      ],
+      legality: 'Schedule II (US).',
+      chemistry: {
+        formula: 'C9H13N',
+        molecularWeight: '135.21 g/mol',
+        class: 'Phenethylamine'
+      },
+      history: 'Marketed in 1937.',
+      routes: ['Oral', 'Insufflation'],
+      afterEffects: 'Crash, irritability.',
+      riskLevel: 'moderate',
+      aliases: ['d-amph']
+    },
+  {
+      id: 'dexmethylphenidate',
+      name: 'Dexmethylphenidate',
+      commonNames: ['Focalin'],
+      category: 'stimulants',
+      class: 'Piperidine',
+      description: 'The active d-isomer of methylphenidate (Ritalin). It is approximately 2x as potent by weight as racemic methylphenidate and is considered to have a smoother effect profile with less "body load" or jitters.',
+      effects: {
+        positive: ['Focus', 'Stimulation', 'Productivity'],
+        neutral: ['Sweating'],
+        negative: ['Anxiety', 'Crash', 'Appetite loss']
+      },
+      dosage: {
+        threshold: '2.5mg',
+        light: '5-10mg',
+        common: '10-20mg',
+        strong: '20-30mg',
+        heavy: '30mg+'
+      },
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '2.5mg',
+                light: '5mg',
+                common: '10-15mg',
+                strong: '20-25mg',
+                heavy: '30mg+'
+            },
+            duration: {
+                onset: '30-45 minutes',
+                comeup: '45 minutes',
+                peak: '1.5-2.5 hours',
+                offset: '2-3 hours',
+                total: '4-6 hours'
+            },
+            notes: 'More recreational than Ritalin via insufflation.'
+        }
+    },
+      interactions: ['MAOIs', 'Alcohol', 'Caffeine'],
+      harmReduction: [
+        'Potent - use half the dose of regular Ritalin',
+        'Do not snort pills with talc fillers'
+      ],
+      legality: 'Schedule II (US).',
+      chemistry: {
+        formula: 'C14H19NO2',
+        molecularWeight: '233.31 g/mol',
+        class: 'Piperidine'
+      },
+      history: 'Approved 2001.',
+      routes: ['Oral', 'Insufflation'],
+      afterEffects: 'Depression/Irritability on comedown.',
+      riskLevel: 'moderate',
+      aliases: ['focalin']
+    },
+  {
+      id: 'armodafinil',
+      name: 'Armodafinil',
+      commonNames: ['Nuvigil', 'Waklert'],
+      category: 'stimulants',
+      class: 'Eugeroic',
+      description: 'The R-enantiomer of Modafinil. It has a longer half-life and is considered "punchier" or slightly more stimulating than regular Modafinil. It is used for shift-work sleep disorder.',
+      effects: {
+        positive: ['Wakefulness', 'Focus', 'Cognitive enhancement'],
+        neutral: ['Appetite suppression'],
+        negative: ['Headache', 'Insomnia', 'Skin rash (rare)']
+      },
+      dosage: {
+        threshold: '30mg',
+        light: '50-75mg',
+        common: '150mg',
+        strong: '200-250mg',
+        heavy: '250mg+'
+      },
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '30mg',
+                light: '50mg',
+                common: '150mg',
+                strong: '250mg',
+                heavy: '300mg+'
+            },
+            duration: {
+                onset: '1-2 hours',
+                comeup: '2 hours',
+                peak: '4-6 hours',
+                offset: '8-10 hours',
+                total: '14-16 hours'
+            },
+            notes: 'Take very early. Lasts all day.'
+        }
+    },
+      interactions: ['Birth Control', 'Caffeine'],
+      harmReduction: [
+        'Hydrate to prevent "Modafinil headache"',
+        'Stop if rash appears'
+      ],
+      legality: 'Schedule IV (US).',
+      chemistry: {
+        formula: 'C15H15NO2S',
+        molecularWeight: '273.35 g/mol',
+        class: 'Sulfinyl'
+      },
+      history: 'Approved 2007.',
+      routes: ['Oral'],
+      afterEffects: 'Sleep difficulty.',
+      riskLevel: 'low',
+      aliases: ['nuvigil']
+    },
+  {
+      id: 'adrafinil',
+      name: 'Adrafinil',
+      commonNames: ['Olmifon'],
+      category: 'stimulants',
+      class: 'Eugeroic',
+      description: 'A prodrug to Modafinil. It is metabolized by the liver into Modafinil. Because it requires liver processing, it takes longer to kick in and can elevate liver enzymes with chronic use.',
+      effects: {
+        positive: ['Wakefulness', 'Focus'],
+        neutral: ['Sulphur urine smell'],
+        negative: ['Liver stress', 'Headache', 'Nausea']
+      },
+      dosage: {
+        threshold: '100mg',
+        light: '200-300mg',
+        common: '300-600mg',
+        strong: '600-900mg',
+        heavy: '900mg+'
+      },
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '150mg',
+                light: '300mg',
+                common: '600mg',
+                strong: '900mg',
+                heavy: '1200mg'
+            },
+            duration: {
+                onset: '1.5-2 hours',
+                comeup: '2 hours',
+                peak: '3-5 hours',
+                offset: '6 hours',
+                total: '12 hours'
+            },
+            notes: 'Less potent than Modafinil.'
+        }
+    },
+      interactions: ['Alcohol (Liver strain)', 'Tylenol (Liver strain)'],
+      harmReduction: [
+        'Do not use daily (Liver enzyme buildup)',
+        'Do not mix with alcohol'
+      ],
+      legality: 'Unscheduled (US).',
+      chemistry: {
+        formula: 'C15H15NO3S',
+        molecularWeight: '289.35 g/mol',
+        class: 'Sulfinyl'
+      },
+      history: 'Discovered 1974.',
+      routes: ['Oral'],
+      afterEffects: 'Fatigue.',
+      riskLevel: 'low',
+      aliases: ['olmifon']
+    },
+  {
+      id: 'phentermine',
+      name: 'Phentermine',
+      commonNames: ['Adipex-P', 'Fastin'],
+      category: 'stimulants',
+      class: 'Substituted Amphetamine',
+      description: 'A stimulant used for weight loss. It releases norepinephrine and suppresses appetite. It provides physical energy but little euphoria compared to amphetamine, making it functional but "jittery".',
+      effects: {
+        positive: ['Appetite suppression', 'Energy'],
+        neutral: ['Sweating', 'Dry mouth'],
+        negative: ['Anxiety', 'Heart palpitations', 'Insomnia', 'Chest pain']
+      },
+      dosage: {
+        threshold: '8mg',
+        light: '15mg',
+        common: '30-37.5mg',
+        strong: '37.5mg+',
+        heavy: 'N/A'
+      },
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '8mg',
+                light: '15mg',
+                common: '30mg',
+                strong: '37.5mg',
+                heavy: 'N/A'
+            },
+            duration: {
+                onset: '30-60 minutes',
+                comeup: '1 hour',
+                peak: '3-5 hours',
+                offset: '6 hours',
+                total: '10-14 hours'
+            },
+            notes: 'Strictly functional/weight loss.'
+        }
+    },
+      interactions: ['MAOIs', 'Caffeine', 'SSRI (Serotonin syndrome risk)'] ,
+      harmReduction: [
+        'Monitor heart rate/blood pressure',
+        'Do not use long term'
+      ],
+      legality: 'Schedule IV (US).',
+      chemistry: {
+        formula: 'C10H15N',
+        molecularWeight: '149.23 g/mol',
+        class: 'Phenethylamine'
+      },
+      history: 'Approved 1959.',
+      routes: ['Oral'],
+      afterEffects: 'Irritability.',
+      riskLevel: 'moderate',
+      aliases: ['adipex']
+    },
+  {
+      id: 'pmma',
+      name: 'PMMA',
+      commonNames: ['Dr. Death', 'Killer', 'Red Mitsubishi'],
+      category: 'stimulants',
+      class: 'Substituted Amphetamine',
+      description: 'PMMA (para-Methoxy-N-methylamphetamine) is chemically related to PMA and MDMA. Like PMA, it is sold as fake Ecstasy. It inhibits MAO-A and releases serotonin. It causes fatal hyperthermia at doses slightly higher than active doses.',
+      effects: {
+        positive: ['Mild stimulation (weak)'],
+        neutral: ['Tremors'],
+        negative: ['Hyperthermia', 'Organ failure', 'Coma', 'Death', 'Panic']
+      },
+      dosage: {
+        threshold: 'Unknown',
+        light: 'N/A',
+        common: 'Dangerous at any dose',
+        strong: 'Lethal',
+        heavy: 'Lethal'
+      },
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: 'N/A',
+                light: 'N/A',
+                common: 'N/A',
+                strong: 'N/A',
+                heavy: 'N/A'
+            },
+            duration: {
+                onset: '1-2 hours',
+                comeup: 'Unknown',
+                peak: 'Unknown',
+                offset: 'Unknown',
+                total: 'Unknown'
+            },
+            notes: 'If you suspect PMMA, seek medical help. Do not wait for symptoms.'
+        }
+    },
+      interactions: ['Anything serotonergic'],
+      harmReduction: [
+        'DO NOT USE',
+        'Test your MDMA',
+        'Slow onset kills: users take more thinking it is weak MDMA'
+      ],
+      legality: 'Schedule I (US).',
+      chemistry: {
+        formula: 'C11H17NO',
+        molecularWeight: '179.26 g/mol',
+        class: 'Amphetamine'
+      },
+      history: 'Appeared as fake MDMA in 2010s.',
+      routes: ['Oral'],
+      afterEffects: 'Severe toxicity.',
+      riskLevel: 'very-high',
+      aliases: ['4-mma']
+    },
+  {
+      id: '4f-eph',
+      name: '4F-EPH',
+      commonNames: ['4-Fluoroethylphenidate'],
+      category: 'stimulants',
+      class: 'Piperidine',
+      description: 'A fluorinated analogue of Ethylphenidate. It is a research chemical stimulant. Reports describe it as functional but prone to causing significant anxiety and jitters compared to 4F-MPH.',
+      effects: {
+        positive: ['Stimulation', 'Wakefulness'],
+        neutral: ['Sweating'],
+        negative: ['Anxiety', 'Paranoia', 'Vasoconstriction', 'Heart palpitations']
+      },
+      dosage: {
+        threshold: '5mg',
+        light: '10-15mg',
+        common: '15-30mg',
+        strong: '30-50mg',
+        heavy: '50mg+'
+      },
+      routeData: {
+        Oral: {
+             dosage: {
+                threshold: '5mg',
+                light: '10mg',
+                common: '20mg',
+                strong: '40mg',
+                heavy: '50mg+'
+            },
+            duration: {
+                onset: '20-40 minutes',
+                comeup: '30 minutes',
+                peak: '2-3 hours',
+                offset: '2 hours',
+                total: '4-7 hours'
+            },
+            notes: 'Functional only. Low recreational value.'
+        }
+    },
+      interactions: ['Stimulants', 'MAOIs'],
+      harmReduction: [
+        'Start low - very jittery',
+        'Avoid caffeine'
+      ],
+      legality: 'Gray Area (US).',
+      chemistry: {
+        formula: 'C15H20FNO2',
+        molecularWeight: '265.32 g/mol',
+        class: 'Phenidate'
+      },
+      history: 'RC market 2016.',
+      routes: ['Oral', 'Insufflation'],
+      afterEffects: 'Anxiety, crash.',
+      riskLevel: 'moderate',
+      aliases: ['4-fluoroethylphenidate']
     }
 ];
