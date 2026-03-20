@@ -57,13 +57,11 @@ interface ActiveDosesTimelineProps {
 
 const STORAGE_KEY = 'drugucopia-dose-logs'
 
-// Parse duration string like "30-60 minutes" or "2-4 hours" to minutes
 function parseDurationToMinutes(durationStr: string): number {
   if (!durationStr) return 0
   
   const lower = durationStr.toLowerCase()
   
-  // Handle ranges like "30-60 minutes" - take the average
   const rangeMatch = lower.match(/(\d+)-(\d+)\s*(minutes?|hours?|min|h)/)
   if (rangeMatch) {
     const min = parseInt(rangeMatch[1])
@@ -77,7 +75,6 @@ function parseDurationToMinutes(durationStr: string): number {
     return avg
   }
   
-  // Handle single values like "30 minutes" or "1 hour"
   const singleMatch = lower.match(/(\d+)\s*(minutes?|hours?|min|h)/)
   if (singleMatch) {
     const value = parseInt(singleMatch[1])
@@ -92,7 +89,6 @@ function parseDurationToMinutes(durationStr: string): number {
   return 0
 }
 
-// Calculate phase timings in minutes from dose time
 interface PhaseTimings {
   onsetStart: number
   onsetEnd: number
@@ -124,7 +120,6 @@ function calculatePhaseTimings(duration: Duration): PhaseTimings {
   }
 }
 
-// Determine current phase and progress
 interface PhaseStatus {
   phase: 'not_started' | 'onset' | 'comeup' | 'peak' | 'offset' | 'ended'
   progress: number
@@ -211,7 +206,6 @@ function getPhaseStatus(doseTime: Date, timings: PhaseTimings): PhaseStatus {
   }
 }
 
-// Format minutes to human readable
 function formatMinutes(minutes: number): string {
   if (minutes < 0) return '0m'
   if (minutes < 60) {
@@ -260,13 +254,13 @@ interface TooltipData {
   progress: number
 }
 
-// SVG dimensions for the graph
-const SVG_WIDTH = 400
-const SVG_HEIGHT = 100
-const PADDING_LEFT = 38
-const PADDING_RIGHT = 10
-const PADDING_TOP = 18  // extra top room for phase labels
-const PADDING_BOTTOM = 16
+// Adjusted wider aspect ratio and responsive settings to make the graph compact vertically
+const SVG_WIDTH = 800
+const SVG_HEIGHT = 160
+const PADDING_LEFT = 40
+const PADDING_RIGHT = 20
+const PADDING_TOP = 25
+const PADDING_BOTTOM = 25
 const GRAPH_WIDTH = SVG_WIDTH - PADDING_LEFT - PADDING_RIGHT
 const GRAPH_HEIGHT = SVG_HEIGHT - PADDING_TOP - PADDING_BOTTOM
 
@@ -277,7 +271,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   const [tooltip, setTooltip] = useState<{ [key: string]: TooltipData }>({})
   const [expandedDose, setExpandedDose] = useState<string | null>(null)
 
-  // Update every minute
   useEffect(() => {
     const interval = setInterval(() => {
       setTick(t => t + 1)
@@ -305,7 +298,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     fetchDoses()
   }, [refreshTrigger])
 
-  // Filter and process active/upcoming doses
   const activeDoses = useMemo(() => {
     return doses
       .filter(dose => dose.duration)
@@ -330,7 +322,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
   }
 
-  // Calculate intensity at a given point using a smooth pharmacokinetic curve
   const getIntensityAtProgress = (progress: number, timings: PhaseTimings): number => {
     const minutes = (progress / 100) * timings.totalDuration
     
@@ -356,7 +347,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     }
   }
 
-  // Get phase at a given progress
   const getPhaseAtProgress = (progress: number, timings: PhaseTimings): string => {
     const minutes = (progress / 100) * timings.totalDuration
     
@@ -366,17 +356,14 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return 'Offset'
   }
 
-  // Convert progress (0-100) to SVG x coordinate
   const progressToX = (progress: number): number => {
     return PADDING_LEFT + (progress / 100) * GRAPH_WIDTH
   }
 
-  // Convert intensity (0-100) to SVG y coordinate
   const intensityToY = (intensity: number): number => {
     return PADDING_TOP + GRAPH_HEIGHT - (intensity / 100) * GRAPH_HEIGHT
   }
 
-  // Generate smooth SVG path for the intensity curve using bezier curves
   const generateCurvePath = (timings: PhaseTimings): string => {
     const points: { x: number; y: number }[] = []
     const numPoints = 100
@@ -410,7 +397,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return path
   }
 
-  // Generate filled area path
   const generateAreaPath = (timings: PhaseTimings): string => {
     const curvePath = generateCurvePath(timings)
     const endX = progressToX(100)
@@ -420,10 +406,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return `${curvePath} L ${endX.toFixed(2)},${bottomY.toFixed(2)} L ${startX.toFixed(2)},${bottomY.toFixed(2)} Z`
   }
 
-  // rAF ref to throttle mouse events
   const rafRef = useRef<number | null>(null)
 
-  // Handle graph interaction - throttled via requestAnimationFrame for responsiveness
   const handleGraphMouseMove = useCallback((doseId: string, e: React.MouseEvent<SVGSVGElement>, timings: PhaseTimings, doseTime: Date) => {
     if (rafRef.current !== null) return
     const clientX = e.clientX
@@ -456,7 +440,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     })
   }, [])
 
-  // Generate time markers for the graph
   const generateTimeMarkers = (timings: PhaseTimings, doseTime: Date): { progress: number; time: Date; label: string }[] => {
     const markers: { progress: number; time: Date; label: string }[] = []
     const totalHours = timings.totalDuration / 60
@@ -475,7 +458,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return markers
   }
 
-  // Generate phase boundary lines
   const generatePhaseBoundaries = (timings: PhaseTimings): { x: number; phase: string }[] => {
     const boundaries: { x: number; phase: string }[] = []
     
@@ -554,7 +536,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                   </div>
                   <div className="flex items-center gap-3">
                     <span className="text-sm text-muted-foreground">
-                      {dose.amount}{dose.unit} • {dose.route}
+                      {dose.amount} {dose.unit} • {dose.route}
                     </span>
                     <div className="flex items-center gap-1 text-sm text-muted-foreground">
                       <Clock className="h-3 w-3" />
@@ -563,10 +545,11 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                   </div>
                 </div>
 
-                <div className="relative">
+                {/* Scaled-down Graph Container */}
+                <div className="relative w-full overflow-hidden">
                   <svg 
                     viewBox={`0 0 ${SVG_WIDTH} ${SVG_HEIGHT}`}
-                    className="w-full h-auto cursor-crosshair"
+                    className="w-full h-auto max-h-48 cursor-crosshair"
                     preserveAspectRatio="xMidYMid meet"
                     onMouseMove={(e) => handleGraphMouseMove(dose.id, e, dose.timings, dose.doseTime)}
                     onMouseLeave={() => handleGraphMouseLeave(dose.id)}
@@ -587,7 +570,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       </linearGradient>
                       
                       <filter id={`glow-${dose.id}`} x="-20%" y="-20%" width="140%" height="140%">
-                        <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+                        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
                         <feMerge>
                           <feMergeNode in="coloredBlur"/>
                           <feMergeNode in="SourceGraphic"/>
@@ -595,7 +578,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       </filter>
                       
                       <filter id={`dropshadow-${dose.id}`} x="-50%" y="-50%" width="200%" height="200%">
-                        <feDropShadow dx="0" dy="1" stdDeviation="2" floodColor="#a855f7" floodOpacity="0.5"/>
+                        <feDropShadow dx="0" dy="2" stdDeviation="3" floodColor="#a855f7" floodOpacity="0.5"/>
                       </filter>
                     </defs>
                     
@@ -630,11 +613,11 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       />
                     </g>
                     
-                    <g className="text-muted-foreground/20" stroke="currentColor" strokeWidth="0.5">
-                      <line x1={PADDING_LEFT} y1={PADDING_TOP} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP} strokeDasharray="2,2" />
-                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.25} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.25} strokeDasharray="2,2" />
-                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.5} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.5} strokeDasharray="2,2" />
-                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.75} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.75} strokeDasharray="2,2" />
+                    <g className="text-muted-foreground/30" stroke="currentColor" strokeWidth="1">
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP} strokeDasharray="4,4" />
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.25} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.25} strokeDasharray="4,4" />
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.5} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.5} strokeDasharray="4,4" />
+                      <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT * 0.75} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT * 0.75} strokeDasharray="4,4" />
                       <line x1={PADDING_LEFT} y1={PADDING_TOP + GRAPH_HEIGHT} x2={SVG_WIDTH - PADDING_RIGHT} y2={PADDING_TOP + GRAPH_HEIGHT} />
                     </g>
                     
@@ -646,8 +629,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         x2={boundary.x}
                         y2={PADDING_TOP + GRAPH_HEIGHT}
                         stroke="currentColor"
-                        strokeWidth="1"
-                        strokeDasharray="4,2"
+                        strokeWidth="1.5"
+                        strokeDasharray="4,4"
                         className="text-muted-foreground/30"
                       />
                     ))}
@@ -661,27 +644,28 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       d={curvePath}
                       fill="none"
                       stroke={`url(#curveGradient-${dose.id})`}
-                      strokeWidth="2.5"
+                      strokeWidth="3"
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       filter={`url(#glow-${dose.id})`}
                     />
                     
-                    <g className="text-[9px] fill-muted-foreground">
-                      <text x={PADDING_LEFT - 5} y={PADDING_TOP + 3} textAnchor="end">100</text>
-                      <text x={PADDING_LEFT - 5} y={PADDING_TOP + GRAPH_HEIGHT * 0.5 + 3} textAnchor="end">50</text>
-                      <text x={PADDING_LEFT - 5} y={PADDING_TOP + GRAPH_HEIGHT + 3} textAnchor="end">0</text>
+                    {/* Y-Axis Labeling */}
+                    <g fill="currentColor" className="text-muted-foreground" fontSize="11">
+                      <text x={PADDING_LEFT - 8} y={PADDING_TOP + 4} textAnchor="end">100</text>
+                      <text x={PADDING_LEFT - 8} y={PADDING_TOP + GRAPH_HEIGHT * 0.5 + 4} textAnchor="end">50</text>
+                      <text x={PADDING_LEFT - 8} y={PADDING_TOP + GRAPH_HEIGHT + 4} textAnchor="end">0</text>
                     </g>
                     
                     {/* Time markers along the bottom axis */}
-                    <g className="text-[9px] fill-muted-foreground">
+                    <g fill="currentColor" className="text-muted-foreground" fontSize="11">
                       {timeMarkers.map((marker, i) => {
                         const x = progressToX(marker.progress)
                         return (
                           <text 
                             key={i} 
                             x={x} 
-                            y={SVG_HEIGHT - 2}
+                            y={SVG_HEIGHT - 6}
                             textAnchor="middle"
                           >
                             {marker.label}
@@ -690,7 +674,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       })}
                     </g>
                     
-                    {/* Phase labels - rendered inside the top of each phase band */}
+                    {/* Phase labels - rendered slightly above the top of each phase band */}
                     {[
                       { name: 'Onset', startProgress: 0, endProgress: (dose.timings.onsetEnd / dose.timings.totalDuration) * 100, color: '#60a5fa' },
                       { name: 'Comeup', startProgress: (dose.timings.onsetEnd / dose.timings.totalDuration) * 100, endProgress: (dose.timings.comeupEnd / dose.timings.totalDuration) * 100, color: '#fbbf24' },
@@ -698,20 +682,19 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       { name: 'Offset', startProgress: (dose.timings.peakEnd / dose.timings.totalDuration) * 100, endProgress: 100, color: '#22d3ee' }
                     ].map((label, i) => {
                       const pixelWidth = ((label.endProgress - label.startProgress) / 100) * GRAPH_WIDTH
-                      if (pixelWidth < 20) return null
+                      if (pixelWidth < 30) return null
                       const centerX = progressToX((label.startProgress + label.endProgress) / 2)
-                      // Abbreviate if narrow
-                      const name = pixelWidth < 38 ? label.name.slice(0, 2) : label.name
+                      const name = pixelWidth < 60 ? label.name.slice(0, 2) : label.name
                       return (
                         <text
                           key={i}
                           x={centerX}
-                          y={PADDING_TOP + 8}
+                          y={PADDING_TOP - 8}
                           textAnchor="middle"
-                          fontSize="8"
+                          fontSize="11"
                           fontWeight="600"
                           fill={label.color}
-                          opacity="0.85"
+                          opacity="0.9"
                         >
                           {name}
                         </text>
@@ -726,15 +709,15 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                           x2={currentX}
                           y2={PADDING_TOP + GRAPH_HEIGHT}
                           stroke="#a855f7"
-                          strokeWidth="1.5"
-                          strokeDasharray="4,2"
+                          strokeWidth="2"
+                          strokeDasharray="4,4"
                           opacity="0.6"
                         />
                         
                         <circle
                           cx={currentX}
                           cy={currentY}
-                          r="5"
+                          r="6"
                           fill="#a855f7"
                           stroke="#fff"
                           strokeWidth="2"
@@ -747,7 +730,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                           cy={currentY}
                           r="3"
                           fill="#fff"
-                          opacity="0.8"
+                          opacity="0.9"
                         />
                       </g>
                     )}
@@ -759,15 +742,15 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         x2={progressToX(currentTooltip.progress)}
                         y2={PADDING_TOP + GRAPH_HEIGHT}
                         stroke="#fff"
-                        strokeWidth="1"
-                        strokeDasharray="3,3"
+                        strokeWidth="1.5"
+                        strokeDasharray="4,4"
                         opacity="0.5"
                       />
                     )}
                   </svg>
                   
                   {currentTooltip && (
-                    <div className="mt-3 p-3 bg-gradient-to-r from-muted/80 to-muted/40 rounded-lg text-sm border border-border/50 backdrop-blur-sm">
+                    <div className="mt-2 p-3 bg-gradient-to-r from-muted/80 to-muted/40 rounded-lg text-sm border border-border/50 backdrop-blur-sm">
                       <div className="flex items-center justify-between gap-4 flex-wrap">
                         <div className="flex items-center gap-2">
                           <span className={`font-semibold ${
