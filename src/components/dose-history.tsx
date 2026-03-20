@@ -214,7 +214,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
                         <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
                           <span className="flex items-center gap-1">
                             <Droplets className="h-3 w-3" />
-                            {dose.amount}{dose.unit}
+                            {dose.amount} {dose.unit}
                           </span>
                           <span className="flex items-center gap-1">
                             <Clock className="h-3 w-3" />
