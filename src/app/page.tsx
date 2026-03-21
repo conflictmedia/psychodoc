@@ -32,7 +32,9 @@ import {
   Activity,
   Plus,
   Syringe,
-  Github
+  Github,
+  Send,
+  PenLine
 } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { DoseLoggerModal } from '@/components/dose-logger-modal'
@@ -46,6 +48,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Separator } from '@/components/ui/separator'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from '@/components/ui/dropdown-menu'
 import { 
   substances, 
   categories, 
@@ -114,6 +123,11 @@ const routeDangerColors: Record<string, string> = {
 }
 
 type ViewType = 'substances' | 'dose-log'
+
+// GitHub issue URLs
+const GITHUB_NEW_SUBSTANCE_URL = 'https://github.com/conflictmedia/drugucopia/issues/new?template=new-substance-request.md'
+const GITHUB_INFO_CHANGE_URL = 'https://github.com/conflictmedia/drugucopia/issues/new?template=change-substance-info.md'
+const GITHUB_FEEDBACK_URL = 'https://github.com/conflictmedia/drugucopia/issues/new'
 
 // Dosage & Duration display component with route selector
 function DosageDurationPanel({ 
@@ -422,6 +436,15 @@ export default function Home() {
                   </Button>
                 }
               />
+              <Button 
+                size="sm" 
+                variant="outline"
+                className="gap-2"
+                onClick={() => window.open(GITHUB_NEW_SUBSTANCE_URL, '_blank')}
+              >
+                <Send className="h-4 w-4" />
+                Submit a Substance
+              </Button>
               <Badge variant="outline" className={categoryColors[selectedSubstance.category]}>
                 {categories.find(c => c.id === selectedSubstance.category)?.name}
               </Badge>
@@ -460,16 +483,33 @@ export default function Home() {
                   <p className="text-muted-foreground leading-relaxed">
                     {selectedSubstance.description}
                   </p>
-                  <Button 
-                    variant="secondary" 
-                    size="sm" 
-                    className="w-full sm:w-auto"
-                    //todo: make this a drop down for submitting new substances and info modifications
-                    onClick={() => window.open('https://github.com/conflictmedia/drugucopia/issues/new?template=new-substance-request.md', '_blank')}
-                  >
-                    <Github className="mr-2 h-4 w-4" />
-                    Incorrect info? Submit a issue on GitHub
-                  </Button>
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <Button 
+                        variant="secondary" 
+                        size="sm" 
+                        className="w-full sm:w-auto"
+                      >
+                        <Github className="mr-2 h-4 w-4" />
+                        Contribute on GitHub
+                      </Button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start">
+                      <DropdownMenuItem onClick={() => window.open(GITHUB_INFO_CHANGE_URL, '_blank')}>
+                        <PenLine className="mr-2 h-4 w-4" />
+                        Submit Info Change
+                      </DropdownMenuItem>
+                      <DropdownMenuItem onClick={() => window.open(GITHUB_NEW_SUBSTANCE_URL, '_blank')}>
+                        <Send className="mr-2 h-4 w-4" />
+                        Submit a New Substance
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem onClick={() => window.open(GITHUB_FEEDBACK_URL, '_blank')}>
+                        <AlertTriangle className="mr-2 h-4 w-4" />
+                        Report an Issue
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
                 </CardContent>
               </Card>
 
@@ -679,16 +719,33 @@ export default function Home() {
               </div>
               <p className="text-xs text-muted-foreground mt-1">Psychoactive Substances Documentation</p>
             </div>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="w-full text-xs bg-background"
-              //todo: make this a drop down for submitting new substances and info modifications
-              onClick={() => window.open('https://github.com/conflictmedia/drugucopia/issues/new', '_blank')}
-            >
-              <Github className="mr-2 h-3 w-3" />
-              Feedback/Issues
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button 
+                  variant="outline" 
+                  size="sm" 
+                  className="w-full text-xs bg-background"
+                >
+                  <Github className="mr-2 h-3 w-3" />
+                  Contribute / Feedback
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-52">
+                <DropdownMenuItem onClick={() => window.open(GITHUB_NEW_SUBSTANCE_URL, '_blank')}>
+                  <Send className="mr-2 h-4 w-4" />
+                  Submit a New Substance
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => window.open(GITHUB_INFO_CHANGE_URL, '_blank')}>
+                  <PenLine className="mr-2 h-4 w-4" />
+                  Submit Info Change
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => window.open(GITHUB_FEEDBACK_URL, '_blank')}>
+                  <AlertTriangle className="mr-2 h-4 w-4" />
+                  Feedback / Report Issue
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </div>
 
           {/* Navigation */}
