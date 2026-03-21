@@ -324,7 +324,7 @@ export const empathogens: Substance[] = [
       name: "Kanna",
       commonNames: ["Mesemebrine", "Channa", "Kougoed"],
       category: "empathogens",
-      class: "Alkaloid",
+      class: "Psychoactive alkaloid containing succulent",
       description: "The main psychoactive effects of kanna are a result of its action as a potent serotonin reuptake inhibitor (SRI), a PDE4 inhibitor, and a monoamine releasing agent. It produces euphoric and anxiolytic effects and has been described as feeling simmilar to MDMA",
       effects : {
         positive: ['Mild euphoria', 'Anxiety reduction/Disinhibiton', 'Audio Enhancement', 'Visual Enhancement (colors, patterns, clarity)', 'Pain relief', 'Stimulation/Sedation', 'Emotion Enhancement', 'Focus/Motivation enhancement'],
