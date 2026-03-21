@@ -25,17 +25,11 @@ export interface Substance {
   category: SubstanceCategory;
   class: string;
   description: string;
+  dosage?: {} 
   effects: {
     positive: string[];
     neutral: string[];
     negative: string[];
-  };
-  dosage: {
-    threshold: string;
-    light: string;
-    common: string;
-    strong: string;
-    heavy: string;
   };
   routeData?: Record<string, RouteDosageDuration>;
   interactions: string[];
@@ -47,7 +41,7 @@ export interface Substance {
     class: string;
   };
   history: string;
-  routes: string[];
+  routes?: string[];
   afterEffects: string;
   riskLevel: 'low' | 'moderate' | 'high' | 'very-high';
   aliases: string[];
