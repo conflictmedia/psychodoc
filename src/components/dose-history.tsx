@@ -314,6 +314,11 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         }
       })
 
+      // Push any locally-logged doses that accumulated while disconnected.
+      // The snapshot listener on Device B will merge these in on receipt.
+      const local = readLocal()
+      if (local.length > 0) await pushToSync(local)
+
       setSyncStatus('synced')
       toast({ title: 'Secure Sync Active', description: 'Your data is now end-to-end encrypted and syncing.' })
     } catch (error) {
