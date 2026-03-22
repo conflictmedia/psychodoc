@@ -1,0 +1,130 @@
+{
+  "id": "alcohol",
+  "name": "Alcohol",
+  "commonNames": [
+    "Alcohol"
+  ],
+  "categories": [
+    "depressants"
+  ],
+  "class": "Alcohol",
+  "description": "It is the primary psychoactive component of alcoholic drinks, liquors and spirits; making it the second-most widely used recreational substance globally (after caffeine). However, isopropyl alcohol, and ethanol, are just a few psychoactive alcohols in alcoholic drinks, and analogues. In modern times, drinking alcohol is the most commonly used legal recreational substance in the world. It is considered to have moderate abuse potential and chronic use is associated with escalating tolerance, physical dependence, and addiction. Additionally, chronic use is associated with negative effects on the brain and other organs.",
+  "effects": {
+    "positive": [
+      "Sedation & Stimulation - This effect manifests itself as an increase in energy and desire to do certain activities in moderate doses, whereas low or high doses can cause the user to feel sedated and sleepy",
+      "Muscle relaxation",
+      "Physical euphoria",
+      "Appetite enhancement",
+      "Body odor alteration - This effect is present at all dosages, and becomes more pronounced the higher the dosage is. This results from the liver's inability to eliminate all alcohol present within one's system. Alcohol not eliminated by the liver will then be eliminated via the kidneys, lungs, and through perspiration (sweating), the latter of which causes a change in body odor, as well as increased perspiration.",
+      "Increased perspiration",
+      "Double vision - This effect increases in proportion to dose and can make driving or operating machinery impossible.",
+      "Cognitive euphoria",
+      "Empathy, affection, and sociability enhancement",
+      "Emotion enhancement",
+      "Increased music appreciation",
+      "Increased libido",
+      "Sleepiness - This effect is experienced almost exclusively in low or high dosages. Small doses of alcohol can cause many users to feel anywhere from mildly to extremely tired whereas moderate doses can actually lead to feelings of stimulation and wakefulness. On very high amounts, however, chances of the individual becoming unconscious are much greater.",
+      "Suppressions or Enhancements - While alcohol is technically capable of both enhancing and suppressing auditory stimuli, it generally suppresses it, although some users note that sounds appear enhanced and markedly louder while under the influence."
+    ],
+    "neutral": [
+      "Pain relief",
+      "Motor control loss",
+      "Increased bodily temperature or Decreased bodily temperature - It is a common myth that alcohol intoxication can lower the chances of experiencing hypothermia when, in fact, it actually increases the chances of hypothermia in part due to temperature regulation suppression. Even small amounts of alcohol can begin to slow down the mechanisms that help maintain a normal body core temperature.",
+      "Skin flushing",
+      "Acuity suppression",
+      "Pattern recognition suppression",
+      "After images - This effect may present itself at higher doses.",
+      "Compulsive redosing",
+      "Ego inflation",
+      "Thought deceleration",
+      "Thought disorganization",
+      "Delirium tremens",
+      "Sleep paralysis - Some users experience sleep paralysis after alcohol consumption; it is usually associated with consistent usage.",
+      "Thought deceleration"
+    ],
+    "negative": [
+      "Neurotoxicity",
+      "Increased blood pressure",
+      "Nausea",
+      "Dehydration",
+      "Difficulty urinating & Frequent urination",
+      "Dizziness",
+      "Headaches",
+      "Temperature regulation suppression",
+      "Respiratory depression - This effect becomes more pronounced at heavier dosages, and may lead or contribute to a loss of consciousness (\"blacking out\"), or in extreme cases, death.",
+      "Tactile suppression - This effect is not usually as pronounced as it is with substances such as ketamine or PCP, but can still manifest itself in varying degrees of intensity.",
+      "Temporary erectile dysfunction",
+      "Analysis suppression",
+      "Anxiety suppression",
+      "Disinhibition",
+      "Creativity suppression",
+      "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others.",
+      "Depression",
+      "Focus suppression",
+      "Information processing suppression",
+      "Language suppression",
+      "Memory suppression",
+      "Amnesia",
+      "Suggestibility suppression",
+      "Irritability",
+      "Anxiety",
+      "Appetite suppression",
+      "Cognitive fatigue and Physical fatigue",
+      "Dehydration",
+      "Nausea",
+      "Headaches",
+      "Information processing suppression"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "10g",
+        "light": "10-20g",
+        "common": "20-30g",
+        "strong": "30-40g",
+        "heavy": "40g"
+      },
+      "duration": {
+        "onset": "2-5 minutes",
+        "comeup": "15-45 minutes",
+        "peak": "30-90 minutes",
+        "offset": "45-120 minutes",
+        "total": "1.5-5 hours"
+      },
+      "notes": "Afterglow: 6-48 hours"
+    }
+  },
+  "interactions": [
+    "Depressants",
+    "Dissociatives",
+    "Benzodiazepines",
+    "DXM",
+    "GHB",
+    "GBL",
+    "Ketamine",
+    "MXE",
+    "Opioids",
+    "Tramadol",
+    "Cocaine",
+    "MAOIs",
+    "PCP",
+    "ALDH2 inhibitors",
+    "Hepatotoxic drugs"
+  ],
+  "harmReduction": [
+    "Death from ethanol consumption is possible when blood alcohol levels reach 0.4%"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Alcohol"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "very-high",
+  "aliases": [
+    "Alcohol"
+  ]
+}

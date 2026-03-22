@@ -1,0 +1,87 @@
+{
+  "id": "nitrous",
+  "name": "Nitrous",
+  "commonNames": [],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Unknown",
+  "description": "Whipped cream chargers/cartridges are called whippits (also spelled “whippits”), nangs, or bulbs. The exact mechanism of action of nitrous oxide is unknown, but it is thought to have an effect on GABA and NMDA receptors in the brain. It was given the name \"laughing gas\" by the British chemist Humphry Davy due to its exhilarating and laughter-inducing effects. Today, it is widely used in surgery and dentistry for its anaesthetic and analgesic effects, and in motorsports for its performance boosting effect on internal combustion engines. Additionally, it has a number of industrial uses and is commonly sold as a whipped cream propellant in kitchen and household stores.",
+  "effects": {
+    "positive": [
+      "Perception of bodily lightness - This creates the sensation that the body is floating and has become entirely weightless. It is often accompanied by feelings of slowly falling or drifting.",
+      "Physical euphoria - This effect can range between mild pleasure to powerfully all-encompassing bliss. Anecdotal reports show that this sensation, which is taken advantage of by recreational users during sexual activities, can greatly enhance orgasm.",
+      "Vitamin deficiency - Repeated doses may induce vitamin B12 deficiency. However, this can be prevented with B12 supplements.",
+      "Derealization",
+      "Cognitive euphoria - This can be described as feelings of mild to intense happiness and general positivity.",
+      "Increased sense of humor",
+      "Laughter fits - This effect is markedly pronounced with nitrous oxide and can be described as sudden bouts of intense laughter and giggling.",
+      "Suggestibility enhancement",
+      "Vivid dreams",
+      "Synaesthesia - This effect is reported to occur most commonly with auditory stimuli, like music translating into visual stimuli within closed eye visuals.",
+      "Perception of interdependent opposites - During moderate to high doses, the effect may be described as having insight into the nature of two conflicting ideas, \"battling\" each other to maintain natural balance."
+    ],
+    "neutral": [
+      "Spontaneous physical sensations - The nitrous oxide \"body high\" starts off as the sensation of a diverse mixture of cold, warm, sharp, and soft tingles which begin across the head and face at lower dosages but spread out across the body at higher dosages.",
+      "Acuity suppression - Blurred vision to the point of all-encompassing blindness is a completely consistent effect within nitrous oxide even at moderate dosages.",
+      "Frame rate suppression - This effect can cause ones visual framerate to lag to such an extent that it can cause one's vision to \"pause\"",
+      "Double vision - This component is also prevalent at moderate dosages and makes reading incapable unless one closes an eye.",
+      "Pattern recognition suppression - This effect occurs at higher dosages and makes one unable to recognize and interpret perceivable visual data.",
+      "Geometry - Nitrous oxide geometry can be described as unique in its behaviour. It usually only occurs at higher dosages and as a static wall of geometry which appears in front of one's vision alongside the physical sensation of becoming and merging with it. It usually manifests as consistently incidental in its form but varies in its arrangement between people. In terms of its stylistic appearance it can be described as simplistic in complexity, organic in style, unstructured in arrangement, colourful in scheme, glossy in shading, soft and blurred in its edges, large in size, still in movement, rounded corners, immersive in depth, and often based on complex interlocking circles.",
+      "Compulsive redosing",
+      "Depersonalization",
+      "Thought deceleration",
+      "Distortions - These distortions are very powerful and loud enough in their volume to make the original sound completely unrecognizable. They include phasers, white noise, high pitch tones and notes, flanging, changes in pitch, echo effects, and stuttering. In particular, the frequency of the stuttering is proportionally related to the intensity of the effects, especially ego death which occurs when the stuttering becomes continuous."
+    ],
+    "negative": [
+      "Neurotoxicity - Long-term or recurrent use of nitrous oxide can result in serious neurological harm.",
+      "Changes in felt bodily form - This usually occurs with higher dosages and can be described as feelings that in a non-painful fashion your body's physical form is being stretched into infinity, compressed into a singularity, or split into two separate halves.",
+      "Dizziness - Although uncommon, some people report dizziness under the influence of nitrous.",
+      "Headaches - Although uncommon, a certain subset of people report headaches during the offset of nitrous oxide.",
+      "Motor control loss - A loss of gross and fine motor control alongside balance and coordination is prevalent within nitrous oxide and becomes especially active at higher dosages. This means that one should be sitting down before the onset unless they are experienced in case of falling over and injuring oneself.",
+      "Tactile suppression - This effect partially to entirely suppresses one's sense of touch, creating feelings of numbness within the extremities. It is responsible for the anesthetic properties of this substance.",
+      "Trouble Urinating",
+      "External hallucinations and Internal hallucinations - In comparison to other more classical dissociatives, hallucinations are particularly rare with nitrous but possible at high dosages. They exclusively occur at high levels, are capable of manifesting as both external and internal in style, and are usually delirious in believability (but commonly only include mundane scenarios such as perceiving and talking to people who are not currently present).",
+      "Amnesia - At high dosages, it is often common for one to experience amnesia and memory loss after the experience has occurred. This is especially prevalent alongside ego death.",
+      "Anxiety suppression",
+      "Déjà vu - Although uncommon and inconsistent, a certain subset of people report strong feelings of deja-vu consistently when under the influence of nitrous oxide.",
+      "Analysis suppression",
+      "Memory suppression - At higher dosages, level 3 ego death is an all-encompassing effect within nitrous oxide. In comparison to other hallucinogens, it is unique in style due to its rapid onset and quick comedown. This creates the experience that one's sense of self is rapidly disintegrated and then suddenly re-stacked through a process of regaining one's long-term memory. This is a remarkably identical process every time the experience is undergone.",
+      "Suppression - This effect can be described as a muffling and quieting of externally sourced sound which results in it sounding more indistinct and distant than it would usually be.",
+      "Unity and interconnectedness - During high dosage states of ego death, this component is a common but inconsistent accompanying effect. It occurs at level 4 - 5 and creates experiences of becoming one with the greater whole. In comparison to other hallucinogens which induce this effect, it can be described as comparatively simpler and less profound due to its more basic accompanying cognitive effects."
+    ]
+  },
+  "routeData": {
+    "inhaled": {
+      "dosage": {
+        "threshold": "4g",
+        "light": "4-8g",
+        "common": "8-16g",
+        "strong": "16-40g",
+        "heavy": "40g"
+      },
+      "duration": {
+        "onset": "5-10 seconds",
+        "comeup": "5-10 seconds",
+        "peak": "15-30 seconds",
+        "offset": "1-5 minutes",
+        "total": "1-5 minutes"
+      },
+      "notes": "Afterglow: 15-30 minutes"
+    }
+  },
+  "interactions": [],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Unknown"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": []
+}

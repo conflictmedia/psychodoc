@@ -1,0 +1,158 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: 3-MeO-PCP
+// ID: 3-meo-pcp
+// Categories: dissociatives
+// Class: Arylcyclohexylamines
+
+export const _3_meo_pcp: Substance = 
+{
+  "id": "3-meo-pcp",
+  "name": "3-MeO-PCP",
+  "commonNames": [
+    "Arylcyclohexylamines"
+  ],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Arylcyclohexylamines",
+  "description": "4-MeO-PCP 3-Methoxyphencyclidine (also known as 3-MeO-PCP) is a lesser-known novel Psychoactive class dissociative substance of the Chemical class arylcyclohexylamine class. 3-MeO-PCP is a derivative of phencyclidine (PCP) and is chemically related to substances like methoxetamine and 3-MeO-PCE. It produces its effects by blocking NMDA receptors in the brain. However, its activity in humans was not described until 1999 when a chemist using the pseudonym John Q. Beagle reported qualitative similarities to PCP along with comparable potency. In 2009, it began to be discussed on online forums such as bluelight.ru and was made available for sale on the research chemicals market.",
+  "effects": {
+    "positive": [
+      "Stimulation - 3-MeO-PCP is regarded to be noticeably stimulating in comparison to other dissociatives such as ketamine, MXE, or DCK. The stimulation it presents is described as clear and subtle.",
+      "Spontaneous bodily sensations - The body high of 3-MeO-PCP can be described in terms of its style variations as a motionless, constant, sharp, all-encompassing, and euphoric activation of nerve endings across the body.",
+      "Physical euphoria - 3-MeO-PCP has been reported to more readily induce euphoria than most other dissociatives, such as ketamine or diphenidine, especially of the manic variant.",
+      "Pain relief - This substance produces distinct nerve-signal blocking anesthetic effects typically required in surgical settings, but only in the stronger to heavier dose ranges.",
+      "Bodily control enhancement or Motor control loss - At lower dosages this compound typically induces enhancements in bodily control. At higher dosages, this enhancement shifts towards motor control loss.",
+      "Appetite suppression or Appetite enhancement - The appetite suppression present with 3-MeO-PCP can be considered to be less sharp than with substances such as Cocaine and Ketamine.  Like ketamine, this is due to the disconnection of electrical signals at high doses.  Unlike ketamine, it is also possible to experience a noticeable appetite enhancement that is less prominent than its sister compound PCP.",
+      "Vibrating vision - At high doses, a person's eyeballs may begin to spontaneously wiggle back and forth in a rapid motion, causing the vision to become blurry and temporarily out of focus.",
+      "Increased heart rate - This effect has been reported as being more pronounced than other dissociatives, such as DCK or diphenidine.",
+      "Increased perspiration",
+      "Cognitive euphoria",
+      "Compulsive redosing - This effect is more prominent based on the route of administration used. For example, it is especially present when smoked or vaporized, due to the relative abruptness of the substance entering and leaving the bloodstream.",
+      "Creativity enhancement",
+      "Mania - This effect is reportedly more common on 3-MeO-PCP than most other dissociatives. It typically occurs during the offset of the experience, but can also occur during the onset and come up as well.",
+      "Depersonalization & Derealization",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Increased libido - This is reported to be present at lower dosage ranges.",
+      "Auditory enhancement - This effect is reported to only occur at lower doses.",
+      "Tactile disconnection",
+      "Visual disconnection - This eventually results in 3-MeO-PCP's equivalent of the \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures.",
+      "Consciousness disconnection",
+      "Existential self-realization"
+    ],
+    "neutral": [
+      "Restless legs",
+      "Physical autonomy",
+      "Optical sliding",
+      "Visual acuity enhancement or Visual acuity suppression - While lower doses of this compound tend to produce mild visual acuity enhancements, this effect quickly disappears as one's general visual faculties become suppressed as the dose is increased.",
+      "Double vision",
+      "Frame rate suppression",
+      "Pattern recognition suppression",
+      "Perspective distortions",
+      "Scenery slicing",
+      "Internal hallucination (settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Conceptual thinking",
+      "Déjà vu",
+      "Dream potentiation",
+      "Time distortion",
+      "Thought deceleration",
+      "Addiction suppression",
+      "Auditory distortion"
+    ],
+    "negative": [
+      "Tactile enhancement or Tactile suppression - At lower dosages, this compound tends to induce tactile enhancements. At higher dosages, this enhancement shifts towards tactile suppressions and anesthesia.",
+      "Spatial disorientation - In contrast to other dissociatives like ketamine, this effect is only prominent at high doses.",
+      "Nausea suppression",
+      "Respiratory depression - This effect can be present at heavier dosage levels.",
+      "Olfactory hallucination",
+      "Dehydration",
+      "Dizziness",
+      "Difficulty urinating",
+      "Seizure - The extent to which this effect can be produced is unknown but can likely happen in those predisposed to them, especially while in physically taxing conditions such as being dehydrated, fatigued or undernourished.",
+      "Anxiety suppression",
+      "Disinhibition",
+      "Psychosis - This effect has been reported to be more common on 3-MeO-PCP than most other dissociatives, such as MXE or ketamine. It typically occurs during the offset of the experience, but can also occur during the onset and come up as well.",
+      "Delusion - Like psychosis, this effect is reportedly more common on 3-MeO-PCP than most other dissociatives.",
+      "Memory suppression",
+      "Ego death",
+      "Amnesia",
+      "Auditory suppression",
+      "Auditory hallucination"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "1mg",
+        "light": "2-5mg",
+        "common": "5-10mg",
+        "strong": "10-15mg",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "5-30 minutes",
+        "comeup": "45-90 minutes",
+        "peak": "1.5-2 hours",
+        "offset": "45-60 minutes",
+        "total": "3-5 hours"
+      },
+      "notes": "Afterglow: 4-48 hours"
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "2mg",
+        "light": "4-8mg",
+        "common": "8-15mg",
+        "strong": "15-25mg",
+        "heavy": "25mg"
+      },
+      "duration": {
+        "onset": "30-90 minutes",
+        "comeup": "45-120 minutes",
+        "peak": "2-3 hours",
+        "offset": "1-2 hours",
+        "total": "4-8 hours"
+      },
+      "notes": "Afterglow: 4-48 hours"
+    },
+    "smoked": {
+      "dosage": {
+        "threshold": "2mg",
+        "light": "5-10mg",
+        "common": "10-20mg",
+        "strong": "20-25mg",
+        "heavy": "25mg"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "45-120 minutes"
+      }
+    }
+  },
+  "interactions": [
+    "Stimulants",
+    "Depressants"
+  ],
+  "harmReduction": [
+    "toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Arylcyclohexylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Arylcyclohexylamines"
+  ]
+};

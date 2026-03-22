@@ -1,0 +1,136 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: 1cP-AL-LAD
+// ID: 1cp-al-lad
+// Categories: hallucinogens
+// Class: Lysergamides
+
+export const _1cp_al_lad: Substance = 
+{
+  "id": "1cp-al-lad",
+  "name": "1cP-AL-LAD",
+  "commonNames": [
+    "Lysergamides"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Lysergamides",
+  "description": "1-Cyclopropionyl-6-allyl-6-nor-lysergic acid diethylamide (also known commonly as 1cP-AL-LAD) is a novel Psychoactive class psychedelic substance of the chemical class lysergamide class. 1cP-AL-LAD is closely related to AL-LAD, for which it is suspected to be a prodrug for, but there is currently no data or much anecdotal reports to confirm this. 1cP-AL-LAD is a novel research chemical which has probably first been produced by a small group of chemists which have also synthesized various other novel lysergamdîdes at the time alongside like 1cP-MiPLA, LSZ and LST in 2020 or 2021. There is very little proof for the validity of this claim. Many effects seem to be identical or nearly identical, including a more manageable and lucid mental state, apparent visuals and dosage levels.",
+  "effects": {
+    "positive": [
+      "Stimulation - In terms of its effects on the physical energy levels of the user, 1cP-AL-LAD is regarded as being able primarily stimulating in nature in the same vein as LSD. This is in distinction to other, more commonly used psychedelics such as psilocybin which are more consistent in producing sedation and relaxedness.",
+      "Perception of bodily lightness  - This component typically accompanies any feelings of stimulation that this compound can produce.",
+      "Physical euphoria - It should be noted that this effect is not as reliably induceable as it is with substances like stimulants or entactogens, and can just as easily manifest as physical discomfort without any apparent reason.",
+      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth or unity and usually occurs during and up to the peak of the experience or directly afterward. Users can feel as if they are physically part of or conjoined with other objects. This is usually reported as feeling comfortable and peaceful in its sensations.",
+      "Tactile enhancement - Feelings of enhanced tactile sensations are consistently present at moderate levels throughout most 1cP-AL-LAD trips. If level 8A geometry is reached, an intense sensation of suddenly becoming aware of and being able to feel every single nerve ending across a person's entire body all at once becomes consistently present.",
+      "Increased bodily temperature",
+      "Stamina enhancement - This is generally mild in comparison to traditional stimulants.",
+      "Bodily control enhancement",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Increased libido",
+      "Increased salivation",
+      "Colour enhancement",
+      "Analysis enhancement - This effect is consistent in its manifestation and outrospection dominant.",
+      "Cognitive euphoria - This component is, generally speaking less consistent and pronounced than it is with substances like psilocybin and MDMA. The mental euphoria experienced on 1cP-AL-LAD is usually simply due to an enhancement of the user’s current psychological and emotional state coupled with its more regularly occurring effect, physical euphoria.",
+      "Novelty enhancement",
+      "Immersion enhancement",
+      "Focus enhancement - This effect is experienced exclusively on low or threshold dosages and feels less forced than it does with stimulants.",
+      "Immersion enhancement",
+      "Motivation enhancement",
+      "Emotion enhancement",
+      "Increased music appreciation",
+      "Increased sense of humor",
+      "Laughter fits",
+      "Wakefulness",
+      "Auditory enhancement",
+      "Synaesthesia -  In its fullest manifestation, this is a very rare and non-reproducible effect. Increasing the dosage can increase the likelihood of this occurring, but seems to only be a prominent part of the experience among those who are already predisposed to synaesthetic states.",
+      "Existential self-realization",
+      "Unity and interconnectedness"
+    ],
+    "neutral": [
+      "Spontaneous bodily sensations - The \"body high\" of 1cP-AL-LAD can be described as proportionally intense in comparison to its accompanying visual and cognitive effects. It behaves as a euphoric, fast-moving, sharp and location specific tingling sensation. For some, it is manifested spontaneously at different unpredictable points throughout the experience, but for most it maintains a steady presence that rises with the onset and hits its limit once the peak has been reached. In comparison to LSD, it is a little less sharp in the tingling sensations it produces as but is otherwise essentially indistinguishable.",
+      "Muscle contractions",
+      "Muscle spasms",
+      "Excessive yawning - This effect is significantly less pronounced than it is with psilocybin and its related compounds, the four-position substituted tryptamines.",
+      "Pupil dilation",
+      "Visual acuity enhancement",
+      "Pattern recognition enhancement",
+      "Drifting (melting, breathing, morphing and flowing) - In comparison to other psychedelics, this effect can be described as highly detailed yet cartoon-like in appearance. The distortions are slow and smooth in motion and fleeting in their appearance. This is nearly identical in appearance to the visual drifting which occurs under the influence of LSD.",
+      "After images",
+      "Tracers",
+      "Colour shifting",
+      "Depth perception distortions",
+      "Diffraction",
+      "Scenery slicing",
+      "Symmetrical texture repetition",
+      "Machinescapes",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) -  This effect is very consistent in dark environments at appropriately high dosages. They can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and occasionally of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
+      "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Conceptual thinking",
+      "Time distortion",
+      "Déjà vu",
+      "Thought acceleration",
+      "Auditory distortion",
+      "Perception of eternalism",
+      "Perception of self-design",
+      "Perception of interdependent opposites"
+    ],
+    "negative": [
+      "Temperature regulation suppression - This component can occur with the use of any lysergamide or psychedelic, but reports suggest it may be pronounced in 1cP-AL-LAD. It is highly advised that users of this compound, especially at heavier doses, monitor their bodily temperature and use techniques like hot showers or cold packs to regulate their core and brain temperature throughout the experience, and to generally always maintain proximity to a climate-controlled environment.",
+      "Nausea - Mild nausea is occasionally reported when this substance is consumed in moderate to high dosages, usually during the peak, and either passes soon after the user has vomited or gradually fades by itself as the peak sets in.",
+      "Appetite suppression",
+      "Difficulty urinating",
+      "Increased blood pressure",
+      "Seizure - This is an effect whose likelihood is largely extrapolated from the seizures that have been reported from the use of LSD. They are thought to mainly be a risk in those who are genetically predisposed to them, particularly while accompanied by physically taxing conditions such as dehydration, fatigue or undernourishment.",
+      "Memory suppression",
+      "Ego death",
+      "Delusion",
+      "Thought loops",
+      "Auditory hallucination"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "20µg",
+        "light": "50-100µg",
+        "common": "100-225µg",
+        "strong": "225-350µg",
+        "heavy": "350µg"
+      },
+      "duration": {
+        "onset": "20-60 minutes",
+        "comeup": "30-60 minutes",
+        "peak": "2.5-5 hours",
+        "offset": "2-3 hours",
+        "total": "7-10 hours"
+      },
+      "notes": "Afterglow: 2-18 hours"
+    }
+  },
+  "interactions": [
+    "Lithium",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown",
+    "extremely low toxicity"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Lysergamides"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "low",
+  "aliases": [
+    "Lysergamides"
+  ]
+};

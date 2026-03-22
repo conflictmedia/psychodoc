@@ -1,0 +1,137 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Diphenidine
+// ID: diphenidine
+// Categories: dissociatives
+// Class: Diarylethylamines
+
+export const diphenidine: Substance = 
+{
+  "id": "diphenidine",
+  "name": "Diphenidine",
+  "commonNames": [
+    "Diarylethylamines"
+  ],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Diarylethylamines",
+  "description": "Diphenhydramine (also known as \"DPH\") Diphenidine (also known as DPD, DND, 1,2-DEP, and occasionally \"DPH\") is a lesser-known novel psychoactive class dissociative substance of the chemical class diarylethylamine class. It is classified as an NMDA receptor antagonist. However, it was not selected for further development. In 2014, there were two cases of diphenidine being sold in combination with synthetic cannabinoids in Japanese herbal incense blends, one of which was implicated in a fatal overdose. It is also likely to have moderate to high abuse potential.",
+  "effects": {
+    "positive": [
+      "Derealization",
+      "Creativity enhancement",
+      "Increased music appreciation",
+      "Cognitive euphoria",
+      "Introspection",
+      "Increased libido - This is reported to be experienced at low to mid dosage ranges.",
+      "Tactile disconnection",
+      "Consciousness disconnection",
+      "Visual disconnection - This eventually results in the diphenidine's equivalent of the \"K-hole\" or more specifically, holes, spaces and voids alongside of structures.",
+      "Auditory enhancement"
+    ],
+    "neutral": [
+      "Visual acuity suppression",
+      "Double vision - This component is prevalent at moderate to heavy dosages and makes reading impossible unless one closes an eye.",
+      "Pattern recognition suppression - This effect generally occurs at higher dosages and makes one unable to recognize and interpret perceivable visual data.",
+      "Frame rate suppression",
+      "Perspective distortions",
+      "Environmental cubism",
+      "Environmental orbism",
+      "Scenery slicing",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) -  In comparison to other dissociatives, this effect can occur at heavy dosages, but is considerably less common than the same effect found within psychedelics and deliriants. It can be comprehensively described through its variations as delirious in believability, fixed in style, equal in new experiences and memory replays in content, autonomous in controllability and solid in style.",
+      "Depersonalization",
+      "Dream potentiation",
+      "Ego inflation",
+      "Thought deceleration",
+      "Time distortion",
+      "Déjà vu",
+      "Conceptual thinking",
+      "Compulsive redosing",
+      "Auditory distortion"
+    ],
+    "negative": [
+      "Anxiety suppression",
+      "Disinhibition",
+      "Memory suppression",
+      "Ego death",
+      "Analysis suppression",
+      "Amnesia",
+      "Auditory suppression",
+      "Auditory hallucination"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "30mg",
+        "light": "40-65mg",
+        "common": "65-100mg",
+        "strong": "100-130mg",
+        "heavy": "130mg"
+      },
+      "duration": {
+        "onset": "15-30 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "2-5 hours"
+      },
+      "notes": "Afterglow: 4-24 hours"
+    },
+    "rectal": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-20mg",
+        "common": "20-40mg",
+        "strong": "40-80mg",
+        "heavy": "80mg"
+      },
+      "duration": {
+        "onset": "10-30 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "5-7 hours"
+      }
+    },
+    "smoked": {
+      "dosage": {
+        "threshold": "Unknown",
+        "light": "<20mg",
+        "common": "20-40mg",
+        "strong": "40-55mg",
+        "heavy": "55mg"
+      },
+      "duration": {
+        "onset": "30-90 seconds",
+        "comeup": "Unknown",
+        "peak": "0.5-2 hours",
+        "offset": "20-40 minutes",
+        "total": "1-3 hours"
+      },
+      "notes": "Afterglow: 2-5 hours"
+    }
+  },
+  "interactions": [
+    "Stimulants",
+    "Depressants"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Diarylethylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Diarylethylamines"
+  ]
+};

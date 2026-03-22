@@ -26,7 +26,7 @@ import { Textarea } from '@/components/ui/textarea'
 // import { Slider } from '@/components/ui/slider' // Shelved: Intensity slider
 import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
 import { Plus, Loader2 } from 'lucide-react'
-import { substances, type Substance } from '@/lib/substance-index'
+import { substances, type Substance } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
 
 interface DoseLoggerModalProps {
@@ -34,7 +34,7 @@ interface DoseLoggerModalProps {
   trigger?: React.ReactNode
   preselectedSubstanceId?: string
   preselectedSubstanceName?: string
-  preselectedCategory?: string
+  preselectedCategory?: string | string[]
   preselectedRoute?: string
 }
 
@@ -81,7 +81,11 @@ export function DoseLoggerModal({
   
   const [substanceId, setSubstanceId] = useState(preselectedSubstanceId || '')
   const [substanceName, setSubstanceName] = useState(preselectedSubstanceName || '')
-  const [category, setCategory] = useState(preselectedCategory || '')
+  const [categories, setCategories] = useState<string[]>(
+    Array.isArray(preselectedCategory) ? preselectedCategory
+    : preselectedCategory ? [preselectedCategory]
+    : []
+  )
   const [amount, setAmount] = useState('')
   const [unit, setUnit] = useState('mg')
   const [route, setRoute] = useState(preselectedRoute || 'Oral')
@@ -99,8 +103,21 @@ export function DoseLoggerModal({
     if (preselectedSubstanceName) {
       setSubstanceName(preselectedSubstanceName)
     }
-    if (preselectedCategory) {
-      setCategory(preselectedCategory)
+    // Derive categories from the actual substance object so we always get the
+    // full array — the preselectedCategory prop may only carry the primary category.
+    if (preselectedSubstanceId) {
+      const found = substances.find(s => s.id === preselectedSubstanceId)
+      if (found) {
+        const raw = found as any
+        const cats: string[] = Array.isArray(raw.categories) && raw.categories.length > 0
+          ? raw.categories
+          : typeof raw.category === 'string' && raw.category && raw.category !== 'unknown'
+          ? [raw.category]
+          : []
+        setCategories(cats)
+      }
+    } else if (preselectedCategory) {
+      setCategories(Array.isArray(preselectedCategory) ? preselectedCategory : [preselectedCategory])
     }
     if (preselectedRoute) {
       setRoute(preselectedRoute)
@@ -144,7 +161,7 @@ export function DoseLoggerModal({
         id: `dose_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         substanceId: substanceId || `custom-${Date.now()}`,
         substanceName,
-        category: category || 'unknown',
+        categories,
         amount: parseFloat(amount),
         unit,
         route,
@@ -186,7 +203,7 @@ export function DoseLoggerModal({
     if (!preselectedSubstanceId) {
       setSubstanceId('')
       setSubstanceName('')
-      setCategory('')
+      setCategories([])
     }
     setAmount('')
     setUnit('mg')
@@ -211,12 +228,18 @@ export function DoseLoggerModal({
     if (found) {
       setSubstanceId(found.id)
       setSubstanceName(found.name)
-      setCategory(found.category)
+      const raw = found as any
+      const cats: string[] = Array.isArray(raw.categories) && raw.categories.length > 0
+        ? raw.categories
+        : typeof raw.category === 'string' && raw.category && raw.category !== 'unknown'
+        ? [raw.category]
+        : []
+      setCategories(cats)
     } else {
       // Custom substance
       setSubstanceId(`custom-${Date.now()}`)
       setSubstanceName(value)
-      setCategory('unknown')
+      setCategories([])
     }
   }
 

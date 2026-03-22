@@ -1,0 +1,123 @@
+{
+  "id": "o-pce",
+  "name": "O-PCE",
+  "commonNames": [
+    "Arylcyclohexylamines"
+  ],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Arylcyclohexylamines",
+  "description": "2'-Oxo-PCM 2'-Oxo-PCE (also known as as Eticyclidone, and O-PCE) is a lesser-known novel psychoactive class dissociative substance of the chemical class arylcyclohexylamine class that produces dissociative, anesthetic, stimulating and hallucinogenic effects when administered. It is structurally related to arylcyclohexylamines like MXE, 3-MeO-PCE, and deschloroketamine and is speculated to produce its effects through its activity as an NMDA receptor antagonist. The structural similarities O-PCE shares with DCK and ketamine which has been speculated to have antibacterial properties, has raised some concern as to whether it also shares these properties as well. However, due to the lack of scientific research on the subject, whether this is true currently remains entirely unknown. It is advised that users of this substance should keep in mind that the possibility of prolonged use may pose a serious threat to one's health and immune system if this does prove to be the case.",
+  "effects": {
+    "positive": [
+      "Stimulation - This substance is extremely stimulating when compared to other dissociatives such as ketamine, MXE, or DCK. Its stimulation can be compared to classical stimulants such as methylphenidate or cocaine, but significantly less functional and more inebriating.",
+      "Increased heart rate - This substance has been reported to cause more physical side effects than MXE, ketamine, and 3-MeO-PCP such as increased heart rate.",
+      "Perception of bodily lightness",
+      "Physical euphoria",
+      "Cognitive euphoria",
+      "Creativity enhancement",
+      "Derealization",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Introspection",
+      "Tactile disconnection",
+      "Visual disconnection - This eventually results in the experience of the notorious \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures.",
+      "Consciousness disconnection",
+      "Existential self-realization",
+      "Unity and interconnectedness"
+    ],
+    "neutral": [
+      "Motor control loss",
+      "Pain relief",
+      "Physical autonomy",
+      "Spontaneous physical sensations",
+      "Visual acuity suppression",
+      "Double vision",
+      "Pattern recognition suppression",
+      "Frame rate suppression",
+      "Perspective distortions",
+      "Environmental cubism",
+      "Environmental orbism",
+      "Scenery slicing",
+      "Internal hallucination (settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Compulsive redosing",
+      "Conceptual thinking",
+      "Déjà vu",
+      "Depersonalization",
+      "Mania",
+      "Time distortion",
+      "Thought deceleration",
+      "Distortions"
+    ],
+    "negative": [
+      "Dizziness",
+      "Nausea",
+      "Tactile suppression",
+      "Orgasm suppression",
+      "Amnesia - This effect can occur at higher doses, typically past the threshold in which one experiences ego death.",
+      "Anxiety suppression",
+      "Disinhibition",
+      "Ego death",
+      "Memory suppression",
+      "Analysis suppression",
+      "Suppression",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "2mg",
+        "light": "3-6mg",
+        "common": "6-12mg",
+        "strong": "12-20mg",
+        "heavy": "20mg"
+      },
+      "duration": {
+        "onset": "2-5 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "3-5 hours"
+      },
+      "notes": "Afterglow: 2-12 hours"
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "1mg",
+        "light": "3-5mg",
+        "common": "5-15mg",
+        "strong": "15-25mg",
+        "heavy": "25mg"
+      },
+      "duration": {
+        "onset": "20-40 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "3-6 hours"
+      },
+      "notes": "Afterglow: 4-48 hours"
+    }
+  },
+  "interactions": [
+    "Stimulants",
+    "Depressants"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Arylcyclohexylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Arylcyclohexylamines"
+  ]
+}

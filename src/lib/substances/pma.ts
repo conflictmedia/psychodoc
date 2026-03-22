@@ -1,0 +1,102 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: PMA
+// ID: pma
+// Categories: empathogens
+// Class: Amphetamine
+
+export const pma: Substance = 
+{
+  "id": "pma",
+  "name": "PMA",
+  "commonNames": [
+    "Amphetamine",
+    "Substituted amphetamines"
+  ],
+  "categories": [
+    "empathogens"
+  ],
+  "class": "Amphetamine",
+  "description": "para-Methoxyamphetamine (also known as 4-methoxyamphetamine, 4-MeOA, inaccurately as 4-MA (which should be reserved for 4-MA (4-MeA) instead) and more commonly as PMA) is a potent psychoactive class hallucinogen substance of the chemical class amphetamine class. PMA belongs to a family of substances known as the substituted amphetamines. However, unlike other substituted amphetamines, PMA does not produce stimulant or entactogen effects, nor euphoria. It is not taken on its own but is instead found as an ingredient in tablets of \"Ecstasy\" as a false substitute for MDMA. PMA, along with other drugs like PMMA and PMEA have very little recreational value and are considered as one of the most dangerous and toxic substances known.",
+  "effects": {
+    "positive": [
+      "Stimulation - In terms of its effects on the user's physical energy levels, PMA is commonly regarded as moderately stimulating and energetic exclusively at lower dosages.",
+      "Increased bodily temperature - The most common cause of death from PMA is due to severe hyperthermia.",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Wakefulness"
+    ],
+    "neutral": [
+      "Abnormal heartbeat - Accelerated and abnormal heartbeats are extremely common with PMA.",
+      "Pupil dilation",
+      "Rapid breathing - People commonly report \"not being able to breathe\".",
+      "Seizures - This is significantly more common with PMMA than with almost any other substance.",
+      "Vibrating vision - This effect is generally more frequent than with MDMA.",
+      "Time distortion",
+      "Double vision",
+      "Drifting (melting, breathing, morphing and flowing) - This effects is more pronounced than it is with MDMA.",
+      "Tracers"
+    ],
+    "negative": [
+      "Appetite suppression",
+      "Dehydration",
+      "Dizziness -  This effect is significantly more common with PMA than it is with methamphetamine or MDMA",
+      "Increased blood pressure",
+      "Nausea and vomiting - This is common at any dose.",
+      "Teeth grinding",
+      "Temporary erectile dysfunction",
+      "Vasoconstriction",
+      "Anxiety or Anxiety suppression - This depends greatly on the dosage, as higher dosages are almost guaranteed to bring anxiety, due to all the adverse effects.",
+      "Cognitive euphoria or Cognitive dysphoria -  This depends greatly on the dosage, as higher dosages are almost guaranteed to bring dysphoria, due to all the adverse effects.",
+      "Dream suppression"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "10mg",
+        "light": "20-40mg",
+        "common": "40-60mg",
+        "strong": "Unknown",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "Unknown"
+      }
+    }
+  },
+  "interactions": [
+    "Tramadol",
+    "aMT",
+    "MAOIs",
+    "DXM",
+    "PCP",
+    "25x-NBOMe",
+    "2C-T-x",
+    "5-MeO-xxT",
+    "DOx"
+  ],
+  "harmReduction": [
+    "can be considered extremely toxic when compared to other substances such as Methamphetamine or MDMA",
+    "Ingestion of PMA has been associated with severe tachycardia (abnormally high heart rate), seizures, hyperthermia, and death"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Amphetamine"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "very-high",
+  "aliases": [
+    "Amphetamine",
+    "Substituted amphetamines"
+  ]
+};

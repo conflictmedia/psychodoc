@@ -24,7 +24,7 @@ import {
   ChevronDown,
   ChevronUp
 } from 'lucide-react'
-import { categoryColors } from '@/lib/substance-index'
+import { categoryColors } from '@/lib/categories'
 
 interface Duration {
   onset: string
@@ -38,7 +38,7 @@ interface DoseLog {
   id: string
   substanceId: string
   substanceName: string
-  category: string
+  categories: string[]
   amount: number
   unit: string
   route: string
@@ -381,6 +381,14 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
   }
 
+  // Normalise: old logs stored category as a string scalar, new ones as string[]
+  const getDoseCategories = (dose: DoseLog): string[] => {
+    if (Array.isArray(dose.categories)) return dose.categories
+    const legacy = (dose as any).category as string | undefined
+    if (legacy && legacy !== 'unknown') return [legacy]
+    return []
+  }
+
   const getIntensityAtProgress = (progress: number, timings: PhaseTimings): number => {
     const minutes = (progress / 100) * timings.totalDuration
     
@@ -584,11 +592,11 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
                     <span className="font-semibold text-foreground">{dose.substanceName}</span>
-                    {dose.category && dose.category !== 'unknown' && (
-                      <Badge variant="outline" className={getCategoryColor(dose.category)}>
-                        {dose.category}
+                    {getDoseCategories(dose).map((cat) => (
+                      <Badge key={cat} variant="outline" className={getCategoryColor(cat)}>
+                        {cat}
                       </Badge>
-                    )}
+                    ))}
                     <Badge className={`${colors.bg} text-white text-xs shadow-sm`}>
                       <PhaseIcon className="h-3 w-3 mr-1" />
                       {dose.status.phase === 'not_started' ? 'Upcoming' : 

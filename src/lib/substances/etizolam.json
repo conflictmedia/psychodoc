@@ -1,0 +1,85 @@
+{
+  "id": "etizolam",
+  "name": "Etizolam",
+  "commonNames": [
+    "Thienodiazepines"
+  ],
+  "categories": [
+    "depressants"
+  ],
+  "class": "Thienodiazepines",
+  "description": "thienodiazepines Etizolam (also known as Etilaam, Etizest, Depas, and many others) is a novel psychoactive class depressant substance of the chemical class thienodiazepine class. Etizolam is chemically related to benzodiazepines and acts by binding to GABA receptors in the brain. Etizolam is not commonly prescribed. It has been sold as a research chemical online and is commonly used as a substitute for pharmaceutical benzodiazepines like alprazolam (Xanax) or diazepam (Valium). Etizolam is commonly found in pellet or pill form, laid on blotter paper, dissolved in propylene glycol or as a pure powder.",
+  "effects": {
+    "positive": [
+      "Sedation - Etizolam is sedating in a rapid-acting fashion. At higher doses, this can lead users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
+      "Muscle relaxation This effect can be described as similar to diazepam, albeit mild-moderately less prominent depending on the dose. Low doses around 0.5-1mg typically cause an effect comparable to alprazolam.",
+      "Physical euphoria",
+      "Increased libido",
+      "Appetite enhancement - This effect is not particularly prominent, but is reported to occur in some people. It can have a synergistic effect when combined with cannabis.",
+      "Cognitive euphoria - This effect is generally produced only at high doses, and is thought to arise largely from the release of pre-existing anxiety in the user. Many users report not feeling any pleasurable or euphoric sensations from benzodiazepines or thienodiazepines like etizolam at all."
+    ],
+    "neutral": [
+      "Motor control loss",
+      "Ego inflation",
+      "Thought deceleration",
+      "Sleepiness",
+      "Residual sleepiness - While etizolam can be used as an effective sleep-inducing aid, its effects may persist into the morning afterwards, which may lead users to feeling \"groggy\" or \"dull\" for up to a few hours.",
+      "Thought deceleration",
+      "Thought disorganization"
+    ],
+    "negative": [
+      "Respiratory depression",
+      "Seizure suppression",
+      "Dizziness",
+      "Temporary erectile dysfunction",
+      "Anxiety suppression",
+      "Disinhibition",
+      "Compulsive redosing - Compulsive redosing likely occurs due to the rapid way in which the substance produces its anxiety-relieving, relaxing and sometimes euphoric effects before quickly dropping off. It can be made worse due to the memory suppression it produces which can lead the user forgetting they have taken any at all, which can lead to a cycle that leads to a dangerous amnesic blackout state.",
+      "Memory suppression",
+      "Amnesia",
+      "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others. It most commonly occurs at high to heavy dosages.",
+      "Analysis suppression",
+      "Motivation suppression",
+      "Emotion suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics.",
+      "Rebound anxiety - Rebound anxiety is a commonly observed effect with anxiety relieving substances like benzodiazepines and etizolam. It typically corresponds to the total duration spent under the substance's influence along with the total amount consumed in a given period, an effect which can easily lend itself to cycles of dependence and addiction.",
+      "Dream potentiation or Dream suppression",
+      "Irritability"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "0.2mg",
+        "light": "0.5-1mg",
+        "common": "1-2mg",
+        "strong": "2-5mg",
+        "heavy": "5mg"
+      },
+      "duration": {
+        "onset": "15-30 minutes",
+        "comeup": "30-60 minutes",
+        "peak": "2-3 hours",
+        "offset": "1.5-2.5 hours",
+        "total": "5-7 hours"
+      },
+      "notes": "Afterglow: 6-24 hours"
+    }
+  },
+  "interactions": [],
+  "harmReduction": [
+    "low toxicity",
+    "potentially lethal when mixed with depressants like alcohol or opioids"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Thienodiazepines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "low",
+  "aliases": [
+    "Thienodiazepines"
+  ]
+}

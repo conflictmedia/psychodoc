@@ -1,0 +1,178 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Dextromethorphan
+// ID: dextromethorphan
+// Categories: dissociatives
+// Class: Substituted morphinans
+
+export const dextromethorphan: Substance = 
+{
+  "id": "dextromethorphan",
+  "name": "Dextromethorphan",
+  "commonNames": [
+    "Substituted morphinans"
+  ],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Substituted morphinans",
+  "description": "DXM was first reported in 1953 and approved for use as a cough suppressant in the United States in 1958. As early as 1975, the popularity and extensive abuse of DXM was recognized, and Romilar was voluntarily removed from the OTC market. Users commonly describe low doses as producing an alcohol-like intoxication while higher doses produce effects similar to ketamine or PCP. It should be noted that DXM in freebase form (as found in Robocough RoboTablets) is around 27-37% more potent than its hydrobromide form due to a higher concentration of DXM by weight. The toxicity of DXM in recreational doses is unclear and has been the subject of controversy.",
+  "effects": {
+    "positive": [
+      "Stimulation & Sedation  - At lower, recreational doses, DXM is predominantly stimulating. However, it can produce waves of tiredness, or the desire to lay down with the eyes closed in a sleep-like state. As higher dosages are approached, the experience generally turns very sedating and lethargic, sometimes resulting in the user not moving at all. Some users report insomnia on DXM which may be a direct result of stimulation.",
+      "Perception of bodily lightness - This creates the sensation that the body is floating and has become entirely weightless. This effect is strangely stimulating and encourages physical activities at low to moderate dosages by making the body feel light and effortless to move.",
+      "Bodily control enhancement - This effect manifests inconsistently at lower dosages but can be quite noticeable.  At the higher plateaus, it gives way to motor control loss, gait alteration, and spatial disorientation.",
+      "Spontaneous bodily sensations - The DXM \"body high\" is a sharp, pleasurable and warm tingling sensation which can be localized to the hands, feet, and head. In lower doses, it can produce an empowering stimulated sensation, at higher dosages a slight to heavy body load.",
+      "Physical euphoria - This results in feelings of physical euphoria which range between mild pleasure to powerful, all-encompassing bliss.",
+      "Changes in felt bodily form - This becomes quite prominent at moderate or high doses.",
+      "Increased bodily temperature - Since dextromethorphan is a moderately potent serotonin reuptake inhibitor, it increases body temperature slightly at moderate to high doses.",
+      "Increased heart rate",
+      "Colour enhancement - Tends to be less rich, vivid, and saturated than the colour enhancement experienced on psychedelics, and often tends to change colors as much as intensify them - a red, orange, or violet visual tinting is frequently present at higher dosages.",
+      "Peripheral vision enhancement - This effect usually only occurs at low doses.",
+      "Cognitive euphoria - While states of cognitive euphoria are commonly reported, this effect can unpredictably manifest itself as cognitive dysphoria for no apparent reason, particularly at higher doses.",
+      "Creativity enhancement",
+      "Derealization",
+      "Emotion enhancement - Though this effect isn't as consistent as it is with other commonly used hallucinogens it is more prominent than with most dissociatives.",
+      "Empathy, affection, and sociability enhancement - This is commonly reported as being similar to but less prominent than with other commonly used entactogens such as MDMA or MDA.",
+      "Immersion enhancement",
+      "Increased sense of humor - Mostly present below the upper plateaus.",
+      "Increased libido - This effect is exclusively felt in low doses.",
+      "Increased music appreciation - This effect can be very intense with DXM, especially at the lower plateaus. Listening to music greatly intensifies the experience and produces strong euphoria.",
+      "Novelty enhancement",
+      "Personal meaning enhancement - This effect is typically only present on the lower plateaus and varies in its believability and content.",
+      "Auditory enhancement",
+      "Cognitive disconnection",
+      "Physical disconnection - Although this effect is present, it is usually not as powerful or as consistent as with ketamine or PCP.",
+      "Visual disconnection - This eventually results in the DXM's equivalent of the \"K-hole\" or more specifically, holes, spaces and voids alongside of structures.",
+      "Synaesthesia - In its fullest manifestation, this is a very rare and non-reproducible effect. Increasing the dosage can increase the likelihood of this occurring, but seems only to be a prominent part of the experience among those who are already predisposed to synaesthetic states.",
+      "Spirituality enhancement",
+      "Existential self-realization",
+      "Unity and interconnectedness"
+    ],
+    "neutral": [
+      "Increased perspiration - This is the result of a combination of increased bodily temperature and temperature regulation suppression.",
+      "Muscle spasms",
+      "Decreased libido",
+      "Itchiness - This effect is colloquially known as \"robo-itch\". Many users never experience this effect while some individuals can experience it quite intensely. It is caused by histamine release and typically occurs as a relative factor of dosage.",
+      "Pain relief",
+      "Optical sliding",
+      "Pupil dilation- Pupil dilation is very noticeable at moderate to high doses but is less prevalent at low doses in the 1st plateau.",
+      "Gait alteration - This is a common effect on DXM and is commonly referred to as \"robo walking\". As with itchiness, some users may never experience this effect while others may experience it quite intensely.",
+      "Magnification - This effect is uncommon and typically occurs in conjunction with perspective distortion.",
+      "Frame rate enhancement  - This effect is rare and occasionally experienced on the lower plateaus. It appears to be setting dependent.",
+      "Double vision - This component is prevalent at moderate to heavy dosages and makes reading impossible unless one closes an eye.",
+      "Pattern recognition suppression - This effect generally occurs at higher dosages and makes one unable to recognize and interpret perceivable visual data. Examples can include an inability to recognize faces or motion.",
+      "Frame rate suppression - This is the so-called \"flanging\" effect, which at appropriately high doses can affect sight, sound and at higher levels phrases, faces and thinking.",
+      "Visual acuity suppression - Vision is reported to be very dream-like, frequently with a hazy or \"static-like\" overlay affecting the visual field.",
+      "After images - Some users report seeing their surroundings for a few seconds after closing their eyes.",
+      "Depth perception distortions",
+      "Drifting - Visual drifting has been reported to occur on DXM, although it is uncommon. This effect is unrealistic in appearance. The distortions fast and smooth in motion, and are fleeting in appearance.",
+      "Environmental cubism",
+      "Environmental orbism",
+      "Perspective distortions",
+      "Scenery slicing",
+      "Tracers",
+      "Visual haze",
+      "Visual stretching",
+      "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - In comparison to other dissociatives, this effect can occur at heavy dosages, but is extremely infrequent in comparison to the same effect found within deliriants. It can be comprehensively described through its variations as delirious in believability, autonomous in controllability and solid in style. The most common theme for this effect to follow is one of experiencing and talking to friends around oneself when they are not actually present.",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) -  In comparison to other dissociatives, this effect can occur at heavy dosages, but is less common than the same effect found within psychedelics and deliriants, although can sometimes become very encompassing nonetheless. It can be comprehensively described through its variations as delirious in believability, fixed in style, equal in new experiences and memory replays in content, autonomous in controllability and solid in style.",
+      "Conceptual thinking",
+      "Decreased libido",
+      "Déjà vu",
+      "Depersonalization - This effect only begins to show in high 2nd / 3rd / 4th plateaus.",
+      "Ego inflation",
+      "Dream potentiation",
+      "Thought deceleration",
+      "Time distortion - Time while on DXM often feels very stretched out. For example, it may feel like hours have passed when in reality only ten minutes have passed. There also seems to be a general difficulty of what time certain events took place.",
+      "Sleepiness - This effect peaks after the first hour of the initial dose taken, once you reach peak effects, it slowly dies down making you awake, yet asleep.",
+      "Auditory distortion"
+    ],
+    "negative": [
+      "Appetite suppression - Appetite suppression on DXM is very strong and may persist through the next day.",
+      "Motor control loss - A loss of gross and fine motor control alongside balance and coordination is prominent within DXM and becomes especially strong at higher dosages. One should be sitting down before the onset to prevent falling over and becoming injured.",
+      "Spatial disorientation - A spinning sensation is commonly felt that can result in mild disorientation as if one were falling through a hole.",
+      "Nausea - DXM can sometimes produce extreme nausea and vomiting, typically during the come up phase of the experience. This is more intense and consistent than the nausea produced by ketamine and MXE. This is likely not caused just by DXM itself, but rather by the medium which contains the DXM, which is usually syrup or gelatin capules. When pure DXM is consumed in high doses it is nonetheless common to experience severe nausea.",
+      "Temperature regulation suppression",
+      "Increased blood pressure",
+      "Orgasm suppression",
+      "Difficulty urinating - This becomes more apparent with escalating doses and, in high doses, can result in a complete inability to urinate.",
+      "Cough suppression - Since dextromethorphan is a commonly sold cough medicine, it will have the same effect in recreational doses.",
+      "Muscle relaxation - This effect is inconsistent, and may alternate with bouts of muscle twitching.",
+      "Dizziness - At higher dosages this can result in incapability to willingly stand up.",
+      "Gustatory hallucination",
+      "Physical autonomy - At very high dosages some may find to awake in strange locations, sometimes while standing or performing actions with no recollection of events or how they got there.",
+      "Tactile suppression - This partially to entirely suppresses  sense of touch, creating feelings of numbness within the extremities. It is responsible for the anesthetic properties of this substance.",
+      "Nystagmus - At very high dosages one may be incapable of recognizing things such as movement of objects or human faces.",
+      "Analysis suppression",
+      "Anxiety suppression or Anxiety - Although DXM typically suppresses anxiety, it is also able to produce it in certain conditions. Panic attacks can occur at heavy dosages.",
+      "Confusion - This effect almost represents delirium in 3rd plateaus, although, your cognitive thinking abilities start to deminish when this effect starts with depersonalization.",
+      "Cognitive fatigue",
+      "Delusion - This effect can occur spontaneously among some users and is more likely to occur at higher doses.",
+      "Disinhibition - This effect can be quite significant even at moderate dosages.",
+      "Memory suppression",
+      "Ego death",
+      "Amnesia - This effect is usually only present with higher dosages, past the threshold for ego death (which can vary between people based on their individual metabolism). It can range from partial to complete memory loss of the experience. Generally, more dull parts of the experience tend to not be remembered at all. Frequent use can sometimes contribute to this, even for days after the experience.",
+      "Focus suppression",
+      "Motivation suppression",
+      "Personal bias suppression - This effect is not usually as pronounced as it is with other more commonly used hallucinogens such as LSD or psilocin.",
+      "Auditory suppression",
+      "Auditory hallucination"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "75mg",
+        "light": "100-200mg",
+        "common": "200-400mg",
+        "strong": "400-700mg",
+        "heavy": "700mg"
+      },
+      "duration": {
+        "onset": "30-120 minutes",
+        "comeup": "60-120 minutes",
+        "peak": "3-6 hours",
+        "offset": "2-4 hours",
+        "total": "8-12 hours"
+      },
+      "notes": "Afterglow: 4-24 hours"
+    }
+  },
+  "interactions": [
+    "ΑMT",
+    "PCP",
+    "MDMA",
+    "Alcohol",
+    "GHB",
+    "GBL",
+    "Opioids",
+    "Tramadol",
+    "MAOIs",
+    "SSRIs",
+    "Antihistamines",
+    "DOx",
+    "25x-NBOMe",
+    "2C-T-x",
+    "5-MeO-xxT",
+    "Amphetamines",
+    "Cocaine",
+    "Bupropion"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted morphinans"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted morphinans"
+  ]
+};

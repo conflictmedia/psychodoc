@@ -65,6 +65,13 @@ export const categories: CategoryInfo[] = [
     description: 'Cognitive enhancers that may improve memory, focus, creativity, or other mental functions with low toxicity and minimal side effects.',
     icon: 'Brain',
     color: 'teal'
+  },
+  {
+    id: 'other',
+    name: 'Other',
+    description: 'Substances that do not fit neatly into a single classification, including novel psychoactive substances and those with mixed or unclear mechanisms of action. Also PsychonautWiki might not have categorized it properly. Please submit an issue on GitHub if you want to categorize.',
+    icon: 'FlaskConical',
+    color: 'zinc'
   }
 ];
 
@@ -77,5 +84,6 @@ export const categoryColors: Record<SubstanceCategory, string> = {
   cannabinoids: 'text-green-500 bg-green-500/10 border-green-500/20',
   opioids: 'text-red-500 bg-red-500/10 border-red-500/20',
   deliriants: 'text-slate-500 bg-slate-500/10 border-slate-500/20',
-  nootropics: 'text-teal-500 bg-teal-500/10 border-teal-500/20'
+  nootropics: 'text-teal-500 bg-teal-500/10 border-teal-500/20',
+  other: 'text-zinc-500 bg-zinc-500/10 border-zinc-500/20'
 };

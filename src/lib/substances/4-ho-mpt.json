@@ -1,0 +1,92 @@
+{
+  "id": "4-ho-mpt",
+  "name": "4-HO-MPT",
+  "commonNames": [
+    "Substituted tryptamines"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted tryptamines",
+  "description": "4-Hydroxy-N-methyl-N-propyltryptamine (also known as 4-HO-MPT or Meprocin) is a novel synthetic psychoactive class psychedelic substance of the chemical class tryptamine chemical class that produces psychedelic effects when administered. It is a closely related structural analog of 4-HO-DMT (Psilocin) and other hallucinogenic tryptamines with powerful psychedelic effects. Very little data exists about the pharmacological properties, metabolism, and toxicity of 4-HO-MPT. It has been sold online as a research chemical as of 2016. It was synthesised and described by Alexander Shulgin in his 1994 book TiHKAL.",
+  "effects": {
+    "positive": [
+      "Increased heart rate",
+      "Colour enhancement",
+      "Brightness alteration",
+      "Cognitive euphoria",
+      "Emotion enhancement",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Novelty enhancement",
+      "Enhancements",
+      "Unity and interconnectedness"
+    ],
+    "neutral": [
+      "Spontaneous physical sensations",
+      "Pupil dilation",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, breathing, morphing and flowing)",
+      "Colour shifting",
+      "Depth perception distortions",
+      "Perspective distortions",
+      "Symmetrical texture repetition",
+      "Tracers",
+      "After images",
+      "Diffraction",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Conceptual thinking",
+      "Time distortion",
+      "Distortions"
+    ],
+    "negative": [
+      "Nausea",
+      "Delusion",
+      "Memory suppression",
+      "Ego death",
+      "Personal bias suppression",
+      "Thought loops",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-20mg",
+        "common": "20-30mg",
+        "strong": "30-50mg",
+        "heavy": "50mg"
+      },
+      "duration": {
+        "onset": "20-60 minutes",
+        "comeup": "1-2 hours",
+        "peak": "2-3 hours",
+        "offset": "1-2 hours",
+        "total": "5-7 hours"
+      },
+      "notes": "Afterglow: 2-12 hours"
+    }
+  },
+  "interactions": [
+    "Lithium",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted tryptamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted tryptamines"
+  ]
+}

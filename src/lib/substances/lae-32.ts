@@ -1,0 +1,68 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: LAE-32
+// ID: lae-32
+// Categories: hallucinogens
+// Class: Lysergamides
+
+export const lae_32: Substance = 
+{
+  "id": "lae-32",
+  "name": "LAE-32",
+  "commonNames": [
+    "Lysergamides"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Lysergamides",
+  "description": "Lysergic acid ethylamide (also known as LAE-32, LAE, and d-ethyllysergamide) is a lesser-known psychoactive class psychedelic substance of the chemical class lysergamide class. It is one of the least known and least researched psychedelic substances. The pharmacology of LAE-32 is complex, but it acts primarily by binding to serotonin receptors in the brain, much like LSD and other serotonergic psychedelics.",
+  "effects": {
+    "positive": [],
+    "neutral": [
+      "Pupil dilation",
+      "Sedation - This effect is mild compared to traditional sedatives such as barbiturates and benzodiazepines."
+    ],
+    "negative": [
+      "Personal bias suppression",
+      "Motivation suppression - LAE-32 is unique among psychedelics for its ability to suppress willpower.",
+      "Personality regression"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "Unknown",
+        "light": "Unknown",
+        "common": "500-1500µg",
+        "strong": "Unknown",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "4-10 hours"
+      }
+    }
+  },
+  "interactions": [
+    "Tramadol"
+  ],
+  "harmReduction": [],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Lysergamides"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Lysergamides"
+  ]
+};

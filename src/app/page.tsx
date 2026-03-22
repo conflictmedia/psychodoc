@@ -56,12 +56,12 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { 
-  substances, 
-  categories, 
+  substances,
   type Substance, 
   type SubstanceCategory,
   type RouteDosageDuration
-} from '@/lib/substance-index'
+} from '@/lib/substances/index'
+import { categories } from '@/lib/categories'
 
 const categoryIcons: Record<SubstanceCategory, React.ElementType> = {
   stimulants: Zap,
@@ -72,7 +72,8 @@ const categoryIcons: Record<SubstanceCategory, React.ElementType> = {
   cannabinoids: Leaf,
   opioids: Pill,
   deliriants: Ghost,
-  nootropics: Brain
+  nootropics: Brain,
+  other: FlaskConical,
 }
 
 const categoryColors: Record<SubstanceCategory, string> = {
@@ -84,7 +85,8 @@ const categoryColors: Record<SubstanceCategory, string> = {
   cannabinoids: 'text-green-500 bg-green-500/10 border-green-500/20',
   opioids: 'text-red-500 bg-red-500/10 border-red-500/20',
   deliriants: 'text-slate-500 bg-slate-500/10 border-slate-500/20',
-  nootropics: 'text-teal-500 bg-teal-500/10 border-teal-500/20'
+  nootropics: 'text-teal-500 bg-teal-500/10 border-teal-500/20',
+  other: 'text-zinc-500 bg-zinc-500/10 border-zinc-500/20'
 }
 
 const riskLevelColors = {
@@ -129,7 +131,86 @@ const GITHUB_NEW_SUBSTANCE_URL = 'https://github.com/conflictmedia/drugucopia/is
 const GITHUB_INFO_CHANGE_URL = 'https://github.com/conflictmedia/drugucopia/issues/new?template=change-substance-info.md'
 const GITHUB_FEEDBACK_URL = 'https://github.com/conflictmedia/drugucopia/issues/new'
 
+// ---------------------------------------------------------------------------
+// Multi-category helpers
+// ---------------------------------------------------------------------------
+
+
+/**
+ * Return all categories for a substance.
+ * Substance.categories is SubstanceCategory[] in the new index.
+ */
+function getSubstanceCategories(substance: Substance): SubstanceCategory[] {
+  return substance.categories ?? []
+}
+
+/**
+ * Return the "primary" category – the first one – for icons, colours, etc.
+ */
+function getPrimaryCategory(substance: Substance): SubstanceCategory | null {
+  const cats = getSubstanceCategories(substance)
+  return cats[0] ?? null
+}
+
+/**
+ * Returns true when a substance belongs to the given category filter.
+ */
+function substanceBelongsToCategory(
+  substance: Substance,
+  filter: SubstanceCategory | 'all'
+): boolean {
+  if (filter === 'all') return true
+  return getSubstanceCategories(substance).includes(filter)
+}
+
+// ---------------------------------------------------------------------------
+// Category badge – renders one or more coloured chips
+// ---------------------------------------------------------------------------
+function CategoryBadges({
+  substance,
+  className = '',
+}: {
+  substance: Substance
+  className?: string
+}) {
+  const cats = getSubstanceCategories(substance)
+  return (
+    <div className={`flex flex-wrap gap-1 ${className}`}>
+      {cats.map((cat) => {
+        const info = categories.find((c) => c.id === cat)
+        return (
+          <Badge
+            key={cat}
+            variant="outline"
+            className={categoryColors[cat] ?? ''}
+          >
+            {info?.name ?? cat}
+          </Badge>
+        )
+      })}
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Category icon component – uses the primary category
+// ---------------------------------------------------------------------------
+function CategoryIcon({
+  substance,
+  className = '',
+}: {
+  substance: Substance
+  className?: string
+}) {
+  const primary = getPrimaryCategory(substance)
+  if (!primary) return null
+  const Icon = categoryIcons[primary]
+  return <Icon className={className} />
+}
+
+// ---------------------------------------------------------------------------
 // Dosage & Duration display component with route selector
+// ---------------------------------------------------------------------------
 function DosageDurationPanel({ 
   substance, 
   onRouteChange 
@@ -157,18 +238,18 @@ function DosageDurationPanel({
     }
   }, [substance.id, hasRouteData, substance.routeData])
 
-  const currentDosage = useMemo(() => {
+  const currentDosage = useMemo<Record<string, string>>(() => {
     if (selectedRoute && substance.routeData?.[selectedRoute]) {
-      return substance.routeData[selectedRoute].dosage
+      return substance.routeData[selectedRoute].dosage ?? {}
     }
-    return substance.dosage
+    return {}
   }, [selectedRoute, substance])
 
-  const currentDuration = useMemo(() => {
+  const currentDuration = useMemo<Record<string, string>>(() => {
     if (selectedRoute && substance.routeData?.[selectedRoute]) {
-      return substance.routeData[selectedRoute].duration
+      return substance.routeData[selectedRoute].duration ?? {}
     }
-    return substance.duration
+    return {}
   }, [selectedRoute, substance])
 
   const currentNotes = useMemo(() => {
@@ -337,7 +418,7 @@ function DosageDurationPanel({
                   </tr>
                 </thead>
                 <tbody>
-                  {Object.entries(substance.routeData!).map(([route, data]) => (
+                  {(Object.entries(substance.routeData!) as [string, RouteDosageDuration][]).map(([route, data]) => (
                     <tr 
                       key={route} 
                       className={`border-b last:border-0 cursor-pointer transition-colors hover:bg-muted/50 ${selectedRoute === route ? 'bg-primary/5' : ''}`}
@@ -365,6 +446,10 @@ function DosageDurationPanel({
   )
 }
 
+// ---------------------------------------------------------------------------
+// Root component
+// ---------------------------------------------------------------------------
+
 export default function Home() {
   const [selectedCategory, setSelectedCategory] = useState<SubstanceCategory | 'all'>('all')
   const [selectedSubstance, setSelectedSubstance] = useState<Substance | null>(null)
@@ -376,8 +461,9 @@ export default function Home() {
 
   const filteredSubstances = useMemo(() => {
     let result = substances
+    // Multi-category aware filter
     if (selectedCategory !== 'all') {
-      result = result.filter(s => s.category === selectedCategory)
+      result = result.filter(s => substanceBelongsToCategory(s, selectedCategory))
     }
     if (searchQuery) {
       const query = searchQuery.toLowerCase()
@@ -398,6 +484,13 @@ export default function Home() {
     setSelectedRoute(route)
   }, [])
 
+  // Scroll to top when a substance is selected
+  useEffect(() => {
+    if (selectedSubstance) {
+      window.scrollTo(0, 0)
+    }
+  }, [selectedSubstance])
+
   // Reset selected route when substance changes
   useEffect(() => {
     if (!selectedSubstance) {
@@ -405,7 +498,13 @@ export default function Home() {
     }
   }, [selectedSubstance])
 
+  // ---------------------------------------------------------------------------
+  // Substance detail view
+  // ---------------------------------------------------------------------------
   if (selectedSubstance) {
+    const primary = getPrimaryCategory(selectedSubstance)
+    const cats = getSubstanceCategories(selectedSubstance)
+
     return (
       <div className="min-h-screen bg-background">
         {/* Header */}
@@ -422,11 +521,11 @@ export default function Home() {
             </Button>
             <Separator orientation="vertical" className="h-6" />
             <h1 className="text-lg font-semibold">{selectedSubstance.name}</h1>
-            <div className="ml-auto flex items-center gap-2">
+            <div className="ml-auto flex items-center gap-2 flex-wrap">
               <DoseLoggerModal 
                 preselectedSubstanceId={selectedSubstance.id}
                 preselectedSubstanceName={selectedSubstance.name}
-                preselectedCategory={selectedSubstance.category}
+                preselectedCategory={getSubstanceCategories(selectedSubstance)}
                 preselectedRoute={selectedRoute || undefined}
                 onLogCreated={handleDoseLogged}
                 trigger={
@@ -445,9 +544,8 @@ export default function Home() {
                 <Send className="h-4 w-4" />
                 Submit a Substance
               </Button>
-              <Badge variant="outline" className={categoryColors[selectedSubstance.category]}>
-                {categories.find(c => c.id === selectedSubstance.category)?.name}
-              </Badge>
+              {/* All category badges in the header */}
+              <CategoryBadges substance={selectedSubstance} />
               <Badge variant="outline" className={riskLevelColors[selectedSubstance.riskLevel]}>
                 {selectedSubstance.riskLevel.replace('-', ' ')} risk
               </Badge>
@@ -465,12 +563,12 @@ export default function Home() {
               <Card>
                 <CardHeader>
                   <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-lg ${categoryColors[selectedSubstance.category]}`}>
-                      {(() => {
-                        const Icon = categoryIcons[selectedSubstance.category]
-                        return <Icon className="h-6 w-6" />
-                      })()}
-                    </div>
+                    {/* Icon uses primary (first) category */}
+                    {primary && (
+                      <div className={`p-2 rounded-lg ${categoryColors[primary]}`}>
+                        <CategoryIcon substance={selectedSubstance} className="h-6 w-6" />
+                      </div>
+                    )}
                     <div>
                       <CardTitle className="text-2xl">{selectedSubstance.name}</CardTitle>
                       <CardDescription>
@@ -597,6 +695,16 @@ export default function Home() {
                   <CardTitle className="text-lg">Quick Info</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
+                  {/* Show all categories */}
+                  <div className="flex items-start gap-3">
+                    {primary && <CategoryIcon substance={selectedSubstance} className="h-4 w-4 text-muted-foreground mt-0.5" />}
+                    <div>
+                      <p className="text-sm text-muted-foreground">
+                        {cats.length > 1 ? 'Categories' : 'Category'}
+                      </p>
+                      <CategoryBadges substance={selectedSubstance} className="mt-1" />
+                    </div>
+                  </div>
                   <div className="flex items-center gap-3">
                     <FlaskConical className="h-4 w-4 text-muted-foreground" />
                     <div>
@@ -699,6 +807,9 @@ export default function Home() {
     )
   }
 
+  // ---------------------------------------------------------------------------
+  // List / main view
+  // ---------------------------------------------------------------------------
   return (
     <div className="min-h-screen bg-background flex">
       {/* Sidebar */}
@@ -774,7 +885,8 @@ export default function Home() {
               
               {categories.map((category) => {
                 const Icon = categoryIcons[category.id]
-                const count = substances.filter(s => s.category === category.id).length
+                // Count uses multi-category-aware filter
+                const count = substances.filter(s => substanceBelongsToCategory(s, category.id)).length
                 return (
                   <Button
                     key={category.id}
@@ -895,7 +1007,8 @@ export default function Home() {
               {/* Substances Grid */}
               <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                 {filteredSubstances.map((substance) => {
-                  const Icon = categoryIcons[substance.category]
+                  const primary = getPrimaryCategory(substance)
+                  const cats = getSubstanceCategories(substance)
                   const hasRouteData = substance.routeData && Object.keys(substance.routeData).length > 1
                   return (
                     <Card 
@@ -906,10 +1019,13 @@ export default function Home() {
                       <CardHeader className="pb-3">
                         <div className="flex items-start justify-between">
                           <div className="flex items-center gap-3">
-                            <div className={`p-2 rounded-lg ${categoryColors[substance.category]}`}>
-                              <Icon className="h-4 w-4" />
-                            </div>
-                            <div>
+                            {/* Icon from primary category */}
+                            {primary && (
+                              <div className={`p-2 rounded-lg shrink-0 ${categoryColors[primary]}`}>
+                                <CategoryIcon substance={substance} className="h-4 w-4" />
+                              </div>
+                            )}
+                            <div className="min-w-0">
                               <CardTitle className="text-lg group-hover:text-primary transition-colors">
                                 {substance.name}
                               </CardTitle>
@@ -918,26 +1034,51 @@ export default function Home() {
                               </CardDescription>
                             </div>
                           </div>
-                          <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                          <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
                         </div>
                       </CardHeader>
                       <CardContent>
                         <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
                           {substance.description}
                         </p>
-                        <div className="flex items-center justify-between">
+
+                        {/* Common names row */}
+                        <div className="flex flex-wrap gap-1 mb-2">
+                          {substance.commonNames.slice(0, 2).map((name, i) => (
+                            <Badge key={i} variant="secondary" className="text-xs">
+                              {name}
+                            </Badge>
+                          ))}
+                          {substance.commonNames.length > 2 && (
+                            <Badge variant="secondary" className="text-xs">
+                              +{substance.commonNames.length - 2}
+                            </Badge>
+                          )}
+                        </div>
+
+                        {/* Categories row + risk */}
+                        <div className="flex items-center justify-between gap-2 flex-wrap">
+                          {/* All category chips – capped at 2 to keep cards tidy */}
                           <div className="flex flex-wrap gap-1">
-                            {substance.commonNames.slice(0, 2).map((name, i) => (
-                              <Badge key={i} variant="secondary" className="text-xs">
-                                {name}
-                              </Badge>
-                            ))}
-                            {substance.commonNames.length > 2 && (
-                              <Badge variant="secondary" className="text-xs">
-                                +{substance.commonNames.length - 2}
+                            {cats.slice(0, 2).map((cat) => {
+                              const info = categories.find(c => c.id === cat)
+                              return (
+                                <Badge
+                                  key={cat}
+                                  variant="outline"
+                                  className={`text-xs ${categoryColors[cat] ?? ''}`}
+                                >
+                                  {info?.name ?? cat}
+                                </Badge>
+                              )
+                            })}
+                            {cats.length > 2 && (
+                              <Badge variant="outline" className="text-xs text-muted-foreground">
+                                +{cats.length - 2}
                               </Badge>
                             )}
                           </div>
+
                           <div className="flex items-center gap-1.5">
                             {hasRouteData && (
                               <Badge variant="outline" className="text-xs border-primary/30 text-primary/70">

@@ -22,7 +22,7 @@ interface DoseLog {
   id: string
   substanceId: string
   substanceName: string
-  category: string
+  categories: string[]
   amount: number
   unit: string
   route: string
@@ -127,15 +127,18 @@ export function DoseStats({ refreshTrigger }: DoseStatsProps) {
     .sort((a, b) => b[1] - a[1])
     .slice(0, 3)
 
-  // Most common category
+  // Most common category — supports both categories[] and legacy category scalar
   const categoryCounts: { [key: string]: number } = {}
   doses.forEach(d => {
-    if (d.category && d.category !== 'unknown') {
-      categoryCounts[d.category] = (categoryCounts[d.category] || 0) + 1
-    }
+    const cats = Array.isArray(d.categories)
+      ? d.categories
+      : ((d as any).category && (d as any).category !== 'unknown' ? [(d as any).category as string] : [])
+    cats.forEach(cat => {
+      categoryCounts[cat] = (categoryCounts[cat] || 0) + 1
+    })
   })
-  const topCategory = Object.entries(categoryCounts)
-    .sort((a, b) => b[1] - a[1])[0]
+  const sortedCategories = Object.entries(categoryCounts)
+    .sort((a, b) => b[1] - a[1])
 
   // Days since last dose
   const sortedDoses = [...doses].sort((a, b) => 
@@ -228,20 +231,19 @@ export function DoseStats({ refreshTrigger }: DoseStatsProps) {
         </Card>
       )}
 
-      {/* Top Category */}
-      {topCategory && (
+      {/* Categories breakdown */}
+      {sortedCategories.length > 0 && (
         <Card className="sm:col-span-2">
           <CardHeader>
-            <CardDescription>Top Category</CardDescription>
+            <CardDescription>Categories</CardDescription>
           </CardHeader>
           <CardContent>
-            <div className="flex items-center gap-2">
-              <Badge variant="outline" className="capitalize">
-                {topCategory[0]}
-              </Badge>
-              <span className="text-sm text-muted-foreground">
-                ({topCategory[1]} logs)
-              </span>
+            <div className="flex flex-wrap gap-2">
+              {sortedCategories.map(([cat, count]) => (
+                <Badge key={cat} variant="outline" className="capitalize">
+                  {cat} ({count})
+                </Badge>
+              ))}
             </div>
           </CardContent>
         </Card>

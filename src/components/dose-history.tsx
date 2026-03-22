@@ -16,7 +16,7 @@ import {
   Activity, Loader2, Timer, Download, Cloud, CloudOff, Lock, CheckCircle2,
   RotateCcw
 } from 'lucide-react'
-import { categoryColors } from '@/lib/substance-index'
+import { categoryColors } from '@/lib/categories'
 import { useToast } from '@/hooks/use-toast'
 import { notifyDoseChange } from './active-doses-timeline'
 
@@ -93,7 +93,7 @@ interface DoseLog {
   id: string
   substanceId: string
   substanceName: string
-  category: string
+  categories: string[]
   amount: number
   unit: string
   route: string
@@ -342,7 +342,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     const rows = doses.map((dose) => {
       const dateObj = new Date(dose.timestamp)
       return [
-        format(dateObj, 'yyyy-MM-dd'), format(dateObj, 'HH:mm:ss'), dose.substanceName, dose.category,
+        format(dateObj, 'yyyy-MM-dd'), format(dateObj, 'HH:mm:ss'), dose.substanceName, getDoseCategories(dose).join('; '),
         dose.amount, dose.unit, dose.route, dose.duration?.total || '', dose.mood || '', dose.setting || '',
         dose.intensity || '', dose.notes || ''
       ].map(escapeCSV).join(',')
@@ -374,6 +374,14 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
 
   const getCategoryColor = (category: string) => {
     return categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
+  }
+
+  // Normalise: old logs stored category as a string scalar, new ones as string[]
+  const getDoseCategories = (dose: DoseLog): string[] => {
+    if (Array.isArray(dose.categories)) return dose.categories
+    const legacy = (dose as any).category as string | undefined
+    if (legacy && legacy !== 'unknown') return [legacy]
+    return []
   }
 
   if (loading) {
@@ -478,11 +486,11 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
                         <div className="flex-1 min-w-0">
                           <div className="flex items-center gap-2 flex-wrap">
                             <span className="font-medium">{dose.substanceName}</span>
-                            {dose.category && dose.category !== 'unknown' && (
-                              <Badge variant="outline" className={getCategoryColor(dose.category)}>
-                                {dose.category}
+                            {getDoseCategories(dose).map((cat) => (
+                              <Badge key={cat} variant="outline" className={getCategoryColor(cat)}>
+                                {cat}
                               </Badge>
-                            )}
+                            ))}
                           </div>
                           
                           <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">

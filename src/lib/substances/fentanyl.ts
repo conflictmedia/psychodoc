@@ -1,0 +1,134 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Fentanyl
+// ID: fentanyl
+// Categories: opioids
+// Class: Anilidopiperidine
+
+export const fentanyl: Substance = 
+{
+  "id": "fentanyl",
+  "name": "Fentanyl",
+  "commonNames": [
+    "Anilidopiperidine",
+    "Substituted piperidines"
+  ],
+  "categories": [
+    "opioids"
+  ],
+  "class": "Anilidopiperidine",
+  "description": "Fentanyl (also known as Fentanil and by the brand names Sublimaze, Actiq, Durogesic, Duragesic, Fentora, Matrifen, Haldid, Onsolis, Instanyl, Abstral, Lazanda among others) is a potent Psychoactive class opioid substance of the Chemical class anilidopiperidine class. It is a strong agonist at the μ-opioid receptors and approximately 40 to 50 times more potent than pharmaceutical grade (i.e. 100% pure) heroin and roughly 80 to 100 times more potent than morphine. A wide range of pharmaceutical fentanyl preparations are available, including transdermal skin patches, lollipops, buccal tablets or patches, nasal sprays, and inhalers. On the street, it is typically encountered in powder form, where it is often cut into or sold as heroin and other drugs, which has resulted in numerous accidental overdoses and fatalities. Users are advised to be aware of the extreme risk they are placing themselves in if they choose to use fentanyl.",
+  "effects": {
+    "positive": [
+      "Pain relief - In comparison to other opiates, fentanyl can be described as a strong analgesic, providing relief even at non-recreational doses.",
+      "Physical euphoria - Fentanyl can be considered as less intense in its physical euphoria when compared with that of morphine or diacetylmorphine (heroin). The sensation itself can be described as strong feelings of intense physical comfort, warmth and bliss which spread throughout the body.",
+      "Increased perspiration",
+      "Cognitive euphoria - Fentanyl can be considered less intense in its cognitive euphoria when compared with that of morphine or heroin. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment, and happiness.",
+      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. This creates a blurred effect and double vision that is present no matter where one focuses their eyes."
+    ],
+    "neutral": [
+      "Itchiness - Unlike other opioids, fentanyl presents very little itch response due to little to no amounts of released histamines.",
+      "Constipation",
+      "Decreased libido",
+      "Pupil constriction",
+      "Compulsive redosing",
+      "Dream potentiation"
+    ],
+    "negative": [
+      "Sedation - Fentanyl can be described as much more sedating then other opiates. Even at moderate dosages, fentanyl can result in overwhelming feelings of sedation and tiredness that is considerably more sedating than that of heroin and oxycodone.",
+      "Respiratory depression - In comparison to other opiates, fentanyl displays this effect at lower doses relative to euphoria than other opiates, and even at low doses results in the sensation that the breath is slowed down mildly to moderately, but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention.",
+      "Cough suppression",
+      "Difficulty urinating",
+      "Decreased blood pressure",
+      "Appetite suppression",
+      "Orgasm suppression",
+      "Anxiety suppression"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "5μg",
+        "light": "10-25μg",
+        "common": "25-50μg",
+        "strong": "50-75μg",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "15-30 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "1-4 hours"
+      }
+    },
+    "sublingual": {
+      "dosage": {
+        "threshold": "5μg",
+        "light": "10-25μg",
+        "common": "25-50μg",
+        "strong": "50-75μg",
+        "heavy": "75μg"
+      },
+      "duration": {
+        "onset": "15-30 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "1-4 hours"
+      }
+    },
+    "transdermal": {
+      "dosage": {
+        "threshold": "5μg",
+        "light": "12-25μg",
+        "common": "25-50μg",
+        "strong": "50-100μg",
+        "heavy": "100μg"
+      },
+      "duration": {
+        "onset": "2-4 hours",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "48-72 hours"
+      }
+    }
+  },
+  "interactions": [
+    "SNRIs",
+    "Alcohol",
+    "Benzodiazepines",
+    "DXM",
+    "GHB",
+    "GBL",
+    "Ketamine",
+    "MXE",
+    "Tramadol",
+    "Grapefruit",
+    "MAOIs",
+    "Serotonin releasers",
+    "SSRIs",
+    "5-HTP"
+  ],
+  "harmReduction": [
+    "potentially fatal at heavy dosages",
+    "potentially lethal when mixed with depressants like alcohol or benzodiazepines",
+    "unintentionally transporting the substance from the skin by touching the mouth, nose or eyes is dangerous"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Anilidopiperidine"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "very-high",
+  "aliases": [
+    "Anilidopiperidine",
+    "Substituted piperidines"
+  ]
+};

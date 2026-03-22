@@ -1,0 +1,129 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: 4-HO-DPT
+// ID: 4-ho-dpt
+// Categories: hallucinogens
+// Class: Substituted tryptamines
+
+export const _4_ho_dpt: Substance = 
+{
+  "id": "4-ho-dpt",
+  "name": "4-HO-DPT",
+  "commonNames": [
+    "Substituted tryptamines"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted tryptamines",
+  "description": "4-HO-DPT (also known as 4-hydroxy-N,N-dipropyltryptamine and sometimes referred to as Procin) is a psychoactive class psychedelic substance of the chemical class tryptamine class. Alexander Shulgin first synthesized 4-HO-DPT and documented it in his book TiHKAL (Tryptamines I Have Known and Loved). It is the 4-hydroxyl analog of DPT. Today it is either used recreationally or as an entheogenic compound and is typically acquired through the use of online research chemical vendors. Due to the difficulty of its synthesis, it remains relatively uncommon even for a substituted tryptamine and has very little history of human usage.",
+  "effects": {
+    "positive": [
+      "Bodily control enhancement",
+      "Increased heart rate",
+      "Tactile enhancement",
+      "Physical euphoria",
+      "Muscle relaxation",
+      "Colour enhancement",
+      "Brightness alteration",
+      "Analysis enhancement",
+      "Cognitive euphoria",
+      "Emotion enhancement",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Novelty enhancement",
+      "Unity and interconnectedness",
+      "Laughter",
+      "Mindfulness",
+      "Enhancements"
+    ],
+    "neutral": [
+      "Spontaneous physical sensations",
+      "Sedation",
+      "Pupil dilation",
+      "Mouth numbing",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Visual acuity suppression",
+      "Drifting (melting, breathing, morphing and flowing)",
+      "Colour shifting",
+      "Depth perception distortions",
+      "Perspective distortions",
+      "Symmetrical texture repetition",
+      "Tracers",
+      "After images",
+      "Diffraction",
+      "Scenery slicing",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Conceptual thinking",
+      "Thought acceleration",
+      "Time distortion",
+      "Distortions"
+    ],
+    "negative": [
+      "Nausea",
+      "Delusion",
+      "Memory suppression",
+      "Ego death",
+      "Personal bias suppression",
+      "Thought loops",
+      "Language suppression",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-15mg",
+        "common": "15-25mg",
+        "strong": "25-35mg",
+        "heavy": "35mg"
+      },
+      "duration": {
+        "onset": "15-45 minutes",
+        "comeup": "30-45 minutes",
+        "peak": "1-3 hours",
+        "offset": "1-2 hours",
+        "total": "4-6 hours"
+      }
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "20mg",
+        "light": "40-60mg",
+        "common": "60-90mg",
+        "strong": "90-130mg",
+        "heavy": "130mg"
+      },
+      "duration": {
+        "onset": "45-60 minutes",
+        "comeup": "60-120 minutes",
+        "peak": "2-3 hours",
+        "offset": "1-2 hours",
+        "total": "5-8 hours"
+      }
+    }
+  },
+  "interactions": [
+    "Lithium",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted tryptamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted tryptamines"
+  ]
+};

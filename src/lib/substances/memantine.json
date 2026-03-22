@@ -1,0 +1,109 @@
+{
+  "id": "memantine",
+  "name": "Memantine",
+  "commonNames": [
+    "Adamantanes"
+  ],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Adamantanes",
+  "description": "Memantine is a dissociative substance of the Chemical class adamantane class that produces long-lived Psychoactive class dissociative effects when administered. It is a derivative of amantadine and is pharmacologically related to compounds like PCP, ketamine, and DXM, although its recreational use is comparatively rare. Memantine was first synthesized by Eli Lilly and Company in 1968 as a potential agent to treat diabetes. Memantine is classified as an NMDA receptor antagonist. This means it binds to and blocks the signaling of excitatory receptors in the central nervous system.",
+  "effects": {
+    "positive": [
+      "Stimulation - Memantine is mildly stimulating in comparison to other dissociatives such as ketamine, MXE, or DCK.",
+      "Spontaneous bodily sensations - The memantine \"body high\" is a sharp, pleasurable tingling sensation which has a location specific to the hands, feet, and head.",
+      "Stamina enhancement",
+      "Bodily control enhancement",
+      "Increased heart rate",
+      "Perception of bodily lightness - This creates the sensation that the body is floating and has become entirely weightless. This effect is oddly stimulating and encourages physical activities at low to moderate dosages by making the body feel light and effortless to move.",
+      "Physical euphoria - This results in feelings which range from mild pleasure to powerful, all-encompassing bliss.",
+      "Colour enhancement",
+      "Brightness alteration",
+      "Auditory enhancement",
+      "Physical disconnection",
+      "Visual disconnection - This eventually results in memantine's equivalent to the ketamine \"k-hole\" or, more specifically, holes, spaces and voids alongside structures. However, many users may find it difficult or at least uncomfortable to reach this state due to the high dose required and associated side effects.",
+      "Cognitive disconnection",
+      "Existential self-realization"
+    ],
+    "neutral": [
+      "Decreased libido",
+      "Changes in felt gravity",
+      "Constipation",
+      "Pain relief",
+      "Physical autonomy",
+      "Acuity enhancement",
+      "Optical sliding",
+      "Acuity suppression - In other words, this effect is the blurring or muddling of vision.",
+      "Double vision - This component is prevalent at moderate to heavy doses and makes reading impossible unless the user closes one eye.",
+      "Frame rate suppression",
+      "Pattern recognition suppression - This effect generally occurs at higher doses and makes the user unable to recognize and interpret perceivable visual data.",
+      "Symmetrical texture repetition",
+      "After images",
+      "Drifting",
+      "Visual haze",
+      "Depth perception distortions",
+      "Perspective distortion",
+      "Environmental cubism",
+      "Environmental orbism",
+      "Scenery slicing",
+      "Machinescapes",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) -  This effect can be comprehensively described through its variations as delirious in believability, fixed in style, equal in new experiences and memory replays in content, autonomous in controllability and solid in style.",
+      "Auditory distortion"
+    ],
+    "negative": [
+      "Cough suppression",
+      "Headache",
+      "Appetite suppression",
+      "Orgasm suppression",
+      "Dizziness - At high doses, this can result in strong and often pleasurable perceptions, when the eyes are closed, that one's body is rapidly spinning horizontally.",
+      "Gustatory suppression",
+      "Nausea - High doses of memantine can sometimes result in nausea and vomiting.",
+      "Nausea suppression - Although its interactions with dopamine and glutamate receptors are capable of causing nausea, memantine's 5-HT3 antagonism tends to result in a much lower likelihood that vomiting or gastrointestinal distress will occur when compared to other dissociatives, such as ketamine or DXM.",
+      "Tactile suppression - This partially to entirely suppresses one's own sense of touch, creating feelings of numbness within the extremities. It is responsible for the anesthetic properties of this substance.",
+      "Motor control loss - A loss of gross and fine motor control alongside of balance and coordination is prevalent within memantine and becomes especially strong at higher dosages. This means that one should be sitting down before the onset unless they are experienced in case of falling over and injuring oneself.",
+      "Difficulty urinating - As with other NMDA antagonists, memantine is capable of causing both acute and chronic difficulties with urination, and may produce a numbing or painful sensation in the bladder and/or urinary tract in some users, especially with frequent usage of high dosages.",
+      "External hallucination (autonomous entities) Even though this effect exists, it's not deliriant and believable unlike other dissociative and deliriant substances.",
+      "Auditory hallucination",
+      "Auditory suppression"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "10mg",
+        "light": "30-70mg",
+        "common": "70-110mg",
+        "strong": "110-170mg",
+        "heavy": "170mg"
+      },
+      "duration": {
+        "onset": "30-180 minutes",
+        "comeup": "2-3 hours",
+        "peak": "3-12 hours",
+        "offset": "5-24 hours",
+        "total": "18-36 hours"
+      },
+      "notes": "Afterglow: 8-24 hours"
+    }
+  },
+  "interactions": [
+    "Stimulants",
+    "Depressants"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Adamantanes"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Adamantanes"
+  ]
+}

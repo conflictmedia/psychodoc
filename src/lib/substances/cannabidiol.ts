@@ -1,0 +1,74 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Cannabidiol
+// ID: cannabidiol
+// Categories: cannabinoids
+// Class: Cannabinoid
+
+export const cannabidiol: Substance = 
+{
+  "id": "cannabidiol",
+  "name": "Cannabidiol",
+  "commonNames": [
+    "Cannabinoid"
+  ],
+  "categories": [
+    "cannabinoids"
+  ],
+  "class": "Cannabinoid",
+  "description": "Cannabidiol (also known as CBD and Epidiolex®) is a naturally-occurring psychoactive class cannabinoid found in the cannabis plant. It is one of some 113 identified cannabinoids in cannabis plants, accounting for up to 40% of the plant's extract. It does not possess the same psychoactivity as tetrahydrocannabinol (THC), which is responsible for the euphoric and hallucinogenic aspects of cannabis, and is typically described as non-intoxicating. In the United States, the cannabidiol drug Epidiolex is approved by the Food and Drug Administration for the treatment of epilepsy disorders. Subjective effects include anxiety suppression, muscle relaxation, and pain relief.",
+  "effects": {
+    "positive": [
+      "Addiction suppression - There are some anecdotal reports that suggest CBD may have some addiction suppressing effects. However, this has not been subjected to rigorous clinical studies and more research is needed.",
+      "Muscle relaxation - Some users report that CBD produces a mild to moderate degree of muscle relaxation that is weaker than that of benzodiazepines and muscle relaxants. However, other users do not experience this effect.",
+      "Mindfulness",
+      "Sleepiness - Sleepiness on CBD depends mostly on dose and/or strain of the plant (if using a full spectrum or hemp extract) and is most prominent after the peak subsides."
+    ],
+    "neutral": [
+      "Pain relief",
+      "Diarrhea",
+      "Addiction suppression",
+      "Peripheral information misinterpretation"
+    ],
+    "negative": [
+      "Seizure suppression",
+      "Anxiety suppression"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "2mg",
+        "light": "5-15mg",
+        "common": "15-30mg",
+        "strong": "30-60mg",
+        "heavy": "60mg"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "15-30 minutes",
+        "peak": "Unknown",
+        "offset": "1-1.5 hours",
+        "total": "1.5-4 hours"
+      }
+    }
+  },
+  "interactions": [],
+  "harmReduction": [
+    "well-tolerated and shows little to no toxicity"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Cannabinoid"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Cannabinoid"
+  ]
+};

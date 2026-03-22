@@ -22,7 +22,8 @@ export interface Substance {
   id: string;
   name: string;
   commonNames: string[];
-  category: SubstanceCategory;
+  categories: SubstanceCategory[];
+  
   class: string;
   description: string;
   dosage?: {} 
@@ -56,7 +57,8 @@ export type SubstanceCategory =
   | 'cannabinoids'
   | 'opioids'
   | 'deliriants'
-  | 'nootropics';
+  | 'nootropics'
+  | 'other';
 
 export interface CategoryInfo {
   id: SubstanceCategory;

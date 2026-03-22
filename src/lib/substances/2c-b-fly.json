@@ -1,0 +1,115 @@
+{
+  "id": "2c-b-fly",
+  "name": "2C-B-FLY",
+  "commonNames": [
+    "Substituted phenethylamines",
+    "Substituted benzofurans"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted phenethylamines",
+  "description": "2C-B-FLY is a lesser-known novel psychoactive class psychedelic substance of the chemical class phenethylamine and chemical class benzodihydrodifuran classes that produces an array of psychedelic and entactogenic effects when administered. Reports have characterized its effects profile as possessing features of 2C-B, mescaline and MDA, with a duration of 6–8 hours (or up to 12 hours in larger doses). 2C-B-FLY is a derivative of the 2C-x family of psychedelic phenethylamines, specifically 2C-B, of which it significantly differs from in terms of its potency, metabolism, and potential toxicity. It was first synthesized by Aaron P. Monte in 1996. Around 2005, 2C-B-FLY appeared and gained some popularity in the online research chemicals market before largely disappearing in October 2009, when a batch of Bromo-DragonFLY was accidentally mislabeled as 2C-B-FLY (Bromo-DragonFLY is dosed in micrograms, where 2C-B-FLY is dosed in milligrams) led to two deaths as a result of taking overdoses of Bromo-DragonFLY meant to be effective doses for 2C-B-FLY.",
+  "effects": {
+    "positive": [
+      "Stimulation and Sedation - At light dosages, this compound is generally stimulating but in a gentle, non-forceful manner similar to that of 2C-B or mescaline. At higher dosages one may find the amount of stimulation to increase to an uncomfortable level with undertones of sedation or lethargy in a manner similar to that of 2C-C or 2C-T-7.",
+      "Spontaneous physical sensations - The \"body high\" of 2C-B-FLY can be described as a pleasurable, warm, soft, all-encompassing and mild tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached. It is comparable to that of a milder mescaline, 2C-B or 2C-E experience.",
+      "Physical euphoria",
+      "Tactile enhancement",
+      "Increased bodily temperature",
+      "Bodily control enhancement",
+      "Increased libido",
+      "Colour enhancement",
+      "Creativity enhancement",
+      "Emotion enhancement",
+      "Empathy, affection, and sociability enhancement - This compound presents entactogenic effects on a level which is less intense than that of 2C-B or MDMA but similar in quality to that of mescaline or 2C-E.",
+      "Increased libido",
+      "Increased music appreciation",
+      "Increased sense of humor",
+      "Novelty enhancement",
+      "Wakefulness",
+      "Enhancements"
+    ],
+    "neutral": [
+      "Bodily pressures",
+      "Stomach bloating",
+      "Diarrhea",
+      "Excessive yawning",
+      "Watery eyes",
+      "Pupil dilation",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, breathing, morphing and flowing) - In comparison to other psychedelics, this effect can be described as highly detailed, slow and smooth in motion, intricate in appearance and unrealistic/cartoon-like in style. It is very comparable to that of 2C-B or mescaline.",
+      "Tracers",
+      "After images",
+      "Colour shifting",
+      "Depth perception distortions",
+      "Perspective distortions",
+      "Symmetrical texture repetition",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Conceptual thinking",
+      "Thought acceleration",
+      "Time distortion",
+      "Distortions",
+      "Diarrhea",
+      "Thought deceleration"
+    ],
+    "negative": [
+      "Temperature regulation suppression - Compared to 2C-B, this effect is far more pronounced and unpredictable in its manifestation. Small increases in the dose may result in large changes in this effect.",
+      "Increased blood pressure",
+      "Headaches - This effect is more commonly reported than 2C-B or other traditional phenethylamines.",
+      "Muscle cramps",
+      "Stomach cramps",
+      "Nausea",
+      "Dehydration",
+      "Difficulty urinating",
+      "Teeth grinding",
+      "Disinhibition",
+      "Memory suppression",
+      "Hallucinations",
+      "Headaches",
+      "Cognitive fatigue",
+      "Motivation suppression"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "2mg",
+        "light": "5-10mg",
+        "common": "10-18mg",
+        "strong": "18-25mg",
+        "heavy": "25mg"
+      },
+      "duration": {
+        "onset": "30-60 minutes",
+        "comeup": "1-2 hours",
+        "peak": "3-5 hours",
+        "offset": "2-3 hours",
+        "total": "7-12 hours"
+      },
+      "notes": "Afterglow: 6-24 hours"
+    }
+  },
+  "interactions": [
+    "Lithium",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted phenethylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted phenethylamines",
+    "Substituted benzofurans"
+  ]
+}

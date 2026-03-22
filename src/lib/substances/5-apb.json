@@ -1,0 +1,96 @@
+{
+  "id": "5-apb",
+  "name": "5-APB",
+  "commonNames": [
+    "Substituted amphetamines",
+    "Substituted benzofurans"
+  ],
+  "categories": [
+    "empathogens",
+    "stimulants"
+  ],
+  "class": "Substituted amphetamines",
+  "description": "5-(2-Aminopropyl)benzofuran (commonly known as 5-APB) is a lesser-known novel Psychoactive class entactogen of the chemical class benzofuran class that produces MDA-like entactogenic and stimulating effects when administered. It is structurally related to entactogens like 5-MAPB, 6-APB, and MDA. 5-APB was first synthesized in 1993 by psychedelic chemist and researcher David E. Nichols as a potential non-neurotoxic alternative to MDMA. However, it did not come into popular recreational use until over a decade later, where it briefly entered the rave scene and global research chemicals market. It was sold along with other novel benzofuran entactogens under the name \"Benzofury\" before its sale and import were subsequently banned.",
+  "effects": {
+    "positive": [
+      "Stimulation",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Wakefulness",
+      "Empathy, affection, and sociability enhancement",
+      "Cognitive euphoria",
+      "Increased music appreciation",
+      "Focus enhancement",
+      "Analysis enhancement",
+      "Memory enhancement",
+      "Motivation enhancement",
+      "Wakefulness"
+    ],
+    "neutral": [
+      "Abnormal heartbeat",
+      "Muscle contractions",
+      "Thought deceleration",
+      "Compulsive redosing",
+      "Thought acceleration"
+    ],
+    "negative": [
+      "Dehydration",
+      "Appetite suppression",
+      "Nausea",
+      "Temporary erectile dysfunction",
+      "Anxiety",
+      "Cognitive fatigue",
+      "Depression",
+      "Irritability",
+      "Motivation suppression"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "20mg",
+        "light": "40-60mg",
+        "common": "60-80mg",
+        "strong": "80-100mg",
+        "heavy": "100mg"
+      },
+      "duration": {
+        "onset": "20-60 minutes",
+        "comeup": "45-90 minutes",
+        "peak": "2-4 hours",
+        "offset": "1.5-3 hours",
+        "total": "5-8 hours"
+      },
+      "notes": "Afterglow: 6-48 hours"
+    }
+  },
+  "interactions": [
+    "25x-NBOMe",
+    "25x-NBOH",
+    "Tramadol",
+    "MAOIs",
+    "SNRIs",
+    "Serotonin releasers",
+    "SSRIs",
+    "5-HTP",
+    "DXM",
+    "MDMA",
+    "Stimulants"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted amphetamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted amphetamines",
+    "Substituted benzofurans"
+  ]
+}

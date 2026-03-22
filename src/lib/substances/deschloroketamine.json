@@ -1,0 +1,144 @@
+{
+  "id": "deschloroketamine",
+  "name": "Deschloroketamine",
+  "commonNames": [
+    "Arylcyclohexylamines"
+  ],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Arylcyclohexylamines",
+  "description": "2'-Oxo-PCE 2'-Oxo-PCM (also known as deschloroketamine, O-PCM, DXE, and DCK) is a lesser-known novel psychoactive class dissociative substance of the chemical class arylcyclohexylamine class that produces dissociative, anesthetic and hallucinogenic effects when administered. Early discussion over DCK has revolved around speculation over claims of antibacterial or immunosuppressant properties. If this speculation is valid, it is possible that its prolonged use could potentially pose a serious threat to one's health and immune system, which along with bladder and urinary tract problems is why misuse of this substance is highly discouraged. Ketamine has been found to have similar properties. DCK has become easily accessible through online research chemical vendors where it is being sold as a designer drug.",
+  "effects": {
+    "positive": [
+      "Muscle relaxation",
+      "Perception of bodily lightness",
+      "Physical autonomy - This is reported to be especially present at low doses and to decrease as the dose increases.",
+      "Physical euphoria - This is reported to be present even at low doses.",
+      "Decreased libido - This is not experienced in all environments, as Increased libido may also be experienced.",
+      "Creativity enhancement",
+      "Derealization",
+      "Cognitive euphoria",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Introspection",
+      "Tactile disconnection",
+      "Visual disconnection - This eventually results in DCK's equivalent of the famous \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures.",
+      "Consciousness disconnection",
+      "Existential self-realization",
+      "Unity and interconnectedness"
+    ],
+    "neutral": [
+      "Pain relief",
+      "Spontaneous physical sensations",
+      "Motor control loss",
+      "Sedation",
+      "Optical sliding",
+      "Compulsive redosing",
+      "Conceptual thinking",
+      "Déjà vu",
+      "Depersonalization",
+      "Dream potentiation",
+      "Mania",
+      "Time distortion",
+      "Thought deceleration",
+      "Distortions",
+      "Synaesthesia",
+      "Double vision",
+      "Frame rate suppression",
+      "Pattern recognition suppression",
+      "Visual acuity suppression",
+      "Perspective distortions",
+      "Environmental cubism",
+      "Environmental orbism",
+      "Scenery slicing",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)"
+    ],
+    "negative": [
+      "Nausea",
+      "Spatial disorientation",
+      "Dizziness",
+      "Tactile suppression",
+      "Orgasm suppression - Orgasm enhancement can also be present, even at higher doses.",
+      "Anxiety suppression",
+      "Disinhibition",
+      "Memory suppression",
+      "Ego death",
+      "Amnesia",
+      "Analysis suppression",
+      "Suppression",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-15mg",
+        "common": "15-25mg",
+        "strong": "25-40mg",
+        "heavy": "40mg"
+      },
+      "duration": {
+        "onset": "5-15 minutes",
+        "comeup": "30-60 minutes",
+        "peak": "1.5-2.5 hours",
+        "offset": "1-2 hours",
+        "total": "3-6 hours"
+      },
+      "notes": "Afterglow: 3-24 hours"
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "10mg",
+        "light": "10-20mg",
+        "common": "20-30mg",
+        "strong": "30-50mg",
+        "heavy": "50mg"
+      },
+      "duration": {
+        "onset": "10-30 minutes",
+        "comeup": "30-60 minutes",
+        "peak": "1.5-2.5 hours",
+        "offset": "1-2 hours",
+        "total": "4-6 hours"
+      },
+      "notes": "Afterglow: 3-24 hours"
+    },
+    "smoked": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "5-10mg",
+        "common": "10-20mg",
+        "strong": "20-40mg",
+        "heavy": "40mg"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "30-90 minutes"
+      }
+    }
+  },
+  "interactions": [
+    "Stimulants",
+    "Depressants"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Arylcyclohexylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Arylcyclohexylamines"
+  ]
+}

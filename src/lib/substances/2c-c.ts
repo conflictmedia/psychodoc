@@ -1,0 +1,112 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: 2C-C
+// ID: 2c-c
+// Categories: hallucinogens
+// Class: Substituted phenethylamines
+
+export const _2c_c: Substance = 
+{
+  "id": "2c-c",
+  "name": "2C-C",
+  "commonNames": [
+    "Substituted phenethylamines"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted phenethylamines",
+  "description": "4-Chloro-2,5-dimethoxyphenethylamine (commonly known as 2C-C) is a lesser-known Psychoactive class psychedelic substance of the Chemical class phenethylamine class that produces psychedelic effects when administered. It is a member of the 2C-x family of psychedelic phenethylamines, all of which were derived from the systematic modification of the mescaline molecule. 2C-C was first synthesized by Alice C. Cheng and Neal Castagnoli Jr. in 1983 as an intermediate in a study evaluating the neurotoxicity of 6-hydroxydopamine analogs. Its activity in humans was later investigated and documented by Alexander Shulgin in his book PiHKAL (\"Phenethylamines I Have Known and Loved\"). Many users report that the effects of 2C-C are gentler, more relaxed, and sedating than other closely related psychedelic phenethylamines such as 2C-B, 2C-I, and 2C-E.",
+  "effects": {
+    "positive": [
+      "Stimulation & Sedation - In terms of its effects on the physical energy levels of the user, the 2C-C experience typically begins with mild stimulation, but usually becomes somewhat sedating as the experience progresses and surprisingly lacks the distinctive energetic feeling associated with most phenethylamines. This is described in PiHKAL as \"an intense form of relaxation.\"",
+      "Spontaneous physical sensations -  The \"body high\" of 2C-C can be described as a pleasurable, warm, soft, all-encompassing and mild tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
+      "Bodily control enhancement - Whilst at lower doses one may find that their bodily control is enhanced, at higher dosages this becomes suppressed.",
+      "Increased bodily temperature",
+      "Increased heart rate - This compound seems to not increase heart rate as much as related substances.",
+      "Increased perspiration",
+      "Tactile enhancement",
+      "Colour enhancement",
+      "Empathy, affection, and sociability enhancement - This component is consistently manifested only in the context of social settings in which one is within the company of others. These feelings of sociability, love and empathy are not as pronounced than those found on substances such as MDMA or 2C-B.",
+      "Analysis enhancement - This introspection dominant effect is only manifested consistently in the context of a non-social setting in which the user is alone.",
+      "Emotion enhancement",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Increased libido",
+      "Increased sense of humor",
+      "Increased music appreciation",
+      "Mindfulness",
+      "Novelty enhancement",
+      "Wakefulness - Due to it's relaxing nature, some users report being able to sleep after the peak effects subsided.",
+      "Auditory enhancement",
+      "Unity and interconnectedness - In contrast to some other psychedelics, this effect does not typically occur except at very high doses."
+    ],
+    "neutral": [
+      "Muscle cramps - Very high dosages of 2C-C are known to cause random muscle tightening, which can become uncomfortable.",
+      "Pupil dilation",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, flowing, breathing and morphing) - In comparison to other psychedelics, this effect can be described as highly detailed, slow and smooth in motion, static in appearance and cartoon-like in style.",
+      "Colour shifting",
+      "Tracers",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - 2C-C is capable of producing high levels of hallucinogenic imagery, although typically only at very heavy doses. When this effect does occur, it commonly contains hallucinations with scenarios, settings, concepts and autonomous entity contact. They are more common within dark environments and can be described as internal in their manifestation, lucid in believability, interactive in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in theme.",
+      "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) -  2C-C is capable of external hallucinations embedded within visual geometry. This particular effect commonly contains hallucinations with scenarios, settings, concepts and autonomous entity contact. They can be described as external in their manifestation, lucid in believability, interactive in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
+      "Conceptual thinking",
+      "Thought acceleration",
+      "Thought connectivity",
+      "Time distortion",
+      "Auditory distortion - This effect does not typically occur except at higher doses."
+    ],
+    "negative": [
+      "Increased blood pressure",
+      "Nausea -  Although nausea remains present, in comparison to other phenethylamines such as 2C-E, 2C-I or 2C-B, this remains relatively mild and tends to dissipate quickly. It is considered by some to be one of the most physically understated psychedelics known.",
+      "Dehydration",
+      "Teeth grinding - This component can be considered to be less intense when compared with that of MDMA.",
+      "Memory suppression - Relative to other psychedelics, 2C-C does not produce this effect except at very high doses.",
+      "Ego death - Relative to other psychedelics, 2C-C does not produce this effect except at very high doses.",
+      "Personal bias suppression",
+      "Auditory hallucination - This effect does not typically occur except at higher doses."
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "15-30mg",
+        "common": "30-50mg",
+        "strong": "50-90mg",
+        "heavy": "90mg"
+      },
+      "duration": {
+        "onset": "20-45 minutes",
+        "comeup": "45-90 minutes",
+        "peak": "2-3 hours",
+        "offset": "1-3 hours",
+        "total": "4-8 hours"
+      },
+      "notes": "Afterglow: 4-12 hours"
+    }
+  },
+  "interactions": [
+    "Lithium",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted phenethylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted phenethylamines"
+  ]
+};

@@ -1,0 +1,104 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: 2C-T
+// ID: 2c-t
+// Categories: hallucinogens
+// Class: Substituted phenethylamines
+
+export const _2c_t: Substance = 
+{
+  "id": "2c-t",
+  "name": "2C-T",
+  "commonNames": [
+    "Substituted phenethylamines"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted phenethylamines",
+  "description": "2,5-Dimethoxy-4-methylthiophenethylamine (also known as 2C-T) is a lesser-known Psychoactive class psychedelic substance of the chemical class phenethylamine class. It is a member of the 2C-x family of psychedelic phenethylamines, all of which are close relatives to mescaline. 2C-T was first synthesized as part of a collaboration between researchers David E. Nichols and Alexander Shulgin. Its effects and synthesis is described in Shulgin's 1991 book PiHKAL (\"Phenethylamines I Have Known and Loved\"). Preliminary anecdotal reports appear to indicate it has some of the psychedelic effects of 2C-T-2 and 2C-T-7.",
+  "effects": {
+    "positive": [
+      "Bodily control enhancement",
+      "Tactile enhancement \"Tactile sensitivity\"",
+      "Increased heart rate",
+      "Colour enhancement",
+      "Emotion enhancement",
+      "Novelty enhancement",
+      "Analysis enhancement - This effect is consistent in its manifestation and is outrospection dominant.",
+      "Increased music appreciation",
+      "Increased sense of humor",
+      "Immersion enhancement",
+      "Wakefulness",
+      "Enhancements",
+      "Existential self-realization",
+      "Unity and interconnectedness"
+    ],
+    "neutral": [
+      "Spontaneous bodily sensations",
+      "Pupil dilation",
+      "Visual acuity enhancement",
+      "Pattern recognition enhancement",
+      "Drifting (melting, flowing, breathing and morphing) - In comparison to other psychedelics, this effect can be described as highly detailed, slow and smooth in motion, static in appearance and extremely realistic in style but with a subtle digital/cartoon-like form.",
+      "Tracers",
+      "After images",
+      "Symmetrical texture repetition",
+      "Colour shifting",
+      "Scenery slicing",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Time distortion",
+      "Conceptual thinking",
+      "Thought acceleration",
+      "Distortions",
+      "Perception of interdependent opposites"
+    ],
+    "negative": [
+      "Nausea",
+      "Vasoconstriction",
+      "Personal bias suppression",
+      "Memory suppression",
+      "Ego death",
+      "Thought loops",
+      "Delusion",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "20mg",
+        "light": "40-60mg",
+        "common": "60-100mg",
+        "strong": "100-120mg",
+        "heavy": "125mg"
+      },
+      "duration": {
+        "onset": "30-45 minutes",
+        "comeup": "Unknown",
+        "peak": "30-115 minutes",
+        "offset": "1-2 hours",
+        "total": "3-6 hours"
+      },
+      "notes": "Afterglow: 1-2 hours"
+    }
+  },
+  "interactions": [],
+  "harmReduction": [
+    "no negative health effects attributed to trying this drug"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted phenethylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted phenethylamines"
+  ]
+};

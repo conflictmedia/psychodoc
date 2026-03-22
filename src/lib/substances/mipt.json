@@ -1,0 +1,85 @@
+{
+  "id": "mipt",
+  "name": "MiPT",
+  "commonNames": [
+    "Substituted tryptamines"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted tryptamines",
+  "description": "N-Methyl-N-isopropyltryptamine (also known as MiPT) is a lesser-known psychoactive class psychedelic substance of the chemical class tryptamine class. It is structurally related to DMT, along with other analogs such as DiPT, MPT, and MET. MiPT was first synthesized and investigated by Alexander Shulgin and described in his book TiHKAL (\"Tryptamines I Have Known and Loved\"). In the commentary, Shulgin notes that \"there is almost a total lack of visual phenomena... no wave-forms, color distortion or object shape changes, and no eyes-closed imagery, unlike most N,N-disubstituted tryptamines.\" Subjective effects include hallucinatory states, time distortion, conceptual thinking, euphoria, and ego loss.",
+  "effects": {
+    "positive": [
+      "Stimulation",
+      "Increased heart rate",
+      "Colour enhancement",
+      "Brightness alteration",
+      "Emotion enhancement",
+      "Creativity enhancement",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Increased sense of humor",
+      "Novelty enhancement",
+      "Wakefulness",
+      "Enhancements - MiPT has been reported to notably enhance auditory sensation, which stands in contrast to the relatively weak visual changes it produces."
+    ],
+    "neutral": [
+      "Spontaneous physical sensations",
+      "Dry mouth",
+      "Pupil dilation",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, breathing, morphing and flowing)",
+      "Colour shifting",
+      "Tracers",
+      "Conceptual thinking",
+      "Thought acceleration",
+      "Thought connectivity",
+      "Time distortion",
+      "Distortions"
+    ],
+    "negative": [
+      "Increased blood pressure",
+      "Nausea",
+      "Teeth grinding",
+      "Memory suppression",
+      "Personal bias suppression",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "Unknown",
+        "light": "Unknown",
+        "common": "10-25mg",
+        "strong": "25-75mg",
+        "heavy": "75mg"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "3-8 hours"
+      }
+    }
+  },
+  "interactions": [],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted tryptamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted tryptamines"
+  ]
+}

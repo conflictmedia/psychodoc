@@ -1,0 +1,129 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: NEP
+// ID: nep
+// Categories: stimulants
+// Class: Cathinone
+
+export const nep: Substance = 
+{
+  "id": "nep",
+  "name": "NEP",
+  "commonNames": [
+    "Cathinone"
+  ],
+  "categories": [
+    "stimulants"
+  ],
+  "class": "Cathinone",
+  "description": "The reported entactogenic effects it displays may also be due to its activity as a serotonin reuptake inhibitor or releasing agent in moderate to high doses, although new research has shown very low serotonin reuptake inhibition. NEP is also closely related to N-Ethylhexedrone (commonly known as Hexen), and has been reported as producing largely-similar effects. NEP first became known in the research chemical market during 2016. As with its parent compound pentedrone, very little data exists about the pharmacological properties, metabolism, and toxicity of NEP in humans. Due to its novelty and extremely short history of human usage, all information related to the use of this compound should be treated with extreme caution.",
+  "effects": {
+    "positive": [
+      "Stimulation - In terms of its effects on the user's physical energy levels, NEP can be considered to be extremely stimulating and energetic.",
+      "Spontaneous tactile sensations - High doses of NEP result in a pleasurable body high characterized by pleasant tingling.",
+      "Tactile enhancement",
+      "Increased heart rate - NEP increases heart rate significantly compared to other stimulants, even at low doses.",
+      "Increased perspiration",
+      "Wakefulness"
+    ],
+    "neutral": [
+      "Abnormal heartbeat",
+      "Thought deceleration"
+    ],
+    "negative": [
+      "Dehydration - Dry mouth and increased sweating can occur after consuming NEP. Low doses of the substance in question cause minimal dehydration.",
+      "Vasoconstriction - NEP has been reported as being slightly vasoconstricting.",
+      "Increased blood pressure",
+      "Appetite suppression",
+      "Temporary erectile dysfunction",
+      "Teeth grinding - This component can be considered to be less intense when compared with that of MDMA.",
+      "Anxiety",
+      "Headaches",
+      "Cognitive fatigue",
+      "Depression",
+      "Irritability",
+      "Motivation suppression"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "10mg",
+        "light": "10-20mg",
+        "common": "20-40mg",
+        "strong": "40-60mg",
+        "heavy": "60mg"
+      },
+      "duration": {
+        "onset": "1-8 minutes",
+        "comeup": "5-15 minutes",
+        "peak": "30-60 minutes",
+        "offset": "30-90 minutes",
+        "total": "1-3 hours"
+      },
+      "notes": "Afterglow: 1-4 hours"
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "10mg",
+        "light": "10-25mg",
+        "common": "25-40mg",
+        "strong": "40-60mg",
+        "heavy": "60mg"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "4-6 hours"
+      }
+    },
+    "smoked": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "5-15mg",
+        "common": "15-30mg",
+        "strong": "30-50mg",
+        "heavy": "50mg"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "1.5-3 hours"
+      }
+    }
+  },
+  "interactions": [
+    "25x-NBOMe",
+    "25x-NBOH",
+    "Tramadol",
+    "MAOIs",
+    "SNRIs",
+    "Serotonin releasers",
+    "SSRIs",
+    "5-HTP",
+    "DXM",
+    "MDMA",
+    "Stimulants"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Cathinone"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Cathinone"
+  ]
+};

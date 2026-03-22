@@ -1,0 +1,107 @@
+{
+  "id": "5-meo-dipt",
+  "name": "5-MeO-DiPT",
+  "commonNames": [
+    "Substituted tryptamines"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted tryptamines",
+  "description": "It is related in structure to DiPT and 5-MeO-MiPT. Anecdotal reports characterize the effects of this compound as highly stimulating and mildly entactogenic, lacking in typical psychedelic visual distortions. Many users report strong physical and tactile effects that serve to enhance libido and sexual pleasure. It is relatively obscure and has a limited history of human use. It is highly advised to use harm reduction practices if using this substance.",
+  "effects": {
+    "positive": [
+      "Stimulation",
+      "Increased heart rate",
+      "Colour enhancement",
+      "Brightness alteration",
+      "Cognitive euphoria",
+      "Emotion enhancement",
+      "Increased libido",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Novelty enhancement",
+      "Unity and interconnectedness",
+      "Enhancements"
+    ],
+    "neutral": [
+      "Spontaneous physical sensations",
+      "Bodily pressures",
+      "Abnormal heartbeat",
+      "Diarrhea",
+      "Pupil dilation",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, breathing, morphing and flowing)",
+      "Colour shifting",
+      "Depth perception distortions",
+      "Perspective distortions",
+      "Symmetrical texture repetition",
+      "Tracers",
+      "After images",
+      "Diffraction",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Conceptual thinking",
+      "Time distortion",
+      "Distortions"
+    ],
+    "negative": [
+      "Nausea",
+      "Increased blood pressure",
+      "Headaches",
+      "Stomach bloating - At higher dosages, this compound can induce severe stomach bloating within those who are susceptible to it. This can be partially to fully mitigated through the use of antacids.",
+      "Vasoconstriction",
+      "Dehydration",
+      "Delusion",
+      "Memory suppression",
+      "Ego death",
+      "Personal bias suppression",
+      "Thought loops",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "3mg",
+        "light": "3-10mg",
+        "common": "10-15mg",
+        "strong": "15-20mg",
+        "heavy": "20mg"
+      },
+      "duration": {
+        "onset": "20-40 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "4-8 hours"
+      },
+      "notes": "Afterglow: 2-6 hours"
+    }
+  },
+  "interactions": [
+    "aMT",
+    "MAOIs",
+    "PCP",
+    "Amphetamines",
+    "Cocaine",
+    "DXM",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted tryptamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted tryptamines"
+  ]
+}

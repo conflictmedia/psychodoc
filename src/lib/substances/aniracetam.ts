@@ -1,0 +1,80 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Aniracetam
+// ID: aniracetam
+// Categories: nootropics
+// Class: Racetams
+
+export const aniracetam: Substance = 
+{
+  "id": "aniracetam",
+  "name": "Aniracetam",
+  "commonNames": [
+    "Racetams"
+  ],
+  "categories": [
+    "nootropics"
+  ],
+  "class": "Racetams",
+  "description": "Aniracetam (Draganon, Sarpul, Ampamet, Memodrin, Referan, and systematically as N-anisoyl-2-pyrrolidinone) is a psychoactive class nootropic agent belonging to the chemical class racetam family of drugs. Although it is one of the first known and synthesized derivatives of piracetam, its research and efficacy in humans is limited. Aniracetam is readily available and sold through online vendors as a dietary supplement in the United States. Dosages are nearly fifteen times those of noopept, making it less potent while offering comparable benefit. Supplementation of aniracetam tends to be in the dosage range of 800-2500mg taken over the course of a day, either in two to three evenly spread dosing periods, such as three doses of 400mg or 800mg.",
+  "effects": {
+    "positive": [
+      "Stimulation",
+      "Colour enhancement",
+      "Auditory enhancement",
+      "Tactile enhancement",
+      "Olfactory enhancement",
+      "Creativity enhancement",
+      "Wakefulness",
+      "Mindfulness",
+      "Focus enhancement",
+      "Motivation enhancement",
+      "Memory enhancement"
+    ],
+    "neutral": [
+      "Acuity enhancement",
+      "Thought connectivity",
+      "Dream potentiation"
+    ],
+    "negative": [
+      "Anxiety suppression",
+      "Lowered latent Inhibition"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "350mg",
+        "light": "500-1200mg",
+        "common": "1200-1800mg",
+        "strong": "1800-2400mg",
+        "heavy": "2400mg"
+      },
+      "duration": {
+        "onset": "45-90 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "3-5 hours"
+      }
+    }
+  },
+  "interactions": [
+    "MAOIs"
+  ],
+  "harmReduction": [],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Racetams"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Racetams"
+  ]
+};

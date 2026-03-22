@@ -1,0 +1,73 @@
+{
+  "id": "grayanotoxin",
+  "name": "Grayanotoxin",
+  "commonNames": [
+    "Diterpene"
+  ],
+  "categories": [
+    "depressants"
+  ],
+  "class": "Diterpene",
+  "description": "",
+  "effects": {
+    "positive": [
+      "Brightness alteration  - Grayanotoxin may make colors appear darker.",
+      "Cognitive euphoria - This effect manifests as a sense of relaxation"
+    ],
+    "neutral": [
+      "Visual acuity suppression",
+      "Double vision",
+      "Drifting - This effect is qualitatively similar to that of other cholinergic substances, and is likely a result of the effects of grayanotoxins on sodium channels.",
+      "Visual haze",
+      "Auditory acuity suppression"
+    ],
+    "negative": [
+      "Color depression",
+      "External hallucination - Deliriant-like hallucinations have been reported after high-dose ingestion of grayanotoxins, this is rarely reported and is unlikely to occur at common doses.",
+      "Internal hallucination",
+      "Cognitive fatigue",
+      "Confusion",
+      "Irritability",
+      "Sleepiness - At sufficient doses, grayanotoxins may cause sedation and even a sudden loss of consciousness .",
+      "Cognitive dysphoria",
+      "Anxiety suppression - Grayanotoxin-containing plants, such as monotropa uniflora, have been historically used for their anxiolytic effects ."
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "Unknown",
+        "light": "Unknown",
+        "common": "Unknown",
+        "strong": "Unknown",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "Unknown"
+      },
+      "notes": "Afterglow: Unknown"
+    }
+  },
+  "interactions": [
+    "Opioids",
+    "Cholinergics",
+    "Depressants"
+  ],
+  "harmReduction": [],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Diterpene"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Diterpene"
+  ]
+}

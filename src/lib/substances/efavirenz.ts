@@ -1,0 +1,104 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Efavirenz
+// ID: efavirenz
+// Categories: hallucinogens
+// Class: Benzoxazine
+
+export const efavirenz: Substance = 
+{
+  "id": "efavirenz",
+  "name": "Efavirenz",
+  "commonNames": [
+    "Benzoxazine"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Benzoxazine",
+  "description": "Efavirenz (sold by the brand name Sustiva) is an antiretroviral medication used in the treatment and prevention of HIV/AIDS. It is notable for being able to produce psychedelic and hallucinogenic effects despite possessing an extremely novel pharmacological profile and chemical structure not shared with any other psychedelic substance. Efavirenz was approved for medical use in the United States in 1998. It is on the World Health Organization's List of Essential Medicines, the most effective and safe medicines needed in a health system. Recreational use of efavirenz for its hallucinogenic and dissociative effects has been reported in South Africa.",
+  "effects": {
+    "positive": [
+      "Physical euphoria - This effect is generally quite mild.",
+      "Stimulation or Sedation",
+      "Colour enhancement",
+      "Unity and interconnectedness - This effect is generally quite mild.",
+      "Introspection",
+      "Dream potentiation - At non-recreational doses, efavirenz often induces strange dreams.",
+      "Auditory enhancement"
+    ],
+    "neutral": [
+      "Spontaneous physical sensations",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, breathing, morphing and flowing)",
+      "After images",
+      "Colour replacement",
+      "Colour shifting",
+      "Recursion",
+      "Scenery slicing",
+      "Symmetrical texture repetition",
+      "Tracers - This is considered the most common visual effect of efavirenz.",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Auditory distortion"
+    ],
+    "negative": [
+      "Difficulty urinating",
+      "Nausea",
+      "Dizziness",
+      "Headaches",
+      "Appetite suppression",
+      "Anxiety or Anxiety suppression",
+      "Psychosis - At very high doses, efavirenz may cause a psychotic state.",
+      "Confusion",
+      "Disinhibition",
+      "Auditory hallucination"
+    ]
+  },
+  "routeData": {
+    "smoked": {
+      "dosage": {
+        "threshold": "Unknown",
+        "light": "Unknown",
+        "common": "600-1800mg",
+        "strong": "Unknown",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "1-5 minutes",
+        "comeup": "Unknown",
+        "peak": "1-2 hours",
+        "offset": "Unknown",
+        "total": "Unknown"
+      },
+      "notes": "Afterglow: 6-12 hours"
+    }
+  },
+  "interactions": [
+    "SNRIs",
+    "MAOIs",
+    "Serotonin releasers",
+    "SSRIs",
+    "5-HTP"
+  ],
+  "harmReduction": [
+    "low toxicity",
+    "may cause liver toxicity at high doses or after chronic use"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Benzoxazine"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "low",
+  "aliases": [
+    "Benzoxazine"
+  ]
+};

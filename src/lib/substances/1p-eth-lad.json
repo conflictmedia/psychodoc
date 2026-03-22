@@ -1,0 +1,92 @@
+{
+  "id": "1p-eth-lad",
+  "name": "1P-ETH-LAD",
+  "commonNames": [
+    "Lysergamides"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Lysergamides",
+  "description": "Common name 1-Propionyl-6-ethyl-6-nor-lysergic acid diethyamide (also known as Common name 1P-ETH-LAD) is a semisynthetic Psychoactive class psychedelic substance of the Chemical class lysergamide chemical class. It is a designer drug analog and suspected prodrug to ETH-LAD, which shares a close structural relationship with LSD and 1P-LSD. Like its parent compound ETH-LAD, this compound has been reported to be moderately to significantly more potent than LSD itself. It has also been reported as being subtly different in effect to LSD and is often described as being more visual and synaesthetic, with a deeper, less emotionally-charged headspace analogous to that of psychedelics like 2C-E or DPT. Very little data exists about the pharmacological properties, metabolism, and toxicity of 1P-ETH-LAD, and it has little history of human usage before January 2016.",
+  "effects": {
+    "positive": [
+      "Colour enhancement",
+      "Analysis enhancement",
+      "Emotion enhancement",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Laughter",
+      "Motivation enhancement",
+      "Novelty enhancement",
+      "Wakefulness",
+      "Enhancements",
+      "Existential self-realization",
+      "Unity and interconnectedness"
+    ],
+    "neutral": [
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, breathing, morphing and flowing) - In comparison to other psychedelics, this effect can be described as highly detailed yet cartoon-like in appearance. The distortions are slow and smooth in motion and fleeting in their appearance. This is nearly identical in appearance to the visual drifting which occurs under the influence of LSD",
+      "After images",
+      "Colour shifting",
+      "Depth perception distortions",
+      "Diffraction",
+      "Scenery slicing",
+      "Symmetrical texture repetition",
+      "Tracers",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - This effect is very consistent in dark environments at appropriately high dosages. The hallucinations can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and occasionally of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
+      "Conceptual thinking",
+      "Déjà vu",
+      "Thought acceleration",
+      "Time distortion",
+      "Distortions"
+    ],
+    "negative": [
+      "Delusion",
+      "Memory suppression",
+      "Ego death",
+      "Personal bias suppression",
+      "Thought loops",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "25µg",
+        "light": "30-60µg",
+        "common": "60-100µg",
+        "strong": "100-200µg",
+        "heavy": "200µg"
+      },
+      "duration": {
+        "onset": "30-90 minutes",
+        "comeup": "Unknown",
+        "peak": "2-4 hours",
+        "offset": "2-4 hours",
+        "total": "6-12 hours"
+      }
+    }
+  },
+  "interactions": [
+    "Lithium",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Lysergamides"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Lysergamides"
+  ]
+}

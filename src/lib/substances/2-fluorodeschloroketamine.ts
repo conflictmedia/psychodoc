@@ -1,0 +1,114 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: 2-Fluorodeschloroketamine
+// ID: 2-fluorodeschloroketamine
+// Categories: dissociatives
+// Class: Arylcyclohexylamines
+
+export const _2_fluorodeschloroketamine: Substance = 
+{
+  "id": "2-fluorodeschloroketamine",
+  "name": "2-Fluorodeschloroketamine",
+  "commonNames": [
+    "Arylcyclohexylamines"
+  ],
+  "categories": [
+    "dissociatives"
+  ],
+  "class": "Arylcyclohexylamines",
+  "description": "2-Fl-2'-Oxo-PCM (also known as 2-Fluorodeschloroketamine, 2-FDCK, and inaccurately as 2-Fluroketamine, Fluoroketamine, and 2-FK and known as CAS number: 111982-50-4) is a lesser-known novel psychoactive class dissociative substance of the Chemical class arylcyclohexylamine class. It is chemically similar to ketamine and deschloroketamine (DCK). It appears to have first become available for sale on the online research chemical market in 2017, in which it was marketed as a legal replacement for ketamine. Subjective effects include sedation, motor control loss, pain relief, internal hallucinations, conceptual thinking, euphoria, and dissociation. 2F-DCK's effects are reported to be similar to those of ketamine.",
+  "effects": {
+    "positive": [
+      "Physical euphoria",
+      "Perception of bodily lightness",
+      "Tactile disconnection",
+      "Visual disconnection - This eventually results in 2-Fluorodeschloroketamine's equivalent of the \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures.",
+      "Consciousness disconnection"
+    ],
+    "neutral": [
+      "Pain relief",
+      "Spontaneous physical sensations",
+      "Motor control loss",
+      "Physical autonomy",
+      "Double vision",
+      "Frame rate suppression",
+      "Pattern recognition suppression",
+      "Visual acuity suppression",
+      "Environmental cubism",
+      "Environmental orbism",
+      "Perspective distortions",
+      "Scenery slicing",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Distortions"
+    ],
+    "negative": [
+      "Dizziness",
+      "Nausea",
+      "Spatial disorientation",
+      "Tactile suppression",
+      "Orgasm suppression",
+      "Hallucinations",
+      "Suppression"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-45mg",
+        "common": "45-100mg",
+        "strong": "100-175mg",
+        "heavy": "175mg"
+      },
+      "duration": {
+        "onset": "1-3 minutes",
+        "comeup": "5-10 minutes",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "1.5-3 hours"
+      },
+      "notes": "Afterglow: 1-4 hours"
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-25mg",
+        "common": "25-70mg",
+        "strong": "70-140mg",
+        "heavy": "140mg"
+      },
+      "duration": {
+        "onset": "15-50 minutes",
+        "comeup": "Unknown",
+        "peak": "50-100 minutes",
+        "offset": "Unknown",
+        "total": "2.5-5 hours"
+      },
+      "notes": "Afterglow: 3-8 hours"
+    }
+  },
+  "interactions": [
+    "Alcohol",
+    "GHB",
+    "GBL",
+    "Opioids",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Arylcyclohexylamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Arylcyclohexylamines"
+  ]
+};

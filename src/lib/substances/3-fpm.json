@@ -1,0 +1,116 @@
+{
+  "id": "3-fpm",
+  "name": "3-FPM",
+  "commonNames": [
+    "Substituted amphetamines",
+    "Phenylmorpholine"
+  ],
+  "categories": [
+    "stimulants"
+  ],
+  "class": "Substituted amphetamines",
+  "description": "3-FPM is a derivative of phenmetrazine, a once-popular stimulant substance that was clinically used as an anorectic in Europe in the 1950s. It produces its activity by increasing the levels of serotonin, dopamine, and norepinephrine in the brain. The synthesis and pharmacology of 3-FPM was first reported in a patent filed in 2011. Subjective effects include stimulation, enhanced focus and motivation, thought acceleration, and euphoria. Users commonly report that 3-FPM produces classical stimulant effects comparable to those of amphetamine.",
+  "effects": {
+    "positive": [
+      "Stimulation - In terms of its effects on the physical energy levels of the user, 3-FPM is usually considered to be mildly to moderately energetic and stimulating in a fashion that is considerably weaker in comparison to that of traditional recreational stimulants such as amphetamine, MDMA or cocaine. This encourages physical activities such as performing chores and repetitive tasks which would otherwise be boring and strenuous physical activities.",
+      "Increased heart rate - In comparison to other stimulants such as amphetamine or cocaine,  3-FPM only has a mild effect on one's heart rate. This effect may be more pronounced with higher doses aswell with redosing.",
+      "Stamina enhancement",
+      "Increased perspiration",
+      "Increased libido - 3-FPM is known for having aphrodisiac properties and is said to enhance sex drive and improve sexual performance.",
+      "Analysis enhancement",
+      "Disinhibition - While 3-FPM is often noted for its potential functional applications, higher doses can result in the kind of disinhibition seen in traditional stimulants like amphetamine or cocaine, leading to increased sociability.",
+      "Cognitive euphoria - This component is much less intense than the euphoria experienced with other stimulants such as amphetamine, cocaine, or methamphetamine.",
+      "Focus enhancement - This component is most effective at low to moderate doses as anything higher will usually impair concentration.",
+      "Motivation enhancement - This component is experienced in a functional form even at moderate to high doses.",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Wakefulness",
+      "Wakefulness",
+      "Derealization",
+      "Brightness alteration - People often report an increase of Brightness on 3-FPM in their subjective experiences. Based on anecdotal reports"
+    ],
+    "neutral": [
+      "Abnormal heartbeat",
+      "Frequent urination",
+      "Dry mouth",
+      "Pupil dilation",
+      "Ego inflation",
+      "Thought acceleration",
+      "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober.",
+      "Thought deceleration"
+    ],
+    "negative": [
+      "Appetite suppression - The above components are also accompanied by a suppression of appetite which is usually much less intense in strength in comparison to the appetite suppression experienced with amphetamine or methamphetamine.",
+      "Dehydration",
+      "Vasoconstriction",
+      "Decreased libido - 3-FPM is known for increasing sexual activity. But while being a CNS stimulant vasoconstriction that occurs with stimulants can make sexual activity more strenuous",
+      "Teeth grinding - This component can be considered to be less intense when compared with that of MDMA and many other stimulants.",
+      "Anxiety",
+      "Anxiety",
+      "Cognitive fatigue",
+      "Depression",
+      "Irritability",
+      "Motivation suppression"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-20mg",
+        "common": "20-35mg",
+        "strong": "35-50mg",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "Unknown",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "3-6 hours"
+      }
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "10mg",
+        "light": "10-30mg",
+        "common": "30-60mg",
+        "strong": "60-90mg",
+        "heavy": "90mg"
+      },
+      "duration": {
+        "onset": "20-40 minutes",
+        "comeup": "Unknown",
+        "peak": "Unknown",
+        "offset": "Unknown",
+        "total": "4-6 hours"
+      },
+      "notes": "Afterglow: 30-90 minutes"
+    }
+  },
+  "interactions": [
+    "25x-NBOMe",
+    "25x-NBOH",
+    "Tramadol",
+    "MAOIs",
+    "DXM",
+    "MDMA",
+    "Stimulants"
+  ],
+  "harmReduction": [
+    "exact toxic dosage is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted amphetamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted amphetamines",
+    "Phenylmorpholine"
+  ]
+}

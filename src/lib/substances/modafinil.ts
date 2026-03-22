@@ -1,0 +1,86 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Modafinil
+// ID: modafinil
+// Categories: stimulants
+// Class: Benzhydryl
+
+export const modafinil: Substance = 
+{
+  "id": "modafinil",
+  "name": "Modafinil",
+  "commonNames": [
+    "Benzhydryl"
+  ],
+  "categories": [
+    "stimulants"
+  ],
+  "class": "Benzhydryl",
+  "description": "Modafinil (also known by the brand names Provigil, Alertec, Modavigil, and others) is a psychoactive class eugeroic substance of the chemical class benzhydryl class that produces wakefulness-promoting and stimulant effects when administered. It is commonly used to enhance cognition, reduce fatigue, and increase alertness in both medical and non-medical contexts. Modafinil is approved by the U.S. Food and Drug Administration for the treatment of obstructive sleep apnea, shift work sleep disorder and narcolepsy. However, studies have shown that modafinil may also be useful off-label for alleviating the symptoms of depression, bipolar disorder, Parkinson's disease, seasonal depressive disorder, ADHD, and various other conditions which have fatigue as a symptom. Modafinil has also been used as a doping agent by various athletes due to its ability to produce physical stimulation.",
+  "effects": {
+    "positive": [
+      "Increased heart rate",
+      "Dehydration - Dehydration and dry mouth commonly occur due to an increase in motivation to engage in physical activities as well as an increased sense of focus which causes one to forget to drink water."
+    ],
+    "neutral": [
+      "Stimulation - In terms of its effects on the user's physical energy levels, modafinil is commonly considered to be stimulating and energetic, but can be considered as much less stimulating when compared to amphetamine. This stimulation encourages physical movement and activities such as running, playing sports, socializing, and/or exercising. The particular style of stimulation which modafinil presents can result in jaw clenching, teeth grinding, or other involuntary movements comparable to that of traditional stimulants at high doses, but are manifested much less consistently and intensely when compared to amphetamine or cocaine.",
+      "Body odor alteration - Modafinil can leave a very distinct smell of sulfur in one's urine. This is likely because modafinil, being a member of the sulphinyl benzhydryl chemical class, contains sulfur in its chemical makeup.",
+      "Pupil dilation",
+      "Photophobia - Although uncommon, modafinil can cause a temporary visual intolerance to light.",
+      "Diarrhea"
+    ],
+    "negative": [
+      "Appetite suppression -  The above components are also accompanied by a suppression of appetite which is usually less intense in strength in comparison to the appetite suppression experienced with amphetamine.",
+      "Headaches - In terms of physical discomfort, modafinil can cause headaches especially if dehydrated, if you have not eaten food, or if you have been sitting in an awkward position for an extended period of time focused intensely on a task.",
+      "Dizziness",
+      "Nausea"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "25mg",
+        "light": "50-100mg",
+        "common": "100-200mg",
+        "strong": "200-300mg",
+        "heavy": "300mg"
+      },
+      "duration": {
+        "onset": "20-60 minutes",
+        "comeup": "20-60 minutes",
+        "peak": "3.5-5 hours",
+        "offset": "1-3 hours",
+        "total": "5-10 hours"
+      },
+      "notes": "Afterglow: 2-6 hours"
+    }
+  },
+  "interactions": [
+    "25x-NBOMe",
+    "25x-NBOH",
+    "Tramadol",
+    "MAOIs",
+    "Hormonal Birth Control",
+    "CYP2C19-substrates",
+    "DXM",
+    "MDMA",
+    "Stimulants"
+  ],
+  "harmReduction": [
+    "The median lethal dose at which 50% of participants die (LD50) from modafinil for human beings has never been reached"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Benzhydryl"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Benzhydryl"
+  ]
+};

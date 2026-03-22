@@ -1,0 +1,115 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: 4-AcO-MET
+// ID: 4-aco-met
+// Categories: hallucinogens
+// Class: Substituted tryptamines
+
+export const _4_aco_met: Substance = 
+{
+  "id": "4-aco-met",
+  "name": "4-AcO-MET",
+  "commonNames": [
+    "Substituted tryptamines"
+  ],
+  "categories": [
+    "hallucinogens"
+  ],
+  "class": "Substituted tryptamines",
+  "description": "4-Acetoxy-N-methyl-N-ethyltryptamine (also known as 4-AcO-MET, Metacetin, and Azomet) is a lesser-known novel Psychoactive class psychedelic substance of Chemical class tryptamine class. Members of this group produce psilocybin-like psychedelic effects when administered. It is structurally related to psychedelic tryptamines like 4-AcO-DMT, 4-AcO-DET, and 4-AcO-MiPT. The substance is closely related in structure to 4-HO-MET, for which it is theorized to act as a prodrug. Very little data exists about the pharmacological properties, metabolism, and toxicity of 4-AcO-MET, and it has little history of human usage.",
+  "effects": {
+    "positive": [
+      "Sedation - 4-AcO-MET is considered by most to be relaxing, stoning and mildly sedating. Compulsive yawning often accompanies this sense of sedation. However, the sedation is often considered to be less strong than that of the related compounds psilocin and 4-AcO-DMT.",
+      "Spontaneous physical sensations - The \"body high\" of 4-AcO-MET can be described as a pleasurable, warm, soft and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
+      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth and usually occurs around or directly after the peak of the experience. Users can feel as if they are physically part of or conjoined with other objects in a seamless continuity. This is usually reported as feeling comfortable, tranquil and mindful, though it can also manifest in the form of bodily tension.",
+      "Muscle contractions - The muscle contractions that can occur by 4-AcO-MET tend to be transient and benign feeling in nature, compared to many other tryptamines, phenethylamines and lysergamides.",
+      "Muscle relaxation",
+      "Excessive yawning - This effect seems to be uniquely pronounced among psilocin and related tryptamines. It can occur to a lesser degree on LSD and very rarely on psychedelic phenethylamines like mescaline. It typically occurs in conjunction with watery eyes.",
+      "Increased salivation",
+      "Colour enhancement",
+      "Analysis enhancement",
+      "Emotion enhancement",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Novelty enhancement",
+      "Unity and interconnectedness",
+      "Wakefulness",
+      "Enhancements"
+    ],
+    "neutral": [
+      "Watery eyes",
+      "Pupil dilation",
+      "Runny nose",
+      "Pattern recognition enhancement",
+      "Visual acuity enhancement",
+      "Drifting (melting, flowing, breathing and morphing) - In comparison to other psychedelics, this effect can be described as highly detailed, cartooon-like in style, slow and smooth in motion and static in appearance.",
+      "After images",
+      "Colour shifting",
+      "Environmental patterning",
+      "Scenery slicing",
+      "Symmetrical texture repetition",
+      "Tracers",
+      "Transformations",
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - This effect is very consistent in dark environments at appropriately high dosages. They can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
+      "Conceptual thinking",
+      "Autonomous voice communication",
+      "Perception of interdependent opposites",
+      "Thought acceleration",
+      "Thought connectivity",
+      "Time distortion",
+      "Brain zaps",
+      "Distortions"
+    ],
+    "negative": [
+      "Olfactory hallucination",
+      "Teeth grinding - This component is considerably less intense when compared with substances like MDMA when it occurs.",
+      "Nausea",
+      "Delusion",
+      "Ego death",
+      "Memory suppression",
+      "Personal bias suppression",
+      "Thought loops",
+      "Hallucinations"
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "5mg",
+        "light": "10-20mg",
+        "common": "20-30mg",
+        "strong": "30-50mg",
+        "heavy": "50mg"
+      },
+      "duration": {
+        "onset": "20-60 minutes",
+        "comeup": "30-60 minutes",
+        "peak": "1-2 hours",
+        "offset": "2+ hours",
+        "total": "4-6 hours"
+      },
+      "notes": "Afterglow: 2-4 hours"
+    }
+  },
+  "interactions": [
+    "Lithium",
+    "Tramadol"
+  ],
+  "harmReduction": [
+    "toxic dose is unknown"
+  ],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted tryptamines"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted tryptamines"
+  ]
+};

@@ -1,0 +1,111 @@
+// Auto-generated from substances.txt
+import type { Substance } from '../types';
+
+// Substance Data
+// Name: Methylnaphthidate
+// ID: methylnaphthidate
+// Categories: stimulants
+// Class: Substituted phenidates
+
+export const methylnaphthidate: Substance = 
+{
+  "id": "methylnaphthidate",
+  "name": "Methylnaphthidate",
+  "commonNames": [
+    "Substituted phenidates"
+  ],
+  "categories": [
+    "stimulants"
+  ],
+  "class": "Substituted phenidates",
+  "description": "Methylnaphthidate (also known as HDMP-28) is a novel synthetic psychoactive class stimulant substance of the substituted chemical class phenidate chemical class. It is a structural analog of the commonly prescribed ADHD drug methylphenidate (e.g. Ritalin, Concerta) that produces moderately stimulating effects when administered. Like members of the phenidate class, methylnaphthidate is believed to act as a monoamine reuptake inhibitor. However, it has been reported to display distinct differences in its subjective effects by not behaving as a traditional dopaminergic stimulant. This has been speculated to owe itself to its appreciable effects on serotonin reuptake inhibition that is not observed in typical methylphenidate analogs.",
+  "effects": {
+    "positive": [
+      "Stimulation",
+      "Increased heart rate - This component has been reported by some as being uniquely pronounced in the -phenidate family. These effects might owe themselves to increased free-circulating serotonin in the blood, which would lead to sustained agonism at Serotonin-2B receptors on the heart.",
+      "Wakefulness",
+      "Analysis enhancement",
+      "Wakefulness",
+      "Increased music appreciation",
+      "Focus enhancement - This component is most effective at low to moderate dosages as anything higher will usually impair concentration.",
+      "Motivation enhancement",
+      "Euphoria - The euphoric rush associated with methylnaphthidate use (as result of dopamine reuptake inhibition) is very short-lived and compulsive, similar to that of cocaine.",
+      "Cognitive fatigue - This component can occur during the offset of this compound as a rebound effect which is usually equal in its intensity to the enhancements which occurred before it."
+    ],
+    "neutral": [
+      "Thought deceleration",
+      "Thought acceleration",
+      "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober."
+    ],
+    "negative": [
+      "Dehydration",
+      "Appetite suppression",
+      "Teeth grinding - This component can be considered to be present, but less intense when compared with that of MDMA.",
+      "Anxiety",
+      "Cognitive fatigue",
+      "Depression",
+      "Irritability",
+      "Motivation suppression"
+    ]
+  },
+  "routeData": {
+    "insufflated": {
+      "dosage": {
+        "threshold": "Unknown",
+        "light": "4-8mg",
+        "common": "8-14mg",
+        "strong": "14-28mg",
+        "heavy": "28mg"
+      },
+      "duration": {
+        "onset": "3-6 minutes",
+        "comeup": "Unknown",
+        "peak": "1-2 hours",
+        "offset": "1-2 hours",
+        "total": "90-180 minutes"
+      },
+      "notes": "Afterglow: 1-2 hours"
+    },
+    "oral": {
+      "dosage": {
+        "threshold": "4mg",
+        "light": "10-15mg",
+        "common": "15-30mg",
+        "strong": "30-50mg",
+        "heavy": "50mg"
+      },
+      "duration": {
+        "onset": "1-10 minutes",
+        "comeup": "Unknown",
+        "peak": "1.5-2 hours",
+        "offset": "1.5-2 hours",
+        "total": "2-5 hours"
+      },
+      "notes": "Afterglow: 1-8 hours"
+    }
+  },
+  "interactions": [
+    "25x-NBOMe",
+    "25x-NBOH",
+    "Tramadol",
+    "MAOIs",
+    "MDMA",
+    "Cocaine",
+    "DXM",
+    "MDMA",
+    "Stimulants"
+  ],
+  "harmReduction": [],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Substituted phenidates"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Substituted phenidates"
+  ]
+};

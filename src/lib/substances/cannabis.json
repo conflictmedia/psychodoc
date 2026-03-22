@@ -1,0 +1,152 @@
+{
+  "id": "cannabis",
+  "name": "Cannabis",
+  "commonNames": [
+    "Cannabinoid"
+  ],
+  "categories": [
+    "other"
+  ],
+  "class": "Cannabinoid",
+  "description": "It is the most used illicit substance in the world. The principal psychoactive constituent of cannabis is tetrahydrocannabinol (THC), which makes up one of 483 known compounds in the plant, including at least 84 other cannabinoids such as cannabidiol (CBD), cannabinol (CBN), tetrahydrocannabivarin (THCV), and cannabigerol (CBG). Lower doses are associated with relaxing effects similar to a depressant. Higher doses are associated with mild-to-moderate hallucinogenic effects such as visual hallucinations, conceptual thinking and time distortion, as well as a greater risk of anxiety, paranoia, and delusions. Cannabis is considered to have low to moderate abuse potential.",
+  "effects": {
+    "positive": [
+      "Sedation Thus, the first dose of cannabis after a period of abstinence will tend to be far more stimulating than subsequent doses, which must compete with the relaxing effects of previous doses. <p>Because the relaxation both persists much longer and shares many of the same pathways as the stimulation, regular ingestion of THC also leads to increased tolerance to its stimulating effects, but not to its relaxing effects.",
+      "Appetite enhancement - The feeling of increased appetite following the use of cannabis has been documented for hundreds of years and is known colloquially as \"the munchies\". Cannabis has been shown in recent studies to stimulate the release of the hormone ghrelin which is normally released by the stomach when empty as a signal for the brain to search for food.",
+      "Gustatory enhancement - Cannabis is regularly known to improve the taste of foods.",
+      "Changes in felt gravity - At extremely high doses, many users report a feeling of being pulled backwards across vast distances (sometimes at powerful speeds). This sensation progressively increases in intensity and often eventually becomes unbearable if one leans backwards or lies down; however, it disappears altogether once the user sits up or leans forward.",
+      "Increased heart rate - Decreased blood pressure can result in an increased heart rate, although this varies depending on the user.",
+      "Muscle relaxation",
+      "Perception of bodily lightness or Perception of bodily heaviness - Depending on the specific strain of cannabis, one can find themselves with a body which can feel either physically heavier or lighter than it usually would in a style that is entirely dependent upon dose or tolerance of the individual.",
+      "Physical euphoria - This rarely exceeds mild to moderate levels of intensity, and although this effect may be present for many users there are also a number of individuals who report experiencing no euphoria at all. For some, this effect is notably more prominent with edible forms of cannabis.",
+      "Seizure suppression - There are many anecdotal reports of the successful treatment of seizures in epilepsy with the use of low THC/high CBD marijuana. However, there is not enough scientific evidence to draw conclusions about its safety or efficacy. Studies in animals have found that cannabidiol, tetrahydrocannabivarin (THCV), and other cannabinoids have anticonvulsant properties.",
+      "Tactile enhancement",
+      "Colour enhancement - This effect is often faint, but has been known to increase in its likeness and/or appearance among \"regular\" users of psychedelics.",
+      "Brightness alteration - THC has been shown to modulate the activity of cone cells in the eye. This can cause an increased sensitivity to light, causing one's vision to appear brighter than normal.",
+      "Visual disconnection",
+      "Analysis enhancement - This effect is significantly less prominent and consistent than it is with serotonergic psychedelics and stimulants.",
+      "Cognitive euphoria - This effect is generally mild and usually only present during the onset and peak of intoxication",
+      "Creativity enhancement",
+      "Derealization",
+      "Decreased libido and Increased libido - Although cannabis is commonly reported to increase sexual desire and heighten its pleasure it has also been reported to decrease one's libido as well. <p>The decrease in libido typically only occurs during the onset of the intoxication whilst the increase in libido commonly occurs during the offset or after the peak effects. However, these components are inconsistent and it is possible for one of these effects to occur without the other.",
+      "Emotion enhancement - The most prominent cognitive component of the cannabis experience is the way in which it enhances the emotions one is already feeling proportional to dose. This can result in euphoria, extreme laughter, and increased immersion within tasks and activities or it can result in anxiety and paranoia depending on the user's current state of mind.",
+      "Immersion enhancement",
+      "Increased music appreciation",
+      "Increased sense of humor",
+      "Laughter fits - Cannabis can often cause spurts of laughter for little, to no reason. This is often where the term \"giggles\" comes from when people are high off cannabis .",
+      "Mindfulness",
+      "Novelty enhancement - Relatively consistent, but not as pronounced as with psychedelics. This effect can become more noticeable and/or consistent if the individual regularly takes psychedelics.",
+      "Personal meaning enhancement",
+      "Sleepiness - This effect depends mostly on dose and/or strain of the plant and is most prominent after the peak subsides.",
+      "Suggestibility enhancement",
+      "Enhancements",
+      "Synaesthesia - This is a very rare and typically non-reproducible effect. It is particularly mild when compared to the states capable of being produced by other hallucinogens, particularly serotonergic psychedelics. Increasing the dosage can increase the likelihood for this effect to occur, but otherwise only seems to be possible among those who are already predisposed to synaesthetic states."
+    ],
+    "neutral": [
+      "Spontaneous bodily sensations - The \"body high\" of cannabis is extremely variable and depends entirely on the individual strain as well as dose and method of intake. In general, however, it can be described as a relatively pleasurable, sometimes warm, soft, intoxicating and all-encompassing sensation. At high dosages, it can cause some users to feel shaky or nerve-wracked.",
+      "Bronchodilation",
+      "Muscle spasms - This effect is usually very subtle and is more likely to occur at high doses.",
+      "Red eye - Marijuana induces corneal vasodilation (so called red eye) and a reduction of intraocular pressure (IOP). Naphazoline eye drops relieve red eyes.",
+      "Acuity suppression - THC is known to decrease intraocular pressure. This can sometimes result in blurry vision for some people.",
+      "Pattern recognition enhancement - This effect can occur at high doses",
+      "Tracers - This effect can be seen at high doses and is generally quite mild. It generally does not extend past level 2.",
+      "Geometry - Cannabis is capable of inconsistently inducing mild psychedelic geometry at extremely high doses within many users who also regularly use psychedelics. It is capable of inducing these in a visual style which seems to be an averaged out depiction of all the psychedelics one has used within the past. These rarely extend beyond level 4 and are considered to be mild, fine, small and zoomed out (but often well-defined).",
+      "Conceptual thinking",
+      "Depersonalization",
+      "Focus suppression and Focus enhancement - This can depend on the user, dose, method or the strain of cannabis used. Higher doses tend to cause focus suppression while lower doses can increase one's focus.",
+      "Thought connectivity - Cannabis can often cause many wandering thoughts and ideas at most doses.",
+      "Thought deceleration",
+      "Time distortion - Cannabis has been commonly reported to alter one's sense of time. The distortion that occurs is generally mild, and is most commonly reported to be in the form of time expansion.",
+      "Distortions - These are usually only present at extremely high doses."
+    ],
+    "negative": [
+      "Appetite suppression - This effect may present itself at the very beginning of the intoxication and is likely due mostly to the cannabinoid THCV.",
+      "Bodily pressures - This can be described a subtle or distinct pressure felt behind one's eye(s).",
+      "Decreased blood pressure",
+      "Motor control loss - This substance causes a partial to moderate suppression of motor control which intensifies proportional to dose, but rarely results in a complete inability to walk and perform basic movements.",
+      "Nausea -  At heavy dosages and overdoses, cannabis can be nauseating. This usually passes after the first 30 or 40 minutes of the intoxication and tends to transition later into nausea suppression.",
+      "Nausea suppression - Cannabis is effective for suppressing nausea induced by both general illness and substances. It is considered an effective treatment for chemotherapy-induced nausea and vomiting (CINV)",
+      "Pain relief - This substance has been reported as useful for treating certain headaches and chronic pain, including pain caused by neuropathy and possibly fibromyalgia and rheumatoid arthritis.",
+      "Vasodilation - THC decreases blood pressure which dilates the blood vessels and increases blood flow throughout the body. The arteries in the eyeball expand from the decreased blood pressure. These enlarged arteries often produce a bloodshot red eye effect and is the basis for its effectiveness at treating glaucoma. Studies have shown  cannabis (smoked or eaten) effectively lowers intraocular pressure by about 25%, as much as standard medications.",
+      "Internal hallucination - The internal hallucinations of cannabis are extremely variable in their appearance depending on the dosage, tolerance and the individual's brain chemistry. They are very inconsistent and for some even rare but can be described as being fainter in appearance when compared to traditional psychedelics and do not seem to be as regularly composed of visual geometry. <p>The most common way in which they manifest themselves is through hypnagogic scenarios. They are most common during high dosages in dark environments and can be comprehensively described through their variations as both lucid and delirious in believability, fixed in style, autonomous in controllability, equal in new experiences and memory replays in content and are primarily geometry-based in style.",
+      "Peripheral information misinterpretation - This very inconsistent effect tends to be mild and fleeting in contrast to other more powerful psychoactive substances. This effect rarely occurs on cannabis alone but when it does it is often in high dosages and/or when the individual has a low tolerance. It is more likely to manifest itself in certain environments as opposed to others and is more likely to happen if one has used stronger substances recently, typically within the past 24 to 36 hours.",
+      "Anxiety or Anxiety suppression",
+      "Analysis suppression",
+      "Delusion",
+      "Dream suppression - It is commonly reported that regular cannabis use before sleep results in a complete absence of dreams. A day or two of abstaining from cannabis results in an intensification of dreams for a short period of time. <p>This claim is supported through studies that demonstrate that measurably reduced eye movement activity and REM states occur when one falls asleep in the THC condition. This state is strongly associated with dreaming. The same study also reported a REM rebound effect; there is more REM activity during the withdrawal from THC.",
+      "Feelings of impending doom - This occurs in high doses, it consists of extreme anxiety and paranoia. It can be compared to a mild \"bad trip\" on psychedelics.",
+      "Memory suppression - Cannabis is known to suppress short-term memory due to inhibition of glutamate neurotransmission in the hippocampus. This effect primarily effects short-term memory, making ego death or long-term memory suppression very unlikely.",
+      "Motivation suppression",
+      "Paranoia - All cannabinoids are capable of inducing paranoia at high doses, with chronic administration, or when administered alongside psychedelics or stimulants.",
+      "Psychosis - The prolonged usage of THC may increase one's disposition to psychosis, particularly in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of schizophrenia)."
+    ]
+  },
+  "routeData": {
+    "oral": {
+      "dosage": {
+        "threshold": "1mg",
+        "light": "2.5-5mg",
+        "common": "5-10mg",
+        "strong": "10-25mg",
+        "heavy": "25mg"
+      },
+      "duration": {
+        "onset": "20-60 minutes",
+        "comeup": "30-60 minutes",
+        "peak": "1-2 hours",
+        "offset": "4-6 hours",
+        "total": "4-10 hours"
+      },
+      "notes": "Afterglow: 6-12 hours"
+    },
+    "smoked": {
+      "dosage": {
+        "threshold": "0.4mg",
+        "light": "0.4-2mg",
+        "common": "2-4mg",
+        "strong": "4-10mg",
+        "heavy": "10mg"
+      },
+      "duration": {
+        "onset": "0.1-10 minutes",
+        "comeup": "5-10 minutes",
+        "peak": "15-45 minutes",
+        "offset": "3-4 hours",
+        "total": "2.5-5 hours"
+      },
+      "notes": "Afterglow: 45-180 minutes"
+    },
+    "sublingual": {
+      "dosage": {
+        "threshold": "Unknown",
+        "light": "Unknown",
+        "common": "Unknown",
+        "strong": "Unknown",
+        "heavy": "Unknown"
+      },
+      "duration": {
+        "onset": "1-10 minutes",
+        "comeup": "15-30 minutes",
+        "peak": "30-60 minutes",
+        "offset": "4-6 hours",
+        "total": "3-7 hours"
+      }
+    }
+  },
+  "interactions": [
+    "Lithium"
+  ],
+  "harmReduction": [],
+  "legality": "Legal status varies by jurisdiction. Check local laws.",
+  "chemistry": {
+    "formula": "Unknown",
+    "molecularWeight": "Unknown",
+    "class": "Cannabinoid"
+  },
+  "history": "Information not available in source data.",
+  "afterEffects": "See route data for afterglow information.",
+  "riskLevel": "moderate",
+  "aliases": [
+    "Cannabinoid"
+  ]
+}
