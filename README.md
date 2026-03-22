@@ -4,7 +4,8 @@ Recreational substance information repository and locally stored dose logger
 
 ## Features
 
-- 118 (and growing) different substances
+- 243 different substances from PsychonautWiki (eventually we will improve this data hopefully as PW is lacking some information on certain substances)
+- Comprehensive effects of substances. 
 - Dosing and Duration info for multiple routes of administration
 - Dose logger with graphs that stores all the information in localStorage on your own browser
 - Export to CSV to backup or migrate your dose history
