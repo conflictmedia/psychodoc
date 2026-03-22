@@ -4,7 +4,8 @@ Recreational substance information repository and locally stored dose logger
 
 ## Features
 
-- 118 (and growing) different substances
+- 243 different substances from PsychonautWiki (eventually we will improve this data hopefully as PW is lacking some information on certain substances)
+- Comprehensive effects of substances. 
 - Dosing and Duration info for multiple routes of administration
 - Dose logger with graphs that stores all the information in localStorage on your own browser
 - Export to CSV to backup or migrate your dose history
@@ -28,7 +29,8 @@ Fork the repo and submit PRs with entries/changes! All substance information is 
 - [ ] Tweak the page on mobile a metric fuckton
 - [ ] Import CSV so you can transfer from mobile/other devices
 - [x] Explore options for more seamless mobile-><-desktop cohesion
-- [ ] Populate repository entries with a lot more data like effects and pharmacology/pharmocokinetics w/ sources
+- [x] Populate repository entries with a lot more data like effects
+- [ ] Add section with pharmacology/pharmocokinetics w/ sources
 - [ ] Implement locally stored custom user added drugs to bridge gap until they are added to into the repository (maybe)
 - [ ] Add expieriences section to substances with links to expierience reports
 - [ ] Add Harm Reduction resource page
