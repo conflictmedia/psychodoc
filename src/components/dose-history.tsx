@@ -130,7 +130,15 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   const cryptoKeyRef = useRef<CryptoKey | null>(null)
   const activeRoomRef = useRef<string | null>(null)
   const hashedRoomRef = useRef<string | null>(null)
-  const deviceIdRef = useRef(Math.random().toString(36).substring(2, 15))
+  const deviceIdRef = useRef(
+    (() => {
+      const stored = localStorage.getItem('drugucopia-device-id')
+      if (stored) return stored
+      const id = Math.random().toString(36).substring(2, 15)
+      localStorage.setItem('drugucopia-device-id', id)
+      return id
+    })()
+  )
   const unsubscribeRef = useRef<(() => void) | null>(null)
   const localVersionRef = useRef<number>(0)
 
@@ -140,14 +148,11 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     try {
       const stored = localStorage.getItem(STORAGE_KEY)
       const logs = stored ? JSON.parse(stored) : []
-      const sorted = logs.sort((a: DoseLog, b: DoseLog) => 
+      const sorted = logs.sort((a: DoseLog, b: DoseLog) =>
         new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
       )
       setDoses(sorted)
-      
-      if (syncStatus === 'synced') {
-        pushToSync(sorted)
-      }
+      // ← Remove the pushToSync(sorted) call that was here
     } catch (error) {
       console.error('Error loading dose logs:', error)
       setDoses([])
@@ -155,7 +160,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       setLoading(false)
     }
   }
-
   useEffect(() => {
     fetchDoses()
   }, [refreshTrigger])
