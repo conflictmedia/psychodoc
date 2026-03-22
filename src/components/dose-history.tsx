@@ -93,25 +93,32 @@ const decryptData = async (encryptedObj: { iv: string; ciphertext: string }, key
 }
 
 // --- MERGE LOGIC ---
-// Union local + remote by ID. On conflict (same ID), keep the one with the
-// newer createdAt. This means no data is ever lost from either side.
-const mergeDoses = (local: DoseLog[], remote: DoseLog[]): DoseLog[] => {
+// Union local + remote by ID, then remove any IDs that appear in either
+// tombstone set. On conflict (same ID), keep the newer createdAt.
+const mergeDoses = (
+  local: DoseLog[],
+  remote: DoseLog[],
+  localDeleted: Set<string>,
+  remoteDeleted: Set<string>
+): { doses: DoseLog[]; deleted: Set<string> } => {
+  const allDeleted = new Set([...localDeleted, ...remoteDeleted])
   const map = new Map<string, DoseLog>()
-  for (const d of local) map.set(d.id, d)
+  for (const d of local) if (!allDeleted.has(d.id)) map.set(d.id, d)
   for (const d of remote) {
+    if (allDeleted.has(d.id)) { map.delete(d.id); continue }
     const existing = map.get(d.id)
     if (!existing) {
       map.set(d.id, d)
     } else {
-      // Keep whichever was created more recently (handles edits if ever added)
-      const existingTime = new Date(existing.createdAt).getTime()
-      const remoteTime = new Date(d.createdAt).getTime()
-      if (remoteTime > existingTime) map.set(d.id, d)
+      if (new Date(d.createdAt).getTime() > new Date(existing.createdAt).getTime()) {
+        map.set(d.id, d)
+      }
     }
   }
-  return Array.from(map.values()).sort(
+  const doses = Array.from(map.values()).sort(
     (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
   )
+  return { doses, deleted: allDeleted }
 }
 
 // --- INTERFACES ---
@@ -138,6 +145,7 @@ interface DoseHistoryProps {
 }
 
 const STORAGE_KEY = 'drugucopia-dose-logs'
+const DELETED_KEY = 'drugucopia-deleted-ids'
 const SYNC_AUTH_KEY = 'drugucopia-sync-auth'
 
 // --- COMPONENT ---
@@ -178,6 +186,18 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(logs))
   }
 
+  const readDeleted = (): Set<string> => {
+    try {
+      return new Set(JSON.parse(localStorage.getItem(DELETED_KEY) || '[]'))
+    } catch {
+      return new Set()
+    }
+  }
+
+  const writeDeleted = (ids: Set<string>) => {
+    localStorage.setItem(DELETED_KEY, JSON.stringify([...ids]))
+  }
+
   const fetchDoses = useCallback(() => {
     setLoading(true)
     try {
@@ -204,7 +224,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
       )
       setDoses(logs)
-      if (syncStatus === 'synced') pushToSync(logs)
+      if (syncStatus === 'synced') pushToSync(logs, readDeleted())
     }
     window.addEventListener('dose-logs-updated', handleExternalUpdate)
     return () => window.removeEventListener('dose-logs-updated', handleExternalUpdate)
@@ -230,12 +250,13 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
 
   // --- SYNC ---
 
-  const pushToSync = async (latestDoses: DoseLog[]) => {
+  const pushToSync = async (latestDoses: DoseLog[], deletedIds?: Set<string>) => {
     if (!cryptoKeyRef.current || !hashedRoomRef.current || isPushingRef.current) return
     isPushingRef.current = true
     try {
-      const encrypted = await encryptData(latestDoses, cryptoKeyRef.current)
-      // Record what we're about to push so the snapshot listener can skip it
+      const deleted = deletedIds ?? readDeleted()
+      const payload = { doses: latestDoses, deleted: [...deleted] }
+      const encrypted = await encryptData(payload, cryptoKeyRef.current)
       lastPushedHashRef.current = encrypted.ciphertext.substring(0, 32)
       await setDoc(doc(db, 'secure_rooms', hashedRoomRef.current), {
         encrypted,
@@ -277,7 +298,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         if (!docSnap.exists()) {
           // Room is new — seed it with our local data
           const local = readLocal()
-          if (local.length > 0) await pushToSync(local)
+          if (local.length > 0) await pushToSync(local, readDeleted())
           return
         }
 
@@ -288,23 +309,25 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         if (remoteHash && remoteHash === lastPushedHashRef.current) return
 
         try {
-          const remoteDoses: DoseLog[] = await decryptData(
-            remoteData.encrypted,
-            cryptoKeyRef.current!
-          )
+          const payload = await decryptData(remoteData.encrypted, cryptoKeyRef.current!)
+          // Support both old format (plain array) and new format ({ doses, deleted })
+          const remoteDoses: DoseLog[] = Array.isArray(payload) ? payload : payload.doses ?? []
+          const remoteDeleted: Set<string> = new Set(Array.isArray(payload) ? [] : payload.deleted ?? [])
 
           const local = readLocal()
-          const merged = mergeDoses(local, remoteDoses)
+          const localDeleted = readDeleted()
+          const { doses: merged, deleted: mergedDeleted } = mergeDoses(local, remoteDoses, localDeleted, remoteDeleted)
 
-          // Only write + push if the merge actually changed anything
           const localIds = new Set(local.map(d => d.id))
-          const hasNew = remoteDoses.some(d => !localIds.has(d.id))
-          if (hasNew) {
+          const hasNewDoses = remoteDoses.some(d => !localIds.has(d.id) && !mergedDeleted.has(d.id))
+          const hasNewDeletions = [...remoteDeleted].some(id => !localDeleted.has(id))
+
+          if (hasNewDoses || hasNewDeletions) {
             writeLocal(merged)
+            writeDeleted(mergedDeleted)
             setDoses(merged)
             notifyDoseChange()
-            // Push the merged result back so the remote is also complete
-            await pushToSync(merged)
+            await pushToSync(merged, mergedDeleted)
             toast({ title: 'Data Synced', description: 'Received updates from another device.' })
           }
         } catch (e) {
@@ -317,7 +340,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       // Push any locally-logged doses that accumulated while disconnected.
       // The snapshot listener on Device B will merge these in on receipt.
       const local = readLocal()
-      if (local.length > 0) await pushToSync(local)
+      if (local.length > 0) await pushToSync(local, readDeleted())
 
       setSyncStatus('synced')
       toast({ title: 'Secure Sync Active', description: 'Your data is now end-to-end encrypted and syncing.' })
@@ -336,6 +359,8 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     lastPushedHashRef.current = null
     isPushingRef.current = false
     localStorage.removeItem(SYNC_AUTH_KEY)
+    // Note: STORAGE_KEY and DELETED_KEY are intentionally kept so local data
+    // and tombstones survive a disconnect/reconnect cycle.
     setSyncStatus('idle')
     setRoomId('')
     setPassword('')
@@ -348,10 +373,13 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     setDeleting(id)
     try {
       const updated = doses.filter(d => d.id !== id)
+      const deleted = readDeleted()
+      deleted.add(id)
       writeLocal(updated)
+      writeDeleted(deleted)
       setDoses(updated)
       notifyDoseChange()
-      await pushToSync(updated)
+      await pushToSync(updated, deleted)
       toast({ title: 'Dose deleted', description: 'The dose log has been removed.' })
     } catch (error) {
       toast({ title: 'Error', description: 'Failed to delete dose.', variant: 'destructive' })
