@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { format, isToday, isYesterday, isThisWeek, isThisMonth } from 'date-fns'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, doc, onSnapshot, setDoc, serverTimestamp } from 'firebase/firestore'
@@ -20,6 +20,8 @@ import { categoryColors } from '@/lib/categories'
 import { useToast } from '@/hooks/use-toast'
 import { notifyDoseChange } from './active-doses-timeline'
 
+// --- FIREBASE ---
+
 const firebaseConfig = {
   apiKey: "AIzaSyApN_Tnp0lphwjpYV3RFuCJD9sJqKhnppA",
   authDomain: "drugucopia.firebaseapp.com",
@@ -27,68 +29,93 @@ const firebaseConfig = {
   storageBucket: "drugucopia.firebasestorage.app",
   messagingSenderId: "871310168837",
   appId: "1:871310168837:web:e85ca16b280cffd56f9d6c"
-};
+}
 
-const hashRoomName = async (roomName: string, password: string) => {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(roomName + password + "drugucopia-salt");
-  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('').substring(0, 32);
-};
+const app = initializeApp(firebaseConfig)
+const db = getFirestore(app)
 
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-
-// --- WEB CRYPTO E2EE UTILS ---
+// --- CRYPTO UTILS ---
 
 const buf2base64 = (buf: ArrayBuffer | Uint8Array): string => {
-  const uint8 = buf instanceof Uint8Array ? buf : new Uint8Array(buf);
-  let binary = '';
-  for (let i = 0; i < uint8.byteLength; i++) {
-    binary += String.fromCharCode(uint8[i]);
-  }
-  return btoa(binary);
-};
+  const uint8 = buf instanceof Uint8Array ? buf : new Uint8Array(buf)
+  let binary = ''
+  for (let i = 0; i < uint8.byteLength; i++) binary += String.fromCharCode(uint8[i])
+  return btoa(binary)
+}
 
 const base642buf = (b64: string): Uint8Array => {
-  const binary = atob(b64);
-  const uint8 = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i++) {
-    uint8[i] = binary.charCodeAt(i);
-  }
-  return uint8;
-};
+  const binary = atob(b64)
+  const uint8 = new Uint8Array(binary.length)
+  for (let i = 0; i < binary.length; i++) uint8[i] = binary.charCodeAt(i)
+  return uint8
+}
 
-const deriveKey = async (password: string, salt: string) => {
-  const enc = new TextEncoder();
+const hashRoomName = async (roomName: string, password: string): Promise<string> => {
+  const data = new TextEncoder().encode(roomName + password + 'drugucopia-salt')
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data)
+  return Array.from(new Uint8Array(hashBuffer))
+    .map(b => b.toString(16).padStart(2, '0'))
+    .join('')
+    .substring(0, 32)
+}
+
+const deriveKey = async (password: string, salt: string): Promise<CryptoKey> => {
+  const enc = new TextEncoder()
   const keyMaterial = await crypto.subtle.importKey(
-    "raw", enc.encode(password), "PBKDF2", false, ["deriveBits", "deriveKey"]
-  );
-  return await crypto.subtle.deriveKey(
-    { name: "PBKDF2", salt: enc.encode(salt), iterations: 100000, hash: "SHA-256" },
+    'raw', enc.encode(password), 'PBKDF2', false, ['deriveBits', 'deriveKey']
+  )
+  return crypto.subtle.deriveKey(
+    { name: 'PBKDF2', salt: enc.encode(salt), iterations: 100000, hash: 'SHA-256' },
     keyMaterial,
-    { name: "AES-GCM", length: 256 },
+    { name: 'AES-GCM', length: 256 },
     true,
-    ["encrypt", "decrypt"]
-  );
-};
+    ['encrypt', 'decrypt']
+  )
+}
 
 const encryptData = async (dataObj: any, key: CryptoKey) => {
-  const iv = crypto.getRandomValues(new Uint8Array(12));
-  const encodedText = new TextEncoder().encode(JSON.stringify(dataObj));
-  const ciphertext = await crypto.subtle.encrypt({ name: "AES-GCM", iv }, key, encodedText);
-  return { iv: buf2base64(iv), ciphertext: buf2base64(ciphertext) };
-};
+  const iv = crypto.getRandomValues(new Uint8Array(12))
+  const ciphertext = await crypto.subtle.encrypt(
+    { name: 'AES-GCM', iv },
+    key,
+    new TextEncoder().encode(JSON.stringify(dataObj))
+  )
+  return { iv: buf2base64(iv), ciphertext: buf2base64(ciphertext) }
+}
 
-const decryptData = async (encryptedObj: {iv: string, ciphertext: string}, key: CryptoKey) => {
-  const iv = base642buf(encryptedObj.iv);
-  const ciphertext = base642buf(encryptedObj.ciphertext);
-  const decrypted = await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ciphertext);
-  return JSON.parse(new TextDecoder().decode(decrypted));
-};
+const decryptData = async (encryptedObj: { iv: string; ciphertext: string }, key: CryptoKey) => {
+  const decrypted = await crypto.subtle.decrypt(
+    { name: 'AES-GCM', iv: base642buf(encryptedObj.iv) },
+    key,
+    base642buf(encryptedObj.ciphertext)
+  )
+  return JSON.parse(new TextDecoder().decode(decrypted))
+}
+
+// --- MERGE LOGIC ---
+// Union local + remote by ID. On conflict (same ID), keep the one with the
+// newer createdAt. This means no data is ever lost from either side.
+const mergeDoses = (local: DoseLog[], remote: DoseLog[]): DoseLog[] => {
+  const map = new Map<string, DoseLog>()
+  for (const d of local) map.set(d.id, d)
+  for (const d of remote) {
+    const existing = map.get(d.id)
+    if (!existing) {
+      map.set(d.id, d)
+    } else {
+      // Keep whichever was created more recently (handles edits if ever added)
+      const existingTime = new Date(existing.createdAt).getTime()
+      const remoteTime = new Date(d.createdAt).getTime()
+      if (remoteTime > existingTime) map.set(d.id, d)
+    }
+  }
+  return Array.from(map.values()).sort(
+    (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+  )
+}
 
 // --- INTERFACES ---
+
 interface DoseLog {
   id: string
   substanceId: string
@@ -113,6 +140,8 @@ interface DoseHistoryProps {
 const STORAGE_KEY = 'drugucopia-dose-logs'
 const SYNC_AUTH_KEY = 'drugucopia-sync-auth'
 
+// --- COMPONENT ---
+
 export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   const [doses, setDoses] = useState<DoseLog[]>([])
   const [loading, setLoading] = useState(true)
@@ -120,132 +149,175 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   const [redosing, setRedosing] = useState<string | null>(null)
   const { toast } = useToast()
 
-  // Sync States
+  // Sync state
   const [showSyncPanel, setShowSyncPanel] = useState(false)
   const [syncStatus, setSyncStatus] = useState<'idle' | 'connecting' | 'synced' | 'error'>('idle')
   const [roomId, setRoomId] = useState('')
   const [password, setPassword] = useState('')
-  
-  // Refs for background syncing
-  const cryptoKeyRef = useRef<CryptoKey | null>(null)
-  const activeRoomRef = useRef<string | null>(null)
-  const hashedRoomRef = useRef<string | null>(null)
-  const deviceIdRef = useRef(
-    (() => {
-      if (typeof window === 'undefined') return Math.random().toString(36).substring(2, 15)
-      const stored = localStorage.getItem('drugucopia-device-id')
-      if (stored) return stored
-      const id = Math.random().toString(36).substring(2, 15)
-      localStorage.setItem('drugucopia-device-id', id)
-      return id
-    })()
-  )
-  const unsubscribeRef = useRef<(() => void) | null>(null)
-  const localVersionRef = useRef<number>(0)
 
-  // Load initial local data
-  const fetchDoses = () => {
+  // Stable refs — never reset on re-render
+  const cryptoKeyRef = useRef<CryptoKey | null>(null)
+  const hashedRoomRef = useRef<string | null>(null)
+  const unsubscribeRef = useRef<(() => void) | null>(null)
+  // Track the last remote snapshot we wrote to Firebase ourselves so we can
+  // skip echoing it back to ourselves. Stored as a stringified payload hash.
+  const lastPushedHashRef = useRef<string | null>(null)
+  const isPushingRef = useRef(false)
+
+  // --- LOCAL DATA ---
+
+  const readLocal = (): DoseLog[] => {
+    try {
+      return JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
+    } catch {
+      return []
+    }
+  }
+
+  const writeLocal = (logs: DoseLog[]) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(logs))
+  }
+
+  const fetchDoses = useCallback(() => {
     setLoading(true)
     try {
-      const stored = localStorage.getItem(STORAGE_KEY)
-      const logs = stored ? JSON.parse(stored) : []
-      const sorted = logs.sort((a: DoseLog, b: DoseLog) =>
-        new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+      const sorted = readLocal().sort(
+        (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
       )
       setDoses(sorted)
-      // ← Remove the pushToSync(sorted) call that was here
     } catch (error) {
       console.error('Error loading dose logs:', error)
       setDoses([])
     } finally {
       setLoading(false)
     }
-  }
+  }, [])
+
   useEffect(() => {
     fetchDoses()
-  }, [refreshTrigger])
+  }, [refreshTrigger, fetchDoses])
 
-  // Auto-connect to sync if credentials exist
+  // Listen for writes from other components (dose-logger-modal, etc.)
+  useEffect(() => {
+    const handleExternalUpdate = () => {
+      const logs = readLocal().sort(
+        (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+      )
+      setDoses(logs)
+      if (syncStatus === 'synced') pushToSync(logs)
+    }
+    window.addEventListener('dose-logs-updated', handleExternalUpdate)
+    return () => window.removeEventListener('dose-logs-updated', handleExternalUpdate)
+  }, [syncStatus])
+
+  // Auto-connect on mount if credentials are saved
   useEffect(() => {
     const savedAuth = localStorage.getItem(SYNC_AUTH_KEY)
     if (savedAuth) {
-      const { savedRoom, savedPass } = JSON.parse(savedAuth)
-      setRoomId(savedRoom)
-      setPassword(savedPass)
-      connectToSync(savedRoom, savedPass)
+      try {
+        const { savedRoom, savedPass } = JSON.parse(savedAuth)
+        setRoomId(savedRoom)
+        setPassword(savedPass)
+        connectToSync(savedRoom, savedPass)
+      } catch {
+        localStorage.removeItem(SYNC_AUTH_KEY)
+      }
     }
-    
     return () => {
       if (unsubscribeRef.current) unsubscribeRef.current()
     }
   }, [])
 
-  // --- SYNC LOGIC ---
+  // --- SYNC ---
+
+  const pushToSync = async (latestDoses: DoseLog[]) => {
+    if (!cryptoKeyRef.current || !hashedRoomRef.current || isPushingRef.current) return
+    isPushingRef.current = true
+    try {
+      const encrypted = await encryptData(latestDoses, cryptoKeyRef.current)
+      // Record what we're about to push so the snapshot listener can skip it
+      lastPushedHashRef.current = encrypted.ciphertext.substring(0, 32)
+      await setDoc(doc(db, 'secure_rooms', hashedRoomRef.current), {
+        encrypted,
+        updatedAt: serverTimestamp(),
+      })
+    } catch (e) {
+      console.error('Failed to push sync:', e)
+      toast({ title: 'Sync Warning', description: 'Failed to push update to cloud.', variant: 'destructive' })
+    } finally {
+      isPushingRef.current = false
+    }
+  }
 
   const connectToSync = async (rId = roomId, pass = password) => {
     if (!rId || !pass) return
-    
-    if (!window.crypto || !window.crypto.subtle) {
+    if (!window.crypto?.subtle) {
       toast({ title: 'Encryption Blocked', description: 'HTTPS is required for syncing.', variant: 'destructive' })
       return
+    }
+
+    // Tear down any existing subscription
+    if (unsubscribeRef.current) {
+      unsubscribeRef.current()
+      unsubscribeRef.current = null
     }
 
     setSyncStatus('connecting')
     try {
       cryptoKeyRef.current = await deriveKey(pass, rId)
-      activeRoomRef.current = rId
-
-      const hashedRoomId = await hashRoomName(rId, pass)
-      hashedRoomRef.current = hashedRoomId
-
+      hashedRoomRef.current = await hashRoomName(rId, pass)
       localStorage.setItem(SYNC_AUTH_KEY, JSON.stringify({ savedRoom: rId, savedPass: pass }))
 
-      const docRef = doc(db, 'secure_rooms', hashedRoomId)
+      const docRef = doc(db, 'secure_rooms', hashedRoomRef.current)
+
       unsubscribeRef.current = onSnapshot(docRef, async (docSnap) => {
-        if (docSnap.exists()) {
-          const remoteData = docSnap.data()
-          
-          // Ignore updates that WE just pushed
-          if (remoteData.sourceDevice === deviceIdRef.current) return
+        // Skip if we're in the middle of pushing (avoids echo)
+        if (isPushingRef.current) return
 
-          // Only accept remote data if its version is newer than our last push
-          const remoteVersion = remoteData.version || 0
-          if (remoteVersion <= localVersionRef.current) return
+        if (!docSnap.exists()) {
+          // Room is new — seed it with our local data
+          const local = readLocal()
+          if (local.length > 0) await pushToSync(local)
+          return
+        }
 
-          try {
-            const remoteDoses: DoseLog[] = await decryptData(
-              remoteData.encrypted,
-              cryptoKeyRef.current!
-            )
+        const remoteData = docSnap.data()
 
-            const sorted = remoteDoses.sort((a, b) => 
-              new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-            )
+        // Skip if this snapshot matches what we just pushed
+        const remoteHash = remoteData.encrypted?.ciphertext?.substring(0, 32)
+        if (remoteHash && remoteHash === lastPushedHashRef.current) return
 
-            // Last write wins: fully replace local with remote
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(sorted))
-            setDoses(sorted)
+        try {
+          const remoteDoses: DoseLog[] = await decryptData(
+            remoteData.encrypted,
+            cryptoKeyRef.current!
+          )
+
+          const local = readLocal()
+          const merged = mergeDoses(local, remoteDoses)
+
+          // Only write + push if the merge actually changed anything
+          const localIds = new Set(local.map(d => d.id))
+          const hasNew = remoteDoses.some(d => !localIds.has(d.id))
+          if (hasNew) {
+            writeLocal(merged)
+            setDoses(merged)
             notifyDoseChange()
-            
-            // Update our version tracker to match what we received
-            localVersionRef.current = remoteVersion
-
+            // Push the merged result back so the remote is also complete
+            await pushToSync(merged)
             toast({ title: 'Data Synced', description: 'Received updates from another device.' })
-          } catch (e) {
-            setSyncStatus('error')
-            toast({ title: 'Decryption Failed', description: 'Wrong password or corrupt data.', variant: 'destructive' })
           }
-        } else {
-          // Room is empty — push our local data to initialize it
-          const currentLocal = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]')
-          if (currentLocal.length > 0) pushToSync(currentLocal)
+        } catch (e) {
+          console.error('Decryption failed:', e)
+          setSyncStatus('error')
+          toast({ title: 'Decryption Failed', description: 'Wrong password or corrupt data.', variant: 'destructive' })
         }
       })
 
       setSyncStatus('synced')
       toast({ title: 'Secure Sync Active', description: 'Your data is now end-to-end encrypted and syncing.' })
-      
     } catch (error) {
+      console.error('Sync connection error:', error)
       setSyncStatus('error')
       toast({ title: 'Connection Error', description: 'Could not connect to sync server.', variant: 'destructive' })
     }
@@ -253,10 +325,11 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
 
   const disconnectSync = () => {
     if (unsubscribeRef.current) unsubscribeRef.current()
+    unsubscribeRef.current = null
     cryptoKeyRef.current = null
-    activeRoomRef.current = null
     hashedRoomRef.current = null
-    localVersionRef.current = 0
+    lastPushedHashRef.current = null
+    isPushingRef.current = false
     localStorage.removeItem(SYNC_AUTH_KEY)
     setSyncStatus('idle')
     setRoomId('')
@@ -264,41 +337,19 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     toast({ title: 'Sync Disconnected', description: 'Data will only save locally.' })
   }
 
-  const pushToSync = async (latestDoses: DoseLog[]) => {
-    if (!cryptoKeyRef.current || !hashedRoomRef.current) return
-
-    try {
-      const now = Date.now()
-      localVersionRef.current = now
-
-      const encrypted = await encryptData(latestDoses, cryptoKeyRef.current)
-      await setDoc(doc(db, 'secure_rooms', hashedRoomRef.current), {
-        encrypted,
-        sourceDevice: deviceIdRef.current,
-        version: now,
-        timestamp: serverTimestamp()
-      })
-    } catch (e) {
-      console.error("Failed to push sync:", e)
-      toast({ title: 'Sync Warning', description: 'Failed to push update to cloud.', variant: 'destructive' })
-    }
-  }
-
-  // --- STANDARD LOGIC ---
+  // --- DOSE ACTIONS ---
 
   const deleteDose = async (id: string) => {
     setDeleting(id)
     try {
       const updated = doses.filter(d => d.id !== id)
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
+      writeLocal(updated)
       setDoses(updated)
       notifyDoseChange()
-      
       await pushToSync(updated)
-
-      toast({ title: 'Dose deleted', description: 'The dose log has been removed' })
+      toast({ title: 'Dose deleted', description: 'The dose log has been removed.' })
     } catch (error) {
-      toast({ title: 'Error', description: 'Failed to delete dose', variant: 'destructive' })
+      toast({ title: 'Error', description: 'Failed to delete dose.', variant: 'destructive' })
     } finally {
       setDeleting(null)
     }
@@ -315,20 +366,19 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         createdAt: now,
         notes: dose.notes ? `Redose — ${dose.notes}` : 'Redose',
       }
-
-      const updated = [newDose, ...doses]
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(updated))
+      const updated = [newDose, ...doses].sort(
+        (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
+      )
+      writeLocal(updated)
       setDoses(updated)
       notifyDoseChange()
-
       await pushToSync(updated)
-
       toast({
         title: 'Redose logged',
-        description: `${dose.substanceName} ${dose.amount} ${dose.unit} logged again at ${format(new Date(now), 'h:mm a')}`,
+        description: `${dose.substanceName} ${dose.amount}${dose.unit} logged again at ${format(new Date(now), 'h:mm a')}`,
       })
     } catch (error) {
-      toast({ title: 'Error', description: 'Failed to log redose', variant: 'destructive' })
+      toast({ title: 'Error', description: 'Failed to log redose.', variant: 'destructive' })
     } finally {
       setRedosing(null)
     }
@@ -347,9 +397,10 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     const rows = doses.map((dose) => {
       const dateObj = new Date(dose.timestamp)
       return [
-        format(dateObj, 'yyyy-MM-dd'), format(dateObj, 'HH:mm:ss'), dose.substanceName, getDoseCategories(dose).join('; '),
-        dose.amount, dose.unit, dose.route, dose.duration?.total || '', dose.mood || '', dose.setting || '',
-        dose.intensity || '', dose.notes || ''
+        format(dateObj, 'yyyy-MM-dd'), format(dateObj, 'HH:mm:ss'),
+        dose.substanceName, getDoseCategories(dose).join('; '),
+        dose.amount, dose.unit, dose.route, dose.duration?.total || '',
+        dose.mood || '', dose.setting || '', dose.intensity || '', dose.notes || ''
       ].map(escapeCSV).join(',')
     })
     const csvContent = [headers.map(escapeCSV).join(','), ...rows].join('\n')
@@ -365,21 +416,25 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     toast({ title: 'Export successful', description: 'Your dose history has been downloaded as a CSV file.' })
   }
 
+  // --- DISPLAY HELPERS ---
+
   const groupDosesByDate = (doses: DoseLog[]) => {
     const groups: { [key: string]: DoseLog[] } = {}
     doses.forEach(dose => {
       const date = new Date(dose.timestamp)
-      let key = isToday(date) ? 'Today' : isYesterday(date) ? 'Yesterday' : 
-                isThisWeek(date) ? 'This Week' : isThisMonth(date) ? 'This Month' : format(date, 'MMMM yyyy')
+      const key = isToday(date) ? 'Today'
+        : isYesterday(date) ? 'Yesterday'
+        : isThisWeek(date) ? 'This Week'
+        : isThisMonth(date) ? 'This Month'
+        : format(date, 'MMMM yyyy')
       if (!groups[key]) groups[key] = []
       groups[key].push(dose)
     })
     return groups
   }
 
-  const getCategoryColor = (category: string) => {
-    return categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
-  }
+  const getCategoryColor = (category: string) =>
+    categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
 
   // Normalise: old logs stored category as a string scalar, new ones as string[]
   const getDoseCategories = (dose: DoseLog): string[] => {
@@ -389,9 +444,15 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     return []
   }
 
+  // --- RENDER ---
+
   if (loading) {
     return (
-      <Card><CardContent className="flex items-center justify-center py-8"><Loader2 className="h-6 w-6 animate-spin text-muted-foreground" /></CardContent></Card>
+      <Card>
+        <CardContent className="flex items-center justify-center py-8">
+          <Loader2 className="h-6 w-6 animate-spin text-muted-foreground" />
+        </CardContent>
+      </Card>
     )
   }
 
@@ -406,13 +467,15 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
           <CardDescription>Your logged substance doses</CardDescription>
         </div>
         <div className="flex gap-2 shrink-0">
-          <Button 
-            variant={syncStatus === 'synced' ? "default" : "outline"}
-            size="sm" 
+          <Button
+            variant={syncStatus === 'synced' ? 'default' : 'outline'}
+            size="sm"
             onClick={() => setShowSyncPanel(!showSyncPanel)}
-            className={syncStatus === 'synced' ? "bg-green-600 hover:bg-green-700" : ""}
+            className={syncStatus === 'synced' ? 'bg-green-600 hover:bg-green-700' : ''}
           >
-            {syncStatus === 'synced' ? <Cloud className="mr-2 h-4 w-4" /> : <CloudOff className="mr-2 h-4 w-4" />}
+            {syncStatus === 'synced'
+              ? <Cloud className="mr-2 h-4 w-4" />
+              : <CloudOff className="mr-2 h-4 w-4" />}
             {syncStatus === 'synced' ? 'Synced' : 'Sync'}
           </Button>
           <Button variant="outline" size="sm" onClick={exportToCSV}>
@@ -429,36 +492,38 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
               <Lock className="h-4 w-4 text-muted-foreground" />
               <h4 className="text-sm font-semibold">End-to-End Encrypted Sync</h4>
             </div>
-            
+
             {syncStatus === 'synced' ? (
               <div className="flex items-center justify-between bg-green-500/10 text-green-700 dark:text-green-400 p-3 rounded-md border border-green-500/20">
                 <div className="flex items-center gap-2">
                   <CheckCircle2 className="h-4 w-4" />
                   <span className="text-sm font-medium">Connected to Room: {roomId}</span>
                 </div>
-                <Button size="sm" variant="ghost" onClick={disconnectSync} className="hover:bg-green-500/20">Disconnect</Button>
+                <Button size="sm" variant="ghost" onClick={disconnectSync} className="hover:bg-green-500/20">
+                  Disconnect
+                </Button>
               </div>
             ) : (
               <div className="flex flex-col sm:flex-row gap-2">
-                <Input 
-                  placeholder="Room Name" 
-                  value={roomId} 
-                  onChange={(e) => setRoomId(e.target.value)} 
+                <Input
+                  placeholder="Room Name"
+                  value={roomId}
+                  onChange={(e) => setRoomId(e.target.value)}
                   className="bg-background"
                 />
-                <Input 
-                  type="password" 
-                  placeholder="Secret Password" 
-                  value={password} 
+                <Input
+                  type="password"
+                  placeholder="Secret Password"
+                  value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="bg-background"
                 />
-                <Button 
-                  onClick={() => connectToSync()} 
+                <Button
+                  onClick={() => connectToSync()}
                   disabled={syncStatus === 'connecting' || !roomId || !password}
                   className="shrink-0"
                 >
-                  {syncStatus === 'connecting' ? <Loader2 className="h-4 w-4 animate-spin mr-2" /> : null}
+                  {syncStatus === 'connecting' && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
                   Connect
                 </Button>
               </div>
@@ -497,7 +562,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
                               </Badge>
                             ))}
                           </div>
-                          
+
                           <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
                             <span className="flex items-center gap-1"><Droplets className="h-3 w-3" />{dose.amount} {dose.unit}</span>
                             <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{format(new Date(dose.timestamp), 'MMM d, yyyy')}</span>
@@ -517,7 +582,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
 
                           {dose.notes && <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{dose.notes}</p>}
                         </div>
-                        
+
                         <div className="flex gap-1 shrink-0">
                           <Button
                             variant="ghost" size="icon"
