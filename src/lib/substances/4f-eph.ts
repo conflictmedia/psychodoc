@@ -95,7 +95,7 @@ export const _4f_eph: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenidates"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

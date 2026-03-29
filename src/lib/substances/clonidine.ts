@@ -78,7 +78,7 @@ export const clonidine: Substance =
     "molecularWeight": "Unknown",
     "class": "Imidazoline"
   },
-  "history": "Information not available in source data.",
+  "history": "In the early 1960s, the medicinal chemist Helmut Stähle was tasked by Boehringer Ingelheim with synthesizing a peripherally active a-adrenergic compound that would be useful for nasal decongestion as simple nose drops. A locally acting a-adrenergic vasoconstrictor agent was expected to provide relief from the symptoms of the common cold by shrinking the swollen nasal membranes and producing an unobstructed air passage. The synthetic design of clonidine was achieved when Stähle had the idea of substituting two chlorine groups on the phenyl group of the imidazoline structure, which most of the newer decongestive agents at the time were derived from. At that time, a double halogen substitution was still unusual for pharmaceuticals, and the prevailing opinion was that compounds with several halogen atoms would at best be useful as pesticides. With the discovery of clonidine, the central a-adrenergic receptors first became known to chemists, pharmacologists and physicians.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

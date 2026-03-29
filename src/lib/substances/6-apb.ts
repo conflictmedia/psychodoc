@@ -131,7 +131,7 @@ export const _6_apb: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted amphetamines"
   },
-  "history": "Information not available in source data.",
+  "history": "The synthesis of 6-APB was first reported by a team led by the medicinal chemist and psychedelic researcher David E. Nichols at Purdue University. They were examining the role of the MDA dioxle ring structure in interacting with serotonergic neurons. It was also partly an effort to find an alternative to MDMA, which was gaining recognition as a potentially useful adjunct in psychotherapy, but was also being linked to neurotoxic effects. Human usage was not documented until 2010, when it emerged for sale on the research chemical market. On March 5, 2014 the UK Home Office announced that 6-APB would be made a class B drug on 10 June 2014 alongside every other benzofuran entactogen and many structurally related drugs.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

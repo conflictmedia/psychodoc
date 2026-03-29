@@ -736,27 +736,27 @@ export default function Home() {
                 </CardContent>
               </Card>
 
-              {/* Chemistry */}
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center gap-2 text-lg">
-                    <FlaskConical className="h-5 w-5" />
-                    Chemistry
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Formula</span>
-                    <code className="text-sm font-mono bg-muted px-2 py-0.5 rounded">
-                      {selectedSubstance.chemistry.formula}
-                    </code>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-muted-foreground">Mol. Weight</span>
-                    <span className="font-mono text-sm">{selectedSubstance.chemistry.molecularWeight}</span>
-                  </div>
-                </CardContent>
-              </Card>
+              // {/* Chemistry */}
+              // <Card>
+              //   <CardHeader>
+              //     <CardTitle className="flex items-center gap-2 text-lg">
+              //       <FlaskConical className="h-5 w-5" />
+              //       Chemistry
+              //     </CardTitle>
+              //   </CardHeader>
+              //   <CardContent className="space-y-3">
+              //     <div className="flex justify-between">
+              //       <span className="text-muted-foreground">Formula</span>
+              //       <code className="text-sm font-mono bg-muted px-2 py-0.5 rounded">
+              //         {selectedSubstance.chemistry.formula}
+              //       </code>
+              //     </div>
+              //     <div className="flex justify-between">
+              //       <span className="text-muted-foreground">Mol. Weight</span>
+              //       <span className="font-mono text-sm">{selectedSubstance.chemistry.molecularWeight}</span>
+              //     </div>
+              //   </CardContent>
+              // </Card>
 
               {/* Interactions */}
               <Card>

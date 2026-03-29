@@ -130,7 +130,7 @@ export const mescaline: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "The ritual use of the Peyote cactus has occurred for at least 5700 years by Native Americans in Mexico. The principal psychoactive component in both Peyote and San Pedro, mescaline, was first isolated and identified in 1897 by the German chemist Arthur Heffter and first synthesized in 1919 by Ernst Späth. In modern times, users will often grind it into a powder and pour it into gel capsules to avoid having to come into contact with the bitter taste of the cactus. Shulgin used mescaline as a starting point for synthesizing dozens of novel psychedelic phenethylamine compounds such as the 2C-x and DOx families. They are found within the first book of PiHKAL, and are as follows: Mescaline, DOM, 2C-B, 2C-E, 2C-T-2 and 2C-T-7.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

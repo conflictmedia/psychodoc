@@ -158,7 +158,7 @@ export const pcp: Substance =
     "molecularWeight": "Unknown",
     "class": "Arylcyclohexylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "After being discovered in 1926, PCP was developed as a general anesthetic in the 1950s because it could achieve analgesia and anesthesia with minimal cardiovascular and respiratory suppression. It was marketed under the name Sernyl and began to be used in surgical procedures in 1963. By 1967, it was discontinued due to postoperative dysphoria and hallucinations. After 1967, it was limited to veterinary use. Also in the 1960s, PCP began to be illegally manufactured in laboratories and emerged as a popular street drug in San Francisco.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

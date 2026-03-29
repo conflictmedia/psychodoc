@@ -95,7 +95,7 @@ export const _2c_t: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "It was first synthesized and studied through a collaboration between David E. Nichols and Alexander Shulgin. However, 2C-T is almost unknown on the black market and is rarely sold online.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

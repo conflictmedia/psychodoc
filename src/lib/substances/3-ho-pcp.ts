@@ -90,7 +90,7 @@ export const _3_ho_pcp: Substance =
     "molecularWeight": "Unknown",
     "class": "Arylcyclohexylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "3-HO-PCP was first synthesized in 1978 to investigate the structure-activity relationship of phencyclidine (PCP) derivatives. It was further explored alongside PCP in the 1980s, where it was discovered to possess μ-opioid agonist activity in animal models. Its potential as a research chemical for human use was not suggested until 1999 when a chemist using the pseudonym John Q. Beagle reported on its significantly increased potency relative to PCP as well as its \"profoundly enhanced affinity for the opiate receptor\" which was estimated to give it analgesic activity one order of magnitude lower than morphine. On October 18, 2012, the Advisory Council on the Misuse of Drugs in the United Kingdom released a report about methoxetamine, saying that the \"harms of methoxetamine are commensurate with Class B of the Misuse of Drugs Act (1971)\", despite the fact that the act does not classify drugs based on harm. The report suggests that all analogs of MXE should also become class B drugs and suggested a catch-all clause covering both existing and unresearched arylcyclohexamines, including 3-HO-PCP.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

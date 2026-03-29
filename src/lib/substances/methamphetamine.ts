@@ -187,7 +187,7 @@ export const methamphetamine: Substance =
     "molecularWeight": "Unknown",
     "class": "Amphetamine"
   },
-  "history": "Information not available in source data.",
+  "history": "Amphetamine was first synthesized in 1887 in Germany by Romanian chemist Lazăr Edeleanu who named it phenylisopropylamine. Shortly after, methamphetamine was synthesized from ephedrine in 1893 by Japanese chemist Nagai Nagayoshi. Eventually, as the addictive properties of the drugs became known, governments began to place strict controls on the sale of the drugs. Despite strict government controls, both amphetamine and methamphetamine have still been used legally or illicitly by individuals from a variety of backgrounds for different purposes. Methamphetamine hydrochloride is approved by the United States Food and Drug Administration (USFDA) under the trade name \"Desoxyn\".",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

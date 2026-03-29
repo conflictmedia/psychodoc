@@ -84,7 +84,7 @@ export const blue_lotus: Substance =
     "molecularWeight": "Unknown",
     "class": "Unknown"
   },
-  "history": "Information not available in source data.",
+  "history": "Blue Lotus is thought to be the primary for the fruit of the lotus tree eaten by the mythical Lotophagi (Lotus Eaters) in Homer's Odyssey. The Lotus Eaters were a race of people living on an island dominated by the lotus tree, after they ate the lotus, they would forget their home and loved ones and long only to stay with their fellow lotus-eaters, falling into a infinite euphoric stupor. Those who ate the plant never cared to report or return. This lotus has been used to produce perfumes since egyptian times. According to a 2023 preprint study, traces of Peganum harmala, and Blue Lotus were identified in an Egyptian ritual Bes-vase, of the 2nd century BCE The plant and flower are very prominent and frequent in Ancient Egyptian art, cuisine and perfumes.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": []

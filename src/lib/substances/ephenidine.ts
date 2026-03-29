@@ -115,7 +115,7 @@ export const ephenidine: Substance =
     "molecularWeight": "Unknown",
     "class": "Diarylethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "Ephenidine has been described as a designer drug. Designer drugs are substances mimic the functional and structural features of commonly used illicit substances in order to circumvent government regulation.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

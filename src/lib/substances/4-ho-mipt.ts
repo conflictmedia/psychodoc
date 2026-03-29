@@ -124,7 +124,7 @@ export const _4_ho_mipt: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted tryptamines"
   },
-  "history": "Information not available in source data.",
+  "history": "The first synthesis of 4-HO-MiPT was published in 1981 by a team of chemists led by David Repke. Repke and Shulgin later collaborated on a paper evaluating the effects of different oxygen substituents on the MiPT structure, describing 4-HO-MiPT as the most interesting of the series and the only one to possess classical hallucinogen effects.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

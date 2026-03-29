@@ -73,7 +73,7 @@ export const desomorphine: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted morphinans"
   },
-  "history": "Information not available in source data.",
+  "history": "It was originally synthesized with the intention to create an alternative to morphine in terms of tolerance and addiction properties and improve the side effect profile. However, desomorphine fell short of these expectations and showed an increased dependence potential compared with morphine. Desomorphine was used in Switzerland and introduced to the Swiss market in 1940 by the company Hoffman-La Roche, under the registered trade name of Permonid. It was used predominantly for postoperative pain due to its fast onset of action and reduced the tendency to cause respiratory depression and nausea. Since 2003, the prevalence of krokodil use in Russia has been increasing rapidly, presumably as a consequence of its low cost and its high dependence potential.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

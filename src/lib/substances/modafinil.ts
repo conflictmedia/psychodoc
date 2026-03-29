@@ -77,7 +77,7 @@ export const modafinil: Substance =
     "molecularWeight": "Unknown",
     "class": "Benzhydryl"
   },
-  "history": "Information not available in source data.",
+  "history": "Modafinil was originally developed in France by neurophysiologist professor Michel Jouvet and Lafon Laboratories. Modafinil originated with the late 1970s invention of a series of benzhydryl sulfinyl compounds, including adrafinil, which was first offered as an experimental treatment for narcolepsy in France in 1986. Modafinil is the primary metabolite of adrafinil, lacking the polar -OH group on its terminal amide, and has similar activity to the parent drug but is much more widely used. It has been prescribed in France since 1994 under the name Modiodal, and in the US since 1998 as Provigil.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

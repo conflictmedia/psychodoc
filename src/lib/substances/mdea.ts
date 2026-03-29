@@ -122,7 +122,7 @@ export const mdea: Substance =
     "molecularWeight": "Unknown",
     "class": "Amphetamine"
   },
-  "history": "Information not available in source data.",
+  "history": "In the United States, MDEA was introduced recreationally in 1985 as a legal substitute to the newly banned MDMA before it was made a Schedule I substance two years later on August 13, 1987 under the Federal Analogue Act. Since then, MDEA has rarely been sold on its own and has largely been used as an occasional additive or substitute ingredient in pills of \"Ecstasy\" (for instance, studies conducted in the 1990s found MDEA present in approximately four percent of ecstasy tablets). While MDEA shares many of the core entactogenic properties of MDMA, it is slightly less potent and considered to be more \"stoning\", lacking the pro-socializing and energizing \"magic\" most party-goers seek in their MDMA experiences. As a result, it is largely considered by most people to be a less desirable variant of MDMA and is thus rarely produced and sold in the illicit drug market, typically showing up only in small batches synthesized and distributed by hobbyist clandestine chemists.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

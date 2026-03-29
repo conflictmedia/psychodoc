@@ -92,7 +92,7 @@ export const dextropropoxyphene: Substance =
     "molecularWeight": "Unknown",
     "class": "Phenylpropylamine"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "very-high",
   "aliases": [

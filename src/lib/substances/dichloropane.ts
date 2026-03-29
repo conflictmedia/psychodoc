@@ -102,7 +102,7 @@ export const dichloropane: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted tropanes"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

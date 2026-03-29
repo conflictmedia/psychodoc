@@ -91,7 +91,7 @@ export const pethidine: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted piperidines"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

@@ -152,7 +152,7 @@ export const cocaine: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted tropanes"
   },
-  "history": "Information not available in source data.",
+  "history": "In these papers, he correctly speculates on the medical use of cocaine as a topical anesthetic due to its numbing effects. Furthermore to cocaine's numbing effects on the lips and mouth being observed by Freud. In other words, you are simply normal, and it is soon hard to believe that you are under the influence of any drug .... Long intensive mental or physical work is performed without any fatigue .... Absolutely no craving for the further use of cocaine appears after the first, or even repeated, taking of the drug; one feels rather a certain curious aversion to it.\" One feels a certain furriness on the lips and palate, followed by a feeling of warmth in the same areas; if one now drinks cold water, it feels warm on the lips and cold in the throat.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

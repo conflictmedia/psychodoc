@@ -77,7 +77,7 @@ export const _2m2b: Substance =
     "molecularWeight": "Unknown",
     "class": "Alcohol"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

@@ -78,7 +78,7 @@ export const dextroamphetamine: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "In 1937 Smith, Kline and French introduced tablets of the dextrorotary enantiomer of amphetamine(at that time sold as Benzedrine)under the tradename Dexedrine.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

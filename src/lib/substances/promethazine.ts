@@ -79,7 +79,7 @@ export const promethazine: Substance =
     "molecularWeight": "Unknown",
     "class": "Phenothiazine"
   },
-  "history": "Information not available in source data.",
+  "history": "Promethazine was developed in the mid-1940s when a team of scientists from Rhône-Poulenc laboratories was able to synthesize it from phenothiazine and a diamine side chain of diphenhydramine. It was previously used as an antipsychotic, although it is generally not administered for this purpose now. It has approximately 1/10 of the antipsychotic strength of chlorpromazine. It became popular among the Houston rap and hip-hop scene in around 1990, and the trend resurfaced in around 2015 to 2016. Often, it was combined with the opiate drug codeine in a preparation called \"lean.\"",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

@@ -133,7 +133,7 @@ export const ayahuasca: Substance =
     "molecularWeight": "Unknown",
     "class": "Unknown"
   },
-  "history": "Information not available in source data.",
+  "history": "A 1000-year-old collection of drug paraphernalia found in a rock shelter in Bolivia features traces of five psychoactive chemicals, including cocaine and components of ayahuasca.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": []

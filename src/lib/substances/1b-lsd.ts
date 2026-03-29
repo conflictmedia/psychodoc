@@ -130,7 +130,7 @@ export const _1b_lsd: Substance =
     "molecularWeight": "Unknown",
     "class": "Lysergamides"
   },
-  "history": "Information not available in source data.",
+  "history": "1B-LSD first appeared on the online research chemical market in August 2016. It is unknown who first synthesized 1B-LSD, as the substance does not appear in any academic literature pre-dating its arrival on the research chemical market. Interestingly, the future usage of 1-akylated lysergamide derivatives as a means to bypass controlled substance laws banning LSD as a precursor was foreseen in a DEA report from 1988: Future Synthetic Drugs of Abuse, 1988.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

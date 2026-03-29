@@ -75,7 +75,7 @@ export const meclofenoxate: Substance =
     "molecularWeight": "Unknown",
     "class": "Cholinergic"
   },
-  "history": "Information not available in source data.",
+  "history": "Mecolofenoxate was developed in 1959 at the French National Scientific Research Center. Meclofenoxate has been tested as alzheimers treatment. Additionally it has been shown to invrease the life span of mice by up to 29.5%.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

@@ -95,7 +95,7 @@ export const tramadol: Substance =
     "molecularWeight": "Unknown",
     "class": "Phenylpropylamine"
   },
-  "history": "Information not available in source data.",
+  "history": "Tramadol was synthesized in 1962 by chemists employed by the German pharmaceutical company Grünenthal. However, it was not approved in Germany until 1977, entering the market as Tramal. It became the leading analgesic drug in Germany and during the past 38 years it has been approved in over 100 countries, including the UK, USA, Republic of China and Canada. For a period of time it was believed tramadol was not a purely synthetic drug after its apparent discovery in the roots of the pin cushion tree. These reports later proved to be erroneous; the tramadol had been excreted by cows treated with the drug, resulting in the tramadol having seeped into the roots through their urine.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

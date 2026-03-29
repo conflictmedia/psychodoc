@@ -120,7 +120,7 @@ export const _4_ho_dpt: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted tryptamines"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

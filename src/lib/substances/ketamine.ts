@@ -161,7 +161,7 @@ export const ketamine: Substance =
     "molecularWeight": "Unknown",
     "class": "Arylcyclohexylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "Ketamine was first synthesized at Parke Davis Laboratories by the American scientist Calvin Stevens. Upon being patented in Belgium in 1963, ketamine was initially used as a veterinary anesthetic. The United States Food and Drug Administration approved it for human consumption in 1970. Due to its favorable sympathomimetic properties and its wide margin of safety, it was administered as a field anaesthetic to soldiers during the Vietnam War. Ketamine is on the World Health Organization’s “Essential Drugs List”, a list of the safest and most effective drugs needed in a modern health system.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

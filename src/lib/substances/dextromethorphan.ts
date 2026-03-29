@@ -169,7 +169,7 @@ export const dextromethorphan: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted morphinans"
   },
-  "history": "Information not available in source data.",
+  "history": "left|thumb|upright=0.7|1968 advertisement of Romilar DXM tablets The racemic parent compound of dextromethorphan, racemethorphan, was first described in a Swiss and US patent application from Hoffmann-La Roche in 1946 and 1947, respectively. A resolution of the two isomers of racemethorphan with tartaric acid was published in 1952, and DXM was successfully tested in 1954 as part of US Navy and CIA-funded research on nonaddictive substitutes for codeine. DXM was approved by the FDA in 1958 as an over-the-counter antitussive, or cough suppressant. The advent of widespread internet access in the 1990s allowed users to rapidly disseminate information about DXM, and online discussion groups formed around use and acquisition of the substance. As early as 1996, DXM HBr powder could be purchased in bulk from online retailers, allowing users to avoid consuming DXM in syrup preparations.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

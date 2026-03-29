@@ -128,7 +128,7 @@ export const mda: Substance =
     "molecularWeight": "Unknown",
     "class": "Amphetamine"
   },
-  "history": "Information not available in source data.",
+  "history": "The first animal tests occurred in 1939, followed by human trials in 1941 that explored it as a possible therapy for Parkinson's disease. From 1949 to 1957, more than 500 human subjects were given MDA in an investigation of its potential use as an antidepressant and anorectic by Smith, Kline & French. The United States Army also experimented with the drug, code-named EA-1298, while working to develop a truth drug or incapacitating agent. A man named Harold Blauer died in January 1953 after being intravenously injected with 450 mg of the drug. MDA was eventually patented as a cough suppressant by H. D. Brown in 1958, as an ataractic by Smith, Kline & French in 1960, and as an anorectic under the trade name \"Amphedoxamine\" in 1961.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

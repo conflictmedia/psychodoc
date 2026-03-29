@@ -86,7 +86,7 @@ export const diazepam: Substance =
     "molecularWeight": "Unknown",
     "class": "Benzodiazepines"
   },
-  "history": "Information not available in source data.",
+  "history": "Following chlordiazepoxide (Librium), which was approved for use in 1960, diazepam was the second benzodiazepine invented by Leo Sternbach of pharmaceutical company Hoffman-La Roche. Released in 1963 as an improved version of Librium, diazepam became incredibly popular and quickly surpassed it in sales, helping Roche to become a pharmaceutical industry giant. After this initial success, other pharmaceutical companies began to introduce other benzodiazepine derivatives. The benzodiazepines gained popularity among medical professionals as an improvement over barbiturates, which have a comparatively narrow therapeutic index, and are far more sedative at therapeutic doses. The benzodiazepines are also far less dangerous; death rarely results from diazepam overdose, except in cases where it is consumed with large amounts of other depressants (such as alcohol or opioids).",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [
