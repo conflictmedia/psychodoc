@@ -124,7 +124,7 @@ export const fentanyl: Substance =
     "molecularWeight": "Unknown",
     "class": "Anilidopiperidine"
   },
-  "history": "Information not available in source data.",
+  "history": "Fentanyl was first synthesized by Paul Janssen in 1960 following the medical inception of pethidine several years earlier. Janssen developed fentanyl by assaying analogues of the structurally related substance pethidine for opioid activity. Following this, many other fentanyl analogues were developed and introduced into medical practice, including sufentanil, alfentanil, remifentanil, and carfentanil. In the mid-1990s, fentanyl was first introduced for widespread palliative use with the clinical introduction of the Duragesic patch. In 2013, 1700 kilograms were used globally.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "very-high",
   "aliases": [

@@ -138,7 +138,7 @@ export const mdma: Substance =
     "molecularWeight": "Unknown",
     "class": "Amphetamine"
   },
-  "history": "Information not available in source data.",
+  "history": "thumb|left|200px|Patent Certificate for Merck's synthesis of MDMA, dated 1912 MDMA was first synthesized in 1912 by the German chemist Dr. Anton Köllisch while employed at the pharmaceutical company Merck. Despite promising results, research was halted due to rising substance prices. Shulgin claims to have first heard about the effects of MDMA in 1967 from a student and decided to experiment with it himself. From the mid-1970s to the mid-1980s there was a growth of clinicians using MDMA (then known as \"Adam\") in California. Despite this, the director of the DEA overruled this recommendation and classified MDMA as a Schedule I controlled substance.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

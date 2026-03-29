@@ -118,7 +118,7 @@ export const lisdexamfetamine: Substance =
     "molecularWeight": "Unknown",
     "class": "Amphetamine"
   },
-  "history": "Information not available in source data.",
+  "history": "Lisdexamfetamine was developed by New River Pharmaceuticals as a longer-lasting and abuse-resistant version of d-amphetamine (dextroamphetamine). The FDA approved lisdexamfetamine for ADHD treatment in adults on the 23th of April 2008 , followed by an approval for use in treating binge eating disorder in adults in January 2015.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

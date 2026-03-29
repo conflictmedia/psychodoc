@@ -93,7 +93,7 @@ export const mirtazapine: Substance =
     "molecularWeight": "Unknown",
     "class": "Piperazinoazepine"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

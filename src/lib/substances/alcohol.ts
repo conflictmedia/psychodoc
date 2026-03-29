@@ -131,7 +131,7 @@ export const alcohol: Substance =
     "molecularWeight": "Unknown",
     "class": "Alcohol"
   },
-  "history": "Information not available in source data.",
+  "history": "History and culture of alcoholic drinks Alcohol was brewed as early as 7000 to 6650 BCE in northern China. Beer was likely brewed from barley as early as the sixth century BCE in Egypt. Pliny the Elder wrote about the golden age of winemaking in Rome, the second century BCE, when vineyards were planted. In vino veritas is a Latin phrase that means \"in wine there is truth.\" The global alcoholic beverages industry exceeded $1 trillion in 2018.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "very-high",
   "aliases": [

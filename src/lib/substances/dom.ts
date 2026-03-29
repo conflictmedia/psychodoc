@@ -115,7 +115,7 @@ export const dom: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted amphetamines"
   },
-  "history": "Information not available in source data.",
+  "history": "DOM was first synthesized and tested in 1963 by Alexander Shulgin, who was investigating the effect of 4-position substitutions on psychedelic amphetamines. DOM is part of the so-called \"magical half-dozen\" which refers to Shulgin's self-rated most important phenethylamine compounds, all of which except mescaline he developed and synthesized himself. They are found within the first book of PiHKAL and are as follows: Mescaline, DOM, 2C-B, 2C-E, 2C-T-2 and 2C-T-7. In mid-1967, tablets containing 20 mg (later 10 mg) of DOM were widely distributed in the Haight-Ashbury District of San Francisco under the name of \"STP\" (short for \"Serenity, Tranquility, and Peace\"). This short-lived appearance of DOM on the black market proved disastrous for several reasons.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

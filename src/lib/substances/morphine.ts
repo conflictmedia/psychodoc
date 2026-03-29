@@ -102,7 +102,7 @@ export const morphine: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted morphinans"
   },
-  "history": "Information not available in source data.",
+  "history": "In Sertürner's, over 50 experiments he believed he had isolated the primary active ingredient in opium. This is generally believed to be the first isolation of an active ingredient from a plant. Other alkaloids were later identified from the opium plant, one of these thirty such alkaloids later became codeine. This came in the form of diacetylmorphine or as it was later marketed, Heroin. About 70% of morphine is used to make other opioids such as hydromorphone, oxycodone and heroin.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

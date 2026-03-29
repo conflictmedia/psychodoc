@@ -102,7 +102,7 @@ export const methylphenidate: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenidates"
   },
-  "history": "Information not available in source data.",
+  "history": "The compound was first synthesized in 1944 by chemist Leandro Panizzon and marketed as “Ritalin” by Swiss company CIBA (now Novartis) in 1954. Although it was first used to allay barbiturate-induced coma, narcolepsy, and depression. It was estimated that the number of doses of methylphenidate used globally in 2013 increased by 66% compared to 2012. In 2022, it was the 32nd most commonly prescribed medication in the United States, with more than 17 million prescriptions. It is available as a generic medication.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

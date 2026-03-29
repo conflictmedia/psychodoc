@@ -89,7 +89,7 @@ export const k_2c_b: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "The original synthesis of βk-2C-B is not available on the public record. However, based on information gathered from internet forums and scientific studies, it appears that it was not originally synthesized in the 1970s by Alexander Shulgin like many 2C-x compounds. The first reliable mention of βk-2C-B does not appear until 2004, with it playing only a minor role in a scientific study as a precursor of 5-HT2A serotonin receptor agonists. The next confirmed mention of the substance can be dated to December 2007. At that time, the user \"King Kong\" of the bluelight.org forum opened a thread for information and discussion of bk-2c-bβk-2C-B.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

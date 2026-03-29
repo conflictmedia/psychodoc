@@ -119,7 +119,7 @@ export const hxe: Substance =
     "molecularWeight": "Unknown",
     "class": "Arylcyclohexylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "HXE first appeared for sale on the online research chemical market in late 2020. However, it has been announced about three years prior where it has been 'hyped' for a long time but was on hold due to synthesis difficulties.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

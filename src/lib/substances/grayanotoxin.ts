@@ -74,7 +74,7 @@ export const grayanotoxin: Substance =
     "molecularWeight": "Unknown",
     "class": "Diterpene"
   },
-  "history": "Information not available in source data.",
+  "history": "Grayanotoxins are an active constituent of a variety of plants with a history of medicinal and recreational use, including species of rhododendron and monotropa uniflora . Most commonly, grayanotoxins are consumed in the form of mad honey, which is contaminated with grayanotoxins from bees that pollinate rhododendron flowers . Mad honey is reportedly used as an aphrodisiac, painkiller, treatment for hypertension, and as a recreational drug, particularly in Nepal and the Black Sea region of Turkey . Historically, mad honey has been added to alcoholic drinks to increase their potency . The Gurung people of Nepal are especially known to harvest mad honey for its supposed hallucinogenic properties .",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

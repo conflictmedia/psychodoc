@@ -90,7 +90,7 @@ export const flunitrazepam: Substance =
     "molecularWeight": "Unknown",
     "class": "Benzodiazepines"
   },
-  "history": "Information not available in source data.",
+  "history": "Flunitrazepam was discovered at Roche as part of the benzodiazepine work led by Leo Sternbach. It was first marketed in 1974 and entered the commerical market in Europe in 1975 under the name Rohypnol. It may be better known as the date-rape drug Rohypnol (with the street name “roofie”). In 1998, due to the abuse of the drug and recreation, Roche modified their 1 mg tablets to make them less soluble and added a blue dye for easier detection in drinks. In a retrospective Swedish study of 1587 deaths, in 159 cases benzodiazepines were found.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

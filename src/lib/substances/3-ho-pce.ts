@@ -88,7 +88,7 @@ export const _3_ho_pce: Substance =
     "molecularWeight": "Unknown",
     "class": "Arylcyclohexylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "On October 18, 2012 the Advisory Council on the Misuse of Drugs in the United Kingdom released a report about methoxetamine, saying that the \"harms of methoxetamine are commensurate with Class B of the Misuse of Drugs Act (1971)\", despite the fact that the act does not classify drugs based on harm. The report went on to suggest that all analogues of MXE should also become class B drugs and suggested a catch-all clause covering both existing and unresearched arylcyclohexamines, which includes 3-HO-PCE.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

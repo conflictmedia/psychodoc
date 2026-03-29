@@ -86,7 +86,7 @@ export const ephedrine: Substance =
     "molecularWeight": "Unknown",
     "class": "Amphetamine"
   },
-  "history": "Information not available in source data.",
+  "history": "In 1885, the chemical synthesis of ephedrine was first accomplished by Japanese organic chemist Nagai Nagayoshi based on his research on traditional Japanese and Chinese herbal medicines. The industrial manufacture of ephedrine in China began in the 1920s, when Merck began marketing and selling the drug as ephetonin. Ephedrine exports from China to the West grew from 4 to 216 tonnes between 1926 and 1928. Ephedrine as a treatment for asthma reached its zenith in the late 1950s, since when there has been a gradual and inevitable decline in its therapeutic use. From mainstream medicine, ephedrine moved into the twilight zone of street drugs and nutritional supplements.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

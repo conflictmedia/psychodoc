@@ -101,7 +101,7 @@ export const _2c_d: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "The synthesis of 2C-D was first published in 1970 by a team from the Texas Research Institute of Mental Sciences,, but initial trials by Alexander Shulgin at sub-threshold doses were carried out in 1964. Further investigations at higher doses were carried out by Shulgin and his fellow researchers between 1974 and 1978. The name '2C-D' derives from the chemical's structure - it is the 2-Carbon analogue of DOM. Shulgin notably referred to 2C-D as a “pharmacological tofu,” meaning it can extend or potentiate the effect of other substances without overly coloring the experience, in a manner similar to how tofu absorbs the flavors of sauces or spices it is cooked with. While some use this as evidence that 2C-D is relatively uninteresting as a psychedelic on its own, others strongly disagree with this assessment and hold that 2C-D is an unusually versatile and fully-fledged psychedelic in its own right.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

@@ -112,7 +112,7 @@ export const gbl: Substance =
     "molecularWeight": "Unknown",
     "class": "Lactone"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

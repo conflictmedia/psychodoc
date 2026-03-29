@@ -92,7 +92,7 @@ export const benzydamine: Substance =
     "molecularWeight": "Unknown",
     "class": "Indazole"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

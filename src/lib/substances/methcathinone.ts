@@ -92,7 +92,7 @@ export const methcathinone: Substance =
     "molecularWeight": "Unknown",
     "class": "Cathinone"
   },
-  "history": "Information not available in source data.",
+  "history": "Methcathinone was first synthesized in 1928 in the USA and it was used in the Soviet Union as an antidepressant. It is common in central and eastern Europe, often sold as the more well known mephedrone or synthesized from OTC drugs containing ephedrine or pseudoephedrine.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

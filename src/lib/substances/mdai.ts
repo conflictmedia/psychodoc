@@ -97,7 +97,7 @@ export const mdai: Substance =
     "molecularWeight": "Unknown",
     "class": "Aminoindane"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

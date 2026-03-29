@@ -111,7 +111,7 @@ export const ghb: Substance =
     "molecularWeight": "Unknown",
     "class": "Γ-Hydroxy acid"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "very-high",
   "aliases": [

@@ -85,7 +85,7 @@ export const f_phenibut: Substance =
     "molecularWeight": "Unknown",
     "class": "Gabapentinoids"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

@@ -140,7 +140,7 @@ export const a_pvp: Substance =
     "molecularWeight": "Unknown",
     "class": "Cathinone"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

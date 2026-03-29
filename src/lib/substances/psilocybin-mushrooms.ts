@@ -106,7 +106,7 @@ export const psilocybin_mushrooms: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted tryptamines"
   },
-  "history": "Information not available in source data.",
+  "history": "Archaeological artifacts from Mexico have also been interpreted by some scholars as evidence for ritual and ceremonial usage of psychoactive mushrooms in the Mayan and Aztec cultures of Mesoamerica. In 1957, Wasson described the psychedelic visions that he experienced during these rituals in \"Seeking the Magic Mushroom\", an article published in Life magazine. Hofmann, who had in 1938 created LSD, led a research group that isolated and identified the psychoactive compounds from Psilocybe mexicana. Leary obtained synthesized psilocybin from Hofmann through Sandoz. In the United States, laws were passed in 1966 that prohibited the production, trade, or ingestion of hallucinogenic substances.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

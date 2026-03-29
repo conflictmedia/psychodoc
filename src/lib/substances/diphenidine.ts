@@ -128,7 +128,7 @@ export const diphenidine: Substance =
     "molecularWeight": "Unknown",
     "class": "Diarylethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "The synthesis of diphenidine was first reported in 1924. It employed a nitrile displacement reaction analogous to the one that would later be used to discover phencyclidine in 1956. Shortly after the 2013 UK ban on arylcyclohexylamines, diphenidine and the related compound methoxphenidine became available on the grey market. In 2014, there were two cases of diphenidine being sold in combination with synthetic cannabinoids in Japanese herbal incense blends. One herbal incense blend was found to contain diphenidine and 5-fluoro-AB-PINACA at concentrations of 289 mg/g and 55.5 mg/g, respectively.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

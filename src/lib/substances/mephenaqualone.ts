@@ -64,7 +64,7 @@ export const mephenaqualone: Substance =
     "molecularWeight": "Unknown",
     "class": "Quinazolinone"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

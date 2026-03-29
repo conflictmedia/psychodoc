@@ -111,7 +111,7 @@ export const ephylone: Substance =
     "molecularWeight": "Unknown",
     "class": "Cathinone"
   },
-  "history": "Information not available in source data.",
+  "history": "However, they did not find medical use due to their side effects. In the early 2000s, synthetic cathinones began to be sold in \"head\" shops and online as designer drugs, also known as research chemicals and \"legal highs\". The synthesis of ephylone was first described in a patent filed by Boehringer Ingelheim in 1969. The emergence of ephylone on the recreational drug market was reported in drug seizures for the first time in 2016. A 2018 report issued by the drug testing organization Energy Control found evidence indicating increasing use of ephylone as a counterfeit or adulterant for MDMA.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

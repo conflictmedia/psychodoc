@@ -119,7 +119,7 @@ export const doi: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted amphetamines"
   },
-  "history": "Information not available in source data.",
+  "history": "DOI was first synthesized by a team at the University of Alberta in 1972.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

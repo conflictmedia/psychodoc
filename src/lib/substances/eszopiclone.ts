@@ -86,7 +86,7 @@ export const eszopiclone: Substance =
     "molecularWeight": "Unknown",
     "class": "Cyclopyrrolone"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

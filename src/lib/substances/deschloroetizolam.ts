@@ -71,7 +71,7 @@ export const deschloroetizolam: Substance =
     "molecularWeight": "Unknown",
     "class": "Thienodiazepines"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

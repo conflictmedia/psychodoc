@@ -87,7 +87,7 @@ export const u_47700: Substance =
     "molecularWeight": "Unknown",
     "class": "Benzamide"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "high",
   "aliases": [

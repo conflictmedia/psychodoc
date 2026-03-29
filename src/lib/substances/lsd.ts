@@ -141,7 +141,7 @@ export const lsd: Substance =
     "molecularWeight": "Unknown",
     "class": "Lysergamides"
   },
-  "history": "Information not available in source data.",
+  "history": "The compound was synthesized as part of a large research program searching for medically useful derivatives of ergot, a fungus that grows on rye and other grains. However, it was not discovered to be psychoactive until five years later, when Hofmann claimed to have accidentally ingested an unknown quantity of the chemical before proceeding to ride his bike home. The first intentional ingestion was recorded on April 19, 1943. Hofmann ingested 250 micrograms (µg) of LSD, believing it would be a threshold dose based on the doses of other ergot alkaloids. He found the effects to be much stronger than he anticipated and was impressed by its profound mind-altering effects.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

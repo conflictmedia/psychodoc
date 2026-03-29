@@ -129,7 +129,7 @@ export const _1p_lsd: Substance =
     "molecularWeight": "Unknown",
     "class": "Lysergamides"
   },
-  "history": "Information not available in source data.",
+  "history": "1P-LSD first appeared on the online research chemical market in January 2015. Although it was likely discovered in an academic setting, it is unknown who first synthesized 1P-LSD, as the substance does not appear in any academic literature pre-dating its arrival on the research chemical market. Interestingly, the future usage of 1-alkylated lysergamide derivatives as a means to bypass controlled substance laws banning LSD as a precursor was foreseen in a DEA report from 1988: Future Synthetic Drugs of Abuse, 1988.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

@@ -82,7 +82,7 @@ export const phenylpiracetam: Substance =
     "molecularWeight": "Unknown",
     "class": "Racetams"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

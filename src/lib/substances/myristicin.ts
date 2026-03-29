@@ -135,7 +135,7 @@ export const myristicin: Substance =
     "molecularWeight": "Unknown",
     "class": "Phenylpropenes"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "very-high",
   "aliases": [

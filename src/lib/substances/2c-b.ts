@@ -165,7 +165,7 @@ export const _2c_b: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted phenethylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "2C-B was first synthesized and tested for psychoactivity in 1974 by the American chemist and psychedelic researcher Alexander Shulgin, who was investigating novel psychedelic compounds based on the chemical structure of mescaline. Shulgin's findings were later published in the 1991 book PiHKAL, in which he listed 2C-B among the \"magical half-dozen\" of psychedelic phenethylamines that he deemed most important. These therapists reported that it created a warm, empathetic bond between them and their patients, helping to break down their ego defenses and inner resistances and allowing the patient to get in touch with suppressed emotions and repressed memories. In the United States, it gained popularity as an alternative to MDMA after the latter was classified as a Schedule I substance in 1985. 2C-B was legally sold in Southern Africa from 1993 to early 1996.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

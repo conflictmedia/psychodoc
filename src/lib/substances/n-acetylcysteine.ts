@@ -68,7 +68,7 @@ export const n_acetylcysteine: Substance =
     "molecularWeight": "Unknown",
     "class": "Cysteine"
   },
-  "history": "Information not available in source data.",
+  "history": null,
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

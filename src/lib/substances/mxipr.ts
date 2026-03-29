@@ -111,7 +111,7 @@ export const mxipr: Substance =
     "molecularWeight": "Unknown",
     "class": "Arylcyclohexylamines"
   },
-  "history": "Information not available in source data.",
+  "history": "MXiPr first appeared for sale on the online research chemical market in late 2020.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

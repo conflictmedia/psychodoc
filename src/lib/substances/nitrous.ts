@@ -90,7 +90,7 @@ export const nitrous: Substance =
     "molecularWeight": "Unknown",
     "class": "Unknown"
   },
-  "history": "Information not available in source data.",
+  "history": "In 1800, Humphry Davy, an assistant at the Pneumatic Institute, published a book about nitrous oxide in 1800. Beginning in 1799, nitrous oxide was used as a recreational drug at \"laughing gas parties\". Despite Davy's discovery of nitrous' potential for anesthesia, doctors did not attempt to use it for nearly half a decade. The practice was not immediately adopted by other dentists, as Wells' first public demonstration had been partly unsuccessful. Nitrous oxide was not found to be a strong enough anesthetic for major surgeries in hospital settings, but it became useful as an initiator for stronger anesthetics like ether or chloroform.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": []

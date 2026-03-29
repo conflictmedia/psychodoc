@@ -82,7 +82,7 @@ export const fenethylline: Substance =
     "molecularWeight": "Unknown",
     "class": "Amphetamine"
   },
-  "history": "Information not available in source data.",
+  "history": "Fenethylline was first synthesized by the German chemicals company Degussa AG in 1961 It was primarily marketed as a milder alternative to amphetamine, due to its lower potential for raising blood pressure, making it ideal for patients with cardiovascular disease. It was also used for the treatment of children with ADHD and less commonly narcolepsy.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

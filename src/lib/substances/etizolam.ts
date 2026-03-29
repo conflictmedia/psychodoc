@@ -86,7 +86,7 @@ export const etizolam: Substance =
     "molecularWeight": "Unknown",
     "class": "Thienodiazepines"
   },
-  "history": "Information not available in source data.",
+  "history": "Etizolam first appeared on the online research chemical market in 2011. Since then its popularity has steadily increased. This likely owes itself to both its low cost and its abundance, and the highly dependence-forming and addictive nature that it shares with recreationally-used benzodiazepines. Etizolam differs from most other research chemicals in that it is approved and actively prescribed as a medical treatment for anxiety in many countries around the world, commonly under brand names like Etilaam and Etizest. Its origins as a medical drug are unclear, although medical papers citing its use in the treatment of anxiety have been documented as early as the 1990s.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "low",
   "aliases": [

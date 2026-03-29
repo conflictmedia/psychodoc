@@ -12,15 +12,10 @@ export const cannabis: Substance =
   "id": "cannabis",
   "name": "Cannabis",
   "commonNames": [
-    "Cannabinoid",
-    "THC",
-    "D9-THC",
-    "Δ9-Tetrahydrocannabinol",
-    "Δ9-THC",
-    "Delta 9 THC"
+    "Cannabinoid"
   ],
   "categories": [
-    "cannabinoids"
+    "other"
   ],
   "class": "Cannabinoid",
   "description": "It is the most used illicit substance in the world. The principal psychoactive constituent of cannabis is tetrahydrocannabinol (THC), which makes up one of 483 known compounds in the plant, including at least 84 other cannabinoids such as cannabidiol (CBD), cannabinol (CBN), tetrahydrocannabivarin (THCV), and cannabigerol (CBG). Lower doses are associated with relaxing effects similar to a depressant. Higher doses are associated with mild-to-moderate hallucinogenic effects such as visual hallucinations, conceptual thinking and time distortion, as well as a greater risk of anxiety, paranoia, and delusions. Cannabis is considered to have low to moderate abuse potential.",
@@ -158,7 +153,7 @@ export const cannabis: Substance =
     "molecularWeight": "Unknown",
     "class": "Cannabinoid"
   },
-  "history": "Information not available in source data.",
+  "history": "The genus cannabis is indigenous to central Asia and the Indian subcontinent. The history of cannabis and its usage by humans dates back to at least the third millennium BC in written history, and possibly as far back as the Pre-Pottery Neolithic B (8800–6500 BCE) based on archaeological evidence. The earliest restrictions on cannabis were reported in the Islamic world by the 14th century. In the 19th century, it began to be restricted in colonial countries, often associated with racial and class stresses. Since the early 20th century, cannabis has been subject to legal restrictions with the possession, use, and sale of cannabis preparations containing psychoactive cannabinoids currently illegal in most countries.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [

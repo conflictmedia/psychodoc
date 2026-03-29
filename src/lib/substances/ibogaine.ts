@@ -122,7 +122,7 @@ export const ibogaine: Substance =
     "molecularWeight": "Unknown",
     "class": "Substituted tryptamines"
   },
-  "history": "Information not available in source data.",
+  "history": "The Iboga tree is the central pillar of the Bwiti religion practiced in West-Central Africa, mainly Gabon, Cameroon, and the Republic of the Congo, which uses the alkaloid-containing roots of the plant for its psychoactive properties in a number of ceremonies. Ibogaine is also used by indigenous peoples in low doses to combat fatigue, hunger, and thirst. Research of ibogaine started in late 19th century. A published description of the ceremonial use of T. iboga in Gabon appears in 1885. Ibogaine was first extracted and crystallized from the T. iboga root in 1901.",
   "afterEffects": "See route data for afterglow information.",
   "riskLevel": "moderate",
   "aliases": [
