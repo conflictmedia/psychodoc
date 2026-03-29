@@ -63,9 +63,9 @@ export const diazepam: Substance =
       },
       "duration": {
         "onset": "20-40 minutes",
-        "comeup": "Unknown",
+        "comeup": "15-30 minutes",
         "peak": "60-90 minutes",
-        "offset": "Unknown",
+        "offset": "1-2 hours",
         "total": "4-8 hours"
       },
       "notes": "Afterglow: 12-36 hours"
