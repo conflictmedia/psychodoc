@@ -12,10 +12,15 @@ export const cannabis: Substance =
   "id": "cannabis",
   "name": "Cannabis",
   "commonNames": [
-    "Cannabinoid"
+    "Cannabinoid",
+    "THC",
+    "D9-THC",
+    "Δ9-Tetrahydrocannabinol",
+    "Δ9-THC",
+    "Delta 9 THC"
   ],
   "categories": [
-    "other"
+    "cannabinoids"
   ],
   "class": "Cannabinoid",
   "description": "It is the most used illicit substance in the world. The principal psychoactive constituent of cannabis is tetrahydrocannabinol (THC), which makes up one of 483 known compounds in the plant, including at least 84 other cannabinoids such as cannabidiol (CBD), cannabinol (CBN), tetrahydrocannabivarin (THCV), and cannabigerol (CBG). Lower doses are associated with relaxing effects similar to a depressant. Higher doses are associated with mild-to-moderate hallucinogenic effects such as visual hallucinations, conceptual thinking and time distortion, as well as a greater risk of anxiety, paranoia, and delusions. Cannabis is considered to have low to moderate abuse potential.",
