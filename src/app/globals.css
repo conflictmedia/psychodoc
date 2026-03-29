@@ -116,7 +116,74 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+
+.safe-area-pb {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Hide scrollbars on horizontally-scrolling chip/tab rows while keeping scroll */
+.scrollbar-none {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE / Edge */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  /* Chrome / Safari / WebKit */
+}
+
+/* Prevent text-size adjustment on orientation change (iOS) */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Momentum scrolling on iOS for any element with overflow-y-auto */
+.overflow-y-auto,
+.overflow-y-scroll {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Minimum tap-target height enforcement on mobile — 44px per Apple HIG */
+@media (max-width: 767px) {
+
+  button,
+  [role="button"],
+  a {
+    min-height: 44px;
+  }
+
+  /* Exception: icon-only buttons and badges don't need 44px */
+  .badge-tap-exempt,
+  [data-slot="badge"] {
+    min-height: unset;
+  }
+
+  /* Bottom nav items get 44px touch area without changing visual height */
+  nav button {
+    min-height: 44px;
+  }
+}
+
+/* Prevent rubber-band scroll on the outermost page wrapper on iOS.
+   Apply this class to the root <div> in your layout if needed. */
+.overscroll-none {
+  overscroll-behavior: none;
+}
+
+/* Mobile header height token — the sticky header is 12 + 44px search = ~108px
+   on the substances tab. JS doesn't need to know this; it's purely CSS. */
+@media (max-width: 767px) {
+  :root {
+    --mobile-header-height: 108px;
+    --mobile-bottomnav-height: calc(72px + env(safe-area-inset-bottom, 0px));
   }
 }
