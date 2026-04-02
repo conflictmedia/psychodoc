@@ -110,7 +110,6 @@ const mergeDoses = (
     if (!existing) {
       map.set(d.id, d)
     } else {
-      // If remote dose is newer (updated), overwrite local
       if (new Date(d.createdAt).getTime() > new Date(existing.createdAt).getTime()) {
         map.set(d.id, d)
       }
@@ -227,6 +226,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     return () => window.removeEventListener('dose-logs-updated', handleExternalUpdate)
   }, [syncStatus])
 
+  // Auto-reconnect on mount — silent (no toast)
   useEffect(() => {
     const savedAuth = localStorage.getItem(SYNC_AUTH_KEY)
     if (savedAuth) {
@@ -234,7 +234,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         const { savedRoom, savedPass } = JSON.parse(savedAuth)
         setRoomId(savedRoom)
         setPassword(savedPass)
-        connectToSync(savedRoom, savedPass)
+        connectToSync(savedRoom, savedPass, true)
       } catch {
         localStorage.removeItem(SYNC_AUTH_KEY)
       }
@@ -266,7 +266,8 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     }
   }
 
-  const connectToSync = async (rId = roomId, pass = password) => {
+  // silent=true suppresses the "Secure Sync Active" toast (used for auto-reconnect on mount)
+  const connectToSync = async (rId = roomId, pass = password, silent = false) => {
     if (!rId || !pass) return
     if (!window.crypto?.subtle) {
       toast({ title: 'Encryption Blocked', description: 'HTTPS is required for syncing.', variant: 'destructive' })
@@ -312,8 +313,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
           const hasNewOrUpdatedDoses = remoteDoses.some(d => {
             if (mergedDeleted.has(d.id)) return false
             const existing = localMap.get(d.id)
-            if (!existing) return true // It's a brand new dose
-            // It's an updated dose (e.g. edited from modal) if remote is newer
+            if (!existing) return true
             return new Date(d.createdAt).getTime() > new Date(existing.createdAt).getTime()
           })
 
@@ -325,7 +325,10 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
             setDoses(merged)
             notifyDoseChange()
             await pushToSync(merged, mergedDeleted)
-            toast({ title: 'Data Synced', description: 'Received updates from another device.' })
+            // Only show this toast when there are genuine remote changes,not on initial load
+            if (!silent) {
+              toast({ title: 'Data Synced', description: 'Received updates from another device.' })
+            }
           }
         } catch (e) {
           console.error('Decryption failed:', e)
@@ -338,7 +341,10 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       if (local.length > 0) await pushToSync(local, readDeleted())
 
       setSyncStatus('synced')
-      toast({ title: 'Secure Sync Active', description: 'Your data is now end-to-end encrypted and syncing.' })
+      // Only announce connection when the user manually clicked Connect
+      if (!silent) {
+        toast({ title: 'Secure Sync Active', description: 'Your data is now end-to-end encrypted and syncing.' })
+      }
     } catch (error) {
       console.error('Sync connection error:', error)
       setSyncStatus('error')
@@ -554,7 +560,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
                     className="bg-background"
                   />
                   <Button
-                    onClick={() => connectToSync()}
+                    onClick={() => connectToSync(roomId, password, false)}
                     disabled={syncStatus === 'connecting' || !roomId || !password}
                     className="shrink-0"
                   >
@@ -618,9 +624,7 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
                             {dose.notes && <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{dose.notes}</p>}
                           </div>
 
-                          {/* Action buttons */}
                           <div className="flex gap-1 shrink-0">
-                            {/* Edit */}
                             <Button
                               variant="ghost"
                               size="icon"
@@ -630,7 +634,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
                             >
                               <Pencil className="h-4 w-4" />
                             </Button>
-                            {/* Redose */}
                             <Button
                               variant="ghost" size="icon"
                               className="h-8 w-8 text-muted-foreground hover:text-primary"
@@ -640,7 +643,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
                             >
                               {redosing === dose.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <RotateCcw className="h-4 w-4" />}
                             </Button>
-                            {/* Delete */}
                             <Button
                               variant="ghost" size="icon"
                               className="h-8 w-8 text-muted-foreground hover:text-destructive"
@@ -661,7 +663,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         </CardContent>
       </Card>
 
-      {/* Edit modal — rendered outside the card so it can be a portal */}
       {editingDose && (
         <EditDoseModal
           dose={editingDose}
