@@ -110,6 +110,7 @@ const mergeDoses = (
     if (!existing) {
       map.set(d.id, d)
     } else {
+      // If remote dose is newer (updated), overwrite local
       if (new Date(d.createdAt).getTime() > new Date(existing.createdAt).getTime()) {
         map.set(d.id, d)
       }
@@ -155,11 +156,9 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   const [loading, setLoading] = useState(true)
   const [deleting, setDeleting] = useState<string | null>(null)
   const [redosing, setRedosing] = useState<string | null>(null)
-  // Edit modal state
   const [editingDose, setEditingDose] = useState<DoseLog | null>(null)
   const { toast } = useToast()
 
-  // Sync state
   const [showSyncPanel, setShowSyncPanel] = useState(false)
   const [syncStatus, setSyncStatus] = useState<'idle' | 'connecting' | 'synced' | 'error'>('idle')
   const [roomId, setRoomId] = useState('')
@@ -309,11 +308,18 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
           const localDeleted = readDeleted()
           const { doses: merged, deleted: mergedDeleted } = mergeDoses(local, remoteDoses, localDeleted, remoteDeleted)
 
-          const localIds = new Set(local.map(d => d.id))
-          const hasNewDoses = remoteDoses.some(d => !localIds.has(d.id) && !mergedDeleted.has(d.id))
+          const localMap = new Map(local.map(d => [d.id, d]))
+          const hasNewOrUpdatedDoses = remoteDoses.some(d => {
+            if (mergedDeleted.has(d.id)) return false
+            const existing = localMap.get(d.id)
+            if (!existing) return true // It's a brand new dose
+            // It's an updated dose (e.g. edited from modal) if remote is newer
+            return new Date(d.createdAt).getTime() > new Date(existing.createdAt).getTime()
+          })
+
           const hasNewDeletions = [...remoteDeleted].some(id => !localDeleted.has(id))
 
-          if (hasNewDoses || hasNewDeletions) {
+          if (hasNewOrUpdatedDoses || hasNewDeletions) {
             writeLocal(merged)
             writeDeleted(mergedDeleted)
             setDoses(merged)
@@ -404,23 +410,15 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     }
   }
 
-  // Called by EditDoseModal after a successful save
   const handleDoseSaved = (updated: DoseLog) => {
-    // Bump createdAt so the merge logic on other devices picks this as the newer version
-    const withTimestamp = {
-      ...updated,
-      createdAt: new Date().toISOString(),
-    }
     const next = doses
-      .map(d => (d.id === withTimestamp.id ? withTimestamp : d))
+      .map(d => (d.id === updated.id ? updated : d))
       .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
 
-    writeLocal(next)
     setDoses(next)
     notifyDoseChange()
-
-    if (syncStatus === 'synced') pushToSync(next, readDeleted())
   }
+
   const exportToCSV = () => {
     if (doses.length === 0) {
       toast({ title: 'Nothing to export', description: 'You have no dose logs to export yet.', variant: 'destructive' })
@@ -675,4 +673,3 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     </>
   )
 }
-

@@ -152,11 +152,9 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
     await new Promise((r) => setTimeout(r, 150))
 
     try {
-      // Recalculate duration from substance routeData if available
       const duration =
         selectedSubstance?.routeData?.[route]?.duration ?? dose.duration
 
-      // Update createdAt to now so merge logic on other devices picks this as the newer version
       const now = new Date().toISOString()
       const updated: DoseLog = {
         ...dose,
@@ -173,7 +171,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
         createdAt: now,
       }
 
-      // Persist to localStorage
       const existing: DoseLog[] = JSON.parse(
         localStorage.getItem(STORAGE_KEY) || '[]'
       )
