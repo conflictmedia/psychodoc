@@ -4,21 +4,22 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { format, isToday, isYesterday, isThisWeek, isThisMonth } from 'date-fns'
 import { initializeApp } from 'firebase/app'
 import { getFirestore, doc, onSnapshot, setDoc, serverTimestamp } from 'firebase/firestore'
-import { 
-  Card, CardContent, CardDescription, CardHeader, CardTitle 
+import {
+  Card, CardContent, CardDescription, CardHeader, CardTitle
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import { Input } from '@/components/ui/input'
-import { 
+import {
   Trash2, Calendar, Clock, Droplets, MapPin, Smile,
   Activity, Loader2, Timer, Download, Cloud, CloudOff, Lock, CheckCircle2,
-  RotateCcw
+  RotateCcw, Pencil
 } from 'lucide-react'
 import { categoryColors } from '@/lib/categories'
 import { useToast } from '@/hooks/use-toast'
 import { notifyDoseChange } from './active-doses-timeline'
+import { EditDoseModal } from './edit-dose-modal'
 
 // --- FIREBASE ---
 
@@ -93,8 +94,7 @@ const decryptData = async (encryptedObj: { iv: string; ciphertext: string }, key
 }
 
 // --- MERGE LOGIC ---
-// Union local + remote by ID, then remove any IDs that appear in either
-// tombstone set. On conflict (same ID), keep the newer createdAt.
+
 const mergeDoses = (
   local: DoseLog[],
   remote: DoseLog[],
@@ -155,6 +155,8 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   const [loading, setLoading] = useState(true)
   const [deleting, setDeleting] = useState<string | null>(null)
   const [redosing, setRedosing] = useState<string | null>(null)
+  // Edit modal state
+  const [editingDose, setEditingDose] = useState<DoseLog | null>(null)
   const { toast } = useToast()
 
   // Sync state
@@ -163,12 +165,9 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   const [roomId, setRoomId] = useState('')
   const [password, setPassword] = useState('')
 
-  // Stable refs — never reset on re-render
   const cryptoKeyRef = useRef<CryptoKey | null>(null)
   const hashedRoomRef = useRef<string | null>(null)
   const unsubscribeRef = useRef<(() => void) | null>(null)
-  // Track the last remote snapshot we wrote to Firebase ourselves so we can
-  // skip echoing it back to ourselves. Stored as a stringified payload hash.
   const lastPushedHashRef = useRef<string | null>(null)
   const isPushingRef = useRef(false)
 
@@ -217,7 +216,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     fetchDoses()
   }, [refreshTrigger, fetchDoses])
 
-  // Listen for writes from other components (dose-logger-modal, etc.)
   useEffect(() => {
     const handleExternalUpdate = () => {
       const logs = readLocal().sort(
@@ -230,7 +228,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     return () => window.removeEventListener('dose-logs-updated', handleExternalUpdate)
   }, [syncStatus])
 
-  // Auto-connect on mount if credentials are saved
   useEffect(() => {
     const savedAuth = localStorage.getItem(SYNC_AUTH_KEY)
     if (savedAuth) {
@@ -277,7 +274,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       return
     }
 
-    // Tear down any existing subscription
     if (unsubscribeRef.current) {
       unsubscribeRef.current()
       unsubscribeRef.current = null
@@ -292,25 +288,20 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
       const docRef = doc(db, 'secure_rooms', hashedRoomRef.current)
 
       unsubscribeRef.current = onSnapshot(docRef, async (docSnap) => {
-        // Skip if we're in the middle of pushing (avoids echo)
         if (isPushingRef.current) return
 
         if (!docSnap.exists()) {
-          // Room is new — seed it with our local data
           const local = readLocal()
           if (local.length > 0) await pushToSync(local, readDeleted())
           return
         }
 
         const remoteData = docSnap.data()
-
-        // Skip if this snapshot matches what we just pushed
         const remoteHash = remoteData.encrypted?.ciphertext?.substring(0, 32)
         if (remoteHash && remoteHash === lastPushedHashRef.current) return
 
         try {
           const payload = await decryptData(remoteData.encrypted, cryptoKeyRef.current!)
-          // Support both old format (plain array) and new format ({ doses, deleted })
           const remoteDoses: DoseLog[] = Array.isArray(payload) ? payload : payload.doses ?? []
           const remoteDeleted: Set<string> = new Set(Array.isArray(payload) ? [] : payload.deleted ?? [])
 
@@ -337,8 +328,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
         }
       })
 
-      // Push any locally-logged doses that accumulated while disconnected.
-      // The snapshot listener on Device B will merge these in on receipt.
       const local = readLocal()
       if (local.length > 0) await pushToSync(local, readDeleted())
 
@@ -359,8 +348,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     lastPushedHashRef.current = null
     isPushingRef.current = false
     localStorage.removeItem(SYNC_AUTH_KEY)
-    // Note: STORAGE_KEY and DELETED_KEY are intentionally kept so local data
-    // and tombstones survive a disconnect/reconnect cycle.
     setSyncStatus('idle')
     setRoomId('')
     setPassword('')
@@ -417,6 +404,16 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
     }
   }
 
+  // Called by EditDoseModal after a successful save
+  const handleDoseSaved = (updated: DoseLog) => {
+    const next = doses
+      .map(d => (d.id === updated.id ? updated : d))
+      .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+    setDoses(next)
+    notifyDoseChange()
+    if (syncStatus === 'synced') pushToSync(next)
+  }
+
   const exportToCSV = () => {
     if (doses.length === 0) {
       toast({ title: 'Nothing to export', description: 'You have no dose logs to export yet.', variant: 'destructive' })
@@ -469,7 +466,6 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   const getCategoryColor = (category: string) =>
     categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
 
-  // Normalise: old logs stored category as a string scalar, new ones as string[]
   const getDoseCategories = (dose: DoseLog): string[] => {
     if (Array.isArray(dose.categories)) return dose.categories
     const legacy = (dose as any).category as string | undefined
@@ -490,160 +486,186 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
   }
 
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-4">
-        <div className="space-y-1.5">
-          <CardTitle className="flex items-center gap-2">
-            <Activity className="h-5 w-5" />
-            Dose History
-          </CardTitle>
-          <CardDescription>Your logged substance doses</CardDescription>
-        </div>
-        <div className="flex gap-2 shrink-0">
-          <Button
-            variant={syncStatus === 'synced' ? 'default' : 'outline'}
-            size="sm"
-            onClick={() => setShowSyncPanel(!showSyncPanel)}
-            className={syncStatus === 'synced' ? 'bg-green-600 hover:bg-green-700' : ''}
-          >
-            {syncStatus === 'synced'
-              ? <Cloud className="mr-2 h-4 w-4" />
-              : <CloudOff className="mr-2 h-4 w-4" />}
-            {syncStatus === 'synced' ? 'Synced' : 'Sync'}
-          </Button>
-          <Button variant="outline" size="sm" onClick={exportToCSV}>
-            <Download className="mr-2 h-4 w-4" />
-            Export
-          </Button>
-        </div>
-      </CardHeader>
+    <>
+      <Card className="flex flex-col">
+        <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-4">
+          <div className="space-y-1.5">
+            <CardTitle className="flex items-center gap-2">
+              <Activity className="h-5 w-5" />
+              Dose History
+            </CardTitle>
+            <CardDescription>Your logged substance doses</CardDescription>
+          </div>
+          <div className="flex gap-2 shrink-0">
+            <Button
+              variant={syncStatus === 'synced' ? 'default' : 'outline'}
+              size="sm"
+              onClick={() => setShowSyncPanel(!showSyncPanel)}
+              className={syncStatus === 'synced' ? 'bg-green-600 hover:bg-green-700' : ''}
+            >
+              {syncStatus === 'synced'
+                ? <Cloud className="mr-2 h-4 w-4" />
+                : <CloudOff className="mr-2 h-4 w-4" />}
+              {syncStatus === 'synced' ? 'Synced' : 'Sync'}
+            </Button>
+            <Button variant="outline" size="sm" onClick={exportToCSV}>
+              <Download className="mr-2 h-4 w-4" />
+              Export
+            </Button>
+          </div>
+        </CardHeader>
 
-      {showSyncPanel && (
-        <div className="px-6 pb-4">
-          <div className="bg-muted p-4 rounded-lg border">
-            <div className="flex items-center gap-2 mb-3">
-              <Lock className="h-4 w-4 text-muted-foreground" />
-              <h4 className="text-sm font-semibold">End-to-End Encrypted Sync</h4>
-            </div>
+        {showSyncPanel && (
+          <div className="px-6 pb-4">
+            <div className="bg-muted p-4 rounded-lg border">
+              <div className="flex items-center gap-2 mb-3">
+                <Lock className="h-4 w-4 text-muted-foreground" />
+                <h4 className="text-sm font-semibold">End-to-End Encrypted Sync</h4>
+              </div>
 
-            {syncStatus === 'synced' ? (
-              <div className="flex items-center justify-between bg-green-500/10 text-green-700 dark:text-green-400 p-3 rounded-md border border-green-500/20">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="h-4 w-4" />
-                  <span className="text-sm font-medium">Connected to Room: {roomId}</span>
+              {syncStatus === 'synced' ? (
+                <div className="flex items-center justify-between bg-green-500/10 text-green-700 dark:text-green-400 p-3 rounded-md border border-green-500/20">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="h-4 w-4" />
+                    <span className="text-sm font-medium">Connected to Room: {roomId}</span>
+                  </div>
+                  <Button size="sm" variant="ghost" onClick={disconnectSync} className="hover:bg-green-500/20">
+                    Disconnect
+                  </Button>
                 </div>
-                <Button size="sm" variant="ghost" onClick={disconnectSync} className="hover:bg-green-500/20">
-                  Disconnect
-                </Button>
-              </div>
-            ) : (
-              <div className="flex flex-col sm:flex-row gap-2">
-                <Input
-                  placeholder="Room Name"
-                  value={roomId}
-                  onChange={(e) => setRoomId(e.target.value)}
-                  className="bg-background"
-                />
-                <Input
-                  type="password"
-                  placeholder="Secret Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  className="bg-background"
-                />
-                <Button
-                  onClick={() => connectToSync()}
-                  disabled={syncStatus === 'connecting' || !roomId || !password}
-                  className="shrink-0"
-                >
-                  {syncStatus === 'connecting' && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
-                  Connect
-                </Button>
-              </div>
-            )}
-            <p className="text-xs text-muted-foreground mt-3">
-              Enter the same room name and password on your other devices to sync data privately. Firebase cannot read your data.
-            </p>
+              ) : (
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Input
+                    placeholder="Room Name"
+                    value={roomId}
+                    onChange={(e) => setRoomId(e.target.value)}
+                    className="bg-background"
+                  />
+                  <Input
+                    type="password"
+                    placeholder="Secret Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    className="bg-background"
+                  />
+                  <Button
+                    onClick={() => connectToSync()}
+                    disabled={syncStatus === 'connecting' || !roomId || !password}
+                    className="shrink-0"
+                  >
+                    {syncStatus === 'connecting' && <Loader2 className="h-4 w-4 animate-spin mr-2" />}
+                    Connect
+                  </Button>
+                </div>
+              )}
+              <p className="text-xs text-muted-foreground mt-3">
+                Enter the same room name and password on your other devices to sync data privately. Firebase cannot read your data.
+              </p>
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
-      <CardContent>
-        {doses.length === 0 ? (
-          <div className="flex flex-col items-center justify-center py-8 text-center">
-            <Calendar className="h-12 w-12 text-muted-foreground mb-4 opacity-50" />
-            <h3 className="text-lg font-medium mb-2">No doses logged yet</h3>
-            <p className="text-sm text-muted-foreground">Start tracking your substance use by logging your first dose</p>
-          </div>
-        ) : (
-          <ScrollArea className="h-[400px] pr-4">
-            {Object.entries(groupDosesByDate(doses)).map(([dateGroup, groupDoses]) => (
-              <div key={dateGroup} className="mb-6">
-                <h4 className="text-sm font-medium text-muted-foreground mb-3 sticky top-0 bg-background py-1 z-10 text-center">
-                  {dateGroup}
-                </h4>
-                <div className="space-y-3">
-                  {groupDoses.map((dose) => (
-                    <div key={dose.id} className="rounded-lg border p-3 hover:bg-muted/50 transition-colors">
-                      <div className="flex items-start justify-between gap-2">
-                        <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2 flex-wrap">
-                            <span className="font-medium">{dose.substanceName}</span>
-                            {getDoseCategories(dose).map((cat) => (
-                              <Badge key={cat} variant="outline" className={getCategoryColor(cat)}>
-                                {cat}
-                              </Badge>
-                            ))}
-                          </div>
-
-                          <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
-                            <span className="flex items-center gap-1"><Droplets className="h-3 w-3" />{dose.amount} {dose.unit}</span>
-                            <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{format(new Date(dose.timestamp), 'MMM d, yyyy')}</span>
-                            <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{format(new Date(dose.timestamp), 'h:mm a')}</span>
-                            <span>{dose.route}</span>
-                            {dose.duration?.total && (
-                              <span className="flex items-center gap-1"><Timer className="h-3 w-3" />{dose.duration.total}</span>
-                            )}
-                          </div>
-
-                          {(dose.mood || dose.setting || dose.notes) && (
-                            <div className="flex flex-wrap gap-2 mt-2">
-                              {dose.mood && <Badge variant="secondary" className="text-xs"><Smile className="h-3 w-3 mr-1" />{dose.mood}</Badge>}
-                              {dose.setting && <Badge variant="secondary" className="text-xs"><MapPin className="h-3 w-3 mr-1" />{dose.setting}</Badge>}
+        <CardContent>
+          {doses.length === 0 ? (
+            <div className="flex flex-col items-center justify-center py-8 text-center">
+              <Calendar className="h-12 w-12 text-muted-foreground mb-4 opacity-50" />
+              <h3 className="text-lg font-medium mb-2">No doses logged yet</h3>
+              <p className="text-sm text-muted-foreground">Start tracking your substance use by logging your first dose</p>
+            </div>
+          ) : (
+            <ScrollArea className="h-[400px] pr-4">
+              {Object.entries(groupDosesByDate(doses)).map(([dateGroup, groupDoses]) => (
+                <div key={dateGroup} className="mb-6">
+                  <h4 className="text-sm font-medium text-muted-foreground mb-3 sticky top-0 bg-background py-1 z-10 text-center">
+                    {dateGroup}
+                  </h4>
+                  <div className="space-y-3">
+                    {groupDoses.map((dose) => (
+                      <div key={dose.id} className="rounded-lg border p-3 hover:bg-muted/50 transition-colors">
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="flex-1 min-w-0">
+                            <div className="flex items-center gap-2 flex-wrap">
+                              <span className="font-medium">{dose.substanceName}</span>
+                              {getDoseCategories(dose).map((cat) => (
+                                <Badge key={cat} variant="outline" className={getCategoryColor(cat)}>
+                                  {cat}
+                                </Badge>
+                              ))}
                             </div>
-                          )}
 
-                          {dose.notes && <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{dose.notes}</p>}
-                        </div>
+                            <div className="flex items-center gap-4 mt-1 text-sm text-muted-foreground">
+                              <span className="flex items-center gap-1"><Droplets className="h-3 w-3" />{dose.amount} {dose.unit}</span>
+                              <span className="flex items-center gap-1"><Calendar className="h-3 w-3" />{format(new Date(dose.timestamp), 'MMM d, yyyy')}</span>
+                              <span className="flex items-center gap-1"><Clock className="h-3 w-3" />{format(new Date(dose.timestamp), 'h:mm a')}</span>
+                              <span>{dose.route}</span>
+                              {dose.duration?.total && (
+                                <span className="flex items-center gap-1"><Timer className="h-3 w-3" />{dose.duration.total}</span>
+                              )}
+                            </div>
 
-                        <div className="flex gap-1 shrink-0">
-                          <Button
-                            variant="ghost" size="icon"
-                            className="h-8 w-8 text-muted-foreground hover:text-primary"
-                            onClick={() => redose(dose)}
-                            disabled={redosing === dose.id}
-                            title="Redose"
-                          >
-                            {redosing === dose.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <RotateCcw className="h-4 w-4" />}
-                          </Button>
-                          <Button
-                            variant="ghost" size="icon"
-                            className="h-8 w-8 text-muted-foreground hover:text-destructive"
-                            onClick={() => deleteDose(dose.id)}
-                            disabled={deleting === dose.id}
-                          >
-                            {deleting === dose.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
-                          </Button>
+                            {(dose.mood || dose.setting || dose.notes) && (
+                              <div className="flex flex-wrap gap-2 mt-2">
+                                {dose.mood && <Badge variant="secondary" className="text-xs"><Smile className="h-3 w-3 mr-1" />{dose.mood}</Badge>}
+                                {dose.setting && <Badge variant="secondary" className="text-xs"><MapPin className="h-3 w-3 mr-1" />{dose.setting}</Badge>}
+                              </div>
+                            )}
+
+                            {dose.notes && <p className="text-xs text-muted-foreground mt-2 line-clamp-2">{dose.notes}</p>}
+                          </div>
+
+                          {/* Action buttons */}
+                          <div className="flex gap-1 shrink-0">
+                            {/* Edit */}
+                            <Button
+                              variant="ghost"
+                              size="icon"
+                              className="h-8 w-8 text-muted-foreground hover:text-foreground"
+                              onClick={() => setEditingDose(dose)}
+                              title="Edit dose"
+                            >
+                              <Pencil className="h-4 w-4" />
+                            </Button>
+                            {/* Redose */}
+                            <Button
+                              variant="ghost" size="icon"
+                              className="h-8 w-8 text-muted-foreground hover:text-primary"
+                              onClick={() => redose(dose)}
+                              disabled={redosing === dose.id}
+                              title="Redose"
+                            >
+                              {redosing === dose.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <RotateCcw className="h-4 w-4" />}
+                            </Button>
+                            {/* Delete */}
+                            <Button
+                              variant="ghost" size="icon"
+                              className="h-8 w-8 text-muted-foreground hover:text-destructive"
+                              onClick={() => deleteDose(dose.id)}
+                              disabled={deleting === dose.id}
+                            >
+                              {deleting === dose.id ? <Loader2 className="h-4 w-4 animate-spin" /> : <Trash2 className="h-4 w-4" />}
+                            </Button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </ScrollArea>
-        )}
-      </CardContent>
-    </Card>
+              ))}
+            </ScrollArea>
+          )}
+        </CardContent>
+      </Card>
+
+      {/* Edit modal — rendered outside the card so it can be a portal */}
+      {editingDose && (
+        <EditDoseModal
+          dose={editingDose}
+          open={!!editingDose}
+          onOpenChange={(open) => { if (!open) setEditingDose(null) }}
+          onSaved={handleDoseSaved}
+        />
+      )}
+    </>
   )
 }
+

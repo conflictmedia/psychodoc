@@ -71,12 +71,13 @@ export function Combobox({
       </PopoverTrigger>
       <PopoverContent className="w-[--radix-popover-trigger-width] p-0" align="start">
         <Command shouldFilter={false}>
-          <CommandInput 
-            placeholder="Type to search..." 
+          <CommandInput
+            placeholder="Type to search..."
             value={search}
             onValueChange={setSearch}
           />
-          <CommandList>
+          {/* ⬇️ This is the only line that changed */}
+          <CommandList onTouchMove={(e) => e.stopPropagation()}>
             <CommandEmpty>
               {allowCustom ? (
                 <div className="py-2 px-2">
@@ -89,7 +90,7 @@ export function Combobox({
                       setSearch('')
                     }}
                   >
-                    Use "{search}"
+                    Use &quot;{search}&quot;
                   </Button>
                 </div>
               ) : (

@@ -759,17 +759,6 @@ function SubstanceDetail({
               </CardContent>
             </Card>
             <Card>
-              <CardHeader className="pb-2">
-                <CardTitle className="text-base flex items-center gap-2">
-                  <Timer className="h-4 w-4" />
-                  After effects
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{substance.afterEffects}</p>
-              </CardContent>
-            </Card>
-            <Card>
               <CardContent className="pt-4 space-y-3">
                 <div className="flex items-center gap-3 text-sm">
                   <Scale className="h-4 w-4 text-muted-foreground shrink-0" />
@@ -997,13 +986,6 @@ function SubstanceDetail({
                 <p className="text-sm text-muted-foreground leading-relaxed">{substance.history}</p>
               </CardContent>
             </Card>
-
-            <Card>
-              <CardHeader><CardTitle className="text-lg">After Effects</CardTitle></CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{substance.afterEffects}</p>
-              </CardContent>
-            </Card>
           </div>
         </div>
 
@@ -1039,8 +1021,8 @@ export default function Home() {
       result = result.filter(
         (s) =>
           s.name.toLowerCase().includes(q) ||
-          s.commonNames.some((n) => n.toLowerCase().includes(q)) ||
-          s.aliases.some((a) => a.toLowerCase().includes(q))
+          s.commonNames.some((n) => n.toLowerCase().includes(q))
+          //s.aliases.some((a) => a.toLowerCase().includes(q))
       )
     }
     return result
@@ -1098,14 +1080,22 @@ export default function Home() {
         } hidden md:flex transition-all duration-300 border-r bg-muted/30 overflow-hidden shrink-0 flex-col`}
       >
         <div className="h-full flex flex-col">
-          <div className="p-4 border-b space-y-4">
-            <div>
-              <div className="flex items-center gap-2">
-                <Image src="logo.png" alt="Drugucopia Logo" width={36} height={36} className="rounded-lg" />
-                <span className="font-bold text-lg">Drugucopia</span>
+            <div className="p-4 border-b space-y-4">
+              <div>
+                <div className="flex items-center gap-2">
+                  <Image src="/logo.png" alt="Drugucopia Logo" width={36} height={36} className="rounded-lg" />
+                  <span className="font-bold text-lg flex-1">Drugucopia</span>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="h-8 w-8 shrink-0"
+                    onClick={() => setSidebarOpen(false)}
+                  >
+                    <X className="h-4 w-4" />
+                  </Button>
+                </div>
+                <p className="text-xs text-muted-foreground mt-1">Psychoactive Substances Documentation</p>
               </div>
-              <p className="text-xs text-muted-foreground mt-1">Psychoactive Substances Documentation</p>
-            </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="w-full text-xs bg-background">
@@ -1183,18 +1173,21 @@ export default function Home() {
       {/* ── Main content ────────────────────────────────────────────────────── */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Desktop header */}
-        <header className="hidden md:flex sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 items-center gap-4 px-4 lg:px-6">
-          <Button
-            variant="ghost"
-            size="icon"
-            onClick={() => setSidebarOpen(!sidebarOpen)}
-          >
-            {sidebarOpen ? <X className="h-5 w-5" /> : (
+        <header className="hidden md:flex sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 items-center px-4 lg:px-6 gap-4">
+          {!sidebarOpen && (
+            <Button
+              variant="ghost"
+              size="icon"
+              className="-ml-2"
+              onClick={() => setSidebarOpen(true)}
+            >
               <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-                <line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="18" x2="21" y2="18" />
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
               </svg>
-            )}
-          </Button>
+            </Button>
+          )}
 
           {desktopView === 'substances' && (
             <div className="flex-1 max-w-md">
@@ -1204,8 +1197,16 @@ export default function Home() {
                   placeholder="Search substances..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9"
+                  className="pl-9 pr-9"
                 />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
               </div>
             </div>
           )}
@@ -1221,7 +1222,6 @@ export default function Home() {
             <ThemeToggle />
           </div>
         </header>
-
         {/* ── Mobile header ─────────────────────────────────────────────────── */}
         <header className="md:hidden sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
           {/* Logo row */}
@@ -1240,8 +1240,16 @@ export default function Home() {
                   placeholder="Search substances…"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="pl-9 h-9"
+                  className="pl-9 pr-9 h-9"
                 />
+                {searchQuery && (
+                  <button
+                    onClick={() => setSearchQuery('')}
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <X className="h-4 w-4" />
+                  </button>
+                )}
               </div>
             </div>
           )}
