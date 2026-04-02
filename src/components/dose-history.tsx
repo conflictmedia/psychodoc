@@ -406,14 +406,21 @@ export function DoseHistory({ refreshTrigger }: DoseHistoryProps) {
 
   // Called by EditDoseModal after a successful save
   const handleDoseSaved = (updated: DoseLog) => {
+    // Bump createdAt so the merge logic on other devices picks this as the newer version
+    const withTimestamp = {
+      ...updated,
+      createdAt: new Date().toISOString(),
+    }
     const next = doses
-      .map(d => (d.id === updated.id ? updated : d))
+      .map(d => (d.id === withTimestamp.id ? withTimestamp : d))
       .sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime())
+
+    writeLocal(next)
     setDoses(next)
     notifyDoseChange()
-    if (syncStatus === 'synced') pushToSync(next)
-  }
 
+    if (syncStatus === 'synced') pushToSync(next, readDeleted())
+  }
   const exportToCSV = () => {
     if (doses.length === 0) {
       toast({ title: 'Nothing to export', description: 'You have no dose logs to export yet.', variant: 'destructive' })
