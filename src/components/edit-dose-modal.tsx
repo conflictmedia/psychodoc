@@ -1,0 +1,332 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import { format } from 'date-fns'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+  DialogClose,
+} from '@/components/ui/dialog'
+import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
+import { Label } from '@/components/ui/label'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
+import { Textarea } from '@/components/ui/textarea'
+import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
+import { Loader2, Pencil } from 'lucide-react'
+import { substances } from '@/lib/substances/index'
+import { useToast } from '@/hooks/use-toast'
+
+interface DoseLog {
+  id: string
+  substanceId: string
+  substanceName: string
+  categories: string[]
+  amount: number
+  unit: string
+  route: string
+  timestamp: string
+  duration: { onset: string; comeup: string; peak: string; offset: string; total: string } | null
+  notes: string | null
+  mood: string | null
+  setting: string | null
+  intensity: number | null
+  createdAt: string
+}
+
+interface EditDoseModalProps {
+  dose: DoseLog
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  onSaved: (updated: DoseLog) => void
+}
+
+const moodOptions: ComboboxOption[] = [
+  { value: 'happy', label: 'Happy' },
+  { value: 'relaxed', label: 'Relaxed' },
+  { value: 'anxious', label: 'Anxious' },
+  { value: 'stressed', label: 'Stressed' },
+  { value: 'sad', label: 'Sad' },
+  { value: 'energetic', label: 'Energetic' },
+  { value: 'curious', label: 'Curious' },
+  { value: 'neutral', label: 'Neutral' },
+  { value: 'excited', label: 'Excited' },
+  { value: 'bored', label: 'Bored' },
+  { value: 'tired', label: 'Tired' },
+  { value: 'focused', label: 'Focused' },
+]
+
+const settingOptions: ComboboxOption[] = [
+  { value: 'home', label: 'Home' },
+  { value: 'friends', label: 'With Friends' },
+  { value: 'party', label: 'Party/Event' },
+  { value: 'nature', label: 'Nature' },
+  { value: 'festival', label: 'Festival' },
+  { value: 'work', label: 'Work' },
+  { value: 'gym', label: 'Gym' },
+  { value: 'concert', label: 'Concert' },
+  { value: 'bar', label: 'Bar/Club' },
+  { value: 'travel', label: 'Traveling' },
+  { value: 'other', label: 'Other' },
+]
+
+const STORAGE_KEY = 'drugucopia-dose-logs'
+
+export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseModalProps) {
+  const { toast } = useToast()
+  const [loading, setLoading] = useState(false)
+
+  // Form state — initialised from the dose being edited
+  const [substanceId, setSubstanceId] = useState(dose.substanceId)
+  const [substanceName, setSubstanceName] = useState(dose.substanceName)
+  const [amount, setAmount] = useState(String(dose.amount))
+  const [unit, setUnit] = useState(dose.unit)
+  const [route, setRoute] = useState(dose.route)
+  const [timestamp, setTimestamp] = useState(
+    format(new Date(dose.timestamp), "yyyy-MM-dd'T'HH:mm")
+  )
+  const [notes, setNotes] = useState(dose.notes ?? '')
+  const [mood, setMood] = useState(dose.mood ?? '')
+  const [setting, setSetting] = useState(dose.setting ?? '')
+
+  // Re-sync whenever the dose prop changes (e.g. different row opened)
+  useEffect(() => {
+    setSubstanceId(dose.substanceId)
+    setSubstanceName(dose.substanceName)
+    setAmount(String(dose.amount))
+    setUnit(dose.unit)
+    setRoute(dose.route)
+    setTimestamp(format(new Date(dose.timestamp), "yyyy-MM-dd'T'HH:mm"))
+    setNotes(dose.notes ?? '')
+    setMood(dose.mood ?? '')
+    setSetting(dose.setting ?? '')
+  }, [dose])
+
+  const substanceOptions: ComboboxOption[] = substances.map((s) => ({
+    value: s.id,
+    label: s.name,
+  }))
+
+  const selectedSubstance = substances.find((s) => s.id === substanceId)
+
+  const getRoutesForSubstance = () => {
+    if (selectedSubstance?.routeData) return Object.keys(selectedSubstance.routeData)
+    return [
+      'oral', 'insufflation', 'inhalation', 'sublingual',
+      'rectal', 'intramuscular', 'transdermal', 'intravenous', 'smoked', 'vaped',
+    ]
+  }
+
+  const handleSubstanceChange = (value: string) => {
+    const found = substances.find((s) => s.id === value)
+    if (found) {
+      setSubstanceId(found.id)
+      setSubstanceName(found.name)
+    } else {
+      setSubstanceId(`custom-${Date.now()}`)
+      setSubstanceName(value)
+    }
+  }
+
+  const handleSave = async () => {
+    if (!substanceName || !amount) {
+      toast({
+        title: 'Missing fields',
+        description: 'Substance name and amount are required.',
+        variant: 'destructive',
+      })
+      return
+    }
+
+    setLoading(true)
+    await new Promise((r) => setTimeout(r, 150))
+
+    try {
+      // Recalculate duration from substance routeData if available
+      const duration =
+        selectedSubstance?.routeData?.[route]?.duration ?? dose.duration
+
+      const updated: DoseLog = {
+        ...dose,
+        substanceId,
+        substanceName,
+        amount: parseFloat(amount),
+        unit,
+        route,
+        timestamp: new Date(timestamp).toISOString(),
+        duration,
+        notes: notes || null,
+        mood: mood || null,
+        setting: setting || null,
+      }
+
+      // Persist to localStorage
+      const existing: DoseLog[] = JSON.parse(
+        localStorage.getItem(STORAGE_KEY) || '[]'
+      )
+      const next = existing.map((d) => (d.id === dose.id ? updated : d))
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
+
+      // Notify sibling components
+      window.dispatchEvent(new CustomEvent('dose-logs-updated'))
+
+      toast({
+        title: 'Dose updated',
+        description: `${substanceName} log has been saved.`,
+      })
+
+      onSaved(updated)
+      onOpenChange(false)
+    } catch {
+      toast({
+        title: 'Error',
+        description: 'Failed to save changes.',
+        variant: 'destructive',
+      })
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <Dialog open={open} onOpenChange={onOpenChange}>
+      <DialogContent className="sm:max-w-[500px]">
+        <DialogHeader>
+          <DialogTitle className="flex items-center gap-2">
+            <Pencil className="h-4 w-4" />
+            Edit Dose Log
+          </DialogTitle>
+          <DialogDescription>
+            Correct any details for this dose entry.
+          </DialogDescription>
+        </DialogHeader>
+
+        <div className="grid gap-4 py-4">
+          {/* Substance */}
+          <div className="grid gap-2">
+            <Label>Substance</Label>
+            <Combobox
+              options={substanceOptions}
+              value={substanceId}
+              onChange={handleSubstanceChange}
+              placeholder="Select or type a substance..."
+              allowCustom
+            />
+          </div>
+
+          {/* Amount + Unit */}
+          <div className="grid grid-cols-2 gap-4">
+            <div className="grid gap-2">
+              <Label>Amount</Label>
+              <Input
+                type="number"
+                step="0.1"
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
+              />
+            </div>
+            <div className="grid gap-2">
+              <Label>Unit</Label>
+              <Select value={unit} onValueChange={setUnit}>
+                <SelectTrigger>
+                  <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                  {['mg', 'g', 'μg', 'ml', 'drops', 'puffs', 'tabs', 'capsules', 'hits', 'lines'].map(
+                    (u) => (
+                      <SelectItem key={u} value={u}>
+                        {u}
+                      </SelectItem>
+                    )
+                  )}
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+
+          {/* Route */}
+          <div className="grid gap-2">
+            <Label>Route of Administration</Label>
+            <Select value={route} onValueChange={setRoute}>
+              <SelectTrigger>
+                <SelectValue />
+              </SelectTrigger>
+              <SelectContent>
+                {getRoutesForSubstance().map((r) => (
+                  <SelectItem key={r} value={r}>
+                    {r}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Timestamp */}
+          <div className="grid gap-2">
+            <Label>Date &amp; Time</Label>
+            <Input
+              type="datetime-local"
+              value={timestamp}
+              onChange={(e) => setTimestamp(e.target.value)}
+            />
+          </div>
+
+          {/* Mood */}
+          <div className="grid gap-2">
+            <Label>Mood (optional)</Label>
+            <Combobox
+              options={moodOptions}
+              value={mood}
+              onChange={setMood}
+              placeholder="Select or type a mood..."
+              allowCustom
+            />
+          </div>
+
+          {/* Setting */}
+          <div className="grid gap-2">
+            <Label>Setting (optional)</Label>
+            <Combobox
+              options={settingOptions}
+              value={setting}
+              onChange={setSetting}
+              placeholder="Select or type a setting..."
+              allowCustom
+            />
+          </div>
+
+          {/* Notes */}
+          <div className="grid gap-2">
+            <Label>Notes (optional)</Label>
+            <Textarea
+              placeholder="Any additional notes..."
+              value={notes}
+              onChange={(e) => setNotes(e.target.value)}
+              rows={3}
+            />
+          </div>
+        </div>
+
+        <DialogFooter>
+          <DialogClose asChild>
+            <Button variant="outline">Cancel</Button>
+          </DialogClose>
+          <Button onClick={handleSave} disabled={loading}>
+            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            Save changes
+          </Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+  )
+}

@@ -2,11 +2,11 @@
 
 import { useState, useEffect } from 'react'
 import { format } from 'date-fns'
-import { 
-  Dialog, 
-  DialogContent, 
-  DialogDescription, 
-  DialogHeader, 
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
   DialogTitle,
   DialogTrigger,
   DialogFooter,
@@ -15,12 +15,12 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { 
-  Select, 
-  SelectContent, 
-  SelectItem, 
-  SelectTrigger, 
-  SelectValue 
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 // import { Slider } from '@/components/ui/slider' // Shelved: Intensity slider
@@ -67,8 +67,8 @@ const settingOptions: ComboboxOption[] = [
   { value: 'other', label: 'Other' },
 ]
 
-export function DoseLoggerModal({ 
-  onLogCreated, 
+export function DoseLoggerModal({
+  onLogCreated,
   trigger,
   preselectedSubstanceId,
   preselectedSubstanceName,
@@ -78,7 +78,7 @@ export function DoseLoggerModal({
   const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
-  
+
   const [substanceId, setSubstanceId] = useState(preselectedSubstanceId || '')
   const [substanceName, setSubstanceName] = useState(preselectedSubstanceName || '')
   const [categories, setCategories] = useState<string[]>(
@@ -125,7 +125,7 @@ export function DoseLoggerModal({
   }, [preselectedSubstanceId, preselectedSubstanceName, preselectedCategory, preselectedRoute])
 
   const selectedSubstance = substances.find(s => s.id === substanceId)
-  
+
   // Get substance options for combobox
   const substanceOptions: ComboboxOption[] = substances.map(s => ({
     value: s.id,
@@ -143,7 +143,7 @@ export function DoseLoggerModal({
     }
 
     setLoading(true)
-    
+
     // Simulate a brief loading state for UX
     await new Promise(resolve => setTimeout(resolve, 200))
 
@@ -151,12 +151,12 @@ export function DoseLoggerModal({
       // Save to localStorage
       const existingLogs = JSON.parse(localStorage.getItem('drugucopia-dose-logs') || '[]')
       const now = new Date().toISOString()
-      
+
       // Get duration info from substance routeData if available
-      const duration = (selectedSubstance?.routeData && selectedSubstance.routeData[route]?.duration) 
-        ? selectedSubstance.routeData[route].duration 
+      const duration = (selectedSubstance?.routeData && selectedSubstance.routeData[route]?.duration)
+        ? selectedSubstance.routeData[route].duration
         : null
-      
+
       const newLog = {
         id: `dose_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         substanceId: substanceId || `custom-${Date.now()}`,
@@ -174,11 +174,11 @@ export function DoseLoggerModal({
         createdAt: now,
         updatedAt: now,
       }
-      
+
       const updatedLogs = [newLog, ...existingLogs].sort(
         (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
       )
-      
+
       localStorage.setItem('drugucopia-dose-logs', JSON.stringify(updatedLogs))
 
       window.dispatchEvent(new CustomEvent('dose-logs-updated'))
@@ -210,7 +210,7 @@ export function DoseLoggerModal({
     setAmount('')
     setUnit('mg')
     if (!preselectedRoute) {
-      setRoute('Oral')
+      setRoute('oral')
     }
     setTimestamp(format(new Date(), "yyyy-MM-dd'T'HH:mm"))
     setNotes('')
@@ -222,7 +222,7 @@ export function DoseLoggerModal({
     if (selectedSubstance?.routeData) {
       return Object.keys(selectedSubstance.routeData)
     }
-    return ['Oral', 'Insufflation', 'Inhalation', 'Sublingual', 'Rectal', 'Transdermal', 'Intravenous', 'Smoked', 'Vaped']
+    return ['oral', 'insufflation', 'inhalation', 'sublingual', 'rectal', 'transdermal', 'intravenous', 'smoked', 'vaped', 'intramuscular']
   }
 
   const handleSubstanceChange = (value: string) => {
@@ -262,7 +262,7 @@ export function DoseLoggerModal({
             Record your substance use for tracking and harm reduction purposes.
           </DialogDescription>
         </DialogHeader>
-        
+
         <div className="grid gap-4 py-4">
           {/* Substance Selection */}
           <div className="grid gap-2">
@@ -281,11 +281,11 @@ export function DoseLoggerModal({
           <div className="grid grid-cols-2 gap-4">
             <div className="grid gap-2">
               <Label>Amount</Label>
-              <Input 
-                type="number" 
+              <Input
+                type="number"
                 step="0.1"
-                placeholder="e.g., 100" 
-                value={amount} 
+                placeholder="e.g., 100"
+                value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />
             </div>
@@ -331,9 +331,9 @@ export function DoseLoggerModal({
           {/* Timestamp */}
           <div className="grid gap-2">
             <Label>Date & Time</Label>
-            <Input 
-              type="datetime-local" 
-              value={timestamp} 
+            <Input
+              type="datetime-local"
+              value={timestamp}
               onChange={(e) => setTimestamp(e.target.value)}
             />
           </div>
@@ -365,7 +365,7 @@ export function DoseLoggerModal({
           {/* Notes */}
           <div className="grid gap-2">
             <Label>Notes (optional)</Label>
-            <Textarea 
+            <Textarea
               placeholder="Any additional notes about this experience..."
               value={notes}
               onChange={(e) => setNotes(e.target.value)}
