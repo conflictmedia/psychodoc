@@ -1,23 +1,14 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "next-themes";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { SyncProvider } from "@/contexts/sync-context";
 
 const ibmPlexSans = IBM_Plex_Sans({
   variable: "--font-ibm-plex-sans",
   subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
 });
 
 const ibmPlexMono = IBM_Plex_Mono({
@@ -27,7 +18,7 @@ const ibmPlexMono = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: "Drugucopia - Psychoactive Substances Documentation",
-  description: "Documentation for psychoactive substances including effects, dosages, harm reductioni.",
+  description: "Documentation for psychoactive substances including effects, dosages, harm reduction.",
   keywords: ["psychoactive", "substances", "documentation", "harm reduction", "drug information"],
   authors: [{ name: "conflictmedia @ conflict@cocaine.ninja" }],
   icons: {
@@ -43,7 +34,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-//        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
         className={`${ibmPlexSans.className} ${ibmPlexMono.className} antialiased bg-background text-foreground`}
       >
         <ThemeProvider
@@ -52,8 +42,11 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
-          <Toaster />
+          {/* Wrap app with SyncProvider */}
+          <SyncProvider>
+            {children}
+            <Toaster />
+          </SyncProvider>
         </ThemeProvider>
       </body>
     </html>

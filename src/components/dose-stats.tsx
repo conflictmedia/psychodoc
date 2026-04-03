@@ -2,18 +2,18 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { format, subDays, isAfter } from 'date-fns'
-import { 
-  Card, 
-  CardContent, 
-  CardDescription, 
-  CardHeader, 
-  CardTitle 
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
-import { 
-  Activity, 
-  TrendingUp, 
-  Calendar, 
+import {
+  Activity,
+  TrendingUp,
+  Calendar,
   Clock,
   Loader2
 } from 'lucide-react'
@@ -45,10 +45,10 @@ export function DoseStats({ refreshTrigger }: DoseStatsProps) {
   const readAndUpdateDoses = useCallback(() => {
     try {
       const stored = localStorage.getItem(STORAGE_KEY) || '[]'
-      
+
       if (stored === lastKnownDataRef.current) return
       lastKnownDataRef.current = stored
-      
+
       const logs: DoseLog[] = JSON.parse(stored)
       setDoses(logs)
     } catch (error) {
@@ -117,7 +117,7 @@ export function DoseStats({ refreshTrigger }: DoseStatsProps) {
   const now = new Date()
   const last7Days = doses.filter(d => isAfter(new Date(d.timestamp), subDays(now, 7)))
   const last30Days = doses.filter(d => isAfter(new Date(d.timestamp), subDays(now, 30)))
-  
+
   // Most used substances
   const substanceCounts: { [key: string]: number } = {}
   doses.forEach(d => {
@@ -141,7 +141,7 @@ export function DoseStats({ refreshTrigger }: DoseStatsProps) {
     .sort((a, b) => b[1] - a[1])
 
   // Days since last dose
-  const sortedDoses = [...doses].sort((a, b) => 
+  const sortedDoses = [...doses].sort((a, b) =>
     new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
   )
   const lastDose = sortedDoses[0]
@@ -251,3 +251,4 @@ export function DoseStats({ refreshTrigger }: DoseStatsProps) {
     </div>
   )
 }
+

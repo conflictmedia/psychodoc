@@ -26,29 +26,14 @@ import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
 import { Loader2, Pencil } from 'lucide-react'
 import { substances } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
-
-interface DoseLog {
-  id: string
-  substanceId: string
-  substanceName: string
-  categories: string[]
-  amount: number
-  unit: string
-  route: string
-  timestamp: string
-  duration: { onset: string; comeup: string; peak: string; offset: string; total: string } | null
-  notes: string | null
-  mood: string | null
-  setting: string | null
-  intensity: number | null
-  createdAt: string
-}
+import { useDoseStore } from '@/store/dose-store'
+import { DoseLog } from '@/types'
 
 interface EditDoseModalProps {
   dose: DoseLog
   open: boolean
   onOpenChange: (open: boolean) => void
-  onSaved: (updated: DoseLog) => void
+  onSaved?: (updated: DoseLog) => void
 }
 
 const moodOptions: ComboboxOption[] = [
@@ -80,13 +65,11 @@ const settingOptions: ComboboxOption[] = [
   { value: 'other', label: 'Other' },
 ]
 
-const STORAGE_KEY = 'drugucopia-dose-logs'
-
 export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseModalProps) {
   const { toast } = useToast()
+  const { updateDose } = useDoseStore()
   const [loading, setLoading] = useState(false)
 
-  // Form state — initialised from the dose being edited
   const [substanceId, setSubstanceId] = useState(dose.substanceId)
   const [substanceName, setSubstanceName] = useState(dose.substanceName)
   const [amount, setAmount] = useState(String(dose.amount))
@@ -99,7 +82,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
   const [mood, setMood] = useState(dose.mood ?? '')
   const [setting, setSetting] = useState(dose.setting ?? '')
 
-  // Re-sync whenever the dose prop changes (e.g. different row opened)
   useEffect(() => {
     setSubstanceId(dose.substanceId)
     setSubstanceName(dose.substanceName)
@@ -155,7 +137,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
       const duration =
         selectedSubstance?.routeData?.[route]?.duration ?? dose.duration
 
-      const now = new Date().toISOString()
       const updated: DoseLog = {
         ...dose,
         substanceId,
@@ -168,24 +149,18 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
         notes: notes || null,
         mood: mood || null,
         setting: setting || null,
-        createdAt: now,
+        updatedAt: new Date().toISOString(),
       }
 
-      const existing: DoseLog[] = JSON.parse(
-        localStorage.getItem(STORAGE_KEY) || '[]'
-      )
-      const next = existing.map((d) => (d.id === dose.id ? updated : d))
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
-
-      // Notify sibling components
-      window.dispatchEvent(new CustomEvent('dose-logs-updated'))
+      // Update via Zustand store instead of local storage directly
+      updateDose(updated)
 
       toast({
         title: 'Dose updated',
         description: `${substanceName} log has been saved.`,
       })
 
-      onSaved(updated)
+      if (onSaved) onSaved(updated)
       onOpenChange(false)
     } catch {
       toast({
@@ -217,7 +192,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
         </DialogHeader>
        <form onSubmit={onSubmit}>
         <div className="grid gap-4 py-4">
-          {/* Substance */}
           <div className="grid gap-2">
             <Label>Substance</Label>
             <Combobox
@@ -229,7 +203,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
             />
           </div>
 
-          {/* Amount + Unit */}
           <div className="grid grid-cols-2 gap-4">
             <div className="grid gap-2">
               <Label>Amount</Label>
@@ -243,40 +216,28 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
             <div className="grid gap-2">
               <Label>Unit</Label>
               <Select value={unit} onValueChange={setUnit}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
+                <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  {['mg', 'g', 'μg', 'ml', 'drops', 'puffs', 'tabs', 'capsules', 'hits', 'lines', 'drinks', 'shots',].map(
-                    (u) => (
-                      <SelectItem key={u} value={u}>
-                        {u}
-                      </SelectItem>
-                    )
-                  )}
+                  {['mg', 'g', 'μg', 'ml', 'drops', 'puffs', 'tabs', 'capsules', 'hits', 'lines', 'drinks', 'shots'].map((u) => (
+                    <SelectItem key={u} value={u}>{u}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
           </div>
 
-          {/* Route */}
           <div className="grid gap-2">
             <Label>Route of Administration</Label>
             <Select value={route} onValueChange={setRoute}>
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
+              <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
                 {getRoutesForSubstance().map((r) => (
-                  <SelectItem key={r} value={r}>
-                    {r}
-                  </SelectItem>
+                  <SelectItem key={r} value={r}>{r}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
 
-          {/* Timestamp */}
           <div className="grid gap-2">
             <Label>Date &amp; Time</Label>
             <Input
@@ -286,7 +247,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
             />
           </div>
 
-          {/* Mood */}
           <div className="grid gap-2">
             <Label>Mood (optional)</Label>
             <Combobox
@@ -298,7 +258,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
             />
           </div>
 
-          {/* Setting */}
           <div className="grid gap-2">
             <Label>Setting (optional)</Label>
             <Combobox
@@ -310,7 +269,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
             />
           </div>
 
-          {/* Notes */}
           <div className="grid gap-2">
             <Label>Notes (optional)</Label>
             <Textarea
@@ -336,5 +294,3 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
     </Dialog>
   )
 }
-
-

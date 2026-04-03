@@ -23,11 +23,12 @@ import {
   SelectValue
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
-// import { Slider } from '@/components/ui/slider' // Shelved: Intensity slider
 import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
 import { Plus, Loader2 } from 'lucide-react'
-import { substances, type Substance } from '@/lib/substances/index'
+import { substances } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
+import { useDoseStore } from '@/store/dose-store'
+import { DoseLog } from '@/types'
 
 interface DoseLoggerModalProps {
   onLogCreated?: () => void
@@ -79,6 +80,9 @@ export function DoseLoggerModal({
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
 
+  // Zustand Store
+  const { addDose } = useDoseStore()
+
   const [substanceId, setSubstanceId] = useState(preselectedSubstanceId || '')
   const [substanceName, setSubstanceName] = useState(preselectedSubstanceName || '')
   const [categories, setCategories] = useState<string[]>(
@@ -96,12 +100,8 @@ export function DoseLoggerModal({
   const [intensity] = useState([5])
 
   useEffect(() => {
-    if (preselectedSubstanceId) {
-      setSubstanceId(preselectedSubstanceId)
-    }
-    if (preselectedSubstanceName) {
-      setSubstanceName(preselectedSubstanceName)
-    }
+    if (preselectedSubstanceId) setSubstanceId(preselectedSubstanceId)
+    if (preselectedSubstanceName) setSubstanceName(preselectedSubstanceName)
     if (preselectedSubstanceId) {
       const found = substances.find(s => s.id === preselectedSubstanceId)
       if (found) {
@@ -123,7 +123,6 @@ export function DoseLoggerModal({
 
   const selectedSubstance = substances.find(s => s.id === substanceId)
 
-  // Get substance options for combobox
   const substanceOptions: ComboboxOption[] = substances.map(s => ({
     value: s.id,
     label: s.name
@@ -145,8 +144,6 @@ export function DoseLoggerModal({
     await new Promise(resolve => setTimeout(resolve, 200))
 
     try {
-      // Save to localStorage
-      const existingLogs = JSON.parse(localStorage.getItem('drugucopia-dose-logs') || '[]')
       const now = new Date().toISOString()
 
       // Get duration info from substance routeData if available
@@ -154,7 +151,7 @@ export function DoseLoggerModal({
         ? selectedSubstance.routeData[route].duration
         : null
 
-      const newLog = {
+      const newLog: DoseLog = {
         id: `dose_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
         substanceId: substanceId || `custom-${Date.now()}`,
         substanceName,
@@ -172,18 +169,14 @@ export function DoseLoggerModal({
         updatedAt: now,
       }
 
-      const updatedLogs = [newLog, ...existingLogs].sort(
-        (a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()
-      )
-
-      localStorage.setItem('drugucopia-dose-logs', JSON.stringify(updatedLogs))
-
-      window.dispatchEvent(new CustomEvent('dose-logs-updated'))
+      // 1-liner to add the dose to the global store, sync to local storage, and trigger re-renders!
+      addDose(newLog)
 
       toast({
         title: 'Dose logged',
         description: `Successfully logged ${amount}${unit} of ${substanceName}`
       })
+
       setOpen(false)
       resetForm()
       onLogCreated?.()
@@ -235,7 +228,6 @@ export function DoseLoggerModal({
         : []
       setCategories(cats)
     } else {
-      // Custom substance
       setSubstanceId(value)
       setSubstanceName(value)
       setCategories([])
@@ -266,7 +258,6 @@ export function DoseLoggerModal({
         </DialogHeader>
         <form onSubmit={onSubmit}>
         <div className="grid gap-4 py-4">
-          {/* Substance Selection */}
           <div className="grid gap-2">
             <Label>Substance</Label>
             <Combobox
@@ -274,12 +265,10 @@ export function DoseLoggerModal({
               value={substanceId}
               onChange={handleSubstanceChange}
               placeholder="Select or type a substance..."
-              // disabled={!!preselectedSubstanceId}
               allowCustom={true}
             />
           </div>
 
-          {/* Amount and Unit */}
           <div className="grid grid-cols-2 gap-4">
             <div className="grid gap-2">
               <Label>Amount</Label>
@@ -294,45 +283,28 @@ export function DoseLoggerModal({
             <div className="grid gap-2">
               <Label>Unit</Label>
               <Select value={unit} onValueChange={setUnit}>
-                <SelectTrigger>
-                  <SelectValue />
-                </SelectTrigger>
+                <SelectTrigger><SelectValue /></SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="mg"> mg</SelectItem>
-                  <SelectItem value="g"> g</SelectItem>
-                  <SelectItem value="μg"> μg</SelectItem>
-                  <SelectItem value="ml"> ml</SelectItem>
-                  <SelectItem value="drops"> drops</SelectItem>
-                  <SelectItem value="puffs"> puffs</SelectItem>
-                  <SelectItem value="tabs"> tabs</SelectItem>
-                  <SelectItem value="capsules"> capsules</SelectItem>
-                  <SelectItem value="hits"> hits</SelectItem>
-                  <SelectItem value="lines"> lines</SelectItem>
-                  <SelectItem value="drinks"> drinks</SelectItem>
-                  <SelectItem value="shots"> shots</SelectItem>
+                  {['mg', 'g', 'μg', 'ml', 'drops', 'puffs', 'tabs', 'capsules', 'hits', 'lines', 'drinks', 'shots'].map(u => (
+                    <SelectItem key={u} value={u}> {u}</SelectItem>
+                  ))}
                 </SelectContent>
               </Select>
             </div>
           </div>
 
-          {/* Route */}
           <div className="grid gap-2">
             <Label>Route of Administration</Label>
             <Select value={route} onValueChange={setRoute}>
-              <SelectTrigger>
-                <SelectValue />
-              </SelectTrigger>
+              <SelectTrigger><SelectValue /></SelectTrigger>
               <SelectContent>
                 {getRoutesForSubstance().map((r) => (
-                  <SelectItem key={r} value={r}>
-                    {r}
-                  </SelectItem>
+                  <SelectItem key={r} value={r}>{r}</SelectItem>
                 ))}
               </SelectContent>
             </Select>
           </div>
 
-          {/* Timestamp */}
           <div className="grid gap-2">
             <Label>Date & Time</Label>
             <Input
@@ -342,7 +314,6 @@ export function DoseLoggerModal({
             />
           </div>
 
-          {/* Mood */}
           <div className="grid gap-2">
             <Label>Mood (optional)</Label>
             <Combobox
@@ -354,7 +325,6 @@ export function DoseLoggerModal({
             />
           </div>
 
-          {/* Setting */}
           <div className="grid gap-2">
             <Label>Setting (optional)</Label>
             <Combobox
@@ -366,7 +336,6 @@ export function DoseLoggerModal({
             />
           </div>
 
-          {/* Notes */}
           <div className="grid gap-2">
             <Label>Notes (optional)</Label>
             <Textarea
@@ -392,4 +361,3 @@ export function DoseLoggerModal({
     </Dialog>
   )
 }
-
