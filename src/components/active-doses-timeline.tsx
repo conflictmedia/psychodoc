@@ -25,41 +25,11 @@ import {
   ChevronUp,
 } from 'lucide-react'
 import { categoryColors } from '@/lib/categories'
-
-interface Duration {
-  onset: string
-  comeup: string
-  peak: string
-  offset: string
-  total: string
-}
-
-interface DoseLog {
-  id: string
-  substanceId: string
-  substanceName: string
-  categories: string[]
-  amount: number
-  unit: string
-  route: string
-  timestamp: string
-  duration: Duration | null
-  notes: string | null
-  mood: string | null
-  setting: string | null
-  intensity: number | null
-  createdAt: string
-}
+import { useDoseStore } from '@/store/dose-store'
+import { DoseLog, Duration } from '@/types'
 
 interface ActiveDosesTimelineProps {
-  refreshTrigger?: number
-}
-
-const STORAGE_KEY = 'drugucopia-dose-logs'
-const DOSE_CHANGE_EVENT = 'drugucopia-dose-change'
-
-export function notifyDoseChange() {
-  window.dispatchEvent(new CustomEvent(DOSE_CHANGE_EVENT))
+  refreshTrigger?: number // Kept for backwards compatibility if passed by parent, though no longer strictly needed
 }
 
 function parseDurationToMinutes(durationStr: string): number {
@@ -327,47 +297,14 @@ function MobilePhaseBar({
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
 export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps) {
-  const [doses, setDoses] = useState<DoseLog[]>([])
-  const [loading, setLoading] = useState(true)
-  const [, setTick] = useState(0)
+  // Replace direct localStorage polling with Zustand store
+  const { doses, isLoaded } = useDoseStore()
+
+  const [tick, setTick] = useState(0)
   const [tooltip, setTooltip] = useState<{ [key: string]: TooltipData }>({})
   const [expandedDose, setExpandedDose] = useState<string | null>(null)
-  const [showGraphFor, setShowGraphFor] = useState<Set<string>>(new Set())
 
-  const lastKnownDataRef = useRef<string>('')
-
-  const readAndUpdateDoses = useCallback(() => {
-    try {
-      const stored = localStorage.getItem(STORAGE_KEY) || '[]'
-      if (stored === lastKnownDataRef.current) return
-      lastKnownDataRef.current = stored
-      const logs: DoseLog[] = JSON.parse(stored)
-      setDoses(logs.sort((a, b) => new Date(b.timestamp).getTime() - new Date(a.timestamp).getTime()))
-    } catch {
-      setDoses([])
-    }
-  }, [])
-
-  useEffect(() => { readAndUpdateDoses(); setLoading(false) }, [readAndUpdateDoses])
-  useEffect(() => { readAndUpdateDoses() }, [refreshTrigger, readAndUpdateDoses])
-
-  useEffect(() => {
-    const handler = () => readAndUpdateDoses()
-    window.addEventListener(DOSE_CHANGE_EVENT, handler)
-    return () => window.removeEventListener(DOSE_CHANGE_EVENT, handler)
-  }, [readAndUpdateDoses])
-
-  useEffect(() => {
-    const handler = (e: StorageEvent) => { if (e.key === STORAGE_KEY) readAndUpdateDoses() }
-    window.addEventListener('storage', handler)
-    return () => window.removeEventListener('storage', handler)
-  }, [readAndUpdateDoses])
-
-  useEffect(() => {
-    const interval = setInterval(() => readAndUpdateDoses(), 2000)
-    return () => clearInterval(interval)
-  }, [readAndUpdateDoses])
-
+  // Keep tick interval to update progress bars visually as time passes
   useEffect(() => {
     const interval = setInterval(() => setTick((t) => t + 1), 60000)
     return () => clearInterval(interval)
@@ -387,7 +324,9 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
         const elapsed = (new Date().getTime() - dose.doseTime.getTime()) / (1000 * 60)
         return elapsed - dose.timings.totalDuration < 12 * 60
       })
-  }, [doses])
+  // We include 'tick' to force recalculation of time remaining every minute
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [doses, tick, refreshTrigger])
 
   const getCategoryColor = (category: string) =>
     categoryColors[category as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
@@ -503,7 +442,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return b
   }
 
-  if (loading) {
+  // Handle loading state globally via Zustand
+  if (!isLoaded) {
     return (
       <Card>
         <CardContent className="flex items-center justify-center py-8">
@@ -562,7 +502,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="font-semibold text-foreground">{dose.substanceName}</span>
-                      {getDoseCategories(dose).map((cat) => (
+                      {getDoseCategories(dose as any).map((cat) => (
                         <Badge key={cat} variant="outline" className={getCategoryColor(cat)}>{cat}</Badge>
                       ))}
                       <Badge className={`${colors.bg} text-white text-xs shadow-sm`}>
