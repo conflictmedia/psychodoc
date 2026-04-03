@@ -629,10 +629,12 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     (groupKey: string, e: React.MouseEvent<SVGSVGElement>, windowDuration: number, windowStart: Date) => {
       if (rafRef.current !== null) return
       const { clientX } = e
-      const rect = e.currentTarget.getBoundingClientRect()
+      const svgEl = e.currentTarget
       rafRef.current = requestAnimationFrame(() => {
         rafRef.current = null
-        const svgX = ((clientX - rect.left) / rect.width) * SVG_W
+        // Use getScreenCTM so the mapping is correct even with preserveAspectRatio letterboxing
+        const ctm = svgEl.getScreenCTM()
+        const svgX = ctm ? (clientX - ctm.e) / ctm.a : 0
         const progress = Math.max(0, Math.min(100, ((svgX - PL) / GW) * 100))
         const mins = (progress / 100) * windowDuration
         // Find the primary route's timings for phase labelling
@@ -1138,6 +1140,10 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         </div>
                         {/* Per-route intensity bars */}
                         <div className="space-y-1">
+                          <div className="flex items-center justify-between text-[10px] text-muted-foreground pb-0.5">
+                            <span>Estimated effect intensity at this moment</span>
+                            <span>0 → max</span>
+                          </div>
                           {group.routes.map((rg) => {
                             if (rg.primary.status.phase === 'ended') return null
                             const palette = ROUTE_PALETTE[rg.paletteIndex]
