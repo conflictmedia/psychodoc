@@ -240,7 +240,10 @@ export function DoseLoggerModal({
   };
 
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <Dialog open={open} onOpenChange={(isOpen) => {
+      if (isOpen) setTimestamp(format(new Date(), "yyyy-MM-dd'T'HH:mm"))
+      setOpen(isOpen)
+    }}>
       <DialogTrigger asChild>
         {trigger || (
           <Button className="gap-2">
