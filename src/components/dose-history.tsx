@@ -9,6 +9,7 @@ import { ScrollArea } from '@/components/ui/scroll-area'
 import { Input } from '@/components/ui/input'
 import { Trash2, Calendar, Clock, Droplets, Activity, Loader2, Download, Upload, Cloud, CloudOff, Lock, CheckCircle2, RotateCcw, Pencil, FileJson, FileText, ChevronDown, AlertTriangle } from 'lucide-react'
 import { categoryColors } from '@/lib/categories'
+import { substances } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
 import { EditDoseModal } from './edit-dose-modal'
 import { useDoseStore } from '@/store/dose-store'
@@ -45,6 +46,46 @@ interface ImportPreview {
   newCount: number
 }
 
+
+function findSubstanceMatch(name: string): { name: string; categories: string[] } | null {
+  const searchName = name.toLowerCase().trim()
+  
+  for (const substance of substances) {
+    // Check main name
+    if (substance.name.toLowerCase() === searchName) {
+      return {
+        name: substance.name,
+        categories: substance.categories
+      }
+    }
+    
+    // Check ID (for exact matches like "mdma" -> "MDMA")
+    if (substance.id.toLowerCase() === searchName) {
+      return {
+        name: substance.name,
+        categories: substance.categories
+      }
+    }
+    
+    // Check common names
+    if (substance.commonNames?.some(cn => cn.toLowerCase() === searchName)) {
+      return {
+        name: substance.name,
+        categories: substance.categories
+      }
+    }
+    
+    // Check aliases
+    if (substance.aliases?.some(alias => alias.toLowerCase() === searchName)) {
+      return {
+        name: substance.name,
+        categories: substance.categories
+      }
+    }
+  }
+  
+  return null
+}
 
 function validateDose(raw: Record<string, unknown>, index: number): DoseLog {
   const requiredString = (key: string) => {
@@ -209,28 +250,7 @@ function parseCSV(text: string): ImportResult {
   return { ok: true, doses }
 }
 
-// ---------------------------------------------------------------------------
-// Psylo JSON parser
-// ---------------------------------------------------------------------------
 
-/**
- * Psylo export schema (dose-log-YYYY-MM-DD.json):
- *  {
- *    doses: [{
- *      id: number,
- *      substance: string,        // ← "substanceName" equivalent
- *      amount: number,
- *      unit: string,
- *      route: string,
- *      timestamp: string,
- *      notes: Array<{ id, timestamp, text }> | [],
- *      onsetAt?: string,
- *      peakAt?: string,
- *      offsetAt?: string,
- *    }],
- *    generalNotes: []
- *  }
- */
 function parsePsyloJSON(text: string): ImportResult {
   let parsed: unknown
   try {
@@ -315,10 +335,15 @@ function parsePsyloJSON(text: string): ImportResult {
       }
     }
 
+    // Try to match the substance against the repository
+    const matchedSubstance = findSubstanceMatch(substance)
+    const finalSubstanceName = matchedSubstance?.name ?? substance
+    const finalCategories = matchedSubstance?.categories ?? []
+
     doses.push({
       id,
-      substanceName: substance,
-      categories: [],          // Psylo doesn't export categories
+      substanceName: finalSubstanceName,
+      categories: finalCategories,
       amount,
       unit,
       route,
