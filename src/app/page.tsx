@@ -144,6 +144,8 @@ const GITHUB_INFO_CHANGE_URL =
   'https://github.com/conflictmedia/drugucopia/issues/new?template=change-substance-info.md'
 const GITHUB_FEEDBACK_URL = 'https://github.com/conflictmedia/drugucopia/issues/new'
 
+const GITHUB_MAIN_URL = 'https://github.com/conflictmedia/drugucopia'
+
 type MobileTab = 'substances' | 'timeline' | 'log' | 'history'
 
 // ─── HELPERS ─────────────────────────────────────────────────────────────────
@@ -795,6 +797,10 @@ function SubstanceDetail({
                 <DropdownMenuItem onClick={() => window.open(GITHUB_FEEDBACK_URL, '_blank')}>
                   <AlertTriangle className="mr-2 h-4 w-4" />Report issue
                 </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => window.open(GITHUB_MAIN_URL, '_blank')}>
+                  <Github className="mr-2 h-4 w-4" />Repo
+                </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </TabsContent>
@@ -851,6 +857,10 @@ function SubstanceDetail({
                     <DropdownMenuSeparator />
                     <DropdownMenuItem onClick={() => window.open(GITHUB_FEEDBACK_URL, '_blank')}>
                       <AlertTriangle className="mr-2 h-4 w-4" />Report issue
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem onClick={() => window.open(GITHUB_MAIN_URL, '_blank')}>
+                      <Github className="mr-2 h-4 w-4" />Repo
                     </DropdownMenuItem>
                   </DropdownMenuContent>
                 </DropdownMenu>
@@ -1113,6 +1123,10 @@ export default function Home() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem onClick={() => window.open(GITHUB_FEEDBACK_URL, '_blank')}>
                   <AlertTriangle className="mr-2 h-4 w-4" />Feedback / Report Issue
+                </DropdownMenuItem>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem onClick={() => window.open(GITHUB_MAIN_URL, '_blank')}>
+                  <Github className="mr-2 h-4 w-4" />Repo
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
