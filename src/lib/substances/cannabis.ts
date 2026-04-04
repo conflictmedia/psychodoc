@@ -25,7 +25,7 @@ export const cannabis: Substance =
     "THC"
   ],
   "categories": [
-    "other"
+    "cannabinoids"
   ],
   "class": "Cannabinoid",
   "description": "Cannabis (also known as THC, marijuana, weed, pot, grass, hemp, zaza, kush, and many others) is a preparation of the cannabis plant that produces psychoactive effects when consumed (via smoking, vaporizing, or ingestion). The mechanism of action is binding activity at cannabinoid receptors distributed throughout the body. The principal psychoactive constituent of cannabis is tetrahydrocannabinol (THC), which makes up one of 483 known compounds in the plant, including at least 84 other cannabinoids such as cannabidiol (CBD), cannabinol (CBN), tetrahydrocannabivarin (THCV), and cannabigerol (CBG). Subjective effects include sedation, appetite enhancement, immersion enhancement, creativity enhancement, increased sense of humor, increased music appreciation, visual disconnection, and euphoria. Higher doses are associated with mild-to-moderate hallucinogenic effects such as visual hallucinations, conceptual thinking and time distortion, as well as a greater risk of anxiety, paranoia, and delusions. However, it is capable of exacerbating certain mental health symptoms like delusions or psychosis in predisposed individuals (see this section).",
