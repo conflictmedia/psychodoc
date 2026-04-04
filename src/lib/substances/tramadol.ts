@@ -90,8 +90,15 @@ export const tramadol: Substance =
     "2C-T-x"
   ],
   "harmReduction": [
-    "low toxicity",
-    "potentially lethal when mixed with depressants like alcohol or benzodiazepines"
+    "Tramadol has a low toxicity relative to dose. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines and generally has a wider range of substances which it is  in comparison to other opioids. It should not be taken during  as this can potentially cause seizures.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other opioids, the chronic use of tramadol can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and  may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of tramadol develops with prolonged and repeated use. The rate at which this occurs develops at different rates for different effects, with tolerance to the constipation-inducing effects developing particularly slowly for instance. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Tramadol presents cross-tolerance with all other opioids, meaning that after the consumption of tramadol all opioids will have a reduced effect.",
+    "Combinations with the following substances can lead to dangerously high serotonin levels. Serotonin syndrome requires immediate medical attention and can be fatal if left untreated.",
+    "MAOIs such as syrian rue, banisteriopsis caapi, phenelzine, selegiline, and moclobemide",
+    "Serotonin releasers such as MDMA, 4-FA, methamphetamine, methylone and aMT",
+    "2C-T-x",
+    "DXM"
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

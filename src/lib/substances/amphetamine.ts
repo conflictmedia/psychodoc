@@ -153,7 +153,18 @@ export const amphetamine: Substance =
     "DOx"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "As of March 2014, there is no evidence that amphetamine is directly neurotoxic in humans. However, high-dose amphetamine can cause indirect neurotoxicity as a result of increased oxidative stress from reactive oxygen species and autoxidation of dopamine.",
+    "In rodents and primates, sufficiently high doses of amphetamine causes damage to dopamine neurons, characterized as reduced transporter and receptor function. Animal models of neurotoxicity from high-dose amphetamine exposure indicate that the occurrence of hyperpyrexia (i.e., core body temperature ≥ 40 °C) is necessary for the development of amphetamine-induced neurotoxicity.",
+    "Melatonin has been shown to prevent (if used 30min+ before dosing) and reverse amphetamine induced neurotoxicity of TH-pSer40 and calpastatin levels in the Substantia Nigra of rats.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "The LD50 (the dosage required to kill 50% of the test subjects) of amphetamine in rats has been found to be between roughly 15 mg and 180 mg per kilogram, depending on the study. No formal studies in humans have been carried out and the exact toxic dosage is unknown.",
+    "Amphetamine has high abuse potential and can cause psychological dependence with chronic use.",
+    "When dependence has developed, cravings and withdrawal effects may occur if use is suddenly discontinued.",
+    "Withdrawal symptoms include paranoia, depression, dream potentiation, anxiety, itching, mood swings, irritability, fatigue, insomnia, an intense craving for more amphetamine or other stimulants.",
+    "Addiction is a serious risk with chronic or heavy recreational amphetamine use, but is unlikely to arise from typical medical use.",
+    "Tolerance to many of the effects of amphetamine develops with prolonged and repeated use. This results in the user having to administer increasingly large doses to achieve the same effects. Upon single administration, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption).",
+    "Amphetamine exhibits cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of amphetamine most stimulants will have a reduced effect.",
+    "Severe amphetamine overdose can result in a stimulant psychosis that may present with a variety of symptoms (e.g., paranoia, hallucinations, delusions). A review on treatment for amphetamine abuse-induced psychosis states that about 5–15% of users fail to recover completely. The same review asserts that antipsychotic medications effectively resolve the symptoms of acute amphetamine psychosis. Psychosis very rarely arises from therapeutic use."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

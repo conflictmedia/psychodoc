@@ -128,7 +128,12 @@ export const dmt: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "extremely low toxicity"
+    "DMT is considered to be non-addictive, is not associated with any form of neurotoxicity, and has an extremely low toxicity relative to dose. As with other psychedelic substances, there are relatively few physical side effects associated with acute DMT exposure. Various studies have shown that in reasonable doses in a careful context, it has little to no negative cognitive, psychiatric or physical consequences.",
+    "However, as with psychedelics generally, DMT is thought to be able to act as a potential trigger for those with underlying psychiatric conditions. Those with a personal or family history of mental illness are advised not to use this substance unless under medical supervision.",
+    "Despite the lack of physical risks, it is highly advised to approach this substance with extreme caution and harm reduction practices.",
+    "The median lethal dose (LD50) of DMT in humans has never been reached in any setting, nor is this expected to change due to its pharmacological properties.",
+    "Like other serotonergic psychedelics, DMT is considered to be non-addictive with a low abuse potential. There are no literature reports of successful attempts to train animals to self-administer DMT — an animal model predictive of abuse liability — indicating that it does not have the necessary pharmacology to either initiate or maintain dependence. Likewise, there is virtually no withdrawal syndrome when chronic use of DMT is stopped.",
+    "Notably, tolerance to the effects of DMT does not appear to occur. The reason for this is unknown. Likewise, DMT does not produce cross-tolerance with other psychedelics, meaning that after the consumption of DMT, psychedelics will not have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

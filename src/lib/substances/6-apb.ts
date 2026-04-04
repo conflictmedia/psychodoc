@@ -123,7 +123,15 @@ export const _6_apb: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "Due to only having a short history of human use, the toxicity and harm potential is not exactly known. Due to its similarity to MDMA, it is likely that the administration of repeated or high dosages of 6-APB may be both neurotoxic and cardiotoxic in some form.",
+    "The exact toxic dosage is unknown. It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Short-term physical health risks of 6-APB consumption include dehydration, insomnia, and hyperthermia (overheating). Continuous activity without sufficient rest or rehydration may cause body temperature to rise to dangerous levels, and loss of fluid via excessive sweating puts the body at further risk as the stimulating and euphoric properties of the substance may render the user oblivious to their energy expenditure for quite some time. Diuretics such as alcohol may exacerbate these risks further.",
+    "Although it has not been formally studied, small changes in ambient temperature may cause large changes in 6-APB-induced serotonergic neurotoxicity as is the case with MDMA.",
+    "The neurotoxicity of 6-APB is subject to ongoing debate. It was specifically designed to be less neurotoxic than MDA or MDMA by circumventing the production of certain metabolic byproducts thought to underlie their toxicity (specifically alpha-methyl-dopamine). Although it is likely to be physically safe to try in a responsible context, it is completely possible that the administration of repeated or high dosages of 6-APB could result in neurotoxicity in some form, presenting as deficits in cognitive, affective and psychomotor function.",
+    "As with MDMA, the long-term, heavy usage of 6-APB (i.e. regular daily or weekly usage) is likely cardiotoxic and may lead to valvulopathy (heart valve issues) via its significant affinity for the 5-HT2B receptor.",
+    "As with other stimulants, the chronic use of 6-APB can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "As a potent releaser of serotonin, tolerance builds quickly with prolonged and repeated use to the point that the substance eventually loses any positive effects and instead leaves the user in an uncomfortable state of anxious, dysphoric stimulation. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3-4 weeks for the tolerance to be reduced to half and 6-8 weeks to be back at baseline (in the absence of further consumption). 6-APB presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of 6-APB all stimulants will have a reduced effect.",
+    "There is an increased risk of serotonin syndrome when 6-APB is taken with many antidepressants, particularly monoamine oxidase inhibitors (MAOIs). Additionally, if 6-APB is taken with SSRIs and SNRIs, it is likely to be significantly less effective if it produces any discernible effects at all."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

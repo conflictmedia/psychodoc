@@ -122,7 +122,13 @@ export const _2c_t_7: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "As of August 2007, there have been at least three reported deaths associated with the use of 2C-T-7. These incidents occurred with insufflated doses of 30 mg or more, or in combination with stimulants such as MDMA,. There have also been a number of reports describing concerning physical side effects and hospitalizations, typically following insufflation.",
+    "It is strongly discouraged to administer 2C-T-7 non-orally because this can cause vomiting, numerous negative side effects, or death at high doses. In Erowid's Fall 2000 2C-T-7 survey, it was reported that the insufflation of 2C-T-7 resulted in more negative side effects than oral administration.",
+    "It is strongly recommended that one use harm reduction practices, such as volumetric dosing, when using this substance to ensure the accurate administration of the intended dose.",
+    "2C-T-7 is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of 2C-T-7 is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 2C-T-7 presents cross-tolerance with all psychedelics, meaning that after the consumption of 2C-T-7 all psychedelics will have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

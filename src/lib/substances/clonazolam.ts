@@ -80,8 +80,11 @@ export const clonazolam: Substance =
     "Dissociatives"
   ],
   "harmReduction": [
-    "low toxicity",
-    "potentially lethal"
+    "Clonazolam likely has a low toxicity relative to dose. However, it is potentially lethal when mixed with depressants like alcohol or opioids.",
+    "It is strongly recommended that one use harm reduction practices, such as volumetric dosing, when using this substance to ensure the accurate administration of the intended dose.",
+    "Clonazolam is generally considered to be extremely physically and psychologically addictive.",
+    "Tolerance will develop to the sedative-hypnotic effects within a couple of days of continuous use. After cessation, the tolerance returns to baseline in 7 - 14 days. However, in certain cases, this may take significantly longer in a manner which is proportional to the duration and intensity of one's long-term usage.",
+    "Clonazolam presents cross-tolerance with all benzodiazepines, meaning that after its consumption all benzodiazepines will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

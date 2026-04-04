@@ -59,7 +59,7 @@ export const ROUTE_PALETTE = [
   { stroke: '#facc15', fill: '#facc15' },  // yellow
 ]
 
-// ─── SVG GRAPH DIMENSIONS ────────────────────────────────────────────────────
+// ─── SVG GRAPH DIMENSIONS (DESKTOP) ────────────────────────────────────────────
 
 export const SVG_W = 800
 export const SVG_H = 180   // slightly taller to accommodate the legend
@@ -69,6 +69,18 @@ export const PT = 25
 export const PB = 40       // extra bottom padding for route legend
 export const GW = SVG_W - PL - PR
 export const GH = SVG_H - PT - PB
+
+// ─── SVG GRAPH DIMENSIONS (MOBILE) ─────────────────────────────────────────────
+// Smaller dimensions optimized for mobile screens with touch-friendly targets
+
+export const MOBILE_SVG_W = 400
+export const MOBILE_SVG_H = 140
+export const MOBILE_PL = 30     // left padding (time labels)
+export const MOBILE_PR = 15     // right padding
+export const MOBILE_PT = 20     // top padding (phase labels)
+export const MOBILE_PB = 25     // bottom padding (route legend)
+export const MOBILE_GW = MOBILE_SVG_W - MOBILE_PL - MOBILE_PR
+export const MOBILE_GH = MOBILE_SVG_H - MOBILE_PT - MOBILE_PB
 
 // ─── MOBILE PHASE DEFINITIONS ────────────────────────────────────────────────
 

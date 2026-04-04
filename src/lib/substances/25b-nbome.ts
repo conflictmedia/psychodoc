@@ -108,7 +108,12 @@ export const _25b_nbome: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "potentially fatal at heavy dosages"
+    "25B-NBOMe is a relatively new substance, and little is known about its pharmacological risks or its interaction with other substances. The lethal dosage has not yet been determined. One case has been reported on where 25B-NBOMe was identified as the cause of death for a 17-year-old boy.",
+    "It is advised that due to 25B-NBOMe's extreme potency it should not be insufflated as this method of administration is potentially fatal at heavy dosages.",
+    "25B-NBOMe has been used in clinical trials with an evaluation dose for safety consideration to humans of only 1 microgram; Such a dose is 300× lower than the dose expected to be hallucinogenic to humans and it is expected that recreational use would greatly exceed doses determined to be safe to humans.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "25B-NBOMe is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of 25B-NBOMe is built almost immediately after ingestion. After that, it takes about 1 week for the tolerance to be reduced to half and 2 weeks to be back at baseline (in the absence of further consumption). 25B-NBOMe presents cross-tolerance with all psychedelics, meaning that after the consumption of 25B-NBOMe all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

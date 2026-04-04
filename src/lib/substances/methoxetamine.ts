@@ -127,7 +127,27 @@ export const methoxetamine: Substance =
     "MAOIs"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational MXE use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown.",
+    "This is because MXE is a research chemical with a very brief history of human usage.",
+    "Anecdotal reports from those who have tried MXE suggests that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
+    "Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "As with other NMDA receptor antagonists, the chronic use of MXE can be considered moderately addictive with a high potential for abuse and is capable of producing psychological dependence among certain users.",
+    "When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of MXE develops with prolonged and repeated use.",
+    "This results in users having to administer increasingly large doses to achieve the same effects.",
+    "After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption).",
+    "MXE presents cross-tolerance with all dissociatives, meaning that after the consumption of MXE all dissociatives will have a reduced effect.",
+    "In terms of its long-term health effects when used repeatedly and excessively for extended periods of time, MXE seems to exhibit almost identical bladder and urinary tract problems to those found within ketamine, but to a lesser extent.",
+    "This is because MXE is four times as potent as ketamine, so significantly less of drug needs to be consumed.",
+    "Symptoms of ketamine-induced cystitis can become extremely serious and can be described as:",
+    "Urinary frequency - Urinary frequency is the need to empty the bladder every few minutes.",
+    "Urinary urgency - This can be described as a sudden, compelling need to urinate.",
+    "Urinary pressure - This is experienced as a constant sensation of fullness in the bladder that is unrelieved by urination.",
+    "Pelvic and bladder pain - Pain can develop suddenly and severely, particularly as the bladder fills with urine.",
+    "Hematuria - Hematuria is visible blood in the urine.",
+    "Incontinence - This is the leakage of urine.",
+    "All of these, however, can easily be avoided by simply not using MXE on a daily or even weekly basis and manually limiting one's usage of the substance."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

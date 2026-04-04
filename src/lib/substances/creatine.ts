@@ -69,7 +69,13 @@ export const creatine: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "There are no clinically significant side-effects of creatine supplementation acutely. Numerous trials have been conducted in humans with varying dosages, and the side-effects have been limited to gastrointestinal distress (from too much creatine consumption at once) and cramping (from insufficient hydration).",
+    "Studies that use a dosage range typical of creatine supplementation (in the range of 5g a day following an acute loading period) note increases to total body water of 6.2% (3.74lbs) over nine weeks, and 1.1kg (2.42 lbs) over 42 days. This effect may be responsible for creatine's capability to increase perceived body weight.",
+    "Regardless, it is strongly recommended that one is familiar with harm reduction practices when using creatine.",
+    "Creatine is not habit-forming with a low potential for abuse. It does not seem to be capable of causing psychological or physiological dependence among users.",
+    "Tolerance to the effects of creatine are not built after ingestion as with most other psychoactive substances. There are many anecdotal reports of people ingesting this substance for prolonged periods of time with no tolerance build up."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

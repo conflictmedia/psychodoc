@@ -61,7 +61,10 @@ export const theanine: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "extremely low toxicity"
+    "Theanine is non-addictive, is not known to cause brain damage, and has an extremely low toxicity relative to dose. There are relatively few physical side effects associated with acute theanine exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Theanine is not habit-forming.",
+    "Tolerance to the effects of theanine are built up after prolonged and repeated usage. After noticeable tolerance has been built, it takes about 5 days for tolerance to be reduced by half and 10 days return to baseline. Theanine presents cross-tolerance with no other known compounds, meaning that after the consumption of theanine all other psychoactive compounds will not have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

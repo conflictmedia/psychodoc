@@ -107,7 +107,15 @@ export const nicotine: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "estimated oral LD50 of 6.5 - 13 mg/kg in humans"
+    "Nicotine has an Toxicity estimated oral LD50 of 6.5 - 13 mg/kg in humans, which is much lower than many other common stimulants. It is unlikely that overdose can be achieved by smoking tobacco. However, coadministration with other sources of nicotine such as patches or gum may potentially be dangerous.",
+    "Nicotine readily passes through the dermis and into the bloodstream upon contact with skin, so safety precautions should be taken when handling it in its pure form.",
+    "Flavored e-liquids intended for use in e-cigarette devices can present a particular danger to children, and there have been cases recorded where children have mistakenly consumed e-liquid products with fatal results.",
+    "Nicotine activates the reward system (mesolimbic pathway) of the brain, which is responsible for its addictive nature. Because of this, tobacco smoking is extremely addictive with a high potential for abuse. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Chronic use of nicotine, as with many other addictive substances, downregulates the production of dopamine and other stimulatory neurotransmitters and also desensitizes nicotinic acetylcholine receptors. In response, the brain upregulates the number of receptors presented. The net effect is an increase in sensitivity to the reward system; the opposite of the decrease in sensitivity as caused by addictive substances like cocaine and heroin.",
+    "In some people, it can take as little as one or two cigarettes before reaching 100% tolerance. This means a decreased dizziness from smoking. Nicotine leaves the system very rapidly. The half-life of nicotine in the brain is about 90 minutes. In 8 or 9 hours, the brain has cleared the active drug completely.",
+    "Tolerance to the effects of this compound rapidly develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Nicotine does not present a cross-tolerance with other dopaminergic stimulants, meaning that after the use of nicotine all stimulants will not have a reduced effect.",
+    "Following discontinuation of nicotine, receptors may take several months to return to baseline.",
+    "Nicotine has been indicated in the increased frequency of congenital disabilities and has been correlated with the increase of attention deficit hyperactivity disorder in children."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

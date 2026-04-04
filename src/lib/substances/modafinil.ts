@@ -73,7 +73,12 @@ export const modafinil: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "The median lethal dose at which 50% of participants die (LD50) from modafinil for human beings has never been reached"
+    "The long-term safety and effectiveness of modafinil as a drug of regular usage have not been determined.",
+    "Anecdotal reports from people who have tried modafinil suggest that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself or using it sparingly (but nothing can be completely guaranteed).",
+    "It is worth noting that as this compound is a commonly prescribed pharmaceutical, it is considerably less likely to have unpredictable adverse health effects than the typical research chemical. Nevertheless, it is strongly recommended that one use harm reduction practices if using this substance.",
+    "Toxicity The median lethal dose at which 50% of participants die (LD50) from modafinil for human beings has never been reached. No life-threatening effects have taken place in clinical trials involving the administration of 1000mg to 1600mg of modafinil per day for 7 to 21 consecutive days. Intentional acute overdoses of 4500mg and 4000mg in two adult subjects and an accidental ingestion of 800mg by a three-year-old child did not result in any life-threatening effects or death. After overdosing on 5000mg of modafinil in a suicide attempt, a fifteen-year-old female reported a severe headache, nausea, and tachycardia, but did not appear to have any lethal or long-term effects.",
+    "The chronic use of modafinil can be considered as not addictive with a low potential for abuse. It does not seem to be capable of causing psychological dependence among most users.",
+    "Tolerance to many of the effects of modafinil develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Modafinil may present a cross-tolerance with all benzhydryl nootropics, meaning that after the consumption of modafinil, all related eugeroic compounds such as armodafinil and adrafinil will display a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

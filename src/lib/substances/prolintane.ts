@@ -89,7 +89,13 @@ export const prolintane: Substance =
     "MDMA",
     "Stimulants"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity and long-term health effects of recreational prolintane use do not seem to have been studied in any scientific context, and the exact toxic dosage is unknown. Anecdotal evidence from people who have tried prolintane within the community suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
+    "The exact lethal dosage of prolintane is unknown, and no formal studies have been carried out in humans. The typical adult therapeutic dose of prolintane has been 10-40mg daily. In therapeutic trials, 20mg prolintant is a mild stimulant equivalent to 100mg caffeine. In a study of fatigued volunteers the administration of 20mg or 40mg prolintane produced similar, but less intense effects than 20mg d-amphetamine. In experimental studies of healthy volunteers, prolintane has little cardiovascular activity following the single dose of 20mg.",
+    "Unlike some of the other more potent stimulants in its class, the chronic use of prolintane can be considered mildly to moderately addictive with only a moderate potential for abuse and is capable of causing psychological dependence among certain users.",
+    "When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage. Addiction is a potential risk among users of prolintane as it can cause compulsive redosing, although typically to a far lesser degree than the notoriously compulsive cathinone analogs A-PVP and MDPV.",
+    "User reports indicate that chronic abuse or single overdose exposure of prolintane can potentially lead to psychosis. Psychotic symptoms from prolintane can include  hearing voices, visual hallucinations, urges to harm oneself, severe anxiety, mania, grandiosity, paranoid delusions, confusion, increased aggression, and irritability."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

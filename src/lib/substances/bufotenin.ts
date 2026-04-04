@@ -76,7 +76,11 @@ export const bufotenin: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational bufotenin do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because bufotenin is a research chemical with very little history of human usage. Anecdotal evidence from people within the psychonaut community who have tried bufotenin suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "Bufotenin is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of bufotenin is built almost immediately after ingestion. After that, it takes about 1 hour for the tolerance to be reduced to half and 2 hours to be back at baseline (in the absence of further consumption). Bufotenin does not have a cross-tolerance with other psychedelics, meaning that after the consumption of bufotenin psychedelics will not have a reduced effect.",
+    "Deaths from bufotenin are rare but, as a powerful monoamine reuptake inhibitor (MRI), injury can occur when excessive doses are taken or when taken with drugs such as MAOIs, RIMAs, stimulants and any substance which act as a releasing agent or reuptake inhibitor of neurotransmitters such as serotonin and dopamine. This has resulted in well documented deaths that are easily avoidable and could have been otherwise prevented."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

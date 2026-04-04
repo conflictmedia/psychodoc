@@ -119,8 +119,14 @@ export const al_lad: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown",
-    "extremely low toxicity"
+    "The toxicity and long-term health effects of recreational AL-LAD use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because AL-LAD is a research chemical with very little history of human usage.",
+    "The body of anecdotal reports suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "As with other psychedelic substances, there are relatively few physical side effects that have been reported associated with acute AL-LAD exposure. Although no formal studies have been conducted, it is likely that as with LSD itself, AL-LAD is able to be considered non-addictive, with an extremely low toxicity relative to dose. It is also likely that as with LSD, there are little to no negative physical, cognitive, psychiatric or other toxic consequences associated with acute AL-LAD exposure.",
+    "However, as with LSD and psychedelics in general, it is possible that AL-LAD can act as a potential trigger for those with underlying psychiatric conditions. Those with a personal or family history of mental illness are generally advised not to use this substance, particularly outside of a supervised medical setting.",
+    "It is strongly recommended that one uses harm reduction practices when using this substance.",
+    "Although no formal studies have been conducted, it is not unreasonable to assume that as with LSD itself, AL-LAD is not habit-forming and that the desire to use it can actually decrease with use.",
+    "Tolerance to the effects of AL-LAD is built almost immediately after ingestion. After that, it takes about 5-7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). AL-LAD presents cross-tolerance with all psychedelics, meaning that after the use of AL-LAD all psychedelics will have a reduced effect.",
+    "The LD50 of AL-LAD is unknown. Adverse psychological reactions are common especially at higher dosages. Some of these include anxiety, delusions, panic attacks and more rarely seizures. Medical attention is usually only needed if suspected of severe psychotic episodes or “fake acid” (such as 25i-NBOMe or DOB). Administration of benzodiazepines or antipsychotics can help to relieve the negative cognitive effects of AL-LAD."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

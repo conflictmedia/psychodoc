@@ -124,7 +124,10 @@ export const _25i_nboh: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "potentially fatal at heavy dosages"
+    "25I-NBOH is a relatively new substance, and little is known about its toxicity or interaction with other substances. It is assumed to pose similar acute health risks as 25I-NBOMe (see  for more information). The LD50 has not yet been determined although it is likely to be potentially fatal at heavy dosages.",
+    "25I-NBOH's extreme potency means it should not be insufflated (snorted) as this method of administration has been associated with many deaths and hospitalizations with the closely related 25I-NBOMe.",
+    "25I-NBOH is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of 25I-NBOH is built almost immediately after ingestion. After that, it takes about 1 week for the tolerance to be reduced to half and 2 weeks to be back at baseline (in the absence of further consumption). 25I-NBOH presents cross-tolerance with all psychedelics, meaning that after the consumption of 25I-NBOH all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

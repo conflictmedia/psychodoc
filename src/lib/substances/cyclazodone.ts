@@ -110,7 +110,14 @@ export const cyclazodone: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational cyclazodone use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because cyclazodone has a very limited history of human usage.",
+    "Another compound related in structure, 4-methylaminorex, is associated with pulmonary hypertension; though, it is reported to induce far stronger stimulation than that of cyclazodone.",
+    "The structurally related compound pemoline was removed from the market after it was found to cause liver damage in children.",
+    "In rodents and primates, sufficiently high doses of monoamine releasing agents cause dopaminergic neurotoxicity, or damage to dopamine neurons, which is characterized by reduced transporter and receptor function. There is no evidence that releasing agents are directly neurotoxic in humans. However, large doses of releasing agents may cause indirect neurotoxicity as a result of increased oxidative stress from reactive oxygen species and autoxidation of dopamine.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Addiction is a serious risk with heavy recreational stimulant use but is unlikely to arise from typical long-term medical use at therapeutic doses. Notably, the structurally related compound pemoline fails to demonstrate a potential for self-administration in primates and is considered to have reduced risk of dependence relative to those more typical dopaminergic stimulants. Caution is nonetheless advised, as with other monoamine releasing agents.",
+    "Tolerance to many of the effects of cyclazodone develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Cyclazodone presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of cyclazodone all stimulants will have a reduced effect.",
+    "Based on its pharmacological similarity to other stimulants, it is likely that misuse of this compound can result in state of psychosis marked by a variety of symptoms (e.g., paranoia, hallucinations, or delusions). A review on the treatment for amphetamine and methamphetamine abuse-induced psychosis states that about 5–15% of users fail to recover completely. The same review asserts that based upon at least one trial, antipsychotic medications effectively resolve the symptoms of acute amphetamine psychosis. Psychosis very rarely arises from therapeutic use. The combination of the prolonged use of high doses combined with sleep deprivation significantly increases the risk of stimulant psychosis."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

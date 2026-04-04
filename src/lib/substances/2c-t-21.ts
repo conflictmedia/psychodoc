@@ -101,7 +101,15 @@ export const _2c_t_21: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "On March 9, 2004, a 22-year-old American male consumed an unknown dose of 2C-T-21 by sticking his tongue into a vial of powder he had purchased online. He developed a temperature of 108 degrees Fahrenheit (42 degrees Celsius), had a tonic-clonic seizure, and slipped into a coma before dying four days later. These symptoms are consistent with those seen in fluoroacetate poisoning, for which there is no known effective antidote.",
+    "Fluoroacetate is hypothesized to be a metabolite of 2C-T-21. Sub-lethal doses of fluoroacetate take up to four days to clear from the body. As such, it is likely dangerous to take 2C-T-21 multiple days in a row as this poisonous metabolite will accumulate. Furthermore, sub-lethal doses may cause damage to tissue with high energy needs (e.g. the brain, gonads, heart, lungs, and fetus). This may account for the experience of a couple who became \"convinced that it is toxic\" in Stolaroff's book.",
+    "There is no anecdotal evidence to suggest that a single, moderate dose of 2C-T-21 can cause negative health effects, although nothing can be guaranteed.",
+    "It is strongly discouraged to administer 2C-T-21 non-orally because this may cause vomiting, numerous negative side effects, or death at high doses.",
+    "It is strongly recommended that one use harm reduction practices, such as volumetric dosing, when using this substance to ensure the accurate administration of the intended dose.",
+    "2C-T-21 is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of 2C-T-21 is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 2C-T-21 presents cross-tolerance with all psychedelics, meaning that after the consumption of 2C-T-21 all psychedelics will have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

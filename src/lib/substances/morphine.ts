@@ -100,7 +100,15 @@ export const morphine: Substance =
     "Tramadol",
     "Grapefruit"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "Like most opioids, unadulterated morphine does not cause many long-term complications other than dependence and constipation. Outside of the extremely powerful addiction and physical dependence, the harmful or toxic aspects of morphine usage are exclusively associated with not taking appropriate precautions in regards to its administration, overdosing and using impure products.",
+    "Heavy dosages of morphine can result in respiratory depression, leading onto fatal or dangerous levels of anoxia (oxygen deprivation). This occurs because the breathing reflex is suppressed by agonism of µ-opioid receptors proportional to the dosage consumed.",
+    "Morphine can also cause nausea and vomiting; a significant number of deaths attributed to opioid overdose are caused by aspiration of vomit by an unconscious victim. This is when an unconscious or semi-conscious user who is lying on their back vomits into their mouth and unknowingly suffocates. It can be prevented by ensuring that one is lying on their side with their head tilted downwards so that the airways cannot be blocked in the event of vomiting while unconscious (also known as the recovery position).",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "As with other opiate-based painkillers, the chronic use of morphine can be considered extremely addictive and is capable of causing both physical and psychological dependence. When physical dependence has developed,  may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of morphine develops with prolonged use, including therapeutic effects. This results in users having to administer increasingly large doses to achieve the same effects. The rate at which this occurs develops at different rates for different effects with tolerance to the constipation-inducing effects developing particularly slowly. Morphine presents cross-tolerance with all other opioids, meaning that after the consumption of morphine all opioids will have a reduced effect.",
+    "The risk of fatal opioid overdoses rise sharply after a period of cessation and relapse, largely because of reduced tolerance. To account for this lack of tolerance, it is safer to only dose a fraction of one's usual dosage if relapsing. It has also been found that the environment one is in can play a role in opioid tolerance. In one scientific study, rats with the same history of heroin administration were significantly more likely to die after receiving their dose in an environment not associated with the drug in contrast to a familiar environment."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

@@ -121,7 +121,10 @@ export const pargy_lad: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational PARGY-LAD do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because PARGY-LAD is a research chemical with very little history of human usage. Anecdotal evidence from people within the psychonaut community who have tried PARGY-LAD suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "While no formal studies have been conducted, PARGY-LAD is likely not habit-forming and it is reasonable to speculate that the desire to use it can actually decrease with repeated administration. As with most psychedelics, it likely possesses what is considered an intrinsic, self-regulating aspect to it.",
+    "Tolerance to the effects of PARGY-LAD is built almost immediately after ingestion. After that, it takes about 5-7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). PARGY-LAD presents cross-tolerance with all psychedelics, meaning that after the consumption of PARGY-LAD all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

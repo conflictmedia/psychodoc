@@ -114,7 +114,15 @@ export const mdea: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "Short-term physical health risks of MDEA consumption include dehydration, insomnia, hyperthermia, and hyponatremia. Continuous activity without sufficient rest or rehydration may cause body temperature to rise to dangerous levels, and loss of fluid via excessive perspiration puts the body at further risk as the stimulatory and euphoric qualities of the drug may render the user oblivious to their energy expenditure for quite some time. Diuretics such as alcohol may exacerbate these risks further.",
+    "The exact toxic dosage is unknown, but considered to be far greater than its active dose.",
+    "As with MDMA, the neurotoxicity of MDEA use has long been the subject of debate. Scientific study has resulted in the general agreement that, although it is physically safe to try in a responsible context, the administration of repeated or high dosages of MDEA is likely to be neurotoxic and cardiotoxic in some form.",
+    "Like other powerful serotonin releasing agents, MDEA is thought to cause down-regulation of serotonin reuptake transporters in the brain. The rate at which the brain recovers from serotonergic changes is unclear. One study demonstrated lasting serotonergic changes in some animals exposed to MDMA, which likely applies to MDEA as well. Other studies have suggested that the brain may recover from serotonergic damage.",
+    "Like with MDMA, the long-term heavy use of MDEA is likely similarly cardiotoxic, leading to valvulopathy through its actions on the 5-HT2B receptor. In one study, 28% of long-term MDMA users (2-3 doses per week for a mean of 6 years, mean of age 24.3 years) had developed clinically evident valvular heart disease.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "As with other stimulants, the chronic use of MDEA can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of MDEA develops with prolonged and repeated use. This results in users having to administer increasingly larger doses to achieve the same effects. After that, it takes about 1-1.5 months for the tolerance to be reduced to half and 2-3 months to be back at baseline (in the absence of further consumption). MDEA presents cross-tolerance with all dopaminergic and serotonergic stimulants and entactogens, meaning that after the consumption of MDEA all of these will have a reduced effect.",
+    "There is an increased risk of serotonin syndrome when MDEA is taken with many antidepressants, particularly selective serotonin reuptake inhibitors (SSRIs) and serotonin-norepinephrine reuptake inhibitors (SNRIs). Additionally, if MDEA is taken with SSRIs and SNRIs, the MDEA will be significantly less powerful or may have no distinguishable effects at all."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

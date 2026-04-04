@@ -120,7 +120,14 @@ export const _1cp_lsd: Substance =
     "Lithium",
     "Tramadol"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity and long-term health effects of recreational 1cP-LSD use have not been studied. This is because 1cP-LSD is a research chemical with almost no history of human use.",
+    "However, as with LSD and psychedelics in general, it is likely that 1cP-LSD can act as a trigger for those with underlying mental disorders. Those with a personal or family history of mental illness are generally advised not to use this substance, particularly when outside of a supervised medical setting.",
+    "It is strongly recommended that one uses harm reduction practices when using this substance.",
+    "1cP-LSD has no known toxic dose. However, higher doses increase the risk of adverse psychological reactions. These reactions include anxiety, delusions and panic attacks. Medical attention is usually not needed except in the case of severe psychotic episodes or the ingestion of fake acid (such as 25i-NBOMe or DOB). Administration of benzodiazepines or antipsychotics can help to relieve the acute negative cognitive effects of 1cP-LSD.",
+    "Although no formal studies have been conducted, it is assumed that like LSD itself, 1cP-LSD is non-addictive with a low abuse potential. There are no literature reports of successful attempts to train animals to self-administer LSD — an animal model predictive of abuse liability — indicating that it does not have the necessary pharmacology to either initiate or maintain dependence. Likewise, there is virtually no withdrawal syndrome when chronic use of LSD is stopped. It is likely that 1cP-LSD does not deviate from LSD in this respect.",
+    "Tolerance to the effects of 1cP-LSD is built almost immediately after ingestion. After that, it takes about 5-7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). 1cP-LSD produces cross-tolerance with all psychedelics, meaning that after the use of 1cP-LSD they will have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

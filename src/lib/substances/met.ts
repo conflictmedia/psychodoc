@@ -149,7 +149,10 @@ export const met: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational MET use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because MET is a research chemical with very little history of human usage. Anecdotal evidence from people within the community who have tried MET suggest that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Early reports suggest MET is not habit-forming and the desire to use it can actually decrease with regular consumption. Like with most psychedelics it is most widely thought to be self-regulating.",
+    "As with DMT, tolerance to the effects of MET does not readily occur, though its extended residual effects indicate a mild form of tolerance may be present when used in quick succession. However, it presents little to no cross-tolerance with other psychedelics, meaning that after the consumption of MET psychedelics will not display a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -1,7 +1,7 @@
 import { format, addHours, addMinutes } from 'date-fns'
 import { Duration, DoseLog } from '@/types'
 import { PhaseTimings, PhaseStatus } from './dose-timeline-types'
-import { PL, GW, PT, GH } from './dose-timeline-constants'
+import { PL, GW, PT, GH, MOBILE_PL, MOBILE_GW, MOBILE_PT, MOBILE_GH } from './dose-timeline-constants'
 
 // ─── DURATION PARSING ─────────────────────────────────────────────────────────
 
@@ -155,10 +155,15 @@ export function isPhasePast(check: string, current: string): boolean {
   return order.indexOf(check) < order.indexOf(current)
 }
 
-// ─── SVG COORDINATE HELPERS ──────────────────────────────────────────────────
+// ─── SVG COORDINATE HELPERS (DESKTOP) ────────────────────────────────────────
 
 export const toX = (progress: number)  => PL + (progress / 100) * GW
 export const toY = (intensity: number) => PT + GH - (intensity / 100) * GH
+
+// ─── SVG COORDINATE HELPERS (MOBILE) ──────────────────────────────────────────
+
+export const toMobileX = (progress: number)  => MOBILE_PL + (progress / 100) * MOBILE_GW
+export const toMobileY = (intensity: number) => MOBILE_PT + MOBILE_GH - (intensity / 100) * MOBILE_GH
 
 // ─── SVG PATH GENERATORS ─────────────────────────────────────────────────────
 
@@ -191,6 +196,40 @@ export function areaPath(t: PhaseTimings, offsetMins: number, windowDuration: nu
   const startX = toX((offsetMins / windowDuration) * 100).toFixed(1)
   const endX   = toX(((offsetMins + t.totalDuration) / windowDuration) * 100).toFixed(1)
   const baseY  = (PT + GH).toFixed(1)
+  return `${curve} L ${endX},${baseY} L ${startX},${baseY} Z`
+}
+
+// ─── MOBILE SVG PATH GENERATORS ──────────────────────────────────────────────
+
+export function mobileCurvePath(t: PhaseTimings, offsetMins: number, windowDuration: number): string {
+  const pts: { x: number; y: number }[] = []
+
+  for (let i = 0; i <= 100; i++) {
+    const localProgress  = (i / 100) * 100
+    const localMins      = (localProgress / 100) * t.totalDuration
+    const globalMins     = offsetMins + localMins
+    const globalProgress = (globalMins / windowDuration) * 100
+    pts.push({ x: toMobileX(globalProgress), y: toMobileY(intensityAt(localProgress, t)) })
+  }
+
+  let d = `M ${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`
+  for (let i = 1; i < pts.length; i++) {
+    const c = pts[i]
+    const n = pts[i + 1]
+    if (n) {
+      d += ` Q ${c.x.toFixed(1)},${c.y.toFixed(1)} ${((c.x + n.x) / 2).toFixed(1)},${((c.y + n.y) / 2).toFixed(1)}`
+    } else {
+      d += ` L ${c.x.toFixed(1)},${c.y.toFixed(1)}`
+    }
+  }
+  return d
+}
+
+export function mobileAreaPath(t: PhaseTimings, offsetMins: number, windowDuration: number): string {
+  const curve  = mobileCurvePath(t, offsetMins, windowDuration)
+  const startX = toMobileX((offsetMins / windowDuration) * 100).toFixed(1)
+  const endX   = toMobileX(((offsetMins + t.totalDuration) / windowDuration) * 100).toFixed(1)
+  const baseY  = (MOBILE_PT + MOBILE_GH).toFixed(1)
   return `${curve} L ${endX},${baseY} L ${startX},${baseY} Z`
 }
 

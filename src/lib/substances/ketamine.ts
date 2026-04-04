@@ -165,7 +165,27 @@ export const ketamine: Substance =
     "Opioids",
     "Tramadol"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "Some users have reported positive experience with .",
+    "It is strongly advised to use harm reduction practices if using this substance.",
+    "There is some evidence that ketamine may have antibiotic properties at higher doses. It is unclear how this affects normal human use.",
+    "The first large-scale, longitudinal study of ketamine users found that frequent ketamine users (at least 4 days/week, averaging 20 days/month) had increased depression and impaired memory by several measures, including verbal, short-term memory and visual memory. However, infrequent (1–4 days/month, averaging 3.25 days/month) ketamine users and former ketamine users were not found to differ from controls in memory, attention and psychological well-being tests.",
+    "This suggests the infrequent use of ketamine does not cause cognitive deficits and that any deficits that might occur may be reversible when ketamine use is discontinued. However, abstinent, frequent, and infrequent users all scored higher than controls on a test of delusional symptoms.",
+    "According to a 2010 systematic review, 110 documented reports of irritative urinary tract symptoms from ketamine dependence exist. Urinary tract symptoms have been collectively referred to as \"ketamine-induced ulcerative cystitis\" or \"ketamine-induced vesicopathy\" and they include urge incontinence, decreased bladder compliance, decreased bladder volume, and painful haematuria (blood in urine).",
+    "The time of onset of lower urinary tract symptoms varies depending, in part, on the severity and chronicity of ketamine use; however, it is unclear whether the severity and chronicity of ketamine use correspond linearly to the presentation of these symptoms. All reported cases where the user consumed greater than 5 grams per day reported symptoms of the lower urinary tract.",
+    "A study conducted in 2015 demonstrated that co-administration of EGCG (10mM/kg) in rats receiving a daily dose of ketamine (25 mg/kg/d), significantly reduced ketamine-induced bladder damage to almost control levels, showing potential benefits of EGCG consumption to prevent or reverse ketamine-induced cystitis (KIC) and ovariectomy-induced overactive bladder (OAB). However, the application to human use is not clear.",
+    "Short-term exposure of cultures of GABAergic neurons to ketamine at high concentrations led to a significant loss of differentiated cells in one study, and non-cell death-inducing concentrations of ketamine (10 μg/ml) may still initiate long-term alterations of the dendritic arbor in differentiated neurons.",
+    "More recent studies of ketamine-induced neurotoxicity have focused on primates in an attempt to use a more accurate model than rodents. One such study administered daily ketamine doses consistent with typical recreational doses (1 mg/kg IV) to adolescent cynomolgus monkeys for varying periods of time.",
+    "Decreased locomotor activity and indicators of increased cell death in the prefrontal cortex were detected in monkeys given daily injections for six months, but not those given daily injections for one month.",
+    "Ketamine has moderate to high abuse potential and produces psychological dependence with chronic use. When dependence has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to the main effects of ketamine develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. Tolerance can decrease after a break (often called a tolerance break), but the duration required to fully reset tolerance varies. This reset period depends on several factors, including an individual’s genetic and physiological makeup, the quantity and frequency of use, and the length of time exposed to the substance.",
+    "Ketamine presents cross-tolerance with all dissociatives, meaning that after the consumption of ketamine all dissociatives will have a reduced effect.",
+    "Dissociatives are reported to be unique from other substances because they are capable of producing a long-term or permanent form of tolerance (\"permatolerance\") that accumulates slowly and independently from normal tolerance.",
+    "Many chronic ketamine users report that they need to consume substantially more to achieve dissociation or k-hole compared to their first use, even after taking extended breaks. The cause is not known, although it has been suggested to be a potential indicator of some form of neurotoxicity.",
+    "Dissociative permatolerance poses an additional problem considering ketamine's negative effects on the urinary tract. As a result, heavy or chronic use of all dissociatives is strongly discouraged.",
+    "Fatal ketamine overdoses are rare. Ketamine's toxicity drastically increases when it is mixed with other substances. Overdoses can cause respiratory depression, vomiting, positional asphyxia, heart problems, rhabdomyolysis causing kidney failure and rarely seizures.  However, there is evidence that suggests extremely high doses may result in damage to the brain and other organs.",
+    "Rapidly injected ketamine (under 2 minutes) can cause cause transient respiratory depression. The effects of ketamine on reflexes and rapid loss of normal consciousness can increase the chances of positional asphyxia (passing out in a position where you can't breath)."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

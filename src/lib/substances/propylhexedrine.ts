@@ -98,7 +98,15 @@ export const propylhexedrine: Substance =
     "MDMA",
     "Stimulants"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity of recreational propylhexedrine use has not been studied as extensively as that of amphetamine or methamphetamine but it is reasonable to assume that most if not all of the same risks apply.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "As with other stimulants, the chronic use of propylhexedrine can be considered highly addictive, and is capable of causing psychological and physiological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops or drastically decreases their usage.",
+    "Tolerance to the effects of this compound likely occurs in the same general fashion as with amphetamine rapidly develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Propylhexedrine presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of propylhexedrine all stimulants will have a reduced effect.",
+    "Like with amphetamine and methamphetamine the evidence on effective treatments for dependence and abuse is limited. In light of this, fluoxetine and imipramine appear to have some limited benefits in treating abuse and addiction",
+    "In highly dependent amphetamine and methamphetamine abusers, \"when chronic heavy users abruptly discontinue methamphetamine use, many report a time-limited withdrawal syndrome that occurs within 24 hours of their last dose\". Withdrawal symptoms in chronic, high-dose users are frequent, occurring in up to 87.6% of cases, and persist for three to four weeks with a marked \"crash\" phase occurring during the first week. Methamphetamine withdrawal symptoms can include anxiety, drug craving, dysphoric mood, fatigue, increased appetite, increased movement or decreased movement, lack of motivation, sleeplessness or sleepiness, and vivid or lucid dreams. Withdrawal symptoms are associated with the degree of dependence (i.e., the extent of abuse). The mental depression associated with methamphetamine withdrawal lasts longer and is more severe than that of cocaine withdrawal.. It is likely that propylhexedrine abuse is subject to these same outcomes.",
+    "Like with the abuse of methamphetamine, propylhexedrine abuse can result in a stimulant-induced psychotic state that may present with a variety of symptoms (e.g., paranoia, hallucinations, delusions), though likely to a lesser degree."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

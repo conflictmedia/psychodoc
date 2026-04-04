@@ -70,8 +70,10 @@ export const carisoprodol: Substance =
     "Dissociatives"
   ],
   "harmReduction": [
-    "moderate toxicity",
-    "potentially lethal when mixed with depressants like alcohol or opioids"
+    "Carisoprodol likely has moderate toxicity relative to dose. However, carisoprodol is Toxicity potentially lethal when mixed with depressants like alcohol or opioids. Carisoprodol has been taken off the market is several countries such as Sweden and Indonesia due to side effects and abuse.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "Carisoprodol is extremely physically and psychologically addictive. Carbamate withdrawal, like barbiturate withdrawal, is medically serious and can potentially cause a life-threatening withdrawal syndrome that can cause seizures, psychosis, and death. Drugs which lower the seizure threshold such as tramadol and amphetamine should be avoided during withdrawal.",
+    "Tolerance will develop to the sedative-hypnotic effects of carisoprodol after prolonged use. It is unknown exactly how long it takes for tolerance to reach baseline."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

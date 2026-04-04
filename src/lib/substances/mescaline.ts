@@ -126,7 +126,12 @@ export const mescaline: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational mescaline use does not appear to have been studied in any scientific context and the exact toxic dose is unknown. However, there are no known fatal overdoses within the scientific literature.",
+    "Anecdotal reports suggest that there are no negative health effects attributed to simply trying mescaline by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed).",
+    "Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Mescaline is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of mescaline is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). Mescaline presents cross-tolerance with all psychedelics, meaning that after the consumption of mescaline all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

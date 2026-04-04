@@ -90,7 +90,10 @@ export const allylescaline: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational allylescaline use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because allylescaline is a research chemical with very little history of human usage. Anecdotal evidence from people within the psychonaut community who have tried allylescaline suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "Allylescaline is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of allylescaline is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). Allylescaline presents cross-tolerance with all psychedelics, meaning that after the consumption of allylescaline all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -82,7 +82,12 @@ export const armodafinil: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "The median lethal dose at which 50% of participants die (LD50) from either armodafinil or modafinil for human beings has never been reached"
+    "The long-term safety and effectiveness of armodafinil has not been determined.",
+    "Anecdotal evidence suggests a lack of adverse health effects when sparingly used at small to moderate doses, although this must not be assumed. This compound is a commonly prescribed prescription medication, thus is considerably less likely to have adverse health effects than that of a typical research chemical.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Toxicity The median lethal dose at which 50% of participants die (LD50) from either armodafinil or modafinil for human beings has never been reached. No life-threatening effects have taken place in clinical trials involving the administration of 1000mg to 1600mg of modafinil per day for 7 to 21 consecutive days. Intentional acute overdoses of 4500mg and 4000mg in two adult subjects and an accidental ingestion of 800mg by a three-year-old child did not result in any life-threatening effects or death. After overdosing on 5000mg of modafinil in a suicide attempt, a fifteen-year-old female reported a severe headache, nausea, and tachycardia, but did not appear to have any lethal or long-term effects.",
+    "Armodafinil, like racemic modafinil, may also possess addiction reinforcing properties, as evidenced by its self-administration in monkeys previously trained to administer cocaine; armodafinil was also partially discriminated as stimulant-like. The chronic use of armodafinil can be considered as mildly addictive with a low potential for abuse. It does not seem to be capable of causing psychological dependence among certain users.",
+    "Tolerance to many of the effects of armodafinil develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Armodafinil may present a cross-tolerance with all benzhydryl nootropics, meaning that after the consumption of armodafinil, certain nootropics such as modafinil and adrafanil may have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

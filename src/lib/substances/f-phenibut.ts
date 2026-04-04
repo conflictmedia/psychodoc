@@ -77,9 +77,13 @@ export const f_phenibut: Substance =
     "Dissociatives"
   ],
   "harmReduction": [
-    "low toxicity",
-    "potentially lethal when mixed with depressants like alcohol, benzodiazepines or opioids",
-    "exact toxic dosage is unknown"
+    "F-Phenibut likely has a low toxicity relative to dose. However, it is Toxicity potentially lethal when mixed with depressants like alcohol, benzodiazepines or opioids.",
+    "The toxicity and long-term health effects of recreational F-Phenibut use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because F-Phenibut has very little history of human usage. Anecdotal evidence from people who have tried this substance within the community suggests that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "F-Phenibut is moderately physically and psychologically addictive, although this usually only occurs with heavy abuse of the substance. This is likely even more so than its predecessor phenibut since its more rapid onset allows more convenient compulsive redosing.",
+    "Tolerance will develop to the sedative-hypnotic effects within a couple of days of continuous use. After cessation, the tolerance returns to baseline in 7 - 14 days. Withdrawal symptoms or rebound symptoms may occur after ceasing usage abruptly following a few weeks or longer of steady dosing and may necessitate a gradual dose reduction.",
+    "Withdrawal symptoms likely include severe anxiety, nervousness, hallucinations, tremors, agitation, dizziness, tension, irritation, rapid heartbeat, fatigue, loss of appetite, nausea, vomiting, psychosis, and insomnia in a similar manner to phenibut.",
+    "F-Phenibut presents cross-tolerance with all GABAgenic depressants, meaning that after its consumption most depressants will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -131,7 +131,15 @@ export const lsa: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational LSA use have not been studied in any scientific context and the exact toxic dose is unknown.",
+    "Anecdotal evidence suggests that there are no negative health effects attributed to simply trying LSA by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "LSA should not be used regularly for long periods of time. When used repeatedly over a short period of time, LSA's vasoconstrictive effects build up while the psychoactive effects get weaker. A common sign of vasoconstriction build up can be described as a feeling of painful or uncomfortable legs. This happens as a result of an insufficient amount of blood getting to the muscles. The upper leg muscles are the largest, most energy consuming muscles in the body and will feel sore if blood flow to them is lowered even slightly.",
+    "When HBWR, morning glory seeds or pure LSA seeds are consumed and sore legs are experienced, a break has been reported to be helpful. With LSA it can take up to 3 days of abstinence to get back to vasoconstriction baseline.",
+    "LSA is considered to be non-addictive with a low abuse potential. There are no literature reports of successful attempts to train animals to self-administer LSA, an animal model predictive of abuse liability, indicating that it does not possess the necessary pharmacology to either initiate or maintain dependence. There is virtually no withdrawal syndrome when use is stopped.",
+    "Tolerance to the effects of LSA forms almost immediately after ingestion. After that, it takes about 7 days for the tolerance to return to baseline (in the absence of further consumption). LSA produces cross-tolerance with all psychedelics, meaning that after the use of LSA all psychedelics will have a reduced effect.",
+    "Selective serotonin reuptake inhibitors (SSRIs) - SSRIs are reported to suppress the visual and cognitive effects of LSA.",
+    "MAOIs - MAO inhibitors, such as passionflower and syrian rue potentiate the visual and introspective effects of psychedelics. It is advised to take caution when combining MAOIs with psychedelics because they can increase the chance of having a bad trip and may  with other substances, such as SSRIs and stimulants, as well as some psychedelics such as MDA."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

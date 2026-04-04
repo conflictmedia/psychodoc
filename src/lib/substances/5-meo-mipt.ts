@@ -115,7 +115,14 @@ export const _5_meo_mipt: Substance =
     "DXM",
     "Tramadol"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "Almost nothing is known about the long-term effects of 5-MeO-MiPT. Alongside of this, the exact toxic dosage is unknown. This is because 5-MeO-MiPT is a research chemical with very little history of human use.",
+    "A preliminary study on mice has shown that a normal dose of 5-MeO-MiPT (0.27 mg/kg) was unable to produce any measurable toxic effects. However, doses of 5-MeO-MiPT way above the normal dosage range (2.7 mg/kg) have been shown to produce cell toxicity by triggering programmed cell death in the brain, liver and kidneys. The extent of the damage, if it occurs in other bodily tissues as well and how it is caused is not known yet.",
+    "Anecdotal evidence from people within the community who have tried 5-MeO-MiPT suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "5-MeO-MiPT is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of 5-MeO-MiPT is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 5-MeO-MiPT presents cross-tolerance with all psychedelics, meaning that after the consumption of 5-MeO-MiPT all psychedelics will have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

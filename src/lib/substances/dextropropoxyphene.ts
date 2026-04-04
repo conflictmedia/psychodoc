@@ -84,9 +84,10 @@ export const dextropropoxyphene: Substance =
     "5-HTP"
   ],
   "harmReduction": [
-    "high toxicity",
-    "potentially lethal when mixed with depressants like alcohol or benzodiazepines",
-    "known to cause potentially fatal heart arrhythmias"
+    "Dextropropoxyphene has a high toxicity relative to dose. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines and generally has a wider range of substances which it is  in comparison to other opioids. Dextropropoxyphene is known to lower the seizure threshold. It should not be taken during  as this can potentially cause seizures. Dextropropoxyphene is known to cause potentially fatal heart arrhythmias, and it is discouraged to take in very heavy doses or several days in a row.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other opioids, the chronic use of dextropropoxyphene can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and  may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of dextropropoxyphene develops with prolonged and repeated use. The rate at which this occurs develops at different rates for different effects, with tolerance to the constipation-inducing effects developing particularly slowly for instance. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Dextropropoxyphene presents cross-tolerance with all other opioids, meaning that after the consumption of dextropropoxyphene all opioids will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -89,7 +89,16 @@ export const mdai: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "MDAI and other similar drugs have been widely used in scientific research as they are able to replicate many of the effects of MDMA, but without causing the associated neurotoxicity.",
+    "No tests have been performed on cardiovascular toxicity.",
+    "There is currently no scientific data on the lethal dose of MDAI in humans and the exact toxic dosage is unknown. Due to its action as a serotonin reuptake inhibitor, overdoses of this substance would likely result in serotonin syndrome.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Although no formal studies have been conducted, MDAI can be considered somewhat habit-forming with a low potential for abuse and is unlikely to be capable of causing psychological dependence among most users.",
+    "This is because unlike traditional stimulants, MDAI does not increase concentrations of dopamine. If addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of MDAI develops with prolonged and repeated use.",
+    "This results in users having to administer increasingly large doses to achieve the same effects.",
+    "After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption).",
+    "MDAI presents cross-tolerance with all entactogens, meaning that after the consumption of MDAI all serotonergic stimulants will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

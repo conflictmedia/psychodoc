@@ -82,8 +82,8 @@ export const pma: Substance =
     "DOx"
   ],
   "harmReduction": [
-    "can be considered extremely toxic when compared to other substances such as Methamphetamine or MDMA",
-    "Ingestion of PMA has been associated with severe tachycardia (abnormally high heart rate), seizures, hyperthermia, and death"
+    "PMA and its relative PMMA Toxicity can be considered extremely toxic when compared to other substances such as Methamphetamine or MDMA . Toxicity Ingestion of PMA has been associated with severe tachycardia (abnormally high heart rate), seizures, dehydration, hyperthermia, and death. PMA has a relatively slow onset, causing many users to redose which causes excess toxicity.",
+    "It is strongly recommended that one use harm reduction practices when using this substance."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

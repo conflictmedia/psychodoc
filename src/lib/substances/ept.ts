@@ -67,7 +67,11 @@ export const ept: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational EPT use have not been studied in any scientific context and the exact toxic dose is unknown. This is because EPT is a research chemical with a very limited history of human usage.",
+    "Anecdotal evidence suggests that there are no negative health effects attributed to simply trying EPT by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Anecdotal reports suggest that EPT does not produce dependence and has low abuse potential. It is believed to be similar in this respect to other unsubstituted tryptamines like DMT, DET, and MET.",
+    "Unlike DMT, tolerance to the effects of EPT appears to form almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). EPT produces cross-tolerance with all psychedelics, meaning that after the consumption of EPT all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

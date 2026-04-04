@@ -102,7 +102,29 @@ export const psilocybin_mushrooms: Substance =
     "Lithium"
   ],
   "harmReduction": [
-    "extremely low toxicity relative to dose"
+    "Numerous studies have found that psilocybin mushrooms are physiologically well-tolerated and has an extremely low toxicity relative to dose. There is no evidence for long-lasting effects on the brain or other organs and there are no documented deaths attributed to the direct effects of psilocybin mushrooms toxicity.",
+    "However, it is worth noting that while they may not be capable of causing direct bodily toxicity or death, their use can still present serious hazards.",
+    "For example, they are capable of strongly impairing the user's judgment and attention span, which may promote erratic or dangerous behaviors. In extreme cases, the user may experience powerful delusions e.g. that they are actually inside of a dream and therefore physically invincible, or that they are being \"chased by demons\". This may prompt them to jump off of a building or run into oncoming traffic.",
+    "Additionally, intense negative experiences and psychotic episodes (i.e. \"bad trips\") can cause lasting psychological trauma if not properly managed or treated afterward. This is particularly a concern in non-supervised settings or when heavy doses are used.",
+    "Finally, it should be noted that evidence of psilocybin mushrooms' effectiveness as a mental health treatment only applies to the controlled procedures used in clinical settings. They are not considered the entire treatment because the current evidence suggests they must be combined with professional psychotherapy to produce lasting effects.",
+    "Without the appropriate safeguards, attempts at self-medicating with psilocybin mushrooms may actually worsen mental health issues.",
+    "It is strongly advised to use harm reduction practices if using this substance. These include:",
+    "Taking the substance under the supervision of a tripsitter for one's first time or while experimenting with a higher dose",
+    "Starting off with a dose in the low-common range and monitoring for unusual reactions (e.g. mania, delusions) or sensitivity",
+    "Not exceeding the listed heavy dose. If heavy doses are required, a tolerance break is advised instead. Heavy doses greatly increase the risk of negative effects",
+    "Keeping a supply of benzodiazepines or antipsychotics (e.g. Seroquel) to abort the trip in the case of overwhelming anxiety or psychosis",
+    "The toxicity of psilocybin and psilocin is extremely low. In rats, the median lethal dose (LD50) of psilocybin when administered orally is 280 milligrams per kilogram (mg/kg).",
+    "Psilocybin comprises approximately 1% of the weight of Psilocybe cubensis and so nearly 1.7 kilograms (3.7 lb) of dried mushrooms or 17 kilograms (37 lb) of fresh mushrooms would be required for a 60 kilogram (130 lb) person to reach the 280 mg/kg LD50 value of rats.",
+    "Based on the results of animal studies, the lethal dose of psilocybin has been extrapolated to be 6 grams, 1000 times greater than the effective dose of 6 milligrams. Unlike many highly prohibited substances, it is effectively impossible to physically overdose on.",
+    "Psilocybin mushrooms can exacerbate symptoms (e.g. delusions, mania, psychosis) of various mental disorders. Additionally,  they can precipitate the early onset of schizophrenia in vulnerable individuals.",
+    "Those with a personal or family history of mental disorders, particularly psychotic disorders like schizophrenia, should not use psilocybin mushrooms without consulting a qualified medical professional.",
+    "Like other serotonergic psychedelics, psilocybin mushrooms have low abuse potential and no physical dependence potential.",
+    "There are no literature reports of successful attempts to train animals to self-administer a serotonergic psychedelic, which is predictive of abuse liability, indicating that it does not have the necessary pharmacology to either initiate or maintain dependence.",
+    "Additionally, there is no human clinical evidence that psilocybin mushrooms causes addiction. Finally, there is virtually no withdrawal syndrome when chronic use of psilocybin mushrooms is stopped.",
+    "Tolerance to the effects of psilocybin builds almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption).",
+    "Psilocybin exhibits cross-tolerance with all psychedelics, meaning that after the consumption of psilocybin all psychedelics will have a reduced effect.",
+    "In rare cases, psilocybin mushrooms may trigger hallucinogen persisting perception disorder (HPPD) in some individuals. The cause is unclear; however, explanations in terms of psilocybin physically remaining in the body for months or years after consumption have been discounted by experimental evidence.",
+    "Some say HPPD is a manifestation of post-traumatic stress disorder, not related to the direct action on brain chemistry, and varies according to the susceptibility of the individual to the disorder."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -142,7 +142,25 @@ export const _3_meo_pcp: Substance =
     "Depressants"
   ],
   "harmReduction": [
-    "toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational 3-MeO-PCP use has not been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-MeO-PCP has very short history of human usage.",
+    "There is one death involving this substance recorded in the medical literature. In this case, the individual's cause of death was determined to be from a combination of 3-MeO-PCP, amphetamine, and diphenhydramine.",
+    "3-MeO-PCP produces dependence with chronic use and has a high potential for abuse. In comparison to other dissociatives, 3-MeO-PCP has been reported to be more likely to produce psychological dependence than other dissociatives. When dependence has developed, cravings and withdrawal effects may occur if one suddenly stops their usage. There are multiple online reports of users becoming seriously dependent on this substance.",
+    "Tolerance to many of the effects of 3-MeO-PCP develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). 3-MeO-PCP presents cross-tolerance with all dissociatives, meaning that after the consumption of 3-MeO-PCP, all dissociatives will have a reduced effect.",
+    "3-MeO-PCP has been reported to cause psychosis, delusions, and mania at a significantly higher rate than other dissociatives such as ketamine, diphenidine, or MXE. There are a large number of experience reports online which describe states of \"psychotic delirium, amnesia, mania, and other serious consequences\" after abusing 3-MeO-PCP. In some cases, it has resulted in hospitalization and occasionally has taken up to a week or more to resolve.",
+    "Users should avoid taking 3-MeO-PCP for multiple days in a row or becoming dependent on it as this seems to be the main risk factor in the observed incidences of severe adverse effects.",
+    "The recommended dosage range should not be exceeded as high doses can trigger these effects as well.",
+    "Users should start with extremely low doses and work their way up as slowly as possible. Volumetric liquid dosing should preferably be used due to the drug's potency; most standard milligram scales cannot accurately weigh out doses below 10-15mg.",
+    "Compulsive redosing before one has fully sobered up is not recommended and can result in too high of a dose.",
+    "Due to the risk of psychosis, it is not recommended to combine this substance with other substances, especially stimulants, psychedelics, or other dissociatives like MXE. Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly advised to use harm reduction practices when using this substance.",
+    "In terms of its long-term health effects when used repeatedly and excessively for extended periods of time, 3-MeO-PCP seems to exhibit almost identical bladder and urinary tract problems to those found within ketamine, but to a lesser extent. This is possibly because 3-MeO-PCP is far more potent than ketamine so significantly less of drug needs to be consumed.  Increased urinary tract effects will compound with usage of other drugs like amphetamine even if the drugs are not simultaneously used.  Symptoms of ketamine-induced cystitis can become extremely serious and can be described as:",
+    "Urinary frequency - Urinary frequency is the need to empty the bladder every few minutes.",
+    "Urinary urgency - This can be described as a sudden, compelling need to urinate.",
+    "Urinary pressure - This is experienced as a constant sensation of fullness in the bladder that is unrelieved by urination.",
+    "Pelvic and bladder pain - Pain can develop suddenly and severely, particularly as the bladder fills with urine.",
+    "Hematuria - Hematuria is visible blood in the urine.",
+    "Incontinence - This is the leakage of urine.",
+    "These effects can be mitigated by refraining from using 3-MeO-PCP regularly (on a daily or weekly basis) and manually limiting one's usage of the substance."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

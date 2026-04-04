@@ -81,7 +81,12 @@ export const jwh_018: Substance =
     "Lithium"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational JWH-018 use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because the drug has very little history of human usage.",
+    "JWH-018, like many synthetic cannabinoids, is a full agonist of the CB1 receptors in contrast to the partial agonist Δ9-THC. Because of this, harm mediated by CB1 receptor agonism can be more severe than its partial agonist counterparts. JWH-018 has caused seizures and convulsions, and evidence suggests this is a result of inhibiting GABA neurotransmission more effectively than Δ9-THC. JWH-018 has also been associated with strokes in two healthy adults.",
+    "JWH-018 has also been known to exacerbate pre-existing psychological disorders causing intense paranoia, anxiety and agitation; however, Δ9-THC itself has been known to do this as well. It is often recommended that those with severe pre-existing mental conditions should not ingest these substances due to the way they strongly increase the current state of mind of the person. Also, like THC, prolonged usage of synthetic cannabinoids may increase one's disposition to mental illness and psychosis, especially in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of psychosis).",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other synthetic cannibanoids, the chronic use of JWH-018 can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of JWH-018 develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). JWH-018 presents cross-tolerance with all cannabinoids, meaning that after the consumption of JWH-018 all cannabinoids will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

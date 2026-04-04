@@ -78,7 +78,13 @@ export const flualprazolam: Substance =
     "Depressants",
     "Dissociatives"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "Flualprazolam likely has a low toxicity relative to dose. However, it is potentially lethal when mixed with depressants like alcohol or opioids.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Like most benzodiazepines, Flualprazolam is considered to be highly addictive with a high potential for abuse.",
+    "Tolerance will develop to the sedative-hypnotic effects within a couple of days of continuous use. After cessation, the tolerance returns to baseline in 7 - 14 days. However, in certain cases this may take significantly longer in a manner which is proportional to the duration and intensity of one's long-term usage.",
+    "Benzodiazepine discontinuation is notoriously difficult and potentially life-threatening for heavy or long-term users. There is an increased risk of seizure following discontinuation of benzodiazepines. Withdrawal symptoms or rebound symptoms may occur after ceasing usage abruptly following a few weeks or longer of steady dosing, and may necessitate a gradual dose reduction. Substances which lower the seizure threshold such as Tramadol should be avoided during withdrawal."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

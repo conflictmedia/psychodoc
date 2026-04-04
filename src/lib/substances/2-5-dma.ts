@@ -68,7 +68,11 @@ export const _2_5_dma: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational 2,5-DMA use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 2,5-DMA is a research chemical with very little history of human usage.",
+    "Anecdotal reports from those who have tried 2,5-DMA suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices, such as volumetric dosing, when using this substance so as to ensure the accurate administration of the intended dose.",
+    "Although no formal studies have been conducted, it is not unreasonable to assume that as is the case with psychedelics in general, 2,5-DMA is not habit-forming and that the desire to use it can actually decrease with use. However, it's stimulating properties do provide a possible risk of addiction which would be associated with other stimulants.",
+    "Tolerance to the effects of 2,5-DMA is built after ingestion over the couse of multiple days. After that, it takes about 3-5 days for the tolerance to be reduced to half and 7-10 days to be back at baseline (in the absence of further consumption). 2,5-DMA may present cross-tolerance, although unlikely, with all psychedelics, meaning that after the consumption of 2,5-DMA all psychedelics will have a reduced effect. It may also produce tolerance to stimulants as well."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

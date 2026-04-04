@@ -85,8 +85,12 @@ export const alprazolam: Substance =
     "Dissociatives"
   ],
   "harmReduction": [
-    "low toxicity",
-    "potentially lethal when mixed with depressants like alcohol, opioids, or barbiturates"
+    "Alprazolam has a low toxicity relative to dose.  However, it is Toxicity potentially lethal when mixed with depressants like alcohol, opioids, or barbiturates. Resulting in increased respiratory depression via a synergistic effect.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "The acute oral LD50 in rats is 331–2171 mg/kg. Other experiments in animals have indicated that cardiopulmonary collapse can occur following massive intravenous doses of alprazolam.",
+    "Alprazolam is extremely physically and psychologically addictive.",
+    "Tolerance will develop to the sedative-hypnotic effects within a couple of days of continuous use. After cessation, the tolerance returns to baseline in 7-14 days. However, in certain cases, this may take significantly longer in a manner which is proportional to the duration and intensity of one's long-term usage.",
+    "Alprazolam presents cross-tolerance with all benzodiazepines, meaning that after its consumption all benzodiazepines will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -101,7 +101,13 @@ export const _2c_p: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational 2C-P use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 2C-P is a research chemical with very little history of human usage.",
+    "Anecdotal reports suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "The LD50 of 2C-P has not been established. However, it is believed that 2C-P is likely to have a smaller therapeutic window compared to other 2C's, meaning a lethal dose may be achieved more easily.",
+    "In 2017, a 25-year old British female died following the ingestion of a large dose of 2C-P at a music festival. No source reported clear evidence that 2C-P by itself led to the immediate death of the female.",
+    "As a serotonergic psychedelic, 2C-P is considered to have a low potential for abuse and dependence.",
+    "Tolerance to the effects of 2C-P is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 2C-P produces cross-tolerance with all psychedelics, meaning that after the consumption of 2C-P all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

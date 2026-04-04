@@ -110,8 +110,12 @@ export const zolpidem: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "low toxicity",
-    "potentially lethal when mixed with depressants like alcohol or opioids"
+    "Zolpidem has a low toxicity relative to dose.  However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids.",
+    "Zolpidem has been reported to cause psychosis, delusions and delirium at a significantly higher rate than other hallucinogens like LSD, ketamine, or DMT. There are a large number of experience reports online which describe states of delirium, amnesia, bizarre behavior, sleep walking, driving while impaired and other serious consequences after abusing the drug. In many cases this has resulted in hospitalization, arrests, car crashes, lengthy court cases and even death.",
+    "It is strongly recommended that one use harm reduction practices and have a trip sitter when using this drug.",
+    "Zolpidem is moderately addictive. A review of 36 human case reports found that reported dependence to zolpidem was lower than that of benzodiazepines.",
+    "Withdrawal symptoms or rebound symptoms may occur after ceasing usage abruptly following a few weeks or longer of steady dosing, and may necessitate a gradual dose reduction. For more information on tapering from zolpidem in a controlled manner, please see this guide while keeping in mind it is intended for benzodiazepines.",
+    "Although dependence builds up more slowly than in benzodiazepines, discontinuation from regular recreational doses of zolpidem appear to be as difficult as  ; it is potentially life-threatening for individuals using regularly to discontinue use without tapering their dose over a period of weeks. There is an increased risk of hypertension, seizures, and death. Drugs which lower the seizure threshold such as tramadol should be avoided during withdrawal."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

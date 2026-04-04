@@ -159,7 +159,15 @@ export const _2c_b: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational 2C-B use have not been studied in any scientific context, and the exact toxic dose is unknown.",
+    "Anecdotal evidence suggests that there are no negative health effects attributed to simply trying it by itself at low to moderate doses or using it very sparingly (although nothing can be completely guaranteed).",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "2C-B at normal doses is unlikely to be neurotoxic. Through rough extrapolations of data from rat cortical cultures, the IC50 of neuronal activity may result from a dose of at least a 330-650mg. In other words, users should avoid a dose that large in order to avoid long term damage, but typical doses should be well within a safe range.",
+    "Users have reported experiencing hypertension, hyperthermia and tachycardia at higher doses. As such, those with pre-existing heart conditions should avoid using 2C-B, and users monitor their temperature and heart-rate and respond accordingly. Heavy physical exertion while on 2C-B is discouraged.",
+    "There is no current data for the LD50 of 2C-B, but it is thought to be considerably higher than the active dose. Alexander Shulgin reported a 100 mg oral dose taken without apparent harm.",
+    "As with other serotonergic psychedelic, 2C-B is considered to be non-addictive with a low potential for abuse.",
+    "Tolerance to the effects of 2C-B is not built almost immediately after ingestion. There are many anecdotal reports of people ingesting this substance many days in a row (either consecutively or by redosing many many times in a row and tripping continuously for dozens of hours) with no immediate tolerance build up and still building quite slowly even under sustained exposure.",
+    "2C-B does not produce cross-tolerance with other serotonergic psychedelics, although most users report other psychedelics affecting 2C-B tolerance. For example 2C-B followed by LSD will not result in any loss of effects whereas LSD followed by 2C-B will. Others report 2C-B following a completely separate tolerance clock to other psychedelics with no cross tolerance being shared between the two, although this seems to be a rare reaction with that individual's personal body chemistry, with the aforementioned one-way tolerance being the case for the very large majority of the population."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

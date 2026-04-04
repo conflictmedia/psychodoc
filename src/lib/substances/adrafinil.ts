@@ -67,7 +67,13 @@ export const adrafinil: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "The long-term safety and effectiveness of modafinil (adrafinil's active component) as a drug of regular usage have not been determined. Anecdotal reports from people who have tried modafinil within the community suggest that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
+    "Adrafinil is more harmful than modafinil due to slight hepatotoxicity, as adrafinil must be processed by the liver. Stomach pain, skin irritation, anxiety, and elevated liver enzymes may occur with prolonged use and have been associated with Adrafinil, specifically.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "The chronic use of adrafinil can be considered as not addictive with a low potential for abuse. It does not seem to be capable of causing psychological dependence among most users.",
+    "Tolerance to many of the effects of adrafinil develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Adrafinil may present a cross-tolerance with all benzhydryl nootropics, meaning that after the consumption of adrafinil, all related eugeroic compounds such as armodafinil and modafinil will display a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

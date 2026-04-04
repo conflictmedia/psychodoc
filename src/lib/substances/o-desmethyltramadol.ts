@@ -114,8 +114,11 @@ export const o_desmethyltramadol: Substance =
     "5-HTP"
   ],
   "harmReduction": [
-    "moderate potential toxicity relative to its dose due to its potency",
-    "potentially lethal when mixed with depressants like alcohol or benzodiazepines"
+    "O-DSMT has a moderate potential toxicity relative to its dose due to its potency. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines.",
+    "O-DSMT has recently been marketed as a currently legal substitute for illegal opioid drugs, either in powder form or mixed into various other preparations. One such blend was sold under the brand Krypton and contains powdered kratom leaf (Mitragyna speciosa) laced with O-DSMT and was reportedly linked to at least 9 accidental deaths from overdose during 2010–2011.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other opioids, the chronic use of O-DSMT can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and  may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of O-DSMT develops with prolonged and repeated use. The rate at which this occurs develops at different rates for different effects, with tolerance to the constipation-inducing effects developing particularly slowly for instance. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). O-DSMT presents cross-tolerance with all other opioids, meaning that after the consumption of O-DSMT all opioids will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

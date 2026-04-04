@@ -60,7 +60,11 @@ export const cake: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "Studies shows that cake is highly addictive due to presence of cakecadine, disaccharides and polysaccharides.",
+    "Studies suggest that regularly use of cake can cause hyperglycemia which can lead to permanent brain damage.",
+    "Researches showed that frequently use of cake can cause pancreas damage."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

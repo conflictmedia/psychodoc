@@ -63,7 +63,13 @@ export const aniracetam: Substance =
   "interactions": [
     "MAOIs"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "Several studies suggest that this substance is safe even when high doses are consumed for a long period of time. although it is worth noting that the exact toxic dosage is unknown. Anecdotal evidence from people who have tried aniracetam within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly. However, nothing can be completely guaranteed.",
+    "Despite its presumed safety, it is still strongly recommended that one use harm reduction practices when using this drug.",
+    "The median lethal dosage (LD50) of aniracetam has not been officially published as it has low abuse potential, but is not known to be harmful in its recommended dosage.",
+    "The chronic use of aniracetam can be considered as non-addictive with a low potential for abuse. It does not seem to be capable of causing psychological dependence among users, although this fact has not been confirmed or supported by clinical studies.",
+    "Tolerance to many of the effects of aniracetam develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Aniracetam may presents cross-tolerance with all racetam nootropics, meaning that after the consumption of aniracetam certain nootropics such as coluracetam and piracetam may have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

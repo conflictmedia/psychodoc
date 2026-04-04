@@ -115,7 +115,12 @@ export const mephedrone: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "Almost nothing is known about the long-term effects of mephedrone due to its short history of its use. Along side of this, the exact toxic dosage is unknown.",
+    "In 2010, unconfirmed reports speculated about the role mephedrone has played in the deaths of several young people in the UK. By July 2010, mephedrone had been alleged to be involved in 52 fatalities in the UK, but detected in only 38 of these cases. Of the nine that coroners had finished investigating, two were caused directly by mephedrone. The first death reported to be caused by mephedrone use was that of 46-year-old who had underlying health problems and repeatedly injected the drug. A report in Forensic Science International in stated mephedrone intoxication has been recorded as the cause of death in two cases in Scotland.",
+    "Despite similarities to known neurotoxins such as methamphetamine and other cathinone derivatives, mephedrone does not appear to produce neurotoxic effects in the dopamine system of mice.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other stimulants, the chronic use of mephedrone can be considered highly addictive with an extreme potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of mephedrone develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Mephedrone presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of mephedrone all stimulants will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

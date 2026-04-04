@@ -96,7 +96,12 @@ export const methylnaphthidate: Substance =
     "MDMA",
     "Stimulants"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity and long-term health effects of recreational methylnaphthidate use do not seem to have been studied in any scientific context and the exact toxic and lethal dosages are unknown. This is because methylnaphthidate is a research chemical with very little history of human usage. Anecdotal evidence from people who have tried methylnaphthidate suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent researchshould always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "In terms of its tolerance, methylnaphthidate can be used multiple days in a row for extended periods of time, but acute tolerance does exist and builds up gradually over repeated extended use. This results in the user requiring an increase in dosage to achieve the same effects.",
+    "While generally considered less recreational, methylnaphthidate has potential for abuse on par with that of amphetamine, cocaine or methylphenidate due to its lack of significant tolerance, euphoric effects and action upon dopamine and serotonin transporters."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

@@ -117,7 +117,10 @@ export const ibogaine: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "Ibogaine has been associated with life-threatening heart complications, such as QT prolongation. It can be taken safely, but only under the supervision of trained medical professionals.",
+    "Ibogaine is not habit-forming, and the desire to use it can actually decrease with regular consumption. Like most psychedelics, it is most often thought to be self-regulating."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",
