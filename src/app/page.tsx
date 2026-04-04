@@ -1048,15 +1048,28 @@ function HomeContent() {
         setDesktopView('substances')
         setMobileTab('substances')
       }
+    } else {
+      // No view param - default to substances view
+      setDesktopView('substances')
+      setMobileTab('substances')
     }
     
-    // Only process substance if it's different from what we last processed
-    if (substanceId && substanceId !== lastProcessedSubstanceRef.current) {
-      const found = substances.find((s) => s.id === substanceId)
-      if (found) {
-        setSelectedSubstance(found)
-        lastProcessedSubstanceRef.current = substanceId
+    // Handle substance parameter changes
+    if (substanceId) {
+      // Only process if it's different from what we last processed
+      if (substanceId !== lastProcessedSubstanceRef.current) {
+        const found = substances.find((s) => s.id === substanceId)
+        if (found) {
+          setSelectedSubstance(found)
+          lastProcessedSubstanceRef.current = substanceId
+        }
       }
+    } else {
+      // No substance param in URL - close substance detail if open
+      if (selectedSubstance) {
+        setSelectedSubstance(null)
+      }
+      lastProcessedSubstanceRef.current = null
     }
     
     // Reset when URL no longer has substance param
@@ -1073,9 +1086,9 @@ function HomeContent() {
     // Clear the URL - go back to current view or base path
     const viewParam = searchParams.get('view')
     if (viewParam) {
-      router.replace(`${pathname}?view=${viewParam}`)
+      router.push(`${pathname}?view=${viewParam}`)
     } else {
-      router.replace(pathname)
+      router.push(pathname)
     }
   }, [searchParams, router, pathname])
 
@@ -1130,10 +1143,10 @@ function HomeContent() {
             // Sync desktop view and update URL
             if (tab === 'substances') {
               setDesktopView('substances')
-              router.replace(pathname)
+              router.push(pathname)
             } else {
               setDesktopView('dose-log')
-              router.replace(`${pathname}?view=${tab}`)
+              router.push(`${pathname}?view=${tab}`)
             }
           }}
           renderLogTrigger={(btn) => (
@@ -1207,7 +1220,7 @@ function HomeContent() {
                 onClick={() => { 
                   setDesktopView('substances')
                   setSelectedCategory('all')
-                  router.replace(pathname)
+                  router.push(pathname)
                 }}
               >
                 <Info className="h-4 w-4" />
@@ -1219,7 +1232,7 @@ function HomeContent() {
                 className="w-full justify-start gap-2"
                 onClick={() => {
                   setDesktopView('dose-log')
-                  router.replace(`${pathname}?view=dose-log`)
+                  router.push(`${pathname}?view=dose-log`)
                 }}
               >
                 <Activity className="h-4 w-4" />
@@ -1237,7 +1250,7 @@ function HomeContent() {
                     onClick={() => { 
                       setDesktopView('substances')
                       setSelectedCategory(category.id)
-                      router.replace(pathname)
+                      router.push(pathname)
                     }}
                   >
                     <Icon className="h-4 w-4" />
@@ -1417,9 +1430,9 @@ function HomeContent() {
                       // Preserve view param if exists, otherwise just substance
                       const viewParam = searchParams.get('view')
                       if (viewParam) {
-                        router.replace(`${pathname}?substance=${substance.id}&view=${viewParam}`)
+                        router.push(`${pathname}?substance=${substance.id}&view=${viewParam}`)
                       } else {
-                        router.replace(`${pathname}?substance=${substance.id}`)
+                        router.push(`${pathname}?substance=${substance.id}`)
                       }
                     }}
                   >
@@ -1497,7 +1510,7 @@ function HomeContent() {
               <CategoryChipRow selected={selectedCategory} onChange={(cat) => {
               setSelectedCategory(cat)
               // Clear URL when selecting a category
-              router.replace(pathname)
+              router.push(pathname)
             }} />
             </div>
 
@@ -1522,9 +1535,9 @@ function HomeContent() {
                       // Preserve view param if exists, otherwise just substance
                       const viewParam = searchParams.get('view')
                       if (viewParam) {
-                        router.replace(`${pathname}?substance=${substance.id}&view=${viewParam}`)
+                        router.push(`${pathname}?substance=${substance.id}&view=${viewParam}`)
                       } else {
-                        router.replace(`${pathname}?substance=${substance.id}`)
+                        router.push(`${pathname}?substance=${substance.id}`)
                       }
                     }}
                     className="w-full text-left flex items-start gap-3 p-4 rounded-2xl border border-border bg-card hover:border-primary/40 active:scale-[0.99] transition-all"
@@ -1594,10 +1607,10 @@ function HomeContent() {
           // Sync desktop view
           if (tab === 'substances') {
             setDesktopView('substances')
-            router.replace(pathname)
+            router.push(pathname)
           } else {
             setDesktopView('dose-log')
-            router.replace(`${pathname}?view=${tab}`)
+            router.push(`${pathname}?view=${tab}`)
           }
         }}
         renderLogTrigger={(btn) => (
@@ -1606,7 +1619,7 @@ function HomeContent() {
               handleDoseLogged()
               setMobileTab('timeline')
               setDesktopView('dose-log')
-              router.replace(`${pathname}?view=timeline`)
+              router.push(`${pathname}?view=timeline`)
             }}
             trigger={btn}
           />
