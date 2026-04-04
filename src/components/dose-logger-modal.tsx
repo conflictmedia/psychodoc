@@ -70,36 +70,36 @@ const settingOptions: ComboboxOption[] = [
   { value: 'other', label: 'Other' },
 ]
 
-// Unit options for dose logging (values are singular form)
+// Unit options for dose logging (values are singular form for consistent storage)
 const unitOptions: ComboboxOption[] = [
-  { value: 'mg', label: 'mg' },
-  { value: 'g', label: 'g' },
+  { value: 'mg', label: 'mg (milligrams)' },
+  { value: 'g', label: 'g (grams)' },
   { value: 'μg', label: 'μg (micrograms)' },
-  { value: 'ml', label: 'ml' },
-  { value: 'drop', label: 'drop(s)' },
-  { value: 'puff', label: 'puff(s)' },
-  { value: 'tab', label: 'tab(s)' },
-  { value: 'capsule', label: 'capsule(s)' },
-  { value: 'hit', label: 'hit(s)' },
-  { value: 'line', label: 'line(s)' },
-  { value: 'drink', label: 'drink(s)' },
-  { value: 'shot', label: 'shot(s)' },
-  { value: 'joint', label: 'joint(s)' },
-  { value: 'blunt', label: 'blunt(s)' },
-  { value: 'bowl', label: 'bowl(s)' },
-  { value: 'blinker', label: 'blinker(s)' },
+  { value: 'ml', label: 'ml (milliliters)' },
+  { value: 'drop', label: 'drop' },
+  { value: 'puff', label: 'puff' },
+  { value: 'tab', label: 'tab' },
+  { value: 'capsule', label: 'capsule' },
+  { value: 'hit', label: 'hit' },
+  { value: 'line', label: 'line' },
+  { value: 'drink', label: 'drink' },
+  { value: 'shot', label: 'shot' },
+  { value: 'joint', label: 'joint' },
+  { value: 'blunt', label: 'blunt' },
+  { value: 'bowl', label: 'bowl' },
+  { value: 'blinker', label: 'blinker' },
 ]
 
 /** Format a unit with proper singular/plural based on amount */
-function formatUnit(unit: string, amount: number): string {
+export function formatUnit(unit: string, amount: number): string {
   // Units that don't change (abbreviations)
   const invariantUnits = ['mg', 'g', 'μg', 'ml', 'mL']
   if (invariantUnits.includes(unit)) {
     return unit
   }
 
-  // Check if amount is exactly 1 (singular)
-  const isSingular = amount === 1
+  // Singular if exactly 1 OR fractional amount less than 1 (e.g., 0.5 tab, 0.25 capsule)
+  const isSingular = amount === 1 || (amount > 0 && amount < 1)
 
   // Pluralization rules (singular -> plural)
   const pluralRules: Record<string, string> = {

@@ -24,6 +24,7 @@ import {
 import { Textarea } from '@/components/ui/textarea'
 import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
 import { Loader2, Pencil } from 'lucide-react'
+import { formatUnit } from './dose-logger-modal'
 import { substances } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
 import { useDoseStore } from '@/store/dose-store'
@@ -63,6 +64,26 @@ const settingOptions: ComboboxOption[] = [
   { value: 'bar', label: 'Bar/Club' },
   { value: 'travel', label: 'Traveling' },
   { value: 'other', label: 'Other' },
+]
+
+// Unit options for dose editing (values are singular form for consistent storage)
+const unitOptions: ComboboxOption[] = [
+  { value: 'mg', label: 'mg (milligrams)' },
+  { value: 'g', label: 'g (grams)' },
+  { value: 'μg', label: 'μg (micrograms)' },
+  { value: 'ml', label: 'ml (milliliters)' },
+  { value: 'drop', label: 'drop' },
+  { value: 'puff', label: 'puff' },
+  { value: 'tab', label: 'tab' },
+  { value: 'capsule', label: 'capsule' },
+  { value: 'hit', label: 'hit' },
+  { value: 'line', label: 'line' },
+  { value: 'drink', label: 'drink' },
+  { value: 'shot', label: 'shot' },
+  { value: 'joint', label: 'joint' },
+  { value: 'blunt', label: 'blunt' },
+  { value: 'bowl', label: 'bowl' },
+  { value: 'blinker', label: 'blinker' },
 ]
 
 export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseModalProps) {
@@ -157,7 +178,7 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
 
       toast({
         title: 'Dose updated',
-        description: `${substanceName} log has been saved.`,
+        description: `Successfully updated ${amount} ${formatUnit(unit, parseFloat(amount))} of ${substanceName}`,
       })
 
       if (onSaved) onSaved(updated)
@@ -215,14 +236,13 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
             </div>
             <div className="grid gap-2">
               <Label>Unit</Label>
-              <Select value={unit} onValueChange={setUnit}>
-                <SelectTrigger><SelectValue /></SelectTrigger>
-                <SelectContent>
-                  {['mg', 'g', 'μg', 'ml', 'drops', 'puffs', 'tabs', 'capsules', 'hits', 'lines', 'drinks', 'shots'].map((u) => (
-                    <SelectItem key={u} value={u}>{u}</SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
+              <Combobox
+                options={unitOptions}
+                value={unit}
+                onChange={setUnit}
+                placeholder="Select or type a unit..."
+                allowCustom
+              />
             </div>
           </div>
 

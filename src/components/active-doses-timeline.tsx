@@ -1,6 +1,57 @@
 'use client'
 
 import { formatDoseAmount } from '@/lib/utils'
+
+/** Format a unit with proper singular/plural based on amount */
+function formatUnit(unit: string, amount: number): string {
+  // Units that don't change (abbreviations)
+  const invariantUnits = ['mg', 'g', 'μg', 'ml', 'mL']
+  if (invariantUnits.includes(unit)) {
+    return unit
+  }
+
+  // Singular if exactly 1 OR fractional amount less than 1 (e.g., 0.5 tab, 0.25 capsule)
+  const isSingular = amount === 1 || (amount > 0 && amount < 1)
+
+  // Pluralization rules (singular -> plural)
+  const pluralRules: Record<string, string> = {
+    'drop': 'drops',
+    'puff': 'puffs',
+    'tab': 'tabs',
+    'capsule': 'capsules',
+    'hit': 'hits',
+    'line': 'lines',
+    'drink': 'drinks',
+    'shot': 'shots',
+    'joint': 'joints',
+    'blunt': 'blunts',
+    'bowl': 'bowls',
+    'blinker': 'blinkers',
+  }
+
+  // Reverse mapping for backwards compatibility (plural -> singular)
+  const singularRules: Record<string, string> = Object.fromEntries(
+    Object.entries(pluralRules).map(([sing, plur]) => [plur, sing])
+  )
+
+  // If the unit is already plural and we need singular
+  if (isSingular && singularRules[unit]) {
+    return singularRules[unit]
+  }
+
+  // If we have a known singular form and need plural
+  if (!isSingular && pluralRules[unit]) {
+    return pluralRules[unit]
+  }
+
+  // If the unit is already in correct form or unknown
+  // For unknown units, just add 's' if plural needed
+  if (!isSingular && !pluralRules[unit] && !singularRules[unit]) {
+    return unit + 's'
+  }
+
+  return unit
+}
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { format, addMinutes } from 'date-fns'
 import {
@@ -394,7 +445,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                           {(() => {
                             if (rg.uniformUnit) {
                               const formatted = formatDoseAmount(rg.totalAmount, rg.unit)
-                              return `${formatted.amount} ${formatted.unit}`
+                              return `${formatted.amount} ${formatUnit(formatted.unit, formatted.amount)}`
                             }
                             return `${rg.doses.length}×`
                           })()}
@@ -449,7 +500,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                                   <span className="font-medium text-foreground">
                                     {(() => {
                                       const formatted = formatDoseAmount(d.amount, d.unit)
-                                      return `${formatted.amount} ${formatted.unit}`
+                                      return `${formatted.amount} ${formatUnit(formatted.unit, formatted.amount)}`
                                     })()}
                                   </span>
                                   <span className="text-muted-foreground">@ {format(d.doseTime, 'h:mm a')}</span>
