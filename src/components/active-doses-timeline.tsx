@@ -398,7 +398,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                                       const formatted = formatDoseAmount(d.amount, d.unit)
                                       return `${formatted.amount} ${formatted.unit}`
                                     })()}
-                                  </span>                                  <span className="font-medium text-foreground">{d.amount} {d.unit}</span>
+                                  </span>
                                   <span className="text-muted-foreground">@ {format(d.doseTime, 'h:mm a')}</span>
                                   <span className={`font-medium ${dc.text}`}>
                                     {d.status.phase === 'not_started' ? 'upcoming'
@@ -487,59 +487,67 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       {/* Per-route area fills (behind curves) */}
                       {group.routes.map((rg) => {
                         const palette    = ROUTE_PALETTE[rg.paletteIndex]
-                        const rPrimary   = rg.primary
-                        if (rPrimary.status.phase === 'ended') return null
-                        const offsetMins = (rPrimary.doseTime.getTime() - group.windowStart.getTime()) / 60_000
-                        const area       = areaPath(rPrimary.timings, offsetMins, group.windowDuration)
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
-                        return (
-                          <path key={`area-${rg.route}`} d={area}
-                            fill={`url(#ag-${group.key}-${rg.paletteIndex})`}
-                            opacity={isIsolated ? 0.1 : 1}
-                            style={{ transition: 'opacity 0.2s ease' }}
-                          />
-                        )
+                        return rg.doses
+                          .filter((d) => d.status.phase !== 'ended')
+                          .map((d) => {
+                            const offsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+                            const area       = areaPath(d.timings, offsetMins, group.windowDuration)
+                            return (
+                              <path key={`area-${rg.route}-${d.id}`} d={area}
+                                fill={`url(#ag-${group.key}-${rg.paletteIndex})`}
+                                opacity={isIsolated ? 0.1 : 1}
+                                style={{ transition: 'opacity 0.2s ease' }}
+                              />
+                            )
+                          })
                       })}
 
                       {/* Per-route curves */}
                       {group.routes.map((rg) => {
                         const palette    = ROUTE_PALETTE[rg.paletteIndex]
-                        const rPrimary   = rg.primary
-                        if (rPrimary.status.phase === 'ended') return null
-                        const offsetMins = (rPrimary.doseTime.getTime() - group.windowStart.getTime()) / 60_000
-                        const curve      = curvePath(rPrimary.timings, offsetMins, group.windowDuration)
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
-                        return (
-                          <path key={`curve-${rg.route}`} d={curve}
-                            fill="none"
-                            stroke={palette.stroke}
-                            strokeWidth={selectedRoute === rg.route ? 3 : 2.5}
-                            filter={`url(#glow-${group.key}-${rg.paletteIndex})`}
-                            opacity={isIsolated ? 0.15 : 1}
-                            style={{ transition: 'opacity 0.2s ease' }}
-                          />
-                        )
+                        return rg.doses
+                          .filter((d) => d.status.phase !== 'ended')
+                          .map((d, di) => {
+                            const offsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+                            const curve      = curvePath(d.timings, offsetMins, group.windowDuration)
+                            // Dim non-primary curves slightly so the latest active stands out
+                            const isPrimary  = d.id === rg.primary.id
+                            return (
+                              <path key={`curve-${rg.route}-${d.id}`} d={curve}
+                                fill="none"
+                                stroke={palette.stroke}
+                                strokeWidth={selectedRoute === rg.route ? 3 : 2.5}
+                                filter={`url(#glow-${group.key}-${rg.paletteIndex})`}
+                                opacity={isIsolated ? 0.15 : isPrimary ? 1 : 0.5}
+                                style={{ transition: 'opacity 0.2s ease' }}
+                              />
+                            )
+                          })
                       })}
 
                       {/* Dose markers */}
                       {group.routes.map((rg) => {
                         const palette    = ROUTE_PALETTE[rg.paletteIndex]
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
-                        const offsetMins = (rg.primary.doseTime.getTime() - group.windowStart.getTime()) / 60_000
                         return (
                           <g key={`markers-${rg.route}`} opacity={isIsolated ? 0.2 : 1} style={{ transition: 'opacity 0.2s ease' }}>
-                            {rg.doses.map((d, di) => (
-                              <DoseMarker
-                                key={d.id}
-                                d={d}
-                                isPrimary={di === 0}
-                                groupKey={group.key}
-                                hex={palette.stroke}
-                                offsetMins={offsetMins}
-                                windowDuration={group.windowDuration}
-                                isFocused={focusedDoseId === d.id}
-                              />
-                            ))}
+                            {rg.doses.map((d, di) => { 
+                              const doseOffsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+                              return (
+                                <DoseMarker
+                                  key={d.id}
+                                  d={d}
+                                  isPrimary={di === 0}
+                                  groupKey={group.key}
+                                  hex={palette.stroke}
+                                  offsetMins={doseOffsetMins}
+                                  windowDuration={group.windowDuration}
+                                  isFocused={focusedDoseId === d.id}
+                                />
+                              )
+                            })}
                           </g>
                         )
                       })}

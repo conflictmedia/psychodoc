@@ -14,9 +14,15 @@ interface DoseMarkerProps {
 }
 
 export function DoseMarker({ d, isPrimary, hex, offsetMins, windowDuration, isFocused }: DoseMarkerProps) {
-  const localProgress  = d.status.phase === 'not_started' ? 0 : d.status.overallProgress
-  const localMins      = (localProgress / 100) * d.timings.totalDuration
-  const globalMins     = offsetMins + localMins
+
+  // How far through this dose's own duration we currently are (0–100)
+  const elapsedMins   = d.status.phase === 'not_started' ? 0
+                      : d.status.phase === 'ended'       ? d.timings.totalDuration
+                      : d.timings.totalDuration - d.status.totalRemaining
+  const localProgress = Math.max(0, Math.min(100, (elapsedMins / d.timings.totalDuration) * 100))
+
+  // Current wall-clock position from windowStart = static start offset + elapsed time within dose
+  const globalMins     = offsetMins + elapsedMins
   const globalProgress = (globalMins / windowDuration) * 100
 
   const mx       = toX(globalProgress)
