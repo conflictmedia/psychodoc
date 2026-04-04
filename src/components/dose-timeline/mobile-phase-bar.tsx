@@ -5,7 +5,7 @@ import { Clock, Layers } from 'lucide-react'
 import { Badge } from '@/components/ui/badge'
 import { SubstanceGroup } from './dose-timeline-types'
 import { phaseColors, phaseIcons, ROUTE_PALETTE, MOBILE_PHASES } from './dose-timeline-constants'
-import { formatMinutes, phaseStart, phaseEnd, isPhasePast } from './dose-timeline-utils'
+import { formatMinutes, phaseStart, phaseEnd, isPhasePast, formatPhaseName } from './dose-timeline-utils'
 import { formatDoseAmount } from '@/lib/utils'
 
 interface MobilePhaseBarProps {
@@ -54,7 +54,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
                       <span className="opacity-50">·</span>
                       <span>{formattedDose.amount} {formattedDose.unit} @ {format(d.doseTime, 'h:mm a')}</span>
                       <span className={`ml-1 text-[10px] font-medium ${phaseColors[d.status.phase].text}`}>
-                        {d.status.phase === 'not_started' ? 'upcoming' : d.status.phase}
+                        {formatPhaseName(d.status.phase).toLowerCase()}
                       </span>
                     </div>
                   )
@@ -66,9 +66,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
 
         <Badge className={`${colors.bg} text-white text-xs shrink-0`}>
           <PhaseIcon className="h-3 w-3 mr-1" />
-          {dose.status.phase === 'not_started'
-            ? 'Upcoming'
-            : dose.status.phase.charAt(0).toUpperCase() + dose.status.phase.slice(1)}
+          {formatPhaseName(dose.status.phase)}
         </Badge>
       </div>
 

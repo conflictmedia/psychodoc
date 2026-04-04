@@ -36,11 +36,14 @@ import {
   PT,
   GW,
   GH,
+  PHASE_BANDS,
+  ENDED_DOSE_RETENTION_MINS,
 } from './dose-timeline/dose-timeline-constants'
 import {
   calculatePhaseTimings,
   getPhaseStatus,
   formatMinutes,
+  formatPhaseName,
   getDoseCategories,
   intensityAt,
   phaseNameAt,
@@ -48,6 +51,7 @@ import {
   areaPath,
   curvePath,
   buildTimeMarkers,
+  getPhaseBandRanges,
 } from './dose-timeline/dose-timeline-utils'
 import { DoseMarker } from './dose-timeline/dose-marker'
 import { MobilePhaseBar } from './dose-timeline/mobile-phase-bar'
@@ -65,31 +69,47 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   const [expandedGroup, setExpandedGroup]   = useState<string | null>(null)
   const [selectedRoutes, setSelectedRoutes] = useState<Record<string, string | null>>({})
   const [focusedDoseId, setFocusedDoseId]   = useState<string | null>(null)
-  const svgRefs = useRef<Record<string, SVGSVGElement | null>>({})
-  const rafRef  = useRef<number | null>(null)
+  const svgRefs    = useRef<Record<string, SVGSVGElement | null>>({})
+  // One RAF ref per group to avoid cross-group cancellation conflicts
+  const rafRefs    = useRef<Record<string, number | null>>({})
+  // Focus timeout ref so it can be cleared on unmount
+  const focusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const id = setInterval(() => setTick((t) => t + 1), 60_000)
     return () => clearInterval(id)
   }, [])
 
+  // Clean up focus timer on unmount
+  useEffect(() => {
+    return () => {
+      if (focusTimerRef.current !== null) clearTimeout(focusTimerRef.current)
+    }
+  }, [])
+
   // ── Enrich doses ─────────────────────────────────────────────────────────
-  const enriched = useMemo<EnrichedDose[]>(() => {
+  // Heavy grouping/sorting only depends on `doses`. Status refresh (tick) is
+  // applied in a separate lightweight pass so the group structure stays stable.
+  const baseDoses = useMemo(() => {
     return doses
       .filter((d) => d.duration)
       .map((d) => {
         const timings  = calculatePhaseTimings(d.duration!)
         const doseTime = new Date(d.timestamp)
-        const status   = getPhaseStatus(doseTime, timings)
-        return { ...d, timings, status, doseTime }
+        return { ...d, timings, doseTime }
       })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [doses, refreshTrigger])
+
+  const enriched = useMemo<EnrichedDose[]>(() => {
+    return baseDoses
+      .map((d) => ({ ...d, status: getPhaseStatus(d.doseTime, d.timings) }))
       .filter((d) => {
         if (d.status.phase !== 'ended') return true
         const sinceEnd = (Date.now() - d.doseTime.getTime()) / 60_000 - d.timings.totalDuration
-        return sinceEnd < 720
+        return sinceEnd < ENDED_DOSE_RETENTION_MINS
       })
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [doses, tick, refreshTrigger])
+  }, [baseDoses, tick])
 
   // ── Group by substance, then sub-group by route ───────────────────────────
   const groups = useMemo<SubstanceGroup[]>(() => {
@@ -127,8 +147,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
         }
       })
 
-      // Base the window only on active doses so ended doses don't skew the time axis.
-      // Fall back to all doses only when everything has ended.
       const activeItems = items.filter((d) => d.status.phase !== 'ended')
       const windowItems = activeItems.length > 0 ? activeItems : items
       const windowStart = new Date(Math.min(...windowItems.map((d) => d.doseTime.getTime())))
@@ -156,19 +174,45 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   // ── SVG mouse interaction ─────────────────────────────────────────────────
 
   const handleMouseMove = useCallback(
-    (groupKey: string, e: React.MouseEvent<SVGSVGElement>, windowDuration: number, windowStart: Date) => {
-      if (rafRef.current !== null) return
-      const { clientX } = e
+    (groupKey: string, e: React.MouseEvent<SVGSVGElement> | React.TouchEvent<SVGSVGElement>, windowDuration: number, windowStart: Date) => {
+      // Cancel any pending RAF for this specific group
+      const pendingRaf = rafRefs.current[groupKey]
+      if (pendingRaf !== null && pendingRaf !== undefined) {
+        cancelAnimationFrame(pendingRaf)
+      }
+
+      const clientX = 'touches' in e
+        ? e.touches[0]?.clientX ?? 0
+        : e.clientX
       const svgEl = e.currentTarget
-      rafRef.current = requestAnimationFrame(() => {
-        rafRef.current = null
-        // getScreenCTM gives the correct mapping even with preserveAspectRatio letterboxing
+
+      rafRefs.current[groupKey] = requestAnimationFrame(() => {
+        rafRefs.current[groupKey] = null
         const ctm      = svgEl.getScreenCTM()
         const svgX     = ctm ? (clientX - ctm.e) / ctm.a : 0
         const progress = Math.max(0, Math.min(100, ((svgX - PL) / GW) * 100))
         const mins     = (progress / 100) * windowDuration
         const group    = groups.find((g) => g.key === groupKey)
-        const refTimings = group?.routes[0]?.primary.timings
+
+        // Find the route whose curve is closest to the cursor's x position —
+        // use that route's timings for the phase label, not always routes[0].
+        const hoverMins = mins
+        let closestRoute = group?.routes[0]
+        if (group) {
+          let minDist = Infinity
+          for (const rg of group.routes) {
+            if (rg.primary.status.phase === 'ended') continue
+            const offsetMins = (rg.primary.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+            const routeMidMins = offsetMins + rg.primary.timings.totalDuration / 2
+            const dist = Math.abs(hoverMins - routeMidMins)
+            if (dist < minDist) {
+              minDist = dist
+              closestRoute = rg
+            }
+          }
+        }
+        const refTimings = closestRoute?.primary.timings
+
         setTooltips((prev) => ({
           ...prev,
           [groupKey]: {
@@ -185,9 +229,10 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   )
 
   const handleMouseLeave = useCallback((key: string) => {
-    if (rafRef.current !== null) {
-      cancelAnimationFrame(rafRef.current)
-      rafRef.current = null
+    const pendingRaf = rafRefs.current[key]
+    if (pendingRaf !== null && pendingRaf !== undefined) {
+      cancelAnimationFrame(pendingRaf)
+      rafRefs.current[key] = null
     }
     setTooltips((prev) => {
       const next = { ...prev }
@@ -207,7 +252,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     setFocusedDoseId(doseId)
     const svg = svgRefs.current[substanceKey]
     if (svg) svg.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
-    setTimeout(() => setFocusedDoseId(null), 1800)
+    if (focusTimerRef.current !== null) clearTimeout(focusTimerRef.current)
+    focusTimerRef.current = setTimeout(() => setFocusedDoseId(null), 1800)
   }, [])
 
   // ── Helpers ───────────────────────────────────────────────────────────────
@@ -260,26 +306,17 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
             const PhaseIcon    = phaseIcons[dose.status.phase]
             const isMultiRoute = group.routes.length > 1
             const isExpanded   = expandedGroup === group.key
+            const expandedId   = `expanded-${group.key}`
             const tip          = tooltips[group.key]
             const marks        = buildTimeMarkers(group.windowDuration, group.windowStart)
 
             // Phase labels + background rects driven by earliest active route
             const refRoute   = group.routes.find((r) => r.primary.status.phase !== 'ended') ?? group.routes[0]
             const refTimings = refRoute.primary.timings
-            const phaseLabels = [
-              { name: 'Onset',  s: 0,                                                       e: (refTimings.onsetEnd  / refTimings.totalDuration) * 100, color: '#60a5fa' },
-              { name: 'Comeup', s: (refTimings.onsetEnd  / refTimings.totalDuration) * 100, e: (refTimings.comeupEnd / refTimings.totalDuration) * 100, color: '#fbbf24' },
-              { name: 'Peak',   s: (refTimings.comeupEnd / refTimings.totalDuration) * 100, e: (refTimings.peakEnd   / refTimings.totalDuration) * 100, color: '#c084fc' },
-              { name: 'Offset', s: (refTimings.peakEnd   / refTimings.totalDuration) * 100, e: 100,                                                     color: '#22d3ee' },
-            ]
-            const phaseRects = [
-              { start: 0,                    end: refTimings.onsetEnd,  fill: '#3b82f6' },
-              { start: refTimings.onsetEnd,  end: refTimings.comeupEnd, fill: '#f59e0b' },
-              { start: refTimings.comeupEnd, end: refTimings.peakEnd,   fill: '#a855f7' },
-              { start: refTimings.peakEnd,   end: refTimings.offsetEnd, fill: '#06b6d4' },
-            ]
+            // Single pass: combine band fill + label color from PHASE_BANDS constant
+            const bandRanges = getPhaseBandRanges(refTimings)
 
-            const allActive    = group.routes.some((r) => r.primary.status.phase !== 'ended')
+            const allActive     = group.routes.some((r) => r.primary.status.phase !== 'ended')
             const selectedRoute = selectedRoutes[group.key] ?? null
 
             return (
@@ -312,9 +349,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                     ))}
                     <Badge className={`${colors.bg} text-white text-xs shadow-sm`}>
                       <PhaseIcon className="h-3 w-3 mr-1" />
-                      {dose.status.phase === 'not_started'
-                        ? 'Upcoming'
-                        : dose.status.phase.charAt(0).toUpperCase() + dose.status.phase.slice(1)}
+                      {formatPhaseName(dose.status.phase)}
                     </Badge>
                   </div>
 
@@ -331,6 +366,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         <button
                           key={rg.route}
                           onClick={() => handleRouteClick(group.key, rg.route)}
+                          aria-pressed={selectedRoute === rg.route}
                           className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-xs font-semibold transition-all duration-200 cursor-pointer"
                           style={{
                             borderColor:   palette.stroke,
@@ -390,6 +426,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                                 <button
                                   key={d.id}
                                   onClick={() => handleDoseChipClick(d.id, group.key)}
+                                  aria-pressed={isFocused}
+                                  aria-describedby={`${group.key}-graph`}
                                   className={`inline-flex items-center gap-1 text-xs px-2 py-0.5 rounded-md border transition-all duration-150 cursor-pointer
                                     ${dc.fill} ${dc.border}
                                     ${isFocused ? 'ring-2 ring-offset-1 ring-offset-background scale-105' : 'hover:brightness-125 hover:scale-[1.03]'}
@@ -423,13 +461,20 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                 {allActive && (
                   <div className="relative w-full overflow-hidden">
                     <svg
+                      id={`${group.key}-graph`}
                       ref={(el) => { svgRefs.current[group.key] = el }}
                       viewBox={`0 0 ${SVG_W} ${SVG_H}`}
                       className="w-full h-auto max-h-56 cursor-crosshair"
                       preserveAspectRatio="xMidYMid meet"
+                      role="img"
+                      aria-label={`Effect intensity timeline for ${group.substanceName}`}
                       onMouseMove={(e) => handleMouseMove(group.key, e, group.windowDuration, group.windowStart)}
                       onMouseLeave={() => handleMouseLeave(group.key)}
+                      onTouchMove={(e) => handleMouseMove(group.key, e, group.windowDuration, group.windowStart)}
+                      onTouchEnd={() => handleMouseLeave(group.key)}
                     >
+                      <title>Effect intensity timeline for {group.substanceName}</title>
+
                       <defs>
                         {group.routes.map((rg) => {
                           const palette = ROUTE_PALETTE[rg.paletteIndex]
@@ -455,17 +500,20 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         </filter>
                       </defs>
 
-                      {/* Phase background bands */}
+                      {/* Phase background bands + labels — single pass over PHASE_BANDS */}
                       <g opacity="0.12">
-                        {phaseRects.map((r, i) => (
-                          <rect key={i}
-                            x={toX((r.start / refTimings.totalDuration) * 100)}
-                            y={PT}
-                            width={((r.end - r.start) / refTimings.totalDuration) * GW}
-                            height={GH}
-                            fill={r.fill}
-                          />
-                        ))}
+                        {PHASE_BANDS.map((band, i) => {
+                          const { startFrac, endFrac } = bandRanges[i]
+                          return (
+                            <rect key={band.name}
+                              x={toX(startFrac * 100)}
+                              y={PT}
+                              width={(endFrac - startFrac) * GW}
+                              height={GH}
+                              fill={band.fill}
+                            />
+                          )
+                        })}
                       </g>
 
                       {/* Grid lines */}
@@ -476,14 +524,16 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         ))}
                       </g>
 
-                      {/* Phase label strip (top) */}
-                      {phaseLabels.map((lbl, i) => {
-                        const px = ((lbl.e - lbl.s) / 100) * GW
+                      {/* Phase label strip (top) — same pass over PHASE_BANDS */}
+                      {PHASE_BANDS.map((band, i) => {
+                        const { startFrac, endFrac } = bandRanges[i]
+                        const px = (endFrac - startFrac) * GW
                         if (px < 12) return null
+                        const midProgress = ((startFrac + endFrac) / 2) * 100
                         return (
-                          <text key={i} x={toX((lbl.s + lbl.e) / 2)} y={PT - 8}
-                            textAnchor="middle" fontSize="11" fontWeight="600" fill={lbl.color} opacity="0.9">
-                            {px < 40 ? lbl.name.slice(0, 1) : px < 70 ? lbl.name.slice(0, 2) : lbl.name}
+                          <text key={band.name} x={toX(midProgress)} y={PT - 8}
+                            textAnchor="middle" fontSize="11" fontWeight="600" fill={band.labelColor} opacity="0.9">
+                            {px < 40 ? band.name.slice(0, 1) : px < 70 ? band.name.slice(0, 2) : band.name}
                           </text>
                         )
                       })}
@@ -513,10 +563,9 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
                         return rg.doses
                           .filter((d) => d.status.phase !== 'ended')
-                          .map((d, di) => {
+                          .map((d) => {
                             const offsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
                             const curve      = curvePath(d.timings, offsetMins, group.windowDuration)
-                            // Dim non-primary curves slightly so the latest active stands out
                             const isPrimary  = d.id === rg.primary.id
                             return (
                               <path key={`curve-${rg.route}-${d.id}`} d={curve}
@@ -537,7 +586,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
                         return (
                           <g key={`markers-${rg.route}`} opacity={isIsolated ? 0.2 : 1} style={{ transition: 'opacity 0.2s ease' }}>
-                            {rg.doses.filter((d) => d.status.phase !== 'ended').map((d, di) => { 
+                            {rg.doses.filter((d) => d.status.phase !== 'ended').map((d, di) => {
                               const doseOffsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
                               return (
                                 <DoseMarker
@@ -577,6 +626,9 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                             return (
                               <g key={rg.route}
                                 onClick={() => handleRouteClick(group.key, rg.route)}
+                                role="button"
+                                aria-pressed={isSelected}
+                                aria-label={`${isSelected ? 'Deselect' : 'Isolate'} ${rg.route} route`}
                                 className="cursor-pointer"
                                 opacity={isIsolated ? 0.35 : 1}
                                 style={{ transition: 'opacity 0.2s ease' }}
@@ -691,6 +743,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       onClick={() => setExpandedGroup(isExpanded ? null : group.key)}
                       className="p-1 hover:bg-muted/50 rounded transition-colors"
                       aria-label={isExpanded ? 'Collapse phase details' : 'Expand phase details'}
+                      aria-expanded={isExpanded}
+                      aria-controls={expandedId}
                     >
                       {isExpanded ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
                     </button>
@@ -699,7 +753,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
 
                 {/* ── Expanded phase details ────────────────────────────── */}
                 {isExpanded && (
-                  <div className="pt-3 border-t border-border/50 space-y-3">
+                  <div id={expandedId} className="pt-3 border-t border-border/50 space-y-3">
                     <div className="grid grid-cols-4 gap-2 text-center text-xs">
                       {([
                         { label: 'Onset',  time: dose.duration?.onset,  pc: phaseColors.onset  },

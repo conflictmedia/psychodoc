@@ -82,6 +82,15 @@ export function formatMinutes(minutes: number): string {
   return m === 0 ? `${h}h` : `${h}h ${m}m`
 }
 
+/**
+ * Returns a display-ready capitalised phase name.
+ * e.g. 'not_started' → 'Upcoming', 'comeup' → 'Comeup'
+ */
+export function formatPhaseName(phase: PhaseStatus['phase']): string {
+  if (phase === 'not_started') return 'Upcoming'
+  return phase.charAt(0).toUpperCase() + phase.slice(1)
+}
+
 export function getDoseCategories(dose: DoseLog): string[] {
   if (Array.isArray(dose.categories)) return dose.categories
   const legacy = (dose as any).category as string | undefined
@@ -91,6 +100,13 @@ export function getDoseCategories(dose: DoseLog): string[] {
 
 // ─── INTENSITY CURVE MATH ─────────────────────────────────────────────────────
 
+/**
+ * Returns the estimated effect intensity at a given point in the dose's lifecycle.
+ *
+ * @param progress - How far through the dose we are, as a value from 0 to 100.
+ * @param t        - Phase timing boundaries for this dose.
+ * @returns        Intensity on a scale of 0–100, where 100 represents peak effect.
+ */
 export function intensityAt(progress: number, t: PhaseTimings): number {
   const mins = (progress / 100) * t.totalDuration
 
@@ -189,4 +205,20 @@ export function buildTimeMarkers(windowDuration: number, windowStart: Date) {
     if (p <= 100) marks.push({ progress: p, label: format(addHours(windowStart, h), 'h:mm') })
   }
   return marks
+}
+
+// ─── PHASE BAND BOUNDARIES ────────────────────────────────────────────────────
+/**
+ * Computes normalised start/end fractions (0–1) for each phase band
+ * given a set of phase timings. Used to render both phase background
+ * rects and phase label text in a single pass.
+ */
+export function getPhaseBandRanges(t: PhaseTimings) {
+  const total = t.totalDuration
+  return [
+    { startFrac: 0,                    endFrac: t.onsetEnd  / total },
+    { startFrac: t.onsetEnd  / total,  endFrac: t.comeupEnd / total },
+    { startFrac: t.comeupEnd / total,  endFrac: t.peakEnd   / total },
+    { startFrac: t.peakEnd   / total,  endFrac: 1                   },
+  ]
 }

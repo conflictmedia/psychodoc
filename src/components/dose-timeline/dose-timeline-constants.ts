@@ -80,3 +80,18 @@ export const MOBILE_PHASES = [
 ] as const
 
 export const PHASE_ORDER = ['onset', 'comeup', 'peak', 'offset'] as const
+
+// ─── PHASE BOUNDARY DATA ─────────────────────────────────────────────────────
+// Combines fill color + label color into a single array to avoid duplication.
+
+export const PHASE_BANDS = [
+  { name: 'Onset',  fill: '#3b82f6', labelColor: '#60a5fa' },
+  { name: 'Comeup', fill: '#f59e0b', labelColor: '#fbbf24' },
+  { name: 'Peak',   fill: '#a855f7', labelColor: '#c084fc' },
+  { name: 'Offset', fill: '#06b6d4', labelColor: '#22d3ee' },
+] as const
+
+// ─── RETENTION WINDOW ────────────────────────────────────────────────────────
+// How long after a dose ends (in minutes) it remains visible on the timeline.
+
+export const ENDED_DOSE_RETENTION_MINS = 720 // 12 hours

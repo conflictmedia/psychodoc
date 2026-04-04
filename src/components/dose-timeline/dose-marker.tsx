@@ -35,7 +35,11 @@ export function DoseMarker({ d, isPrimary, hex, offsetMins, windowDuration, isFo
   const formattedDose = formatDoseAmount(d.amount, d.unit)
 
   return (
-    <g opacity={isEnded ? 0.35 : 1}>
+    <g
+      opacity={isEnded ? 0.35 : 1}
+      role="img"
+      aria-label={`${formattedDose.amount} ${formattedDose.unit} dose marker`}
+    >
       {/* Vertical guide line */}
       {!isEnded && (
         <line
