@@ -1220,7 +1220,10 @@ function HomeContent() {
                 onClick={() => { 
                   setDesktopView('substances')
                   setSelectedCategory('all')
-                  router.push(pathname)
+                  // Only navigate if there are query params to clear
+                  if (searchParams.toString()) {
+                    router.push(pathname)
+                  }
                 }}
               >
                 <Info className="h-4 w-4" />
@@ -1250,7 +1253,10 @@ function HomeContent() {
                     onClick={() => { 
                       setDesktopView('substances')
                       setSelectedCategory(category.id)
-                      router.push(pathname)
+                      // Only navigate if there are query params to clear
+                      if (searchParams.toString()) {
+                        router.push(pathname)
+                      }
                     }}
                   >
                     <Icon className="h-4 w-4" />
@@ -1509,8 +1515,10 @@ function HomeContent() {
             <div className="px-4 pt-3 pb-1">
               <CategoryChipRow selected={selectedCategory} onChange={(cat) => {
               setSelectedCategory(cat)
-              // Clear URL when selecting a category
-              router.push(pathname)
+              // Only navigate if there are query params to clear
+              if (searchParams.toString()) {
+                router.push(pathname)
+              }
             }} />
             </div>
 
@@ -1607,7 +1615,10 @@ function HomeContent() {
           // Sync desktop view
           if (tab === 'substances') {
             setDesktopView('substances')
-            router.push(pathname)
+            // Only navigate if there are query params to clear
+            if (searchParams.toString()) {
+              router.push(pathname)
+            }
           } else {
             setDesktopView('dose-log')
             router.push(`${pathname}?view=${tab}`)
