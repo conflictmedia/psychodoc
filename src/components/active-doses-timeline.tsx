@@ -127,9 +127,13 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
         }
       })
 
-      const windowStart = new Date(Math.min(...items.map((d) => d.doseTime.getTime())))
+      // Base the window only on active doses so ended doses don't skew the time axis.
+      // Fall back to all doses only when everything has ended.
+      const activeItems = items.filter((d) => d.status.phase !== 'ended')
+      const windowItems = activeItems.length > 0 ? activeItems : items
+      const windowStart = new Date(Math.min(...windowItems.map((d) => d.doseTime.getTime())))
       let maxEnd = 0
-      for (const d of items) {
+      for (const d of windowItems) {
         const offsetMins = (d.doseTime.getTime() - windowStart.getTime()) / 60_000
         maxEnd = Math.max(maxEnd, offsetMins + d.timings.totalDuration)
       }
@@ -533,7 +537,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
                         return (
                           <g key={`markers-${rg.route}`} opacity={isIsolated ? 0.2 : 1} style={{ transition: 'opacity 0.2s ease' }}>
-                            {rg.doses.map((d, di) => { 
+                            {rg.doses.filter((d) => d.status.phase !== 'ended').map((d, di) => { 
                               const doseOffsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
                               return (
                                 <DoseMarker
