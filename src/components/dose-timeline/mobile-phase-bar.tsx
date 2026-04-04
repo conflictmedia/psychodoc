@@ -149,7 +149,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
           <div className="flex items-center gap-1.5 font-semibold text-base">
             {knownSubstance ? (
               <Link
-                href={`/substances/${knownSubstance.id}`}
+                href={`/?substance=${knownSubstance.id}`}
                 className="hover:underline hover:text-primary transition-colors"
               >
                 {group.substanceName}

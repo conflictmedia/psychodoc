@@ -1,57 +1,6 @@
 'use client'
 
 import { formatDoseAmount } from '@/lib/utils'
-
-/** Format a unit with proper singular/plural based on amount */
-function formatUnit(unit: string, amount: number): string {
-  // Units that don't change (abbreviations)
-  const invariantUnits = ['mg', 'g', 'μg', 'ml', 'mL']
-  if (invariantUnits.includes(unit)) {
-    return unit
-  }
-
-  // Singular if exactly 1 OR fractional amount less than 1 (e.g., 0.5 tab, 0.25 capsule)
-  const isSingular = amount === 1 || (amount > 0 && amount < 1)
-
-  // Pluralization rules (singular -> plural)
-  const pluralRules: Record<string, string> = {
-    'drop': 'drops',
-    'puff': 'puffs',
-    'tab': 'tabs',
-    'capsule': 'capsules',
-    'hit': 'hits',
-    'line': 'lines',
-    'drink': 'drinks',
-    'shot': 'shots',
-    'joint': 'joints',
-    'blunt': 'blunts',
-    'bowl': 'bowls',
-    'blinker': 'blinkers',
-  }
-
-  // Reverse mapping for backwards compatibility (plural -> singular)
-  const singularRules: Record<string, string> = Object.fromEntries(
-    Object.entries(pluralRules).map(([sing, plur]) => [plur, sing])
-  )
-
-  // If the unit is already plural and we need singular
-  if (isSingular && singularRules[unit]) {
-    return singularRules[unit]
-  }
-
-  // If we have a known singular form and need plural
-  if (!isSingular && pluralRules[unit]) {
-    return pluralRules[unit]
-  }
-
-  // If the unit is already in correct form or unknown
-  // For unknown units, just add 's' if plural needed
-  if (!isSingular && !pluralRules[unit] && !singularRules[unit]) {
-    return unit + 's'
-  }
-
-  return unit
-}
 import { useState, useRef } from 'react'
 import { format, isToday, isYesterday, isThisWeek, isThisMonth } from 'date-fns'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -435,6 +384,7 @@ export function DoseHistory() {
   const csvInputRef = useRef<HTMLInputElement>(null)
   const jsonInputRef = useRef<HTMLInputElement>(null)
   const psyloJsonInputRef = useRef<HTMLInputElement>(null)
+  const redosingRef = useRef(false)
 
   if (!isLoaded) {
     return (
@@ -632,27 +582,47 @@ export function DoseHistory() {
   }
 
   const handleRedose = async (dose: DoseLog) => {
+    if (redosingRef.current) return // Synchronous guard — safe on mobile double-tap
+    redosingRef.current = true
     setRedosing(dose.id)
-    const now = new Date().toISOString()
-    addDose({
-      id: crypto.randomUUID(),
-      timestamp: now,
-      createdAt: now,
-      updatedAt: now,
-      substanceId: dose.substanceId,
-      substanceName: dose.substanceName,
-      categories: dose.categories,
-      amount: dose.amount,
-      unit: dose.unit,
-      route: dose.route,
-      duration: dose.duration,
-      intensity: dose.intensity,
-      mood: dose.mood,
-      setting: dose.setting,
-      notes: dose.notes ? `Redose — ${dose.notes}` : 'Redose',
-    })
-    setRedosing(null)
-    toast({ title: 'Redose logged', description: `${dose.substanceName} logged again.` })
+
+    try {
+      const now = new Date().toISOString()
+      const result = addDose({
+        id: crypto.randomUUID(),
+        timestamp: now,
+        createdAt: now,
+        updatedAt: now,
+        substanceId: dose.substanceId,
+        substanceName: dose.substanceName,
+        categories: dose.categories,
+        amount: dose.amount,
+        unit: dose.unit,
+        route: dose.route,
+        duration: dose.duration,
+        intensity: dose.intensity,
+        mood: dose.mood,
+        setting: dose.setting,
+        notes: dose.notes ? `Redose — ${dose.notes}` : 'Redose',
+      })
+
+      // Handle if addDose returns a promise (async storage)
+      if (result instanceof Promise) {
+        await result
+      }
+
+      toast({ title: 'Redose logged', description: `${dose.substanceName} logged again.` })
+    } catch (error) {
+      console.error('Redose failed:', error)
+      toast({
+        title: 'Redose failed',
+        description: 'Could not log redose. Please try again.',
+        variant: 'destructive'
+      })
+    } finally {
+      redosingRef.current = false
+      setRedosing(null)
+    }
   }
 
   const groupDosesByDate = (doses: DoseLog[]) => {
@@ -861,7 +831,7 @@ export function DoseHistory() {
                                     <Droplets className="h-3 w-3 shrink-0" />
                                     {(() => {
                                       const formatted = formatDoseAmount(dose.amount, dose.unit)
-                                      return `${formatted.amount} ${formatUnit(formatted.unit, formatted.amount)}`
+                                      return `${formatted.amount} ${formatted.unit}`
                                     })()}
                                   </span>
                                   <span className="flex items-center gap-1">
@@ -874,7 +844,7 @@ export function DoseHistory() {
                                 <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => setEditingDose(dose)}>
                                   <Pencil className="h-4 w-4" />
                                 </Button>
-                                <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleRedose(dose)} disabled={redosing === dose.id}>
+                                <Button variant="ghost" size="icon" className="h-8 w-8 touch-manipulation" onClick={() => handleRedose(dose)} disabled={redosing === dose.id}>
                                   {redosing === dose.id ? <Loader2 className="animate-spin h-4 w-4" /> : <RotateCcw className="h-4 w-4" />}
                                 </Button>
                                 <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive" onClick={() => handleDelete(dose.id)} disabled={deleting === dose.id}>
