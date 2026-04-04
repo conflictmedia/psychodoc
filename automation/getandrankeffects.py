@@ -1,6 +1,7 @@
 import mwparserfromhell
 import requests
 import re
+import argparse
 
 BASE = "https://psychonautwiki.org/w/api.php"
 
@@ -328,11 +329,23 @@ class HybridSentimentClassifier:
 # USAGE
 # ============================================
 
-# if __name__ == "__main__":
-#     # Get effects for any substance
-#     positive = get_positive_effects("LSD")
-#     negative = get_negative_effects("LSD")
-#     neutral = get_neutral_effects("LSD")
+if __name__ == "__main__":
+
+    ap = argparse.ArgumentParser("substance2parse")
+    ap.add_argument("substance", help="substance to get and rank effects for")
+    args = ap.parse_args()
+    
+    # Get effects for any substance
+    positive = get_positive_effects(args.substance)
+    negative = get_negative_effects(args.substance)
+    neutral = get_neutral_effects(args.substance)
+
+    print("positive: ")
+    print(positive)
+    print("negative: ")
+    print(negative)
+    print("neutral: ")
+    print(neutral)
     
 #     print(f"Positive: {len(positive)} effects")
 #     print(f"Negative: {len(negative)} effects")
