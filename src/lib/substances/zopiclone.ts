@@ -78,7 +78,10 @@ export const zopiclone: Substance =
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "Zopiclone is extremely physically and psychologically addictive. This compound may have an even greater addictive potential than benzodiazepines.",
     "Tolerance will develop to the sedative-hypnotic effects within a couple of weeks of daily use. After cessation, the tolerance returns to baseline in 7 - 14 days. Withdrawal symptoms or rebound symptoms may occur after ceasing usage abruptly following a few weeks or longer of steady dosing, and may necessitate a gradual dose reduction.",
-    "Zopiclone presents cross-tolerance with all benzodiazepines, meaning that after its consumption benzodiazepines and most other GABAgenic depressants will have a reduced effect."
+    "Zopiclone presents cross-tolerance with all benzodiazepines, meaning that after its consumption benzodiazepines and most other GABAgenic depressants will have a reduced effect.",
+    "Depressants (1,4-Butanediol, 2-methyl-2-butanol, alcohol, barbiturates, GHB/GBL, methaqualone, opioids) - This combination can result in dangerous or even fatal levels of respiratory depression. These substances potentiate the muscle relaxation, sedation and amnesia caused by one another and can lead to unexpected loss of consciousness at high doses. There is also an increased risk of vomiting during unconsciousness and death from the resulting suffocation. If this occurs, users should attempt to fall asleep in the recovery position or have a friend move them into it.",
+    "Dissociatives - This combination can result in an increased risk of vomiting during unconsciousness and death from the resulting suffocation. If this occurs, users should attempt to fall asleep in the recovery position or have a friend move them into it.",
+    "Grapefruit - Caution should be taken when zopiclone is taken with grapefruit as it inhibits CYP3A4 prolonging zopiclone's duration and potentiates its sedative effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

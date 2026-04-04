@@ -127,7 +127,8 @@ export const _3_meo_pce: Substance =
     "Pelvic and bladder pain - Pain can develop suddenly and severely, especially since the bladder fills with urine.",
     "Hematuria - Hematuria is visible blood in the urine.",
     "Incontinence - This is the leakage of urine.",
-    "All of these, however, can easily be avoided by simply not using 3-MeO-PCE on a daily or even weekly basis and consciously limiting one's usage of the substance."
+    "All of these, however, can easily be avoided by simply not using 3-MeO-PCE on a daily or even weekly basis and consciously limiting one's usage of the substance.",
+    "Psychedelics - This combination is not advised because 3-MeO-PCE has been reported to cause extreme psychological disturbances such as psychosis and mania at a significantly higher rate than other dissociatives."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

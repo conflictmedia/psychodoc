@@ -160,7 +160,8 @@ export const _3_meo_pcp: Substance =
     "Pelvic and bladder pain - Pain can develop suddenly and severely, particularly as the bladder fills with urine.",
     "Hematuria - Hematuria is visible blood in the urine.",
     "Incontinence - This is the leakage of urine.",
-    "These effects can be mitigated by refraining from using 3-MeO-PCP regularly (on a daily or weekly basis) and manually limiting one's usage of the substance."
+    "These effects can be mitigated by refraining from using 3-MeO-PCP regularly (on a daily or weekly basis) and manually limiting one's usage of the substance.",
+    "MDMA: 3-MeO-PCP acts as a mild serotonin releasing agent and could interact negatively with the serotonin release of MDMA"
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

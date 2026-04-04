@@ -120,7 +120,9 @@ export const mephedrone: Substance =
     "Despite similarities to known neurotoxins such as methamphetamine and other cathinone derivatives, mephedrone does not appear to produce neurotoxic effects in the dopamine system of mice.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",
     "As with other stimulants, the chronic use of mephedrone can be considered highly addictive with an extreme potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
-    "Tolerance to many of the effects of mephedrone develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Mephedrone presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of mephedrone all stimulants will have a reduced effect."
+    "Tolerance to many of the effects of mephedrone develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Mephedrone presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of mephedrone all stimulants will have a reduced effect.",
+    "MDMA - The neurotoxic effects of MDMA may be increased when combined with other stimulants.",
+    "Cocaine - This combination may increase strain on the heart."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

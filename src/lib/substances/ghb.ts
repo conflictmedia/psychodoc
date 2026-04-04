@@ -119,7 +119,19 @@ export const ghb: Substance =
     "GHB, when used medicinally (two medicinal doses per day, four hours apart), creates little to no dependance while the more frequent one uses GHB, it causes exponentially more dependance and withdrawal symptoms.",
     "Although there have been reported fatalities due to GHB withdrawal, reports are inconclusive and further research is needed.",
     "Tolerance will develop to the sedative-hypnotic effects within several days of continuous use. After cessation, the tolerance returns to baseline in 7 - 14 days. Withdrawal symptoms or rebound symptoms may occur after ceasing usage abruptly following a few weeks or longer of steady dosing, and may necessitate a gradual dose reduction to minimize neurotoxicity from withdrawal. It is proposed that GHB and especially GBL can lead to dependence at a significantly faster rate than longer-acting depressants.",
-    "GHB presents cross-tolerance with 1,4-Butanediol and GBL, since these act as prodrugs for GHB. with alcohol and baclofen has been shown in rats, and is likely with other GABAB-agonists."
+    "GHB presents cross-tolerance with 1,4-Butanediol and GBL, since these act as prodrugs for GHB. with alcohol and baclofen has been shown in rats, and is likely with other GABAB-agonists.",
+    "Nitrous - Both substances potentiate the ataxia and sedation caused by the other and can lead to unexpected loss of consciousness at high doses. While unconscious, vomit aspiration is a risk if not placed in the recovery position. Memory blackouts are likely.",
+    "Amphetamines - Stimulants increase respiration rate allowing a higher dose of sedatives. If the stimulant wears off first then the GHB may overcome the patient and cause respiratory arrest.",
+    "MDMA - Large amounts of GHB/GBL may overwhelm the effects of MDMA on the comedown.",
+    "Cocaine - Stimulants increase respiration rate allowing a higher dose of sedatives. If the stimulant wears off first then the GHB may overcome the patient and cause respiratory arrest. Likewise the GHB can wear off and leave a dangerous concentration of Cocaine behind.",
+    "Ketamine - Both substances cause ataxia and bring a risk of vomiting and unconsciousness. If the user falls unconscious while under the influence there is a severe risk of vomit aspiration if they are not placed in the recovery position.",
+    "MXE - Both substances cause ataxia and bring a risk of vomiting and unconsciousness. If the patient falls unconscious while under the influence there is a severe risk of vomit aspiration if they are not placed in the recovery position.",
+    "DXM - Both substances cause ataxia and bring a risk of vomiting and unconsciousness. If the patient falls unconscious while under the influence there is a severe risk of vomit aspiration if they are not placed in the recovery position. This combination is hard to predict.",
+    "PCP - Details of this combination are not well understood but PCP generally interacts in an unpredictable manner.",
+    "Alcohol - Even in very low doses this combination rapidly leads to memory loss, severe ataxia and unconsciousness. There is a high risk of vomit aspiration while unconscious.",
+    "Opioids - The two substances potentiate each other strongly and unpredictably, very rapidly leading to unconsciousness. While unconscious, vomit aspiration is a risk if not placed in the recovery position.",
+    "Tramadol - The sedative effects of this combination can lead to dangerous respiratory depression.",
+    "Benzodiazepines - The two substances potentiate each other strongly and unpredictably, very rapidly leading to unconsciousness. While unconscious, vomit aspiration is a risk if not placed in the recovery position."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

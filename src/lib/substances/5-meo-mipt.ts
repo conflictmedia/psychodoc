@@ -121,7 +121,8 @@ export const _5_meo_mipt: Substance =
     "Anecdotal evidence from people within the community who have tried 5-MeO-MiPT suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",
     "5-MeO-MiPT is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
-    "Tolerance to the effects of 5-MeO-MiPT is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 5-MeO-MiPT presents cross-tolerance with all psychedelics, meaning that after the consumption of 5-MeO-MiPT all psychedelics will have a reduced effect."
+    "Tolerance to the effects of 5-MeO-MiPT is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 5-MeO-MiPT presents cross-tolerance with all psychedelics, meaning that after the consumption of 5-MeO-MiPT all psychedelics will have a reduced effect.",
+    "There are no known deaths from 5-MeO-MiPT but, as a monoamine reuptake inhibitor (MRI), injury could occur when excessive doses are taken or when it is taken with drugs such as MAOIs, RIMAs, stimulants and any substance which act as a releasing agent or reuptake inhibitor of neurotransmitters such as serotonin and dopamine."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

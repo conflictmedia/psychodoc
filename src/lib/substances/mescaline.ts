@@ -131,7 +131,14 @@ export const mescaline: Substance =
     "Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "Mescaline is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
-    "Tolerance to the effects of mescaline is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). Mescaline presents cross-tolerance with all psychedelics, meaning that after the consumption of mescaline all psychedelics will have a reduced effect."
+    "Tolerance to the effects of mescaline is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). Mescaline presents cross-tolerance with all psychedelics, meaning that after the consumption of mescaline all psychedelics will have a reduced effect.",
+    "5-MeO-xxT - The 5-MeO class of tryptamines can be unpredictable in their interactions",
+    "Cannabis - Cannabis has an unexpectedly strong and somewhat unpredictable synergy with psychedelics.",
+    "Amphetamines - The focus and anxiety caused by stimulants is magnified by psychedelics and results in an increased risk of thought loops",
+    "Cocaine - The focus and anxiety caused by stimulants is magnified by psychedelics and results in an increased risk of thought loops",
+    "MAOIs",
+    "Tramadol - This combination can cause seizures due to the lowering of the threshold by Tramadol and the potential of Mescaline to cause seziures.",
+    "ΑMT"
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -66,7 +66,10 @@ export const grayanotoxin: Substance =
     "Depressants"
   ],
   "harmReduction": [
-    "It is strongly recommended that one use harm reduction practices when using this substance."
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Cholinergics - Because grayanotoxins potentiate the effects of acetylcholine, cholinergic substances such as nicotine, caffeine, and galantamine may carry an increased risk of cholinergic crisis.",
+    "Depressants - Combining grayanotoxins with other depressants increase the risk of a sudden loss of consciousness.",
+    "Opioids  - Grayanotoxins and opioids potentiate the sedation, hypotension, and decreased heart rate caused by each other, increasing the risk of sudden loss of consciousness or respiratory depression."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

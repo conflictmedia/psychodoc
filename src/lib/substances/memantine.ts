@@ -112,6 +112,7 @@ export const memantine: Substance =
     "Anecdotal evidence from people who have tried memantine within the community suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "The dependence potential for memantine is unknown. However, due to its long duration and long onset, users are discouraged to redose, meaning it is unlikely users will develop an addiction.",
     "Memantine presents cross-tolerance with all dissociatives, meaning that after the consumption of memantine all dissociatives will have a reduced effect.",
+    "Memantine has very limited information on drug combinations and should therefore be treated with extreme caution when combined with other drugs.",
     "Cannabis - Cannabis is reported to increase the effects of memantine.",
     "Nicotine - Anecdotal reports suggest an interaction between tobacco and memantine.",
     "Opioids - Memantine is reported to increase the effects, prevent build up and in some cases reverse tolerance to opioids.",

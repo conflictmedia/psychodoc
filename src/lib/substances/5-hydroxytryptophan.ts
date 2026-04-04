@@ -94,7 +94,15 @@ export const _5_hydroxytryptophan: Substance =
   ],
   "harmReduction": [
     "Due to the conversion of 5-HTP into serotonin by the liver, with prolonged use, there may be a significant risk of heart valve disease from serotonin's effect on the heart, which is thought to be due to agonism of the 5-HT2B receptors present on it.",
-    "It has been suggested that 5-HTP may cause eosinophilia-myalgia syndrome (EMS), a serious condition which results in extreme muscle tenderness, myalgia, and blood abnormalities. However, there is evidence to show that EMS was likely caused by a contaminant in certain 5-HTP supplements instead of the substance itself."
+    "It has been suggested that 5-HTP may cause eosinophilia-myalgia syndrome (EMS), a serious condition which results in extreme muscle tenderness, myalgia, and blood abnormalities. However, there is evidence to show that EMS was likely caused by a contaminant in certain 5-HTP supplements instead of the substance itself.",
+    "Although many substances are safe on their own, they can become dangerous and even life-threatening when combined with other substances. The list below contains some common potentially dangerous combinations, but may not include all of them. Certain combinations may be safe in low doses of each, but still increase the potential risk of death. Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "Combinations in the list below may increase the amount of neurotransmitters, such as serotonin, to dangerous or even fatal levels, resulting in life-threatening serotonin syndrome.",
+    "SSRIs - When combined with antidepressants of the SSRI class, high doses of 5-HTP can cause acute serotonin syndrome in rats.",
+    "SNRIs",
+    "Serotonin releasers such as MDMA, mephedrone, 4-FA, MDAI and αMT - To prevent serotonin syndrome, 5-HTP should only be taken once the user has come down from the MDMA (or other serotonin releaser), roughly 12 hours after the last dose.",
+    "MAOIs such as syrian rue, banisteriopsis caapi, 2C-T-2, 2C-T-7, αMT, and some antidepressants - When combined with antidepressants of the MAOI class, high doses of 5-HTP can cause acute serotonin syndrome in rats.",
+    "Tricyclic antidepressants (TCAs)",
+    "Tramadol"
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -63,7 +63,8 @@ export const citicoline: Substance =
     "Citicoline is non-addictive, is not known to cause brain damage, and has an extremely low toxicity relative to dose. Similar to many other nootropics substances, there are relatively few physical side effects associated with acute citicoline exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "Citicoline is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
-    "Citicoline does not seem to build up an immediate tolerance and becomes stronger with prolonged use due to its long half-life. It is not recommended to take citicoline for extended periods longer than two weeks."
+    "Citicoline does not seem to build up an immediate tolerance and becomes stronger with prolonged use due to its long half-life. It is not recommended to take citicoline for extended periods longer than two weeks.",
+    "Citicoline is a suspected monoaminergic substance. Citicoline and MAOIs are a potentially dangerous combination. It is likely that MAOIs could increase the effects of Alpha-GPC unpredictably. Taking this chemical while on prescription MAOIs is strongly discouraged."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

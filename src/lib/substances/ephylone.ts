@@ -110,7 +110,8 @@ export const ephylone: Substance =
     "Numerous reports of hospitalizations and overdose deaths indicate that ephylone is extremely toxic at very high dosages. The DEA claimed approximately 151 ephylone-related deaths occurred in the U.S. between 2014 and 2018. Higher dosages of ephylone have been linked to serotonin syndrome, rhabdomyolysis, kidney injury, acidemia and other life-threatening symptoms.",
     "It is strongly advised to use harm reduction practices if using this substance.",
     "As with other stimulants, the chronic use of ephylone can be considered moderately addictive with a high potential for abuse. It is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects will occur if one suddenly stops their use.",
-    "Tolerance to many of the effects of ephylone develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects."
+    "Tolerance to many of the effects of ephylone develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects.",
+    "Stimulants - Combining ephylone with other stimulants may result in dangerous increases in blood pressure and heart rate."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

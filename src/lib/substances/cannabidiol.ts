@@ -62,7 +62,8 @@ export const cannabidiol: Substance =
     "According to clinical studies, cannabidiol is well-tolerated and shows little to no toxicity.",
     "In a 2011 literature review, CBD was found to not alter physiological parameters such as heart rate, blood pressure, and body temperature. Moreover, psychological and psychomotor functions are not adversely affected. Chronic use and high doses of up to 1500  mg per day have been repeatedly shown to be well tolerated by humans. As a result, it is considered to have a good safety profile. However, this information should be interpreted cautiously as cannabidiol has been subject to relatively few human studies; further research is needed to fully establish its safety profile.",
     "Commonly reported side effects from prescribed cannabidiol use include tiredness, diarrhea, and changes of appetite and weight.",
-    "Cannabidiol is considered to have low abuse potential compared to THC and other recreational substances. Cannabidiol administration does not produce euphoria or other reinforcing effects and there is no evidence that use results in physical or psychological dependence."
+    "Cannabidiol is considered to have low abuse potential compared to THC and other recreational substances. Cannabidiol administration does not produce euphoria or other reinforcing effects and there is no evidence that use results in physical or psychological dependence.",
+    "Cannabidiol can be an inhibitor of CYP enzymes (including CYP3A4), which are involved in the metabolism of many psychoactive substances. As a result, it has the potential to cause dangerous interactions. Caution is advised when combining cannabidiol with other substances, particularly with higher doses."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

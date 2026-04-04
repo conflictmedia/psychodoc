@@ -64,7 +64,8 @@ export const alpha_gpc: Substance =
     "Alpha-GPC is non-addictive, is not known to cause harm, and has an extremely low toxicity relative to dose. Similar to many other nootropic substances, there are relatively few physical side effects associated with acute choline exposure. Various studies have shown that in reasonable doses in a particular context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "Regardless, it is strongly recommended that one is familiar with and uses harm reduction practices when using this substance.",
     "Alpha-GPC is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
-    "Tolerance to the effects of alpha-GPC is built after prolonged and repeated usage. After that, it takes about 7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). Alpha-GPC presents cross-tolerance with no other known compounds, meaning that after the use of Alpha-GPC all other psychoactive compounds will not have a reduced effect."
+    "Tolerance to the effects of alpha-GPC is built after prolonged and repeated usage. After that, it takes about 7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). Alpha-GPC presents cross-tolerance with no other known compounds, meaning that after the use of Alpha-GPC all other psychoactive compounds will not have a reduced effect.",
+    "alpha-GPC is a suspected monoaminergic substance. Alpha-GPC and MAOIs are a potentially dangerous combination. It is likely that MAOIs could increase the effects of Alpha-GPC unpredictably. Taking this chemical while on prescription MAOIs is strongly discouraged."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

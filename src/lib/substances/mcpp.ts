@@ -80,7 +80,9 @@ export const mcpp: Substance =
   ],
   "harmReduction": [
     "It is strongly recommended that one use harm reduction practices when using this drug.",
-    "mCPP is not known to be addictive, but there are not any studies exclusively on its addiction potential."
+    "mCPP is not known to be addictive, but there are not any studies exclusively on its addiction potential.",
+    "mCPP is metabolized by cytochrome P450 2D6, and concurrently taking inhibitors of that enzyme results in increased serum levels of mCPP. Commonly encounter inhibitors of CYP2D6 include ciprofloxacin, bupropion (Wellbutrin), fluoxetine (Prozac) and grapefruit juice.",
+    "Cocaine - This combination may increase strain on the heart."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

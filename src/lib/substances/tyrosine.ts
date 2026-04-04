@@ -83,7 +83,10 @@ export const tyrosine: Substance =
     "Tyrosine is physically safe, is not known to cause brain damage, and has an extremely low toxicity relative to dose. Similar to many other nootropic drugs, there are relatively few physical side effects associated with acute tyrosine exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "However, it is still strongly recommended that one use harm reduction practices when using this drug.",
     "Tyrosine may potentially be mildly habit forming and the desire to use it may actually increase with use. This is because of its dopaminergic properties. However, in comparison to other more traditional stimulants such as amphetamine or methylphenidate, it is not nearly as addictive or compulsive.",
-    "Tolerance to the effects of tyrosine are quickly built after repeated and frequent usage. After that, it takes about 7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). Tyrosine presents cross-tolerance with other dopaminergic stimulants, meaning that after the consumption of tyrosine, most other stimulant compounds will have a reduced effect."
+    "Tolerance to the effects of tyrosine are quickly built after repeated and frequent usage. After that, it takes about 7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). Tyrosine presents cross-tolerance with other dopaminergic stimulants, meaning that after the consumption of tyrosine, most other stimulant compounds will have a reduced effect.",
+    "Stimulants - Tyrosine is stimulatory on its own. Therefore, it may theoretically interact with other stimulatory pharmaceuticals or supplements and cause dangerously high blood pressure or heartrate.",
+    "MDMA - The neurotoxic effects of MDMA may be increased when combined with amphetamine and other stimulants.",
+    "Cocaine - This combination may increase strain on the heart."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

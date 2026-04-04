@@ -115,7 +115,10 @@ export const _2_fea: Substance =
     "Anecdotal reports from those who have tried 2-FEA suggest that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself or using it sparingly (but nothing can be completely guaranteed).",
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "As with other stimulants, the chronic use of 2-FEA can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
-    "Tolerance to many of the effects of 2-FEA develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). 2-FEA presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of 2-FEA all stimulants will have a reduced effect."
+    "Tolerance to many of the effects of 2-FEA develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). 2-FEA presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of 2-FEA all stimulants will have a reduced effect.",
+    "Stimulants - 2-FEA can be potentially dangerous in combination with other stimulants as it can increase one's heart rate and blood pressure to dangerous levels.",
+    "MDMA - The neurotoxic effects of MDMA may be increased when combined with amphetamines.",
+    "Cocaine - This combination may increase strain on the heart."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

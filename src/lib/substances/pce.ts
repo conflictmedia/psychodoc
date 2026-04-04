@@ -151,7 +151,8 @@ export const pce: Substance =
     "Pelvic and bladder pain - Pain can develop suddenly and severely, particularly as the bladder fills with urine.",
     "Hematuria - Hematuria is visible blood in the urine.",
     "Incontinence - This is the leakage of urine.",
-    "A large body of anecdotal evidence suggests that these symptoms can be minimized by not using PCE on a regular basis (daily or weekly at the bare minimum) and carefully monitoring and limiting one's usage of the substance, although general usage of this substance is still discouraged due to its observed toxic properties."
+    "A large body of anecdotal evidence suggests that these symptoms can be minimized by not using PCE on a regular basis (daily or weekly at the bare minimum) and carefully monitoring and limiting one's usage of the substance, although general usage of this substance is still discouraged due to its observed toxic properties.",
+    "Psychedelics - This combination is not advised because PCE has been reported to cause extreme psychological disturbances such as psychosis and mania at a significantly higher rate than other dissociatives."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

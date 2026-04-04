@@ -124,7 +124,12 @@ export const psilocybin_mushrooms: Substance =
     "Tolerance to the effects of psilocybin builds almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption).",
     "Psilocybin exhibits cross-tolerance with all psychedelics, meaning that after the consumption of psilocybin all psychedelics will have a reduced effect.",
     "In rare cases, psilocybin mushrooms may trigger hallucinogen persisting perception disorder (HPPD) in some individuals. The cause is unclear; however, explanations in terms of psilocybin physically remaining in the body for months or years after consumption have been discounted by experimental evidence.",
-    "Some say HPPD is a manifestation of post-traumatic stress disorder, not related to the direct action on brain chemistry, and varies according to the susceptibility of the individual to the disorder."
+    "Some say HPPD is a manifestation of post-traumatic stress disorder, not related to the direct action on brain chemistry, and varies according to the susceptibility of the individual to the disorder.",
+    "Amphetamines - Stimulants increase anxiety levels and the risk of thought loops which can lead to negative experiences",
+    "Cannabis: Cannabis can have an unexpectedly strong and unpredictable synergy with psilocybin mushrooms. While it is commonly used to intensify or prolong the mushrooms' effects, caution is highly advised as mixing these substances can significantly increase the risk of anxiety, paranoia, panic attacks, and psychosis. Anecdotal reports often describe the ingestion of cannabis as the triggering event for a bad trip or psychosis. Users are advised to start off with only a fraction (e.g. 1/4th - 1/3rd) of their typical cannabis dose and space out hits to avoid accidental over-intake.",
+    "Cocaine - Stimulants increase anxiety levels and the risk of thought loops which can lead to negative experiences",
+    "Tramadol - Tramadol is well known to lower seizure threshold and psychedelics also cause occasional seizures.",
+    "Lithium - Lithium is commonly prescribed in the treatment of bipolar disorder; however, studies find it can significantly increase the risk of and seizures when combined to psychedelics. As a result, this combination should be strictly avoided."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -112,7 +112,10 @@ export const dom: Substance =
     "Anecdotal evidence suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "DOM is not habit-forming and the desire to use it can decrease with use. It is most often self-regulating.",
-    "Tolerance to the effects of DOM is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). DOM presents cross-tolerance with all psychedelics, meaning that after the consumption of DOM all psychedelics will have a reduced effect."
+    "Tolerance to the effects of DOM is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). DOM presents cross-tolerance with all psychedelics, meaning that after the consumption of DOM all psychedelics will have a reduced effect.",
+    "Lithium: Lithium is commonly prescribed in the treatment of bipolar disorder; however, there is a large body of anecdotal evidence that suggests taking it with psychedelics can significantly increase the risk of psychosis and seizures. As a result, this combination should be strictly avoided.",
+    "Tramadol - Tramadol lowers the seizure threshold and psychedelics may act as triggers for seizures, particularly in those who are predisposed to them.",
+    "Stimulants - Stimulants affect many parts of the brain. Combined with psychedelics, stimulation can turn into uncontrollable anxiety, panic, thought loops and paranoia. This interaction may cause elevated risk of psychosis."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -122,6 +122,8 @@ export const mdea: Substance =
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "As with other stimulants, the chronic use of MDEA can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
     "Tolerance to many of the effects of MDEA develops with prolonged and repeated use. This results in users having to administer increasingly larger doses to achieve the same effects. After that, it takes about 1-1.5 months for the tolerance to be reduced to half and 2-3 months to be back at baseline (in the absence of further consumption). MDEA presents cross-tolerance with all dopaminergic and serotonergic stimulants and entactogens, meaning that after the consumption of MDEA all of these will have a reduced effect.",
+    "Stimulants - The neurotoxic effects of MDEA may be increased when combined with other stimulants.",
+    "Cocaine - This combination may increase strain on the heart.",
     "There is an increased risk of serotonin syndrome when MDEA is taken with many antidepressants, particularly selective serotonin reuptake inhibitors (SSRIs) and serotonin-norepinephrine reuptake inhibitors (SNRIs). Additionally, if MDEA is taken with SSRIs and SNRIs, the MDEA will be significantly less powerful or may have no distinguishable effects at all."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",

@@ -90,6 +90,7 @@ export const efavirenz: Substance =
     "Efavirenz has a low toxicity relative to dose. Like many HIV medications, efavirenz may cause liver toxicity at high doses or after chronic use.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",
     "Efavirenz is not known to be habit-forming. While developing a tolerance to efavirenz is extremely rare, abusing efavirenz may cause HIV to become resistant to the drug and increase the viral load in patients with HIV.",
+    "As efavirenz may cause hepatoxicity at high doses or after chronic use, it is not recommended to take this substance concurrently with other substances that may cause hepatoxicity. Efavirenz is an inducer of the CYP2B6 and CYP3A4 enzymes of the cytochrome P450 system, and as a result may change the metabolism of drugs metabolized by them. Consuming garlic may decrease serum levels of efavirenz.",
     "Efavirenz is a weak serotonin reuptake inhibitor, so it is possible that combining heavy doses of efavirenz and the substances listed below may result in serotonin syndrome."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",

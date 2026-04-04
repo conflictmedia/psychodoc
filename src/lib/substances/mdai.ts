@@ -98,7 +98,9 @@ export const mdai: Substance =
     "Tolerance to many of the effects of MDAI develops with prolonged and repeated use.",
     "This results in users having to administer increasingly large doses to achieve the same effects.",
     "After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption).",
-    "MDAI presents cross-tolerance with all entactogens, meaning that after the consumption of MDAI all serotonergic stimulants will have a reduced effect."
+    "MDAI presents cross-tolerance with all entactogens, meaning that after the consumption of MDAI all serotonergic stimulants will have a reduced effect.",
+    "MDMA - The neurotoxic effects of MDMA may be increased when combined with other stimulants.",
+    "Cocaine - This combination may increase strain on the heart to a dangerous degree."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

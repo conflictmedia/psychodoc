@@ -93,7 +93,10 @@ export const etizolam: Substance =
     "Thienodiazepine overdose is a medical emergency that may lead to a coma, permanent brain injury or death if not treated promptly and properly.",
     "Symptoms of a thienodiazepine overdose may include severe thought deceleration, slurred speech, confusion, delusions, respiratory depression, coma or death.",
     "Thienodiazepine overdoses may be treated effectively in a hospital environment, with generally favorable outcomes.",
-    "Thienodiazepine overdoses are sometimes treated with flumazenil, a GABAA antagonist. However, care is primarily supportive in nature."
+    "Thienodiazepine overdoses are sometimes treated with flumazenil, a GABAA antagonist. However, care is primarily supportive in nature.",
+    "Depressants (1,4-Butanediol, 2-methyl-2-butanol, alcohol, barbiturates, GHB/GBL, methaqualone, opioids) - This combination can result in dangerous or even fatal levels of respiratory depression. These substances potentiate the muscle relaxation, sedation and amnesia caused by one another and can lead to unexpected loss of consciousness at high doses. There is also an increased risk of vomiting during unconsciousness and death from the resulting suffocation. If this occurs, users should attempt to fall asleep in the recovery position or have a friend move them into it.",
+    "Dissociatives - This combination can result in an increased risk of vomiting during unconsciousness and death from the resulting suffocation. If this occurs, users should attempt to fall asleep in the recovery position or have a friend move them into it.",
+    "Stimulants -  It is dangerous to combine thienzodiazepines with stimulants due to the risk of excessive intoxication. Stimulants mask the sedative effect of thienzodiazepines, which is the main factor most people consider when determining their level of intoxication. Once the stimulant wears off, the effects of thienzodiazepines will be significantly increased, leading to intensified disinhibition. If combined, one should strictly limit themselves to only dose a certain amount of thienzodiazepines per hour. This combination can also potentially result in severe dehydration if hydration is not monitored."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

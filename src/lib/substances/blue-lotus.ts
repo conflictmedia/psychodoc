@@ -81,7 +81,9 @@ export const blue_lotus: Substance =
     "The toxicity of Blue Lotus is misunderstood and poorly researched. Only the pure alkaloids have been tested with little toxicity, however, mixing Blue Lotus with other substances could present a risk.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "There are no studies on aporphine in animals. However, studies on subcutaneous apomorphine injection, the bioactive form of aporphine, have been carried out. In a 5-day study, mice were administered up to 10 mg/kg apomorphine subcutaneously daily. No adverse effects were observed other than a slight increase in dopamine levels.",
-    "Blue Lotus is not thought to be addictive. Its compounds have been used in the treatment of alcohol and morphine addiction."
+    "Blue Lotus is not thought to be addictive. Its compounds have been used in the treatment of alcohol and morphine addiction.",
+    "The main and absolute contraindication to using Blue Lotus, is the concurrent use of adrenergic receptor antagonists; combined, they cause a severe drop in blood pressure and fainting.",
+    "L-DOPA and Blue Lotus could pose risks and cause symptoms such as sleepiness, dizziness, runny nose, sweating and tremors."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

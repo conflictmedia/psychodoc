@@ -84,7 +84,8 @@ export const progesterone: Substance =
     "The observed LD50 in mice was 100mg/kg via intravenous, 327mg/kg intraperitoneal and > 200mg/kg orally, anasthetic effects were observed at 16mg/kg intraperitoneal.",
     "Dependence potential of Progesterone has been sparsely reported by transfeminine people. There is one case report of a women on post menopausal HRT that documents addiction.",
     "Tolerance to the offects of Progesterone metabolites on GABA will build within a few years and return to baseline within a few months after cessation.",
-    "Combining oral progesterone with food leads to a two fold increase in absorptions.  Since oral progesterone is a oil soluable reports of increased effects when combined with fatty foods do seem plausible."
+    "Combining oral progesterone with food leads to a two fold increase in absorptions.  Since oral progesterone is a oil soluable reports of increased effects when combined with fatty foods do seem plausible.",
+    "Depressants Taking oral progesterone together with alcohol or barbiturates will increase absorption rates and peak potentially leading to black out intervals or loss of motor control, anesthetic levels in humans are not documented, but might be reachable. Other dangerous depressants are benzodiazepines and opioids since their absorption can be increased, resulting in a higher risk of overdose."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

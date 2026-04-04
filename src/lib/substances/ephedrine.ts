@@ -85,7 +85,8 @@ export const ephedrine: Substance =
     "In comparison to other stimulants, ephedrine has particularly strong effects on the cardiovascular system, and its use has been associated with heart attacks, strokes, and arrythmia.",
     "A 28-year-old white female with a history of two prior suicide attempts was found dead in her home by her common law husband. Autopsy findings were unremarkable except for partially dissolved ephedrine tablets in the stomach contents. Significant toxicological finding included ephedrine concentrations in the blood of 11 mg/L, liver of 24 mg/kg, kidney of 14 mg/kg, and brain of 8.9 mg/kg.",
     "As with other stimulants, the chronic use of ephedrine can be considered moderately addictive and is capable of causing psychological dependence among certain users.",
-    "Tolerance to the effects of ephedrine are quickly built after repeated and frequent usage.  Ephedrinepresents cross-tolerance with other dopaminergic stimulants, meaning that after the consumption of ephedrine, most other stimulant compounds will have a reduced effect."
+    "Tolerance to the effects of ephedrine are quickly built after repeated and frequent usage.  Ephedrinepresents cross-tolerance with other dopaminergic stimulants, meaning that after the consumption of ephedrine, most other stimulant compounds will have a reduced effect.",
+    "Severe Interactions of ephedrine include: iobenguane I 123, isocarboxazid, linezolid, phenelzine, procarbazine, rasagiline, selegiline, and tranylcypromine. Check with your health care professional or doctor for additional medical advice, or if you have health questions, concerns or for more information about this medicine."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

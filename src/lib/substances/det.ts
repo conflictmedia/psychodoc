@@ -93,7 +93,10 @@ export const det: Substance =
     "Although no formal studies have been conducted, it is believed that DET is not habit-forming and the desire to use it can actually decrease with use.",
     "Tolerance to the effects of DET is built almost immediately after ingestion.",
     "After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption).",
-    "DET presents cross-tolerance with all psychedelics, meaning that after the consumption of DET all psychedelics will have a reduced effect."
+    "DET presents cross-tolerance with all psychedelics, meaning that after the consumption of DET all psychedelics will have a reduced effect.",
+    "Lithium - Lithium is often used as treatment for bipolar disorder. It can dangerously amplify the intensity of psychedelics and has been strongly linked with psychosis and seizures. The causes are poorly understood, but it may be due to its glutaminergic and GABAergic properties.",
+    "Stimulants - Stimulants affect many parts of the brain. Combined with psychedelics, stimulation can turn into uncontrollable anxiety, panic, thought loops and paranoia. This interaction may cause elevated risk of psychosis.",
+    "Tramadol - Tramadol lowers the seizure threshold and psychedelics may act as triggers for seizures, particularly in those who are predisposed to them."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

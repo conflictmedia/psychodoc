@@ -76,7 +76,12 @@ export const promethazine: Substance =
   "harmReduction": [
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "The lowest published toxic dose of promethazine in humans (oral) is 3.5 mg/kg. This means that a person weighing 70 kg can show signs of toxicity at 245 mg. The LD50 of promethazine in mice (oral) is 255 mg/kg. If applied to humans, this suggests that 50% of people weighing 70 kg would die after consuming 17.85 grams of promethazine.",
-    "Promethazine is not addictive."
+    "Promethazine is not addictive.",
+    "Promethazine, because of its extensive pharmacology, has many interactions. According to the interactions checker on Drugs.com, promethazine is known to interact with over 1000 other prescription and OTC drugs.",
+    "Depressants (1,4-Butanediol, 2-methyl-2-butanol, alcohol, barbiturates, GHB/GBL, methaqualone, opioids) - This combination can result in dangerous or even fatal levels of respiratory depression. These substances potentiate the muscle relaxation, sedation and amnesia caused by one another and can lead to unexpected loss of consciousness at high doses. There is also an increased risk of vomiting during unconsciousness and death from the resulting suffocation. If this occurs, users should try to fall asleep in the recovery position or have a friend move them into it.",
+    "Anti-dopaminergics - Because promethazine also blocks dopamine receptors, other drugs and substances that do this will increase the chances of developing acute or tardive dyskinesia, neuroleptic malignant syndrome, or parkinsonism.",
+    "Anticholinergics - Promethazine with anticholinergics (or antimuscarinics) can cause increased blocking of acetylcholine, being potentially dangerous with cardiovascular effects as well as delirium.",
+    "Stimulants - Due to promethazine's excitatory cardiac effect, combining it with stimulants poses a risk of an abnormal heart rhythm, severe tachycardia, or a heart attack as well as other cardiovascular events."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

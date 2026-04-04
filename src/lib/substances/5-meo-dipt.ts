@@ -107,7 +107,8 @@ export const _5_meo_dipt: Substance =
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "Excessive doses have caused nausea, vomiting, agitation, decreased blood pressure, pupil dilation, increased heart rate, and hallucinations in a number of young adults. Rhabdomyolysis and renal failure occurred in one young man, and another one died 3–4 hours after an apparent rectal overdose. A 24-year-old man also died of this compound being administered into the colon.",
     "Like other serotonergic psychedelics, 5-MeO-DiPT is not habit-forming.",
-    "Tolerance to the effects of 5-MeO-DiPT builds almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 5-MeO-DiPT presents cross-tolerance with all psychedelics, meaning that after the consumption of 5-MeO-DiPT, all psychedelics will have a reduced effect."
+    "Tolerance to the effects of 5-MeO-DiPT builds almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). 5-MeO-DiPT presents cross-tolerance with all psychedelics, meaning that after the consumption of 5-MeO-DiPT, all psychedelics will have a reduced effect.",
+    "5-MeO-DiPT is a monoaminergic reuptake inhibitor (MRI). 5-MeO-DiPT and MAOIs are a potentially dangerous combination. It is likely that MAOIs could increase the effects of 5-MeO-DiPT unpredictably. Taking this chemical while on prescription MAOIs is strongly discouraged."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

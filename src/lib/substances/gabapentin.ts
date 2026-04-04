@@ -83,7 +83,9 @@ export const gabapentin: Substance =
     "It should be noted that in both studies along with others that the patients evaluated had a higher suicide risk and the studies were both limited and imprecise.",
     "People who accidentally or intentionally overdose may experience drowsiness, sedation, blurred vision, slurred speech, somnolence and possibly death (if a very high amount was taken and particularly if combined with alcohol). Serum gabapentin concentrations may be measured to confirm diagnosis.",
     "Gabapentin is not considered psychologically addictive. However, it is possible to develop a physical dependence on the drug. In fact, people can experience withdrawal symptoms for up to 45 days after they stop taking gabapentin. Although gabapentin does give some people a euphoric “high” which can cause abuse, gabapentin abusers do not present with the kind of compulsive, drug-seeking behavior or strong cravings associated with other more common depressants such as opioids, alcohol or benzodiazepines.",
-    "Tolerance will develop to the anxiolytic effects with prolonged continuous usage. After cessation, the tolerance returns to baseline in 7-14 days. Withdrawal symptoms or rebound symptoms may occur after ceasing usage abruptly following a few weeks or longer of steady dosing and may necessitate a gradual dose reduction."
+    "Tolerance will develop to the anxiolytic effects with prolonged continuous usage. After cessation, the tolerance returns to baseline in 7-14 days. Withdrawal symptoms or rebound symptoms may occur after ceasing usage abruptly following a few weeks or longer of steady dosing and may necessitate a gradual dose reduction.",
+    "Opioids - Combining opioids with gabapentin can cause death from respiratory failure.",
+    "Depressants (GABAergic) - Gabapentin significantly potentiates the effects of alcohol, benzodiazepines and other GABAergics which may lead to blackouts, and dangerous behaviour."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

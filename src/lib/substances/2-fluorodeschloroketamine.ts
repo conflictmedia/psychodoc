@@ -110,7 +110,15 @@ export const _2_fluorodeschloroketamine: Substance =
     "Pelvic and bladder pain - Pain can develop suddenly and severely, particularly as the bladder fills with urine.",
     "Hematuria - Hematuria is visible blood in the urine.",
     "Incontinence - This is the leakage of urine.",
-    "All of these, however, can easily be avoided by simply not using 2-Fluorodeschloroketamine on a daily or even weekly basis and manually limiting one's usage of the substance."
+    "All of these, however, can easily be avoided by simply not using 2-Fluorodeschloroketamine on a daily or even weekly basis and manually limiting one's usage of the substance.",
+    "Benzodiazepines - Both substances potentiate the ataxia and sedation caused by the other and can lead to unexpected loss of consciousness at high doses. While unconscious, vomit aspiration is a risk if not placed in the recovery position.",
+    "MAOIs - MAO-B inhibitors appear to increase the potency of ketamine. MAO-A inhibitors have some negative reports associated with the combination but there isn't much information available",
+    "Alcohol - Both substances cause ataxia and bring a very high risk of vomiting and unconsciousness. If the user falls unconscious while under the influence there is a severe risk of vomit aspiration if they are not placed in the recovery position.",
+    "GHB - Both substances cause ataxia and bring a risk of vomiting and unconsciousness. If the user falls unconscious while under the influence there is a severe risk of vomit aspiration if they are not placed in the recovery position.",
+    "GBL - Both substances cause ataxia and bring a risk of vomiting and unconsciousness. If the user falls unconscious while under the influence there is a severe risk of vomit aspiration if they are not placed in the recovery position.",
+    "Opioids - Both substances bring a risk of vomiting and unconsciousness. If the user falls unconscious while under the influence there is a severe risk of vomit aspiration if they are not placed in the recovery position.",
+    "Tramadol - Potential increased risk of seizures.",
+    "Grapefruit - Grapefruit juice significantly increases oral absorption of ketamine. This may result in the user having double the concentration of ketamine in their system compared to normal. The ketamine may also have a longer duration of effect. It is likely that this property extends to 2F-DCK as well."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

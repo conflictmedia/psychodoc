@@ -94,7 +94,10 @@ export const prolintane: Substance =
     "The exact lethal dosage of prolintane is unknown, and no formal studies have been carried out in humans. The typical adult therapeutic dose of prolintane has been 10-40mg daily. In therapeutic trials, 20mg prolintant is a mild stimulant equivalent to 100mg caffeine. In a study of fatigued volunteers the administration of 20mg or 40mg prolintane produced similar, but less intense effects than 20mg d-amphetamine. In experimental studies of healthy volunteers, prolintane has little cardiovascular activity following the single dose of 20mg.",
     "Unlike some of the other more potent stimulants in its class, the chronic use of prolintane can be considered mildly to moderately addictive with only a moderate potential for abuse and is capable of causing psychological dependence among certain users.",
     "When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage. Addiction is a potential risk among users of prolintane as it can cause compulsive redosing, although typically to a far lesser degree than the notoriously compulsive cathinone analogs A-PVP and MDPV.",
-    "User reports indicate that chronic abuse or single overdose exposure of prolintane can potentially lead to psychosis. Psychotic symptoms from prolintane can include  hearing voices, visual hallucinations, urges to harm oneself, severe anxiety, mania, grandiosity, paranoid delusions, confusion, increased aggression, and irritability."
+    "User reports indicate that chronic abuse or single overdose exposure of prolintane can potentially lead to psychosis. Psychotic symptoms from prolintane can include  hearing voices, visual hallucinations, urges to harm oneself, severe anxiety, mania, grandiosity, paranoid delusions, confusion, increased aggression, and irritability.",
+    "Stimulants - Prolintane can be potentially dangerous in combination with other stimulants as it can increase one's heart rate and blood pressure to dangerous levels.",
+    "MDMA - The neurotoxic effects of MDMA may be increased when combined with amphetamine and other stimulants.",
+    "Cocaine - This combination may increase strain on the heart."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
