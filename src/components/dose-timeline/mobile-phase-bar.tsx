@@ -6,6 +6,7 @@ import { Badge } from '@/components/ui/badge'
 import { SubstanceGroup } from './dose-timeline-types'
 import { phaseColors, phaseIcons, ROUTE_PALETTE, MOBILE_PHASES } from './dose-timeline-constants'
 import { formatMinutes, phaseStart, phaseEnd, isPhasePast } from './dose-timeline-utils'
+import { formatDoseAmount } from '@/lib/utils'
 
 interface MobilePhaseBarProps {
   group: SubstanceGroup
@@ -38,22 +39,26 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
 
           {group.routes.map((rg) => {
             const palette = ROUTE_PALETTE[rg.paletteIndex]
+            const totalFormatted = rg.uniformUnit ? formatDoseAmount(rg.totalAmount, rg.unit) : null
             return (
               <div key={rg.route} className="text-xs text-muted-foreground mt-0.5">
                 <span className="font-medium" style={{ color: palette.stroke }}>
                   {rg.route}
                 </span>
                 {' · '}
-                {rg.uniformUnit ? `${rg.totalAmount} ${rg.unit}` : `${rg.doses.length} doses`}
-                {rg.doses.map((d) => (
-                  <div key={d.id} className="flex items-center gap-1 pl-2">
-                    <span className="opacity-50">·</span>
-                    <span>{d.amount} {d.unit} @ {format(d.doseTime, 'h:mm a')}</span>
-                    <span className={`ml-1 text-[10px] font-medium ${phaseColors[d.status.phase].text}`}>
-                      {d.status.phase === 'not_started' ? 'upcoming' : d.status.phase}
-                    </span>
-                  </div>
-                ))}
+                {totalFormatted ? `${totalFormatted.amount} ${totalFormatted.unit}` : `${rg.doses.length} doses`}
+                {rg.doses.map((d) => {
+                  const formattedDose = formatDoseAmount(d.amount, d.unit)
+                  return (
+                    <div key={d.id} className="flex items-center gap-1 pl-2">
+                      <span className="opacity-50">·</span>
+                      <span>{formattedDose.amount} {formattedDose.unit} @ {format(d.doseTime, 'h:mm a')}</span>
+                      <span className={`ml-1 text-[10px] font-medium ${phaseColors[d.status.phase].text}`}>
+                        {d.status.phase === 'not_started' ? 'upcoming' : d.status.phase}
+                      </span>
+                    </div>
+                  )
+                })}
               </div>
             )
           })}

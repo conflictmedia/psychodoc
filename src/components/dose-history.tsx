@@ -1,5 +1,6 @@
 'use client'
 
+import { formatDoseAmount } from '@/lib/utils'
 import { useState, useRef } from 'react'
 import { format, isToday, isYesterday, isThisWeek, isThisMonth } from 'date-fns'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
@@ -785,7 +786,11 @@ export function DoseHistory() {
                             </div>
                             <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-1.5 text-sm text-muted-foreground">
                               <span className="flex items-center gap-1">
-                                <Droplets className="h-3 w-3 shrink-0" />{dose.amount} {dose.unit}
+                                <Droplets className="h-3 w-3 shrink-0" />
+                                {(() => {
+                                  const formatted = formatDoseAmount(dose.amount, dose.unit)
+                                  return `${formatted.amount} ${formatted.unit}`
+                                })()}
                               </span>
                               <span className="flex items-center gap-1">
                                 <Clock className="h-3 w-3 shrink-0" />{format(new Date(dose.timestamp), 'h:mm a')}

@@ -1,6 +1,7 @@
 import { EnrichedDose } from './dose-timeline-types'
 import { PT, GH } from './dose-timeline-constants'
 import { toX, toY, intensityAt } from './dose-timeline-utils'
+import { formatDoseAmount } from '@/lib/utils'
 
 interface DoseMarkerProps {
   d: EnrichedDose
@@ -23,6 +24,9 @@ export function DoseMarker({ d, isPrimary, hex, offsetMins, windowDuration, isFo
   const isHollow = d.status.phase === 'not_started'
   const isEnded  = d.status.phase === 'ended'
   const radius   = isPrimary ? 6 : 4
+
+  // Format dose with unit conversion
+  const formattedDose = formatDoseAmount(d.amount, d.unit)
 
   return (
     <g opacity={isEnded ? 0.35 : 1}>
