@@ -583,11 +583,20 @@ export function DoseHistory() {
     setRedosing(dose.id)
     const now = new Date().toISOString()
     addDose({
-      ...dose,
       id: crypto.randomUUID(),
       timestamp: now,
       createdAt: now,
       updatedAt: now,
+      substanceId: dose.substanceId,
+      substanceName: dose.substanceName,
+      categories: dose.categories,
+      amount: dose.amount,
+      unit: dose.unit,
+      route: dose.route,
+      duration: dose.duration,
+      intensity: dose.intensity,
+      mood: dose.mood,
+      setting: dose.setting,
       notes: dose.notes ? `Redose — ${dose.notes}` : 'Redose',
     })
     setRedosing(null)
