@@ -22,25 +22,21 @@ export const ephedrine: Substance =
   "description": "Ephenidine\nEphedrine is a naturally occurring central nervous system stimulant obtained from the plant Ephedra equisetina. It is often used to prevent low blood pressure during spinal anesthesia. Ephedrine is closely related in structure to methamphetamine, and pseudoephedrine although its CNS actions are much less potent and also longer-acting than those of the amphetamines.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Stamina enhancement - Ephedrine is commonly used as a performance enhancer by athletes and bodybuilders",
       "Physical euphoria",
-      "Increased heart rate - Ephedrine is often reported to increase heart rate to a greater extent than other amphetamines.",
-      "Increased perspiration",
-      "Increased bodily temperature",
       "Cognitive euphoria - The euphoria produced by ephedrine is reported to be less intense than the euphoria produced by amphetamine, methamphetamine or MDMA.",
       "Empathy, affection and sociability enhancement",
       "Focus enhancement",
       "Memory enhancement",
       "Increased music appreciation",
-      "Increased libido or Decreased libido - Some users report that ephedrine enhances libido, while others experience a suppression of libido. Overall, the effects of ephedrine on libido are milder than that of other amphetamines",
       "Increased music appreciation",
       "Motivation enhancement",
       "Wakefulness"
     ],
     "neutral": [
+      "Stimulation",
+      "Increased libido or Decreased libido - Some users report that ephedrine enhances libido, while others experience a suppression of libido. Overall, the effects of ephedrine on libido are milder than that of other amphetamines",
       "Bronchodilation",
-      "Dry mouth",
       "Spontaneous bodily sensations",
       "Pupil dilation - This effect is milder and less frequent than with other amphetamines.",
       "Visual acuity enhancement",
@@ -50,6 +46,10 @@ export const ephedrine: Substance =
       "Time compression - This effect is more intense with ephedrine than with most other stimulants"
     ],
     "negative": [
+      "Increased heart rate - Ephedrine is often reported to increase heart rate to a greater extent than other amphetamines.",
+      "Increased perspiration",
+      "Increased bodily temperature",
+      "Dry mouth",
       "Appetite suppression",
       "Nausea - At high doses",
       "Vasoconstriction",

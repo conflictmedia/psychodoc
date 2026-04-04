@@ -23,8 +23,6 @@ export const adrafinil: Substance =
   "description": "Adrafinil (also known as Olmifon) is a prodrug for modafinil - a wakefulness-promoting agent (eugeroic) with nootropic effects. Safety information on adrafinil is lacking because modafinil is often used instead, for treatment of narcolepsy and excessive daytime sleepiness. Long-term supplementation of adrafinil is not advised, since adrafinil is metabolized into modafinil in the liver, and may stress the liver through elevated liver enzymes with prolonged use.",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased heart rate",
       "Wakefulness",
       "Focus enhancement",
       "Memory enhancement",
@@ -33,12 +31,14 @@ export const adrafinil: Substance =
       "Increased music appreciation"
     ],
     "neutral": [
+      "Stimulation",
       "Photophobia",
       "Body odor alteration",
       "Thought acceleration",
       "Time distortion"
     ],
     "negative": [
+      "Increased heart rate",
       "Dehydration",
       "Headaches",
       "Appetite suppression",

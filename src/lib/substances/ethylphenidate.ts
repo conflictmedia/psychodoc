@@ -22,7 +22,6 @@ export const ethylphenidate: Substance =
   "description": "Ethylphenidate (also known as EPH) is a novel stimulant substance of the phenidate class that produces traditional stimulant effects when administered. It is a closely related analog of methylphenidate (brand names Ritalin, Concerta). The two substances have very similar pharmacological mechanisms but discernible differences in their subjective effects with ethylphenidate often considered to be recreational.",
   "effects": {
     "positive": [
-      "Increased heart rate",
       "Focus enhancement - This component is most effective at low to moderate dosages as anything higher will usually impair concentration.",
       "Euphoria - The euphoric rush associated with ethylphenidate use, as result of dopamine reuptake inhibition, is very short-lived and compulsive, similarly to that of cocaine.",
       "Analysis enhancement",
@@ -34,10 +33,11 @@ export const ethylphenidate: Substance =
     "neutral": [
       "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober.",
       "Thought acceleration",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Stimulation - Ethylphenidate is usually reported to be energetic and stimulating in a fashion that is distinct but much weaker than that of amphetamine or methamphetamine and stronger than that of modafinil and caffeine. At lower to moderate doses, it encourages general productivity and at higher dosages it encourages physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which ethylphenidate presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of fine motor control."
     ],
     "negative": [
-      "Stimulation - Ethylphenidate is usually reported to be energetic and stimulating in a fashion that is distinct but much weaker than that of amphetamine or methamphetamine and stronger than that of modafinil and caffeine. At lower to moderate doses, it encourages general productivity and at higher dosages it encourages physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which ethylphenidate presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of fine motor control.",
+      "Increased heart rate",
       "Dehydration",
       "Appetite suppression",
       "Vasoconstriction - Norepinephrine reuptake inhibition causes the sympathetic nervous system to constrict vessels and puts strain on the cardiovascular system with prolonged use.",

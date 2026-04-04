@@ -19,8 +19,6 @@ export const nm_2_ai: Substance =
   "description": "NM-2-AI (N-methyl-2-aminoindane) is a lesser-known novel stimulant substance of the aminoindane class. In comparison to 2-AI, this compound has a lower potency, a longer duration and very similar effects. It has recently become easily accessible  through online research chemical vendors where it is sold as a designer drug.",
   "effects": {
     "positive": [
-      "Increased heart rate",
-      "Increased perspiration",
       "Wakefulness",
       "Focus enhancement - This component is most effective at low to moderate doses as anything higher will usually impair concentration.",
       "Motivation enhancement - This compound can be considered as slightly more functional than that of 2-AI and therefore more effective for performing tasks whilst under its influence.",
@@ -34,10 +32,12 @@ export const nm_2_ai: Substance =
     "neutral": [
       "Stimulation - In terms of its effects on the physical energy levels of the user, NM-2-AI is usually considered to be energetic and stimulating in a fashion that is similar to that of amphetamine but stronger than that of modafinil or caffeine. It is similar yet distinct from the stimulation experienced on MDMA, encouraging physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which NM-2-AI presents can be described as forced. This means that at higher doses, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
       "Thought deceleration",
-      "Thought acceleration",
-      "Compulsive redosing"
+      "Thought acceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Compulsive redosing",
       "Dehydration",
       "Appetite suppression",
       "Nausea",

@@ -25,28 +25,28 @@ export const desomorphine: Substance =
     "positive": [
       "Physical euphoria",
       "Cognitive euphoria",
-      "Compulsive redosing - Due to its fast onset and shorter duration of action, this effect is more pronounced than it is for other opiates like morphine.",
-      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. This creates a blurred effect and double vision that is present no matter where one focuses their eyes. This can be so intense it becomes impossible to read or drive."
+      "Pain relief"
     ],
     "neutral": [
+      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. This creates a blurred effect and double vision that is present no matter where one focuses their eyes. This can be so intense it becomes impossible to read or drive.",
       "Sedation",
-      "Constipation",
-      "Decreased libido",
       "Itchiness",
-      "Pain relief",
       "Pupil constriction",
-      "Skin flushing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression",
+      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states.imagery. This is often accompanied by ill-defined geometry."
     ],
     "negative": [
+      "Compulsive redosing - Due to its fast onset and shorter duration of action, this effect is more pronounced than it is for other opiates like morphine.",
+      "Constipation",
+      "Decreased libido",
+      "Skin flushing",
       "Cough suppression",
       "Difficulty urinating",
       "Nausea - Desomorphine produces less nausea than morphine, according to early clinical studies.",
       "Respiratory depression - Desomorphine produces less respiratory depression than morphine, according to early clinical studies.",
       "Appetite suppression",
-      "Orgasm suppression",
-      "Anxiety suppression",
-      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states.imagery. This is often accompanied by ill-defined geometry."
+      "Orgasm suppression"
     ]
   },
   "routeData": {

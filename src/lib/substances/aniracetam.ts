@@ -21,27 +21,26 @@ export const aniracetam: Substance =
   "description": "Aniracetam  (Draganon, Sarpul, Ampamet, Memodrin, Referan, and systematically as N-anisoyl-2-pyrrolidinone) is a nootropic agent belonging to the racetam family of drugs. Supplementation of aniracetam tends to be in the dosage range of 800-2500mg taken over the course of a day, either in two to three evenly spread dosing periods, such as three doses of 400mg or 800mg. Aniracetam has protected against scopolamine-induced amnesia both in rat populations and in human populations, suggesting it can aid recovery from deliriant intoxication and other typically cognitively impaired states by preserving adequate levels of acetylcholine as a primary mechanism.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Colour enhancement",
       "Auditory enhancement",
       "Tactile enhancement",
       "Olfactory enhancement",
       "Creativity enhancement",
       "Wakefulness",
-      "Mindfulness",
       "Focus enhancement",
       "Motivation enhancement",
       "Memory enhancement"
     ],
     "neutral": [
+      "Stimulation",
+      "Mindfulness",
       "Acuity enhancement",
       "Thought connectivity",
-      "Dream potentiation"
-    ],
-    "negative": [
+      "Dream potentiation",
       "Anxiety suppression",
       "Lowered latent Inhibition"
-    ]
+    ],
+    "negative": []
   },
   "routeData": {
     "oral": {

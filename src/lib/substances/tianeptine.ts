@@ -25,27 +25,27 @@ export const tianeptine: Substance =
   "description": "Tianeptine (trade names Stablon and Coaxil) is an atypical antidepressant. This is primarily due to the fact that it is not thought to act immediately through the regulation of monoaminergic neurotransmitters (such as serotonin, dopamine, or noradrenaline.) Rather, it is theorized to act upon glutamate and glutamatergic mechanisms, causing the brain to adapt more readily to stress and depression. Clinical trials of tianeptine suggest that it is just as effective as other, more popular antidepressants such as fluoxetine (i.e., SSRI) and amitriptyline (i.e., TCA). Prescription guidelines indicate that tianeptine should be taken in 12.5 mg doses and taken three times daily, waiting 3-4 hours between doses.",
   "effects": {
     "positive": [
-      "Stimulation & Sedation - At lower to moderate doses, tianeptine is known for its  stimulating and motivating effects. Dosages beyond that can make it feel more like an traditional opioid and can result in more sedation.",
       "Physical euphoria - More pronounced feelings of euphoria have been reported at doses near or above 100 mg. These feelings are extremely similar to that of a typical opioid.",
-      "Bronchodilation - Tianeptine increases the reuptake of serotonin, which has been found to combat bronchoconstriction.",
       "Muscle relaxation",
       "Pain relief - Like traditional opioids, tianeptine can cause pain relieve. Although being more pronounced at higher dosages, a therapeutic dosage might just as well introduce this to an lesser extent.",
-      "Constipation - This might only manifest itself at repeated administration beyond the therapeutic dosages.",
-      "Motivation enhancement",
-      "Ego inflation - Usually only occurs at dosages beyond the therapeutic recommendations."
+      "Motivation enhancement"
     ],
     "neutral": [
+      "Stimulation & Sedation - At lower to moderate doses, tianeptine is known for its  stimulating and motivating effects. Dosages beyond that can make it feel more like an traditional opioid and can result in more sedation.",
+      "Bronchodilation - Tianeptine increases the reuptake of serotonin, which has been found to combat bronchoconstriction.",
+      "Ego inflation - Usually only occurs at dosages beyond the therapeutic recommendations.",
       "Itchiness - Like traditional opioids, itchiness may manifest at recreational doses, and can range from mild to severe depending on dosage and tolerance.",
       "Thought acceleration or Thought deceleration",
-      "Rejuvenation"
+      "Rejuvenation",
+      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry.",
+      "Anxiety suppression - Tianeptine has been found to be especially useful in mitigating the effects of panic attacks."
     ],
     "negative": [
+      "Constipation - This might only manifest itself at repeated administration beyond the therapeutic dosages.",
       "Headaches -  Typically occurs due to dehydration.",
       "Nausea - Nausea is experienced in high dosages, when taken for its euphoric effects.",
       "Dizziness - This usually only happens at higher dosages, dehydration, malnutrition or in conjunction with other substances.",
       "Physical fatigue - Typically only occurs at higher dosages.",
-      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry.",
-      "Anxiety suppression - Tianeptine has been found to be especially useful in mitigating the effects of panic attacks.",
       "Cognitive fatigue - Although rare, some users may experience adverse effects in terms of cognition such as the impairment of thought processes."
     ]
   },

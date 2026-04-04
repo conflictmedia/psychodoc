@@ -23,8 +23,6 @@ export const creatine: Substance =
   "description": "is an amino acid with nootropic effects that occurs naturally within the body of  vertebrates and in some foods such as meat, eggs, and fish. It was identified in 1832 when Michel Eugène Chevreul isolated it from the basified water-extract of skeletal muscle. When taken as a supplement within humans, this compound has cognitive enhancing, neuroprotective, cardioprotective and performance enhancing effects which are particularly present during strenuous physical exercise.",
   "effects": {
     "positive": [
-      "Stimulation - The stimulation which Creatine presents can be considered as subtle, yet persistent and energetic comparable to that of caffeine, yet even less forced in nature.",
-      "Perception of bodily heaviness - Creatine may have a large effect on increasing overall weight due to water retention. Due to this, creatine, rather than altering perception, manifests itself in a physical bodily change. However, the degree of increase is dosage-dependent.",
       "Appetite enhancement",
       "Bodily control enhancement",
       "Stamina enhancement",
@@ -36,17 +34,19 @@ export const creatine: Substance =
       "Memory enhancement"
     ],
     "neutral": [
-      "Muscle spasms",
-      "Diarrhea",
+      "Stimulation - The stimulation which Creatine presents can be considered as subtle, yet persistent and energetic comparable to that of caffeine, yet even less forced in nature.",
+      "Perception of bodily heaviness - Creatine may have a large effect on increasing overall weight due to water retention. Due to this, creatine, rather than altering perception, manifests itself in a physical bodily change. However, the degree of increase is dosage-dependent.",
       "Rejuvenation",
       "Thought connectivity",
-      "Thought organization"
+      "Thought organization",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Muscle spasms",
+      "Diarrhea",
       "Headaches",
       "Stomach cramps",
       "Dehydration",
-      "Anxiety suppression",
       "Irritability"
     ]
   },

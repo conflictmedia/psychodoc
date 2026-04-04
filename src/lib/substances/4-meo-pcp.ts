@@ -22,25 +22,22 @@ export const _4_meo_pcp: Substance =
   "description": "3-MeO-PCP\n4-Methoxyphencyclidine (abbreviated 4-MeO-PCP) is a synthetic dissociative of the arylcyclohexylamine class which produces hallucinogenic and anesthetic effects. A 1999 review published by a chemist using the pseudonym John Q. Beagle suggested the potency of 4-MeO-PCP in man was reduced relative to PCP. It was introduced in late 2008 by a company trading under the name CBAY and was followed by several related compounds such as 3-MeO-PCP and Methoxetamine (MXE).",
   "effects": {
     "positive": [
-      "Perception of bodily lightness",
       "Physical euphoria",
-      "Tactile disconnection",
-      "Consciousness disconnection",
       "Creativity enhancement",
-      "Derealization",
       "Existential self-realization",
       "Euphoria",
       "Immersion enhancement",
       "Increased music appreciation",
-      "Introspection",
-      "Visual disconnection - This eventually results in 4-MeO-PCP's equivalent of the famous \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures."
+      "Introspection"
     ],
     "neutral": [
-      "Motor control loss",
-      "Physical autonomy",
+      "Perception of bodily lightness",
+      "Tactile disconnection",
+      "Consciousness disconnection",
+      "Derealization",
+      "Visual disconnection - This eventually results in 4-MeO-PCP's equivalent of the famous \\\"k-hole\\\" or, more specifically, holes, spaces and voids alongside of structures.",
       "Spontaneous physical sensations",
       "Optical sliding",
-      "Compulsive redosing",
       "Conceptual thinking",
       "Déjà vu",
       "Depersonalization",
@@ -57,15 +54,18 @@ export const _4_meo_pcp: Substance =
       "Environmental orbism",
       "Scenery slicing",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
-      "Distortions"
+      "Distortions",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Physical autonomy",
+      "Compulsive redosing",
       "Dizziness",
       "Nausea",
       "Spatial disorientation",
       "Tactile suppression",
       "Amnesia",
-      "Anxiety suppression",
       "Disinhibition",
       "Memory suppression",
       "Ego death",

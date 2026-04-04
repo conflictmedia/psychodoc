@@ -22,28 +22,28 @@ export const dichloropane: Substance =
   "description": "It is structurally related to cocaine and shares many of its effects, although it notably lacks its local anesthetic properties. Dichloropane has been shown to have a slower onset and longer duration of action compared to cocaine in animal studies. Anecdotal reports characterize it as having the basic stimulant qualities of cocaine but without as much euphoria, more protracted comedown, and less general enjoyability.",
   "effects": {
     "positive": [
-      "Increased heart rate",
-      "Increased perspiration",
       "Analysis enhancement - This effect is usually only present at low to moderate doses.",
       "Cognitive euphoria",
       "Focus enhancement - This component is most effective at low to moderate dosages as anything higher will usually impair concentration.",
       "Increased libido",
       "Increased music appreciation",
-      "Motivation enhancement - Relative to cocaine, dichloropane presents far less motivation enhancement that is associated with excess dopaminergic signaling and has more of a \"stoning\" or demotivating effect.",
+      "Motivation enhancement - Relative to cocaine, dichloropane presents far less motivation enhancement that is associated with excess dopaminergic signaling and has more of a \\\"stoning\\\" or demotivating effect.",
       "Wakefulness",
-      "Wakefulness"
+      "Wakefulness",
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
       "Ego inflation",
       "Thought acceleration",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Stimulation - Dichloropane is usually considered to be energetic and stimulating in a fashion that is comparatively weaker than cocaine, but stronger than that of modafinil, caffeine, and methylphenidate. The particular style of stimulation which dichloropane presents can be described as encouraged at low to moderate dosages but forced at higher dosages. This means that at certain dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of fine motor control. This effect is replaced with moderate fatigue and general exhaustion during the offset of the experience.",
+      "Bronchodilation - This can sometimes be very apparent and can result in an inability to swallow."
     ],
     "negative": [
-      "Stimulation - Dichloropane is usually considered to be energetic and stimulating in a fashion that is comparatively weaker than cocaine, but stronger than that of modafinil, caffeine, and methylphenidate. The particular style of stimulation which dichloropane presents can be described as encouraged at low to moderate dosages but forced at higher dosages. This means that at certain dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of fine motor control. This effect is replaced with moderate fatigue and general exhaustion during the offset of the experience.",
+      "Increased heart rate",
+      "Increased perspiration",
       "Abnormal heartbeat - This substance consistently raises one's heart rate to abnormally high levels which can be potentially dangerous with prolonged or extremely high dosages.",
       "Appetite suppression",
-      "Bronchodilation - This can sometimes be very apparent and can result in an inability to swallow.",
       "Dehydration",
       "Increased blood pressure",
       "Teeth grinding - This component can be considered to be less intense when compared with that of MDMA.",

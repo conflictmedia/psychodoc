@@ -22,11 +22,7 @@ export const propylhexedrine: Substance =
   "description": "Propylhexedrine (also known as Benzedrex and Obesin) is a stimulant substance of the cycloalkylamine class. Propylhexedrine is widely used medicinally as a nasal decongestant (for relief of congestion due to colds, allergies and allergic rhinitis) and sometimes used recreationally as an over-the-counter \"legal high\". Benzedrex was first manufactured by Smith, Kline and French after the Benzedrine inhaler, which contained racemic amphetamine, became unavailable following the placement of amphetamines on the US Schedule II status (i.e. Subjective effects include stimulation, focus enhancement, motivation enhancement, increased libido, appetite suppression, and euphoria.",
   "effects": {
     "positive": [
-      "Increased heart rate - Due to its pronounced peripheral nervous system activity, propylhexedrine tends to increase heart rate much more drastically than comparable dosages of other stimulants.",
-      "Increased bodily temperature",
-      "Increased perspiration",
       "Stamina enhancement",
-      "Brightness alteration",
       "Euphoria - The euphoria capable of being produced by propylhexedrine is reported to be similiar to that of methamphetamine at high doses.",
       "Analysis enhancement",
       "Euphoria",
@@ -39,18 +35,23 @@ export const propylhexedrine: Substance =
       "Wakefulness - According to anecdotal reports, residual feelings of wakefulness can persist for up to 12 hours after the initial high wears off."
     ],
     "neutral": [
+      "Brightness alteration",
       "Stimulation - In terms of its effects on the physical energy levels of the user, propylhexedrine is usually considered to be extremely energetic and stimulating in a fashion that is extremely similar to that of amphetamine or methamphetamine, and stronger than that of modafinil, caffeine, and methylphenidate. It is similar to the stimulation experienced on racemic or the levorotorary form of amphetamine or the racemic methamphetamine, encouraging physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which propylhexedrine presents can be described as forced or pressing and is noticeably more adrenergic and tense on the body. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
       "Pupil dilation",
       "Bronchodilation",
       "Frequent urination",
       "Drifting - This effect is usually subtle and barely noticeable and only occurs at higher dosages or when combined with cannabis. Commonly this consists of level 1-2 drifting.",
-      "Compulsive redosing",
       "Ego inflation",
       "Thought acceleration",
       "Thought organization",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Double vision - An uncommon effect that only occurs at very high, potentially dangerous or toxic dosages."
     ],
     "negative": [
+      "Increased heart rate - Due to its pronounced peripheral nervous system activity, propylhexedrine tends to increase heart rate much more drastically than comparable dosages of other stimulants.",
+      "Increased bodily temperature",
+      "Increased perspiration",
+      "Compulsive redosing",
       "Abnormal heartbeat - Heart palpitations are commonly reported on common to heavy doses of this substance due to its significant peripheral nervous system activity.",
       "Increased blood pressure - Propylhexedrine has been noted by users to raise blood pressure significantly more than other stimulants. It has been speculated that this is due to its higher affinity for noradrenaline relative to stimulants such as amphetamine.",
       "Appetite suppression",
@@ -59,7 +60,6 @@ export const propylhexedrine: Substance =
       "Teeth grinding",
       "Temporary erectile dysfunction",
       "Vasoconstriction - Propylhexedrine has been noted by users as being particularly vasoconstrictive in comparison to other stimulants. It has been speculated that this is due to its higher affinity for noradrenaline relative to stimulants such as amphetamine.",
-      "Double vision - An uncommon effect that only occurs at very high, potentially dangerous or toxic dosages.",
       "Disinhibition",
       "Anxiety",
       "Anxiety",

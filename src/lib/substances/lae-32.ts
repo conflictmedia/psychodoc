@@ -18,13 +18,14 @@ export const lae_32: Substance =
   "class": "Lysergamides",
   "description": "Lysergic acid ethylamide (also known as LAE-32, LAE, and d-ethyllysergamide) is a lesser-known psychedelic substance of the lysergamide class. It is one of the least known and least researched psychedelic substances.\nThe pharmacology of LAE-32 is complex, but it acts primarily by binding to serotonin receptors in the brain, much like LSD and other serotonergic psychedelics.",
   "effects": {
-    "positive": [],
+    "positive": [
+      "Personal bias suppression"
+    ],
     "neutral": [
       "Pupil dilation",
       "Sedation - This effect is mild compared to traditional sedatives such as barbiturates and benzodiazepines."
     ],
     "negative": [
-      "Personal bias suppression",
       "Motivation suppression - LAE-32 is unique among psychedelics for its ability to suppress willpower.",
       "Personality regression"
     ]

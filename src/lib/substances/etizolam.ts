@@ -24,28 +24,29 @@ export const etizolam: Substance =
   "description": "thienodiazepines\nEtizolam (also known as Etilaam, Etizest, Depas, and many others) is a novel depressant substance of the thienodiazepine class. It has been sold as a research chemical online and is commonly used as a substitute for pharmaceutical benzodiazepines like alprazolam (Xanax) or diazepam (Valium). As a result, individuals who are physically dependent on this substance are advised to taper their dose by gradually lowering the amount taken each day over a prolonged period of time instead of stopping use abruptly.",
   "effects": {
     "positive": [
-      "Sedation - Etizolam is sedating in a rapid-acting fashion. At higher doses, this can lead users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation This effect can be described as similar to diazepam, albeit mild-moderately less prominent depending on the dose. Low doses around 0.5-1mg typically cause an effect comparable to alprazolam.",
       "Physical euphoria",
       "Increased libido",
       "Appetite enhancement - This effect is not particularly prominent, but is reported to occur in some people. It can have a synergistic effect when combined with cannabis.",
-      "Cognitive euphoria - This effect is generally produced only at high doses, and is thought to arise largely from the release of pre-existing anxiety in the user. Many users report not feeling any pleasurable or euphoric sensations from benzodiazepines or thienodiazepines like etizolam at all."
+      "Cognitive euphoria - This effect is generally produced only at high doses, and is thought to arise largely from the release of pre-existing anxiety in the user. Many users report not feeling any pleasurable or euphoric sensations from benzodiazepines or thienodiazepines like etizolam at all.",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Motor control loss",
+      "Sedation - Etizolam is sedating in a rapid-acting fashion. At higher doses, this can lead users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Ego inflation",
       "Thought deceleration",
       "Sleepiness",
-      "Residual sleepiness - While etizolam can be used as an effective sleep-inducing aid, its effects may persist into the morning afterwards, which may lead users to feeling \"groggy\" or \"dull\" for up to a few hours.",
+      "Residual sleepiness - While etizolam can be used as an effective sleep-inducing aid, its effects may persist into the morning afterwards, which may lead users to feeling \\\"groggy\\\" or \\\"dull\\\" for up to a few hours.",
       "Thought deceleration",
-      "Thought disorganization"
+      "Anxiety suppression",
+      "Dream potentiation or Dream suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Thought disorganization",
       "Respiratory depression",
-      "Seizure suppression",
       "Dizziness",
       "Temporary erectile dysfunction",
-      "Anxiety suppression",
       "Disinhibition",
       "Compulsive redosing - Compulsive redosing likely occurs due to the rapid way in which the substance produces its anxiety-relieving, relaxing and sometimes euphoric effects before quickly dropping off. It can be made worse due to the memory suppression it produces which can lead the user forgetting they have taken any at all, which can lead to a cycle that leads to a dangerous amnesic blackout state.",
       "Memory suppression",
@@ -55,7 +56,6 @@ export const etizolam: Substance =
       "Motivation suppression",
       "Emotion suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics.",
       "Rebound anxiety - Rebound anxiety is a commonly observed effect with anxiety relieving substances like benzodiazepines and etizolam. It typically corresponds to the total duration spent under the substance's influence along with the total amount consumed in a given period, an effect which can easily lend itself to cycles of dependence and addiction.",
-      "Dream potentiation or Dream suppression",
       "Irritability"
     ]
   },

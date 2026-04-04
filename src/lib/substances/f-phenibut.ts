@@ -23,9 +23,7 @@ export const f_phenibut: Substance =
   "description": "F-Phenibut (also known as 4-Fluorophenibut, Fluorophenibut, Fluorobut, Baflofen and CGP-11130) is a central nervous system depressant and closely related structural analog of phenibut. F-Phenibut possesses an effect profile similar to phenibut but with a faster onset, significantly increased potency, and shorter total duration. It has recently become available through online research chemical vendors, although little is known about this substance, particularly its potential toxicity and addiction potential.",
   "effects": {
     "positive": [
-      "Stimulation and Sedation - At lower doses, F-Phenibut has a mild physical and mental stimulation effect, encouraging movement, wakefulness, productivity and socialization. At higher doses, however, it becomes physically sedating, encouraging sleep and lethargy. Sleeping after dosing a small amount may result in a deep, restful sleep which can leave the user feeling refreshed and alert upon waking.",
       "Physical euphoria",
-      "Increased perspiration",
       "Appetite enhancement",
       "Empathy, love, and sociability enhancement - Unlike alcohol which merely increases sociability through disinhibition, F-Phenibut presents entactogenic effects which, although much weaker than that of traditional entactogens such as MDMA, are still prominent and well-defined even at moderate doses.",
       "Cognitive euphoria",
@@ -33,13 +31,16 @@ export const f_phenibut: Substance =
       "Increased music appreciation"
     ],
     "neutral": [
-      "Motor control loss",
-      "Temperature regulation loss",
+      "Stimulation and Sedation - At lower doses, F-Phenibut has a mild physical and mental stimulation effect, encouraging movement, wakefulness, productivity and socialization. At higher doses, however, it becomes physically sedating, encouraging sleep and lethargy. Sleeping after dosing a small amount may result in a deep, restful sleep which can leave the user feeling refreshed and alert upon waking.",
       "Frequent urination",
-      "Compulsive redosing - This component is highly pronounced in comparison to phenibut.",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Increased perspiration",
+      "Motor control loss",
+      "Temperature regulation loss",
+      "Compulsive redosing - This component is highly pronounced in comparison to phenibut.",
       "Respiratory depression",
       "Nausea - F-Phenibut can induce mild to extreme nausea depending greatly on dose and tolerance. It usually manifests roughly 90 minutes after the initial dose and generally involves waves of nausea accompanied by excessive sweating and vomiting.",
       "Stomach cramps",
@@ -49,7 +50,6 @@ export const f_phenibut: Substance =
       "Muscle cramps - Muscle cramps and joint pain are sometimes accompanied at high doses.",
       "Disinhibition",
       "Analysis suppression - High doses will usually induce a state of mild stupor and confusion.",
-      "Anxiety suppression",
       "Depression - A low mood can be experienced as an after effect of high or frequent dosing.",
       "Amnesia - In comparison to many other GABAergics, this component is very weak except at very high doses."
     ]

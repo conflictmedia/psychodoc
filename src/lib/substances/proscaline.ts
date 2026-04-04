@@ -21,18 +21,18 @@ export const proscaline: Substance =
   "description": "The synthesis of proscaline was first published by David E. Nichols in 1977. Around the same time, Alexander Shulgin sampled and evaluated the chemical at doses up to 60 mg, estimating its potency as five times that of mescaline. Shulgin later documented his findings in the 1991 book PiHKAL (\"Phenethylamines I Have Known and Loved\").",
   "effects": {
     "positive": [
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
       "Novelty enhancement",
       "Unity and interconnectedness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Enhancements",
       "Spontaneous tactile sensations",
       "Pupil dilation",
       "Pattern recognition enhancement",
@@ -45,18 +45,18 @@ export const proscaline: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Nausea",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

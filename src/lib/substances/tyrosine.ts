@@ -23,7 +23,6 @@ export const tyrosine: Substance =
   "description": "Tyrosine (also known as L-Tyrosine and 4-hydroxyphenylalanine) is a non-essential amino acid that serves a precursor to dopamine, adrenaline and norepinephrine in the human body. It is also one of the 22 amino acids that are used by cells to synthesize proteins and is abundant in many high-protein foods, such as chicken, turkey, fish, cottage cheese, cheese, yogurt, almonds, milk, avocados, bananas, peanuts, pumpkin seeds, sesame seeds and soy products. Some evidence suggests tyrosine supplementation can affect performance on working memory tasks under certain conditions, especially stress.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Wakefulness",
       "Analysis enhancement",
       "Cognitive euphoria - Tyrosine can cause mild euphoria at strong doses",
@@ -37,8 +36,10 @@ export const tyrosine: Substance =
       "Stamina enhancement"
     ],
     "neutral": [
+      "Stimulation",
       "Thought deceleration",
-      "Thought acceleration"
+      "Thought acceleration",
+      "Anxiety suppression"
     ],
     "negative": [
       "Appetite suppression",
@@ -47,8 +48,7 @@ export const tyrosine: Substance =
       "Cognitive fatigue",
       "Anxiety",
       "Depression",
-      "Irritability",
-      "Anxiety suppression"
+      "Irritability"
     ]
   },
   "routeData": {

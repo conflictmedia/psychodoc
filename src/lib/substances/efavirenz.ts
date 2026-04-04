@@ -23,14 +23,14 @@ export const efavirenz: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - This effect is generally quite mild.",
-      "Stimulation or Sedation",
       "Colour enhancement",
       "Unity and interconnectedness - This effect is generally quite mild.",
       "Introspection",
-      "Dream potentiation - At non-recreational doses, efavirenz often induces strange dreams.",
       "Auditory enhancement"
     ],
     "neutral": [
+      "Stimulation or Sedation",
+      "Dream potentiation - At non-recreational doses, efavirenz often induces strange dreams.",
       "Spontaneous physical sensations",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
@@ -42,18 +42,18 @@ export const efavirenz: Substance =
       "Scenery slicing",
       "Symmetrical texture repetition",
       "Tracers - This is considered the most common visual effect of efavirenz.",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
-      "Auditory distortion"
+      "Auditory distortion",
+      "Anxiety or Anxiety suppression"
     ],
     "negative": [
+      "Transformations",
       "Difficulty urinating",
       "Nausea",
       "Dizziness",
       "Headaches",
       "Appetite suppression",
-      "Anxiety or Anxiety suppression",
       "Psychosis - At very high doses, efavirenz may cause a psychotic state.",
       "Confusion",
       "Disinhibition",

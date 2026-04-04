@@ -21,9 +21,6 @@ export const _5_mapb: Substance =
   "description": "5-(2-methylaminopropyl)benzofuran (abbreviated 5-MAPB) is a synthetic entactogen of the substituted benzofuran class of chemicals, which are known to produce euphoric, entactogenic, stimulating and mildly hallucinogenic effects. These include such MDA-inspired substances as 5-APB, 6-APB and 5-EAPB, among others. This compound is known for its stimulating, euphoric and entactogenic effects that is capable of acting a quasi-substitute for MDMA proper, which has resulted in its rise in popularity as a research chemical that is easily accessible through the use of online vendors.",
   "effects": {
     "positive": [
-      "Stimulation -  In terms of its effects on the user's physical energy levels, 5-MAPB is commonly regarded as significantly less stimulating and energizing than MDMA, while still retaining its core entactogenic effects. Unlike MDMA, which encourages activities such as running, climbing and dancing in a way that makes it a popular choice for musical events such as festivals and raves, the distinct style of stimulation which 5-MAPB presents can be described as mildly to moderately forced, trending more towards sedation and relaxation. This means that at higher doses, it becomes difficult or impossible to keep still as jaw clenching, involuntarily body shakes and vibrations become present, resulting in an extreme unsteadiness of the hands and a general lack of motor control, though to a far lesser degree than with MDMA.",
-      "Increased heart rate",
-      "Increased perspiration",
       "Empathy, love, and sociability enhancement",
       "Focus enhancement",
       "Analysis enhancement",
@@ -35,13 +32,16 @@ export const _5_mapb: Substance =
       "Wakefulness"
     ],
     "neutral": [
-      "Nystagmus",
+      "Stimulation -  In terms of its effects on the user's physical energy levels, 5-MAPB is commonly regarded as significantly less stimulating and energizing than MDMA, while still retaining its core entactogenic effects. Unlike MDMA, which encourages activities such as running, climbing and dancing in a way that makes it a popular choice for musical events such as festivals and raves, the distinct style of stimulation which 5-MAPB presents can be described as mildly to moderately forced, trending more towards sedation and relaxation. This means that at higher doses, it becomes difficult or impossible to keep still as jaw clenching, involuntarily body shakes and vibrations become present, resulting in an extreme unsteadiness of the hands and a general lack of motor control, though to a far lesser degree than with MDMA.",
       "Acuity enhancement",
       "Thought acceleration",
-      "Compulsive redosing",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Nystagmus",
+      "Compulsive redosing",
       "Dehydration",
       "Appetite suppression",
       "Nausea",

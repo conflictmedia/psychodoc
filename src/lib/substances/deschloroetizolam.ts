@@ -21,20 +21,20 @@ export const deschloroetizolam: Substance =
   "description": "thienodiazepines\nDeschloroetizolam is a short-acting psychoactive substance of the thienodiazepine class which has been shown to produce depressant, anxiolytic, sedative, hypnotic, muscle relaxant, anticonvulsant and amnesic effects. Deschloroetizolam is closely related to etizolam (Etilaam), triazolam (Halcion), and alprazolam (Xanax). It is not prescribed and is not recognised as a controlled substance in many parts of the world, leading to its appearance within grey market research chemical vendors in 2014.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation",
       "Euphoria"
     ],
     "neutral": [
+      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Thought deceleration",
-      "Compulsive redosing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Compulsive redosing",
       "Respiratory depression",
       "Dizziness",
       "Amnesia",
-      "Anxiety suppression",
       "Analysis suppression",
       "Disinhibition",
       "Emotion suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics.",

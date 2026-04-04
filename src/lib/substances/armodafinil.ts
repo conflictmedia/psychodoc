@@ -26,8 +26,6 @@ export const armodafinil: Substance =
   "description": "(R)-Modafinil (also known as Armodafinil and by the brand names Nuvigil, Artvigil, and Waklert) is a eugeroic substance of the benzhydryl class. Armodafinil was approved by the U.S. Food and Drug Administration (FDA) in June 2007 for the treatment of obstructive sleep apnea, shift work sleep disorder, and narcolepsy. In addition to its wakefulness-promoting effects and ability to increase locomotor activity in animals, armodafinil can produce rewarding psychoactive and euphoric effects such as alterations in mood, perception, thinking, and feelings typically observed with other central nervous system (CNS) stimulants in humans.",
   "effects": {
     "positive": [
-      "Increased heart rate",
-      "Dehydration - Dehydration and dry mouth commonly occur due to an increase in motivation to engage in physical activities as well as an increased sense of focus which causes one to forget to drink water.",
       "Wakefulness",
       "Motivation enhancement",
       "Focus enhancement",
@@ -41,14 +39,16 @@ export const armodafinil: Substance =
       "Body odor alteration - Armodafinil, like the racemic modafinil, can leave a very distinct smell of sulfur in one's urine. This is likely because armodafinil, being a member of sulphinyl benzhydryl chemical class, contain sulfur in its chemical makeup.",
       "Thought acceleration",
       "Thought organization",
-      "Time distortion - A perceived increase of time can be attributed to the dopaminergic properties of this substance."
+      "Time distortion - A perceived increase of time can be attributed to the dopaminergic properties of this substance.",
+      "Anxiety or Anxiety suppression"
     ],
     "negative": [
+      "Increased heart rate",
+      "Dehydration - Dehydration and dry mouth commonly occur due to an increase in motivation to engage in physical activities as well as an increased sense of focus which causes one to forget to drink water.",
       "Appetite suppression -  A possible suppression of appetite can be attributed to dopaminergic properties of armodafinil. There is a disparity between the strength of the suppression induced by this substance and amphetamine, likely due to a higher dopaminergic activity of the latter.",
       "Headaches - In terms of physical discomfort, armodafinil can cause headaches especially if dehydrated, if you have not eaten food, or if you have been sitting in an awkward position for an extended period focused intensely on a task.",
       "Dizziness",
       "Nausea",
-      "Anxiety or Anxiety suppression",
       "Emotion suppression"
     ]
   },

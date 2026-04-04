@@ -22,15 +22,10 @@ export const mipla: Substance =
   "description": "MiPLA is structurally related to LSD and likely has a similar mechanism of action, working primarily by binding to the serotonin-2A receptor in the brain. It has recently been researched in greater detail by by a team led by David E. Nichols at Purdue University. MiPLA and its effects are also mentioned in Alexander Shulgin's \"Pharmacology Notes #9\" and \"Pharmacology Notes C\".",
   "effects": {
     "positive": [
-      "Stimulation - Similar to LSD, MiPLA is considered to be primarily stimulating in nature. This is in distinction to other, more commonly used psychedelics such as psilocybin which are more consistent in producing sedation and relaxedness.",
       "Physical euphoria - Physical euphoria on MiPLA is not as consistent as it is with substances like stimulants or entactogens, and can just as easily manifest as physical discomfort without any apparent reason.",
-      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth or unity and usually occurs during and up to the peak of the experience or directly afterward. Users can feel as if they are physically part of or conjoined with other objects. This is usually reported as feeling comfortable and peaceful in its sensations.",
       "Tactile enhancement - Feelings of enhanced tactile sensations are consistently present at moderate levels throughout most MiPLA trips.",
-      "Increased bodily temperature",
       "Stamina enhancement - Generally mild in comparison to traditional stimulants.",
       "Bodily control enhancement",
-      "Increased heart rate",
-      "Increased perspiration",
       "Increased libido",
       "Increased salivation",
       "Colour enhancement",
@@ -51,8 +46,9 @@ export const mipla: Substance =
       "Unity and interconnectedness"
     ],
     "neutral": [
+      "Stimulation - Similar to LSD, MiPLA is considered to be primarily stimulating in nature. This is in distinction to other, more commonly used psychedelics such as psilocybin which are more consistent in producing sedation and relaxedness.",
+      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth or unity and usually occurs during and up to the peak of the experience or directly afterward. Users can feel as if they are physically part of or conjoined with other objects. This is usually reported as feeling comfortable and peaceful in its sensations.",
       "Muscle contractions",
-      "Muscle spasms",
       "Excessive yawning - This effect is significantly less pronounced than it is with psilocybin and its related compounds, the four-position substituted tryptamines.",
       "Pupil dilation",
       "Visual acuity enhancement",
@@ -66,17 +62,21 @@ export const mipla: Substance =
       "Scenery slicing",
       "Symmetrical texture repetition",
       "Machinescapes",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) -  This effect is very consistent in dark environments at appropriately high dosages. They can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and occasionally of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Déjà vu",
       "Thought acceleration",
-      "Auditory distortion"
+      "Auditory distortion",
+      "Spontaneous bodily sensations - The \\\"body high\\\" of MiPLA can be described as proportionally intense in comparison to its accompanying visual and cognitive effects. It behaves as a pleasurable, fast-moving, sharp and location specific tingling sensation. For some, it is manifested spontaneously at different unpredictable points throughout the experience, but for most it maintains a steady presence that rises with the onset and hits its limit once the peak has been reached. In comparison to LSD, MiPLA is a little less sharp in the tingling sensations it produces as but is otherwise essentially indistinguishable."
     ],
     "negative": [
-      "Spontaneous bodily sensations - The \"body high\" of MiPLA can be described as proportionally intense in comparison to its accompanying visual and cognitive effects. It behaves as a pleasurable, fast-moving, sharp and location specific tingling sensation. For some, it is manifested spontaneously at different unpredictable points throughout the experience, but for most it maintains a steady presence that rises with the onset and hits its limit once the peak has been reached. In comparison to LSD, MiPLA is a little less sharp in the tingling sensations it produces as but is otherwise essentially indistinguishable.",
+      "Increased bodily temperature",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Muscle spasms",
+      "Transformations",
       "Temperature regulation suppression",
       "Nausea",
       "Appetite suppression",

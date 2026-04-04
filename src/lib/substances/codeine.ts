@@ -25,30 +25,30 @@ export const codeine: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - This particular substance can be considered as less intense in its physical euphoria when compared with that of morphine or diacetylmorphine (heroin) due to the upper limit of how much can be converted into its active form through metabolism. The sensation itself can be described as extreme feelings of intense physical comfort, warmth and bliss which spreads throughout the body.",
-      "Itchiness - This compound presents greater amounts of itchiness due to higher amounts of histamine release in comparison to other opioids.",
       "Cognitive euphoria - This particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) due to the upper limit of how much can be converted into its active form through metabolism. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as a powerful and overwhelming feeling of emotional bliss, contentment, and happiness.",
-      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. This creates a blurred effect and double vision that is present no matter where one focuses their eyes. This can be so intense it becomes impossible to read or drive."
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
+      "Itchiness - This compound presents greater amounts of itchiness due to higher amounts of histamine release in comparison to other opioids.",
+      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. This creates a blurred effect and double vision that is present no matter where one focuses their eyes. This can be so intense it becomes impossible to read or drive.",
       "Sedation - At higher dosages, this compound can result in feelings of sedation and is considerably more sedating than that of oxycodone and hydrocodone.",
-      "Constipation",
-      "Decreased libido",
       "Pupil constriction",
       "Thought deceleration",
-      "Compulsive redosing - It is worth noting that redosing codeine will not amplify the intensity of its effects.",
       "Dream potentiation",
       "Sleepiness",
-      "Internal Hallucination -One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry."
+      "Internal Hallucination -One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry.",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Constipation",
+      "Decreased libido",
+      "Compulsive redosing - It is worth noting that redosing codeine will not amplify the intensity of its effects.",
       "Respiratory depression - At low to moderate doses, this effect results in the sensation that the breath is slowed down mildly to moderately, but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention.",
       "Appetite suppression",
       "Cough suppression",
       "Difficulty urinating",
       "Nausea - This effect is more likely to occur during high dosages and/or when the user doesn't adequately pace themselves.",
-      "Orgasm suppression",
-      "Anxiety suppression"
+      "Orgasm suppression"
     ]
   },
   "routeData": {

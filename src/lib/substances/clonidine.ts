@@ -26,27 +26,27 @@ export const clonidine: Substance =
     "positive": [
       "Addiction suppression - Clonidine has shown efficacy as a treatment for alcohol, opioid, and nicotine substance use disorders. It has been shown to block opiate withdrawal symptoms.",
       "Focus enhancement - This effect usually occurs at lower doses which are sometimes prescribed for the treatment of ADHD.",
-      "Memory enhancement",
-      "Increased heart rate - This occurs as a rebound effect to clonidine's antihypertensive effects and is typically only prominent following sustained use."
+      "Memory enhancement"
     ],
     "neutral": [
       "Sedation - Clonidine can produce a strong sedative effect, which has been compared to that of benzodiazepines. Users can become very tired and sleep through prompts to awake.",
-      "Dry mouth",
-      "Constipation",
       "Pupil constriction",
       "Raynaud's Phenomenon - Raynaud's Phenomenon occurs when the spasm of arteries results in reduced blood flow to the extremities, causing a pale tone, tingling, coldness, and numbness.",
-      "Thought deceleration"
-    ],
-    "negative": [
+      "Thought deceleration",
       "Decreased heart rate - In normal use as well as overdose, heartrate is lowered and is directly affected by how much is taken.",
       "Decreased blood pressure - Clonidine's sympatholytic effects quickly and effectively lower blood pressure. Users should take care to avoid standing up too quickly to avoid an overwhelming light-headedness and possible fainting spell.",
+      "Anxiety suppression - Clonidine has mild to moderate anxiolytic effects and is sometimes used clinically to treat anxiety."
+    ],
+    "negative": [
+      "Increased heart rate - This occurs as a rebound effect to clonidine's antihypertensive effects and is typically only prominent following sustained use.",
+      "Dry mouth",
+      "Constipation",
       "Abnormal heartbeat - This effect has a low likelihood. Caution should be taken if clonidine is taken with other substances that affect heartbeat. Intense physical activity should be avoided while on this substance.",
       "Physical fatigue",
       "Dizziness - This effect can increase the likelihood of falling and injuring oneself.",
       "Cognitive fatigue",
-      "Anxiety suppression - Clonidine has mild to moderate anxiolytic effects and is sometimes used clinically to treat anxiety.",
       "Focus suppression - This effect usually occurs at higher doses.",
-      "Auditory suppression - Reports describe this effect as a \"hollow\" loss of hearing. It is believed to be a result of lowered blood pressure.",
+      "Auditory suppression - Reports describe this effect as a \\\"hollow\\\" loss of hearing. It is believed to be a result of lowered blood pressure.",
       "Irritability - One can feel very agitated and annoyed, especially with more ease. This especially happens when the medicine is suddenly stopped, which is an incorrect practice; clonidine should be tapered off of the user.",
       "Increased blood pressure - This occurs as a rebound effect to clonidine's antihypertensive effects and is typically only prominent following sustained use."
     ]

@@ -22,12 +22,8 @@ export const _2c_e: Substance =
   "description": "Like other psychedelics, it is thought to produce its effects by binding to serotonin receptors in the brain, although the precise mechanism is poorly understood. 2C-E was first synthesized and tested for human activity by Alexander Shulgin in 1977,  who documented his findings in the 1991 book PiHKAL (\"Phenethylamines I Have Known and Loved\"). User reports characterize 2C-E as a highly unpredictable, dose-sensitive psychedelic that is capable of producing strong visual distortions along with a significant \"body load\", which includes nausea and bodily discomfort.",
   "effects": {
     "positive": [
-      "Stimulation - 2C-E is usually considered to be very energetic and stimulating in a fashion that is comparable to that of MDMA, although it is 'encouraged' instead of 'forced' according to many users.",
-      "Spontaneous bodily sensations - The \"body high\" of 2C-E is manifested as one of the most proportionally intense in comparison to almost all of the classical psychedelics. The sensation itself can be described as an intense and slightly uncomfortable energetic pins and needles sensation that constantly encompasses a person's entire body. It is usually felt over the surface of the skin but occasionally manifests itself in the form of a continuously shifting, tingling sensation that travels up and down the body in intermittent waves.  This skin tingling is much more pronounced than with other psychedelics.  Alongside this, many users report uncomfortable body feelings characterized by dysphoric aches and urges to shift the position of one's body and prolonged tensing of unusual combinations of muscle groups.",
       "Tactile enhancement",
       "Bodily control enhancement",
-      "Increased heart rate",
-      "Increased perspiration",
       "Colour enhancement",
       "Analysis enhancement - This component is introspection dominant and consistently manifested only in the context of a non-social setting in which the user is alone.",
       "Empathy, affection, and sociability enhancement - This component is consistently manifested only in the context of social settings in which one is within the company of others. These feelings are a little weaker and less sharp than those produced by substances such as MDMA and 2C-B but still often prove strong enough to provide long-lasting therapeutic effects.",
@@ -38,14 +34,17 @@ export const _2c_e: Substance =
       "Novelty enhancement",
       "Increased libido",
       "Wakefulness",
-      "Enhancements",
       "Synaesthesia - In its fullest manifestation, this is a very rare and non-reproducible effect. Increasing the dosage can increase the likelihood of this occurring, but seems to only be a prominent part of the experience among those who are already predisposed to synaesthetic states. However, many reports indicate that this substance is relatively reliable at inducing synaesthetic states.{citation needed",
       "Spirituality enhancement",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Physical euphoria - Feelings of frequent but unpredictable rushes of warm physical euphoria are extremely common and very pleasurable. These move from the top of the head downwards before enveloping one's whole body.",
+      "Personal bias suppression"
     ],
     "neutral": [
-      "Physical euphoria - Feelings of frequent but unpredictable rushes of warm physical euphoria are extremely common and very pleasurable. These move from the top of the head downwards before enveloping one's whole body.",
+      "Stimulation - 2C-E is usually considered to be very energetic and stimulating in a fashion that is comparable to that of MDMA, although it is 'encouraged' instead of 'forced' according to many users.",
+      "Spontaneous bodily sensations - The \\\"body high\\\" of 2C-E is manifested as one of the most proportionally intense in comparison to almost all of the classical psychedelics. The sensation itself can be described as an intense and slightly uncomfortable energetic pins and needles sensation that constantly encompasses a person's entire body. It is usually felt over the surface of the skin but occasionally manifests itself in the form of a continuously shifting, tingling sensation that travels up and down the body in intermittent waves.  This skin tingling is much more pronounced than with other psychedelics.  Alongside this, many users report uncomfortable body feelings characterized by dysphoric aches and urges to shift the position of one's body and prolonged tensing of unusual combinations of muscle groups.",
+      "Enhancements",
       "Muscle contractions",
       "Frequent urination",
       "Pupil dilation",
@@ -57,7 +56,6 @@ export const _2c_e: Substance =
       "Scenery slicing",
       "Symmetrical texture repetition",
       "Tracers",
-      "Transformations",
       "Machinescapes",
       "Internal hallucination (settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - In comparison to other psychedelics such as LSD, 2C-E is extremely reliable at producing hallucinations embedded within visual geometry. This particular effect commonly contains hallucinations with scenarios, settings, and concepts. They are more likely to present themselves within dark environments and can be described as internal in their manifestation, lucid in believability, interactive in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Conceptual thinking",
@@ -67,6 +65,9 @@ export const _2c_e: Substance =
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Transformations",
       "Temperature regulation suppression",
       "Increased blood pressure",
       "Nausea -  Mild to extreme nausea is consistently reported when consumed in moderate to high doses and either passes once the user has vomited or gradually fades by itself as the peak sets in.",
@@ -75,7 +76,6 @@ export const _2c_e: Substance =
       "Seizure - This is a rarely observed effect but is believed to be a risk in those predisposed to them, especially while in physically taxing conditions such as being dehydrated, fatigued, undernourished, or overheated.",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Hallucinations"
     ]
   },

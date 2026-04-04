@@ -25,18 +25,17 @@ export const modafinil: Substance =
   "class": "Benzhydryl",
   "description": "Modafinil (also known by the brand names Provigil, Alertec, Modavigil, and others) is a eugeroic substance of the benzhydryl class that produces wakefulness-promoting and stimulant effects when administered. Modafinil is approved by the U.S. Food and Drug Administration for the treatment of obstructive sleep apnea, shift work sleep disorder and narcolepsy. However, studies have shown that modafinil may also be useful off-label for alleviating the symptoms of depression, bipolar disorder, Parkinson's disease, seasonal depressive disorder, ADHD, and various other conditions which have fatigue as a symptom.",
   "effects": {
-    "positive": [
-      "Increased heart rate",
-      "Dehydration - Dehydration and dry mouth commonly occur due to an increase in motivation to engage in physical activities as well as an increased sense of focus which causes one to forget to drink water."
-    ],
+    "positive": [],
     "neutral": [
       "Stimulation - In terms of its effects on the user's physical energy levels, modafinil is commonly considered to be stimulating and energetic, but can be considered as much less stimulating when compared to amphetamine. This stimulation encourages physical movement and activities such as running, playing sports, socializing, and/or exercising. The particular style of stimulation which modafinil presents can result in jaw clenching, teeth grinding, or other involuntary movements comparable to that of traditional stimulants at high doses, but are manifested much less consistently and intensely when compared to amphetamine or cocaine.",
       "Body odor alteration - Modafinil can leave a very distinct smell of sulfur in one's urine. This is likely because modafinil, being a member of the sulphinyl benzhydryl chemical class, contains sulfur in its chemical makeup.",
       "Pupil dilation",
-      "Photophobia - Although uncommon, modafinil can cause a temporary visual intolerance to light.",
-      "Diarrhea"
+      "Photophobia - Although uncommon, modafinil can cause a temporary visual intolerance to light."
     ],
     "negative": [
+      "Increased heart rate",
+      "Dehydration - Dehydration and dry mouth commonly occur due to an increase in motivation to engage in physical activities as well as an increased sense of focus which causes one to forget to drink water.",
+      "Diarrhea",
       "Appetite suppression -  The above components are also accompanied by a suppression of appetite which is usually less intense in strength in comparison to the appetite suppression experienced with amphetamine.",
       "Headaches - In terms of physical discomfort, modafinil can cause headaches especially if dehydrated, if you have not eaten food, or if you have been sitting in an awkward position for an extended period of time focused intensely on a task.",
       "Dizziness",

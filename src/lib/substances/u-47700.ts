@@ -22,24 +22,24 @@ export const u_47700: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - This particular substance is considered to cause less physically intense euphoria as compared to morphine or diacetylmorphine (heroin). This sensation is described as moderate feelings of physical comfort, warmth and physical euphoria which spreads throughout the body.",
-      "Itchiness - This compound, like most opioids, tends to cause strong histamine reactions which cause the skin to feel itchy.",
-      "Sedation - With high dosages, this compound causes considerably stronger sedation than oxycodone or hydrocodone.",
-      "Cognitive euphoria - This particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) due to its short duration and structural differences. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as a powerful and overwhelming feeling of emotional bliss, contentment, and happiness."
+      "Cognitive euphoria - This particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) due to its short duration and structural differences. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as a powerful and overwhelming feeling of emotional bliss, contentment, and happiness.",
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
-      "Constipation",
+      "Itchiness - This compound, like most opioids, tends to cause strong histamine reactions which cause the skin to feel itchy.",
+      "Sedation - With high dosages, this compound causes considerably stronger sedation than oxycodone or hydrocodone.",
       "Pupil constriction",
-      "Decreased libido",
       "Dream potentiation",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Constipation",
+      "Decreased libido",
       "Respiratory depression - Although it has not been formally studied, anecdotal reports suggest that respiratory depression is significantly stronger with this compound in comparison to other more common opioids such as heroin and morphine at relative doses. At low to moderate doses, this effect results in the sensation that the breath is slowed down mildly to moderately, but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention.",
       "Cough suppression",
       "Difficulty urinating",
       "Appetite suppression",
-      "Anxiety suppression",
       "Compulsive redosing - Due to the short duration of this substance and the addictive properties of opioids in general, there is a strong risk of compulsive redosing which is considerably dangerous considering it is very corrosive to mucous membranes.",
       "Cognitive fatigue",
       "Anxiety",

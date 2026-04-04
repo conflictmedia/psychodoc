@@ -24,21 +24,21 @@ export const flubromazolam: Substance =
     "neutral": [
       "Thought deceleration",
       "Dream potentiation",
-      "Compulsive redosing",
       "Sleepiness",
-      "Residual sleepiness - While flubromazolam can be used as an effective sleep-inducing aid, its effects may persist into the morning afterwards, which may lead users to feeling \"groggy\" or \"dull\" for a few hours if not significantly longer.",
+      "Residual sleepiness - While flubromazolam can be used as an effective sleep-inducing aid, its effects may persist into the morning afterwards, which may lead users to feeling \\\"groggy\\\" or \\\"dull\\\" for a few hours if not significantly longer.",
       "Thought deceleration",
-      "Thought disorganization"
+      "Anxiety suppression",
+      "Dream potentiation or Dream suppression"
     ],
     "negative": [
+      "Compulsive redosing",
+      "Thought disorganization",
       "Amnesia",
-      "Anxiety suppression",
       "Analysis suppression",
       "Disinhibition",
       "Emotion suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics.",
       "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others. It most commonly occurs at heavy dosages.",
       "Rebound anxiety - Rebound anxiety is a commonly observed effect with anxiety relieving substances like benzodiazepines. It typically corresponds to the total duration spent under the substance's influence along with the total amount consumed in a given period, an effect which can easily lend itself to cycles of dependence and addiction.",
-      "Dream potentiation or Dream suppression",
       "Irritability"
     ]
   },

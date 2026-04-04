@@ -21,23 +21,23 @@ export const meclofenoxate: Substance =
     "positive": [
       "Bodily control enhancement",
       "Stamina enhancement",
-      "Stimulation - The stimulation which meclofenoxate presents can be considered as primarily subtle and similar to that of caffeine.",
       "Focus enhancement",
       "Memory enhancement",
-      "Mindfulness",
       "Motivation enhancement",
       "Wakefulness - In comparison to citicoline, meclofenoxate manifests itself primarily in a physically stimulating manner over a mental stimulation."
     ],
     "neutral": [
-      "Muscle tension",
+      "Stimulation - The stimulation which meclofenoxate presents can be considered as primarily subtle and similar to that of caffeine.",
+      "Mindfulness",
       "Anxiolytic",
       "Dream potentiation",
       "Visual acuity enhancement",
       "Olfactory intensification",
-      "Insomnia"
+      "Body odor alteration - This can be caused in some populations, especially those suffering from trimethylaminuria. Choline (a metabolite of meclofenoxate) is a precursor to trimethylamine, which those with trimethylaminuria are not able to easily break down, oftening resulting in smelling similar to fish."
     ],
     "negative": [
-      "Body odor alteration - This can be caused in some populations, especially those suffering from trimethylaminuria. Choline (a metabolite of meclofenoxate) is a precursor to trimethylamine, which those with trimethylaminuria are not able to easily break down, oftening resulting in smelling similar to fish.",
+      "Muscle tension",
+      "Insomnia",
       "Dizziness",
       "Headaches",
       "Nausea",

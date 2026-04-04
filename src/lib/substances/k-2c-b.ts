@@ -23,18 +23,18 @@ export const k_2c_b: Substance =
   "description": "Subjective effects include open and closed-eye visuals, time distortion, euphoria, and ego loss. βk-2C-B is relatively uncommon and has little to no history of human usage prior to its 2014 distribution by online vendors as a research chemical. As a result, users are advised to approach this novel and poorly understood hallucinogenic substance with the proper amount of precaution and harm reduction practices if choosing to use it.",
   "effects": {
     "positive": [
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
       "Novelty enhancement",
       "Unity and interconnectedness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Enhancements",
       "Spontaneous tactile sensations",
       "Pupil dilation",
       "Pattern recognition enhancement",
@@ -47,18 +47,18 @@ export const k_2c_b: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Nausea",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

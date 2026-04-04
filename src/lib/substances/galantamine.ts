@@ -21,19 +21,19 @@ export const galantamine: Substance =
   "description": "Galantamine (also known as Nivalin, Razadyne, Razadyne ER, Reminyl, and Lycoremine) is a water soluble, reversible, competitive acetylcholinesterase inhibitor that functions as a nootropic, oneirogen, and mild dissociative substance. Studies of usage in modern medicine began in the Soviet Union in the 1950s by Soviet pharmacologists M. D. Mashkovsky and R. P. Kruglikova–Lvova. Galantamine has been used for decades in Eastern Europe and Russia for the treatment of various conditions such as myasthenia, myopathy, and sensory and motor dysfunction associated with disorders of the central nervous system.",
   "effects": {
     "positive": [
-      "Stimulation - Galantamine is primarily stimulating and provides nootropic effects.",
       "Colour enhancement",
       "Cognitive euphoria",
-      "Dream potentiation - Galantamine was shown to increase lucid dreaming by 27% at 4 mg and 42% at 8 mg in a 2018 double-blind study lasting three nights.",
       "Memory enhancement"
     ],
     "neutral": [
-      "Sleep paralysis",
+      "Stimulation - Galantamine is primarily stimulating and provides nootropic effects.",
+      "Dream potentiation - Galantamine was shown to increase lucid dreaming by 27% at 4 mg and 42% at 8 mg in a 2018 double-blind study lasting three nights.",
       "Drifting",
       "Sleepiness",
       "Distortions"
     ],
     "negative": [
+      "Sleep paralysis",
       "Physical fatigue",
       "Dizziness",
       "Headaches",

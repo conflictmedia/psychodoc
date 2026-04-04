@@ -21,15 +21,15 @@ export const citicoline: Substance =
   "description": "Citicoline (CDP-choline, cytidine 5'-diphosphocholine) is a water soluble nutrient which serves as a precursor to both choline and cytidine  within the brain  (which later converts to uridine). To humans, choline is an essential nutrient as its role in reducing the risk of neural tube defects, fatty liver disease, and other pathologies have been documented. This supplement is catered towards preventing or treating memory impairments associated with aging because both of the molecules it confers are neuroprotective and potentially enhance learning.",
   "effects": {
     "positive": [
-      "Stimulation - The stimulation which citicoline presents can be considered as primarily subtle and less than that of caffeine.",
       "Wakefulness - In comparison to Alpha-GPC, Citicoline manifests itself primarily in a mentally stimulating manner over a physical stimulation.",
       "Focus enhancement",
       "Addiction suppression - Citicoline has been shown to reduce psychological cravings in cocaine-dependent populations who actively seek substance abuse treatment.",
-      "Mindfulness",
-      "Memory enhancement"
+      "Memory enhancement",
+      "Pain relief - CDP-choline appears to have painkilling effects via the nicotinic acetylcholine receptors in a dosage-dependent manner."
     ],
     "neutral": [
-      "Pain relief - CDP-choline appears to have painkilling effects via the nicotinic acetylcholine receptors in a dosage-dependent manner.",
+      "Stimulation - The stimulation which citicoline presents can be considered as primarily subtle and less than that of caffeine.",
+      "Mindfulness",
       "Body odor alteration - This may occur in some populations, especially those suffering from trimethylaminuria. Choline (a byproduct of CDP-choline) is a precursor to trimethylamine, which some people are not able to break down easily, often resulting in a fishy smell.",
       "Acuity enhancement - Citicoline may prevent and treat eye damage related to glaucoma.",
       "Dream potentiation"

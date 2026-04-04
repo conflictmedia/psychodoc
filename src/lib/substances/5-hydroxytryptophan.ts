@@ -29,31 +29,32 @@ export const _5_hydroxytryptophan: Substance =
   "description": "5-HTP is available over the counter in the United States, United Kingdom, and Canada as a dietary supplement and is sometimes used as an antidepressant, sleep aid, and appetite suppressant. 5-HTP is also popularly consumed by users of MDMA and other serotonin-releasing agents to try to reduce the negative after effects that begin during the substance's come down period, including anxiety, depression, and cognitive fatigue. tryptophan hydroxylase) for a short period after, it is believed that taking 5-HTP in the days after coming down will speed up the production of serotonin and decrease the time needed to recover (though there are many popular misconceptions and controversies as to just how effective it is for this purpose).",
   "effects": {
     "positive": [
-      "Stimulation",
       "Bodily control enhancement",
-      "Increased heart rate",
       "Color enhancement",
       "Cognitive euphoria - Although mild, this effect is present at heavier dosages, but may also come with it a number of peripheral side effects due to peripheral serotonin activity (mostly on the gut).",
       "Memory enhancement",
-      "Mindfulness",
       "Motivation enhancement"
     ],
     "neutral": [
+      "Stimulation",
+      "Mindfulness",
       "Sedation",
-      "Abnormal heartbeat",
-      "Diarrhea",
       "Ear ringing",
       "Heartburn",
-      "Stomach bloating",
       "Tracers",
       "Drifting",
       "Depth perception distortions",
       "Sleepiness",
       "Thought acceleration or Thought deceleration",
       "Dream potentiation",
-      "Sleep paralysis"
+      "Anxiety suppression"
     ],
     "negative": [
+      "Increased heart rate",
+      "Abnormal heartbeat",
+      "Diarrhea",
+      "Stomach bloating",
+      "Sleep paralysis",
       "Appetite suppression",
       "Dizziness",
       "Headaches",
@@ -61,7 +62,6 @@ export const _5_hydroxytryptophan: Substance =
       "Nausea and vomiting",
       "Stomach cramps",
       "Teeth grinding",
-      "Anxiety suppression",
       "Physical fatigue",
       "Hallucinations - Auditory hallucinations have been reported on 5-HTP, however they are rare and only occur at high dosages."
     ]

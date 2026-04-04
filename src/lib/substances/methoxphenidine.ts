@@ -24,15 +24,14 @@ export const methoxphenidine: Substance =
   "description": "The first reports of human recreational use appeared shortly after the 2013 U.K. arylcyclohexylamine ban, during which it and diphenidine began to be sold in powder and tablet form on the online research chemical market. It was initially marketed by vendors as a replacement for the highly popular methoxetamine (MXE) despite little to no evidence that it possessed similar effects. Methoxphenidine belongs to a class of substances that can induce a hallucinogenic state known as \"dissociative anesthesia\", in which the user feels detached from their bodies.",
   "effects": {
     "positive": [
-      "Tactile disconnection - This results in typical states of progressive physical disconnection but is far more consciously controllable than that of other dissociatives. This allows one to choose how much of their body they are currently aware of and connected to simply by directing their focus towards it even throughout higher states of disconnection and out-of-body experiences.",
-      "Spontaneous physical sensations - The MXP \"body high\" is a soft, pleasurable vibrating sensation which can be felt all over the body which progressively intensifies throughout the onset before dissipating once the peak has been reached.",
       "Euphoria - This results in feelings of physical euphoria which range between mild pleasure to powerfully all-encompassing bliss.",
-      "Perception of bodily lightness - This creates the sensation that the body is floating and has become entirely weightless. This effect is strangely stimulating and encourages physical activities at low to moderate dosages by making the body feel light and effortless to move.",
-      "Visual disconnection - This eventually results in MXP's equivalent of the famous \"K-hole\" or more specifically, holes, spaces and voids alongside of structures."
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
-      "Physical autonomy",
+      "Tactile disconnection - This results in typical states of progressive physical disconnection but is far more consciously controllable than that of other dissociatives. This allows one to choose how much of their body they are currently aware of and connected to simply by directing their focus towards it even throughout higher states of disconnection and out-of-body experiences.",
+      "Spontaneous physical sensations - The MXP \\\"body high\\\" is a soft, pleasurable vibrating sensation which can be felt all over the body which progressively intensifies throughout the onset before dissipating once the peak has been reached.",
+      "Perception of bodily lightness - This creates the sensation that the body is floating and has become entirely weightless. This effect is strangely stimulating and encourages physical activities at low to moderate dosages by making the body feel light and effortless to move.",
+      "Visual disconnection - This eventually results in MXP's equivalent of the famous \\\"K-hole\\\" or more specifically, holes, spaces and voids alongside of structures.",
       "Gait alteration",
       "Visual acuity suppression",
       "Double vision - This component is prevalent at moderate to heavy dosages and makes reading impossible unless one closes an eye.",
@@ -46,6 +45,7 @@ export const methoxphenidine: Substance =
       "Distortions - The auditory distortion which is present at moderate to high doses of MXP can be described as a concomitant, audial component of frame rate suppression. This causes one to hear sound at a lagged frame rate. This can be described as 2 -15 seconds longer, with repeating, extremely distorted syllables at heavy dosages."
     ],
     "negative": [
+      "Physical autonomy",
       "Tactile suppression - This partially to entirely suppresses one's own sense of touch, creating feelings of numbness within the extremities. It is responsible for the anaesthetic properties of this substance.",
       "Motor control loss - A loss of gross and fine motor control alongside of balance and coordination is prevalent within MXP and becomes especially strong at higher dosages. This means that one should be sitting down before the onset unless they are experienced in case of falling over and injuring oneself.",
       "Dizziness - Although uncommon, some people report dizziness under the influence of MXP.",

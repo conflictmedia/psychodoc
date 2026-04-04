@@ -27,15 +27,15 @@ export const cake: Substance =
       "Empathy, affection, and sociability enhancement",
       "Increased libido",
       "Spirituality enhancement",
-      "Mindfulness",
-      "Perception of bodily heaviness - Many users reported a real increased weight.",
       "Wakefulness"
     ],
     "neutral": [
-      "Thought acceleration",
-      "Abnormal heartbeat"
+      "Mindfulness",
+      "Perception of bodily heaviness - Many users reported a real increased weight.",
+      "Thought acceleration"
     ],
     "negative": [
+      "Abnormal heartbeat",
       "Stomach cramps",
       "Nausea - Some users reported nausea on extremely high doses.",
       "Appetite suppression"

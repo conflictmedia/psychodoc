@@ -23,7 +23,6 @@ export const _3c_e: Substance =
   "effects": {
     "positive": [
       "Colour enhancement",
-      "Brightness alteration",
       "Empathy, affection, and sociability enhancement - This component is typically manifested only in the context of social settings in which one is within the company of others, and only at lower, non-impairing doses. These feelings of sociability, affection, and empathy tend to be weaker and less consistent than those produced by substances such as MDMA and 2C-B, but can still prove strong enough to provide long-lasting therapeutic effects.",
       "Cognitive euphoria",
       "Analysis enhancement - This effect is consistent in its manifestation and outrospection dominant.",
@@ -35,12 +34,14 @@ export const _3c_e: Substance =
       "Laughter fits",
       "Increased libido",
       "Wakefulness",
-      "Enhancements",
       "Synaesthesia - In its fullest manifestation, this is a very rare and non-reproducible effect. Increasing the dosage can increase the likelihood of this occurring, but seems only to be a prominent part of the experience among those who are already predisposed to synaesthetic states.",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Enhancements",
       "Visual acuity enhancement",
       "Pattern recognition enhancement",
       "Drifting (melting, flowing, breathing and morphing)",
@@ -51,7 +52,6 @@ export const _3c_e: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; Alterations in perspective and scenarios and plots) - In comparison to other psychedelics such as LSD, 3C-E is extremely high in internal hallucinations. They are more common within dark environments and can be comprehensibly described through its variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Conceptual thinking",
       "Thought acceleration",
@@ -60,9 +60,9 @@ export const _3c_e: Substance =
       "Distortions"
     ],
     "negative": [
+      "Transformations",
       "Confusion",
-      "Anxiety & Paranoia - This effect is not as common at low to moderate doses and is less likely to occur when the basic rules of set and setting are taken into account. It should be noted that this inconsistently induced effect is seemingly more likely to manifest when used with cannabis. This combination should be used with extreme caution if one is not experienced with psychedelics, meaning that the user should adequately pace themselves with a fraction of their usual amount. It is commonly reported that psychedelics can to a certain extent counteract some of the perceived mental cloudiness or intoxicating effects of THC causing the user to in turn use more cannabis than is needed which can often lead to an overwhelmingly anxious and paranoid headspace which can trigger a \"bad trip\".",
-      "Personal bias suppression",
+      "Anxiety & Paranoia - This effect is not as common at low to moderate doses and is less likely to occur when the basic rules of set and setting are taken into account. It should be noted that this inconsistently induced effect is seemingly more likely to manifest when used with cannabis. This combination should be used with extreme caution if one is not experienced with psychedelics, meaning that the user should adequately pace themselves with a fraction of their usual amount. It is commonly reported that psychedelics can to a certain extent counteract some of the perceived mental cloudiness or intoxicating effects of THC causing the user to in turn use more cannabis than is needed which can often lead to an overwhelmingly anxious and paranoid headspace which can trigger a \\\"bad trip\\\".",
       "Memory suppression",
       "Ego death",
       "Hallucinations"

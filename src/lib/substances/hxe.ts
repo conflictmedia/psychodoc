@@ -21,19 +21,18 @@ export const hxe: Substance =
   "description": "3-HO-2'-Oxo-PCE (commonly known as HXE) is a novel dissociative substance of the arylcyclohexylamine class that produces ketamine-like dissociative effects when administered. It is structurally related to Methoxetamine, Ketamine and PCE. Limited data exists about the pharmacological properties, metabolism, and toxicity of HXE in humans, and it has a limited history of human use.",
   "effects": {
     "positive": [
+      "Existential self-realization",
+      "Unity and interconnectedness",
+      "Pain relief"
+    ],
+    "neutral": [
       "Stimulation or Sedation - HXE has a mild stimulating effect which promotes activities like socializing or moving. Higher doses will evidently lead to greater amounts of sedation as moving around can become difficult. However, there are some stimulating effects that persist at higher dosages as well.",
       "Perfection of bodily lightness - This creates the sensation that the body is floating and has become entirely weightless. This effect is strangely stimulating and encourages physical activities at low to moderate doses by making the body feel light and effortless to move.",
       "Tactile disconnection",
-      "Visual disconnection - This eventually results in HXE's equivalent of the \"k-hole\" or more specifically, holes, spaces and voids alongside of structures.",
+      "Visual disconnection - This eventually results in HXE's equivalent of the \\\"k-hole\\\" or more specifically, holes, spaces and voids alongside of structures.",
       "Consciousness disconnection",
-      "Existential self-realization",
-      "Unity and interconnectedness"
-    ],
-    "neutral": [
       "Spontaneous physical sensations - The body feeling  of HXE can be described as slightly warm, but also empty or rough at times.",
       "Gait alteration",
-      "Pain relief",
-      "Physical autonomy",
       "Optical sliding",
       "Visual acuity suppression",
       "Double vision - This component is prevalent at moderate to heavy doses and makes reading impossible unless one closes an eye.",
@@ -48,6 +47,7 @@ export const hxe: Substance =
       "Distortions"
     ],
     "negative": [
+      "Physical autonomy",
       "Dizziness - This effect is usually uncommon.",
       "Motor control loss - A loss of gross and fine motor control alongside balance and coordination is prevalent within HXE and becomes especially strong at higher doses, although this compound seems to be less susceptiblw to this. This means that one should be sitting down before the onset (unless experienced) in the case of falling over and injuring oneself.",
       "Spatial disorientation",

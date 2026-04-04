@@ -26,13 +26,12 @@ export const bufotenin: Substance =
       "Analysis enhancement",
       "Emotion enhancement",
       "Increased music appreciation",
-      "Mindfulness",
       "Unity and interconnectedness",
-      "Wakefulness",
-      "Enhancements"
+      "Wakefulness"
     ],
     "neutral": [
-      "Visual acuity enhancement and Visual acuity suppression - Bufotenin is equally capable of both decreasing and increasing visual acuity. The outcome of which effect will manifest seems to be chosen almost entirely at random and is largely setting dependent.",
+      "Mindfulness",
+      "Enhancements",
       "Drifting (Morphing, Breathing, Melting, Flowing) - In comparison to other psychedelics, this effect can be described as identical to DMT in its style, highly detailed, slow and smooth in motion and static in appearance.",
       "Colour shifting",
       "Environmental orbism",
@@ -44,6 +43,7 @@ export const bufotenin: Substance =
       "Distortions"
     ],
     "negative": [
+      "Visual acuity enhancement and Visual acuity suppression - Bufotenin is equally capable of both decreasing and increasing visual acuity. The outcome of which effect will manifest seems to be chosen almost entirely at random and is largely setting dependent.",
       "Amnesia",
       "Anxiety",
       "Delusion",

@@ -21,18 +21,18 @@ export const hexedrone: Substance =
   "description": "N-Ethylhexedrone (Hexen)\nHexedrone is a novel synthetic stimulant of the cathinone class. Subjective effects include stimulation, disinhibition, thought acceleration and euphoria. Due to its novelty and extremely short history of human usage, all information related to the use of this compound should be treated with caution.",
   "effects": {
     "positive": [
-      "Spontaneous tactile sensations - High doses of hexedrone result in a pleasurable body high characterized by pleasant tingling.",
-      "Stimulation - In terms of its effects on the user's physical energy levels, hexedrone can be considered to be extremely stimulating and energetic.",
       "Tactile enhancement",
-      "Increased heart rate",
-      "Increased perspiration",
       "Focus enhancement",
       "Wakefulness"
     ],
     "neutral": [
+      "Spontaneous tactile sensations - High doses of hexedrone result in a pleasurable body high characterized by pleasant tingling.",
+      "Stimulation - In terms of its effects on the user's physical energy levels, hexedrone can be considered to be extremely stimulating and energetic.",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
       "Dehydration - Dry mouth and increased sweating can occur after consuming hexedrone. Low doses of the substance in question cause minimal dehydration.",
       "Vasoconstriction - Hexedrone can be considered slightly vasoconstricting.",
       "Appetite suppression",

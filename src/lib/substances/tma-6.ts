@@ -22,7 +22,6 @@ export const tma_6: Substance =
   "description": "It has been reported to produce a complex mixture of stimulant, hallucinogenic and entactogenic effects that distinguish it from other psychedelic phenethylamine derivatives like the 2C-x or DOx series. TMA-6 has no history of human usage prior to the 1991 publication of its synthesis and pharmacology in the book PiHKAL (\"Phenethylamines I Have Known And Loved\") by Alexander Shulgin, who called it \"one of the most rewarding and pleasurable of the methoxylated amphetamines\". Since then it has been regarded as a novelty in the psychedelics community and is made available for sale only rarely by clandestine laboratory operations.",
   "effects": {
     "positive": [
-      "Stimulation - In terms of its effects on the physical energy levels of the user, TMA-6 is usually considered to be extremely stimulating at levels which do not become overwhelming, resulting in a shakiness and unsteadiness of the hands but encouraging one to move around, run, dance, climb and generally engage in physical activities. In comparison, other more commonly used psychedelics such as psilocin are generally sedating and relaxed.",
       "Tactile enhancement - Feelings of enhanced tactile sensation are consistently present at moderate levels throughout most TMA-6 trips.",
       "Bodily control enhancement",
       "Empathy, love, and sociability enhancement - This component is consistently manifested only in the context of social settings in which one is within the company of others. These feelings of sociability, love and empathy are weaker and sharper than those found on substances such as MDMA and 2C-B, but still can elevate one's mood.",
@@ -34,10 +33,12 @@ export const tma_6: Substance =
       "Wakefulness",
       "Increased libido",
       "Colour enhancement",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
-      "Spontaneous tactile sensations - The \"body high\" of TMA-6 is manifested as somewhat intense in comparison to most classical psychedelics such as LSD. The sensation itself can be described as a constantly present yet somewhat mild energetic pins and needles sensation that encompasses a person’s entire body. It is usually felt over every square inch of the skin, but occasionally manifests itself in the form of a continuously shifting tingling sensation that travels up and down the body in spontaneous waves.",
+      "Stimulation - In terms of its effects on the physical energy levels of the user, TMA-6 is usually considered to be extremely stimulating at levels which do not become overwhelming, resulting in a shakiness and unsteadiness of the hands but encouraging one to move around, run, dance, climb and generally engage in physical activities. In comparison, other more commonly used psychedelics such as psilocin are generally sedating and relaxed.",
+      "Enhancements",
+      "Spontaneous tactile sensations - The \\\"body high\\\" of TMA-6 is manifested as somewhat intense in comparison to most classical psychedelics such as LSD. The sensation itself can be described as a constantly present yet somewhat mild energetic pins and needles sensation that encompasses a person’s entire body. It is usually felt over every square inch of the skin, but occasionally manifests itself in the form of a continuously shifting tingling sensation that travels up and down the body in spontaneous waves.",
       "Pupil dilation",
       "Thought acceleration",
       "Time distortion",
@@ -56,7 +57,6 @@ export const tma_6: Substance =
       "Nausea -  Mild to extreme nausea is reported when consumed in moderate to high dosages and either passes once the person has vomited or gradually fades by itself as the peak sets in.",
       "Vasoconstriction - This effect is usually only present at higher dosages, but can be particularly uncomfortable.",
       "Increased blood pressure",
-      "Personal bias suppression",
       "Memory suppression",
       "Ego death",
       "Hallucinations"

@@ -19,26 +19,26 @@ export const grayanotoxin: Substance =
   "description": "",
   "effects": {
     "positive": [
-      "Brightness alteration  - Grayanotoxin may make colors appear darker.",
       "Cognitive euphoria - This effect manifests as a sense of relaxation"
     ],
     "neutral": [
+      "Brightness alteration  - Grayanotoxin may make colors appear darker.",
       "Visual acuity suppression",
       "Double vision",
       "Drifting - This effect is qualitatively similar to that of other cholinergic substances, and is likely a result of the effects of grayanotoxins on sodium channels.",
       "Visual haze",
-      "Auditory acuity suppression"
-    ],
-    "negative": [
-      "Color depression",
       "External hallucination - Deliriant-like hallucinations have been reported after high-dose ingestion of grayanotoxins, this is rarely reported and is unlikely to occur at common doses.",
       "Internal hallucination",
+      "Sleepiness - At sufficient doses, grayanotoxins may cause sedation and even a sudden loss of consciousness .",
+      "Anxiety suppression - Grayanotoxin-containing plants, such as monotropa uniflora, have been historically used for their anxiolytic effects ."
+    ],
+    "negative": [
+      "Auditory acuity suppression",
+      "Color depression",
       "Cognitive fatigue",
       "Confusion",
       "Irritability",
-      "Sleepiness - At sufficient doses, grayanotoxins may cause sedation and even a sudden loss of consciousness .",
-      "Cognitive dysphoria",
-      "Anxiety suppression - Grayanotoxin-containing plants, such as monotropa uniflora, have been historically used for their anxiolytic effects ."
+      "Cognitive dysphoria"
     ]
   },
   "routeData": {

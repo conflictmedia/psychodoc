@@ -21,10 +21,8 @@ export const coluracetam: Substance =
   "description": "It was originally developed and tested by the Mitsubishi Tanabe Pharma Corporation for Alzheimer's disease. After the drug had failed to reach the endpoints in its clinical trials, it was in-licensed by BrainCells Inc for investigations into major depressive disorder (MDD), which was preceded by being awarded a \"Qualifying Therapeutic Discovery Program Grant\" by the state of California. Colouracetam is easily available and sold through online vendors as a dietary supplement in the United States.",
   "effects": {
     "positive": [
-      "Stimulation - The stimulation which coluracetam presents can be considered as primarily subtle and short lasting, comparable to that of caffeine.",
       "Colour enhancement",
       "Auditory enhancement",
-      "Mindfulness",
       "Tactile enhancement",
       "Wakefulness",
       "Focus enhancement",
@@ -33,13 +31,14 @@ export const coluracetam: Substance =
       "Memory enhancement"
     ],
     "neutral": [
+      "Stimulation - The stimulation which coluracetam presents can be considered as primarily subtle and short lasting, comparable to that of caffeine.",
+      "Mindfulness",
       "Acuity enhancement",
       "Thought connectivity",
-      "Dream potentiation"
-    ],
-    "negative": [
+      "Dream potentiation",
       "Anxiety suppression"
-    ]
+    ],
+    "negative": []
   },
   "routeData": {
     "insufflated": {

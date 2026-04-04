@@ -20,15 +20,14 @@ export const choline_bitartrate: Substance =
   "class": "Ammonium salt",
   "description": "Choline is an essential nutrient in humans, with documented roles in reducing the risk of neural tube defects, fatty liver disease and other pathologies. Choline is rarely sold as a free base; it is generally combined with an acid to form a salt such as choline bitartrate for stability, or conjugated into one of the more complex forms such as citicoline. Choline supplementation can be used in the treatment of liver disorders, hepatitis, glaucoma, atherosclerosis, Alzheimer's disease, bipolar disorder and possibly other neurological disorders.",
   "effects": {
-    "positive": [
-      "Stimulation - The stimulation which choline presents can be considered as primarily subtle, less than that of caffeine."
-    ],
+    "positive": [],
     "neutral": [
-      "Dream potentiation"
+      "Stimulation - The stimulation which choline presents can be considered as primarily subtle, less than that of caffeine.",
+      "Dream potentiation",
+      "Body odor alteration - This occurs in some populations, especially those suffering from trimethylaminuria. Choline is a precursor to trimethylamine, which some persons are not able to easily break down, often resulting in a \\\"fishy smell.\\\""
     ],
     "negative": [
-      "Headaches",
-      "Body odor alteration - This occurs in some populations, especially those suffering from trimethylaminuria. Choline is a precursor to trimethylamine, which some persons are not able to easily break down, often resulting in a \"fishy smell.\""
+      "Headaches"
     ]
   },
   "routeData": {

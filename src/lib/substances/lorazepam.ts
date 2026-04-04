@@ -26,24 +26,24 @@ export const lorazepam: Substance =
     "positive": [
       "Muscle relaxation",
       "Appetite enhancement - This effect is not particularly prominent, but is reported to occur in some people. It can have a synergistic effect when combined with cannabis",
-      "Appetite enhancement"
+      "Appetite enhancement",
+      "Nausea suppression",
+      "Seizure suppression"
     ],
     "neutral": [
       "Sedation",
-      "Motor control loss",
       "Frequent urination",
-      "Compulsive redosing",
       "Dream potentiation",
       "Thought deceleration - This can often be visibly clear to onlookers just during verbal exchanges even on light-medium doses without tolerance.",
-      "Black out"
+      "Black out",
+      "Anxiety suppression - Not as prominent as with alprazolam, clonazepam or diazepam."
     ],
     "negative": [
+      "Motor control loss",
+      "Compulsive redosing",
       "Dizziness",
-      "Nausea suppression",
       "Respiratory depression",
-      "Seizure suppression",
       "Analysis suppression",
-      "Anxiety suppression - Not as prominent as with alprazolam, clonazepam or diazepam.",
       "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others. It most commonly occurs at heavy dosages.",
       "Disinhibition",
       "Emotion suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics. This particular component may even be more prominent on lorazepam than other common benzodiazepines.",

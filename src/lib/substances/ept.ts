@@ -21,29 +21,29 @@ export const ept: Substance =
   "description": "N-Ethyl-N-propyltryptamine (also known as Ethylpropyltryptamine and EPT) is an obscure novel psychedelic substance of the tryptamine class. It first appeared for sale on the online research chemical market in 2016. Initial reports describe the effects of EPT as mild and indistinct compared to structurally similar base tryptamines such as DMT, DET and DPT, all of which are highly powerful psychedelics.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Increased libido",
-      "Perception of bodily lightness",
       "Colour enhancement",
-      "Auditory enhancement"
+      "Auditory enhancement",
+      "Personal bias suppression"
     ],
     "neutral": [
-      "Motor control loss",
+      "Stimulation",
+      "Perception of bodily lightness",
       "Pupil dilation",
       "Pattern recognition enhancement",
       "Diffraction",
       "Drifting (melting, breathing, morphing and flowing)",
-      "Object alteration",
       "Symmetrical texture repetition",
       "Thought acceleration",
       "Time distortion",
-      "Auditory distortion"
+      "Auditory distortion",
+      "Internal hallucination"
     ],
     "negative": [
+      "Motor control loss",
+      "Object alteration",
       "Nausea",
-      "Internal hallucination",
-      "Memory suppression",
-      "Personal bias suppression"
+      "Memory suppression"
     ]
   },
   "routeData": {

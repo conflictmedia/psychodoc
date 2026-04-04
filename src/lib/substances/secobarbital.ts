@@ -23,26 +23,26 @@ export const secobarbital: Substance =
   "description": "barbiturates\nSecobarbital, also known as secobarbitone in British English and by the brand name Seconal, is a short-acting psychoactive drug of the barbiturate class which produces powerful anxiolytic, hypnotic, muscle relaxant and amnesic effects. Secobarbital works in a similar fashion to benzodiazepines, however, barbiturates bind to a different and distinct allosteric site on the GABAA receptor. Compared to other barbiturates such as phenobarbital, secobarbital has a prompt onset of action, generally working within fifteen minutes of ingestion.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation",
       "Physical euphoria  - Compared to other GABAergic depressants, this effect is particularly strong.",
-      "Cognitive euphoria - Compared to other GABAergic depressants, this effect is particularly strong. The feeling itself can be described as an extremely strong feeling of relaxed contentment."
+      "Cognitive euphoria - Compared to other GABAergic depressants, this effect is particularly strong. The feeling itself can be described as an extremely strong feeling of relaxed contentment.",
+      "Pain relief - Compared to other agents such as opioids, this effect is generally considered to be quite weak.",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Motor control loss",
-      "Decreased libido",
-      "Pain relief - Compared to other agents such as opioids, this effect is generally considered to be quite weak.",
-      "Acuity suppression - Like many depressants, high doses of secobarbital may cause blurred vision.",
+      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Thought deceleration",
       "Slurred speech - At higher doses, secobarbital is known to cause slurred speech.",
-      "Compulsive redosing"
+      "Decreased blood pressure - Barbiturates may decrease blood pressure in some individuals and have occasionally been used to reduce intracranial pressure.",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Decreased libido",
+      "Acuity suppression - Like many depressants, high doses of secobarbital may cause blurred vision.",
+      "Compulsive redosing",
       "Dizziness",
-      "Decreased blood pressure - Barbiturates may decrease blood pressure in some individuals and have occasionally been used to reduce intracranial pressure.",
       "Respiratory depression",
-      "Seizure suppression",
-      "Anxiety suppression",
       "Analysis suppression",
       "Disinhibition",
       "Amnesia",

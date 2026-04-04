@@ -27,15 +27,16 @@ export const _1p_eth_lad: Substance =
       "Emotion enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
-      "Laughter",
       "Motivation enhancement",
       "Novelty enhancement",
       "Wakefulness",
-      "Enhancements",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Laughter",
+      "Enhancements",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
       "Drifting (melting, breathing, morphing and flowing) - In comparison to other psychedelics, this effect can be described as highly detailed yet cartoon-like in appearance. The distortions are slow and smooth in motion and fleeting in their appearance. This is nearly identical in appearance to the visual drifting which occurs under the influence of LSD",
@@ -46,7 +47,6 @@ export const _1p_eth_lad: Substance =
       "Scenery slicing",
       "Symmetrical texture repetition",
       "Tracers",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - This effect is very consistent in dark environments at appropriately high dosages. The hallucinations can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and occasionally of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Conceptual thinking",
       "Déjà vu",
@@ -55,10 +55,10 @@ export const _1p_eth_lad: Substance =
       "Distortions"
     ],
     "negative": [
+      "Transformations",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

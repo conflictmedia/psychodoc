@@ -24,27 +24,27 @@ export const flualprazolam: Substance =
       "Muscle relaxation - Reportedly stronger than Alprazolam.",
       "Physical euphoria - Short-lasting, encouraging compulsive redosing.",
       "Increased libido - Uncommon but noticeable effect, especially for first-time users.",
-      "Cognitive euphoria - Reportedly short lasting (1-2h after dosing), encouraging compulsive redosing while still intoxicated."
+      "Cognitive euphoria - Reportedly short lasting (1-2h after dosing), encouraging compulsive redosing while still intoxicated.",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Motor control loss - More common at higher doses.",
-      "Compulsive redosing",
       "Ego inflation",
       "Thought deceleration",
       "Sleepiness - Noticeably more sedating than Alprazolam.",
       "Visual acuity suppression - Like many depressants, flualprazolam may cause blurred or otherwise suppressed visual acuity, especially at high doses.",
       "Dream potentiation",
-      "Residual sleepiness - While benzodiazepines can be used as an effective sleep-inducing aid, their effects may persist into the morning afterward, which may lead users to feeling \"groggy\" or \"dull\" for up to a few hours.",
+      "Residual sleepiness - While benzodiazepines can be used as an effective sleep-inducing aid, their effects may persist into the morning afterward, which may lead users to feeling \\\"groggy\\\" or \\\"dull\\\" for up to a few hours.",
       "Thought deceleration",
-      "Thought disorganization"
+      "Sedation - Reported to be stronger than many benzodiazepines. It has been described as a very forceful hypnotic, inducing sleep by force at high doses. This effect is dangerously hard to predict independent of any previous benzodiazepine tolerance.",
+      "Anxiety suppression - Somewhat effective, but outweighed by hypnotic & sedative effects."
     ],
     "negative": [
-      "Sedation - Reported to be stronger than many benzodiazepines. It has been described as a very forceful hypnotic, inducing sleep by force at high doses. This effect is dangerously hard to predict independent of any previous benzodiazepine tolerance.",
+      "Motor control loss - More common at higher doses.",
+      "Compulsive redosing",
+      "Thought disorganization",
       "Respiratory depression,",
-      "Seizure suppression",
       "Dizziness - Strong at higher doses.",
       "Temporary erectile dysfunction - Can sometimes be very strong and last for a few hours.",
-      "Anxiety suppression - Somewhat effective, but outweighed by hypnotic & sedative effects.",
       "Disinhibition - More prominent at high doses.",
       "Memory suppression - Quite strong at high doses.",
       "Delusions of sobriety - Present but manageable with some of the effect being imperceptible until the following day, depending on the dosage.",

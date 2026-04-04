@@ -23,8 +23,6 @@ export const _5_meo_mipt: Substance =
   "description": "The synthesis and pharmacology of 5-MeO-MiPT was first reported in 1985 by David Repke and Alexander Shulgin. Its effects in humans was documented in Shulgin's book TiHKAL (\"Tryptamines I Have Known and Loved\"). Anecdotal reports describe 5-MeO-MiPT's effects as highly stimulating and mildly entactogenic, lacking in typical psychedelic visual distortions.",
   "effects": {
     "positive": [
-      "Stimulation - At doses below 10 to 15mg, 5-MeO-MiPT produces a degree of stimulation comparable to that of LSD.",
-      "Increased heart rate",
       "Colour enhancement",
       "Analysis enhancement",
       "Empathy, affection, and sociability enhancement - This effect is consistently manifested only in the context of social settings in which one is within the company of others. These feelings of sociability, love and empathy are a little weaker and less sharp than those found on substances such as MDMA and 2C-B but still prove strong enough to provide long-lasting therapeutic effects.",
@@ -33,13 +31,13 @@ export const _5_meo_mipt: Substance =
       "Increased libido - increased libido and significantly enhanced orgasms are reported",
       "Novelty enhancement",
       "Wakefulness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation - At doses below 10 to 15mg, 5-MeO-MiPT produces a degree of stimulation comparable to that of LSD.",
+      "Enhancements",
       "Bodily pressures",
-      "Abnormal heartbeat",
       "Pupil dilation",
-      "Diarrhea",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
       "Drifting (Melting, Breathing, Warping and Flowing) - In comparison to other psychedelics, this effect can be described as highly detailed, slow and smooth in motion and static in appearance.",
@@ -48,17 +46,20 @@ export const _5_meo_mipt: Substance =
       "Symmetrical texture repetition",
       "Colour shifting",
       "Scenery slicing",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - In comparison to other psychedelics such as LSD, 5-MeO-MiPT is extremely high in hallucinations at appropriate dosages. These are more common in darkness and can be comprehensibly described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Depersonalization - Unlike most traditional psychedelics, 5-MeO-MiPT can cause extreme depersonalization and dissociation for some users throughout the duration of the experience.",
       "Conceptual thinking",
       "Thought acceleration",
       "Thought connectivity",
       "Time distortion",
-      "Distortions"
+      "Distortions",
+      "Spontaneous bodily sensations - The \\\"body high\\\" of 5-MeO-MiPT can be described as a pleasurable, warm, soft and all-encompassing glow. This may be accompanied by a cold, sharp tingling sensation that manifests spontaneously at different unpredictable points throughout the experience, although for others can maintain a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached."
     ],
     "negative": [
-      "Spontaneous bodily sensations - The \"body high\" of 5-MeO-MiPT can be described as a pleasurable, warm, soft and all-encompassing glow. This may be accompanied by a cold, sharp tingling sensation that manifests spontaneously at different unpredictable points throughout the experience, although for others can maintain a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
+      "Increased heart rate",
+      "Abnormal heartbeat",
+      "Diarrhea",
+      "Transformations",
       "Nausea - Nausea is commonly reported and can sometimes result in vomiting, although it typically fades after the come up phase. In comparison to 5-MeO-DiPT, this substance has a much lower tendency to trigger unpleasant physical reactions.",
       "Increased blood pressure",
       "Headaches",
@@ -66,7 +67,6 @@ export const _5_meo_mipt: Substance =
       "Stomach bloating - At higher doses, this compound can induce severe stomach bloating within those who are susceptible. This can be partially to fully mitigated through the use of antacids.",
       "Vasoconstriction",
       "Memory suppression",
-      "Personal bias suppression",
       "Hallucinations"
     ]
   },

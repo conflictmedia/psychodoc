@@ -21,20 +21,20 @@ export const pyrazolam: Substance =
   "description": "Pyrazolam was originally developed at Hoffman-La Roche in the 1970s and subsequently \"rediscovered\" and sold as a research chemical starting in 2012. It should be noted that the sudden discontinuation of benzodiazepines can be potentially dangerous or life-threatening for individuals using regularly for extended periods of time, sometimes resulting in seizures or death. It is highly recommended to taper one's dose by gradually lowering the amount taken each day for a prolonged period of time instead of stopping abruptly.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, pyrazolam is considerably less sedating than other substances of the same class unless it is taken at heavy doses.",
       "Muscle relaxation"
     ],
     "neutral": [
-      "Motor control loss",
+      "Sedation -  In terms of energy level alterations, pyrazolam is considerably less sedating than other substances of the same class unless it is taken at heavy doses.",
       "Thought deceleration",
-      "Compulsive redosing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Compulsive redosing",
       "Dizziness",
       "Respiratory depression",
       "Amnesia",
-      "Anxiety suppression",
       "Analysis suppression",
       "Disinhibition",
       "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others."

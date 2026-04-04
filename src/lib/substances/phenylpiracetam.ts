@@ -24,8 +24,6 @@ export const phenylpiracetam: Substance =
   "description": "Phenylpiracetam (also known as Phenotropil and Carphedon) is a central nervous system stimulant and nootropic agent belonging to the racetam family of drugs. Supplementation of phenylpiracetam tends to be in the dosage range of 100 - 300 mg taken over the course of a day, either in two to three evenly spread dosing periods (such as three doses of 100mg or 200mg). Phenylpiracetam has protected against scopolamine-induced amnesia both in rat populations, suggesting it can aid recovery from deliriant intoxication and other typically cognitively impaired states by preserving adequate levels of acetylcholine as a primary mechanism.",
   "effects": {
     "positive": [
-      "Stimulation - The stimulation which phenylpiracetam presents in common doses can be considered as primarily subtle, comparable to that of caffeine, although in heavy doses it can be uncomfortably overstimulating.",
-      "Increased heart rate - This may be a result of the dopamine and noradrenaline reuptake inhibition.",
       "Stamina enhancement - This effect is relatively mild compared to other stimulants such as amphetamine.",
       "Colour enhancement",
       "Auditory enhancement",
@@ -33,22 +31,24 @@ export const phenylpiracetam: Substance =
       "Tactile enhancement",
       "Analysis enhancement",
       "Wakefulness",
-      "Mindfulness",
       "Focus enhancement",
       "Motivation enhancement",
       "Memory enhancement"
     ],
     "neutral": [
+      "Stimulation - The stimulation which phenylpiracetam presents in common doses can be considered as primarily subtle, comparable to that of caffeine, although in heavy doses it can be uncomfortably overstimulating.",
+      "Mindfulness",
       "Acuity enhancement",
       "Thought connectivity",
       "Dream potentiation",
       "Thought deceleration",
-      "Insomnia"
+      "Anxiety suppression"
     ],
     "negative": [
+      "Increased heart rate - This may be a result of the dopamine and noradrenaline reuptake inhibition.",
+      "Insomnia",
       "Headaches - This is more prominent at higher doses. It can be promoted by redosing multiple times.",
       "Appetite suppression",
-      "Anxiety suppression",
       "Irritability",
       "Cognitive dysphoria - This effect typically only occurs at extremely high dosages.",
       "Anxiety",

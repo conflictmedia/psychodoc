@@ -22,17 +22,17 @@ export const oxiracetam: Substance =
   "description": "Oxiracetam (ISF 2522) is a mild central nervous system stimulant and nootropic agent belonging to the racetam family of drugs. Supplementation of oxiracetam tends to be in the dosage range of 1,200-2,400mg taken over the course of a day, either in two to three evenly spread dosing periods (such as three doses of 400mg or 800mg). Oxiracetam has moderately protected against scopolamine-induced amnesia both in rat populations and in human populations, suggesting it can aid recovery from deliriant intoxication and other typically cognitively impaired states by preserving adequate levels of acetylcholine as a primary mechanism.",
   "effects": {
     "positive": [
-      "Stimulation - The stimulation which oxiracetam presents can be considered as primarily subtle, with a magnitude comparable to that of caffeine.",
       "Colour enhancement",
-      "Enhancements",
       "Wakefulness",
-      "Mindfulness",
       "Analysis enhancement",
       "Focus enhancement",
       "Motivation enhancement",
       "Memory enhancement"
     ],
     "neutral": [
+      "Stimulation - The stimulation which oxiracetam presents can be considered as primarily subtle, with a magnitude comparable to that of caffeine.",
+      "Enhancements",
+      "Mindfulness",
       "Acuity enhancement",
       "Thought connectivity",
       "Dream potentiation"

@@ -22,14 +22,10 @@ export const allylescaline: Substance =
   "description": "The effects of this compound were first described by Alexander Shulgin in his book PiHKAL: A Chemical Love Story. He lists the dosage range as 20 – 35 mg orally and describes the duration of action to be 8 - 12 hours. Subjective effects bear appreciable similarity to mescaline and include open and closed-eye visuals, time distortion, enhanced introspection, conceptual thinking, euphoria, and ego loss.",
   "effects": {
     "positive": [
-      "Stimulation - In terms of its effects on the physical energy levels of the user, allylescaline is usually considered to be very energetic and stimulating without being forced. For example, when taken in any environment it will usually encourage physical activities such as running, walking, climbing or dancing. In comparison, other more commonly used psychedelics such as psilocin or LSA are generally sedating and relaxed.",
-      "Spontaneous tactile sensations - The \"body high\" of allylescaline can be characterized as proportionally very intense in comparison to its accompanying visual and cognitive effects. It is manifested in a number of forms including an intense soft, warm glow that grows over the body and is capable of becoming extremely physically euphoric. This is contrasted by a pleasant yet sharp electric sensation that moves up and down the body.",
       "Tactile enhancement - Allylescaline causes enhanced tactile sensations at all doses. Notably, allylescaline causes awareness of every sensation and every nerve ending in the body once level 8A geometry is reached.",
       "Physical euphoria - Relative to other psychedelics, allylescaline has been noted for the physically euphoric aspect that is vaguely reminiscent of other phenethylamines. In high or excessive dosages this effect can be diminished by uncomfortable physical side effects.",
-      "Increased heart rate",
       "Increased libido - When it occurs, this effect is mild to moderate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Empathy, love, and sociability enhancement",
@@ -37,11 +33,14 @@ export const allylescaline: Substance =
       "Increased music appreciation",
       "Novelty enhancement",
       "Unity and interconnectedness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation - In terms of its effects on the physical energy levels of the user, allylescaline is usually considered to be very energetic and stimulating without being forced. For example, when taken in any environment it will usually encourage physical activities such as running, walking, climbing or dancing. In comparison, other more commonly used psychedelics such as psilocin or LSA are generally sedating and relaxed.",
+      "Spontaneous tactile sensations - The \\\"body high\\\" of allylescaline can be characterized as proportionally very intense in comparison to its accompanying visual and cognitive effects. It is manifested in a number of forms including an intense soft, warm glow that grows over the body and is capable of becoming extremely physically euphoric. This is contrasted by a pleasant yet sharp electric sensation that moves up and down the body.",
+      "Brightness alteration",
+      "Enhancements",
       "Pupil dilation",
-      "Muscle spasms",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
       "Drifting (melting, breathing, morphing and flowing)",
@@ -52,7 +51,6 @@ export const allylescaline: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Autonomous voice communication",
@@ -60,12 +58,14 @@ export const allylescaline: Substance =
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Muscle spasms",
+      "Transformations",
       "Nausea - Mild to extreme nausea is commonly reported and either passes instantly once the user has vomited or gradually fades by itself as the peak sets in.",
       "Muscle cramps",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

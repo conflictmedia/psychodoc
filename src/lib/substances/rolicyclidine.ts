@@ -21,16 +21,16 @@ export const rolicyclidine: Substance =
   "description": "Rolicyclidine (also known as PCPy, or sometimes PHP) is a simple dissociative substance of the arylcyclohexylamine class. Compared to plain PCP, it is almost unknown, despite a strikingly easier synthesis, employing unwatched pyrrolidine instead of piperidine. Having been synthesized in a british patent from 1958, it was never developed for medical use, some higher analogues substituted at either the pyrrolidine ring or the phenyl ring are known, in this case the latter 3-Me being discovered as a strong triple reuptake inhibitor\nSubjective effects include motor control loss, pain relief, internal hallucinations, memory suppression, conceptual thinking, euphoria, and depersonalization / dissociation.",
   "effects": {
     "positive": [
-      "Cognitive disconnection",
-      "Physical disconnection",
-      "Visual disconnection - This eventually results in PCPy's equivalent of the \"k-hole\" or more specifically, holes, spaces and voids alongside of structures.",
       "Cognitive euphoria",
       "Creativity enhancement",
-      "Derealization",
       "Immersion enhancement",
       "Introspection"
     ],
     "neutral": [
+      "Cognitive disconnection",
+      "Physical disconnection",
+      "Visual disconnection - This eventually results in PCPy's equivalent of the \\\"k-hole\\\" or more specifically, holes, spaces and voids alongside of structures.",
+      "Derealization",
       "Double vision",
       "Frame rate suppression",
       "Pattern recognition suppression",
@@ -39,7 +39,6 @@ export const rolicyclidine: Substance =
       "Environmental orbism",
       "Perspective distortions",
       "Scenery slicing",
-      "Compulsive redosing",
       "Conceptual thinking",
       "Depersonalization",
       "Déjà vu",
@@ -47,16 +46,17 @@ export const rolicyclidine: Substance =
       "Mania",
       "Thought acceleration & Thought deceleration",
       "Thought connectivity",
-      "Thought disorganization",
       "Time distortion",
-      "Auditory distortion"
-    ],
-    "negative": [
+      "Auditory distortion",
       "Internal hallucination",
       "External hallucination",
+      "Anxiety suppression"
+    ],
+    "negative": [
+      "Compulsive redosing",
+      "Thought disorganization",
       "Amnesia",
       "Analysis suppression",
-      "Anxiety suppression",
       "Delusion",
       "Disinhibition",
       "Ego death",

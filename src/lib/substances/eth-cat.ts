@@ -23,9 +23,7 @@ export const eth_cat: Substance =
   "description": "Ethylcathinone (also known as Ethylpropion, Ethcathinone, and commonly as ETH-CAT) is a stimulant substance of the cathinone chemical class that produces stimulating and focus enhancing effects when administered. It has been described as having a more functional than recreational character due to the limited euphoria it produces for a stimulant, although its short active duration can promote compulsive redosing. Very little data exists about the pharmacological properties, metabolism, and toxicity of ETH-CAT, and it has little history of human usage.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Physical euphoria",
-      "Increased heart rate",
       "Wakefulness",
       "Analysis enhancement",
       "Focus enhancement",
@@ -34,14 +32,16 @@ export const eth_cat: Substance =
       "Wakefulness"
     ],
     "neutral": [
+      "Stimulation",
       "Thought deceleration",
       "Thought acceleration",
       "Thought organization",
-      "Compulsive redosing",
-      "Visual haze",
-      "Peripheral information misinterpretation - As with most other stimulants, this component primarily occurs at higher doses or after a sustained period of redosing."
+      "Visual haze"
     ],
     "negative": [
+      "Increased heart rate",
+      "Compulsive redosing",
+      "Peripheral information misinterpretation - As with most other stimulants, this component primarily occurs at higher doses or after a sustained period of redosing.",
       "Dehydration",
       "Appetite suppression",
       "Teeth grinding - This component can be considered to be less intense when compared with that of MDMA.",

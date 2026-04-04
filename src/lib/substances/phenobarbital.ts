@@ -24,24 +24,24 @@ export const phenobarbital: Substance =
   "description": "Pentobarbital\nPhenobarbital, also known as phenobarbitone in British English and by the brand name Luminal, is a long-acting psychoactive drug of the barbiturate class which produces powerful anxiolytic, hypnotic, muscle relaxant and amnesic effects. Phenobarbital is used medically as an anticonvulsant, and occasionally in the short term treatment of insomnia. Phenobarbital works in a similar fashion to benzodiazepines, however barbiturates bind to a distinct allosteric site on the GABAA receptor.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation",
       "Physical euphoria - Compared to short-acting barbiturates such as pentobarbital and secobarbital, this effect is quite weak.",
-      "Cognitive euphoria - Compared to short-acting barbiturates such as pentobarbital and secobarbital, this effect is quite weak. The feeling itself can be described as an extremely strong feeling of relaxed contentment."
+      "Cognitive euphoria - Compared to short-acting barbiturates such as pentobarbital and secobarbital, this effect is quite weak. The feeling itself can be described as an extremely strong feeling of relaxed contentment.",
+      "Seizure suppression"
     ],
     "neutral": [
+      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
+      "Thought deceleration",
+      "Decreased blood pressure - Barbiturates may decrease blood pressure in some individuals and have occasionally been used to reduce intracranial pressure.",
+      "Anxiety suppression"
+    ],
+    "negative": [
       "Motor control loss",
       "Decreased libido",
       "Acuity suppression - Like many depressants, high doses of phenobarbital may cause blurred vision.",
-      "Thought deceleration",
-      "Compulsive redosing"
-    ],
-    "negative": [
+      "Compulsive redosing",
       "Dizziness",
-      "Decreased blood pressure - Barbiturates may decrease blood pressure in some individuals and have occasionally been used to reduce intracranial pressure.",
       "Respiratory depression",
-      "Seizure suppression",
-      "Anxiety suppression",
       "Analysis suppression",
       "Disinhibition",
       "Amnesia",

@@ -21,16 +21,10 @@ export const _1cp_al_lad: Substance =
   "description": "1cP-AL-LAD is a novel research chemical which has probably first been produced by a small group of chemists which have also synthesized various other novel lysergamdîdes at the time alongside like 1cP-MiPLA, LSZ and LST in 2020 or 2021. Many effects seem to be identical or nearly identical, including a more manageable and lucid mental state, apparent visuals and dosage levels. While it is often characterized by users as being generally more recreational and non-threatening compared to LSD, it is highly advised to approach this highly potent hallucinogenic substance with the proper amount of precaution and harm reduction practices if using it.",
   "effects": {
     "positive": [
-      "Stimulation - In terms of its effects on the physical energy levels of the user, 1cP-AL-LAD is regarded as being able primarily stimulating in nature in the same vein as LSD. This is in distinction to other, more commonly used psychedelics such as psilocybin which are more consistent in producing sedation and relaxedness.",
-      "Perception of bodily lightness  - This component typically accompanies any feelings of stimulation that this compound can produce.",
       "Physical euphoria - It should be noted that this effect is not as reliably induceable as it is with substances like stimulants or entactogens, and can just as easily manifest as physical discomfort without any apparent reason.",
-      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth or unity and usually occurs during and up to the peak of the experience or directly afterward. Users can feel as if they are physically part of or conjoined with other objects. This is usually reported as feeling comfortable and peaceful in its sensations.",
       "Tactile enhancement - Feelings of enhanced tactile sensations are consistently present at moderate levels throughout most 1cP-AL-LAD trips. If level 8A geometry is reached, an intense sensation of suddenly becoming aware of and being able to feel every single nerve ending across a person's entire body all at once becomes consistently present.",
-      "Increased bodily temperature",
       "Stamina enhancement - This is generally mild in comparison to traditional stimulants.",
       "Bodily control enhancement",
-      "Increased heart rate",
-      "Increased perspiration",
       "Increased libido",
       "Increased salivation",
       "Colour enhancement",
@@ -52,9 +46,11 @@ export const _1cp_al_lad: Substance =
       "Unity and interconnectedness"
     ],
     "neutral": [
-      "Spontaneous bodily sensations - The \"body high\" of 1cP-AL-LAD can be described as proportionally intense in comparison to its accompanying visual and cognitive effects. It behaves as a euphoric, fast-moving, sharp and location specific tingling sensation. For some, it is manifested spontaneously at different unpredictable points throughout the experience, but for most it maintains a steady presence that rises with the onset and hits its limit once the peak has been reached. In comparison to LSD, it is a little less sharp in the tingling sensations it produces as but is otherwise essentially indistinguishable.",
+      "Stimulation - In terms of its effects on the physical energy levels of the user, 1cP-AL-LAD is regarded as being able primarily stimulating in nature in the same vein as LSD. This is in distinction to other, more commonly used psychedelics such as psilocybin which are more consistent in producing sedation and relaxedness.",
+      "Perception of bodily lightness  - This component typically accompanies any feelings of stimulation that this compound can produce.",
+      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth or unity and usually occurs during and up to the peak of the experience or directly afterward. Users can feel as if they are physically part of or conjoined with other objects. This is usually reported as feeling comfortable and peaceful in its sensations.",
+      "Spontaneous bodily sensations - The \\\"body high\\\" of 1cP-AL-LAD can be described as proportionally intense in comparison to its accompanying visual and cognitive effects. It behaves as a euphoric, fast-moving, sharp and location specific tingling sensation. For some, it is manifested spontaneously at different unpredictable points throughout the experience, but for most it maintains a steady presence that rises with the onset and hits its limit once the peak has been reached. In comparison to LSD, it is a little less sharp in the tingling sensations it produces as but is otherwise essentially indistinguishable.",
       "Muscle contractions",
-      "Muscle spasms",
       "Excessive yawning - This effect is significantly less pronounced than it is with psilocybin and its related compounds, the four-position substituted tryptamines.",
       "Pupil dilation",
       "Visual acuity enhancement",
@@ -68,7 +64,6 @@ export const _1cp_al_lad: Substance =
       "Scenery slicing",
       "Symmetrical texture repetition",
       "Machinescapes",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) -  This effect is very consistent in dark environments at appropriately high dosages. They can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and occasionally of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
@@ -81,6 +76,11 @@ export const _1cp_al_lad: Substance =
       "Perception of interdependent opposites"
     ],
     "negative": [
+      "Increased bodily temperature",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Muscle spasms",
+      "Transformations",
       "Temperature regulation suppression - This component can occur with the use of any lysergamide or psychedelic, but reports suggest it may be pronounced in 1cP-AL-LAD. It is highly advised that users of this compound, especially at heavier doses, monitor their bodily temperature and use techniques like hot showers or cold packs to regulate their core and brain temperature throughout the experience, and to generally always maintain proximity to a climate-controlled environment.",
       "Nausea - Mild nausea is occasionally reported when this substance is consumed in moderate to high dosages, usually during the peak, and either passes soon after the user has vomited or gradually fades by itself as the peak sets in.",
       "Appetite suppression",

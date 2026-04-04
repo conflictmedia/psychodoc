@@ -22,25 +22,25 @@ export const _2_fa: Substance =
   "effects": {
     "positive": [
       "Physical euphoria",
-      "Stimulation",
       "Stamina enhancement",
-      "Increased heart rate",
-      "Increased perspiration",
       "Tactile enhancement",
       "Wakefulness"
     ],
     "neutral": [
+      "Stimulation",
       "Pupil dilation",
-      "Abnormal heartbeat",
       "Constipation or Diarrhea",
       "Frequent urination",
       "Muscle contractions",
-      "Muscle spasms",
-      "Seizure",
       "Depersonalization",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Abnormal heartbeat",
+      "Muscle spasms",
+      "Seizure",
       "Appetite suppression",
       "Dehydration",
       "Difficulty urinating",

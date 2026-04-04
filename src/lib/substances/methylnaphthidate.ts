@@ -22,23 +22,23 @@ export const methylnaphthidate: Substance =
   "description": "Methylnaphthidate (also known as HDMP-28) is a novel synthetic stimulant substance of the substituted phenidate chemical class. Ritalin, Concerta) that produces moderately stimulating effects when administered. Very little data exists about the pharmacological properties, metabolism, and toxicity of methylnaphthidate, and it has little history of human usage.",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased heart rate - This component has been reported by some as being uniquely pronounced in the -phenidate family. These effects might owe themselves to increased free-circulating serotonin in the blood, which would lead to sustained agonism at Serotonin-2B receptors on the heart.",
       "Wakefulness",
       "Analysis enhancement",
       "Wakefulness",
       "Increased music appreciation",
       "Focus enhancement - This component is most effective at low to moderate dosages as anything higher will usually impair concentration.",
       "Motivation enhancement",
-      "Euphoria - The euphoric rush associated with methylnaphthidate use (as result of dopamine reuptake inhibition) is very short-lived and compulsive, similar to that of cocaine.",
-      "Cognitive fatigue - This component can occur during the offset of this compound as a rebound effect which is usually equal in its intensity to the enhancements which occurred before it."
+      "Euphoria - The euphoric rush associated with methylnaphthidate use (as result of dopamine reuptake inhibition) is very short-lived and compulsive, similar to that of cocaine."
     ],
     "neutral": [
+      "Stimulation",
       "Thought deceleration",
       "Thought acceleration",
       "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober."
     ],
     "negative": [
+      "Increased heart rate - This component has been reported by some as being uniquely pronounced in the -phenidate family. These effects might owe themselves to increased free-circulating serotonin in the blood, which would lead to sustained agonism at Serotonin-2B receptors on the heart.",
+      "Cognitive fatigue - This component can occur during the offset of this compound as a rebound effect which is usually equal in its intensity to the enhancements which occurred before it.",
       "Dehydration",
       "Appetite suppression",
       "Teeth grinding - This component can be considered to be present, but less intense when compared with that of MDMA.",

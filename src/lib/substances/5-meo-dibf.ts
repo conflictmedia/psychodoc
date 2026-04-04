@@ -21,9 +21,6 @@ export const _5_meo_dibf: Substance =
   "description": "5-Methoxy-N,N-diisopropylbenzofuranethylamine (also known as 5-MeO-DiBF) is a novel psychedelic substance of the benzofuran class that produces psychedelic and stimulating effects when administered. This compound has little to no history of human usage prior to its September 2015 release on the online research chemical market. Due to its extreme novelty and unknown toxicity profile, it is highly advised that one use harm reduction practices if using this substance.",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased heart rate",
-      "Perception of bodily lightness",
       "Tactile enhancement",
       "Colour enhancement",
       "Analysis enhancement",
@@ -32,11 +29,13 @@ export const _5_meo_dibf: Substance =
       "Increased music appreciation",
       "Novelty enhancement",
       "Wakefulness",
-      "Auditory enhancement"
+      "Auditory enhancement",
+      "Personal bias suppression"
     ],
     "neutral": [
-      "Spontaneous physical sensations -  The \"body high\" of 5-MeO-DiBF can be described as a motionless, constant, sharp and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the come up and hits its limit once the peak has been reached.",
-      "Muscle spasms",
+      "Stimulation",
+      "Perception of bodily lightness",
+      "Spontaneous physical sensations -  The \\\"body high\\\" of 5-MeO-DiBF can be described as a motionless, constant, sharp and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the come up and hits its limit once the peak has been reached.",
       "Pupil dilation",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
@@ -51,11 +50,12 @@ export const _5_meo_dibf: Substance =
       "Auditory distortion"
     ],
     "negative": [
+      "Increased heart rate",
+      "Muscle spasms",
       "Nausea - This effect is particularly mild compared to other psychedelics.",
       "Temperature regulation suppression",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Auditory hallucination"
     ]
   },

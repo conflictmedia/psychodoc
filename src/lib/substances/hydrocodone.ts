@@ -24,29 +24,29 @@ export const hydrocodone: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - Physical euphoria on hydrocodone is commonly described as less intense when compared with morphine or heroin. The sensation itself can be described as extreme feelings of intense physical comfort, warmth, pleasure and bliss which spreads throughout the body.",
-      "Itchiness - This compound presents greater amounts of itchiness due to higher amounts of histamine release in comparison to other opioids.",
-      "Cognitive euphoria - Cognitive euphoria on hydrocodone is described as less intense compared to morphine or diacetylmorphine (heroin). However, it is still capable of producing extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment, and happiness."
+      "Cognitive euphoria - Cognitive euphoria on hydrocodone is described as less intense compared to morphine or diacetylmorphine (heroin). However, it is still capable of producing extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment, and happiness.",
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
-      "Constipation",
-      "Decreased libido",
+      "Itchiness - This compound presents greater amounts of itchiness due to higher amounts of histamine release in comparison to other opioids.",
       "Pupil constriction",
-      "Compulsive redosing",
       "Dream potentiation",
-      "Sleepiness"
+      "Sleepiness",
+      "Sedation - At higher dosages, this compound can result in feelings of sedation but is considerably less sedating than that of codeine, oxycodone or heroin.",
+      "Decreased heart rate",
+      "Anxiety suppression"
     ],
     "negative": [
-      "Sedation - At higher dosages, this compound can result in feelings of sedation but is considerably less sedating than that of codeine, oxycodone or heroin.",
+      "Constipation",
+      "Decreased libido",
+      "Compulsive redosing",
       "Respiratory depression - At low to moderate doses, this effect results in the sensation that breaths are slowed down mildly to moderately, but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention.",
       "Appetite suppression",
       "Cough suppression",
-      "Decreased heart rate",
       "Difficulty urinating",
       "Nausea",
       "Stomach cramps",
-      "Orgasm suppression",
-      "Anxiety suppression"
+      "Orgasm suppression"
     ]
   },
   "routeData": {

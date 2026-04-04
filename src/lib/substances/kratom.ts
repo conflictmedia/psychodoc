@@ -26,7 +26,6 @@ export const kratom: Substance =
   "description": "Mitragyna speciosa (also known as kratom) is a tropical tree of the coffee family indigenous to South East Asia. M. speciosa is indigenous to Thailand, Indonesia, Malaysia, Myanmar, and Papua New Guinea, where it has been used in traditional medicines for centuries. Starting in the 2000s, kratom began to receive significant attention due to increased use in Western cultures as an alternative medicine. Lower doses are generally reported to produce caffeine-like stimulant effects such as enhanced focus and motivation while higher doses produce typical opioid effects like pain relief, sedation, and euphoria.",
   "effects": {
     "positive": [
-      "Visual disconnection - A sense of subtle disconnection from visual input is often experienced with high doses of kratom. This is similar to a low-level version of the same effect universally experienced with dissociatives and may be a result of NMDA antagonist properties of rhynchophylline, an alkaloid found in kratom.",
       "Cognitive euphoria - In comparison to other opioids, kratom can be considered as less intense in its cognitive euphoria when compared with that of morphine or heroin.",
       "Empathy, affection, and sociability enhancement",
       "Increased music appreciation",
@@ -34,18 +33,19 @@ export const kratom: Substance =
       "Motivation enhancement"
     ],
     "neutral": [
+      "Visual disconnection - A sense of subtle disconnection from visual input is often experienced with high doses of kratom. This is similar to a low-level version of the same effect universally experienced with dissociatives and may be a result of NMDA antagonist properties of rhynchophylline, an alkaloid found in kratom.",
       "Dream potentiation",
       "Thought acceleration",
       "Thought deceleration",
       "Time Distortion - Some users report kratom to cause time dilation",
       "Double vision",
-      "Visual acuity suppression"
+      "Visual acuity suppression",
+      "Anxiety suppression",
+      "Sleepiness - Certain strains of kratom are noted to sometimes make users very tired. In high dosages this can get to the point where the user may be drifting in and out of consciousness or even  experience what is called \\\"nodding\\\".",
+      "Internal hallucination - The internal hallucinations of kratom can be described as more solid than psychedelics and do not seem to be composed of visual geometry. They typically manifest themselves through hypnagogic scenarios. They are most common with high doses and can be comprehensively described in their variations as lucid in believability, fixed in style, autonomous in controllability, and equal in new experiences and memory replays in content."
     ],
     "negative": [
-      "Anxiety suppression",
-      "Sleepiness - Certain strains of kratom are noted to sometimes make users very tired. In high dosages this can get to the point where the user may be drifting in and out of consciousness or even  experience what is called \"nodding\".",
-      "Irritability",
-      "Internal hallucination - The internal hallucinations of kratom can be described as more solid than psychedelics and do not seem to be composed of visual geometry. They typically manifest themselves through hypnagogic scenarios. They are most common with high doses and can be comprehensively described in their variations as lucid in believability, fixed in style, autonomous in controllability, and equal in new experiences and memory replays in content."
+      "Irritability"
     ]
   },
   "routeData": {

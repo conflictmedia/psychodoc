@@ -22,9 +22,7 @@ export const _5_meo_dalt: Substance =
   "description": "N,N-Diallyl-5-methoxytryptamine (also known as 5-MeO-DALT or colloquially as Foxtrot) is a lesser-known psychedelic substance of the tryptamine class that produces short-lived psychedelic effects when administered. 5-MeO-DALT was first synthesized by Alexander Shulgin, who sent the first material regarding the synthesis and effects to a researcher in May 2004. This material was subsequently circulated online and the compound soon appeared on the online research chemical market.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Tactile enhancement",
-      "Increased heart rate",
       "Colour enhancement",
       "Analysis enhancement",
       "Emotion enhancement",
@@ -32,10 +30,12 @@ export const _5_meo_dalt: Substance =
       "Increased music appreciation",
       "Novelty enhancement",
       "Wakefulness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
-      "Spontaneous physical sensations -  The \"body high\" of 5-MeO-DALT can be described as a motionless, constant, sharp and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the come up and hits its limit once the peak has been reached.",
+      "Stimulation",
+      "Enhancements",
+      "Spontaneous physical sensations -  The \\\"body high\\\" of 5-MeO-DALT can be described as a motionless, constant, sharp and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the come up and hits its limit once the peak has been reached.",
       "Pupil dilation",
       "Acuity enhancement",
       "Pattern recognition enhancement",
@@ -50,10 +50,10 @@ export const _5_meo_dalt: Substance =
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
       "Increased blood pressure",
       "Temperature regulation suppression",
       "Memory suppression",
-      "Personal bias suppression",
       "Hallucinations"
     ]
   },

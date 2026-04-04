@@ -24,16 +24,14 @@ export const _2_fluorodeschloroketamine: Substance =
   "effects": {
     "positive": [
       "Physical euphoria",
-      "Perception of bodily lightness",
-      "Tactile disconnection",
-      "Visual disconnection - This eventually results in 2-Fluorodeschloroketamine's equivalent of the \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures.",
-      "Consciousness disconnection"
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
+      "Perception of bodily lightness",
+      "Tactile disconnection",
+      "Visual disconnection - This eventually results in 2-Fluorodeschloroketamine's equivalent of the \\\"k-hole\\\" or, more specifically, holes, spaces and voids alongside of structures.",
+      "Consciousness disconnection",
       "Spontaneous physical sensations",
-      "Motor control loss",
-      "Physical autonomy",
       "Double vision",
       "Frame rate suppression",
       "Pattern recognition suppression",
@@ -46,6 +44,8 @@ export const _2_fluorodeschloroketamine: Substance =
       "Distortions"
     ],
     "negative": [
+      "Motor control loss",
+      "Physical autonomy",
       "Dizziness",
       "Nausea",
       "Spatial disorientation",

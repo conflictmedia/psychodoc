@@ -27,15 +27,15 @@ export const metizolam: Substance =
     ],
     "neutral": [
       "Sedation",
-      "Motor control loss",
       "Thought deceleration",
-      "Compulsive redosing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Compulsive redosing",
       "Respiratory depression",
       "Dizziness",
-      "Anxiety suppression",
       "Disinhibition",
       "Analysis suppression",
       "Amnesia",

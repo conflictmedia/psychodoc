@@ -21,35 +21,35 @@ export const mdai: Substance =
   "description": "It acts as a putatively non-neurotoxic and highly selective serotonin releasing agent (SSRA) with neglible effects on dopamine and norepinephrine. MDAI was developed by the American medicinal chemist and pharmacologist David E. Nichols during the 1990s at Purdue University. It is currently being investigated as a potential alternative to traditional entactogens in the treatment of mental health conditions like anxiety and depression.",
   "effects": {
     "positive": [
-      "Spontaneous physical sensations - The \"body high\" of MDAI can be described as a moderate to extreme euphoric, soft and warm tingling sensation that encompasses the entire body. It is capable of becoming overwhelmingly pleasurable at higher doses. This sensation maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
       "Physical euphoria",
       "Tactile enhancement",
-      "Vibrating vision - At high doses, a person's eyeballs may begin to spontaneously wiggle back and forth in a rapid motion, causing the vision to become blurry and temporarily out of focus. This is a condition known as nystagmus.",
-      "Increased perspiration",
       "Colour enhancement",
       "Cognitive euphoria - Strong emotional euphoria and feelings of happiness are present within MDAI and are a direct result of serotonin release.",
       "Empathy, affection, and sociability enhancement - This particular effect is not as pronounced, powerful and therapeutic as that of MDMA or 2C-B. It is the most obvious and noticeable effect within any MDAI experience and dominates the head space.",
       "Increased music appreciation",
       "Immersion enhancement",
-      "Mindfulness",
-      "Enhancements",
       "Wakefulness"
     ],
     "neutral": [
+      "Spontaneous physical sensations - The \\\"body high\\\" of MDAI can be described as a moderate to extreme euphoric, soft and warm tingling sensation that encompasses the entire body. It is capable of becoming overwhelmingly pleasurable at higher doses. This sensation maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
+      "Mindfulness",
+      "Enhancements",
       "Visual acuity enhancement",
       "Tracers",
       "Thought deceleration",
       "Time distortion",
       "Distortions",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Sedation - The largest reported difference between MDAI and MDMA is that MDAI primarily results in moderate sedation and can therefore discourage physical activities such as running, dancing or climbing.",
+      "Anxiety suppression"
     ],
     "negative": [
-      "Sedation - The largest reported difference between MDAI and MDMA is that MDAI primarily results in moderate sedation and can therefore discourage physical activities such as running, dancing or climbing.",
+      "Vibrating vision - At high doses, a person's eyeballs may begin to spontaneously wiggle back and forth in a rapid motion, causing the vision to become blurry and temporarily out of focus. This is a condition known as nystagmus.",
+      "Increased perspiration",
       "Temperature regulation suppression",
       "Dehydration - Feelings of dry mouth and dehydration are a universal experience with MDAI. This effect is a product of an increased heart rate and an extreme motivation to engage in strenuous physical activities. While it is important to avoid becoming dehydrated (especially when out dancing in a hot environment) there have been a number of users suffering from water intoxication through over-drinking, so it is advised that users simply sip at water and never over-drink.",
       "Difficulty urinating - Much like MDMA, higher doses of MDAI result in difficulty urinating. This is an effect that is completely temporary and harmless. It is most likely due to the promotion of the release of anti-diuretic hormone (ADH), which is the mechanism responsible for this side effect within MDMA. Anti-diuretic hormone is responsible for regulating urination. Difficulty urinating can be lessened by simply relaxing, but can be significantly relieved by placing a hot flannel over the genitals to warm them up and encourage blood flow. Some have reported that simply listening to the sound of running water also helps (such as a tap/faucet).",
       "Temporary erectile dysfunction",
-      "Anxiety suppression",
       "Anxiety",
       "Cognitive fatigue",
       "Depression",

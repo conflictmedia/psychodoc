@@ -21,18 +21,18 @@ export const diphenidine: Substance =
   "description": "Diphenhydramine (also known as \"DPH\")\nDiphenidine (also known as DPD, DND, 1,2-DEP, and occasionally \"DPH\") is a lesser-known novel dissociative substance of the diarylethylamine class. Shortly after the 2013 UK arylcyclohexylamine ban, diphenidine and the related compound methoxphenidine became available on the grey market. In 2014, there were two cases of diphenidine being sold in combination with synthetic cannabinoids in Japanese herbal incense blends, one of which was implicated in a fatal overdose. Subjective effects include stimulation, motor control loss, pain relief, internal hallucinations, conceptual thinking, euphoria, and dissociation.",
   "effects": {
     "positive": [
-      "Derealization",
       "Creativity enhancement",
       "Increased music appreciation",
       "Cognitive euphoria",
       "Introspection",
       "Increased libido - This is reported to be experienced at low to mid dosage ranges.",
-      "Tactile disconnection",
-      "Consciousness disconnection",
-      "Visual disconnection - This eventually results in the diphenidine's equivalent of the \"K-hole\" or more specifically, holes, spaces and voids alongside of structures.",
       "Auditory enhancement"
     ],
     "neutral": [
+      "Derealization",
+      "Tactile disconnection",
+      "Consciousness disconnection",
+      "Visual disconnection - This eventually results in the diphenidine's equivalent of the \\\"K-hole\\\" or more specifically, holes, spaces and voids alongside of structures.",
       "Visual acuity suppression",
       "Double vision - This component is prevalent at moderate to heavy dosages and makes reading impossible unless one closes an eye.",
       "Pattern recognition suppression - This effect generally occurs at higher dosages and makes one unable to recognize and interpret perceivable visual data.",
@@ -49,11 +49,11 @@ export const diphenidine: Substance =
       "Time distortion",
       "Déjà vu",
       "Conceptual thinking",
-      "Compulsive redosing",
-      "Auditory distortion"
+      "Auditory distortion",
+      "Anxiety suppression"
     ],
     "negative": [
-      "Anxiety suppression",
+      "Compulsive redosing",
       "Disinhibition",
       "Memory suppression",
       "Ego death",

@@ -19,25 +19,25 @@ export const progesterone: Substance =
   "description": "Opioids\nPregn-4-ene-3,20-dione, also known as Progesterone or P4 is a steroid sex hormone of the progestogen class. Progesterone can be taken orally, vaginal, rectal and by subcutaneous or intramuscular injection. Progesterone is commonly used as a part of trans-feminising hormone therapy or post menopausal Hormone replacement therapy.",
   "effects": {
     "positive": [
-      "Increased bodily temperature - at high concentration progesterone elevates body temperature for ~1°C",
       "Physical euphoria",
       "Increased libido",
-      "Mindfulness",
       "Increased music appreciation",
-      "Increased libido"
+      "Increased libido",
+      "Pain relief"
     ],
     "neutral": [
+      "Mindfulness",
       "Sedation",
-      "Pain relief",
-      "Motor control loss",
       "Thought deceleration",
       "Sleepiness",
-      "Sleepiness"
+      "Sleepiness",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Increased bodily temperature - at high concentration progesterone elevates body temperature for ~1°C",
+      "Motor control loss",
       "Amnesia",
-      "Dizziness",
-      "Anxiety suppression"
+      "Dizziness"
     ]
   },
   "routeData": {

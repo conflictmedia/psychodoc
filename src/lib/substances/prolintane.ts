@@ -22,7 +22,6 @@ export const prolintane: Substance =
   "effects": {
     "positive": [
       "Stamina enhancement",
-      "Stimulation",
       "Wakefulness",
       "Cognitive euphoria",
       "Creativity enhancement",
@@ -33,19 +32,20 @@ export const prolintane: Substance =
       "Wakefulness"
     ],
     "neutral": [
-      "Abnormal heartbeat",
+      "Stimulation",
       "Muscle contractions",
-      "Muscle spasms",
-      "Restless leg syndrome",
       "Thought deceleration",
-      "Compulsive redosing",
       "Ego inflation",
       "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober.",
       "Thought acceleration",
-      "Thought organization - Mainly observed with low to common doses.",
-      "Thought disorganization - This effect manifests and is also intensified with higher doses."
+      "Thought organization - Mainly observed with low to common doses."
     ],
     "negative": [
+      "Abnormal heartbeat",
+      "Muscle spasms",
+      "Restless leg syndrome",
+      "Compulsive redosing",
+      "Thought disorganization - This effect manifests and is also intensified with higher doses.",
       "Appetite suppression",
       "Diarrhea or Nausea - Some experience reports describe individuals who have experienced one or more types of gastrointestinal disturbance while under the influence of prolintane, but typically only at very high doses.",
       "Headaches",

@@ -23,10 +23,7 @@ export const _4_aco_mipt: Substance =
   "description": "4-Acetoxy-N-methyl-N-isopropyltryptamine (abbreviated 4-AcO-MiPT and also known as mipracetin) is a synthetic psychedelic tryptamine. These substances are commonly hypothesized to act primarily as prodrugs for their respective hydroxylated counterparts (e.g. Today it is either used recreationally or as an entheogenic substance and is typically acquired through the use of online research chemical vendors.",
   "effects": {
     "positive": [
-      "Sedation - In terms of its effects on the physical energy levels of the tripper, 4-AcO-MiPT is considered by most to be relaxing, stoning and mildly sedating. This sense of sedation is often accompanied by uncontrollable yawning.",
-      "Spontaneous tactile sensations - The \"body high\" of 4-AcO-MiPT can be described as a pleasurable, warm, soft and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
       "Colour enhancement",
-      "Brightness alteration",
       "Analysis enhancement",
       "Emotion enhancement",
       "Immersion enhancement",
@@ -37,12 +34,15 @@ export const _4_aco_mipt: Substance =
       "Synaesthesia - In its fullest manifestation, this is a very rare and non-reproducible effect. Increasing the dosage can increase the likelihood of this occurring, but seems to only be a prominent part of the experience among those who are already predisposed to synaesthetic states.",
       "Spirituality enhancement",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Sedation - In terms of its effects on the physical energy levels of the tripper, 4-AcO-MiPT is considered by most to be relaxing, stoning and mildly sedating. This sense of sedation is often accompanied by uncontrollable yawning.",
+      "Spontaneous tactile sensations - The \\\"body high\\\" of 4-AcO-MiPT can be described as a pleasurable, warm, soft and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
+      "Brightness alteration",
       "Excessive yawning",
       "Pupil dilation",
-      "Runny nose",
       "Watery eyes",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
@@ -54,7 +54,6 @@ export const _4_aco_mipt: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - This effect is very consistent in dark environments at appropriately high dosages. They can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Conceptual thinking",
       "Autonomous voice communication",
@@ -64,11 +63,12 @@ export const _4_aco_mipt: Substance =
       "Auditory distortion"
     ],
     "negative": [
+      "Runny nose",
+      "Transformations",
       "Delusion",
       "Enhancement and suppression cycles - This can be described as constant waves of extremely stimulated and profound thinking which are spontaneously surpassed in a cyclic fashion by waves of general thought suppression and mental intoxication. These two states seem to switch between each other in a consistent loop once every 20 - 60 minutes.",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Auditory hallucination"
     ]

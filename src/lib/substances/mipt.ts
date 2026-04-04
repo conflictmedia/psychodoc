@@ -21,10 +21,7 @@ export const mipt: Substance =
   "description": "It is structurally related to DMT, along with other analogs such as DiPT, MPT, and MET. MiPT was first synthesized and investigated by Alexander Shulgin and described in his book TiHKAL (\"Tryptamines I Have Known and Loved\"). In the commentary, Shulgin notes that \"there is almost a total lack of visual phenomena... no wave-forms, color distortion or object shape changes, and no eyes-closed imagery, unlike most N,N-disubstituted tryptamines.\"",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Emotion enhancement",
       "Creativity enhancement",
       "Immersion enhancement",
@@ -32,11 +29,13 @@ export const mipt: Substance =
       "Increased sense of humor",
       "Novelty enhancement",
       "Wakefulness",
-      "Enhancements - MiPT has been reported to notably enhance auditory sensation, which stands in contrast to the relatively weak visual changes it produces."
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation",
+      "Brightness alteration",
+      "Enhancements - MiPT has been reported to notably enhance auditory sensation, which stands in contrast to the relatively weak visual changes it produces.",
       "Spontaneous physical sensations",
-      "Dry mouth",
       "Pupil dilation",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
@@ -50,11 +49,12 @@ export const mipt: Substance =
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Dry mouth",
       "Increased blood pressure",
       "Nausea",
       "Teeth grinding",
       "Memory suppression",
-      "Personal bias suppression",
       "Hallucinations"
     ]
   },

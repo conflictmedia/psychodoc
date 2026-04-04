@@ -23,8 +23,7 @@ export const _2c_t: Substance =
   "effects": {
     "positive": [
       "Bodily control enhancement",
-      "Tactile enhancement \"Tactile sensitivity\"",
-      "Increased heart rate",
+      "Tactile enhancement \\\"Tactile sensitivity\\\"",
       "Colour enhancement",
       "Emotion enhancement",
       "Novelty enhancement",
@@ -33,11 +32,12 @@ export const _2c_t: Substance =
       "Increased sense of humor",
       "Immersion enhancement",
       "Wakefulness",
-      "Enhancements",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Enhancements",
       "Spontaneous bodily sensations",
       "Pupil dilation",
       "Visual acuity enhancement",
@@ -48,7 +48,6 @@ export const _2c_t: Substance =
       "Symmetrical texture repetition",
       "Colour shifting",
       "Scenery slicing",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Time distortion",
       "Conceptual thinking",
@@ -57,9 +56,10 @@ export const _2c_t: Substance =
       "Perception of interdependent opposites"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Nausea",
       "Vasoconstriction",
-      "Personal bias suppression",
       "Memory suppression",
       "Ego death",
       "Thought loops",

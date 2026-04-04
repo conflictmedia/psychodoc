@@ -23,18 +23,18 @@ export const nep: Substance =
   "description": "N-Ethyl-nor-pentedrone (also known as N-Ethylpentedrone, Ethyl-pentedrone, Ethylpentedrone or more commonly, NEP) is a lesser-known novel stimulant substance of the cathinone class that produces stimulating, euphoric, and mildly entactogenic effects when administered. The reported entactogenic effects it displays may also be due to its activity as a serotonin reuptake inhibitor or releasing agent in moderate to high doses, although new research has shown very low serotonin reuptake inhibition. NEP shares a close structural relationship to its parent compound pentedrone, differing by an addition ethyl group on the terminal nitrogen on the carbon chain.",
   "effects": {
     "positive": [
-      "Stimulation - In terms of its effects on the user's physical energy levels, NEP can be considered to be extremely stimulating and energetic.",
-      "Spontaneous tactile sensations - High doses of NEP result in a pleasurable body high characterized by pleasant tingling.",
       "Tactile enhancement",
-      "Increased heart rate - NEP increases heart rate significantly compared to other stimulants, even at low doses.",
-      "Increased perspiration",
       "Wakefulness"
     ],
     "neutral": [
-      "Abnormal heartbeat",
+      "Stimulation - In terms of its effects on the user's physical energy levels, NEP can be considered to be extremely stimulating and energetic.",
+      "Spontaneous tactile sensations - High doses of NEP result in a pleasurable body high characterized by pleasant tingling.",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased heart rate - NEP increases heart rate significantly compared to other stimulants, even at low doses.",
+      "Increased perspiration",
+      "Abnormal heartbeat",
       "Dehydration - Dry mouth and increased sweating can occur after consuming NEP. Low doses of the substance in question cause minimal dehydration.",
       "Vasoconstriction - NEP has been reported as being slightly vasoconstricting.",
       "Increased blood pressure",

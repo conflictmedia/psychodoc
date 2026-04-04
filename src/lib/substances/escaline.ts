@@ -21,11 +21,9 @@ export const escaline: Substance =
   "description": "3,5-Dimethoxy-4-ethoxyphenethylamine (commonly known as Escaline) is a synthetic psychedelic substance of the phenethylamine chemical class that produces psychedelic effects when administered. Escaline was first synthesized and reported in the scientific literature by Benington, et al., in 1954, but was later re-examined in the laboratory of David E. Nichols who prepared a series of mescaline analogues, including proscaline, jimscaline, isoproscaline, and others. He lists the dosage range as 40 mg to 60 mg orally and describes the duration of action to be 8–12 hours.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Tactile enhancement",
       "Bodily control enhancement",
       "Stamina enhancement",
-      "Increased heart rate",
       "Colour enhancement",
       "Increased music appreciation",
       "Novelty enhancement",
@@ -33,13 +31,15 @@ export const escaline: Substance =
       "Suggestibility enhancement",
       "Increased sense of humor",
       "Laughter fits",
-      "Mindfulness",
       "Wakefulness",
-      "Enhancements",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation",
+      "Mindfulness",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Pupil dilation",
       "Muscle contractions",
@@ -51,7 +51,6 @@ export const escaline: Substance =
       "Symmetrical texture repetition",
       "Colour shifting",
       "Scenery slicing",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Thought acceleration",
@@ -62,8 +61,9 @@ export const escaline: Substance =
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Nausea",
-      "Personal bias suppression",
       "Memory suppression",
       "Ego death",
       "Delusion",

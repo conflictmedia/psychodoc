@@ -22,10 +22,6 @@ export const caffeine: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - Caffeine has been reported to produce very mild physical euphoria in non-tolerant users, especially when they are already well-rested. Some people report that caffeine is more euphoric in the afternoon than the morning.",
-      "Bronchodilation - Caffeine is an effective bronchodilator. In clinical tests on adults with asthma, at fairly low doses (less than 5mg/kg of body weight), caffeine has been shown to provide a small improvement in lung function.",
-      "Frequent urination - When doses of caffeine equivalent to 2–3 cups of coffee are administered to people who have not consumed caffeine during prior days, they produce a mild increase in urinary output. Most people who consume caffeine, however, ingest it daily. Regular users of caffeine have been shown to develop a strong tolerance to the diuretic effect.",
-      "Increased heart rate",
-      "Increased perspiration",
       "Stamina enhancement - This effect is relatively mild compared to other stimulants such as amphetamine.",
       "Tactile enhancement",
       "Analysis enhancement",
@@ -39,18 +35,22 @@ export const caffeine: Substance =
       "Wakefulness"
     ],
     "neutral": [
-      "Compulsive redosing - This effect is less persistent than it is with nicotine or cocaine.",
+      "Bronchodilation - Caffeine is an effective bronchodilator. In clinical tests on adults with asthma, at fairly low doses (less than 5mg/kg of body weight), caffeine has been shown to provide a small improvement in lung function.",
+      "Frequent urination - When doses of caffeine equivalent to 2–3 cups of coffee are administered to people who have not consumed caffeine during prior days, they produce a mild increase in urinary output. Most people who consume caffeine, however, ingest it daily. Regular users of caffeine have been shown to develop a strong tolerance to the diuretic effect.",
       "Ego inflation",
       "Thought acceleration",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Stimulation - Caffeine is reported to be mildly to moderately energetic and stimulating in a fashion that is considerably weaker in comparison to that of traditional recreational stimulants such as amphetamine, MDMA or cocaine. This encourages physical activities such as performing chores and repetitive tasks which would otherwise be boring and strenuous physical activities. The particular style of stimulation which caffeine presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
+      "Vasoconstriction and Vasodilation - Whilst caffeine acts as a mild vasoconstrictor, its metabolite theobromine is a vasodilator and these effects are thought to cancel each other out."
     ],
     "negative": [
-      "Stimulation - Caffeine is reported to be mildly to moderately energetic and stimulating in a fashion that is considerably weaker in comparison to that of traditional recreational stimulants such as amphetamine, MDMA or cocaine. This encourages physical activities such as performing chores and repetitive tasks which would otherwise be boring and strenuous physical activities. The particular style of stimulation which caffeine presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Compulsive redosing - This effect is less persistent than it is with nicotine or cocaine.",
       "Appetite suppression",
       "Dizziness - This effect is not common except at overly high doses or taken when fatigued or at low blood sugar.",
       "Nausea - Moderate to extreme nausea has been reported to occur, typically at higher dosages.",
       "Teeth grinding - This effect does not occur as consistently as it does on other stimulants such as amphetamine or MDMA.",
-      "Vasoconstriction and Vasodilation - Whilst caffeine acts as a mild vasoconstrictor, its metabolite theobromine is a vasodilator and these effects are thought to cancel each other out.",
       "Anxiety",
       "Cognitive dysphoria - This effect typically only occurs at high to extremely high dosages.",
       "Irritability",

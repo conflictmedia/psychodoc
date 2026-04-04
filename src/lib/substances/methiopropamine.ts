@@ -32,10 +32,10 @@ export const methiopropamine: Substance =
     "neutral": [
       "Thought acceleration",
       "Thought organization",
-      "Compulsive redosing",
       "Thought deceleration"
     ],
     "negative": [
+      "Compulsive redosing",
       "Anxiety",
       "Cognitive fatigue",
       "Depression",

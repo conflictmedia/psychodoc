@@ -24,32 +24,32 @@ export const clonazepam: Substance =
   "description": "benzodiazepines\nClonazolam\nthumbnail|right|Klonopin 0.5 mg.thumbnail|right|Klonopin 1 mgthumbnail|right|Rivotril drops 2.5 mg/ml\nClonazepam (trade name Klonopin or Rivotril) is a long-acting psychoactive substance of the benzodiazepine class which produces mainly anxiolytic, but also anticonvulsant, muscle relaxant, amnesic, sedative, depressant and hypnotic effects. It is commonly used and FDA approved for the medical treatment of panic disorder, generalized anxiety disorder (GAD), and social anxiety disorder (SAD). It is highly recommended to taper one's dose by gradually lowering the amount taken each day for a prolonged period of time instead of stopping abruptly.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation - This effect is relatively strong when compared with alprazolam.",
-      "Physical euphoria - Clonazepam is similar to alprazolam, where despite suppressing emotion, people report moderate-strong feelings of relaxation, pleasure and comfort in the body. This seems to present itself more often in those with pre-existing anxiety. However, this isn't consistent with everyone, with some users reporting no euphoric qualities at all."
+      "Physical euphoria - Clonazepam is similar to alprazolam, where despite suppressing emotion, people report moderate-strong feelings of relaxation, pleasure and comfort in the body. This seems to present itself more often in those with pre-existing anxiety. However, this isn't consistent with everyone, with some users reporting no euphoric qualities at all.",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Motor control loss",
+      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Visual acuity suppression - Like many depressants, clonazepam is known to cause blurred or otherwise suppressed visual acuity.",
       "Thought deceleration",
-      "Compulsive redosing",
       "Dream potentiation",
-      "Residual sleepiness - While benzodiazepines can be used as an effective sleep-inducing aid, their effects may persist into the morning afterward, which may lead users to feeling \"groggy\" or \"dull\" for up to a few hours.",
+      "Residual sleepiness - While benzodiazepines can be used as an effective sleep-inducing aid, their effects may persist into the morning afterward, which may lead users to feeling \\\"groggy\\\" or \\\"dull\\\" for up to a few hours.",
       "Thought deceleration",
-      "Thought disorganization"
+      "Anxiety suppression",
+      "Dream potentiation or Dream suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Compulsive redosing",
+      "Thought disorganization",
       "Dizziness",
       "Respiratory depression",
-      "Seizure suppression",
       "Amnesia",
-      "Anxiety suppression",
       "Analysis suppression",
       "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others. It most commonly occurs at heavy dosages.",
       "Disinhibition",
       "Emotion suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics.",
       "Rebound anxiety - Rebound anxiety is a commonly observed effect with anxiety relieving substances like benzodiazepines. It typically corresponds to the total duration spent under the substance's influence along with the total amount consumed in a given period, an effect which can easily lend itself to cycles of dependence and addiction.",
-      "Dream potentiation or Dream suppression",
       "Irritability"
     ]
   },

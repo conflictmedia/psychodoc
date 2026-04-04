@@ -24,24 +24,25 @@ export const diazepam: Substance =
   "description": "benzodiazepines\nDiclazepam\n (also known as Valium) is a depressant substance of the benzodiazepine class. It is commonly used to treat a wide range of conditions including anxiety, panic attacks, insomnia, seizures, muscle spasms, and restless legs syndrome. Diazepam is a core medicine in the World Health Organization's Essential Drugs List, the minimum medical needs for a basic health-care system. However, it is generally considered to have lesser recreational effects compared to benzodiazepines like clonazepam (Klonopin) and alprazolam (Xanax). While diazepam itself does not naturally occur in plants or animals, recent research has indicated that low concentrations of its major metabolite, desmethyldiazepam (DD), can be found in various biological systems, including those of animals and certain plants.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this drug is sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation - In comparison to alprazolam (Xanax), diazepam has greater amounts of muscle relaxation.",
-      "Physical euphoria - Diazepam is similar to other benzodiazepines, where despite suppressing emotion, people report moderate-strong feelings of relaxation, pleasure and comfort in the body. This seems to present itself more often in those with pre-existing anxiety. However, this isn't consistent with everyone, with some users reporting no euphoric qualities at all. It should also be noted that if this effect is experienced, it is typically more subtle in nature in comparison to more potent & faster acting benzodiazepines, such as alprazolam (Xanax.)"
+      "Physical euphoria - Diazepam is similar to other benzodiazepines, where despite suppressing emotion, people report moderate-strong feelings of relaxation, pleasure and comfort in the body. This seems to present itself more often in those with pre-existing anxiety. However, this isn't consistent with everyone, with some users reporting no euphoric qualities at all. It should also be noted that if this effect is experienced, it is typically more subtle in nature in comparison to more potent & faster acting benzodiazepines, such as alprazolam (Xanax.)",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Motor control loss",
+      "Sedation -  In terms of energy level alterations, this drug is sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Visual acuity suppression - Like many depressants, diazepam is known to cause blurred or otherwise suppressed visual acuity. This is less likely to occur than other benzodiazepines, however it can still present itself at higher doses, or if the user has a low tolerance.",
       "Thought deceleration",
-      "Compulsive redosing",
-      "Residual sleepiness - While benzodiazepines can be used as an effective sleep-inducing aid, their effects may persist into the morning afterward, which may lead users to feeling \"groggy\" or \"dull\" for up to a few hours.",
+      "Residual sleepiness - While benzodiazepines can be used as an effective sleep-inducing aid, their effects may persist into the morning afterward, which may lead users to feeling \\\"groggy\\\" or \\\"dull\\\" for up to a few hours.",
       "Thought deceleration",
-      "Thought disorganization"
+      "Anxiety suppression",
+      "Dream potentiation or Dream suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Compulsive redosing",
+      "Thought disorganization",
       "Respiratory depression",
       "Dizziness",
-      "Seizure suppression",
-      "Anxiety suppression",
       "Disinhibition",
       "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others. It most commonly occurs at heavy dosages.",
       "Analysis suppression",
@@ -51,7 +52,6 @@ export const diazepam: Substance =
       "Motivation suppression - Due to diazepam's moderate sedation and lethargy, doing any type of activity that requires moving, or high amounts of effort may be difficult to do on this compound, especially at higher doses.",
       "Language suppression - Diazepam & most benzodiazepines are known to cause slurred speech and difficulty communicating words in a clear fashion.",
       "Rebound anxiety - Rebound anxiety is a commonly observed effect with anxiety relieving substances like benzodiazepines. It typically corresponds to the total duration spent under the substance's influence along with the total amount consumed in a given period, an effect which can easily lend itself to cycles of dependence and addiction.",
-      "Dream potentiation or Dream suppression",
       "Irritability"
     ]
   },

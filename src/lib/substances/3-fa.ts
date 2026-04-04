@@ -22,11 +22,8 @@ export const _3_fa: Substance =
   "description": "3-Fluoroamphetamine (3-FA) is a synthetic ring-substituted fluorinated amphetamine compound that produces potent classical stimulant effects that has been claimed to be \"almost equipotent\" with methamphetamine. It is one part of a series of designer fluorinated amphetamine analogs such as 2-FA, 2-FMA, 3-FEA, and 4-FA that are known for their euphoric and stimulating effects and growing popularity as research chemical substitutes for classical street stimulants.\n3-FA is rarely found on the streets, and only sometimes sold as a grey market research chemical through online vendors.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Tactile enhancement - This component primarily tends to happen at higher doses only and is rarely observed lower to medium doses",
       "Physical euphoria",
-      "Increased heart rate",
-      "Increased perspiration",
       "Wakefulness",
       "Cognitive euphoria",
       "Focus enhancement",
@@ -36,12 +33,16 @@ export const _3_fa: Substance =
       "Increased music appreciation - This component primarily tends to happen at higher doses only, as low to medium doses of 3-FA are more focused and productivity-oriented."
     ],
     "neutral": [
+      "Stimulation",
       "Thought deceleration",
       "Thought acceleration",
-      "Compulsive redosing",
-      "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober."
+      "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober.",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Compulsive redosing",
       "Dehydration",
       "Appetite suppression",
       "Teeth grinding - This component can be considered to be less intense when compared with that of MDMA as well as 2-FMA.",
@@ -49,8 +50,7 @@ export const _3_fa: Substance =
       "Cognitive fatigue",
       "Depression",
       "Irritability",
-      "Motivation suppression",
-      "Anxiety suppression"
+      "Motivation suppression"
     ]
   },
   "routeData": {

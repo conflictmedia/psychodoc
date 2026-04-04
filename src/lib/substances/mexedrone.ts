@@ -24,20 +24,20 @@ export const mexedrone: Substance =
     "positive": [
       "Physical euphoria",
       "Tactile enhancement",
-      "Sedation - The biggest difference between mexedrone and mephedrone is that it primarily results in moderate sedation over stimulation and can therefore discourage physical activities such as running, dancing or climbing.",
-      "Vibrating vision - At high doses, a person's eyeballs may begin  to spontaneously wiggle back and forth in a rapid motion, causing the vision to become blurry and temporarily out of focus. This is a condition known as nystagmus.",
-      "Increased perspiration",
       "Euphoria - Mild emotional euphoria and feelings of happiness are present within mexedrone and are likely a direct result of serotonin and dopamine release.",
-      "Enhancements",
       "Wakefulness"
     ],
     "neutral": [
-      "Spontaneous physical sensations - The \"body high\" of mexedrone can be described as a mild soft and warm tingling sensation that encompasses the entire body. This sensation maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
+      "Sedation - The biggest difference between mexedrone and mephedrone is that it primarily results in moderate sedation over stimulation and can therefore discourage physical activities such as running, dancing or climbing.",
+      "Enhancements",
+      "Spontaneous physical sensations - The \\\"body high\\\" of mexedrone can be described as a mild soft and warm tingling sensation that encompasses the entire body. This sensation maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
       "Thought acceleration",
       "Thought connectivity",
       "Thought deceleration"
     ],
     "negative": [
+      "Vibrating vision - At high doses, a person's eyeballs may begin  to spontaneously wiggle back and forth in a rapid motion, causing the vision to become blurry and temporarily out of focus. This is a condition known as nystagmus.",
+      "Increased perspiration",
       "Dehydration",
       "Temperature regulation suppression",
       "Teeth grinding - This component can be considered to be less intense when compared with that of MDMA.",

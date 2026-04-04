@@ -22,34 +22,34 @@ export const eszopiclone: Substance =
   "description": "GABAergics\nEszopiclone (also known by the trade names Lunesta) is a non-benzodiazepine hypnotic substance of the cyclopyrrolone class that is primarily used in the treatment of insomnia. Other Z-drugs include Zopiclone (Imovane) zaleplon (Sonata) and zolpidem (Ambien and AmbienCR). Eszopiclone is thought to increase the normal neurotransmission of the neurotransmitter GABA in the central nervous system in a similar yet distinct way to the activity of benzodiazepines.",
   "effects": {
     "positive": [
-      "Sedation - Eszopiclone is extremely sedating and can put the user into an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit or lay down and feel as if they are constantly on the verge of passing out. This sense of sleep deprivation increases proportional to dosage and can eventually become powerful enough to force a person into complete unconsciousness regardless of where they are or what they are doing at that moment.",
       "Muscle relaxation",
-      "Increased music appreciation"
+      "Increased music appreciation",
+      "Euphoria -  Some users report euphoria from Eszopiclone, although this is short lived and usually exclusive to the onset of the experience and often followed by emotion suppression.",
+      "Euphoria -  Some users report euphoria from Eszopiclone, although this is short lived and usually exclusive to the onset of the experience and often followed by emotion suppression."
     ],
     "neutral": [
-      "Euphoria -  Some users report euphoria from Eszopiclone, although this is short lived and usually exclusive to the onset of the experience and often followed by emotion suppression.",
+      "Sedation - Eszopiclone is extremely sedating and can put the user into an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit or lay down and feel as if they are constantly on the verge of passing out. This sense of sleep deprivation increases proportional to dosage and can eventually become powerful enough to force a person into complete unconsciousness regardless of where they are or what they are doing at that moment.",
       "Time compression - This effect is mostly noticeable while under the influence of a high dose.",
-      "Compulsive redosing",
-      "Shadow people",
-      "Acuity suppression",
       "Drifting (melting, breathing, morphing and flowing) - Visual drifting effects are the most prominent visual effects of this substance. They typically occur at strong doses, or when the user resists the urge to sleep.. They are similar to the distortions produced zolpidem and are usually less pronounced than those of deliriants. Like deliriant visuals, they are most prominent in low lighting. Depending on dose and lighting, they can be described as slow or fast in speed, static in permanence, smooth in motion, realistic in appearance, and simplistic or intricate.",
       "Tracers - This effect is mild and typically only experienced at high doses.",
       "Thought deceleration",
-      "Delirium",
-      "Euphoria -  Some users report euphoria from Eszopiclone, although this is short lived and usually exclusive to the onset of the experience and often followed by emotion suppression.",
       "Time compression - This effect is mostly noticeable while under the influence of a high dose.",
-      "Compulsive redosing"
+      "External hallucinations - At very high doses, Eszopiclone can produce external hallucinations that are similar to, but less pronounced than those of deliriants.",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Compulsive redosing",
+      "Shadow people",
+      "Acuity suppression",
+      "Delirium",
+      "Compulsive redosing",
       "Respiratory depression",
       "Dizziness",
       "Motor control loss - This effect is pronounced and comparable to the motor control loss experienced on a heavy dose of alcohol. This typically results in users stumbling and an inability to walk in a straight line. As this may easily result in injury, one should avoid walking and using stairs while on Eszopiclone.",
       "Gustatory hallucination - Eszopiclone is commonly reported to leave a strong, unpleasant metallic taste in one's mouth.",
       "Emotion suppression -  While Eszopiclone primarily suppresses anxiety, it also suppresses other emotions in a similar but less intense fashion to antipsychotics.",
       "Irritability - Combined with the strong disinhibiting effects of Eszopiclone, this effect can cause people under the influence of Eszopiclone to have violent behavior towards others and sometimes themselves.",
-      "External hallucinations - At very high doses, Eszopiclone can produce external hallucinations that are similar to, but less pronounced than those of deliriants.",
       "Amnesia -  Compared to benzodiazepines, Eszopiclone can produce amnesia at much lower doses. One may potentially not remember exactly what happened while under the influence of a common dose. This is usually less intense than the amnesia produced by zolpidem.",
-      "Anxiety suppression",
       "Disinhibition",
       "Delusion",
       "Analysis suppression",

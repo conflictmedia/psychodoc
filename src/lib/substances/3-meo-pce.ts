@@ -22,23 +22,22 @@ export const _3_meo_pce: Substance =
   "description": "3-Methoxyeticyclidine (also known as Methoxieticyclidine and 3-MeO-PCE) is a novel dissociative substance of the arylcyclohexylamine class that produces dissociative and hallucinogenic effects when administered. 3-MeO-PCE began to gain popularity in 2010  and is sold on the online grey area research chemical market as a legal alternative to PCP or ketamine. Very little data exists about the pharmacological properties, metabolism, and toxicity of 3-MeO-PCE, and it has a very brief history of human usage.",
   "effects": {
     "positive": [
-      "Tactile disconnection",
-      "Visual disconnection - This eventually results in 3-MeO-PCE's equivalent of the notorious \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures.",
-      "Consciousness disconnection",
       "Unity and interconnectedness",
-      "Mania - This effect is reportedly more common on 3-MeO-PCE than most other dissociatives. It typically occurs during the offset of the trip, but can also occur during the onset and come up as well.",
       "Cognitive euphoria",
-      "Derealization",
-      "Compulsive redosing - This effect is more prominent based on the route of administration used. For example, it is especially present when smoked or vaporized, due to the relative abruptness of the substance entering and leaving the bloodstream.",
       "Creativity enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
       "Introspection",
-      "Colour enhancement"
+      "Colour enhancement",
+      "Synaesthesia"
     ],
     "neutral": [
+      "Tactile disconnection",
+      "Visual disconnection - This eventually results in 3-MeO-PCE's equivalent of the notorious \\\"k-hole\\\" or, more specifically, holes, spaces and voids alongside of structures.",
+      "Consciousness disconnection",
+      "Mania - This effect is reportedly more common on 3-MeO-PCE than most other dissociatives. It typically occurs during the offset of the trip, but can also occur during the onset and come up as well.",
+      "Derealization",
       "Distortions",
-      "Synaesthesia",
       "Depersonalization",
       "Conceptual thinking",
       "Déjà vu",
@@ -52,12 +51,13 @@ export const _3_meo_pce: Substance =
       "Environmental cubism",
       "Perspective distortions",
       "Scenery slicing",
-      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)"
+      "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Compulsive redosing - This effect is more prominent based on the route of administration used. For example, it is especially present when smoked or vaporized, due to the relative abruptness of the substance entering and leaving the bloodstream.",
       "Suppression",
       "Hallucinations",
-      "Anxiety suppression",
       "Disinhibition",
       "Delusion - Like psychosis, this effect is reportedly more common on 3-MeO-PCE than most other dissociatives.",
       "Delusions of sobriety",

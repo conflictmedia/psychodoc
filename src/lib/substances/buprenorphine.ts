@@ -27,27 +27,27 @@ export const buprenorphine: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - This particular substance can be considered as less intense in its physical euphoria when compared with that of morphine or diacetylmorphine (heroin) due to it being a partial agonist of the μ-opioid receptor. The sensation itself can be described as extreme feelings of intense physical comfort, warmth and bliss which spreads throughout the body.",
-      "Cognitive euphoria - This particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) due to it being a partial agonist of the μ-opioid receptor. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment,  and happiness."
+      "Cognitive euphoria - This particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) due to it being a partial agonist of the μ-opioid receptor. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment,  and happiness.",
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
       "Itchiness",
       "Sedation",
-      "Constipation",
-      "Decreased libido",
-      "Pupil constriction"
+      "Pupil constriction",
+      "Decreased heart rate",
+      "Anxiety suppression",
+      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry."
     ],
     "negative": [
+      "Constipation",
+      "Decreased libido",
       "Respiratory depression - Buprenorphine causes less respiratory depression than other opioids due to it being a partial agonist of the μ-opioid receptor.",
       "Dizziness",
-      "Decreased heart rate",
       "Cough suppression",
       "Difficulty urinating",
       "Nausea - Buprenorphine causes substantially more nausea and vomiting than other opioids.",
       "Appetite suppression",
-      "Orgasm suppression",
-      "Anxiety suppression",
-      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry."
+      "Orgasm suppression"
     ]
   },
   "routeData": {

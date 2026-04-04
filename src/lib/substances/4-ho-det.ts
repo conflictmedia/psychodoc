@@ -24,10 +24,7 @@ export const _4_ho_det: Substance =
   "effects": {
     "positive": [
       "Tactile enhancement",
-      "Stimulation",
       "Bodily control enhancement",
-      "Increased heart rate",
-      "Excessive yawning  - This effect seems to be uniquely pronounced among psilocin and related tryptamines. It can occur to a lesser degree on LSD and very rarely on psychedelic phenethylamines like mescaline. It typically occurs in combination with watery eyes. However, many anecdotal reports suggest that this component is not as noticeable compared to the aforementioned psychedelics",
       "Colour enhancement",
       "Analysis enhancement",
       "Immersion enhancement",
@@ -36,15 +33,17 @@ export const _4_ho_det: Substance =
       "Laughter fits",
       "Novelty enhancement",
       "Wakefulness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation",
+      "Excessive yawning  - This effect seems to be uniquely pronounced among psilocin and related tryptamines. It can occur to a lesser degree on LSD and very rarely on psychedelic phenethylamines like mescaline. It typically occurs in combination with watery eyes. However, many anecdotal reports suggest that this component is not as noticeable compared to the aforementioned psychedelics",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Watery eyes",
       "Frequent urination",
       "Muscle contractions",
       "Pupil dilation",
-      "Runny nose",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
       "Drifting (melting, breathing, morphing and flowing)",
@@ -55,7 +54,6 @@ export const _4_ho_det: Substance =
       "Perspective distortions",
       "Symmetrical texture repetition",
       "Machinescapes",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
@@ -65,11 +63,13 @@ export const _4_ho_det: Substance =
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Runny nose",
+      "Transformations",
       "Temperature regulation suppression",
       "Olfactory hallucination",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

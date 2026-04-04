@@ -21,18 +21,18 @@ export const blue_lotus: Substance =
     "positive": [
       "Muscle relaxation",
       "Visual Color enhancement",
-      "Brightness alteration",
       "Increased music appreciation",
       "Empathy, affection, and sociability enhancement",
-      "Derealization"
+      "Pain relief",
+      "Auditory acuity enhancement"
     ],
     "neutral": [
-      "Pain relief",
+      "Brightness alteration",
+      "Derealization",
       "Sedation",
       "Visual Tracers",
       "Dream potentiation",
-      "Sleepiness",
-      "Auditory acuity enhancement"
+      "Sleepiness"
     ],
     "negative": [
       "Headache",

@@ -22,19 +22,19 @@ export const det: Substance =
   "description": "Diethyltryptamine (also known as N,N-DET or DET) is a synthetic psychedelic tryptamine and a close structural analog of DMT (Dimethyltryptamine). It is extremely uncommon and has little history of human usage. In the 1950s, the endogenous production of psychoactive agents was considered to be a potential explanation for the hallucinatory symptoms of some psychiatric diseases; this is known as the transmethylation hypothesis.",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
       "Novelty enhancement",
-      "Enhancements",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation",
+      "Brightness alteration",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Pupil dilation",
       "Pattern recognition enhancement",
@@ -47,19 +47,19 @@ export const det: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Increased blood pressure",
       "Nausea",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

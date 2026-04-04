@@ -22,18 +22,19 @@ export const fenethylline: Substance =
   "description": "Fenethylline (also known as phenethylline, fenetylline, amphetamin​oethyl​theophylline, amfetyline, or by brand names including Captagon, Biocapton and Fitton) is a stimulant substance of the amphetamine class. Captagon is primarily produced in and exported from Syria, sponsored by the Syrian government under the Assad regime. The annual Captagon merchandise of Syria is estimated to have been worth 57 billion US dollars in 2022.",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased bodily temperature",
       "Stamina enhancement",
       "Cognitive euphoria",
       "Wakefulness"
     ],
     "neutral": [
-      "Abnormal heartbeat",
+      "Stimulation",
       "Bronchodilation",
-      "Dry mouth"
+      "Irritability'"
     ],
     "negative": [
+      "Increased bodily temperature",
+      "Abnormal heartbeat",
+      "Dry mouth",
       "Increased blood pressure - Fenethylline leads to only a mild increase in blood pressure, because theophylline and amphetamine are a vasodilator and a vasoconstrictor respectively.",
       "Appetite suppression",
       "Muscle cramps",
@@ -41,7 +42,6 @@ export const fenethylline: Substance =
       "Appetite suppression",
       "Irritability",
       "Depression",
-      "Irritability'",
       "Motivation suppression"
     ]
   },

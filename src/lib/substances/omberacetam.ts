@@ -24,7 +24,6 @@ export const omberacetam: Substance =
   "description": "Omberacetam is easily accessible through the use of online vendors as a legal dietary supplement in the U.S. and as a medication in other countries. It is growing in popularity due to its effectiveness as a cognitive enhancing compound and because its active dose range is between 10 and 30 mg, which is much lower than compounds that offer similar effects such as the racetams. When compared to the traditional racetams, omberacetam has been found to be, according to studies, 1000 times more potent than the prototypical racetam drug, piracetam.",
   "effects": {
     "positive": [
-      "Stimulation - The stimulation which omberacetam presents can be considered as primarily subtle and encouraged rather than forceful and distinct.",
       "Colour enhancement - Some anecdotal reports state that it makes colours appear more vibrant.",
       "Wakefulness",
       "Focus enhancement",
@@ -32,16 +31,17 @@ export const omberacetam: Substance =
       "Memory enhancement"
     ],
     "neutral": [
-      "Spontaneous physical sensations - The \"body high\" which omberacetam presents can be described as a faint, all-encompassing, soft and consistent tingling sensation.",
+      "Stimulation - The stimulation which omberacetam presents can be considered as primarily subtle and encouraged rather than forceful and distinct.",
+      "Spontaneous physical sensations - The \\\"body high\\\" which omberacetam presents can be described as a faint, all-encompassing, soft and consistent tingling sensation.",
       "Acuity enhancement",
       "Visual haze",
       "Thought connectivity",
       "Thought acceleration",
-      "Rejuvenation"
+      "Rejuvenation",
+      "Anxiety suppression"
     ],
     "negative": [
       "Headaches",
-      "Anxiety suppression",
       "Irritability"
     ]
   },

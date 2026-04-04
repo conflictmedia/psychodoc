@@ -25,32 +25,32 @@ export const promethazine: Substance =
     "positive": [
       "Muscle relaxation",
       "Physical euphoria - This can lead to a very pleasant feeling of the entire body relaxing, feeling like warm gel. It is similar to but distinct from an opioid's physical euphoria.",
-      "Euphoria - Usually, promethazine causes minimal euphoria normally only in anxious individuals and can even be dysphoric, however when used at low doses and combined with an opioid such as codeine, oxycodone or hydrocodone, it can effectively potentiate the euphoric effect and allow for a lower opioid dose."
+      "Euphoria - Usually, promethazine causes minimal euphoria normally only in anxious individuals and can even be dysphoric, however when used at low doses and combined with an opioid such as codeine, oxycodone or hydrocodone, it can effectively potentiate the euphoric effect and allow for a lower opioid dose.",
+      "Nausea suppression - Promethazine is used to treat motion sickness or nausea."
     ],
     "neutral": [
-      "Abnormal heartbeat - This effect is exceptionally rare.",
-      "Dry mouth - This is a common side effect of this substance.",
       "Depth perception distortions - This side effect is uncommon.",
       "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - The threshold for hallucinations on promethazine is higher than other 1st generation antihistamines like diphenhydramine and doxylamine, occurs mainly heavy doses and can be difficult to reach due to the user likely falling asleep before they can reach delirium, as promethazine is extremely sedating at high doses. It can be comprehensively described through its variations as delirious in believability, controllable or autonomous in controllability and solid in style. The most common themes for these hallucinations include those of both everyday occurrences such as smoking phantom cigarettes, talking to people who are not there, seeing and feeling insects and immersion in sinister or nightmarish experiences.",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - Relative to other hallucinogens, this effect occurs briefly and spontaneously at moderate doses but becomes progressively extended in its occurrence and duration proportional to dosage before eventually becoming all-encompassing. It can be comprehensively described through its variations as delirious in believability, interactive in style, equal in new experiences and memory replays in content, autonomous in controllability and solid in style. Internal hallucinations may occur at lighter dosages than needed to cause external hallucinations and delirium.",
-      "Peripheral information misinterpretation",
-      "Shadow people",
-      "Transformations",
       "Object activation",
-      "Sleepiness"
-    ],
-    "negative": [
+      "Sleepiness",
       "Sedation - Promethazine causes pronounced sedation and a general feeling of slowness, usually with the feeling of not wanting to move, this effect is normally considerably stronger than Diphenhydramine or Doxylamine and it is generally considered to be one of the most sedating antihistamines due to its high anticholinergic, H1 antagonist and weak D2 antagonist activity.",
       "Increased heart rate and increased blood pressure - Anticholinergic activity at muscarinic acetylcholine receptors causes these effects.",
-      "Nausea suppression - Promethazine is used to treat motion sickness or nausea.",
-      "Difficulty urinating - This side effect is uncommon.",
       "Anxiety suppression - Usually, promethazine acts as an anti-anxiety agent.",
-      "Anxiety -  Promethazine can occasionaly cause paranoia and Anxiety due to delirium although it is rarer than that of Diphenhydramine, Doxylamine and chlorpheniramine.",
-      "Emotion suppression - This effect is mild and occurs due to the mild weak antipsycotic effect, however much weaker than that of chlorpromazine or prochlorperazine.",
-      "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others.",
       "Sleepiness -  Feelings of physical exhaustion and tiredness are a common and pronounced effect of promethazine. The substance is therefore used to treat insomnia and abnormal sleep cycles.",
       "Delirium and confusion -  In low to moderate doses, promethazine presents a harmless sense of being confused or delirious. In high doses and overdose, it can become (but rarely does) so severe that the patient or user experiences excited delirium, a state of severe agitation and confusion.",
       "Unspeakable horrors"
+    ],
+    "negative": [
+      "Abnormal heartbeat - This effect is exceptionally rare.",
+      "Dry mouth - This is a common side effect of this substance.",
+      "Peripheral information misinterpretation",
+      "Shadow people",
+      "Transformations",
+      "Difficulty urinating - This side effect is uncommon.",
+      "Anxiety -  Promethazine can occasionaly cause paranoia and Anxiety due to delirium although it is rarer than that of Diphenhydramine, Doxylamine and chlorpheniramine.",
+      "Emotion suppression - This effect is mild and occurs due to the mild weak antipsycotic effect, however much weaker than that of chlorpromazine or prochlorperazine.",
+      "Delusions of sobriety - This is the false belief that one is perfectly sober despite obvious evidence to the contrary such as severe cognitive impairment and an inability to fully communicate with others."
     ]
   },
   "routeData": {

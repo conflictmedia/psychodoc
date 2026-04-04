@@ -22,7 +22,6 @@ export const tma_2: Substance =
   "description": "Members in this family been observed to produce a complex mixture of hallucinogenic, stimulant, psychedelic and entactogenic effects that qualitatively separates it from other psychedelic phenethylamine compounds like members of the 2C-x or DOx series. TMA-2 was first synthesized by Viktor Bruckner in 1933, but was not investigated as a psychoactive chemical until Alexander Shulgin synthesized and tested it in 1962. This suggests that there was only very limited human usage of TMA-2 between its invention and the publication of its synthesis and pharmacology in Shulgin's 1991 book PiHKAL (\"Phenethylamines I Have Known And Loved\").",
   "effects": {
     "positive": [
-      "Stimulation - In terms of its effects on the physical energy levels of the user, TMA-2 is usually considered to be extremely stimulating at levels which do not become overwhelming, resulting in a shakiness and unsteadiness of the hands but encouraging one to move around, run, dance, climb and generally engage in physical activities. In comparison, other more commonly used psychedelics such as psilocin are generally sedating and relaxed.",
       "Tactile enhancement - Feelings of enhanced tactile sensation are consistently present at moderate levels throughout most TMA-2 trips.",
       "Bodily control enhancement",
       "Colour enhancement",
@@ -34,10 +33,12 @@ export const tma_2: Substance =
       "Increased music appreciation",
       "Wakefulness",
       "Increased libido",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
-      "Spontaneous bodily sensations - The \"body high\" of TMA-2 is manifested as somewhat intense in comparison to most classical psychedelics such as LSD. The sensation itself can be described as a constantly present yet somewhat mild energetic pins and needles sensation that encompasses a person’s entire body. It is usually felt over every square inch of the skin, but occasionally manifests itself in the form of a continuously shifting tingling sensation that travels up and down the body in spontaneous waves.",
+      "Stimulation - In terms of its effects on the physical energy levels of the user, TMA-2 is usually considered to be extremely stimulating at levels which do not become overwhelming, resulting in a shakiness and unsteadiness of the hands but encouraging one to move around, run, dance, climb and generally engage in physical activities. In comparison, other more commonly used psychedelics such as psilocin are generally sedating and relaxed.",
+      "Enhancements",
+      "Spontaneous bodily sensations - The \\\"body high\\\" of TMA-2 is manifested as somewhat intense in comparison to most classical psychedelics such as LSD. The sensation itself can be described as a constantly present yet somewhat mild energetic pins and needles sensation that encompasses a person’s entire body. It is usually felt over every square inch of the skin, but occasionally manifests itself in the form of a continuously shifting tingling sensation that travels up and down the body in spontaneous waves.",
       "Pupil dilation",
       "Visual acuity enhancement",
       "Pattern recognition enhancement",
@@ -57,7 +58,6 @@ export const tma_2: Substance =
       "Nausea -  Mild to extreme nausea is reported when consumed in moderate to high dosages and either passes once the person has vomited or gradually fades by itself as the peak sets in.",
       "Vasoconstriction - This effect is usually only present at higher dosages, but can be particularly uncomfortable.",
       "Increased blood pressure",
-      "Personal bias suppression",
       "Memory suppression",
       "Ego death",
       "Hallucinations"

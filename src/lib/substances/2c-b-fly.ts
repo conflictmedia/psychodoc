@@ -21,11 +21,8 @@ export const _2c_b_fly: Substance =
   "description": "Reports have characterized its effects profile as possessing features of 2C-B, mescaline and MDA, with a duration of 6–8 hours (or up to 12 hours in larger doses). 2C-B-FLY is a derivative of the 2C-x family of psychedelic phenethylamines, specifically 2C-B, of which it significantly differs from in terms of its potency, metabolism, and potential toxicity. Around 2005, 2C-B-FLY appeared and gained some popularity in the online research chemicals market before largely disappearing in October 2009, when a batch of Bromo-DragonFLY was accidentally mislabeled as 2C-B-FLY (Bromo-DragonFLY is dosed in micrograms, where 2C-B-FLY is dosed in milligrams) led to two deaths as a result of taking overdoses of Bromo-DragonFLY meant to be effective doses for 2C-B-FLY.",
   "effects": {
     "positive": [
-      "Stimulation and Sedation - At light dosages, this compound is generally stimulating but in a gentle, non-forceful manner similar to that of 2C-B or mescaline. At higher dosages one may find the amount of stimulation to increase to an uncomfortable level with undertones of sedation or lethargy in a manner similar to that of 2C-C or 2C-T-7.",
-      "Spontaneous physical sensations - The \"body high\" of 2C-B-FLY can be described as a pleasurable, warm, soft, all-encompassing and mild tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached. It is comparable to that of a milder mescaline, 2C-B or 2C-E experience.",
       "Physical euphoria",
       "Tactile enhancement",
-      "Increased bodily temperature",
       "Bodily control enhancement",
       "Increased libido",
       "Colour enhancement",
@@ -36,13 +33,13 @@ export const _2c_b_fly: Substance =
       "Increased music appreciation",
       "Increased sense of humor",
       "Novelty enhancement",
-      "Wakefulness",
-      "Enhancements"
+      "Wakefulness"
     ],
     "neutral": [
+      "Stimulation and Sedation - At light dosages, this compound is generally stimulating but in a gentle, non-forceful manner similar to that of 2C-B or mescaline. At higher dosages one may find the amount of stimulation to increase to an uncomfortable level with undertones of sedation or lethargy in a manner similar to that of 2C-C or 2C-T-7.",
+      "Spontaneous physical sensations - The \\\"body high\\\" of 2C-B-FLY can be described as a pleasurable, warm, soft, all-encompassing and mild tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached. It is comparable to that of a milder mescaline, 2C-B or 2C-E experience.",
+      "Enhancements",
       "Bodily pressures",
-      "Stomach bloating",
-      "Diarrhea",
       "Excessive yawning",
       "Watery eyes",
       "Pupil dilation",
@@ -55,16 +52,19 @@ export const _2c_b_fly: Substance =
       "Depth perception distortions",
       "Perspective distortions",
       "Symmetrical texture repetition",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Thought acceleration",
       "Time distortion",
       "Distortions",
-      "Diarrhea",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased bodily temperature",
+      "Stomach bloating",
+      "Diarrhea",
+      "Transformations",
+      "Diarrhea",
       "Temperature regulation suppression - Compared to 2C-B, this effect is far more pronounced and unpredictable in its manifestation. Small increases in the dose may result in large changes in this effect.",
       "Increased blood pressure",
       "Headaches - This effect is more commonly reported than 2C-B or other traditional phenethylamines.",

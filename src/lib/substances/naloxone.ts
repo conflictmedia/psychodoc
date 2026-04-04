@@ -22,10 +22,9 @@ export const naloxone: Substance =
   "class": "Substituted morphinans",
   "description": "Experts now advise that anyone using street drugs—and those around them—should carry naloxone, as opioids are increasingly found contaminating the drug supply. Naloxone (commonly sold under the brand names Narcan and Evzio) is a synthetic mu-opioid antagonist of the morphinan chemical class that is widely used to reverse the effects of an acute opioid overdose. This is partially due to naloxone programs in several countries to give naloxone to people who use opioids along with the rapid deployment of naloxone by law enforcement agencies and emergency medical services.",
   "effects": {
-    "positive": [
-      "Identity alteration - Naloxone has been demonstrated by a pilot study to significantly reduce the symptoms of chronic long-term depersonalization. Within this study, 11 patients received single doses (1.6 or 4 mg i.v.) and three others received multiple infusions, with the maximal dosage being 10 mg, and the effect of naloxone on symptom severity was then measured and determined."
-    ],
+    "positive": [],
     "neutral": [
+      "Identity alteration - Naloxone has been demonstrated by a pilot study to significantly reduce the symptoms of chronic long-term depersonalization. Within this study, 11 patients received single doses (1.6 or 4 mg i.v.) and three others received multiple infusions, with the maximal dosage being 10 mg, and the effect of naloxone on symptom severity was then measured and determined.",
       "Sedation - Naloxone is considerably sedating. It can result in the user feeling sleepy and having difficulty keeping their eyes open."
     ],
     "negative": [

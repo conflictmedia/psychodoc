@@ -20,7 +20,6 @@ export const _3c_p: Substance =
   "effects": {
     "positive": [
       "Colour enhancement",
-      "Brightness alteration",
       "Empathy, affection, and sociability enhancement",
       "Cognitive euphoria",
       "Analysis enhancement",
@@ -32,12 +31,14 @@ export const _3c_p: Substance =
       "Laughter fits",
       "Increased libido",
       "Wakefulness",
-      "Enhancements",
       "Synaesthesia - In its fullest manifestation, this is a very rare and non-reproducible effect. Increasing the dosage can increase the likelihood of this occurring, but seems only to be a prominent part of the experience among those who are already predisposed to synaesthetic states.",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Enhancements",
       "Visual acuity enhancement",
       "Pattern recognition enhancement",
       "Drifting (melting, flowing, breathing and morphing)",
@@ -49,7 +50,6 @@ export const _3c_p: Substance =
       "After images",
       "Diffraction",
       "Level 8B - While the geometry produced by 3C-P has yet to be fully characterized, the geometry gives off certain attributes which are significantly more likely to result in states of level 8A visual geometry over level 8B at higher doses.",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; Alterations in perspective and scenarios and plots)",
       "Conceptual thinking",
       "Thought acceleration",
@@ -58,9 +58,9 @@ export const _3c_p: Substance =
       "Distortions"
     ],
     "negative": [
+      "Transformations",
       "Confusion",
       "Anxiety & Paranoia",
-      "Personal bias suppression",
       "Memory suppression",
       "Hallucinations"
     ]

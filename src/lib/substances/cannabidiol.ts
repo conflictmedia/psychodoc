@@ -25,18 +25,18 @@ export const cannabidiol: Substance =
     "positive": [
       "Addiction suppression - There are some anecdotal reports that suggest CBD may have some addiction suppressing effects. However, this has not been subjected to rigorous clinical studies and more research is needed.",
       "Muscle relaxation - Some users report that CBD produces a mild to moderate degree of muscle relaxation that is weaker than that of benzodiazepines and muscle relaxants. However, other users do not experience this effect.",
-      "Mindfulness",
-      "Sleepiness - Sleepiness on CBD depends mostly on dose and/or strain of the plant (if using a full spectrum or hemp extract) and is most prominent after the peak subsides."
+      "Pain relief",
+      "Addiction suppression",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Pain relief",
-      "Diarrhea",
-      "Addiction suppression",
-      "Peripheral information misinterpretation"
+      "Mindfulness",
+      "Sleepiness - Sleepiness on CBD depends mostly on dose and/or strain of the plant (if using a full spectrum or hemp extract) and is most prominent after the peak subsides.",
+      "Anxiety suppression"
     ],
     "negative": [
-      "Seizure suppression",
-      "Anxiety suppression"
+      "Diarrhea",
+      "Peripheral information misinterpretation"
     ]
   },
   "routeData": {

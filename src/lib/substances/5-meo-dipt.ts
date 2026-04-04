@@ -23,10 +23,7 @@ export const _5_meo_dipt: Substance =
   "description": "5-Methoxy-N,N-diisopropyltryptamine (also known as 5-MeO-DiPT, Foxy, and Foxy Methoxy) is a novel psychedelic substance of the tryptamine class that produces psychedelic effects when administered. The first human trials of 5-MeO-DiPT were undertaken by Alexander Shulgin in 1975. who would co-author and publish a paper detailing its synthesis and human psychopharmacology in 1981. A summary of the synthesis and reports of human use is included in Shulgin's 1997 book TiHKAL (\"Tryptamines I Have Known And Loved\").",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Increased libido",
@@ -34,13 +31,14 @@ export const _5_meo_dipt: Substance =
       "Increased music appreciation",
       "Novelty enhancement",
       "Unity and interconnectedness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation",
+      "Brightness alteration",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Bodily pressures",
-      "Abnormal heartbeat",
-      "Diarrhea",
       "Pupil dilation",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
@@ -52,13 +50,16 @@ export const _5_meo_dipt: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Abnormal heartbeat",
+      "Diarrhea",
+      "Transformations",
       "Nausea",
       "Increased blood pressure",
       "Headaches",
@@ -68,7 +69,6 @@ export const _5_meo_dipt: Substance =
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

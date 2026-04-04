@@ -19,9 +19,11 @@ export const _7_hydroxymitragynine: Substance =
   "class": "Indole alkaloids",
   "description": "7-Hydroxymitragynine (7-HMG) is a naturally occurring indole alkaloid found in Mitragyna speciosa (kratom) acting on the opioid receptors in the brain. Though present in very small amounts (0.01%–0.04% of the plant's total alkaloids), it is a highly potent contributor to the pharmacological effects of kratom. In 2023 & 2024, it began to be commercially sold for consumption by online vendors & in brick & mortar stores",
   "effects": {
-    "positive": ['Stimulation or Sedation - Generally more sedative than Mitragynine in moderate-high doses.', 'Physical euphoria - 7-Hydroxymitragynine reliably produces physical euphoria at higher doses. However, this euphoria is not as intense as the euphoria of opioids like heroin, or oxycodone. Instead being closer to hydrocodone (commonly known as "Vicodin"). The sensation itself can be described as extreme feelings of intense physical comfort, warmth, love and contentment.', 'Increased perspiration - Generally accompanied with an increase of body temperature.', 'Cognitive euphoria', 'Motivation enhancement', 'Increased music appreciation', 'Empathy, affection, and sociability enhancement'],
-    "neutral": ['Pain relief', 'Itchiness', 'Constipation - Significantly less than other opioids, typically only seen in high doses.', 'Stomach cramps - Prominent at stronger doses, potentially lasting an extended period after.', 'Pupil constriction', 'Vasodilation', 'Compulsive redosing', 'Dream potentiation', 'Focus enhancement or Focus suppression', 'Double vision', 'Visual acuity suppression'],
-    "negative": ['Respiratory depression - Significantly less than other opioids, typically only seen in high doses.', 'Cough suppression', 'Difficulty urinating - Prominent at stronger doses.', 'Nausea', 'Orgasm suppression', 'Anxiety suppression', 'Disinhibition', 'Irritability', 'Internal hallucinations - 7-Hydroxymitragynine typically is devoid of geometry, with internal hallucinations due to nodding coming in the form of hypnagogic scenarios. Most likely seen in higher doses with variability in lucidity, fixed content, autonomous, & equally split of novel experiences & memories.']
+    "positive": [],
+    "neutral": [
+      "Vicodin"
+    ],
+    "negative": []
   },
   "routeData": {
     "oral": {

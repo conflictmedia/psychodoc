@@ -22,29 +22,29 @@ export const zopiclone: Substance =
   "description": "GABAergics\nZopiclone (also known by the trade names Zimovane and Imovane) is a non-benzodiazepine hypnotic substance of the cyclopyrrolone class. It belongs to a family of substances colloquially known as \"Z-drugs\", which includes zaleplon (Sonata) and zolpidem (Ambien and AmbienCR). While \"Z-drugs\" were initially thought to have less misuse potential than benzodiazepines, this appraisal has shifted somewhat in the last few years as a number of cases of addiction and habituation have been observed.",
   "effects": {
     "positive": [
-      "Sedation - zopiclone is extremely sedating and can put the user into an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit or lay down and feel as if they are constantly on the verge of passing out. This sense of sleep deprivation increases proportional to dosage and can eventually become powerful enough to force a person into complete unconsciousness regardless of where they are or what they are doing at that moment.",
       "Muscle relaxation",
-      "Increased music appreciation"
+      "Increased music appreciation",
+      "Euphoria -  Some users report euphoria from zopiclone, although this is short lived and usually exclusive to the onset of the experience and often followed by emotion suppression."
     ],
     "neutral": [
-      "Shadow people",
-      "Acuity suppression",
+      "Sedation - zopiclone is extremely sedating and can put the user into an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit or lay down and feel as if they are constantly on the verge of passing out. This sense of sleep deprivation increases proportional to dosage and can eventually become powerful enough to force a person into complete unconsciousness regardless of where they are or what they are doing at that moment.",
       "Drifting (melting, breathing, morphing and flowing) - Visual drifting effects are the most prominent visual effects of this substance. They typically occur at strong doses, or when the user resists the urge to sleep.. They are similar to the distortions produced zolpidem and are usually less pronounced than those of deliriants. Like deliriant visuals, they are most prominent in low lighting. Depending on dose and lighting, they can be described as slow or fast in speed, static in permanence, smooth in motion, realistic in appearance, and simplistic or intricate.",
       "Tracers - This effect is mild and typically only experienced at high doses.",
       "Thought deceleration",
-      "Delirium",
-      "Euphoria -  Some users report euphoria from zopiclone, although this is short lived and usually exclusive to the onset of the experience and often followed by emotion suppression.",
       "Time compression - This effect is mostly noticeable while under the influence of a high dose.",
-      "Compulsive redosing"
+      "External hallucinations - At very high doses, zopiclone can produce external hallucinations that are similar to, but less pronounced than those of deliriants.",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Shadow people",
+      "Acuity suppression",
+      "Delirium",
+      "Compulsive redosing",
       "Respiratory depression",
       "Dizziness",
       "Motor control loss - This effect is pronounced and comparable to the motor control loss experienced on a heavy dose of alcohol. This typically results in users stumbling and an inability to walk in a straight line. As this may easily result in injury, one should avoid walking and using stairs while on zopiclone.",
       "Gustatory hallucination - Zopiclone is sometimes reported to leave a metallic taste in one's mouth.",
-      "External hallucinations - At very high doses, zopiclone can produce external hallucinations that are similar to, but less pronounced than those of deliriants.",
       "Amnesia -  Compared to benzodiazepines, zopiclone can produce amnesia at much lower doses. One may potentially not remember exactly what happened while under the influence of a common dose. This is usually less intense than the amnesia produced by zolpidem.",
-      "Anxiety suppression",
       "Disinhibition",
       "Delusion",
       "Analysis suppression",

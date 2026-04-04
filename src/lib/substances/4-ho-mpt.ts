@@ -22,18 +22,18 @@ export const _4_ho_mpt: Substance =
   "description": "4-Hydroxy-N-methyl-N-propyltryptamine (also known as 4-HO-MPT or Meprocin) is a novel synthetic psychedelic substance of the tryptamine chemical class that produces psychedelic effects when administered. It is a closely related structural analog of 4-HO-DMT (Psilocin) and other hallucinogenic tryptamines with powerful psychedelic effects. It was synthesised and described by Alexander Shulgin in his 1994 book TiHKAL.",
   "effects": {
     "positive": [
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
       "Novelty enhancement",
-      "Enhancements",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Pupil dilation",
       "Pattern recognition enhancement",
@@ -46,18 +46,18 @@ export const _4_ho_mpt: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Nausea",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

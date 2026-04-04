@@ -23,25 +23,25 @@ export const temazepam: Substance =
   "description": "benzodiazepines\nTemazepam (trade name Restoril) is a short-acting psychoactive substance of the benzodiazepine class which produces anxiolytic, sedative, hypnotic, muscle relaxant, anticonvulsant, and amnesic effects. Significant blood levels were achieved in 15-30 minutes post-ingestion with peak levels achieved within 30 minutes to 3 three hours. It's worth noting that the sudden discontinuation of benzodiazepines can be potentially dangerous or life-threatening for individuals using regularly for extended periods of time, sometimes resulting in seizures or death.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation",
       "Physical euphoria - The euphoria felt on temazepam is significantly stronger than that felt on other benzodiazepines such as alprazolam.",
-      "Cognitive euphoria - The euphoria felt on temazepam is significantly stronger than that felt on other benzodiazepines such as alprazolam."
+      "Cognitive euphoria - The euphoria felt on temazepam is significantly stronger than that felt on other benzodiazepines such as alprazolam.",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Motor control loss",
+      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. At higher levels, this causes users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out instead of engaging in physical activities. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Thought deceleration",
-      "Compulsive redosing",
-      "Dream potentiation"
-    ],
-    "negative": [
-      "Dizziness",
-      "Respiratory depression",
-      "Seizure suppression",
+      "Dream potentiation",
       "Decreased heart rate",
       "Perception of bodily heaviness -  Temazepam is known to cause feelings of heaviness in the body. This effect can range from motor impairment and difficulty moving at lower doses to complete lethargy or inability to stand up or move at high doses.",
+      "Anxiety suppression"
+    ],
+    "negative": [
+      "Motor control loss",
+      "Compulsive redosing",
+      "Dizziness",
+      "Respiratory depression",
       "Amnesia",
-      "Anxiety suppression",
       "Analysis suppression",
       "Disinhibition",
       "Emotion suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics.",

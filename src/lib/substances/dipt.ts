@@ -21,18 +21,17 @@ export const dipt: Substance =
   "description": "The first human trials of DiPT were undertaken in 1975 by Alexander Shulgin, who would co-author and publish a paper detailing its synthesis and human psychopharmacology in 1981. A summary of the synthesis and reports of human use is included in Shulgin's 1997 book TiHKAL (\"Tryptamines I Have Known And Loved\"). Additional subjective effects of DiPT include a body high, moderate euphoria, mild visuals, dizziness, and nausea.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Physical euphoria",
       "Tactile enhancement",
-      "Increased heart rate",
       "Auditory enhancement",
-      "Tinnitus - This is more common in quiet areas or is exaggerated whilst yawning. It does not necessarily hurt in the ears and the pitch and frequency are not as high and constant.",
       "Increased music appreciation - This effect is subjective and depends on the person and the perceived tunes.",
       "Analysis enhancement",
       "Wakefulness",
-      "Color enhancement"
+      "Color enhancement",
+      "Synaesthesia"
     ],
     "neutral": [
+      "Stimulation",
       "Spontaneous physical sensations",
       "Excessive yawning",
       "Pupil dilation",
@@ -42,14 +41,15 @@ export const dipt: Substance =
       "Drifting (melting, breathing, morphing and flowing)",
       "Depth perception distortions",
       "Geometry - The visual geometry produced by this compound can be described as somewhat similar in appearance to that of DMT.",
-      "Synaesthesia",
-      "Auditory distortion"
+      "Auditory distortion",
+      "Ear pressure - This effect is generally mild but has been painful in some cases."
     ],
     "negative": [
+      "Increased heart rate",
+      "Tinnitus - This is more common in quiet areas or is exaggerated whilst yawning. It does not necessarily hurt in the ears and the pitch and frequency are not as high and constant.",
       "Increased blood pressure",
       "Nausea",
-      "Auditory hallucination",
-      "Ear pressure - This effect is generally mild but has been painful in some cases."
+      "Auditory hallucination"
     ]
   },
   "routeData": {

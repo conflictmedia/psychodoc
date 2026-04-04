@@ -22,23 +22,20 @@ export const _3_ho_pcp: Substance =
   "description": "In addition to its primary activity as a NMDA receptor antagonist, it has been found to have appreciable affinity for the μ-opioid receptor. Like other substances of its class, particularly methoxetamine (MXE), phencyclidine (PCP), and 3-MeO-PCE, it is known to primarily induce a state referred to as \"dissociative anesthesia\", albeit the extent to which this occurs has been reported to be highly dose-dependent and variable in its effects. Due to its sensitive dose-response, potential habit-forming properties, as well as unknown toxicity profile, it is strongly recommended that one use proper harm reduction practices if choosing to use this substance.",
   "effects": {
     "positive": [
-      "Tactile disconnection",
-      "Visual disconnection",
-      "Consciousness disconnection",
       "Cognitive euphoria",
-      "Compulsive redosing - This effect is more prominent based on the route of administration used. For example, it is especially present when smoked or vaporized, due to the relative abruptness of the substance entering and leaving the bloodstream.",
       "Immersion enhancement",
       "Creativity Enhancement",
-      "Depersonalization & Derealization",
       "Increased music appreciation"
     ],
     "neutral": [
+      "Tactile disconnection",
+      "Visual disconnection",
+      "Consciousness disconnection",
       "Conceptual thinking",
       "Déjà vu",
       "Time distortion",
       "Thought connectivity",
       "Thought deceleration",
-      "Thought disorganization",
       "Distortions",
       "Visual acuity suppression",
       "Double vision",
@@ -46,10 +43,13 @@ export const _3_ho_pcp: Substance =
       "Pattern recognition suppression",
       "Perspective distortions",
       "Scenery slicing",
-      "Internal hallucination (settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)"
+      "Internal hallucination (settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
+      "Anxiety suppression"
     ],
     "negative": [
-      "Anxiety suppression",
+      "Compulsive redosing - This effect is more prominent based on the route of administration used. For example, it is especially present when smoked or vaporized, due to the relative abruptness of the substance entering and leaving the bloodstream.",
+      "Depersonalization & Derealization",
+      "Thought disorganization",
       "Disinhibition",
       "Delusion",
       "Memory suppression",

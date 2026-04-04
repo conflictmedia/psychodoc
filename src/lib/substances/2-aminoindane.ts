@@ -22,8 +22,6 @@ export const _2_aminoindane: Substance =
   "effects": {
     "positive": [
       "Pain relief - Many anecdotal reports suggest that this compound may suppress pain in a fashion somewhat similar to opioids without the distinct physical euphoria.",
-      "Increased heart rate",
-      "Increased perspiration",
       "Focus enhancement - This component is most effective at low to moderate doses as anything higher will usually impair concentration.",
       "Analysis enhancement",
       "Wakefulness",
@@ -37,10 +35,12 @@ export const _2_aminoindane: Substance =
       "Stimulation - In terms of its effects on the physical energy levels of the user, 2-AI is usually considered to be energetic and stimulating in a fashion that is similar to that of amphetamine but stronger than that of modafinil or caffeine. It is similar yet distinct from the stimulation experienced on MDMA, encouraging physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which 2-AI presents can be described as forced. This means that at higher doses, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
       "Acuity enhancement",
       "Thought acceleration",
-      "Compulsive redosing",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Compulsive redosing",
       "Dehydration",
       "Appetite suppression",
       "Nausea",

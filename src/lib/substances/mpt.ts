@@ -22,18 +22,18 @@ export const mpt: Substance =
   "description": "N-Methyl-N-propyltryptamine (abbreviated MPT; also known as Methylpropyltryptamine) is a synthetic psychedelic of the tryptamine class that has reported to display powerful hallucinogenic and sometimes entactogenic effects. It is structurally analogous to N,N-dimethyltryptamine (DMT) and various base psychedelic tryptamines by which one can have a \"breakthrough\" experience such as MET, EPT, and DPT. While little is known aboout the pharmacology of this substance, early reports indicate that vaporizing or freebasing the compounds shares most of the core components of the DMT experience, just with its own stylistic pharmacodynamic and kinetic variations.",
   "effects": {
     "positive": [
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
       "Novelty enhancement",
       "Unity and interconnectedness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Pupil dilation",
       "Pattern recognition enhancement",
@@ -46,18 +46,18 @@ export const mpt: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Nausea",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

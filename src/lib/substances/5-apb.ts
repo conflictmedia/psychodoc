@@ -22,9 +22,6 @@ export const _5_apb: Substance =
   "description": "5-APB was first synthesized in 1993 by psychedelic chemist and researcher David E. Nichols as a potential non-neurotoxic alternative to MDMA. However, it did not come into popular recreational use until over a decade later, where it briefly entered the rave scene and global research chemicals market. Compared to other members of its family such as 6-APB and 5-MAPB, this compound in particular is known for its stimulating and euphoric effects which has resulted in its rise in popularity as a product which is easily accessible through the use of online research chemical vendors.",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased heart rate",
-      "Increased perspiration",
       "Wakefulness",
       "Empathy, affection, and sociability enhancement",
       "Cognitive euphoria",
@@ -36,13 +33,16 @@ export const _5_apb: Substance =
       "Wakefulness"
     ],
     "neutral": [
-      "Abnormal heartbeat",
+      "Stimulation",
       "Muscle contractions",
       "Thought deceleration",
-      "Compulsive redosing",
       "Thought acceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Abnormal heartbeat",
+      "Compulsive redosing",
       "Dehydration",
       "Appetite suppression",
       "Nausea",

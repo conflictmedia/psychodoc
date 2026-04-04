@@ -22,11 +22,8 @@ export const _2c_t_2: Substance =
   "description": "2,5-Dimethoxy-4-ethylthiophenethylamine (also known as 2C-T-2, and Rosy) is a psychedelic substance of the phenethylamine chemical class that produces psychedelic effects when administered. 2C-T-2 was first synthesized and tested for activity in humans by Alexander Shulgin in 1981 and described in his 1991 book PiHKAL (\"Phenethylamines I Have Known and Loved\"). Very little data exists about the pharmacological properties, metabolism, and toxicity of 2C-T-2, and it has a relatively short history of human usage.",
   "effects": {
     "positive": [
-      "Stimulation - 2C-T-2 is usually considered to be very energetic and stimulating in a fashion that is quite comparable to that of other phenethylamines such as 2C-B, 2C-E and 2C-P.",
       "Bodily control enhancement - Although this component is capable of manifesting itself in a distinct and noticeable fashion for most users, it does not generally seem to be as apparent or intense as the same component found within LSD and 2C-B.",
       "Tactile enhancement",
-      "Increased bodily temperature",
-      "Increased heart rate",
       "Colour enhancement",
       "Emotion enhancement",
       "Novelty enhancement",
@@ -35,12 +32,13 @@ export const _2c_t_2: Substance =
       "Increased sense of humor",
       "Immersion enhancement",
       "Wakefulness",
-      "Enhancements",
       "Existential self-realization",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
-      "Diarrhea",
+      "Stimulation - 2C-T-2 is usually considered to be very energetic and stimulating in a fashion that is quite comparable to that of other phenethylamines such as 2C-B, 2C-E and 2C-P.",
+      "Enhancements",
       "Pupil dilation",
       "Visual acuity enhancement",
       "Pattern recognition enhancement",
@@ -50,22 +48,24 @@ export const _2c_t_2: Substance =
       "Symmetrical texture repetition",
       "Colour shifting",
       "Scenery slicing",
-      "Transformations",
       "External hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - In comparison to other psychedelics such as ayahuasca, 2C-T-2 is very high in external hallucinations. This particular effect commonly contains hallucinations with scenarios, settings, concepts and autonomous entity contact manifested as dense solidified geometric matter or physical objects of imagined concepts. They are more common within dark environments and can be described as external in their manifestation, lucid in believability, interactive in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - In comparison to other psychedelics such as LSD, 2C-T-2 is very high in hallucinations embedded within visual geometry. This particular effect commonly contains hallucinations with scenarios, settings, concepts and autonomous entity contact. They are more common within dark environments and can be described as internal in their manifestation, lucid in believability, interactive in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Time distortion",
       "Conceptual thinking",
       "Thought acceleration",
       "Distortions",
-      "Perception of interdependent opposites"
+      "Perception of interdependent opposites",
+      "Spontaneous physical sensations - The \\\"body high\\\" of 2C-T-2 can be described as very intense and uncomfortable in comparison to 2C-E or 2C-B. In high doses, it's capable of causing painful cramping. It is similar yet distinct from the \\\"body high\\\" experienced on 2C-T-7, but is considered much more unpleasant. The sensation itself can be described as intense and may manifest itself in the form of a continuously shifting tingling sensation that travels up and down the body in spontaneous waves."
     ],
     "negative": [
-      "Spontaneous physical sensations - The \"body high\" of 2C-T-2 can be described as very intense and uncomfortable in comparison to 2C-E or 2C-B. In high doses, it's capable of causing painful cramping. It is similar yet distinct from the \"body high\" experienced on 2C-T-7, but is considered much more unpleasant. The sensation itself can be described as intense and may manifest itself in the form of a continuously shifting tingling sensation that travels up and down the body in spontaneous waves.",
+      "Increased bodily temperature",
+      "Increased heart rate",
+      "Diarrhea",
+      "Transformations",
       "Nausea -  Extreme nausea is commonly reported when consumed in moderate to high doses and either passes once the tripper has vomited or gradually fades by itself as the peak sets in. It can be described as very painful and violent in comparison to 2C-T-7 or 2C-E.",
       "Stomach cramps",
       "Vasoconstriction",
       "Temperature regulation suppression",
-      "Personal bias suppression",
       "Memory suppression",
       "Ego death",
       "Thought loops",

@@ -21,35 +21,35 @@ export const thj_018: Substance =
   "description": "It has been marketed by many research chemical vendors as a legal alternative to the popular JWH-018, which had been banned in 2009. Unlike cannabis, the chronic abuse of synthetic cannabinoids has been associated with multiple deaths and more dangerous side effects and toxicity in general. Therefore, it is strongly discouraged to take this substance for extended periods of time or in excessive doses.",
   "effects": {
     "positive": [
-      "Spontaneous physical sensations - The \"body high\" of THJ-018 can be described as a warm, soft, pleasurable, all-encompassing tingling sensation that spreads over the body after initial ingestion. It maintains a consistent presence that quickly rises with the onset and hits its limit once the peak has been reached before immediately dissipating.",
-      "Sedation - Generally, the effects on the user's energy levels are primarily sedating. This encourages one to relax, and (at higher doses) fall asleep. This can, however, be suppressed by simply forcing oneself to engage in physical activities.",
-      "Appetite enhancement - As with many other cannabinoids, THJ-018 causes an increase in appetite, known colloquially as \"the munchies\" in popular American and United Kingdom culture. Clinical studies and survey data have found that cannabis increases food enjoyment and interest in food. This is thought to be due to the way in which endocannabinoids in the hypothalamus activate cannabinoid receptors that are responsible for maintaining food intake.",
+      "Appetite enhancement - As with many other cannabinoids, THJ-018 causes an increase in appetite, known colloquially as \\\"the munchies\\\" in popular American and United Kingdom culture. Clinical studies and survey data have found that cannabis increases food enjoyment and interest in food. This is thought to be due to the way in which endocannabinoids in the hypothalamus activate cannabinoid receptors that are responsible for maintaining food intake.",
       "Pain relief - Cannabinoids have been clinically demonstrated to provide pain relief via agonism of cannabinoid receptors CB1 and CB2, which extends to synthetic cannabinoid receptor agonists.",
-      "Perception of bodily lightness",
-      "Changes in gravity - THJ-018 can cause vertigo with which the environment appears to be spinning or oscillating. At moderate doses, it can spontaneously induce the sensation of falling, which can be overwhelming and uncomfortable.",
       "Colour enhancement",
       "Emotion enhancement - The most prominent cognitive component of cannabinoids is the way in which they enhance the emotions one is already feeling proportional to dose. This can result in euphoria, extreme laughter, and increased immersion within tasks and activities or it can result in anxiety and paranoia depending on the user's current state of mind.",
-      "Mindfulness",
       "Immersion enhancement",
-      "Increased music appreciation",
-      "Enhancements"
+      "Increased music appreciation"
     ],
     "neutral": [
+      "Spontaneous physical sensations - The \\\"body high\\\" of THJ-018 can be described as a warm, soft, pleasurable, all-encompassing tingling sensation that spreads over the body after initial ingestion. It maintains a consistent presence that quickly rises with the onset and hits its limit once the peak has been reached before immediately dissipating.",
+      "Sedation - Generally, the effects on the user's energy levels are primarily sedating. This encourages one to relax, and (at higher doses) fall asleep. This can, however, be suppressed by simply forcing oneself to engage in physical activities.",
+      "Perception of bodily lightness",
+      "Changes in gravity - THJ-018 can cause vertigo with which the environment appears to be spinning or oscillating. At moderate doses, it can spontaneously induce the sensation of falling, which can be overwhelming and uncomfortable.",
+      "Mindfulness",
+      "Enhancements",
       "Brain zaps",
-      "Acuity suppression",
       "Geometry - As reported with other cannabinoids, THJ-018 can produce closed eye visuals at moderate doses which can escalate into visual distortions such as a ripples in the field of vision upon continuous administration. Within users who also regularly use psychedelics, it is capable of inducing these consistently in a visual style which seems to be an averaged out depiction of all the psychedelics one has used within the past. These rarely extend beyond level 4 and are considered to be mild, fine, small and zoomed out but brighter and better defined than the geometry experienced with cannabis.",
       "Thought connectivity",
       "Thought deceleration",
-      "Conceptual thinking"
+      "Conceptual thinking",
+      "Dehydration- This is known colloquially as \\\"cotton mouth\\\" in popular American and United Kingdom culture.",
+      "Dream suppression"
     ],
     "negative": [
+      "Acuity suppression",
       "Motor control loss - This substance causes a partial to moderate suppression of motor control which intensifies proportional to dose, but rarely results in a complete inability to walk and perform basic movements.",
       "Vasodilation - Cannabinoids appear to decrease blood pressure by dilating the blood vessels, increasing blood flow throughout the body. The arteries in the eyeball expand from the decreased blood pressure, and the heart rate increases to compensate for the reduction in pressure.",
-      "Dehydration- This is known colloquially as \"cotton mouth\" in popular American and United Kingdom culture.",
       "Anxiety - Subjectively, THJ-018 is less anxiogenic and stimulating than Δ9-THC, AM-2201, or 5F-UR-144 but more so when compared to JWH-018 or JWH-073. It can be described as moderately sedating.",
       "Paranoia - All cannabinoids are capable of inducing paranoia at high doses or with chronic administration.",
       "analysis suppression",
-      "Dream suppression",
       "Psychosis - The prolonged usage of synthetic cannabinoids may increase one's disposition to psychosis, particularly in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of schizophrenia)."
     ]
   },

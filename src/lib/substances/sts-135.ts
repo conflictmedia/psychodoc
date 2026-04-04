@@ -21,30 +21,30 @@ export const sts_135: Substance =
   "description": "STS-135 (also called N-(adamantan-1-yl)-1-(5-fluoropentyl)-1H-indole-3-carboxamide or 5F-APICA) is a drug that acts as a potent agonist for the cannabinoid receptors which produces subjective effects somewhat similar to that of cannabis with a short duration and an emphasis on intense physical sensations. There is very little information regarding the pharmacology of this compound within the scientific literature. Despite this, however, it is available for sale as a grey area research chemical through online vendors.",
   "effects": {
     "positive": [
-      "Spontaneous tactile sensations - The \"body high\" of STS-135 can be described as a sharp,  uncomfortable, all-encompassing, electric tingling sensation that spreads over the body after initial ingestion. It maintains a consistent presence that quickly rises with the onset and hits its limit once the peak has been reached before immediately dissipating.",
-      "Appetite enhancement - As with many other cannabinoids, STS-135 causes an increase in appetite, known colloquially as \"the munchies\" in popular American and United Kingdom culture. Clinical studies and survey data have found that cannabis increases food enjoyment and interest in food. This is thought to be due to the way in which endocannabinoids in the hypothalamus activate cannabinoid receptors that are responsible for maintaining food intake.",
+      "Appetite enhancement - As with many other cannabinoids, STS-135 causes an increase in appetite, known colloquially as \\\"the munchies\\\" in popular American and United Kingdom culture. Clinical studies and survey data have found that cannabis increases food enjoyment and interest in food. This is thought to be due to the way in which endocannabinoids in the hypothalamus activate cannabinoid receptors that are responsible for maintaining food intake.",
       "Pain relief - Cannabinoids have been clinically demonstrated to provide pain relief via agonism of cannabinoid receptors CB1 and CB2, which extends to synthetic cannabinoid receptor agonists.",
-      "Perception of bodily heaviness or Perception of bodily lightness",
       "Emotion enhancement",
-      "Mindfulness",
-      "Increased music appreciation",
-      "Enhancements"
+      "Increased music appreciation"
     ],
     "neutral": [
+      "Spontaneous tactile sensations - The \\\"body high\\\" of STS-135 can be described as a sharp,  uncomfortable, all-encompassing, electric tingling sensation that spreads over the body after initial ingestion. It maintains a consistent presence that quickly rises with the onset and hits its limit once the peak has been reached before immediately dissipating.",
+      "Perception of bodily heaviness or Perception of bodily lightness",
+      "Mindfulness",
+      "Enhancements",
       "Changes in gravity",
-      "Vasodilation",
       "Thought connectivity",
       "Thought deceleration",
       "Conceptual thinking",
-      "Distortions"
+      "Distortions",
+      "Dehydration- This is known colloquially as \\\"cotton mouth\\\" in popular American and United Kingdom culture.",
+      "Dream suppression"
     ],
     "negative": [
+      "Vasodilation",
       "Motor control loss - This substance causes a partial to moderate suppression of motor control which intensifies proportional to dose, but rarely results in a complete inability to walk and perform basic movements.",
-      "Dehydration- This is known colloquially as \"cotton mouth\" in popular American and United Kingdom culture.",
       "Anxiety - In comparison to other cannabinoids, this compound is particularly prone to inducing feelings of anxiety and it should therefore be avoided by people who are particularly prone to this state of mind.",
       "Paranoia",
       "analysis suppression",
-      "Dream suppression",
       "Psychosis - The prolonged usage of synthetic cannabinoids may increase one's disposition to psychosis, particularly in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of schizophrenia)."
     ]
   },

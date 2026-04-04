@@ -31,15 +31,15 @@ export const theacrine: Substance =
       "Increased libido",
       "Memory enhancement",
       "Motivation enhancement",
-      "Wakefulness"
+      "Wakefulness",
+      "Pain relief - Theacrine has pain reducing properties related to its anti-inflammatory effects. This is believed to be about that of ibuprofen."
     ],
     "neutral": [
-      "Pain relief - Theacrine has pain reducing properties related to its anti-inflammatory effects. This is believed to be about that of ibuprofen.",
-      "Compulsive redosing - This effect is less persistent than it is with caffeine, as it tends to have a longer duration.",
-      "Thought acceleration"
+      "Thought acceleration",
+      "Stimulation - In terms of its effects on the physical energy levels of the user, theacrine is usually considered to be mildly to moderately energetic and stimulating in a fashion that is considerably weaker in comparison to that of traditional recreational stimulants such as amphetamine, MDMA or cocaine. This encourages physical activities such as performing chores and repetitive tasks which would otherwise be boring and strenuous physical activities. The particular style of stimulation which theacrine presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control."
     ],
     "negative": [
-      "Stimulation - In terms of its effects on the physical energy levels of the user, theacrine is usually considered to be mildly to moderately energetic and stimulating in a fashion that is considerably weaker in comparison to that of traditional recreational stimulants such as amphetamine, MDMA or cocaine. This encourages physical activities such as performing chores and repetitive tasks which would otherwise be boring and strenuous physical activities. The particular style of stimulation which theacrine presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
+      "Compulsive redosing - This effect is less persistent than it is with caffeine, as it tends to have a longer duration.",
       "Appetite suppression",
       "Nausea - This mostly occurs at high doses.",
       "Bruxism - This effect does not occur as consistently as it does on other stimulants such as MDMA.",

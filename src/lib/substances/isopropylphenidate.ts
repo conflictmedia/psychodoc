@@ -23,7 +23,6 @@ export const isopropylphenidate: Substance =
   "description": "Isopropylphenidate (also known as IPH, IPP, IPPH, IPD and IPPD) is a novel lesser-known stimulant of the phenidate chemical class. One study found that it displayed the same basic activity as a norepinephrine-dopamine reuptake inhibitor (NDRI), possessing, along with both methylphenidate and ethylphenidate, an appreciably high affinity for the dopamine transporter and effects on its cellular reuptake. It was initially released following the banning of ethylphenidate, which on April 2015 became illegal in the United Kingdom following a temporary-then-permanent blanket ban.",
   "effects": {
     "positive": [
-      "Increased heart rate",
       "Wakefulness",
       "Analysis enhancement",
       "Focus enhancement - This component is most effective at low to moderate doses as anything higher will usually impair concentration.",
@@ -32,18 +31,19 @@ export const isopropylphenidate: Substance =
       "Cognitive euphoria - The euphoric rush associated with isopropylphenidate use (as a result of dopamine reuptake inhibition) is very short-lived and compulsive, vaguely similar to that of cocaine.",
       "Increased music appreciation",
       "Increased libido - This component is generally considered mild compared to that of other stimulants.",
-      "Compulsive redosing - This can be attributed to the mild-to-moderate euphoric rush and relatively short half-life of isopropylphenidate possesses, and is especially prominent when it is insufflated. Those who wish to use it for productivity purposes are advised to only take low to moderate doses strictly through oral administration. insufflation can amplify the urge to redose. Many users report that the compulsive redosing aspects of isopropylphenidate are far more tame and controllable than the majority of research chemical stimulants, such as 4F-MPH, a-PHP or Hexen, likely due to the absence of a pronounced rush and an extended onset.",
       "Wakefulness"
     ],
     "neutral": [
-      "Dry mouth",
       "Thought deceleration",
       "Thought acceleration",
       "Thought connectivity",
-      "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it would while sober."
+      "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it would while sober.",
+      "Stimulation - Isopropylphenidate is usually considered to be energetic and stimulating in a fashion that is distinct but much weaker than that of amphetamine or methamphetamine and stronger than that of modafinil and caffeine. At lower to moderate doses, it encourages general productivity, but at higher dosages it encourages physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which isopropylphenidate presents can be described as forced. This means that at higher doses, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in unsteadiness of the hands, shaking of the entire body and a general loss of motor control."
     ],
     "negative": [
-      "Stimulation - Isopropylphenidate is usually considered to be energetic and stimulating in a fashion that is distinct but much weaker than that of amphetamine or methamphetamine and stronger than that of modafinil and caffeine. At lower to moderate doses, it encourages general productivity, but at higher dosages it encourages physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which isopropylphenidate presents can be described as forced. This means that at higher doses, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in unsteadiness of the hands, shaking of the entire body and a general loss of motor control.",
+      "Increased heart rate",
+      "Compulsive redosing - This can be attributed to the mild-to-moderate euphoric rush and relatively short half-life of isopropylphenidate possesses, and is especially prominent when it is insufflated. Those who wish to use it for productivity purposes are advised to only take low to moderate doses strictly through oral administration. insufflation can amplify the urge to redose. Many users report that the compulsive redosing aspects of isopropylphenidate are far more tame and controllable than the majority of research chemical stimulants, such as 4F-MPH, a-PHP or Hexen, likely due to the absence of a pronounced rush and an extended onset.",
+      "Dry mouth",
       "Dehydration",
       "Appetite suppression",
       "Vasoconstriction",

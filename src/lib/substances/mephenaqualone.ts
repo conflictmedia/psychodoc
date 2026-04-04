@@ -21,19 +21,19 @@ export const mephenaqualone: Substance =
   "description": "GABAergics\nMephenaqualone is a central nervous system (CNS) depressant of the quinazolinone class that acts as a sedative and hypnotic. It is an analogue of methaqualone, sharing a similar chemical structure and pharmacological effects.",
   "effects": {
     "positive": [
-      "Sedation - Mephenaqualone induces a strong sense of sedation and relaxation, making users feel lethargic and often leading to sleepiness or even unconsciousness at higher doses.",
       "Physical euphoria - Users may experience a mild to moderate physical euphoria, characterized by pleasant bodily sensations.",
-      "Muscle relaxation - Muscle relaxation is a prominent effect, contributing to its use as a sedative.",
-      "Double vision - At higher doses, mephenaqualone can cause double vision or a blurred visual field.",
-      "Dream potentiation - Some users report enhanced vividness and recall of dreams."
+      "Muscle relaxation - Muscle relaxation is a prominent effect, contributing to its use as a sedative."
     ],
     "neutral": [
+      "Sedation - Mephenaqualone induces a strong sense of sedation and relaxation, making users feel lethargic and often leading to sleepiness or even unconsciousness at higher doses.",
+      "Double vision - At higher doses, mephenaqualone can cause double vision or a blurred visual field.",
+      "Dream potentiation - Some users report enhanced vividness and recall of dreams.",
       "Visual acuity suppression - Users may notice a decrease in the sharpness of their vision.",
-      "Thought deceleration - Thoughts may become slower and less complex under the influence of mephenaqualone."
+      "Thought deceleration - Thoughts may become slower and less complex under the influence of mephenaqualone.",
+      "Anxiety suppression - The drug has significant anxiety-reducing properties, making users feel calm and unconcerned."
     ],
     "negative": [
       "Motor control loss - Higher doses may result in a noticeable loss of motor control and coordination.",
-      "Anxiety suppression - The drug has significant anxiety-reducing properties, making users feel calm and unconcerned.",
       "Disinhibition - Like other CNS depressants, it can reduce social inhibitions and make users more talkative or outgoing."
     ]
   },

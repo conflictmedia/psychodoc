@@ -24,10 +24,6 @@ export const n_ethylhexedrone: Substance =
   "description": "Hexedrone\nN-Ethylhexedrone (also known as NEH, ethyl-hex, ethyl-hexedrone, hex-en, ethylhexedrone and hexen) is a lesser-known novel stimulant substance of the cathinone class. N-Ethylhexedrone likely acts as a potent dopamine and norepinephrine reuptake inhibitor, without releasing neurotransmitters or affecting other neurotransmitters. It appears to have emerged on the online research chemical market in late 2015.",
   "effects": {
     "positive": [
-      "Stimulation - N-Ethylhexedrone is reported to be moderately to extremely stimulating and energetic.",
-      "Increased bodily temperature",
-      "Increased heart rate - The increase on the HR is notorius, bigger and longer that with other stims.",
-      "Increased perspiration",
       "Stamina enhancement",
       "Euphoria - This effect is usually not as powerful as with amphetamine or mephedrone.",
       "Analysis enhancement - This effect is mostly present in lower doses and is considered weak compared to other stimulant compounds. At high doses, it becomes overshadowed by euphoric stimulation.",
@@ -36,15 +32,13 @@ export const n_ethylhexedrone: Substance =
       "Motivation enhancement",
       "Increased libido",
       "Increased music appreciation",
-      "Wakefulness"
+      "Wakefulness",
+      "Pain relief"
     ],
     "neutral": [
-      "Spontaneous bodily sensations - As with related cathininones, it is commonly reported that medium to high doses of N-ethylhexedrone can produce a pleasurable \"body high\" characterized by pleasant tingling sensations, which are stronger than that of amphetamine but weaker than a-PVP.",
-      "Pain relief",
-      "Mouth numbing - N-Ethylhexedrone presents a moderate local anesthetic effect.",
-      "Abnormal heartbeat",
+      "Stimulation - N-Ethylhexedrone is reported to be moderately to extremely stimulating and energetic.",
+      "Spontaneous bodily sensations - As with related cathininones, it is commonly reported that medium to high doses of N-ethylhexedrone can produce a pleasurable \\\"body high\\\" characterized by pleasant tingling sensations, which are stronger than that of amphetamine but weaker than a-PVP.",
       "Body odor alteration - This happens at a less consistent rate than with methamphetamine.",
-      "Dry mouth",
       "Muscle contractions",
       "Thought acceleration",
       "Time compression",
@@ -53,6 +47,12 @@ export const n_ethylhexedrone: Substance =
       "Thought deceleration"
     ],
     "negative": [
+      "Increased bodily temperature",
+      "Increased heart rate - The increase on the HR is notorius, bigger and longer that with other stims.",
+      "Increased perspiration",
+      "Mouth numbing - N-Ethylhexedrone presents a moderate local anesthetic effect.",
+      "Abnormal heartbeat",
+      "Dry mouth",
       "Tactile enhancement and Tactile suppression - Reports suggest that at moderate to high dosages, N-ethylhexedrone is slightly anesthetic which is reminiscent to cocaine but with lower effects.",
       "Vasoconstriction  - A number of reports indicate, N-ethylhexedrone can be considered vasoconstrictive tipically reporting cold hands and foots.",
       "Increased blood pressure",

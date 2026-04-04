@@ -22,20 +22,20 @@ export const pentedrone: Substance =
   "description": "It is an example of a contemporary designer drug specifically chosen to mimic and/or replace the effects of street drugs like cocaine, MDMA, or methamphetamine. Pentedrone is known to come in the form of either a white powder or crystallized shards which users can ingest to produce a powerful, fast-acting but short-lived euphoric stimulant effects which are comparable to those of crack-cocaine, N-ethylpentedrone and a-PVP-type compounds, particularly when they are insufflated, vaporized or injected. Starting with the advent of MDPV, research chemical stimulants like pentedrone have gained notoriety for its tendency to induce compulsive redosing and addictive behaviors in a seemingly significant percentage of its users as well the ability to readily induce paranoid, delusional states and stimulant psychosis when abused.",
   "effects": {
     "positive": [
-      "Stimulation - In terms of its effects on the user's physical energy levels, pentedrone can be considered to be very stimulating and energetic.",
-      "Spontaneous physical sensations - Much like related cathninones, it is commonly reported that medium to high doses of pentedrone can result in a pleasurable body high characterized by a pleasant tingling sensation, which persists for a short period after administration before quickly falling off, which can lead users to redose more than they initially intended.",
       "Physical euphoria - This effect usually occurs at the peak of the experience, which can be short-lived compared to its total duration.",
       "Tactile enhancement",
-      "Increased heart rate",
-      "Increased perspiration",
       "Focus enhancement",
       "Wakefulness"
     ],
     "neutral": [
-      "Abnormal heartbeat",
+      "Stimulation - In terms of its effects on the user's physical energy levels, pentedrone can be considered to be very stimulating and energetic.",
+      "Spontaneous physical sensations - Much like related cathninones, it is commonly reported that medium to high doses of pentedrone can result in a pleasurable body high characterized by a pleasant tingling sensation, which persists for a short period after administration before quickly falling off, which can lead users to redose more than they initially intended.",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Abnormal heartbeat",
       "Dehydration - Dry mouth and increased sweating can occur after consuming pentedrone.",
       "Vasoconstriction - A number of reports indicate that pentedrone can produce slight vasoconstriction, though this has yet to be scientifically validated.",
       "Increased blood pressure",

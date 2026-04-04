@@ -24,16 +24,15 @@ export const mxipr: Substance =
     "positive": [
       "Cognitive euphoria - The euphoria of this substance is reported to be stronger than that of other dissociatives like O-PCE but weaker than that of MXE.",
       "Creativity enhancement",
-      "Depersonalization & Derealization",
       "Immersion enhancement",
       "Increased music appreciation",
       "Increased libido - This is reported to be present at lower dosage ranges.",
-      "Tactile disconnection",
-      "Visual disconnection - This eventually results in MXiPr's equivalent of the \"k-hole\" or, more specifically, holes, spaces and voids alongside of structures.",
-      "Consciousness disconnection",
       "Existential self-realization"
     ],
     "neutral": [
+      "Tactile disconnection",
+      "Visual disconnection - This eventually results in MXiPr's equivalent of the \\\"k-hole\\\" or, more specifically, holes, spaces and voids alongside of structures.",
+      "Consciousness disconnection",
       "Visual acuity enhancement or Visual acuity suppression - While lower doses of this compound tend to produce mild visual acuity enhancements, this effect quickly disappears as one's general visual faculties become suppressed as the dose is increased.",
       "Double vision",
       "Frame rate suppression",
@@ -51,10 +50,11 @@ export const mxipr: Substance =
       "Dream potentiation",
       "Time distortion",
       "Thought deceleration",
-      "Distortions - These distortions are very powerful and loud enough in their volume to make the original sound completely unrecognizable. They include phasers, white noise, high pitch tones and notes, flanging, changes in pitch, echo effects, and stuttering. In particular, the frequency of the stuttering is proportionally related to the intensity of the effects, especially ego death which occurs when the stuttering becomes continuous."
+      "Distortions - These distortions are very powerful and loud enough in their volume to make the original sound completely unrecognizable. They include phasers, white noise, high pitch tones and notes, flanging, changes in pitch, echo effects, and stuttering. In particular, the frequency of the stuttering is proportionally related to the intensity of the effects, especially ego death which occurs when the stuttering becomes continuous.",
+      "Anxiety suppression"
     ],
     "negative": [
-      "Anxiety suppression",
+      "Depersonalization & Derealization",
       "Disinhibition",
       "Delusion - Most likely, this effect is more common with MXiPr than with most other arylcyclohexylamines but less common in occurrence compared to substances like 3-MeO-PCP.",
       "Memory suppression",

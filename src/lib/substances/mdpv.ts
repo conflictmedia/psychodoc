@@ -24,7 +24,6 @@ export const mdpv: Substance =
   "description": "It was claimed to have potential to be an alternative for racemic amphetamine and, despite showing some desirable qualities such as reduced toxicity as compared to amphetamine, was chosen to not be developed as a medicinal drug. Products labeled as \"bath salts\" containing MDPV were previously sold as recreational drugs in gas stations and convenience stores in the United States, similar to the marketing strategy of Spice and K2 as incense. A total of 107 non-fatal intoxications and 99 analytically confirmed deaths related to MDPV between September 2009 and August 2013 were reported by nine European countries.",
   "effects": {
     "positive": [
-      "Stimulation",
       "Stamina enhancement",
       "Wakefulness",
       "Cognitive euphoria",
@@ -37,21 +36,22 @@ export const mdpv: Substance =
       "Wakefulness - Strong wakefulness is reported at high doses and can last for many hours after long periods of use."
     ],
     "neutral": [
-      "Abnormal heartbeat",
+      "Stimulation",
       "Muscle contractions",
-      "Muscle spasms",
-      "Diarrhea - Some users have reported experiencing diarrhea while under the influence of MDPV, although this seems to be a relatively uncommon effect.",
-      "Restless leg syndrome",
       "Auditory distortion",
       "Thought deceleration",
-      "Compulsive redosing - MDPV is extremely potent in this effect; it has been shown that some users end up redosing, even if the negative effects outweigh the positives.",
       "Ego inflation",
       "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober.",
       "Thought acceleration",
-      "Thought organization - Mainly observed with low to common doses.",
-      "Thought disorganization - This effect manifests and is also intensified at higher doses."
+      "Thought organization - Mainly observed with low to common doses."
     ],
     "negative": [
+      "Abnormal heartbeat",
+      "Muscle spasms",
+      "Diarrhea - Some users have reported experiencing diarrhea while under the influence of MDPV, although this seems to be a relatively uncommon effect.",
+      "Restless leg syndrome",
+      "Compulsive redosing - MDPV is extremely potent in this effect; it has been shown that some users end up redosing, even if the negative effects outweigh the positives.",
+      "Thought disorganization - This effect manifests and is also intensified at higher doses.",
       "Increased heart rate - Higher doses of MDPV can create a significant and often dangerous increase in heart rate and blood pressure.",
       "Appetite suppression",
       "Headaches",

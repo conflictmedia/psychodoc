@@ -22,23 +22,23 @@ export const carisoprodol: Substance =
   "description": "GABAergics\nCarisoprodol, also known by the brand name Soma, is a carbamate sedative-hypnotic. Carisoprodol is used medically as a centrally-acting muscle relaxant, anxiolytic and hypnotic for the short-term treatment of insomnia. Carisoprodol, like barbiturates, has been primarily replaced by benzodiazepines due to a larger therapeutic window, having less severe adverse effects and being safer in overdose.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. However, unlike benzodiazepines, carisoprodol causes direct GABA-A agonism at higher doses, resulting in more significant sedation in comparison. It can be described as more akin to barbiturates.",
       "Muscle relaxation",
       "Physical euphoria - This effect generally occurs only at heavier doses, but may be present at lower doses as well. The euphoria felt on carisoprodol is significantly stronger than that felt on benzodiazepines.",
-      "Cognitive euphoria - Compared to most other depressants, this effect is particularly strong."
+      "Cognitive euphoria - Compared to most other depressants, this effect is particularly strong.",
+      "Pain relief - Compared to other agents such as opioids, this effect is generally considered to be quite weak."
     ],
     "neutral": [
-      "Motor control loss",
-      "Decreased libido",
-      "Pain relief - Compared to other agents such as opioids, this effect is generally considered to be quite weak.",
-      "Acuity suppression - Like many depressants, high doses of carisoprodol may cause blurred vision.",
+      "Sedation -  In terms of energy level alterations, this drug has the potential to be extremely sedating and often results in an overwhelmingly lethargic state. However, unlike benzodiazepines, carisoprodol causes direct GABA-A agonism at higher doses, resulting in more significant sedation in comparison. It can be described as more akin to barbiturates.",
       "Thought deceleration",
-      "Compulsive redosing"
+      "Anxiety suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Decreased libido",
+      "Acuity suppression - Like many depressants, high doses of carisoprodol may cause blurred vision.",
+      "Compulsive redosing",
       "Dizziness",
       "Respiratory depression",
-      "Anxiety suppression",
       "Analysis suppression",
       "Disinhibition",
       "Amnesia",

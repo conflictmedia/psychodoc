@@ -35,27 +35,27 @@ export const fentanyl: Substance =
     "positive": [
       "Pain relief - In comparison to other opiates, fentanyl can be described as a strong analgesic, providing relief even at non-recreational doses.",
       "Physical euphoria - Fentanyl can be considered as less intense in its physical euphoria when compared with that of morphine or diacetylmorphine (heroin). The sensation itself can be described as strong feelings of intense physical comfort, warmth and bliss which spread throughout the body.",
-      "Increased perspiration",
-      "Cognitive euphoria - Fentanyl can be considered less intense in its cognitive euphoria when compared with that of morphine or heroin. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment, and happiness.",
-      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. This creates a blurred effect and double vision that is present no matter where one focuses their eyes."
+      "Cognitive euphoria - Fentanyl can be considered less intense in its cognitive euphoria when compared with that of morphine or heroin. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment, and happiness."
     ],
     "neutral": [
+      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. This creates a blurred effect and double vision that is present no matter where one focuses their eyes.",
       "Itchiness - Unlike other opioids, fentanyl presents very little itch response due to little to no amounts of released histamines.",
-      "Constipation",
-      "Decreased libido",
       "Pupil constriction",
-      "Compulsive redosing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Sedation - Fentanyl can be described as much more sedating then other opiates. Even at moderate dosages, fentanyl can result in overwhelming feelings of sedation and tiredness that is considerably more sedating than that of heroin and oxycodone.",
+      "Decreased blood pressure",
+      "Anxiety suppression"
     ],
     "negative": [
-      "Sedation - Fentanyl can be described as much more sedating then other opiates. Even at moderate dosages, fentanyl can result in overwhelming feelings of sedation and tiredness that is considerably more sedating than that of heroin and oxycodone.",
+      "Increased perspiration",
+      "Constipation",
+      "Decreased libido",
+      "Compulsive redosing",
       "Respiratory depression - In comparison to other opiates, fentanyl displays this effect at lower doses relative to euphoria than other opiates, and even at low doses results in the sensation that the breath is slowed down mildly to moderately, but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention.",
       "Cough suppression",
       "Difficulty urinating",
-      "Decreased blood pressure",
       "Appetite suppression",
-      "Orgasm suppression",
-      "Anxiety suppression"
+      "Orgasm suppression"
     ]
   },
   "routeData": {

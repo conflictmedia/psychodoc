@@ -23,14 +23,15 @@ export const n_acetylcysteine: Substance =
     "positive": [
       "Addiction suppression - Acetylcysteine's action on glutaminergic and dopaminergic pathways is thought to reverse brain functions which have been disturbed by drug abuse and addiction. This mechanism has been shown to provide relief for those who struggle with compulsive redosing, reward behaviors and psychological cravings, and has been shown to positively reverse nicotine addiction, cocaine addiction, marijuana dependence., and many other compulsive behaviors. Anecdotal reports suggest that one can take this compound over their addictive drug of choice for the purpose of quickly suppressing their cravings.",
       "Motivation enhancement",
-      "Focus enhancement",
-      "Mindfulness"
+      "Focus enhancement"
     ],
     "neutral": [
+      "Mindfulness",
       "Bronchodilation",
       "Itchiness",
       "Nose bleeds - A certain subset of people may experience minor nose bleeds which is likely due to this compound's mechanism as a blood thinner.",
-      "Rejuvenation"
+      "Rejuvenation",
+      "Anxiety suppression"
     ],
     "negative": [
       "Appetite suppression",
@@ -38,8 +39,7 @@ export const n_acetylcysteine: Substance =
       "Cough suppression",
       "Headaches",
       "Increased blood pressure",
-      "Nausea",
-      "Anxiety suppression"
+      "Nausea"
     ]
   },
   "routeData": {

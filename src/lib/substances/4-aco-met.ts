@@ -24,12 +24,7 @@ export const _4_aco_met: Substance =
   "description": "4-Acetoxy-N-methyl-N-ethyltryptamine (also known as 4-AcO-MET, Metacetin, and Azomet) is a lesser-known novel psychedelic substance of tryptamine class. Members of this group produce psilocybin-like psychedelic effects when administered. Very little data exists about the pharmacological properties, metabolism, and toxicity of 4-AcO-MET, and it has little history of human usage.",
   "effects": {
     "positive": [
-      "Sedation - 4-AcO-MET is considered by most to be relaxing, stoning and mildly sedating. Compulsive yawning often accompanies this sense of sedation. However, the sedation is often considered to be less strong than that of the related compounds psilocin and 4-AcO-DMT.",
-      "Spontaneous physical sensations - The \"body high\" of 4-AcO-MET can be described as a pleasurable, warm, soft and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
-      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth and usually occurs around or directly after the peak of the experience. Users can feel as if they are physically part of or conjoined with other objects in a seamless continuity. This is usually reported as feeling comfortable, tranquil and mindful, though it can also manifest in the form of bodily tension.",
-      "Muscle contractions - The muscle contractions that can occur by 4-AcO-MET tend to be transient and benign feeling in nature, compared to many other tryptamines, phenethylamines and lysergamides.",
       "Muscle relaxation",
-      "Excessive yawning - This effect seems to be uniquely pronounced among psilocin and related tryptamines. It can occur to a lesser degree on LSD and very rarely on psychedelic phenethylamines like mescaline. It typically occurs in conjunction with watery eyes.",
       "Increased salivation",
       "Colour enhancement",
       "Analysis enhancement",
@@ -39,12 +34,17 @@ export const _4_aco_met: Substance =
       "Novelty enhancement",
       "Unity and interconnectedness",
       "Wakefulness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Sedation - 4-AcO-MET is considered by most to be relaxing, stoning and mildly sedating. Compulsive yawning often accompanies this sense of sedation. However, the sedation is often considered to be less strong than that of the related compounds psilocin and 4-AcO-DMT.",
+      "Spontaneous physical sensations - The \\\"body high\\\" of 4-AcO-MET can be described as a pleasurable, warm, soft and all-encompassing tingling sensation. This maintains a consistent presence that steadily rises with the onset and hits its limit once the peak has been reached.",
+      "Changes in felt bodily form - This effect is often accompanied by a sense of warmth and usually occurs around or directly after the peak of the experience. Users can feel as if they are physically part of or conjoined with other objects in a seamless continuity. This is usually reported as feeling comfortable, tranquil and mindful, though it can also manifest in the form of bodily tension.",
+      "Muscle contractions - The muscle contractions that can occur by 4-AcO-MET tend to be transient and benign feeling in nature, compared to many other tryptamines, phenethylamines and lysergamides.",
+      "Excessive yawning - This effect seems to be uniquely pronounced among psilocin and related tryptamines. It can occur to a lesser degree on LSD and very rarely on psychedelic phenethylamines like mescaline. It typically occurs in conjunction with watery eyes.",
+      "Enhancements",
       "Watery eyes",
       "Pupil dilation",
-      "Runny nose",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
       "Drifting (melting, flowing, breathing and morphing) - In comparison to other psychedelics, this effect can be described as highly detailed, cartooon-like in style, slow and smooth in motion and static in appearance.",
@@ -54,7 +54,6 @@ export const _4_aco_met: Substance =
       "Scenery slicing",
       "Symmetrical texture repetition",
       "Tracers",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - This effect is very consistent in dark environments at appropriately high dosages. They can be comprehensively described through their variations as lucid in believability, interactive in style, new experiences in content, autonomous in controllability, geometry-based in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Conceptual thinking",
       "Autonomous voice communication",
@@ -66,13 +65,14 @@ export const _4_aco_met: Substance =
       "Distortions"
     ],
     "negative": [
+      "Runny nose",
+      "Transformations",
       "Olfactory hallucination",
       "Teeth grinding - This component is considerably less intense when compared with substances like MDMA when it occurs.",
       "Nausea",
       "Delusion",
       "Ego death",
       "Memory suppression",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

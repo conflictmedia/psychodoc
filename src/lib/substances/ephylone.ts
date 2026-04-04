@@ -25,14 +25,9 @@ export const ephylone: Substance =
   "description": "Little is known about its pharmacology, although it likely produces its effects by increasing levels of serotonin, dopamine, and norepinephrine in the brain. Ephylone was developed in the 1960s by Boehringer Ingelheim as a central nervous system stimulant, although it never became marketed. Since then, its prevalence has steadily risen, particularly at dance music festivals where it appears as an adulterant or counterfeit for MDMA.",
   "effects": {
     "positive": [
-      "Stimulation",
-      "Increased perspiration",
       "Tactile enhancement",
       "Stamina enhancement",
-      "Increased heart rate",
-      "Increased bodily temperature",
       "Cognitive euphoria",
-      "Compulsive redosing - Reports of redose compulsion on ephylone suggests it is more similar to other substituted cathinones like mephedrone, than to MDMA.",
       "Emotion enhancement",
       "Empathy, affection, and sociability enhancement",
       "Focus enhancement",
@@ -43,16 +38,21 @@ export const ephylone: Substance =
       "Wakefulness"
     ],
     "neutral": [
+      "Stimulation",
       "Spontaneous bodily sensations",
       "Muscle contractions",
-      "Dry mouth",
-      "Abnormal heartbeat",
-      "Peripheral information misinterpretation",
       "Ego inflation",
       "Time distortion - This can be described as the experience of time speeding up and passing much quicker than it usually would when sober.",
       "Thought deceleration"
     ],
     "negative": [
+      "Increased perspiration",
+      "Increased heart rate",
+      "Increased bodily temperature",
+      "Compulsive redosing - Reports of redose compulsion on ephylone suggests it is more similar to other substituted cathinones like mephedrone, than to MDMA.",
+      "Dry mouth",
+      "Abnormal heartbeat",
+      "Peripheral information misinterpretation",
       "Dehydration - Ephylone appears to be dehydrating to a similar extent as substances like methylone. Users are advised to pay careful attention to both their water and electrolyte levels when taking the substance, being cautious to neither under nor over-drink.",
       "Appetite suppression",
       "Teeth grinding",

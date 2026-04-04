@@ -24,27 +24,27 @@ export const ethylmorphine: Substance =
   "effects": {
     "positive": [
       "Euphoria - This particular substance can be considered as less intense in its physical euphoria when compared with that of morphine or diacetylmorphine (heroin).",
-      "Euphoria - Like codeine, this particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) due to the upper limit of how much can be converted into its active form through metabolism. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment,  and happiness."
+      "Euphoria - Like codeine, this particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) due to the upper limit of how much can be converted into its active form through metabolism. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment,  and happiness.",
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
       "Itchiness",
-      "Constipation",
       "Sedation",
       "Pupil constriction",
-      "Decreased libido",
-      "Compulsive redosing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Constipation",
+      "Decreased libido",
+      "Compulsive redosing",
       "Respiratory depression",
       "Cough suppression",
       "Difficulty urinating",
       "Nausea",
       "Stomach cramps",
       "Appetite suppression",
-      "Orgasm suppression",
-      "Anxiety suppression"
+      "Orgasm suppression"
     ]
   },
   "routeData": {

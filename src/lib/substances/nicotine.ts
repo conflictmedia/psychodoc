@@ -22,10 +22,6 @@ export const nicotine: Substance =
   "description": "Nicotine is a naturally-occurring alkaloid which can have both stimulant and depressant effects due to it affecting a range of biological systems simultaneously. It is also used as an antiherbivore agent to deter plant predation and has been used as an insecticide in the past. Subjective effects include stimulation, focus enhancement, motivation enhancement, anxiety suppression, and mild euphoria. Unlike many other psychoactive substances, nicotine in the form of tobacco is reported to have a unique biphasic effect in which inhaling it in short puffs produces a stimulant effect, while deep drags produces a relaxing one. At sufficiently high doses, it can potentially be deadly, though serious or fatal overdoses are rare.",
   "effects": {
     "positive": [
-      "Stimulation & Sedation - The stimulatory effects of nicotine are much less pronounced than other stimulants such as caffeine or amphetamine. At higher doses, however, nicotine inhibits nerve transmission which produces moderate sedative effects.",
-      "Increased heart rate",
-      "Increased perspiration",
-      "Increased salivation or Dry Mouth - Dry mouth happens rarely with high doses of nicotine, but it's milder than cannabis.",
       "Physical euphoria - Physical euphoria with nicotine happens more often when the user has low tolerance. After regular use this effect can only happen at high or normal doses after discontinued use. It is worth noting that this euphoria isn't as pronounced as MDMA, Cocaine or any other stimulant.",
       "Cognitive euphoria",
       "Empathy, affection, and sociability enhancement - Nicotine increases sociability",
@@ -37,19 +33,23 @@ export const nicotine: Substance =
       "Wakefulness"
     ],
     "neutral": [
+      "Stimulation & Sedation - The stimulatory effects of nicotine are much less pronounced than other stimulants such as caffeine or amphetamine. At higher doses, however, nicotine inhibits nerve transmission which produces moderate sedative effects.",
+      "Increased salivation or Dry Mouth - Dry mouth happens rarely with high doses of nicotine, but it's milder than cannabis.",
       "Pupil constriction",
-      "Compulsive redosing",
       "Dream potentiation",
-      "Thought acceleration"
+      "Thought acceleration",
+      "Anxiety and Anxiety suppression - Low doses of nicotine produce stimulatory effects, which can cause anxiety. Higher doses stimulate the release of beta-endorphin, an opioid found within the body, which relieves anxiety."
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Compulsive redosing",
       "Dizziness - At high doses or with users without any tolerance, nicotine can cause one to feel dizzy or lightheaded.",
       "Abnormal heartbeat - At high doses, nicotine can trigger an elevated heart rate or even heart palpitations.",
       "Increased blood pressure",
       "Nausea - This effect tends to only be prominent at excessively high doses and especially when one has a low tolerance.",
       "Appetite suppression",
-      "Vasoconstriction",
-      "Anxiety and Anxiety suppression - Low doses of nicotine produce stimulatory effects, which can cause anxiety. Higher doses stimulate the release of beta-endorphin, an opioid found within the body, which relieves anxiety."
+      "Vasoconstriction"
     ]
   },
   "routeData": {

@@ -22,7 +22,6 @@ export const baclofen: Substance =
   "description": "GABAergics\nBaclofen (also known as Lioresal, Gablofen, Kemstro, Liofen) is a depressant substance of the butyric acid class. Today, it is used clinically to treat muscle spasticity, and holds promise as a treatment for alcoholism. Once physical dependence to a GABAergic substance occurs, the user cannot stop use abruptly without risking withdrawal symptoms such as anxiety, muscle tremors, and in severe cases, seizures.",
   "effects": {
     "positive": [
-      "Stimulation and Sedation - Baclofen has different effects on physical energy levels depending on the dosage used. At lower doses, baclofen has a mild physical and mental stimulation effect, encouraging movement, wakefulness, and productivity. At common doses and higher, baclofen is physically sedating, encouraging sleep and lethargy.",
       "Physical euphoria - Compared to gabapentinoids (such as phenibut) and benzodiazepines, baclofen is considered less euphoric.",
       "Muscle relaxation",
       "Increased libido - This effect is more pronounced at lower doses.",
@@ -31,20 +30,24 @@ export const baclofen: Substance =
       "Empathy, affection, and sociability enhancement",
       "Motivation enhancement",
       "Increased music appreciation",
-      "Addiction suppression - Baclofen is also used for alcoholism treatment."
+      "Addiction suppression - Baclofen is also used for alcoholism treatment.",
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
-      "Motor control loss",
-      "Diarrhea",
+      "Stimulation and Sedation - Baclofen has different effects on physical energy levels depending on the dosage used. At lower doses, baclofen has a mild physical and mental stimulation effect, encouraging movement, wakefulness, and productivity. At common doses and higher, baclofen is physically sedating, encouraging sleep and lethargy.",
       "Pupil dilation",
       "Frequent urination",
       "Thought deceleration",
       "Residual sleepiness",
-      "Compulsive redosing",
-      "Depersonalization"
+      "Depersonalization",
+      "Anxiety suppression - This effect is less pronounced compared to gabapentinoids or benzodiazepines.",
+      "Low Blood Pressure",
+      "Low Heart Rate"
     ],
     "negative": [
+      "Motor control loss",
+      "Diarrhea",
+      "Compulsive redosing",
       "Respiratory depression",
       "Nausea - Compared to gabapentinoids (such as phenibut) and alcohol, baclofen has stronger and longer lasting nausea.",
       "Orgasm suppression",
@@ -52,7 +55,6 @@ export const baclofen: Substance =
       "Dehydration",
       "Headaches",
       "Difficulty urinating",
-      "Anxiety suppression - This effect is less pronounced compared to gabapentinoids or benzodiazepines.",
       "Disinhibition",
       "Compulsive redosing - This effect is generally caused by the anxiety the user experiences during the comedown.",
       "Analysis suppression",
@@ -60,8 +62,6 @@ export const baclofen: Substance =
       "Confusion",
       "Rebound anxiety",
       "Cognitive fatigue",
-      "Low Blood Pressure",
-      "Low Heart Rate",
       "Depression"
     ]
   },

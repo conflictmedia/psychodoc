@@ -34,23 +34,25 @@ export const oxycodone: Substance =
   "effects": {
     "positive": [
       "Euphoria - In comparison to other opioids, this particular substance can be considered similar in its physical euphoria when compared with that of morphine or diacetylmorphine (heroin) and more intense when compared to kratom and hydrocodone. The sensation itself can be described as extreme feelings of intense physical comfort, warmth, love and bliss.",
-      "Increased perspiration",
       "Euphoria - This seems to be caused by both µ-opioid receptor agonism and downstream dopamine reinforcement. In comparison to other opioids, this particular substance can be considered similar in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) and more intense when compared to kratom and hydrocodone. The sensation itself can be described as powerful and overwhelming feelings of emotional bliss, contentment, and happiness.",
-      "Increased music appreciation"
+      "Increased music appreciation",
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
       "Sedation - Oxycodone is considerably less sedating than codeine but more sedating than kratom.",
-      "Constipation",
-      "Decreased libido",
       "Itchiness",
       "Pupil constriction",
-      "Skin flushing",
       "Ego inflation",
-      "Compulsive redosing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression",
+      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery and mild geometry."
     ],
     "negative": [
+      "Increased perspiration",
+      "Constipation",
+      "Decreased libido",
+      "Skin flushing",
+      "Compulsive redosing",
       "Respiratory depression - At low to moderate doses, this effect results in the sensation that the breath is slowed down mildly to moderately, but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention.",
       "Cough suppression",
       "Difficulty urinating",
@@ -58,9 +60,7 @@ export const oxycodone: Substance =
       "Stomach cramps",
       "Appetite suppression",
       "Orgasm suppression",
-      "Anxiety suppression",
-      "Irritability - While opioids are well known for their ability to improve mood, they can also have the paradoxical effect of increasing the user's sensitivity to irritable stimuli. This can manifest as aloofness and sudden outbursts of anger and aggression (colloquially known as \"opiate rage\"). It appears to occur more frequently during the comedown of the experience and/or with heavy use.",
-      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery and mild geometry."
+      "Irritability - While opioids are well known for their ability to improve mood, they can also have the paradoxical effect of increasing the user's sensitivity to irritable stimuli. This can manifest as aloofness and sudden outbursts of anger and aggression (colloquially known as \\\"opiate rage\\\"). It appears to occur more frequently during the comedown of the experience and/or with heavy use."
     ]
   },
   "routeData": {

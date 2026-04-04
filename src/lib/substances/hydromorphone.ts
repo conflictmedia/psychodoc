@@ -24,28 +24,28 @@ export const hydromorphone: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - In comparison to other opioids, this particular substance can be considered similar in its physical euphoria when compared with that of morphine or diacetylmorphine (heroin) and more intense when compared to kratom and hydrocodone. The sensation itself can be described as feelings of intense physical comfort, warmth, love and bliss.",
-      "Cognitive euphoria - In comparison to other opioids, this particular substance can be considered similar in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) and more intense when compared to kratom and hydrocodone. The sensation itself can be described as powerful and overwhelming feelings of emotional bliss, contentment, and happiness."
+      "Cognitive euphoria - In comparison to other opioids, this particular substance can be considered similar in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin) and more intense when compared to kratom and hydrocodone. The sensation itself can be described as powerful and overwhelming feelings of emotional bliss, contentment, and happiness.",
+      "Pain relief"
     ],
     "neutral": [
       "Sedation",
-      "Constipation",
-      "Decreased libido",
       "Itchiness",
-      "Pain relief",
       "Pupil constriction",
-      "Skin flushing",
-      "Compulsive redosing",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression",
+      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry."
     ],
     "negative": [
+      "Constipation",
+      "Decreased libido",
+      "Skin flushing",
+      "Compulsive redosing",
       "Cough suppression",
       "Difficulty urinating",
       "Nausea",
       "Respiratory depression - This can lead to an increased risk in overdose at high doses.",
       "Appetite suppression",
-      "Orgasm suppression",
-      "Anxiety suppression",
-      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry."
+      "Orgasm suppression"
     ]
   },
   "routeData": {

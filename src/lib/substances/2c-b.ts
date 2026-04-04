@@ -23,12 +23,7 @@ export const _2c_b: Substance =
   "description": "4-Bromo-2,5-dimethoxyphenethylamine (also known as Nexus, Bromo Mescaline, BDMPEA, Venus, and 2C-B) is a novel psychedelic substance of the phenethylamine class. In the 1970s, it first saw use as a therapeutic aid by a small circle of American psychotherapists and was considered one of the best substances for this purpose due to its short duration, relative absence of side effects, and comparably mild nature. Recreational use was observed shortly afterward and it was briefly manufactured and sold commercially under such names as \"Erox\" and \"Nexus\" in \"head\" / \"smart\" shops and adult video stores before being federally scheduled in 1995. Smaller doses (under 15 mg) are reported to be useful as a sensory and aesthetic enhancer (in a manner somewhat similar to MDMA) while larger doses are reported to produce a distinct mind-manifesting psychedelic effect.",
   "effects": {
     "positive": [
-      "Stimulation - 2C-B is typically described as very energetic and stimulating in a fashion that draws comparisons to MDMA. At higher doses this effect can become more forced, encouraging users to engage in physical activities such as dancing.",
-      "Spontaneous bodily sensations - The \"body high\" of 2C-B is reported to be one of the most complex among psychedelics, exhibiting aspects of MDMA, 2C-E, and LSD. This is first characterized by an intense soft, warm glow that grows over the body and is capable of becoming highly euphoric.",
       "Bodily control enhancement",
-      "Increased bodily temperature",
-      "Increased heart rate",
-      "Increased perspiration",
       "Tactile enhancement",
       "Colour enhancement",
       "Empathy, affection, and sociability enhancement - These feelings of sociability, love and empathy are a little weaker and less sharp than those found on substances such as MDMA but still prove stronger and more consistent than other psychedelics of any class. This has been reported to provide long-lasting therapeutic effects.",
@@ -46,9 +41,12 @@ export const _2c_b: Substance =
       "Synaesthesia - In its fullest manifestation, this is a very rare and non-reproducible effect. Increasing the dosage can increase the likelihood of synesthesia, but seems to only be a prominent part of the experience among those who are already predisposed to synaesthetic states.",
       "Existential self-realization",
       "Spirituality enhancement",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Stimulation - 2C-B is typically described as very energetic and stimulating in a fashion that draws comparisons to MDMA. At higher doses this effect can become more forced, encouraging users to engage in physical activities such as dancing.",
+      "Spontaneous bodily sensations - The \\\"body high\\\" of 2C-B is reported to be one of the most complex among psychedelics, exhibiting aspects of MDMA, 2C-E, and LSD. This is first characterized by an intense soft, warm glow that grows over the body and is capable of becoming highly euphoric.",
       "Pupil dilation",
       "Magnification",
       "Pattern recognition enhancement",
@@ -61,10 +59,8 @@ export const _2c_b: Substance =
       "Scenery slicing",
       "Symmetrical texture repetition",
       "Tracers",
-      "Transformations",
       "Machinescapes",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - Although 2C-B is technically capable of producing hallucinatory states in a fashion that is on par with psilocin or DMT in its vividness and intensity. In comparison, these effects are extremely rare and inconsistent at common doses, though are usually readily producible at high doses, particularly when taken by rectal or intravenous routes. While traditional psychedelics such as LSA, ayahuasca and mescaline will induce internal hallucinations near consistently at level 5 geometry and above, 2C-B will for most go straight into Level 8A visual geometry. This lack of consistently induced hallucinatory breakthroughs means that for some, 2C-B is simply not as deep of an experience as certain other psychedelics.",
-      "Peripheral information misinterpretation",
       "Conceptual thinking",
       "Rejuvenation",
       "Thought acceleration",
@@ -73,6 +69,11 @@ export const _2c_b: Substance =
       "Auditory distortion"
     ],
     "negative": [
+      "Increased bodily temperature",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Transformations",
+      "Peripheral information misinterpretation",
       "Nausea - Mild to extreme nausea is reported when consumed in moderate to high dosages and either passes once the user has vomited or gradually fades by itself as the peak sets in.",
       "Appetite suppression - While not as intense as stimulants such as MDMA, most doses can cause a decrease in appetite.",
       "Increased blood pressure",
@@ -82,7 +83,6 @@ export const _2c_b: Substance =
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Auditory hallucination"
     ]
   },

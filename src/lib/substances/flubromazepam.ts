@@ -21,28 +21,29 @@ export const flubromazepam: Substance =
   "description": "benzodiazepines\nFlubromazolam\nFlubromazepam is a long-lasting psychoactive substance of the benzodiazepine class which produces anxiolytic, sedative, muscle relaxant, depressant and amnesic effects. This compound was first made in 1960, but was never marketed and did not receive any further attention or study until late 2012. It's worth noting that the sudden discontinuation of benzodiazepines can be potentially dangerous or life-threatening for individuals regularly using for extended periods of time, sometimes resulting in seizures or death.",
   "effects": {
     "positive": [
-      "Sedation -  In terms of energy level alterations, this substance has the potential to become very sedating in a rapid-acting fashion. At higher doses, this can lead users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Muscle relaxation",
       "Physical euphoria",
       "Increased libido",
       "Appetite enhancement - This effect is not particularly prominent, but is reported to occur in some people. It can have a synergistic effect when combined with cannabis.",
-      "Cognitive euphoria - This effect is generally produced only at high doses, and is thought to arise largely from the release of pre-existing anxiety in the user. Many users report not feeling any pleasurable or euphoric sensations from benzodiazepines at all."
+      "Cognitive euphoria - This effect is generally produced only at high doses, and is thought to arise largely from the release of pre-existing anxiety in the user. Many users report not feeling any pleasurable or euphoric sensations from benzodiazepines at all.",
+      "Seizure suppression"
     ],
     "neutral": [
-      "Motor control loss",
+      "Sedation -  In terms of energy level alterations, this substance has the potential to become very sedating in a rapid-acting fashion. At higher doses, this can lead users to suddenly feel as if they are extremely sleep deprived and have not slept for days, forcing them to sit down and generally feel as if they are constantly on the verge of passing out. This sense of sleep deprivation increases proportional to dosage and eventually becomes powerful enough to force a person into complete unconsciousness.",
       "Ego inflation",
       "Thought deceleration",
       "Sleepiness",
       "Residual sleepiness",
       "Thought deceleration",
-      "Thought disorganization"
+      "Anxiety suppression",
+      "Dream potentiation or Dream suppression"
     ],
     "negative": [
+      "Motor control loss",
+      "Thought disorganization",
       "Respiratory depression",
-      "Seizure suppression",
       "Dizziness",
       "Temporary erectile dysfunction",
-      "Anxiety suppression",
       "Disinhibition",
       "Compulsive redosing - This component is likely due to the rapid way in which the substance produces its anxiety-relieving, relaxing and sometimes euphoric effects before quickly dropping off. It can be made worse due to the memory suppression it produces which can lead the user forgetting they have taken any at all, which can lead to a cycle that leads to a dangerous amnesic blackout state.",
       "Memory suppression",
@@ -52,7 +53,6 @@ export const flubromazepam: Substance =
       "Motivation suppression",
       "Emotionality suppression - Although this compound primarily suppresses anxiety, it also dulls other emotions in a manner which is distinct but less intensive than that of antipsychotics.",
       "Rebound anxiety - Rebound anxiety is a commonly observed effect with anxiety relieving substances like benzodiazepines. It typically corresponds to the total duration spent under the substance's influence along with the total amount consumed in a given period, an effect which can easily lend itself to cycles of dependence and addiction.",
-      "Dream potentiation or Dream suppression",
       "Irritability"
     ]
   },

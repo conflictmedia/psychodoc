@@ -28,15 +28,15 @@ export const _1_4_butanediol: Substance =
   "description": "It occurs as a thick, colorless liquid or solid depending on storage temperature (melting point of 20 ℃), and has a distinct bitter-sweet taste. 1,4-Butanediol is used industrially as a solvent and in the manufacture of some types of plastics, elastic fibers and polyurethanes. For this reason, it is recommended to only transport and store the drug using a glass container, standard gelatin capsules (not vegetarian), or high-density polyethylene plastic (also known as #2 recycled plastic).",
   "effects": {
     "positive": [
-      "Stimulation and Sedation - At lower dosages, 1,4-Butanediol is physically stimulating, encouraging movement and wakefulness. At higher dosages, however, it becomes physically sedating, encouraging sleep and lethargy.",
       "Euphoria",
       "Increased salivation"
     ],
     "neutral": [
-      "Motor control loss",
+      "Stimulation and Sedation - At lower dosages, 1,4-Butanediol is physically stimulating, encouraging movement and wakefulness. At higher dosages, however, it becomes physically sedating, encouraging sleep and lethargy.",
       "Optical sliding"
     ],
     "negative": [
+      "Motor control loss",
       "Respiratory depression - In cases of 1,4-butanediol overdoses, many reportedly experience an abnormal pattern of breathing characterized by progressively deeper and sometimes faster breathing, followed by a gradual decrease that results in a temporary stop in breathing called an apnea.",
       "Nausea - This effect is more common with 1,4-butanediol than GHB.",
       "Stomach cramps",

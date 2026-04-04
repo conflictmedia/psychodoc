@@ -24,21 +24,21 @@ export const alpha_gpc: Substance =
   "effects": {
     "positive": [
       "Bodily control enhancement",
-      "Stimulation - The stimulation which alpha-GPC presents can be considered as primarily subtle and similar to that of caffeine.",
       "Stamina enhancement",
       "Wakefulness - In comparison to citicoline, alpha-GPC manifests itself primarily in a physically stimulating manner over a mental stimulation.",
       "Focus enhancement",
-      "Mindfulness",
       "Memory enhancement",
       "Motivation enhancement"
     ],
     "neutral": [
-      "Dream potentiation"
+      "Stimulation - The stimulation which alpha-GPC presents can be considered as primarily subtle and similar to that of caffeine.",
+      "Mindfulness",
+      "Dream potentiation",
+      "Body odor alteration - This can be caused in some populations, especially those suffering from trimethylaminuria. Choline (a byproduct of alpha-GPC) is a precursor to trimethylamine, which those with trimethylaminuria are not able to easily break down, oftening resulting in smelling similar to fish."
     ],
     "negative": [
       "Headaches",
-      "Teeth grinding",
-      "Body odor alteration - This can be caused in some populations, especially those suffering from trimethylaminuria. Choline (a byproduct of alpha-GPC) is a precursor to trimethylamine, which those with trimethylaminuria are not able to easily break down, oftening resulting in smelling similar to fish."
+      "Teeth grinding"
     ]
   },
   "routeData": {

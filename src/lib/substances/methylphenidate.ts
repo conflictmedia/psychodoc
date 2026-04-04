@@ -25,28 +25,28 @@ export const methylphenidate: Substance =
   "description": "Methylphenidate (also known as MPH, MPD, and the trade names Ritalin, Concerta, and Methylin, among others) is a classical potent stimulant substance of the phenidate class. The mechanism of action involves increasing concentrations of the neurotransmitters dopamine and norepinephrine. It was first synthesized in 1944 and was approved for medical use in the United States in 1955. Subjective effects include stimulation, focus enhancement, motivation enhancement, increased libido, appetite suppression, and euphoria.",
   "effects": {
     "positive": [
-      "Increased heart rate",
-      "Increased perspiration",
       "Increased libido - Higher doses of methylphenidate can increase sexual desire.",
-      "Increased heart rate",
       "Wakefulness"
     ],
     "neutral": [
       "Spontaneous bodily sensations",
-      "Abnormal heartbeat",
       "Frequent urination",
-      "Dry mouth",
-      "Thought deceleration"
+      "Thought deceleration",
+      "Stimulation Methylphenidate is usually reported to be highly energetic and distinctively stimulating, similar to amphetamine or cocaine and stronger than modafinil and caffeine. At lower to moderate doses, it encourages general productivity but at higher dosages it can encourage physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which methylphenidate presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
+      "Pupil dilation - This effect is experienced only at common to high dosages as well as in low lighting and is more prominent on the comedown."
     ],
     "negative": [
-      "Stimulation Methylphenidate is usually reported to be highly energetic and distinctively stimulating, similar to amphetamine or cocaine and stronger than modafinil and caffeine. At lower to moderate doses, it encourages general productivity but at higher dosages it can encourage physical activities such as dancing, socializing, running, or cleaning. The particular style of stimulation which methylphenidate presents can be described as forced. This means that at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
+      "Increased heart rate",
+      "Increased perspiration",
+      "Increased heart rate",
+      "Abnormal heartbeat",
+      "Dry mouth",
       "Dehydration",
       "Appetite suppression",
       "Nausea - May occur at higher doses, although tends to fade after a short period.",
       "Dizziness",
       "Teeth grinding - Teeth grinding may be present at higher doses. However, it is less intense than that of MDMA.",
       "Vasoconstriction",
-      "Pupil dilation - This effect is experienced only at common to high dosages as well as in low lighting and is more prominent on the comedown.",
       "Anxiety",
       "Cognitive fatigue",
       "Depression",

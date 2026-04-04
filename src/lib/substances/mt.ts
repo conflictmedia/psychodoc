@@ -24,9 +24,6 @@ export const mt: Substance =
   "description": "α-Methyltryptamine (also known as Indopan and commonly as αMT or aMT) is a lesser-known entactogen substance of the tryptamine class. It was briefly used in the Soviet Union as an antidepressant under the trade name Indopan. There were 22 deaths linked to αMT in England and Wales where the drug became popular as a legal high from 2012 until it was banned in early 2015.",
   "effects": {
     "positive": [
-      "Stimulation - Regarding its effects on the physical energy levels of the user, AMT tends to be very stimulating, resulting in jaw clenching and a shakiness and unsteadiness of the hands. The stimulation encourages the user to move around, run, dance, climb or engage in physical activities. In comparison, other common psychedelics such as psilocybin are sedating and relaxed.",
-      "Increased heart rate",
-      "Increased perspiration",
       "Colour enhancement",
       "Empathy, affection, and sociability enhancement - This effect is consistently manifested mainly in the context of social settings in which one is within the company of others. These feelings of sociability, love and empathy are a little weaker and less sharp than with MDMA.",
       "Analysis enhancement - This component is introspection dominant and consistently manifested only in the context of a non-social setting in which the user is alone.",
@@ -34,12 +31,12 @@ export const mt: Substance =
       "Cognitive euphoria",
       "Immersion enhancement",
       "Increased music appreciation",
-      "Wakefulness",
-      "Enhancements"
+      "Wakefulness"
     ],
     "neutral": [
-      "Spontaneous bodily sensations - AMT's \"body high\" can be described as an intense and constant all-encompassing sensation. In comparison to other psychedelics, this sensation does not manifest itself in the form of a continuously shifting tingling sensation that travels up and down the body spontaneously; it is instead felt like an extended, unchanging activation of every nerve ending on the body that lasts throughout the entire duration of the experience. This continuous sensation is immensely pleasurable but can become overwhelmingly intense and almost a burden at higher levels.",
-      "Abnormal heartbeat",
+      "Stimulation - Regarding its effects on the physical energy levels of the user, AMT tends to be very stimulating, resulting in jaw clenching and a shakiness and unsteadiness of the hands. The stimulation encourages the user to move around, run, dance, climb or engage in physical activities. In comparison, other common psychedelics such as psilocybin are sedating and relaxed.",
+      "Enhancements",
+      "Spontaneous bodily sensations - AMT's \\\"body high\\\" can be described as an intense and constant all-encompassing sensation. In comparison to other psychedelics, this sensation does not manifest itself in the form of a continuously shifting tingling sensation that travels up and down the body spontaneously; it is instead felt like an extended, unchanging activation of every nerve ending on the body that lasts throughout the entire duration of the experience. This continuous sensation is immensely pleasurable but can become overwhelmingly intense and almost a burden at higher levels.",
       "Pupil dilation",
       "Acuity enhancement",
       "Pattern recognition enhancement",
@@ -49,21 +46,24 @@ export const mt: Substance =
       "Colour shifting",
       "Scenery slicing",
       "Tracers",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots) - This particular effect is uncommon during the first half of the trip but capable of manifesting itself towards the end of the experience, particularly if sleep deprivation starts to take its toll due to the abnormally long duration. The internal hallucinations are more common within dark environments and can be comprehensively described through their variations as lucid in believability, fixed in style, new experiences in content, autonomous in controllability, geometry-based in style and almost exclusively of a personal, religious, spiritual, science-fiction, fantasy, surreal, nonsensical or transcendental nature in their overall theme.",
       "Conceptual thinking",
       "Thought acceleration",
       "Thought connectivity",
       "Time distortion",
-      "Distortions"
+      "Distortions",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased perspiration",
+      "Abnormal heartbeat",
+      "Transformations",
       "Difficulty urinating - A slight difficulty urinating is occasionally present.",
       "Temperature regulation suppression",
       "Headaches - Many people report headaches towards the end of the experience.",
       "Increased blood pressure",
       "Nausea - Moderate to extreme nausea is commonly reported. This either passes once the user has vomited or gradually fades by itself as the peak sets in.",
-      "Anxiety suppression",
       "Disinhibition",
       "Memory suppression",
       "Ego death",

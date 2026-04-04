@@ -23,15 +23,10 @@ export const benzydamine: Substance =
   "description": "Benzydamine (also known as Difflam or Tantum Verde) is a topical anaesthetic of the indazole chemical class. It is sometimes found in small doses in over-the-counter products used to treat sore throats. In Germany, Arabic Countries and Poland, it is sold as a vaginal douching agent under the brand name Tantum Rosa.",
   "effects": {
     "positive": [
-      "Increased heart rate",
-      "Euphoria - Felt during onset but fades as the trip peaks.",
-      "Feelings of impending doom - Replaces Euphoria",
-      "Paranoia - Replaces Euphoria"
+      "Euphoria - Felt during onset but fades as the trip peaks."
     ],
     "neutral": [
       "Stimulation - Residual stimulation and insomnia may last up to 48 hours after initial dosing of this substance. The taxing nature of having gone through the deliriant trip and the following sleep deprivation is likely to cause paranoia.",
-      "Abnormal heartbeat",
-      "Motor control loss",
       "Frequent urination",
       "External hallucinations  (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Visual acuity suppression",
@@ -42,21 +37,26 @@ export const benzydamine: Substance =
       "Geometry",
       "Double vision",
       "Pattern recognition suppression",
+      "Object activation",
+      "Time distortion",
+      "Thought acceleration",
+      "Distortion",
+      "Unspeakable horrors"
+    ],
+    "negative": [
+      "Increased heart rate",
+      "Feelings of impending doom - Replaces Euphoria",
+      "Paranoia - Replaces Euphoria",
+      "Abnormal heartbeat",
+      "Motor control loss",
       "Vibrating vision",
       "Peripheral information misinterpretation",
       "Shadow people",
-      "Object activation",
       "Delirium",
-      "Time distortion",
-      "Thought acceleration",
-      "Distortion"
-    ],
-    "negative": [
       "Tactile suppression",
       "Gustatory hallucinations",
       "Dehydration",
       "Dizziness",
-      "Unspeakable horrors",
       "Anxiety",
       "Depression",
       "Delusions",

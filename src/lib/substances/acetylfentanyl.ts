@@ -28,21 +28,21 @@ export const acetylfentanyl: Substance =
     "neutral": [
       "Itchiness - This drug presents very little itch response  due to little to no amounts of histamine being release, unlike other opioids.",
       "Sedation - Acetylfentanyl can be described as considerably less sedating than fentanyl; however, at heavy doses this compound can result in overwhelming feelings of sedation and tiredness.",
-      "Constipation",
       "Pupil constriction",
-      "Decreased libido",
-      "Compulsive redosing",
       "Dream potentiation",
-      "Double vision - Blurred or double vision may be present and uncontrollable, rendering one unable to operate a vehicle or heavy machinery."
+      "Double vision - Blurred or double vision may be present and uncontrollable, rendering one unable to operate a vehicle or heavy machinery.",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Constipation",
+      "Decreased libido",
+      "Compulsive redosing",
       "Respiratory depression - In comparison to other opiates, acetylfentanyl displays this effect at lower doses relative to euphoria. Even low doses result in the sensation that the breath is slowed down mildly to moderately but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention.",
       "Dehydration",
       "Cough suppression",
       "Difficulty urinating",
       "Appetite suppression",
-      "Orgasm suppression",
-      "Anxiety suppression"
+      "Orgasm suppression"
     ]
   },
   "routeData": {

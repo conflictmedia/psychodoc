@@ -20,20 +20,19 @@ export const mcpp: Substance =
   "class": "Substituted piperazines",
   "description": "meta-Chlorophenylpiperazine (also known as mCPP) is a stimulant drug of the phenylpiperazine class. It was first synthesized as one in a series of potential novel antihistamines by Thomas H. Wicker Jr. in 1951 as part of his doctoral work at the University of Florida. Unlike many other stimulants like amphetamine, mCPP is generally considered to be unpleasant.",
   "effects": {
-    "positive": [
-      "Increased bodily temperature"
-    ],
+    "positive": [],
     "neutral": [
-      "Decreased libido",
       "Pupil dilation",
-      "Abnormal heartbeat",
       "Perception of bodily heaviness",
-      "Dysphoria - While this substance can induce a mild euphoria at low doses, mCPP is generally considered to be unpleasant and dysphoric at common and high doses.",
       "Drifting",
-      "Tracers"
+      "Tracers",
+      "Stimulation - The particular style of stimulation which mCPP presents can be described as forced. This means that, at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control."
     ],
     "negative": [
-      "Stimulation - The particular style of stimulation which mCPP presents can be described as forced. This means that, at higher dosages, it becomes difficult or impossible to keep still as jaw clenching, involuntarily bodily shakes and vibrations become present, resulting in extreme shaking of the entire body, unsteadiness of the hands, and a general lack of motor control.",
+      "Increased bodily temperature",
+      "Decreased libido",
+      "Abnormal heartbeat",
+      "Dysphoria - While this substance can induce a mild euphoria at low doses, mCPP is generally considered to be unpleasant and dysphoric at common and high doses.",
       "Difficulty urinating",
       "Nausea",
       "Appetite suppression",

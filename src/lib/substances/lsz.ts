@@ -25,12 +25,12 @@ export const lsz: Substance =
   "effects": {
     "positive": [
       "Bodily control enhancement",
-      "Stimulation",
       "Tactile enhancement",
-      "Colour enhancement",
-      "Enhancements"
+      "Colour enhancement"
     ],
     "neutral": [
+      "Stimulation",
+      "Enhancements",
       "Pupil dilation",
       "Spontaneous physical sensations",
       "Pattern recognition enhancement",
@@ -41,11 +41,11 @@ export const lsz: Substance =
       "Perspective distortions",
       "Symmetrical texture repetition",
       "Tracers",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Distortions"
     ],
     "negative": [
+      "Transformations",
       "Nausea",
       "Hallucinations"
     ]

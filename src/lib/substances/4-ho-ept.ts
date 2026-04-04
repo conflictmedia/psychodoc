@@ -22,18 +22,18 @@ export const _4_ho_ept: Substance =
   "description": "4-Hydroxy-N-ethyl-N-propyltryptamine (also known as 4-HO-EPT or Eprocin) is a novel synthetic psychedelic substance of the tryptamine chemical class that produces psychedelic effects when administered. Very little data exists about the pharmacological properties, metabolism, and toxicity of 4-HO-EPT. Unlike other more popular 4-subbed tryptamines, Eprocin isn't really visual, it mostly enhances colors and makes them more \"neon-ish\".",
   "effects": {
     "positive": [
-      "Increased heart rate",
       "Colour enhancement",
-      "Brightness alteration",
       "Cognitive euphoria",
       "Emotion enhancement",
       "Immersion enhancement",
       "Increased music appreciation",
       "Novelty enhancement",
-      "Enhancements",
-      "Unity and interconnectedness"
+      "Unity and interconnectedness",
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Pupil dilation",
       "Pattern recognition enhancement",
@@ -46,18 +46,18 @@ export const _4_ho_ept: Substance =
       "Tracers",
       "After images",
       "Diffraction",
-      "Transformations",
       "Internal hallucination (autonomous entities; settings, sceneries, and landscapes; perspective hallucinations and scenarios and plots)",
       "Conceptual thinking",
       "Time distortion",
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Transformations",
       "Nausea",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Hallucinations"
     ]

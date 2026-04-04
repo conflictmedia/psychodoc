@@ -21,10 +21,8 @@ export const piracetam: Substance =
   "description": "Piracetam was first synthesized in 1964 by Corneliu E. Giurgea and other scientists at the Belgian pharmaceutical company UCB. In the United Kingdom, piracetam is prescribed mainly for myoclonus (spasmodic jerky contraction of groups of muscles), but is used off-label for other conditions. In the United States, it is not approved by the Food and Drug Administration for any medical use and it is not permitted to be sold as a dietary supplement.",
   "effects": {
     "positive": [
-      "Stimulation - The stimulation which piracetam presents can be considered as primarily subtle, comparable to that of caffeine.",
       "Auditory enhancement",
       "Colour enhancement",
-      "Mindfulness",
       "Tactile enhancement",
       "Focus enhancement",
       "Memory enhancement",
@@ -32,14 +30,16 @@ export const piracetam: Substance =
       "Wakefulness"
     ],
     "neutral": [
-      "Muscle spasms",
+      "Stimulation - The stimulation which piracetam presents can be considered as primarily subtle, comparable to that of caffeine.",
+      "Mindfulness",
       "Acuity enhancement",
       "Dream potentiation",
-      "Thought connectivity"
+      "Thought connectivity",
+      "Anxiety suppression or Anxiety"
     ],
     "negative": [
+      "Muscle spasms",
       "Headaches - Some users suggest that this effect may be alleviated with a choline source such as choline bitartrate, alpha-GPC or citicoline.",
-      "Anxiety suppression or Anxiety",
       "Irritability"
     ]
   },

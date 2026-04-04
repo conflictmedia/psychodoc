@@ -22,14 +22,9 @@ export const _2_fea: Substance =
   "description": "2-Fluoroethamphetamine (2-FEA) is a novel stimulant substance of the amphetamine class that produces classical stimulant effects such as stimulation, enhanced focus and euphoria when administered. The exact effects of 2-FEA are not well known by its users with anecdotal reports suggesting only minimal activity and possible serotonergic qualities. 2-FEA is sold on the online research chemical market.",
   "effects": {
     "positive": [
-      "Stimulation and Sedation - 2-FEA is reported to produce a paradoxical combination of sedating and stimulating effects. The sedating aspects are perhaps attributable to serotonin release. The stimulating effects are typically more prominent at dosages in and above the strong dosage range and tend to become prominent after the peak effects have subsided.",
       "Physical euphoria",
       "Tactile enhancement",
       "Stamina enhancement",
-      "Increased heart rate",
-      "Increased bodily temperature",
-      "Increased perspiration",
-      "Brightness alteration - 2-FEA can make spaces seem brighter as a result of its pupil dilating effects.",
       "Analysis enhancement",
       "Cognitive euphoria",
       "Focus enhancement",
@@ -41,15 +36,12 @@ export const _2_fea: Substance =
       "Wakefulness"
     ],
     "neutral": [
-      "Abnormal heartbeat",
+      "Stimulation and Sedation - 2-FEA is reported to produce a paradoxical combination of sedating and stimulating effects. The sedating aspects are perhaps attributable to serotonin release. The stimulating effects are typically more prominent at dosages in and above the strong dosage range and tend to become prominent after the peak effects have subsided.",
+      "Brightness alteration - 2-FEA can make spaces seem brighter as a result of its pupil dilating effects.",
       "Bronchodilation",
-      "Dry mouth",
       "Frequent urination",
       "Pupil dilation",
-      "Restless legs",
       "Drifting (breathing and morphing) - This effect is usually subtle and barely noticeable and only occurs at higher dosages or when combined with cannabis.",
-      "Transformations - This effect occurs very rarely, and typically only when the user has taken high doses, is coming down, or has been awake for unusually long periods. It is usually very mild when it does occur.",
-      "Compulsive redosing",
       "Ego inflation",
       "Thought acceleration",
       "Thought organization",
@@ -58,6 +50,14 @@ export const _2_fea: Substance =
       "Thought deceleration"
     ],
     "negative": [
+      "Increased heart rate",
+      "Increased bodily temperature",
+      "Increased perspiration",
+      "Abnormal heartbeat",
+      "Dry mouth",
+      "Restless legs",
+      "Transformations - This effect occurs very rarely, and typically only when the user has taken high doses, is coming down, or has been awake for unusually long periods. It is usually very mild when it does occur.",
+      "Compulsive redosing",
       "Increased blood pressure",
       "Appetite suppression",
       "Dehydration",

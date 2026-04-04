@@ -26,25 +26,25 @@ export const sufentanil: Substance =
     "positive": [
       "Pain relief - In comparison to other opiates, sufentanil can be described as a strong analgesic, providing relief even at non-recreational doses.",
       "Physical euphoria - This particular substance can be considered as less intense in its physical euphoria when compared with that of morphine or fentanyl. The sensation itself can be described as strong feelings of physical comfort, warmth and bliss which spread throughout the body.",
-      "Increased perspiration",
       "Cognitive euphoria - This particular substance can be considered as significantly less intense in its cognitive euphoria when compared with that of morphine or fentanyl. It is still, however, capable of extreme intensity and overwhelming bliss at heavier dosages with a low tolerance. The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment, and happiness."
     ],
     "neutral": [
       "Itchiness - Unlike most other opioids, this compound produces very little itchiness due to the lack of histamine activity.",
-      "Constipation",
-      "Decreased libido",
       "Pupil constriction",
-      "Compulsive redosing"
+      "Sedation - Sufentanil can be described as much more sedating then other opioids. Even at moderate dosages, this compound can result in overwhelming feelings of sedation and tiredness that is considerably more sedating than that of heroin and oxycodone.",
+      "Low blood pressure",
+      "Anxiety suppression"
     ],
     "negative": [
+      "Increased perspiration",
+      "Constipation",
+      "Decreased libido",
+      "Compulsive redosing",
       "Respiratory depression - In comparison to other opiates, sufentanil displays this effect at lower doses relative to euphoria then other opiates, and even at low doses results in the sensation that the breath is slowed down mildly to moderately, but does not cause noticeable impairment. At high doses and overdoses, opioid-induced respiratory depression can result in a shortness of breath, abnormal breathing patterns, semi-consciousness, or unconsciousness. Severe overdoses can result in a coma or death without immediate medical attention. In the hospital setting, patients that are administered sufentanil are constantly monitored to ensure their breathing is not significantly depressed.",
-      "Sedation - Sufentanil can be described as much more sedating then other opioids. Even at moderate dosages, this compound can result in overwhelming feelings of sedation and tiredness that is considerably more sedating than that of heroin and oxycodone.",
       "Cough suppression",
       "Difficulty urinating",
-      "Low blood pressure",
       "Appetite suppression",
-      "Orgasm suppression",
-      "Anxiety suppression"
+      "Orgasm suppression"
     ]
   },
   "routeData": {

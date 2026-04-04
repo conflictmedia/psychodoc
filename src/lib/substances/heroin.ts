@@ -26,33 +26,33 @@ export const heroin: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - The physical euphoria experienced on this substance is extremely intense when compared to other opioids such as codeine or tramadol. The sensation itself can be described as extreme feelings of intense physical comfort, warmth, and all-encompassing bliss.",
-      "Increased perspiration",
       "Cognitive euphoria - The cognitive euphoria experienced on this substance is extremely intense when compared to other opioids such as codeine or tramadol. The sensation itself can be described as powerful and overwhelming feelings of emotional bliss, contentment, and happiness.",
-      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. It appears to be caused by issues in depth perception, as by closing one eye the issue can be temporarily alleviated."
+      "Pain relief"
     ],
     "neutral": [
-      "Pain relief",
-      "Constipation",
-      "Decreased libido",
+      "Double vision - At high doses, the eyes un-focus and re-focus uncontrollably. It appears to be caused by issues in depth perception, as by closing one eye the issue can be temporarily alleviated.",
       "Itchiness",
       "Pupil constriction",
-      "Compulsive redosing",
       "Dream potentiation",
-      "Auditory acuity suppression",
-      "Auditory distortion - Some users experience rumbling in the ears and/or tinnitus with this substance. Effect may last for long periods after the experience due to the ototoxicity of opioids"
+      "Auditory distortion - Some users experience rumbling in the ears and/or tinnitus with this substance. Effect may last for long periods after the experience due to the ototoxicity of opioids",
+      "Sedation - This leads to the trademark \\\"nodding off\\\" effect seen in heroin users, where the head falls, the eyes close, and the user slips uncontrollably into momentary unconsciousness. This can lead to falling into microsleeps while sitting or standing up.",
+      "Decreased heart rate",
+      "Anxiety suppression",
+      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry."
     ],
     "negative": [
-      "Sedation - This leads to the trademark \"nodding off\" effect seen in heroin users, where the head falls, the eyes close, and the user slips uncontrollably into momentary unconsciousness. This can lead to falling into microsleeps while sitting or standing up.",
+      "Increased perspiration",
+      "Constipation",
+      "Decreased libido",
+      "Compulsive redosing",
+      "Auditory acuity suppression",
       "Respiratory depression - Heavy dosages of heroin can result in respiratory depression which leads onto fatal or dangerous levels of anoxia (oxygen deprivation). This occurs because the breathing reflex is suppressed by agonism of µ-opioid receptors proportional to the dosage consumed.",
       "Appetite suppression",
       "Dehydration",
       "Cough suppression",
-      "Decreased heart rate",
       "Difficulty urinating",
       "Nausea - This effect can be intense enough to lead to vomiting at high doses. When severe, the nausea and subsequent vomiting can cause dehydration in the user.",
-      "Orgasm suppression",
-      "Anxiety suppression",
-      "Internal hallucination - One may experience a state of semi-consciousness and hypnagogia during heavy dosage nodding which results in dream-like states and up to level 3 imagery. This is often accompanied by ill-defined geometry."
+      "Orgasm suppression"
     ]
   },
   "routeData": {

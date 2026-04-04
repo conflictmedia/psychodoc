@@ -23,12 +23,10 @@ export const _4_ho_dpt: Substance =
   "effects": {
     "positive": [
       "Bodily control enhancement",
-      "Increased heart rate",
       "Tactile enhancement",
       "Physical euphoria",
       "Muscle relaxation",
       "Colour enhancement",
-      "Brightness alteration",
       "Analysis enhancement",
       "Cognitive euphoria",
       "Emotion enhancement",
@@ -36,15 +34,16 @@ export const _4_ho_dpt: Substance =
       "Increased music appreciation",
       "Novelty enhancement",
       "Unity and interconnectedness",
-      "Laughter",
-      "Mindfulness",
-      "Enhancements"
+      "Personal bias suppression"
     ],
     "neutral": [
+      "Brightness alteration",
+      "Laughter",
+      "Mindfulness",
+      "Enhancements",
       "Spontaneous physical sensations",
       "Sedation",
       "Pupil dilation",
-      "Mouth numbing",
       "Pattern recognition enhancement",
       "Visual acuity enhancement",
       "Visual acuity suppression",
@@ -64,11 +63,12 @@ export const _4_ho_dpt: Substance =
       "Distortions"
     ],
     "negative": [
+      "Increased heart rate",
+      "Mouth numbing",
       "Nausea",
       "Delusion",
       "Memory suppression",
       "Ego death",
-      "Personal bias suppression",
       "Thought loops",
       "Language suppression",
       "Hallucinations"

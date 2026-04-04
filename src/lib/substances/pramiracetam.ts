@@ -21,25 +21,25 @@ export const pramiracetam: Substance =
   "description": "In parts of Europe, pramiracetam is marketed as a prescription drug by Menarini under the brand name Pramistar as a treatment for memory and attention deficits in aging people with neurodegenerative and vascular dementias. In the United States, it is readily available and sold through online vendors as a dietary supplement. Pramiracetam is typically used at dosages of either 400mg thrice daily or 600mg twice daily; both of these dosing regimens totals 1,200mg of pramiracetam a day.",
   "effects": {
     "positive": [
-      "Stimulation - Pramiracetam produces a subtle form of stimulation comparable to that of caffeine.",
       "Colour enhancement",
       "Auditory enhancement",
       "Tactile enhancement",
       "Wakefulness",
-      "Mindfulness",
       "Focus enhancement",
       "Motivation enhancement",
       "Memory enhancement"
     ],
     "neutral": [
+      "Stimulation - Pramiracetam produces a subtle form of stimulation comparable to that of caffeine.",
+      "Mindfulness",
       "Acuity enhancement",
       "Thought connectivity",
-      "Dream potentiation"
+      "Dream potentiation",
+      "Anxiety suppression"
     ],
     "negative": [
       "Headaches",
-      "Emotion suppression - Most prominent among its effects is its ability to bring the user to a mellow or emotionally dulled state. In comparison to other substances such as quetiapine or benzodiazepines, it manifests itself lucidly, rather than invoking carelessness or dulling thought.",
-      "Anxiety suppression"
+      "Emotion suppression - Most prominent among its effects is its ability to bring the user to a mellow or emotionally dulled state. In comparison to other substances such as quetiapine or benzodiazepines, it manifests itself lucidly, rather than invoking carelessness or dulling thought."
     ]
   },
   "routeData": {

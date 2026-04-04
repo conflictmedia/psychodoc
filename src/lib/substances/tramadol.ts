@@ -26,26 +26,27 @@ export const tramadol: Substance =
   "effects": {
     "positive": [
       "Physical euphoria - Tramadol is considered as less intense in its physical euphoria when compared with that of morphine or heroin.  The sensation itself can be described as extreme feelings of intense physical comfort, warmth, love and bliss.",
-      "Itchiness - Itchiness is comparably greater than other opioids due to higher amounts of histamine release.",
       "Cognitive euphoria - This particular substance can be considered as less intense in its cognitive euphoria when compared with that of morphine or diacetylmorphine (heroin). The sensation itself can be described as powerful and overwhelming feeling of emotional bliss, contentment, and happiness.",
       "Empathy, affection and sociability enhancement",
       "Motivation enhancement",
       "Increased music appreciation Music may sound more immersive when under the influence of tramadol.",
-      "Wakefulness"
+      "Wakefulness",
+      "Pain relief"
     ],
     "neutral": [
+      "Itchiness - Itchiness is comparably greater than other opioids due to higher amounts of histamine release.",
       "Sedation & Stimulation - At lower to common doses, tramadol is considerably more, and highly stimulating than traditional opiates like codeine and heroin due to its action as a norepinephrine reuptake inhibitor. Higher doses are marked by sedation and lethargy characteristic of traditional opiates.",
-      "Pain relief",
-      "Constipation",
       "Pupil constriction",
+      "Thought acceleration",
+      "Dream potentiation",
+      "Anxiety suppression"
+    ],
+    "negative": [
+      "Constipation",
       "Decreased libido",
       "Seizure",
       "Restless legs",
-      "Thought acceleration",
       "Compulsive redosing",
-      "Dream potentiation"
-    ],
-    "negative": [
       "Cough suppression",
       "Dehydration - Tramadol can produce significant dehydration, particularly with higher doses. Users are advised to drink water throughout the experience to help mitigate the comedown and side effects like headaches.",
       "Difficulty urinating",
@@ -55,9 +56,8 @@ export const tramadol: Substance =
       "Teeth grinding - This effect typically occurs only at lower dosages where the stimulation is more pronounced, this is likely due to its action as a serotonin reuptake inhibitor.",
       "Headaches - Headaches seem to occur more frequently on tramadol than other opiates, although they don't occur for everyone. The underlying cause is unclear, although it may be related to its SNRI properties.",
       "Disinhibition",
-      "Anxiety suppression",
       "Anxiety - While tramadol has a greater tendency to suppress anxiety, it can also potentially cause it under certain conditions. This effect can possibly be attributed to the noradrenergic properties of this substance.",
-      "Irritability - While opioids are well known for their ability to improve mood, they can also have the paradoxical effect of increasing the user's sensitivity to irritable stimuli. This can manifest as aloofness and sudden outbursts of anger and aggression (colloquially known as \"opiate rage\"). It appears to occur more frequently during the comedown of the experience and/or with heavy use. Tramadol's noradrenergic properties may also have a part in this effect."
+      "Irritability - While opioids are well known for their ability to improve mood, they can also have the paradoxical effect of increasing the user's sensitivity to irritable stimuli. This can manifest as aloofness and sudden outbursts of anger and aggression (colloquially known as \\\"opiate rage\\\"). It appears to occur more frequently during the comedown of the experience and/or with heavy use. Tramadol's noradrenergic properties may also have a part in this effect."
     ]
   },
   "routeData": {
