@@ -1,5 +1,6 @@
 'use client'
 
+import { formatDoseAmount } from '@/lib/utils'
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { format, addMinutes } from 'date-fns'
 import {
@@ -339,7 +340,13 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         >
                           {rg.route}
                           <span className="opacity-40 font-normal">·</span>
-                          {rg.uniformUnit ? `${rg.totalAmount} ${rg.unit}` : `${rg.doses.length}×`}
+                          {(() => {
+                            if (rg.uniformUnit) {
+                              const formatted = formatDoseAmount(rg.totalAmount, rg.unit)
+                              return `${formatted.amount} ${formatted.unit}`
+                            }
+                            return `${rg.doses.length}×`
+                          })()}
                           {timeLeft && (
                             <>
                               <span className="opacity-40 font-normal">·</span>
@@ -386,7 +393,12 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                                   style={isFocused ? { ringColor: palette.stroke } : undefined}
                                   title="Click to highlight on graph"
                                 >
-                                  <span className="font-medium text-foreground">{d.amount} {d.unit}</span>
+                                  <span className="font-medium text-foreground">
+                                    {(() => {
+                                      const formatted = formatDoseAmount(d.amount, d.unit)
+                                      return `${formatted.amount} ${formatted.unit}`
+                                    })()}
+                                  </span>                                  <span className="font-medium text-foreground">{d.amount} {d.unit}</span>
                                   <span className="text-muted-foreground">@ {format(d.doseTime, 'h:mm a')}</span>
                                   <span className={`font-medium ${dc.text}`}>
                                     {d.status.phase === 'not_started' ? 'upcoming'
