@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { format } from 'date-fns'
 import {
   Dialog,
@@ -24,11 +24,13 @@ import {
 } from '@/components/ui/select'
 import { Textarea } from '@/components/ui/textarea'
 import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
-import { Plus, Loader2 } from 'lucide-react'
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
+import { Plus, Loader2, AlertTriangle } from 'lucide-react'
 import { substances } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
 import { useDoseStore } from '@/store/dose-store'
 import { DoseLog } from '@/types'
+import { calculatePhaseTimings, getPhaseStatus } from '@/components/dose-timeline/dose-timeline-utils'
 
 interface DoseLoggerModalProps {
   onLogCreated?: () => void
@@ -76,12 +78,12 @@ export function DoseLoggerModal({
   preselectedCategory,
   preselectedRoute,
 }: DoseLoggerModalProps) {
-  const [open, setOpen] = useState(false)
+  const[open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
 
-  // Zustand Store
-  const { addDose } = useDoseStore()
+  // 2. Extract doses from the store
+  const { doses, addDose } = useDoseStore()
 
   const [substanceId, setSubstanceId] = useState(preselectedSubstanceId || '')
   const [substanceName, setSubstanceName] = useState(preselectedSubstanceName || '')
@@ -122,6 +124,80 @@ export function DoseLoggerModal({
   }, [preselectedSubstanceId, preselectedSubstanceName, preselectedCategory, preselectedRoute])
 
   const selectedSubstance = substances.find(s => s.id === substanceId)
+
+  const activeDoses = useMemo(() => {
+    return doses.filter(dose => {
+      if (!dose.duration) return false;
+      const timings = calculatePhaseTimings(dose.duration);
+      const status = getPhaseStatus(new Date(dose.timestamp), timings);
+      return status.phase !== 'ended';
+    });
+  }, [doses]);
+
+  const interactingSubstances = useMemo(() => {
+    if (!selectedSubstance) return[];
+    
+    const interactions = new Set<string>();
+    const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    
+    for (const dose of activeDoses) {
+      if (dose.substanceId === selectedSubstance.id) continue;
+      
+      const activeSubstance = substances.find(s => s.id === dose.substanceId || s.name === dose.substanceName);
+      
+      if (!activeSubstance) {
+        // Fallback for custom active substances
+        const activeNameLower = dose.substanceName.toLowerCase();
+        const selectedInteractsWithActive = selectedSubstance.interactions?.some(i => {
+          const iLower = i.toLowerCase();
+          try {
+            return new RegExp(`\\b${escapeRegExp(activeNameLower)}\\b`, 'i').test(iLower);
+          } catch {
+            return iLower.includes(activeNameLower);
+          }
+        });
+        if (selectedInteractsWithActive) {
+          interactions.add(dose.substanceName);
+        }
+        continue;
+      }
+      
+      const getKeywords = (sub: any) =>[
+        sub.name, sub.class, ...(sub.categories || []), ...(sub.commonNames ||[]), ...(sub.aliases ||[])
+      ].filter(Boolean).map((s: string) => s.toLowerCase()).filter((s: string) => s !== 'other' && s.length > 2);
+      
+      const activeKeywords = getKeywords(activeSubstance);
+      const selectedKeywords = getKeywords(selectedSubstance);
+      
+      const selectedInteractsWithActive = selectedSubstance.interactions?.some(i => {
+        const iLower = i.toLowerCase();
+        return activeKeywords.some(k => {
+          try {
+            return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(iLower);
+          } catch {
+            return iLower.includes(k);
+          }
+        });
+      });
+      
+      const activeInteractsWithSelected = activeSubstance.interactions?.some(i => {
+        const iLower = i.toLowerCase();
+        return selectedKeywords.some(k => {
+          try {
+            return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(iLower);
+          } catch {
+            return iLower.includes(k);
+          }
+        });
+      });
+      
+      if (selectedInteractsWithActive || activeInteractsWithSelected) {
+        interactions.add(activeSubstance.name);
+      }
+    }
+    
+    return Array.from(interactions);
+  }, [selectedSubstance, activeDoses]);
 
   const substanceOptions: ComboboxOption[] = substances.map(s => ({
     value: s.id,
@@ -271,6 +347,17 @@ export function DoseLoggerModal({
               allowCustom={true}
             />
           </div>
+
+          {interactingSubstances.length > 0 && (
+            <Alert variant="destructive" className="bg-destructive/10 text-destructive border-destructive/20">
+              <AlertTriangle className="h-4 w-4" />
+              <AlertTitle>Potential Interaction Warning</AlertTitle>
+              <AlertDescription>
+                This substance may interact with your currently active dose(s) of: <strong>{interactingSubstances.join(', ')}</strong>. 
+                Please exercise caution and research potential interactions.
+              </AlertDescription>
+            </Alert>
+          )}
 
           <div className="grid grid-cols-2 gap-4">
             <div className="grid gap-2">

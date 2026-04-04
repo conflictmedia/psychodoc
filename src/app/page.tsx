@@ -1,7 +1,8 @@
 'use client'
 
-import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import React, { useState, useMemo, useEffect, useRef, useCallback, Suspense } from 'react'
 import Image from 'next/image'
+import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import {
   Search,
   X,
@@ -1009,7 +1010,10 @@ function SubstanceDetail({
 
 // ─── ROOT COMPONENT ───────────────────────────────────────────────────────────
 
-export default function Home() {
+function HomeContent() {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+  const pathname = usePathname()
   const [selectedCategory, setSelectedCategory] = useState<SubstanceCategory | 'all'>('all')
   const [selectedSubstance, setSelectedSubstance] = useState<Substance | null>(null)
   const [selectedRoute, setSelectedRoute] = useState<string | null>(null)
@@ -1020,6 +1024,60 @@ export default function Home() {
   // Mobile bottom nav
   const [mobileTab, setMobileTab] = useState<MobileTab>('substances')
   const [doseRefreshTrigger, setDoseRefreshTrigger] = useState(0)
+
+  // Track the last processed substance ID from URL to avoid re-processing same ID
+  const lastProcessedSubstanceRef = useRef<string | null>(null)
+
+  // Handle URL query parameters (?substance=<id>&view=<view>)
+  useEffect(() => {
+    const substanceId = searchParams.get('substance')
+    const viewParam = searchParams.get('view')
+    
+    // Handle view parameter for desktop and mobile
+    if (viewParam) {
+      if (viewParam === 'dose-log') {
+        setDesktopView('dose-log')
+        setMobileTab('timeline')
+      } else if (viewParam === 'timeline') {
+        setDesktopView('dose-log')
+        setMobileTab('timeline')
+      } else if (viewParam === 'history') {
+        setDesktopView('dose-log')
+        setMobileTab('history')
+      } else if (viewParam === 'substances') {
+        setDesktopView('substances')
+        setMobileTab('substances')
+      }
+    }
+    
+    // Only process substance if it's different from what we last processed
+    if (substanceId && substanceId !== lastProcessedSubstanceRef.current) {
+      const found = substances.find((s) => s.id === substanceId)
+      if (found) {
+        setSelectedSubstance(found)
+        lastProcessedSubstanceRef.current = substanceId
+      }
+    }
+    
+    // Reset when URL no longer has substance param
+    if (!substanceId) {
+      lastProcessedSubstanceRef.current = null
+    }
+  }, [searchParams])
+
+  // Navigate back from substance detail, clearing the URL
+  const handleBackFromDetail = useCallback(() => {
+    setSelectedSubstance(null)
+    lastProcessedSubstanceRef.current = null
+    
+    // Clear the URL - go back to current view or base path
+    const viewParam = searchParams.get('view')
+    if (viewParam) {
+      router.replace(`${pathname}?view=${viewParam}`)
+    } else {
+      router.replace(pathname)
+    }
+  }, [searchParams, router, pathname])
 
   const filteredSubstances = useMemo(() => {
     let result = substances
@@ -1059,7 +1117,7 @@ export default function Home() {
       <>
         <SubstanceDetail
           substance={selectedSubstance}
-          onBack={() => setSelectedSubstance(null)}
+          onBack={handleBackFromDetail}
           onDoseLogged={handleDoseLogged}
         />
         {/* Mobile bottom nav stays visible on detail */}
@@ -1068,6 +1126,15 @@ export default function Home() {
           onChange={(tab) => {
             setSelectedSubstance(null)
             setMobileTab(tab)
+            lastProcessedSubstanceRef.current = null
+            // Sync desktop view and update URL
+            if (tab === 'substances') {
+              setDesktopView('substances')
+              router.replace(pathname)
+            } else {
+              setDesktopView('dose-log')
+              router.replace(`${pathname}?view=${tab}`)
+            }
           }}
           renderLogTrigger={(btn) => (
             <DoseLoggerModal
@@ -1137,7 +1204,11 @@ export default function Home() {
               <Button
                 variant={desktopView === 'substances' && selectedCategory === 'all' ? 'secondary' : 'ghost'}
                 className="w-full justify-start gap-2"
-                onClick={() => { setDesktopView('substances'); setSelectedCategory('all') }}
+                onClick={() => { 
+                  setDesktopView('substances')
+                  setSelectedCategory('all')
+                  router.replace(pathname)
+                }}
               >
                 <Info className="h-4 w-4" />
                 All Substances
@@ -1146,7 +1217,10 @@ export default function Home() {
               <Button
                 variant={desktopView === 'dose-log' ? 'secondary' : 'ghost'}
                 className="w-full justify-start gap-2"
-                onClick={() => setDesktopView('dose-log')}
+                onClick={() => {
+                  setDesktopView('dose-log')
+                  router.replace(`${pathname}?view=dose-log`)
+                }}
               >
                 <Activity className="h-4 w-4" />
                 Dose Log
@@ -1160,7 +1234,11 @@ export default function Home() {
                     key={category.id}
                     variant={desktopView === 'substances' && selectedCategory === category.id ? 'secondary' : 'ghost'}
                     className="w-full justify-start gap-2"
-                    onClick={() => { setDesktopView('substances'); setSelectedCategory(category.id) }}
+                    onClick={() => { 
+                      setDesktopView('substances')
+                      setSelectedCategory(category.id)
+                      router.replace(pathname)
+                    }}
                   >
                     <Icon className="h-4 w-4" />
                     <span className="truncate">{category.name}</span>
@@ -1333,7 +1411,17 @@ export default function Home() {
                   <Card
                     key={substance.id}
                     className="cursor-pointer hover:border-primary/50 transition-colors group"
-                    onClick={() => setSelectedSubstance(substance)}
+                    onClick={() => {
+                      setSelectedSubstance(substance)
+                      lastProcessedSubstanceRef.current = substance.id
+                      // Preserve view param if exists, otherwise just substance
+                      const viewParam = searchParams.get('view')
+                      if (viewParam) {
+                        router.replace(`${pathname}?substance=${substance.id}&view=${viewParam}`)
+                      } else {
+                        router.replace(`${pathname}?substance=${substance.id}`)
+                      }
+                    }}
                   >
                     <CardHeader className="pb-3">
                       <div className="flex items-start justify-between">
@@ -1406,7 +1494,11 @@ export default function Home() {
           {/* ─ Mobile: Substances tab ─ */}
           <div className={`${mobileTab === 'substances' ? 'block md:hidden' : 'hidden'} pb-24`}>
             <div className="px-4 pt-3 pb-1">
-              <CategoryChipRow selected={selectedCategory} onChange={setSelectedCategory} />
+              <CategoryChipRow selected={selectedCategory} onChange={(cat) => {
+              setSelectedCategory(cat)
+              // Clear URL when selecting a category
+              router.replace(pathname)
+            }} />
             </div>
 
             {selectedCategory !== 'all' && (
@@ -1424,7 +1516,17 @@ export default function Home() {
                 return (
                   <button
                     key={substance.id}
-                    onClick={() => setSelectedSubstance(substance)}
+                    onClick={() => {
+                      setSelectedSubstance(substance)
+                      lastProcessedSubstanceRef.current = substance.id
+                      // Preserve view param if exists, otherwise just substance
+                      const viewParam = searchParams.get('view')
+                      if (viewParam) {
+                        router.replace(`${pathname}?substance=${substance.id}&view=${viewParam}`)
+                      } else {
+                        router.replace(`${pathname}?substance=${substance.id}`)
+                      }
+                    }}
                     className="w-full text-left flex items-start gap-3 p-4 rounded-2xl border border-border bg-card hover:border-primary/40 active:scale-[0.99] transition-all"
                   >
                     {primary && (
@@ -1487,17 +1589,46 @@ export default function Home() {
       {/* ── Mobile bottom nav ──────────────────────────────────────────────── */}
       <MobileBottomNav
         active={mobileTab}
-        onChange={setMobileTab}
+        onChange={(tab) => {
+          setMobileTab(tab)
+          // Sync desktop view
+          if (tab === 'substances') {
+            setDesktopView('substances')
+            router.replace(pathname)
+          } else {
+            setDesktopView('dose-log')
+            router.replace(`${pathname}?view=${tab}`)
+          }
+        }}
         renderLogTrigger={(btn) => (
           <DoseLoggerModal
             onLogCreated={() => {
               handleDoseLogged()
               setMobileTab('timeline')
+              setDesktopView('dose-log')
+              router.replace(`${pathname}?view=timeline`)
             }}
             trigger={btn}
           />
         )}
       />
     </div>
+  )
+}
+
+// ─── EXPORT WITH SUSPENSE BOUNDARY ─────────────────────────────────────────────
+
+export default function Home() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="flex flex-col items-center gap-4">
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent" />
+          <p className="text-sm text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    }>
+      <HomeContent />
+    </Suspense>
   )
 }

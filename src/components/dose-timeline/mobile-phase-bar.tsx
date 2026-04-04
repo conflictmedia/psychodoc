@@ -2,11 +2,13 @@
 
 import { format } from 'date-fns'
 import { Clock, Layers } from 'lucide-react'
+import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { SubstanceGroup } from './dose-timeline-types'
 import { phaseColors, phaseIcons, ROUTE_PALETTE, MOBILE_PHASES } from './dose-timeline-constants'
 import { formatMinutes, phaseStart, phaseEnd, isPhasePast, formatPhaseName } from './dose-timeline-utils'
 import { formatDoseAmount } from '@/lib/utils'
+import { substances } from '@/lib/substances/index'
 
 interface MobilePhaseBarProps {
   group: SubstanceGroup
@@ -21,6 +23,9 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
   const colors      = phaseColors[dose.status.phase]
   const PhaseIcon   = phaseIcons[dose.status.phase]
   const isMultiRoute = group.routes.length > 1
+  
+  // Check if it's a known substance
+  const knownSubstance = substances.find(s => s.id === dose.substanceId || s.name.toLowerCase() === group.substanceName.toLowerCase());
 
   return (
     <div className="rounded-2xl border border-border bg-card p-4 space-y-3">
@@ -28,7 +33,13 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
           <div className="flex items-center gap-1.5 font-semibold text-base">
-            {group.substanceName}
+            {knownSubstance ? (
+              <Link href={`/substances/${knownSubstance.id}`} className="hover:underline hover:text-primary transition-colors">
+                {group.substanceName}
+              </Link>
+            ) : (
+              <span>{group.substanceName}</span>
+            )}
             {isMultiRoute && (
               <span className="inline-flex items-center gap-0.5 text-xs font-medium text-muted-foreground bg-muted/60 px-1.5 py-0.5 rounded-full">
                 <Layers className="h-3 w-3" />

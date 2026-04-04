@@ -31,6 +31,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from '@/components/ui/dialog'
+import Link from 'next/link'
 
 
 
@@ -50,7 +51,7 @@ interface ImportPreview {
 
 function findSubstanceMatch(name: string): { name: string; categories: string[] } | null {
   const searchName = name.toLowerCase().trim()
-  
+
   for (const substance of substances) {
     // Check main name
     if (substance.name.toLowerCase() === searchName) {
@@ -59,7 +60,7 @@ function findSubstanceMatch(name: string): { name: string; categories: string[] 
         categories: substance.categories
       }
     }
-    
+
     // Check ID (for exact matches like "mdma" -> "MDMA")
     if (substance.id.toLowerCase() === searchName) {
       return {
@@ -67,7 +68,7 @@ function findSubstanceMatch(name: string): { name: string; categories: string[] 
         categories: substance.categories
       }
     }
-    
+
     // Check common names
     if (substance.commonNames?.some(cn => cn.toLowerCase() === searchName)) {
       return {
@@ -75,7 +76,7 @@ function findSubstanceMatch(name: string): { name: string; categories: string[] 
         categories: substance.categories
       }
     }
-    
+
     // Check aliases
     if (substance.aliases?.some(alias => alias.toLowerCase() === searchName)) {
       return {
@@ -84,7 +85,7 @@ function findSubstanceMatch(name: string): { name: string; categories: string[] 
       }
     }
   }
-  
+
   return null
 }
 
@@ -140,7 +141,7 @@ function parseJSON(text: string): ImportResult {
     return { ok: false, error: 'File is not valid JSON.' }
   }
 
-    const rawDoses: unknown[] = Array.isArray(parsed)
+  const rawDoses: unknown[] = Array.isArray(parsed)
     ? parsed
     : Array.isArray((parsed as Record<string, unknown>)?.doses)
       ? ((parsed as Record<string, unknown>).doses as unknown[])
@@ -303,20 +304,20 @@ function parsePsyloJSON(text: string): ImportResult {
       return { ok: false, error: `${rowLabel}: "timestamp" is not a valid date.` }
     }
 
-    
-    
+
+
     const id = raw.id != null
       ? `psylo-${raw.id}`
       : crypto.randomUUID()
 
-    
+
     const notesArr = Array.isArray(raw.notes) ? raw.notes as Array<{ text?: string }> : []
     const notesStr = notesArr
       .map((n) => (typeof n.text === 'string' ? n.text.trim() : ''))
       .filter(Boolean)
       .join(' | ') || undefined
 
-    
+
     let duration: DoseLog['duration'] = undefined
     if (raw.onsetAt || raw.peakAt || raw.offsetAt) {
       const onset = raw.onsetAt ? new Date(raw.onsetAt as string) : null
@@ -374,7 +375,7 @@ export function DoseHistory() {
   const [showSyncPanel, setShowSyncPanel] = useState(false)
   const [importPreview, setImportPreview] = useState<ImportPreview | null>(null)
   const [isImporting, setIsImporting] = useState(false)
-  
+
   // Delete all state
   const [showDeleteAllDialog, setShowDeleteAllDialog] = useState(false)
   const [deleteConfirmText, setDeleteConfirmText] = useState('')
@@ -609,9 +610,9 @@ export function DoseHistory() {
       const date = new Date(dose.timestamp)
       const key = isToday(date) ? 'Today'
         : isYesterday(date) ? 'Yesterday'
-        : isThisWeek(date) ? 'This Week'
-        : isThisMonth(date) ? 'This Month'
-        : format(date, 'MMMM yyyy')
+          : isThisWeek(date) ? 'This Week'
+            : isThisMonth(date) ? 'This Month'
+              : format(date, 'MMMM yyyy')
       if (!groups[key]) groups[key] = []
       groups[key].push(dose)
     })
@@ -777,53 +778,66 @@ export function DoseHistory() {
             </div>
           ) : (
             <ScrollArea className="h-[400px] pr-4">
-              {Object.entries(groupDosesByDate(doses)).map(([dateGroup, groupDoses]) => (
-                <div key={dateGroup} className="mb-6">
-                  <h4 className="text-sm font-medium text-muted-foreground mb-3 sticky top-0 bg-background py-1 z-10 text-center">
-                    {dateGroup}
-                  </h4>
-                  <div className="space-y-3">
-                    {groupDoses.map((dose) => (
-                      <div key={dose.id} className="rounded-lg border p-3 hover:bg-muted/50 transition-colors">
-                        <div className="flex items-start justify-between gap-2">
-                          <div className="flex-1 min-w-0">
-                            <div className="flex items-center gap-2 flex-wrap">
-                              <span className="font-medium">{dose.substanceName}</span>
-                              {(dose.categories || []).map((cat) => (
-                                <Badge key={cat} variant="outline" className={getCategoryColor(cat)}>{cat}</Badge>
-                              ))}
-                            </div>
-                            <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-1.5 text-sm text-muted-foreground">
-                              <span className="flex items-center gap-1">
-                                <Droplets className="h-3 w-3 shrink-0" />
-                                {(() => {
-                                  const formatted = formatDoseAmount(dose.amount, dose.unit)
-                                  return `${formatted.amount} ${formatted.unit}`
-                                })()}
-                              </span>
-                              <span className="flex items-center gap-1">
-                                <Clock className="h-3 w-3 shrink-0" />{format(new Date(dose.timestamp), 'h:mm a')}
-                              </span>
-                              <span>{dose.route}</span>
+              {Object.entries(groupDosesByDate(doses)).map(([dateGroup, groupDoses]) => {
+                return (
+                  <div key={dateGroup} className="mb-6">
+                    <h4 className="text-sm font-medium text-muted-foreground mb-3 sticky top-0 bg-background py-1 z-10 text-center">
+                      {dateGroup}
+                    </h4>
+                    <div className="space-y-3">
+                      {groupDoses.map((dose) => {
+                        // Find if it's a known substance to link to its page
+                        const knownSubstance = substances.find(s => s.id === dose.substanceId || s.name.toLowerCase() === dose.substanceName.toLowerCase())
+
+                        return (
+                          <div key={dose.id} className="rounded-lg border p-3 hover:bg-muted/50 transition-colors">
+                            <div className="flex items-start justify-between gap-2">
+                              <div className="flex-1 min-w-0">
+                                <div className="flex items-center gap-2 flex-wrap">
+                                  {knownSubstance ? (
+                                    <Link href={`/?substance=${knownSubstance.id}`} className="font-medium hover:underline hover:text-primary transition-colors">
+                                      {dose.substanceName}
+                                    </Link>
+                                  ) : (
+                                    <span className="font-medium">{dose.substanceName}</span>
+                                  )}
+                                  {(dose.categories || []).map((cat) => (
+                                    <Badge key={cat} variant="outline" className={getCategoryColor(cat)}>{cat}</Badge>
+                                  ))}
+                                </div>
+                                <div className="flex flex-wrap items-center gap-x-3 gap-y-1.5 mt-1.5 text-sm text-muted-foreground">
+                                  <span className="flex items-center gap-1">
+                                    <Droplets className="h-3 w-3 shrink-0" />
+                                    {(() => {
+                                      const formatted = formatDoseAmount(dose.amount, dose.unit)
+                                      return `${formatted.amount} ${formatted.unit}`
+                                    })()}
+                                  </span>
+                                  <span className="flex items-center gap-1">
+                                    <Clock className="h-3 w-3 shrink-0" />{format(new Date(dose.timestamp), 'h:mm a')}
+                                  </span>
+                                  <span>{dose.route}</span>
+                                </div>
+                              </div>
+                              <div className="flex gap-1 shrink-0">
+                                <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => setEditingDose(dose)}>
+                                  <Pencil className="h-4 w-4" />
+                                </Button>
+                                <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleRedose(dose)} disabled={redosing === dose.id}>
+                                  {redosing === dose.id ? <Loader2 className="animate-spin h-4 w-4" /> : <RotateCcw className="h-4 w-4" />}
+                                </Button>
+                                <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive" onClick={() => handleDelete(dose.id)} disabled={deleting === dose.id}>
+                                  {deleting === dose.id ? <Loader2 className="animate-spin h-4 w-4" /> : <Trash2 className="h-4 w-4" />}
+                                </Button>
+                              </div>
                             </div>
                           </div>
-                          <div className="flex gap-1 shrink-0">
-                            <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => setEditingDose(dose)}>
-                              <Pencil className="h-4 w-4" />
-                            </Button>
-                            <Button variant="ghost" size="icon" className="h-8 w-8" onClick={() => handleRedose(dose)} disabled={redosing === dose.id}>
-                              {redosing === dose.id ? <Loader2 className="animate-spin h-4 w-4" /> : <RotateCcw className="h-4 w-4" />}
-                            </Button>
-                            <Button variant="ghost" size="icon" className="h-8 w-8 text-destructive" onClick={() => handleDelete(dose.id)} disabled={deleting === dose.id}>
-                              {deleting === dose.id ? <Loader2 className="animate-spin h-4 w-4" /> : <Trash2 className="h-4 w-4" />}
-                            </Button>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                        )
+                      })}
+                    </div>
                   </div>
-                </div>
-              ))}
+                )
+              })}
             </ScrollArea>
           )}
         </CardContent>
@@ -838,7 +852,7 @@ export function DoseHistory() {
         />
       )}
 
-   
+
       <Dialog open={!!importPreview} onOpenChange={(open) => !open && setImportPreview(null)}>
         <DialogContent className="max-w-md">
           <DialogHeader>
@@ -873,7 +887,7 @@ export function DoseHistory() {
                 </div>
               </div>
 
-              
+
               {importPreview.duplicateCount > 0 && (
                 <div className="rounded-lg border border-amber-500/30 bg-amber-500/10 p-3 flex gap-2">
                   <AlertTriangle className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" />
@@ -944,7 +958,7 @@ export function DoseHistory() {
                     You are about to delete all your dose history
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    This will permanently remove {doses.length} dose log{doses.length !== 1 ? 's' : ''} from your history. 
+                    This will permanently remove {doses.length} dose log{doses.length !== 1 ? 's' : ''} from your history.
                     Consider exporting your data first if you want to keep a backup.
                   </p>
                 </div>

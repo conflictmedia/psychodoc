@@ -55,7 +55,8 @@ import {
 } from './dose-timeline/dose-timeline-utils'
 import { DoseMarker } from './dose-timeline/dose-marker'
 import { MobilePhaseBar } from './dose-timeline/mobile-phase-bar'
-
+import Link from 'next/link'
+import { substances } from '@/lib/substances/index'
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
 interface ActiveDosesTimelineProps {
@@ -318,6 +319,9 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
 
             const allActive     = group.routes.some((r) => r.primary.status.phase !== 'ended')
             const selectedRoute = selectedRoutes[group.key] ?? null
+            
+            // Check if it's a known substance
+            const knownSubstance = substances.find(s => s.id === dose.substanceId || s.name.toLowerCase() === group.substanceName.toLowerCase());
 
             return (
               <div
@@ -327,9 +331,16 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                 {/* ── Header ───────────────────────────────────────────── */}
                 <div className="flex items-center justify-between flex-wrap gap-2">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="font-semibold text-foreground">{group.substanceName}</span>
+                    {knownSubstance ? (
+                      <Link href={`/?substance=${knownSubstance.id}`} className="font-semibold text-foreground hover:underline hover:text-primary transition-colors">
+                        {group.substanceName}
+                      </Link>
+                    ) : (
+                      <span className="font-semibold text-foreground">{group.substanceName}</span>
+                    )}
                     {isMultiRoute && (
                       <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground bg-muted/60 px-2 py-0.5 rounded-full border border-border/50">
+
                         <Layers className="h-3 w-3" />
                         {group.routes.length} routes
                         {selectedRoute && (
