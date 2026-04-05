@@ -4,110 +4,51 @@ import { formatDoseAmount } from '@/lib/utils'
 
 /** Format a unit with proper singular/plural based on amount */
 function formatUnit(unit: string, amount: number): string {
-  // Units that don't change (abbreviations)
   const invariantUnits = ['mg', 'g', 'μg', 'ml', 'mL']
-  if (invariantUnits.includes(unit)) {
-    return unit
-  }
-
-  // Singular if exactly 1 OR fractional amount less than 1 (e.g., 0.5 tab, 0.25 capsule)
+  if (invariantUnits.includes(unit)) return unit
   const isSingular = amount === 1 || (amount > 0 && amount < 1)
-
-  // Pluralization rules (singular -> plural)
   const pluralRules: Record<string, string> = {
-    'drop': 'drops',
-    'puff': 'puffs',
-    'tab': 'tabs',
-    'capsule': 'capsules',
-    'hit': 'hits',
-    'line': 'lines',
-    'drink': 'drinks',
-    'shot': 'shots',
-    'joint': 'joints',
-    'blunt': 'blunts',
-    'bowl': 'bowls',
-    'blinker': 'blinkers',
+    'drop': 'drops', 'puff': 'puffs', 'tab': 'tabs', 'capsule': 'capsules',
+    'hit': 'hits', 'line': 'lines', 'drink': 'drinks', 'shot': 'shots',
+    'joint': 'joints', 'blunt': 'blunts', 'bowl': 'bowls', 'blinker': 'blinkers',
   }
-
-  // Reverse mapping for backwards compatibility (plural -> singular)
   const singularRules: Record<string, string> = Object.fromEntries(
     Object.entries(pluralRules).map(([sing, plur]) => [plur, sing])
   )
-
-  // If the unit is already plural and we need singular
-  if (isSingular && singularRules[unit]) {
-    return singularRules[unit]
-  }
-
-  // If we have a known singular form and need plural
-  if (!isSingular && pluralRules[unit]) {
-    return pluralRules[unit]
-  }
-
-  // If the unit is already in correct form or unknown
-  // For unknown units, just add 's' if plural needed
-  if (!isSingular && !pluralRules[unit] && !singularRules[unit]) {
-    return unit + 's'
-  }
-
+  if (isSingular && singularRules[unit]) return singularRules[unit]
+  if (!isSingular && pluralRules[unit]) return pluralRules[unit]
+  if (!isSingular && !pluralRules[unit] && !singularRules[unit]) return unit + 's'
   return unit
 }
+
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { format, addMinutes } from 'date-fns'
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
+  Card, CardContent, CardDescription, CardHeader, CardTitle,
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import {
-  Activity,
-  Timer,
-  Clock,
-  Loader2,
-  Info,
-  ChevronDown,
-  ChevronUp,
-  Layers,
+  Activity, Timer, Clock, Loader2, Info, ChevronDown, ChevronUp, Layers,
 } from 'lucide-react'
 import { categoryColors } from '@/lib/categories'
 import { useDoseStore } from '@/store/dose-store'
 
 import { EnrichedDose, RouteGroup, SubstanceGroup, TooltipData } from './dose-timeline/dose-timeline-types'
 import {
-  phaseColors,
-  phaseIcons,
-  phaseDescriptions,
-  ROUTE_PALETTE,
-  SVG_W,
-  SVG_H,
-  PL,
-  PT,
-  GW,
-  GH,
-  PHASE_BANDS,
-  ENDED_DOSE_RETENTION_MINS,
+  phaseColors, phaseIcons, phaseDescriptions, ROUTE_PALETTE,
+  SVG_W, SVG_H, PL, PT, GW, GH, PHASE_BANDS, ENDED_DOSE_RETENTION_MINS,
 } from './dose-timeline/dose-timeline-constants'
 import {
-  calculatePhaseTimings,
-  getPhaseStatus,
-  formatMinutes,
-  formatPhaseName,
-  getDoseCategories,
-  intensityAt,
-  phaseNameAt,
-  toX,
-  areaPath,
-  curvePath,
-  buildTimeMarkers,
-  getPhaseBandRanges,
+  calculatePhaseTimings, getPhaseStatus, formatMinutes, formatPhaseName,
+  getDoseCategories, intensityAt, phaseNameAt, toX, areaPath, curvePath,
+  buildTimeMarkers, getPhaseBandRanges,
 } from './dose-timeline/dose-timeline-utils'
 import { DoseMarker } from './dose-timeline/dose-marker'
 import { MobilePhaseBar } from './dose-timeline/mobile-phase-bar'
+import { EstimatedDurationBadge } from '@/components/estimated-duration-badge'
 import Link from 'next/link'
 import { substances } from '@/lib/substances/index'
+
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 
 interface ActiveDosesTimelineProps {
@@ -122,9 +63,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   const [selectedRoutes, setSelectedRoutes] = useState<Record<string, string | null>>({})
   const [focusedDoseId, setFocusedDoseId]   = useState<string | null>(null)
   const svgRefs    = useRef<Record<string, SVGSVGElement | null>>({})
-  // One RAF ref per group to avoid cross-group cancellation conflicts
   const rafRefs    = useRef<Record<string, number | null>>({})
-  // Focus timeout ref so it can be cleared on unmount
   const focusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
@@ -132,16 +71,12 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     return () => clearInterval(id)
   }, [])
 
-  // Clean up focus timer on unmount
   useEffect(() => {
     return () => {
       if (focusTimerRef.current !== null) clearTimeout(focusTimerRef.current)
     }
   }, [])
 
-  // ── Enrich doses ─────────────────────────────────────────────────────────
-  // Heavy grouping/sorting only depends on `doses`. Status refresh (tick) is
-  // applied in a separate lightweight pass so the group structure stays stable.
   const baseDoses = useMemo(() => {
     return doses
       .filter((d) => d.duration)
@@ -163,7 +98,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
       })
   }, [baseDoses, tick])
 
-  // ── Group by substance, then sub-group by route ───────────────────────────
   const groups = useMemo<SubstanceGroup[]>(() => {
     const substanceMap = new Map<string, EnrichedDose[]>()
     for (const d of enriched) {
@@ -223,19 +157,12 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     })
   }, [enriched])
 
-  // ── SVG mouse interaction ─────────────────────────────────────────────────
-
   const handleMouseMove = useCallback(
     (groupKey: string, e: React.MouseEvent<SVGSVGElement> | React.TouchEvent<SVGSVGElement>, windowDuration: number, windowStart: Date) => {
-      // Cancel any pending RAF for this specific group
       const pendingRaf = rafRefs.current[groupKey]
-      if (pendingRaf !== null && pendingRaf !== undefined) {
-        cancelAnimationFrame(pendingRaf)
-      }
+      if (pendingRaf !== null && pendingRaf !== undefined) cancelAnimationFrame(pendingRaf)
 
-      const clientX = 'touches' in e
-        ? e.touches[0]?.clientX ?? 0
-        : e.clientX
+      const clientX = 'touches' in e ? e.touches[0]?.clientX ?? 0 : e.clientX
       const svgEl = e.currentTarget
 
       rafRefs.current[groupKey] = requestAnimationFrame(() => {
@@ -246,8 +173,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
         const mins     = (progress / 100) * windowDuration
         const group    = groups.find((g) => g.key === groupKey)
 
-        // Find the route whose curve is closest to the cursor's x position —
-        // use that route's timings for the phase label, not always routes[0].
         const hoverMins = mins
         let closestRoute = group?.routes[0]
         if (group) {
@@ -257,10 +182,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
             const offsetMins = (rg.primary.doseTime.getTime() - group.windowStart.getTime()) / 60_000
             const routeMidMins = offsetMins + rg.primary.timings.totalDuration / 2
             const dist = Math.abs(hoverMins - routeMidMins)
-            if (dist < minDist) {
-              minDist = dist
-              closestRoute = rg
-            }
+            if (dist < minDist) { minDist = dist; closestRoute = rg }
           }
         }
         const refTimings = closestRoute?.primary.timings
@@ -286,18 +208,11 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
       cancelAnimationFrame(pendingRaf)
       rafRefs.current[key] = null
     }
-    setTooltips((prev) => {
-      const next = { ...prev }
-      delete next[key]
-      return next
-    })
+    setTooltips((prev) => { const next = { ...prev }; delete next[key]; return next })
   }, [])
 
   const handleRouteClick = useCallback((substanceKey: string, route: string) => {
-    setSelectedRoutes((prev) => ({
-      ...prev,
-      [substanceKey]: prev[substanceKey] === route ? null : route,
-    }))
+    setSelectedRoutes((prev) => ({ ...prev, [substanceKey]: prev[substanceKey] === route ? null : route }))
   }, [])
 
   const handleDoseChipClick = useCallback((doseId: string, substanceKey: string) => {
@@ -308,12 +223,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     focusTimerRef.current = setTimeout(() => setFocusedDoseId(null), 1800)
   }, [])
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
-
   const getCategoryColor = (cat: string) =>
     categoryColors[cat as keyof typeof categoryColors] || 'text-gray-500 bg-gray-500/10 border-gray-500/20'
-
-  // ── Render ────────────────────────────────────────────────────────────────
 
   if (!isLoaded) {
     return (
@@ -362,17 +273,25 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
             const tip          = tooltips[group.key]
             const marks        = buildTimeMarkers(group.windowDuration, group.windowStart)
 
-            // Phase labels + background rects driven by earliest active route
             const refRoute   = group.routes.find((r) => r.primary.status.phase !== 'ended') ?? group.routes[0]
             const refTimings = refRoute.primary.timings
-            // Single pass: combine band fill + label color from PHASE_BANDS constant
             const bandRanges = getPhaseBandRanges(refTimings)
 
             const allActive     = group.routes.some((r) => r.primary.status.phase !== 'ended')
             const selectedRoute = selectedRoutes[group.key] ?? null
-            
-            // Check if it's a known substance
-            const knownSubstance = substances.find(s => s.id === dose.substanceId || s.name.toLowerCase() === group.substanceName.toLowerCase());
+
+            const knownSubstance = substances.find(
+              s => s.id === dose.substanceId || s.name.toLowerCase() === group.substanceName.toLowerCase()
+            )
+
+            const anyEstimated = group.routes.some(rg =>
+              rg.doses.some(d => d.durationIsEstimated)
+            )
+            // Use the first estimated dose's sourceRoute for the badge tooltip
+            const estimatedSourceRoute = group.routes
+              .flatMap(rg => rg.doses)
+              .find(d => d.durationIsEstimated)
+              ?.durationSourceRoute
 
             return (
               <div
@@ -383,15 +302,23 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                 <div className="flex items-center justify-between flex-wrap gap-2">
                   <div className="flex items-center gap-2 flex-wrap">
                     {knownSubstance ? (
-                      <Link href={`/?substance=${knownSubstance.id}`} className="font-semibold text-foreground hover:underline hover:text-primary transition-colors">
+                      <Link
+                        href={`/?substance=${knownSubstance.id}`}
+                        className="font-semibold text-foreground hover:underline hover:text-primary transition-colors"
+                      >
                         {group.substanceName}
                       </Link>
                     ) : (
                       <span className="font-semibold text-foreground">{group.substanceName}</span>
                     )}
+
+                    {/* ── Estimated duration badge ──────────────────────── */}
+                    {anyEstimated && (
+                      <EstimatedDurationBadge sourceRoute={estimatedSourceRoute} />
+                    )}
+
                     {isMultiRoute && (
                       <span className="inline-flex items-center gap-1 text-xs font-medium text-muted-foreground bg-muted/60 px-2 py-0.5 rounded-full border border-border/50">
-
                         <Layers className="h-3 w-3" />
                         {group.routes.length} routes
                         {selectedRoute && (
@@ -415,7 +342,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                     </Badge>
                   </div>
 
-                  {/* Route summary pills — clickable to isolate */}
+                  {/* Route summary pills */}
                   <div className="flex items-center gap-2 flex-wrap">
                     {group.routes.map((rg) => {
                       const palette  = ROUTE_PALETTE[rg.paletteIndex]
@@ -562,16 +489,14 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         </filter>
                       </defs>
 
-                      {/* Phase background bands + labels — single pass over PHASE_BANDS */}
+                      {/* Phase background bands */}
                       <g opacity="0.12">
                         {PHASE_BANDS.map((band, i) => {
                           const { startFrac, endFrac } = bandRanges[i]
                           return (
                             <rect key={band.name}
-                              x={toX(startFrac * 100)}
-                              y={PT}
-                              width={(endFrac - startFrac) * GW}
-                              height={GH}
+                              x={toX(startFrac * 100)} y={PT}
+                              width={(endFrac - startFrac) * GW} height={GH}
                               fill={band.fill}
                             />
                           )
@@ -586,7 +511,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         ))}
                       </g>
 
-                      {/* Phase label strip (top) — same pass over PHASE_BANDS */}
+                      {/* Phase label strip */}
                       {PHASE_BANDS.map((band, i) => {
                         const { startFrac, endFrac } = bandRanges[i]
                         const px = (endFrac - startFrac) * GW
@@ -600,7 +525,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         )
                       })}
 
-                      {/* Per-route area fills (behind curves) */}
+                      {/* Area fills */}
                       {group.routes.map((rg) => {
                         const palette    = ROUTE_PALETTE[rg.paletteIndex]
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
@@ -619,7 +544,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                           })
                       })}
 
-                      {/* Per-route curves */}
+                      {/* Curves */}
                       {group.routes.map((rg) => {
                         const palette    = ROUTE_PALETTE[rg.paletteIndex]
                         const isIsolated = selectedRoute !== null && selectedRoute !== rg.route
@@ -629,11 +554,14 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                             const offsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
                             const curve      = curvePath(d.timings, offsetMins, group.windowDuration)
                             const isPrimary  = d.id === rg.primary.id
+                            // Dashed stroke for estimated durations
+                            const isEstimated = d.durationIsEstimated
                             return (
                               <path key={`curve-${rg.route}-${d.id}`} d={curve}
                                 fill="none"
                                 stroke={palette.stroke}
                                 strokeWidth={selectedRoute === rg.route ? 3 : 2.5}
+                                strokeDasharray={isEstimated ? '8,4' : undefined}
                                 filter={`url(#glow-${group.key}-${rg.paletteIndex})`}
                                 opacity={isIsolated ? 0.15 : isPrimary ? 1 : 0.5}
                                 style={{ transition: 'opacity 0.2s ease' }}
@@ -667,7 +595,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         )
                       })}
 
-                      {/* Time axis labels */}
+                      {/* Time axis */}
                       <g fontSize="10" fill="currentColor" className="text-muted-foreground/60">
                         {marks.map((m, i) => (
                           <text key={i} x={toX(m.progress)} y={SVG_H - 40 + 14} textAnchor="middle">
@@ -676,7 +604,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         ))}
                       </g>
 
-                      {/* Route legend (bottom) — clickable */}
+                      {/* Route legend */}
                       {isMultiRoute && (
                         <g>
                           {group.routes.map((rg, li) => {
@@ -768,6 +696,13 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                             )
                           })}
                         </div>
+                        {/* Estimated duration note in tooltip */}
+                        {anyEstimated && (
+                          <p className="text-[10px] text-amber-400/70 border-t border-border/30 pt-2 flex items-center gap-1">
+                            <span>⚗</span>
+                            Timeline curve is based on interpolated duration data — actual timing may vary.
+                          </p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -833,6 +768,16 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       <Info className="h-3.5 w-3.5 flex-shrink-0" />
                       <span>{phaseDescriptions[dose.status.phase]}</span>
                     </div>
+                    {/* Estimated duration detail in expanded section */}
+                    {anyEstimated && (
+                      <div className="text-xs flex items-start gap-1.5 bg-amber-500/8 border border-amber-500/20 p-2 rounded">
+                        <span className="text-amber-400 shrink-0">⚗</span>
+                        <span className="text-amber-300/80">
+                          Duration interpolated from <span className="font-medium">{estimatedSourceRoute}</span> route data.
+                          Timeline is an estimate — actual phases may differ.
+                        </span>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

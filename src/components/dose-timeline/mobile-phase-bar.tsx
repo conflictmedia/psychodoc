@@ -6,86 +6,50 @@ import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { SubstanceGroup, EnrichedDose } from './dose-timeline-types'
 import {
-  phaseColors,
-  phaseIcons,
-  ROUTE_PALETTE,
-  PHASE_BANDS,
-  MOBILE_SVG_W,
-  MOBILE_SVG_H,
-  MOBILE_PL,
-  MOBILE_PT,
-  MOBILE_GW,
-  MOBILE_GH,
+  phaseColors, phaseIcons, ROUTE_PALETTE, PHASE_BANDS,
+  MOBILE_SVG_W, MOBILE_SVG_H, MOBILE_PL, MOBILE_PT, MOBILE_GW, MOBILE_GH,
 } from './dose-timeline-constants'
 import {
-  formatMinutes,
-  formatPhaseName,
-  intensityAt,
-  getPhaseBandRanges,
-  toMobileX,
-  toMobileY,
-  mobileCurvePath,
-  mobileAreaPath,
+  formatMinutes, formatPhaseName, intensityAt, getPhaseBandRanges,
+  toMobileX, toMobileY, mobileCurvePath, mobileAreaPath,
 } from './dose-timeline-utils'
 import { formatDoseAmount } from '@/lib/utils'
 import { substances } from '@/lib/substances/index'
+import { EstimatedDurationBadge } from '@/components/estimated-duration-badge'
 
 interface MobilePhaseBarProps {
   group: SubstanceGroup
 }
 
-/**
- * Mobile dose marker component for the timeline graph
- */
 function MobileDoseMarker({
-  d,
-  hex,
-  offsetMins,
-  windowDuration,
+  d, hex, offsetMins, windowDuration,
 }: {
   d: EnrichedDose
   hex: string
   offsetMins: number
   windowDuration: number
 }) {
-  // Calculate current position
   const elapsedMins =
-    d.status.phase === 'not_started'
-      ? 0
-      : d.status.phase === 'ended'
-        ? d.timings.totalDuration
-        : d.timings.totalDuration - d.status.totalRemaining
+    d.status.phase === 'not_started' ? 0
+    : d.status.phase === 'ended'     ? d.timings.totalDuration
+    : d.timings.totalDuration - d.status.totalRemaining
   const localProgress = Math.max(0, Math.min(100, (elapsedMins / d.timings.totalDuration) * 100))
-
-  const globalMins = offsetMins + elapsedMins
+  const globalMins     = offsetMins + elapsedMins
   const globalProgress = (globalMins / windowDuration) * 100
-
-  const mx = toMobileX(globalProgress)
-  const my = toMobileY(intensityAt(localProgress, d.timings))
+  const mx     = toMobileX(globalProgress)
+  const my     = toMobileY(intensityAt(localProgress, d.timings))
   const isEnded = d.status.phase === 'ended'
-  const radius = 4
 
   return (
     <g opacity={isEnded ? 0.35 : 1}>
-      {/* Vertical guide line */}
       {!isEnded && (
         <line
-          x1={mx}
-          y1={MOBILE_PT}
-          x2={mx}
-          y2={MOBILE_PT + MOBILE_GH}
-          stroke={hex}
-          strokeWidth={1}
-          strokeDasharray="2,2"
-          opacity={0.3}
+          x1={mx} y1={MOBILE_PT} x2={mx} y2={MOBILE_PT + MOBILE_GH}
+          stroke={hex} strokeWidth={1} strokeDasharray="2,2" opacity={0.3}
         />
       )}
-
-      {/* Main dot */}
       <circle
-        cx={mx}
-        cy={my}
-        r={radius}
+        cx={mx} cy={my} r={4}
         fill={d.status.phase === 'not_started' ? 'none' : hex}
         stroke={d.status.phase === 'not_started' ? hex : '#ffffff88'}
         strokeWidth={1}
@@ -94,24 +58,23 @@ function MobileDoseMarker({
   )
 }
 
-/**
- * Mobile card — one per SubstanceGroup.
- * Shows a full timeline graph with multiple dose curves per route.
- */
 export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
-  const dose = group.primary
-  const colors = phaseColors[dose.status.phase]
-  const PhaseIcon = phaseIcons[dose.status.phase]
+  const dose         = group.primary
+  const colors       = phaseColors[dose.status.phase]
+  const PhaseIcon    = phaseIcons[dose.status.phase]
   const isMultiRoute = group.routes.length > 1
 
-  // Check if it's a known substance
   const knownSubstance = substances.find(
-    (s) =>
-      s.id === dose.substanceId ||
-      s.name.toLowerCase() === group.substanceName.toLowerCase()
+    (s) => s.id === dose.substanceId || s.name.toLowerCase() === group.substanceName.toLowerCase()
   )
 
-  // Calculate window duration that includes all doses
+  // ── Estimated duration detection ─────────────────────────────────────────
+  const anyEstimated = group.routes.some(rg => rg.doses.some(d => d.durationIsEstimated))
+  const estimatedSourceRoute = group.routes
+    .flatMap(rg => rg.doses)
+    .find(d => d.durationIsEstimated)
+    ?.durationSourceRoute
+
   let maxEnd = 0
   for (const rg of group.routes) {
     for (const d of rg.doses) {
@@ -121,15 +84,12 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
   }
   const windowDuration = Math.max(maxEnd, group.windowDuration)
 
-  // Phase band ranges based on primary route timings
-  const refRoute =
-    group.routes.find((r) => r.primary.status.phase !== 'ended') ?? group.routes[0]
+  const refRoute   = group.routes.find((r) => r.primary.status.phase !== 'ended') ?? group.routes[0]
   const refTimings = refRoute.primary.timings
   const bandRanges = getPhaseBandRanges(refTimings)
 
-  // Build time markers for mobile
   const hours = windowDuration / 60
-  const step = hours > 6 ? 2 : 1
+  const step  = hours > 6 ? 2 : 1
   const timeMarkers: { progress: number; label: string }[] = []
   for (let h = 0; h <= hours; h += step) {
     const p = ((h * 60) / windowDuration) * 100
@@ -146,7 +106,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
       {/* Header */}
       <div className="flex items-start justify-between gap-2">
         <div className="min-w-0">
-          <div className="flex items-center gap-1.5 font-semibold text-base">
+          <div className="flex items-center gap-1.5 font-semibold text-base flex-wrap">
             {knownSubstance ? (
               <Link
                 href={`/?substance=${knownSubstance.id}`}
@@ -157,6 +117,12 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
             ) : (
               <span>{group.substanceName}</span>
             )}
+
+            {/* ── Estimated duration badge ──────────────────────────────── */}
+            {anyEstimated && (
+              <EstimatedDurationBadge sourceRoute={estimatedSourceRoute} />
+            )}
+
             {isMultiRoute && (
               <span className="inline-flex items-center gap-0.5 text-xs font-medium text-muted-foreground bg-muted/60 px-1.5 py-0.5 rounded-full">
                 <Layers className="h-3 w-3" />
@@ -169,18 +135,12 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
           <div className="mt-1 space-y-0.5">
             {group.routes.map((rg) => {
               const palette = ROUTE_PALETTE[rg.paletteIndex]
-              const totalFormatted = rg.uniformUnit
-                ? formatDoseAmount(rg.totalAmount, rg.unit)
-                : null
+              const totalFormatted = rg.uniformUnit ? formatDoseAmount(rg.totalAmount, rg.unit) : null
               return (
                 <div key={rg.route} className="text-xs text-muted-foreground">
-                  <span className="font-medium" style={{ color: palette.stroke }}>
-                    {rg.route}
-                  </span>
+                  <span className="font-medium" style={{ color: palette.stroke }}>{rg.route}</span>
                   {' · '}
-                  {totalFormatted
-                    ? `${totalFormatted.amount} ${totalFormatted.unit}`
-                    : `${rg.doses.length} doses`}
+                  {totalFormatted ? `${totalFormatted.amount} ${totalFormatted.unit}` : `${rg.doses.length} doses`}
                 </div>
               )
             })}
@@ -209,19 +169,15 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
               {group.routes.map((rg) => {
                 const palette = ROUTE_PALETTE[rg.paletteIndex]
                 return (
-                  <g key={rg.route}>
-                    <linearGradient
-                      id={`mobile-ag-${group.key}-${rg.paletteIndex}`}
-                      x1="0%"
-                      y1="0%"
-                      x2="0%"
-                      y2="100%"
-                    >
-                      <stop offset="0%" stopColor={palette.stroke} stopOpacity="0.35" />
-                      <stop offset="60%" stopColor={palette.stroke} stopOpacity="0.12" />
-                      <stop offset="100%" stopColor={palette.stroke} stopOpacity="0.03" />
-                    </linearGradient>
-                  </g>
+                  <linearGradient
+                    key={rg.route}
+                    id={`mobile-ag-${group.key}-${rg.paletteIndex}`}
+                    x1="0%" y1="0%" x2="0%" y2="100%"
+                  >
+                    <stop offset="0%"   stopColor={palette.stroke} stopOpacity="0.35" />
+                    <stop offset="60%"  stopColor={palette.stroke} stopOpacity="0.12" />
+                    <stop offset="100%" stopColor={palette.stroke} stopOpacity="0.03" />
+                  </linearGradient>
                 )
               })}
             </defs>
@@ -231,12 +187,9 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
               {PHASE_BANDS.map((band, i) => {
                 const { startFrac, endFrac } = bandRanges[i]
                 return (
-                  <rect
-                    key={band.name}
-                    x={toMobileX(startFrac * 100)}
-                    y={MOBILE_PT}
-                    width={(endFrac - startFrac) * MOBILE_GW}
-                    height={MOBILE_GH}
+                  <rect key={band.name}
+                    x={toMobileX(startFrac * 100)} y={MOBILE_PT}
+                    width={(endFrac - startFrac) * MOBILE_GW} height={MOBILE_GH}
                     fill={band.fill}
                   />
                 )
@@ -246,67 +199,57 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
             {/* Grid lines */}
             <g className="text-muted-foreground/30" stroke="currentColor" strokeWidth="0.5">
               {[0, 0.5, 1].map((f) => (
-                <line
-                  key={f}
-                  x1={MOBILE_PL}
-                  y1={MOBILE_PT + MOBILE_GH * f}
-                  x2={MOBILE_SVG_W - 15}
-                  y2={MOBILE_PT + MOBILE_GH * f}
+                <line key={f}
+                  x1={MOBILE_PL} y1={MOBILE_PT + MOBILE_GH * f}
+                  x2={MOBILE_SVG_W - 15} y2={MOBILE_PT + MOBILE_GH * f}
                   strokeDasharray={f === 1 ? undefined : '3,3'}
                 />
               ))}
             </g>
 
-            {/* Phase label strip (top) */}
+            {/* Phase label strip */}
             {PHASE_BANDS.map((band, i) => {
               const { startFrac, endFrac } = bandRanges[i]
               const px = (endFrac - startFrac) * MOBILE_GW
               if (px < 10) return null
               const midProgress = ((startFrac + endFrac) / 2) * 100
               return (
-                <text
-                  key={band.name}
-                  x={toMobileX(midProgress)}
-                  y={MOBILE_PT - 6}
-                  textAnchor="middle"
-                  fontSize="9"
-                  fontWeight="600"
-                  fill={band.labelColor}
-                  opacity="0.9"
+                <text key={band.name}
+                  x={toMobileX(midProgress)} y={MOBILE_PT - 6}
+                  textAnchor="middle" fontSize="9" fontWeight="600"
+                  fill={band.labelColor} opacity="0.9"
                 >
                   {px < 30 ? band.name.slice(0, 1) : band.name}
                 </text>
               )
             })}
 
-            {/* Per-route area fills (behind curves) */}
+            {/* Area fills */}
             {group.routes.map((rg) => {
               const palette = ROUTE_PALETTE[rg.paletteIndex]
               return rg.doses
                 .filter((d) => d.status.phase !== 'ended')
                 .map((d) => {
-                  const offsetMins =
-                    (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
-                  const area = mobileAreaPath(d.timings, offsetMins, windowDuration)
+                  const offsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
                   return (
                     <path
                       key={`area-${rg.route}-${d.id}`}
-                      d={area}
+                      d={mobileAreaPath(d.timings, offsetMins, windowDuration)}
                       fill={`url(#mobile-ag-${group.key}-${rg.paletteIndex})`}
                     />
                   )
                 })
             })}
 
-            {/* Per-route curves - ALL doses per route */}
+            {/* Curves — dashed when estimated */}
             {group.routes.map((rg) => {
               const palette = ROUTE_PALETTE[rg.paletteIndex]
               return rg.doses.map((d) => {
-                const offsetMins =
-                  (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
-                const curve = mobileCurvePath(d.timings, offsetMins, windowDuration)
-                const isActive = d.status.phase !== 'ended'
-                const isPrimary = d.id === rg.primary.id
+                const offsetMins  = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+                const curve       = mobileCurvePath(d.timings, offsetMins, windowDuration)
+                const isActive    = d.status.phase !== 'ended'
+                const isPrimary   = d.id === rg.primary.id
+                const isEstimated = d.durationIsEstimated
                 return (
                   <path
                     key={`curve-${rg.route}-${d.id}`}
@@ -314,18 +257,18 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
                     fill="none"
                     stroke={palette.stroke}
                     strokeWidth={isPrimary ? 2 : 1.5}
+                    strokeDasharray={isEstimated ? '6,3' : undefined}
                     opacity={isActive ? (isPrimary ? 1 : 0.6) : 0.3}
                   />
                 )
               })
             })}
 
-            {/* Dose markers for all doses */}
+            {/* Dose markers */}
             {group.routes.map((rg) => {
               const palette = ROUTE_PALETTE[rg.paletteIndex]
               return rg.doses.map((d) => {
-                const doseOffsetMins =
-                  (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+                const doseOffsetMins = (d.doseTime.getTime() - group.windowStart.getTime()) / 60_000
                 return (
                   <MobileDoseMarker
                     key={`marker-${d.id}`}
@@ -338,7 +281,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
               })
             })}
 
-            {/* Time axis labels */}
+            {/* Time axis */}
             <g fontSize="8" fill="currentColor" className="text-muted-foreground/60">
               {timeMarkers.map((m, i) => (
                 <text key={i} x={toMobileX(m.progress)} y={MOBILE_SVG_H - 8} textAnchor="middle">
@@ -347,7 +290,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
               ))}
             </g>
 
-            {/* Route legend (if multi-route) */}
+            {/* Route legend */}
             {isMultiRoute && (
               <g>
                 {group.routes.map((rg, li) => {
@@ -356,23 +299,10 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
                   const ly = MOBILE_SVG_H - 2
                   return (
                     <g key={rg.route}>
-                      <line
-                        x1={lx}
-                        y1={ly - 4}
-                        x2={lx + 16}
-                        y2={ly - 4}
-                        stroke={palette.stroke}
-                        strokeWidth={2.5}
-                        strokeLinecap="round"
-                      />
+                      <line x1={lx} y1={ly - 4} x2={lx + 16} y2={ly - 4}
+                        stroke={palette.stroke} strokeWidth={2.5} strokeLinecap="round" />
                       <circle cx={lx + 8} cy={ly - 4} r="2" fill={palette.stroke} />
-                      <text
-                        x={lx + 20}
-                        y={ly}
-                        fontSize="8"
-                        fill={palette.stroke}
-                        fontWeight="600"
-                      >
+                      <text x={lx + 20} y={ly} fontSize="8" fill={palette.stroke} fontWeight="600">
                         {rg.route}
                       </text>
                     </g>
@@ -381,6 +311,15 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
               </g>
             )}
           </svg>
+
+          {/* Estimated disclaimer below graph */}
+          {anyEstimated && (
+            <p className="mt-1 text-[10px] text-amber-400/70 flex items-center gap-1 px-0.5">
+              <span>⚗</span>
+              Dashed curve — duration interpolated from {estimatedSourceRoute ?? 'another route'}.
+              Actual timing may vary.
+            </p>
+          )}
         </div>
       )}
 
@@ -391,9 +330,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
           return (
             <div key={rg.route} className="text-xs">
               <div className="flex items-center justify-between">
-                <span className="font-medium" style={{ color: palette.stroke }}>
-                  {rg.route}
-                </span>
+                <span className="font-medium" style={{ color: palette.stroke }}>{rg.route}</span>
                 {rg.primary.status.phase !== 'ended' && rg.primary.status.phase !== 'not_started' && (
                   <span className="text-muted-foreground">
                     {formatMinutes(rg.primary.status.totalRemaining)} left
@@ -408,16 +345,12 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
                     return (
                       <div key={d.id} className="flex items-center gap-1 text-muted-foreground">
                         <span className="opacity-50">·</span>
-                        <span>
-                          {formattedDose.amount} {formattedDose.unit}
-                        </span>
+                        <span>{formattedDose.amount} {formattedDose.unit}</span>
                         <span className="opacity-60">@ {format(d.doseTime, 'h:mm a')}</span>
                         <span className={`text-[10px] font-medium ${dc.text}`}>
-                          {d.status.phase === 'not_started'
-                            ? 'upcoming'
-                            : d.status.phase === 'ended'
-                              ? 'done'
-                              : formatMinutes(d.status.totalRemaining)}
+                          {d.status.phase === 'not_started' ? 'upcoming'
+                            : d.status.phase === 'ended' ? 'done'
+                            : formatMinutes(d.status.totalRemaining)}
                         </span>
                       </div>
                     )

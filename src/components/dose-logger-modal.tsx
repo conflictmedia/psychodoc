@@ -15,7 +15,6 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-
 import { Textarea } from '@/components/ui/textarea'
 import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
@@ -23,8 +22,10 @@ import { Plus, Loader2, AlertTriangle } from 'lucide-react'
 import { substances } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
 import { useDoseStore } from '@/store/dose-store'
-import { DoseLog } from '@/types'
+import { DoseLog, Duration } from '@/types'
 import { calculatePhaseTimings, getPhaseStatus } from '@/components/dose-timeline/dose-timeline-utils'
+import { getDurationForRoute } from '@/lib/duration-interpolation'
+import { DurationOverrideFields } from '@/components/duration-override-fields'
 
 interface DoseLoggerModalProps {
   onLogCreated?: () => void
@@ -64,7 +65,6 @@ const settingOptions: ComboboxOption[] = [
   { value: 'other', label: 'Other' },
 ]
 
-// Unit options for dose logging (values are singular form for consistent storage)
 const unitOptions: ComboboxOption[] = [
   { value: 'mg', label: 'mg (milligrams)' },
   { value: 'g', label: 'g (grams)' },
@@ -84,7 +84,6 @@ const unitOptions: ComboboxOption[] = [
   { value: 'blinker', label: 'blinker' },
 ]
 
-// Default route options for dose logging
 const defaultRouteOptions: ComboboxOption[] = [
   { value: 'oral', label: 'Oral' },
   { value: 'insufflation', label: 'Insufflation' },
@@ -100,52 +99,23 @@ const defaultRouteOptions: ComboboxOption[] = [
 
 /** Format a unit with proper singular/plural based on amount */
 export function formatUnit(unit: string, amount: number): string {
-  // Units that don't change (abbreviations)
   const invariantUnits = ['mg', 'g', 'μg', 'ml', 'mL']
-  if (invariantUnits.includes(unit)) {
-    return unit
-  }
+  if (invariantUnits.includes(unit)) return unit
 
-  // Singular if exactly 1 OR fractional amount less than 1 (e.g., 0.5 tab, 0.25 capsule)
   const isSingular = amount === 1 || (amount > 0 && amount < 1)
 
-  // Pluralization rules (singular -> plural)
   const pluralRules: Record<string, string> = {
-    'drop': 'drops',
-    'puff': 'puffs',
-    'tab': 'tabs',
-    'capsule': 'capsules',
-    'hit': 'hits',
-    'line': 'lines',
-    'drink': 'drinks',
-    'shot': 'shots',
-    'joint': 'joints',
-    'blunt': 'blunts',
-    'bowl': 'bowls',
-    'blinker': 'blinkers',
+    'drop': 'drops', 'puff': 'puffs', 'tab': 'tabs', 'capsule': 'capsules',
+    'hit': 'hits', 'line': 'lines', 'drink': 'drinks', 'shot': 'shots',
+    'joint': 'joints', 'blunt': 'blunts', 'bowl': 'bowls', 'blinker': 'blinkers',
   }
-
-  // Reverse mapping for backwards compatibility (plural -> singular)
   const singularRules: Record<string, string> = Object.fromEntries(
     Object.entries(pluralRules).map(([sing, plur]) => [plur, sing])
   )
 
-  // If the unit is already plural and we need singular
-  if (isSingular && singularRules[unit]) {
-    return singularRules[unit]
-  }
-
-  // If we have a known singular form and need plural
-  if (!isSingular && pluralRules[unit]) {
-    return pluralRules[unit]
-  }
-
-  // If the unit is already in correct form or unknown
-  // For unknown units, just add 's' if plural needed
-  if (!isSingular && !pluralRules[unit] && !singularRules[unit]) {
-    return unit + 's'
-  }
-
+  if (isSingular && singularRules[unit]) return singularRules[unit]
+  if (!isSingular && pluralRules[unit]) return pluralRules[unit]
+  if (!isSingular && !pluralRules[unit] && !singularRules[unit]) return unit + 's'
   return unit
 }
 
@@ -157,11 +127,9 @@ export function DoseLoggerModal({
   preselectedCategory,
   preselectedRoute,
 }: DoseLoggerModalProps) {
-  const[open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false)
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
-
-  // 2. Extract doses from the store
   const { doses, addDose } = useDoseStore()
 
   const [substanceId, setSubstanceId] = useState(preselectedSubstanceId || '')
@@ -173,12 +141,15 @@ export function DoseLoggerModal({
   )
   const [amount, setAmount] = useState('')
   const [unit, setUnit] = useState('mg')
-  const [route, setRoute] = useState(preselectedRoute || 'Oral')
+  const [route, setRoute] = useState(preselectedRoute || 'oral')
   const [timestamp, setTimestamp] = useState(format(new Date(), "yyyy-MM-dd'T'HH:mm"))
   const [notes, setNotes] = useState('')
   const [mood, setMood] = useState('')
   const [setting, setSetting] = useState('')
   const [intensity] = useState([5])
+
+  // Duration override state — null means "use whatever interpolation gives us"
+  const [durationOverride, setDurationOverride] = useState<Duration | null>(null)
 
   useEffect(() => {
     if (preselectedSubstanceId) setSubstanceId(preselectedSubstanceId)
@@ -197,114 +168,104 @@ export function DoseLoggerModal({
     } else if (preselectedCategory) {
       setCategories(Array.isArray(preselectedCategory) ? preselectedCategory : [preselectedCategory])
     }
-    if (preselectedRoute) {
-      setRoute(preselectedRoute)
-    }
+    if (preselectedRoute) setRoute(preselectedRoute)
   }, [preselectedSubstanceId, preselectedSubstanceName, preselectedCategory, preselectedRoute])
 
   const selectedSubstance = substances.find(s => s.id === substanceId)
 
+  // ── Duration resolution ──────────────────────────────────────────────────
+  // Priority: user override > real routeData > interpolated estimate > null
+  const estimatedDuration = useMemo(
+    () => getDurationForRoute(selectedSubstance ?? null, route),
+    [selectedSubstance, route]
+  )
+
+  // The duration we'll actually save — override wins if provided
+  const resolvedDuration: Duration | null = useMemo(() => {
+    if (durationOverride) return durationOverride
+    if (estimatedDuration) {
+      // Strip the EstimatedDuration-specific fields before saving
+      const { isEstimated, sourceRoute, estimationNote, ...plain } = estimatedDuration
+      return plain
+    }
+    return null
+  }, [durationOverride, estimatedDuration])
+
+  // Reset override when route or substance changes
+  useEffect(() => {
+    setDurationOverride(null)
+  }, [substanceId, route])
+
+  // ── Interaction detection ────────────────────────────────────────────────
   const activeDoses = useMemo(() => {
     return doses.filter(dose => {
-      if (!dose.duration) return false;
-      const timings = calculatePhaseTimings(dose.duration);
-      const status = getPhaseStatus(new Date(dose.timestamp), timings);
-      return status.phase !== 'ended';
-    });
-  }, [doses]);
+      if (!dose.duration) return false
+      const timings = calculatePhaseTimings(dose.duration)
+      const status = getPhaseStatus(new Date(dose.timestamp), timings)
+      return status.phase !== 'ended'
+    })
+  }, [doses])
 
   const interactingSubstances = useMemo(() => {
-    if (!selectedSubstance) return[];
-    
-    const interactions = new Set<string>();
-    const escapeRegExp = (string: string) => string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    
-    for (const dose of activeDoses) {
-      if (dose.substanceId === selectedSubstance.id) continue;
-      
-      const activeSubstance = substances.find(s => s.id === dose.substanceId || s.name === dose.substanceName);
-      
-      if (!activeSubstance) {
-        // Fallback for custom active substances
-        const activeNameLower = dose.substanceName.toLowerCase();
-        const selectedInteractsWithActive = selectedSubstance.interactions?.some(i => {
-          const iLower = i.toLowerCase();
-          try {
-            return new RegExp(`\\b${escapeRegExp(activeNameLower)}\\b`, 'i').test(iLower);
-          } catch {
-            return iLower.includes(activeNameLower);
-          }
-        });
-        if (selectedInteractsWithActive) {
-          interactions.add(dose.substanceName);
-        }
-        continue;
-      }
-      
-      const getKeywords = (sub: any) =>[
-        sub.name, sub.class, ...(sub.categories || []), ...(sub.commonNames ||[]), ...(sub.aliases ||[])
-      ].filter(Boolean).map((s: string) => s.toLowerCase()).filter((s: string) => s !== 'other' && s.length > 2);
-      
-      const activeKeywords = getKeywords(activeSubstance);
-      const selectedKeywords = getKeywords(selectedSubstance);
-      
-      const selectedInteractsWithActive = selectedSubstance.interactions?.some(i => {
-        const iLower = i.toLowerCase();
-        return activeKeywords.some(k => {
-          try {
-            return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(iLower);
-          } catch {
-            return iLower.includes(k);
-          }
-        });
-      });
-      
-      const activeInteractsWithSelected = activeSubstance.interactions?.some(i => {
-        const iLower = i.toLowerCase();
-        return selectedKeywords.some(k => {
-          try {
-            return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(iLower);
-          } catch {
-            return iLower.includes(k);
-          }
-        });
-      });
-      
-      if (selectedInteractsWithActive || activeInteractsWithSelected) {
-        interactions.add(activeSubstance.name);
-      }
-    }
-    
-    return Array.from(interactions);
-  }, [selectedSubstance, activeDoses]);
+    if (!selectedSubstance) return []
+    const interactions = new Set<string>()
+    const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
-  const substanceOptions: ComboboxOption[] = substances.map(s => ({
-    value: s.id,
-    label: s.name
-  }))
+    for (const dose of activeDoses) {
+      if (dose.substanceId === selectedSubstance.id) continue
+      const activeSubstance = substances.find(s => s.id === dose.substanceId || s.name === dose.substanceName)
+
+      if (!activeSubstance) {
+        const activeNameLower = dose.substanceName.toLowerCase()
+        const hits = selectedSubstance.interactions?.some(i => {
+          try { return new RegExp(`\\b${escapeRegExp(activeNameLower)}\\b`, 'i').test(i.toLowerCase()) }
+          catch { return i.toLowerCase().includes(activeNameLower) }
+        })
+        if (hits) interactions.add(dose.substanceName)
+        continue
+      }
+
+      const keywords = (sub: any) => [sub.name, sub.class, ...(sub.categories || []), ...(sub.commonNames || []), ...(sub.aliases || [])]
+        .filter(Boolean).map((s: string) => s.toLowerCase()).filter((s: string) => s !== 'other' && s.length > 2)
+
+      const activeKw    = keywords(activeSubstance)
+      const selectedKw  = keywords(selectedSubstance)
+
+      const fwd = selectedSubstance.interactions?.some(i => activeKw.some(k => {
+        try { return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(i.toLowerCase()) }
+        catch { return i.toLowerCase().includes(k) }
+      }))
+      const rev = activeSubstance.interactions?.some(i => selectedKw.some(k => {
+        try { return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(i.toLowerCase()) }
+        catch { return i.toLowerCase().includes(k) }
+      }))
+
+      if (fwd || rev) interactions.add(activeSubstance.name)
+    }
+    return Array.from(interactions)
+  }, [selectedSubstance, activeDoses])
+
+  const substanceOptions: ComboboxOption[] = substances.map(s => ({ value: s.id, label: s.name }))
 
   const handleSubmit = async () => {
     if (!substanceName || !amount) {
-      toast({
-        title: 'Missing fields',
-        description: 'Please select a substance and enter an amount',
-        variant: 'destructive'
-      })
+      toast({ title: 'Missing fields', description: 'Please select a substance and enter an amount', variant: 'destructive' })
       return
     }
-
     setLoading(true)
-
-    // Simulate a brief loading state for UX
     await new Promise(resolve => setTimeout(resolve, 200))
 
     try {
       const now = new Date().toISOString()
 
-      // Get duration info from substance routeData if available
-      const duration = (selectedSubstance?.routeData && selectedSubstance.routeData[route]?.duration)
-        ? selectedSubstance.routeData[route].duration
-        : null
+      // Attach estimation metadata to notes if we used an estimate
+      let finalNotes = notes || null
+      if (!durationOverride && estimatedDuration?.isEstimated) {
+        const disclaimer = `[Duration estimated from ${estimatedDuration.sourceRoute} route data — verify before relying on timeline]`
+        finalNotes = notes ? `${notes}\n${disclaimer}` : disclaimer
+      }
+
+      const usingEstimate = !durationOverride && !!estimatedDuration?.isEstimated
 
       const newLog: DoseLog = {
         id: `dose_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`,
@@ -315,8 +276,10 @@ export function DoseLoggerModal({
         unit,
         route,
         timestamp: new Date(timestamp).toISOString(),
-        duration,
-        notes: notes || null,
+        duration: resolvedDuration,
+        durationIsEstimated: usingEstimate || undefined,
+        durationSourceRoute: usingEstimate ? estimatedDuration?.sourceRoute : undefined,
+        notes: finalNotes,
         mood: mood || null,
         setting: setting || null,
         intensity: intensity[0],
@@ -324,23 +287,18 @@ export function DoseLoggerModal({
         updatedAt: now,
       }
 
-      // 1-liner to add the dose to the global store, sync to local storage, and trigger re-renders!
       addDose(newLog)
 
       toast({
         title: 'Dose logged',
-        description: `Successfully logged ${amount} ${formatUnit(unit, parseFloat(amount))} of ${substanceName}`
+        description: `${amount} ${formatUnit(unit, parseFloat(amount))} of ${substanceName}${estimatedDuration?.isEstimated && !durationOverride ? ' (estimated timeline)' : ''}`,
       })
 
       setOpen(false)
       resetForm()
       onLogCreated?.()
     } catch (error) {
-      toast({
-        title: 'Error',
-        description: 'Failed to log dose',
-        variant: 'destructive'
-      })
+      toast({ title: 'Error', description: 'Failed to log dose', variant: 'destructive' })
     } finally {
       setLoading(false)
     }
@@ -354,16 +312,13 @@ export function DoseLoggerModal({
     }
     setAmount('')
     setUnit('mg')
-    if (!preselectedRoute) {
-      setRoute('oral')
-    }
+    if (!preselectedRoute) setRoute('oral')
     setTimestamp(format(new Date(), "yyyy-MM-dd'T'HH:mm"))
     setNotes('')
     setMood('')
     setSetting('')
+    setDurationOverride(null)
   }
-
-
 
   const handleSubstanceChange = (value: string) => {
     const found = substances.find(s => s.id === value)
@@ -382,12 +337,13 @@ export function DoseLoggerModal({
       setSubstanceName(value)
       setCategories([])
     }
+    setDurationOverride(null)
   }
 
   const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    handleSubmit();
-  };
+    e.preventDefault()
+    handleSubmit()
+  }
 
   return (
     <Dialog open={open} onOpenChange={(isOpen) => {
@@ -402,7 +358,7 @@ export function DoseLoggerModal({
           </Button>
         )}
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[500px]">
+      <DialogContent className="sm:max-w-[500px] max-h-[90dvh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle>Log a Dose</DialogTitle>
           <DialogDescription>
@@ -410,120 +366,127 @@ export function DoseLoggerModal({
           </DialogDescription>
         </DialogHeader>
         <form onSubmit={onSubmit}>
-        <div className="grid gap-4 py-4">
-          <div className="grid gap-2">
-            <Label>Substance</Label>
-            <Combobox
-              options={substanceOptions}
-              value={substanceId}
-              onChange={handleSubstanceChange}
-              placeholder="Select from list or type custom..."
-              allowCustom={true}
-            />
-            <p className="text-xs text-muted-foreground">Select from list or type a custom substance</p>
-          </div>
-
-          {interactingSubstances.length > 0 && (
-            <Alert variant="destructive" className="bg-destructive/10 text-destructive border-destructive/20">
-              <AlertTriangle className="h-4 w-4" />
-              <AlertTitle>Potential Interaction Warning</AlertTitle>
-              <AlertDescription>
-                This substance may interact with your currently active dose(s) of: <strong>{interactingSubstances.join(', ')}</strong>. 
-                Please exercise caution and research potential interactions.
-              </AlertDescription>
-            </Alert>
-          )}
-
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid gap-4 py-4">
             <div className="grid gap-2">
-              <Label>Amount</Label>
+              <Label>Substance</Label>
+              <Combobox
+                options={substanceOptions}
+                value={substanceId}
+                onChange={handleSubstanceChange}
+                placeholder="Select from list or type custom..."
+                allowCustom={true}
+              />
+              <p className="text-xs text-muted-foreground">Select from list or type a custom substance</p>
+            </div>
+
+            {interactingSubstances.length > 0 && (
+              <Alert variant="destructive" className="bg-destructive/10 text-destructive border-destructive/20">
+                <AlertTriangle className="h-4 w-4" />
+                <AlertTitle>Potential Interaction Warning</AlertTitle>
+                <AlertDescription>
+                  This substance may interact with your currently active dose(s) of: <strong>{interactingSubstances.join(', ')}</strong>.
+                  Please exercise caution and research potential interactions.
+                </AlertDescription>
+              </Alert>
+            )}
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="grid gap-2">
+                <Label>Amount</Label>
+                <Input
+                  type="number"
+                  step="0.1"
+                  placeholder="e.g., 100"
+                  value={amount}
+                  onChange={(e) => setAmount(e.target.value)}
+                />
+              </div>
+              <div className="grid gap-2">
+                <Label>Unit</Label>
+                <Combobox
+                  options={unitOptions}
+                  value={unit}
+                  onChange={setUnit}
+                  placeholder="Select or type custom..."
+                  allowCustom={true}
+                />
+              </div>
+            </div>
+
+            <div className="grid gap-2">
+              <Label>Route of Administration</Label>
+              <Combobox
+                options={selectedSubstance?.routeData
+                  ? Object.keys(selectedSubstance.routeData).map(r => ({ value: r, label: r }))
+                  : defaultRouteOptions}
+                value={route}
+                onChange={setRoute}
+                placeholder="Select or type custom..."
+                allowCustom
+              />
+              <p className="text-xs text-muted-foreground">Type a custom route if needed</p>
+            </div>
+
+            <div className="grid gap-2">
+              <Label>Date & Time</Label>
               <Input
-                type="number"
-                step="0.1"
-                placeholder="e.g., 100"
-                value={amount}
-                onChange={(e) => setAmount(e.target.value)}
+                type="datetime-local"
+                value={timestamp}
+                onChange={(e) => setTimestamp(e.target.value)}
               />
             </div>
+
+            {/* ── Duration section ─────────────────────────────────────── */}
+            <div className="grid gap-2 rounded-lg border border-border/60 bg-muted/20 p-3">
+              <DurationOverrideFields
+                baseDuration={estimatedDuration}
+                onChange={setDurationOverride}
+              />
+            </div>
+
             <div className="grid gap-2">
-              <Label>Unit</Label>
+              <Label>Mood (optional)</Label>
               <Combobox
-                options={unitOptions}
-                value={unit}
-                onChange={setUnit}
+                options={moodOptions}
+                value={mood}
+                onChange={setMood}
                 placeholder="Select or type custom..."
                 allowCustom={true}
               />
-              <p className="text-xs text-muted-foreground">Type a custom unit if needed</p>
+            </div>
+
+            <div className="grid gap-2">
+              <Label>Setting (optional)</Label>
+              <Combobox
+                options={settingOptions}
+                value={setting}
+                onChange={setSetting}
+                placeholder="Select or type custom..."
+                allowCustom={true}
+              />
+            </div>
+
+            <div className="grid gap-2">
+              <Label>Notes (optional)</Label>
+              <Textarea
+                placeholder="Any additional notes about this experience..."
+                value={notes}
+                onChange={(e) => setNotes(e.target.value)}
+                rows={3}
+              />
             </div>
           </div>
 
-          <div className="grid gap-2">
-            <Label>Route of Administration</Label>
-            <Combobox
-              options={selectedSubstance?.routeData ? Object.keys(selectedSubstance.routeData).map(r => ({ value: r, label: r })) : defaultRouteOptions}
-              value={route}
-              onChange={setRoute}
-              placeholder="Select or type custom..."
-              allowCustom
-            />
-            <p className="text-xs text-muted-foreground">Type a custom route if needed</p>
-          </div>
-
-          <div className="grid gap-2">
-            <Label>Date & Time</Label>
-            <Input
-              type="datetime-local"
-              value={timestamp}
-              onChange={(e) => setTimestamp(e.target.value)}
-            />
-          </div>
-
-          <div className="grid gap-2">
-            <Label>Mood (optional)</Label>
-            <Combobox
-              options={moodOptions}
-              value={mood}
-              onChange={setMood}
-              placeholder="Select or type custom..."
-              allowCustom={true}
-            />
-            <p className="text-xs text-muted-foreground">Select or type a custom mood</p>
-          </div>
-
-          <div className="grid gap-2">
-            <Label>Setting (optional)</Label>
-            <Combobox
-              options={settingOptions}
-              value={setting}
-              onChange={setSetting}
-              placeholder="Select or type custom..."
-              allowCustom={true}
-            />
-            <p className="text-xs text-muted-foreground">Select or type a custom setting</p>
-          </div>
-
-          <div className="grid gap-2">
-            <Label>Notes (optional)</Label>
-            <Textarea
-              placeholder="Any additional notes about this experience..."
-              value={notes}
-              onChange={(e) => setNotes(e.target.value)}
-              rows={3}
-            />
-          </div>
-        </div>
-
-        <DialogFooter>
-          <DialogClose asChild>
-            <Button type="button" variant="outline">Cancel</Button>
-          </DialogClose>
-          <Button type="submit" disabled={loading}>
-            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            Log Dose
-          </Button>
-        </DialogFooter>
-       </form>
+          <DialogFooter>
+            <DialogClose asChild>
+              <Button type="button" variant="outline">Cancel</Button>
+            </DialogClose>
+            <Button type="submit" disabled={loading}>
+              {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+              Log Dose
+            </Button>
+          </DialogFooter>
+        </form>
       </DialogContent>
     </Dialog>
   )
