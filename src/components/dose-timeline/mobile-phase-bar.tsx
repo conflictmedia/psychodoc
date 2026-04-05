@@ -1,7 +1,7 @@
 'use client'
 
 import { format } from 'date-fns'
-import { Clock, Layers } from 'lucide-react'
+import { Clock, Layers, AlertTriangle } from 'lucide-react'
 import Link from 'next/link'
 import { Badge } from '@/components/ui/badge'
 import { SubstanceGroup, EnrichedDose } from './dose-timeline-types'
@@ -16,6 +16,22 @@ import {
 import { formatDoseAmount } from '@/lib/utils'
 import { substances } from '@/lib/substances/index'
 import { EstimatedDurationBadge } from '@/components/estimated-duration-badge'
+
+/** Check if duration has incomplete phase data (only onset + total, missing individual phases) */
+function hasIncompletePhases(duration: { onset?: string; comeup?: string; peak?: string; offset?: string; total?: string } | null | undefined): boolean {
+  if (!duration) return false
+  const hasOnset = duration.onset && duration.onset.trim() !== '' && duration.onset !== '—'
+  const hasTotal = duration.total && duration.total.trim() !== '' && duration.total !== '—'
+  const hasComeup = duration.comeup && duration.comeup.trim() !== '' && duration.comeup !== '—'
+  const hasPeak = duration.peak && duration.peak.trim() !== '' && duration.peak !== '—'
+  const hasOffset = duration.offset && duration.offset.trim() !== '' && duration.offset !== '—'
+  
+  // Incomplete if we have onset + total but missing at least one of comeup/peak/offset
+  if (hasOnset && hasTotal && (!hasComeup || !hasPeak || !hasOffset)) {
+    return true
+  }
+  return false
+}
 
 interface MobilePhaseBarProps {
   group: SubstanceGroup
@@ -75,6 +91,11 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
     .find(d => d.durationIsEstimated)
     ?.durationSourceRoute
 
+  // ── Incomplete phases detection ─────────────────────────────────────────
+  const anyIncompletePhases = group.routes.some(rg =>
+    rg.doses.some(d => hasIncompletePhases(d.duration))
+  )
+
   let maxEnd = 0
   for (const rg of group.routes) {
     for (const d of rg.doses) {
@@ -121,6 +142,17 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
             {/* ── Estimated duration badge ──────────────────────────────── */}
             {anyEstimated && (
               <EstimatedDurationBadge sourceRoute={estimatedSourceRoute} />
+            )}
+
+            {/* ── Incomplete phases badge ──────────────────────────────── */}
+            {anyIncompletePhases && (
+              <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full cursor-help
+                bg-blue-500/15 text-blue-400 border border-blue-500/30"
+                title="Duration data is incomplete. Phase timings are estimated based on onset and total duration."
+              >
+                <AlertTriangle className="h-2.5 w-2.5" />
+                Incomplete
+              </span>
             )}
 
             {isMultiRoute && (
@@ -241,7 +273,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
                 })
             })}
 
-            {/* Curves — dashed when estimated */}
+            {/* Curves — dashed when estimated, dotted when incomplete */}
             {group.routes.map((rg) => {
               const palette = ROUTE_PALETTE[rg.paletteIndex]
               return rg.doses.map((d) => {
@@ -250,6 +282,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
                 const isActive    = d.status.phase !== 'ended'
                 const isPrimary   = d.id === rg.primary.id
                 const isEstimated = d.durationIsEstimated
+                const isIncomplete = hasIncompletePhases(d.duration)
                 return (
                   <path
                     key={`curve-${rg.route}-${d.id}`}
@@ -257,7 +290,7 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
                     fill="none"
                     stroke={palette.stroke}
                     strokeWidth={isPrimary ? 2 : 1.5}
-                    strokeDasharray={isEstimated ? '6,3' : undefined}
+                    strokeDasharray={isEstimated ? '6,3' : isIncomplete ? '4,2' : undefined}
                     opacity={isActive ? (isPrimary ? 1 : 0.6) : 0.3}
                   />
                 )
@@ -312,13 +345,23 @@ export function MobilePhaseBar({ group }: MobilePhaseBarProps) {
             )}
           </svg>
 
-          {/* Estimated disclaimer below graph */}
-          {anyEstimated && (
-            <p className="mt-1 text-[10px] text-amber-400/70 flex items-center gap-1 px-0.5">
-              <span>⚗</span>
-              Dashed curve — duration interpolated from {estimatedSourceRoute ?? 'another route'}.
-              Actual timing may vary.
-            </p>
+          {/* Disclaimer notes below graph */}
+          {(anyEstimated || anyIncompletePhases) && (
+            <div className="mt-1 space-y-0.5 px-0.5">
+              {anyEstimated && (
+                <p className="text-[10px] text-amber-400/70 flex items-center gap-1">
+                  <span>⚗</span>
+                  Dashed curve — duration interpolated from {estimatedSourceRoute ?? 'another route'}.
+                  Actual timing may vary.
+                </p>
+              )}
+              {anyIncompletePhases && (
+                <p className="text-[10px] text-blue-400/70 flex items-center gap-1">
+                  <AlertTriangle className="h-2.5 w-2.5" />
+                  Dotted curve — phase timings estimated from onset and total duration.
+                </p>
+              )}
+            </div>
           )}
         </div>
       )}

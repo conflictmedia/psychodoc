@@ -21,6 +21,22 @@ function formatUnit(unit: string, amount: number): string {
   return unit
 }
 
+/** Check if duration has incomplete phase data (only onset + total, missing individual phases) */
+function hasIncompletePhases(duration: { onset?: string; comeup?: string; peak?: string; offset?: string; total?: string } | null | undefined): boolean {
+  if (!duration) return false
+  const hasOnset = duration.onset && duration.onset.trim() !== '' && duration.onset !== '—'
+  const hasTotal = duration.total && duration.total.trim() !== '' && duration.total !== '—'
+  const hasComeup = duration.comeup && duration.comeup.trim() !== '' && duration.comeup !== '—'
+  const hasPeak = duration.peak && duration.peak.trim() !== '' && duration.peak !== '—'
+  const hasOffset = duration.offset && duration.offset.trim() !== '' && duration.offset !== '—'
+  
+  // Incomplete if we have onset + total but missing at least one of comeup/peak/offset
+  if (hasOnset && hasTotal && (!hasComeup || !hasPeak || !hasOffset)) {
+    return true
+  }
+  return false
+}
+
 import { useState, useEffect, useMemo, useCallback, useRef } from 'react'
 import { format, addMinutes } from 'date-fns'
 import {
@@ -28,7 +44,7 @@ import {
 } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import {
-  Activity, Timer, Clock, Loader2, Info, ChevronDown, ChevronUp, Layers,
+  Activity, Timer, Clock, Loader2, Info, ChevronDown, ChevronUp, Layers, AlertTriangle,
 } from 'lucide-react'
 import { categoryColors } from '@/lib/categories'
 import { useDoseStore } from '@/store/dose-store'
@@ -293,6 +309,11 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
               .find(d => d.durationIsEstimated)
               ?.durationSourceRoute
 
+            // Check if any dose has incomplete phase data
+            const anyIncompletePhases = group.routes.some(rg =>
+              rg.doses.some(d => hasIncompletePhases(d.duration))
+            )
+
             return (
               <div
                 key={group.key}
@@ -315,6 +336,17 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                     {/* ── Estimated duration badge ──────────────────────── */}
                     {anyEstimated && (
                       <EstimatedDurationBadge sourceRoute={estimatedSourceRoute} />
+                    )}
+
+                    {/* ── Incomplete phases badge ──────────────────────── */}
+                    {anyIncompletePhases && (
+                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold px-1.5 py-0.5 rounded-full cursor-help
+                        bg-blue-500/15 text-blue-400 border border-blue-500/30"
+                        title="Duration data is incomplete. Phase timings are estimated based on onset and total duration."
+                      >
+                        <AlertTriangle className="h-2.5 w-2.5" />
+                        Incomplete data
+                      </span>
                     )}
 
                     {isMultiRoute && (
@@ -556,12 +588,14 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                             const isPrimary  = d.id === rg.primary.id
                             // Dashed stroke for estimated durations
                             const isEstimated = d.durationIsEstimated
+                            // Dotted stroke for incomplete phases
+                            const isIncomplete = hasIncompletePhases(d.duration)
                             return (
                               <path key={`curve-${rg.route}-${d.id}`} d={curve}
                                 fill="none"
                                 stroke={palette.stroke}
                                 strokeWidth={selectedRoute === rg.route ? 3 : 2.5}
-                                strokeDasharray={isEstimated ? '8,4' : undefined}
+                                strokeDasharray={isEstimated ? '8,4' : isIncomplete ? '4,2' : undefined}
                                 filter={`url(#glow-${group.key}-${rg.paletteIndex})`}
                                 opacity={isIsolated ? 0.15 : isPrimary ? 1 : 0.5}
                                 style={{ transition: 'opacity 0.2s ease' }}
@@ -703,6 +737,13 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                             Timeline curve is based on interpolated duration data — actual timing may vary.
                           </p>
                         )}
+                        {/* Incomplete phases note in tooltip */}
+                        {anyIncompletePhases && (
+                          <p className="text-[10px] text-blue-400/70 border-t border-border/30 pt-2 flex items-center gap-1">
+                            <AlertTriangle className="h-2.5 w-2.5" />
+                            Phase timings are estimated from onset and total duration — individual phases may differ.
+                          </p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -775,6 +816,16 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         <span className="text-amber-300/80">
                           Duration interpolated from <span className="font-medium">{estimatedSourceRoute}</span> route data.
                           Timeline is an estimate — actual phases may differ.
+                        </span>
+                      </div>
+                    )}
+                    {/* Incomplete phases disclaimer in expanded section */}
+                    {anyIncompletePhases && (
+                      <div className="text-xs flex items-start gap-1.5 bg-blue-500/8 border border-blue-500/20 p-2 rounded">
+                        <AlertTriangle className="h-3.5 w-3.5 text-blue-400 shrink-0 mt-0.5" />
+                        <span className="text-blue-300/80">
+                          <span className="font-medium text-blue-400">Incomplete duration data.</span> Only onset and total duration were provided.
+                          Phase timings (comeup, peak, offset) are estimated proportionally and may not reflect actual experience.
                         </span>
                       </div>
                     )}
