@@ -8,7 +8,7 @@ export interface Duration {
 
 export interface DoseLog {
   id: string
-  substanceId: string
+  substanceId?: string
   substanceName: string
   categories: string[]
   amount: number
@@ -16,10 +16,12 @@ export interface DoseLog {
   route: string
   timestamp: string
   duration: Duration | null
+  durationIsEstimated?: boolean
+  durationSourceRoute?: string
   notes: string | null
   mood: string | null
   setting: string | null
-  intensity: number | null
+  intensity?: number | null
   createdAt: string
   updatedAt?: string
 }
