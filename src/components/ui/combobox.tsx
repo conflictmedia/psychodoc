@@ -21,6 +21,8 @@ import {
 export interface ComboboxOption {
   value: string
   label: string
+  /** Additional keywords for search filtering (e.g., commonNames, aliases) */
+  keywords?: string[]
 }
 
 interface ComboboxProps {
@@ -47,9 +49,18 @@ export function Combobox({
   const [open, setOpen] = React.useState(false)
   const [search, setSearch] = React.useState('')
 
-  const filteredOptions = options.filter((option) =>
-    option.label.toLowerCase().includes(search.toLowerCase())
-  )
+  const filteredOptions = options.filter((option) => {
+    const searchLower = search.toLowerCase()
+    // Match against label
+    if (option.label.toLowerCase().includes(searchLower)) {
+      return true
+    }
+    // Also match against keywords (e.g., commonNames)
+    if (option.keywords?.some(keyword => keyword.toLowerCase().includes(searchLower))) {
+      return true
+    }
+    return false
+  })
 
   const displayValue = value
     ? options.find((option) => option.value === value)?.label || value

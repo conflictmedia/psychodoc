@@ -12,7 +12,9 @@ export const o_desmethyltramadol: Substance =
   "id": "o-desmethyltramadol",
   "name": "O-Desmethyltramadol",
   "commonNames": [
-    "O-Desmethyltramadol"
+    "O-Desmethyltramadol",
+    "ODSMT",
+    "O-DSMT"
   ],
   "categories": [
     "opioids"

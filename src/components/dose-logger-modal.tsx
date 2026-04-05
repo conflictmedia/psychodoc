@@ -245,7 +245,12 @@ export function DoseLoggerModal({
     return Array.from(interactions)
   }, [selectedSubstance, activeDoses])
 
-  const substanceOptions: ComboboxOption[] = substances.map(s => ({ value: s.id, label: s.name }))
+  // Include commonNames as keywords for search filtering
+  const substanceOptions: ComboboxOption[] = substances.map(s => ({ 
+    value: s.id, 
+    label: s.name,
+    keywords: s.commonNames
+  }))
 
   const handleSubmit = async () => {
     if (!substanceName || !amount) {
