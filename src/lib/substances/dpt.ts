@@ -147,6 +147,23 @@ export const dpt: Substance =
         "total": "30-90 minutes"
       },
       "notes": "Afterglow: 2-4 hours"
+    },
+    "intramuscular": {
+      "dosage": {
+        "threshold": "10mg",
+        "light": "15-20mg",
+        "common": "15-75mg",
+        "strong": "50-125mg",
+        "heavy": "125mg+"
+      },
+      "duration": {
+        "onset": "2-10 minutes",
+        "comeup": "10-30 minutes",
+        "peak": "30-60 minutes",
+        "offset": "1-3 hours",
+        "total": "3-4 hours"
+      },
+      "notes": "LLM(GLM5 - Advanced Search) DERIVED DATA, MAY NOT BE ACCURATE!!!!!!!"
     }
   },
   "interactions": [],
