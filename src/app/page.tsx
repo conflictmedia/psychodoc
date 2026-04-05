@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useMemo, useEffect, useRef, useCallback, Suspense } from 'react'
+import React, { useState, useMemo, useEffect, useRef, useCallback, Suspense, memo, useDeferredValue } from 'react'
 import Image from 'next/image'
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import {
@@ -144,7 +144,6 @@ const GITHUB_NEW_SUBSTANCE_URL =
 const GITHUB_INFO_CHANGE_URL =
   'https://github.com/conflictmedia/drugucopia/issues/new?template=change-substance-info.md'
 const GITHUB_FEEDBACK_URL = 'https://github.com/conflictmedia/drugucopia/issues/new'
-
 const GITHUB_MAIN_URL = 'https://github.com/conflictmedia/drugucopia'
 
 type MobileTab = 'substances' | 'timeline' | 'log' | 'history'
@@ -191,6 +190,134 @@ function CategoryIcon({ substance, className = '' }: { substance: Substance; cla
   const Icon = categoryIcons[primary]
   return <Icon className={className} />
 }
+
+// ─── MEMOIZED SUBSTANCE CARD (DESKTOP) ───────────────────────────────────────
+// Wrapped in memo so the grid of 100+ cards doesn't re-render on every
+// tooltip hover, timer tick, or unrelated state change in HomeContent.
+
+interface SubstanceCardProps {
+  substance: Substance
+  onSelect: (s: Substance) => void
+}
+
+const SubstanceCard = memo(function SubstanceCard({ substance, onSelect }: SubstanceCardProps) {
+  const primary = getPrimaryCategory(substance)
+  const cats = getSubstanceCategories(substance)
+  const hasRouteData = substance.routeData && Object.keys(substance.routeData).length > 1
+
+  return (
+    <Card
+      className="cursor-pointer hover:border-primary/50 transition-colors group"
+      onClick={() => onSelect(substance)}
+    >
+      <CardHeader className="pb-3">
+        <div className="flex items-start justify-between">
+          <div className="flex items-center gap-3">
+            {primary && (
+              <div className={`p-2 rounded-lg shrink-0 ${categoryColors[primary]}`}>
+                <CategoryIcon substance={substance} className="h-4 w-4" />
+              </div>
+            )}
+            <div className="min-w-0">
+              <CardTitle className="text-lg group-hover:text-primary transition-colors">
+                {substance.name}
+              </CardTitle>
+              <CardDescription className="text-xs">{substance.class}</CardDescription>
+            </div>
+          </div>
+          <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
+        </div>
+      </CardHeader>
+      <CardContent>
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{substance.description}</p>
+        <div className="flex flex-wrap gap-1 mb-2">
+          {substance.commonNames.slice(0, 2).map((name, i) => (
+            <Badge key={i} variant="secondary" className="text-xs">{name}</Badge>
+          ))}
+          {substance.commonNames.length > 2 && (
+            <Badge variant="secondary" className="text-xs">+{substance.commonNames.length - 2}</Badge>
+          )}
+        </div>
+        <div className="flex items-center justify-between gap-2 flex-wrap">
+          <div className="flex flex-wrap gap-1">
+            {cats.slice(0, 2).map((cat) => {
+              const info = categories.find((c) => c.id === cat)
+              return (
+                <Badge key={cat} variant="outline" className={`text-xs ${categoryColors[cat] ?? ''}`}>
+                  {info?.name ?? cat}
+                </Badge>
+              )
+            })}
+            {cats.length > 2 && (
+              <Badge variant="outline" className="text-xs text-muted-foreground">+{cats.length - 2}</Badge>
+            )}
+          </div>
+          <div className="flex items-center gap-1.5">
+            {hasRouteData && (
+              <Badge variant="outline" className="text-xs border-primary/30 text-primary/70">
+                {Object.keys(substance.routeData!).length} routes
+              </Badge>
+            )}
+            <Badge variant="outline" className={riskLevelColors[substance.riskLevel]}>
+              {substance.riskLevel.replace('-', ' ')}
+            </Badge>
+          </div>
+        </div>
+      </CardContent>
+    </Card>
+  )
+})
+
+// ─── MEMOIZED MOBILE SUBSTANCE ROW ───────────────────────────────────────────
+
+interface MobileSubstanceRowProps {
+  substance: Substance
+  onSelect: (s: Substance) => void
+}
+
+const MobileSubstanceRow = memo(function MobileSubstanceRow({ substance, onSelect }: MobileSubstanceRowProps) {
+  const primary = getPrimaryCategory(substance)
+  const cats = getSubstanceCategories(substance)
+
+  return (
+    <button
+      onClick={() => onSelect(substance)}
+      className="w-full text-left flex items-start gap-3 p-4 rounded-2xl border border-border bg-card hover:border-primary/40 active:scale-[0.99] transition-all"
+    >
+      {primary && (
+        <div className={`p-2.5 rounded-xl shrink-0 ${categoryColors[primary]}`}>
+          <CategoryIcon substance={substance} className="h-5 w-5" />
+        </div>
+      )}
+      <div className="flex-1 min-w-0">
+        <div className="flex items-start justify-between gap-2 mb-1">
+          <span className="font-semibold text-base leading-tight">{substance.name}</span>
+          <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
+        </div>
+        <p className="text-xs text-muted-foreground mb-2">{substance.class}</p>
+        <p className="text-sm text-muted-foreground line-clamp-2 mb-2 leading-relaxed">
+          {substance.description}
+        </p>
+        <div className="flex flex-wrap gap-1">
+          {cats.slice(0, 2).map((cat) => {
+            const info = categories.find((c) => c.id === cat)
+            return (
+              <Badge key={cat} variant="outline" className={`text-xs ${categoryColors[cat]}`}>
+                {info?.name ?? cat}
+              </Badge>
+            )
+          })}
+          {cats.length > 2 && (
+            <Badge variant="outline" className="text-xs">+{cats.length - 2}</Badge>
+          )}
+          <Badge variant="outline" className={`text-xs ${riskLevelColors[substance.riskLevel]}`}>
+            {substance.riskLevel.replace('-', ' ')}
+          </Badge>
+        </div>
+      </div>
+    </button>
+  )
+})
 
 // ─── DOSAGE + DURATION PANEL ─────────────────────────────────────────────────
 
@@ -240,7 +367,6 @@ function DosageDurationPanel({
 
   return (
     <div className="space-y-4">
-      {/* Route selector */}
       {hasRouteData && (
         <Card className="border-primary/20 bg-primary/5">
           <CardHeader className="pb-3">
@@ -253,7 +379,6 @@ function DosageDurationPanel({
             </CardDescription>
           </CardHeader>
           <CardContent>
-            {/* Scrollable route chips on mobile */}
             <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-none -mx-1 px-1">
               {Object.keys(substance.routeData!).map((route) => {
                 const isSelected = selectedRoute === route
@@ -289,7 +414,6 @@ function DosageDurationPanel({
         </Card>
       )}
 
-      {/* Dosage + Duration side by side on tablet+, stacked on mobile */}
       <div className="grid gap-4 sm:grid-cols-2">
         <Card>
           <CardHeader className="pb-2">
@@ -370,7 +494,6 @@ function DosageDurationPanel({
         </p>
       )}
 
-      {/* Routes comparison table — hidden on xs, shown md+ */}
       {hasRouteData && Object.keys(substance.routeData!).length > 1 && (
         <Card className="hidden sm:block">
           <CardHeader className="pb-3">
@@ -483,7 +606,7 @@ function MobileBottomNav({
   )
 }
 
-// ─── CATEGORY CHIP ROW (mobile horizontal scroll) ───────────────────────────
+// ─── CATEGORY CHIP ROW ───────────────────────────────────────────────────────
 
 function CategoryChipRow({
   selected,
@@ -543,14 +666,13 @@ function SubstanceDetail({
 
   const handleRouteChange = useCallback((r: string | null) => setSelectedRoute(r), [])
 
-  // Quick stats from first available route
   const firstRoute = substance.routeData ? Object.keys(substance.routeData)[0] : null
   const quickDuration = firstRoute ? substance.routeData![firstRoute]?.duration : null
   const quickDosage = firstRoute ? substance.routeData![firstRoute]?.dosage : null
 
   return (
     <div className="min-h-screen bg-background flex flex-col">
-      {/* Desktop header (hidden on mobile) */}
+      {/* Desktop header */}
       <header className="hidden md:flex sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 items-center gap-4 px-4 lg:px-6">
         <Button variant="ghost" size="sm" onClick={onBack} className="gap-2">
           <ArrowLeft className="h-4 w-4" />
@@ -604,9 +726,8 @@ function SubstanceDetail({
         </div>
       </header>
 
-      {/* Mobile: hero + quick stats + tabbed content */}
+      {/* Mobile content */}
       <div className="md:hidden flex-1 overflow-y-auto pb-24">
-        {/* Hero */}
         <div className="px-4 pt-4 pb-3 border-b border-border">
           <div className="flex items-start gap-3 mb-3">
             {primary && (
@@ -635,7 +756,6 @@ function SubstanceDetail({
           <p className="text-sm text-muted-foreground leading-relaxed">{substance.description}</p>
         </div>
 
-        {/* Quick stat chips */}
         {quickDuration && (
           <div className="flex gap-2 px-4 py-3 overflow-x-auto scrollbar-none border-b border-border">
             {quickDuration.onset && (
@@ -671,7 +791,6 @@ function SubstanceDetail({
           </div>
         )}
 
-        {/* Tabbed content */}
         <Tabs defaultValue="effects" className="w-full">
           <div className="sticky top-[52px] z-30 bg-background border-b border-border">
             <TabsList className="w-full h-auto p-0 bg-transparent rounded-none flex overflow-x-auto scrollbar-none justify-start gap-0">
@@ -779,7 +898,6 @@ function SubstanceDetail({
                 </div>
               </CardContent>
             </Card>
-            {/* Contribute button */}
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="w-full gap-2">
@@ -821,7 +939,7 @@ function SubstanceDetail({
         </Tabs>
       </div>
 
-      {/* Desktop layout — original 3-column */}
+      {/* Desktop layout */}
       <main className="hidden md:block container mx-auto py-6 lg:py-10">
         <div className="grid gap-6 lg:grid-cols-3 mb-8">
           <div className="lg:col-span-2 space-y-6">
@@ -999,10 +1117,6 @@ function SubstanceDetail({
             </Card>
           </div>
         </div>
-
-        <div className="hidden">
-          <DoseHistory />
-        </div>
       </main>
     </div>
   )
@@ -1016,24 +1130,20 @@ function HomeContent() {
   const pathname = usePathname()
   const [selectedCategory, setSelectedCategory] = useState<SubstanceCategory | 'all'>('all')
   const [selectedSubstance, setSelectedSubstance] = useState<Substance | null>(null)
-  const [selectedRoute, setSelectedRoute] = useState<string | null>(null)
   const [searchQuery, setSearchQuery] = useState('')
+  // PERF: defer the filter pass so keystrokes feel instant
+  const deferredQuery = useDeferredValue(searchQuery)
   const [sidebarOpen, setSidebarOpen] = useState(true)
-  // Desktop view toggle
   const [desktopView, setDesktopView] = useState<'substances' | 'dose-log'>('substances')
-  // Mobile bottom nav
   const [mobileTab, setMobileTab] = useState<MobileTab>('substances')
-  const [doseRefreshTrigger, setDoseRefreshTrigger] = useState(0)
 
-  // Track the last processed substance ID from URL to avoid re-processing same ID
   const lastProcessedSubstanceRef = useRef<string | null>(null)
 
-  // Handle URL query parameters (?substance=<id>&view=<view>)
+  // Handle URL query parameters
   useEffect(() => {
     const substanceId = searchParams.get('substance')
     const viewParam = searchParams.get('view')
-    
-    // Handle view parameter for desktop and mobile
+
     if (viewParam) {
       if (viewParam === 'dose-log') {
         setDesktopView('dose-log')
@@ -1049,14 +1159,11 @@ function HomeContent() {
         setMobileTab('substances')
       }
     } else {
-      // No view param - default to substances view
       setDesktopView('substances')
       setMobileTab('substances')
     }
-    
-    // Handle substance parameter changes
+
     if (substanceId) {
-      // Only process if it's different from what we last processed
       if (substanceId !== lastProcessedSubstanceRef.current) {
         const found = substances.find((s) => s.id === substanceId)
         if (found) {
@@ -1065,25 +1172,16 @@ function HomeContent() {
         }
       }
     } else {
-      // No substance param in URL - close substance detail if open
-      if (selectedSubstance) {
-        setSelectedSubstance(null)
-      }
+      if (selectedSubstance) setSelectedSubstance(null)
       lastProcessedSubstanceRef.current = null
     }
-    
-    // Reset when URL no longer has substance param
-    if (!substanceId) {
-      lastProcessedSubstanceRef.current = null
-    }
+
+    if (!substanceId) lastProcessedSubstanceRef.current = null
   }, [searchParams])
 
-  // Navigate back from substance detail, clearing the URL
   const handleBackFromDetail = useCallback(() => {
     setSelectedSubstance(null)
     lastProcessedSubstanceRef.current = null
-    
-    // Clear the URL - go back to current view or base path
     const viewParam = searchParams.get('view')
     if (viewParam) {
       router.push(`${pathname}?view=${viewParam}`)
@@ -1092,36 +1190,47 @@ function HomeContent() {
     }
   }, [searchParams, router, pathname])
 
+  // PERF: filter runs on deferredQuery, not the live input value
   const filteredSubstances = useMemo(() => {
     let result = substances
     if (selectedCategory !== 'all') {
       result = result.filter((s) => substanceBelongsToCategory(s, selectedCategory))
     }
-    if (searchQuery) {
-      const q = searchQuery.toLowerCase()
+    if (deferredQuery) {
+      const q = deferredQuery.toLowerCase()
       result = result.filter(
         (s) =>
           s.name.toLowerCase().includes(q) ||
           s.commonNames.some((n) => n.toLowerCase().includes(q))
-          //s.aliases.some((a) => a.toLowerCase().includes(q))
       )
     }
     return result
-  }, [selectedCategory, searchQuery])
+  }, [selectedCategory, deferredQuery])
 
-  const handleDoseLogged = () => {
-    setDoseRefreshTrigger((p) => p + 1)
-    window.dispatchEvent(new CustomEvent('dose-logs-updated'))
-  }
+  // PERF: stable callback — no new reference on each render
+  const handleDoseLogged = useCallback(() => {
+    // DoseStats and DoseHistory read from useDoseStore directly,
+    // so no refreshTrigger state is needed.
+  }, [])
 
-  const handleRouteChange = useCallback((route: string | null) => setSelectedRoute(route), [])
+  const handleSelectSubstance = useCallback((substance: Substance) => {
+    setSelectedSubstance(substance)
+    lastProcessedSubstanceRef.current = substance.id
+    const viewParam = searchParams.get('view')
+    router.push(
+      viewParam
+        ? `${pathname}?substance=${substance.id}&view=${viewParam}`
+        : `${pathname}?substance=${substance.id}`
+    )
+  }, [searchParams, router, pathname])
+
+  const handleCategoryChange = useCallback((cat: SubstanceCategory | 'all') => {
+    setSelectedCategory(cat)
+    if (searchParams.toString()) router.push(pathname)
+  }, [searchParams, router, pathname])
 
   useEffect(() => {
     if (selectedSubstance) window.scrollTo(0, 0)
-  }, [selectedSubstance])
-
-  useEffect(() => {
-    if (!selectedSubstance) setSelectedRoute(null)
   }, [selectedSubstance])
 
   // ── Substance detail ────────────────────────────────────────────────────────
@@ -1133,14 +1242,12 @@ function HomeContent() {
           onBack={handleBackFromDetail}
           onDoseLogged={handleDoseLogged}
         />
-        {/* Mobile bottom nav stays visible on detail */}
         <MobileBottomNav
           active={mobileTab}
           onChange={(tab) => {
             setSelectedSubstance(null)
             setMobileTab(tab)
             lastProcessedSubstanceRef.current = null
-            // Sync desktop view and update URL
             if (tab === 'substances') {
               setDesktopView('substances')
               router.push(pathname)
@@ -1150,10 +1257,7 @@ function HomeContent() {
             }
           }}
           renderLogTrigger={(btn) => (
-            <DoseLoggerModal
-              onLogCreated={handleDoseLogged}
-              trigger={btn}
-            />
+            <DoseLoggerModal onLogCreated={handleDoseLogged} trigger={btn} />
           )}
         />
       </>
@@ -1163,29 +1267,29 @@ function HomeContent() {
   // ── List / dose-log view ────────────────────────────────────────────────────
   return (
     <div className="min-h-screen bg-background flex">
-      {/* ── Desktop sidebar ─────────────────────────────────────────────────── */}
+      {/* Desktop sidebar */}
       <aside
         className={`${
           sidebarOpen ? 'w-64' : 'w-0'
         } hidden md:flex transition-all duration-300 border-r bg-muted/30 overflow-hidden shrink-0 flex-col`}
       >
         <div className="h-full flex flex-col">
-            <div className="p-4 border-b space-y-4">
-              <div>
-                <div className="flex items-center gap-2">
-                  <Image src="logo.png" alt="Drugucopia Logo" width={36} height={36} className="rounded-lg" />
-                  <span className="font-bold text-lg flex-1">Drugucopia</span>
-                  <Button
-                    variant="ghost"
-                    size="icon"
-                    className="h-8 w-8 shrink-0"
-                    onClick={() => setSidebarOpen(false)}
-                  >
-                    <X className="h-4 w-4" />
-                  </Button>
-                </div>
-                <p className="text-xs text-muted-foreground mt-1">Psychoactive Substances Documentation</p>
+          <div className="p-4 border-b space-y-4">
+            <div>
+              <div className="flex items-center gap-2">
+                <Image src="logo.png" alt="Drugucopia Logo" width={36} height={36} className="rounded-lg" />
+                <span className="font-bold text-lg flex-1">Drugucopia</span>
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  className="h-8 w-8 shrink-0"
+                  onClick={() => setSidebarOpen(false)}
+                >
+                  <X className="h-4 w-4" />
+                </Button>
               </div>
+              <p className="text-xs text-muted-foreground mt-1">Psychoactive Substances Documentation</p>
+            </div>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="w-full text-xs bg-background">
@@ -1217,13 +1321,10 @@ function HomeContent() {
               <Button
                 variant={desktopView === 'substances' && selectedCategory === 'all' ? 'secondary' : 'ghost'}
                 className="w-full justify-start gap-2"
-                onClick={() => { 
+                onClick={() => {
                   setDesktopView('substances')
                   setSelectedCategory('all')
-                  // Only navigate if there are query params to clear
-                  if (searchParams.toString()) {
-                    router.push(pathname)
-                  }
+                  if (searchParams.toString()) router.push(pathname)
                 }}
               >
                 <Info className="h-4 w-4" />
@@ -1250,13 +1351,10 @@ function HomeContent() {
                     key={category.id}
                     variant={desktopView === 'substances' && selectedCategory === category.id ? 'secondary' : 'ghost'}
                     className="w-full justify-start gap-2"
-                    onClick={() => { 
+                    onClick={() => {
                       setDesktopView('substances')
                       setSelectedCategory(category.id)
-                      // Only navigate if there are query params to clear
-                      if (searchParams.toString()) {
-                        router.push(pathname)
-                      }
+                      if (searchParams.toString()) router.push(pathname)
                     }}
                   >
                     <Icon className="h-4 w-4" />
@@ -1281,7 +1379,7 @@ function HomeContent() {
         </div>
       </aside>
 
-      {/* ── Main content ────────────────────────────────────────────────────── */}
+      {/* Main content */}
       <div className="flex-1 flex flex-col min-w-0">
         {/* Desktop header */}
         <header className="hidden md:flex sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 h-14 items-center px-4 lg:px-6 gap-4">
@@ -1333,16 +1431,15 @@ function HomeContent() {
             <ThemeToggle />
           </div>
         </header>
-        {/* ── Mobile header ─────────────────────────────────────────────────── */}
+
+        {/* Mobile header */}
         <header className="md:hidden sticky top-0 z-40 bg-background/95 backdrop-blur border-b border-border">
-          {/* Logo row */}
           <div className="flex items-center gap-3 px-4 h-12">
             <Image src="logo.png" alt="Drugucopia" width={28} height={28} className="rounded-lg" />
             <span className="font-bold text-base flex-1">Drugucopia</span>
             <ThemeToggle />
           </div>
 
-          {/* Search — only on substances tab */}
           {mobileTab === 'substances' && (
             <div className="px-4 pb-2">
               <div className="relative">
@@ -1388,18 +1485,18 @@ function HomeContent() {
           )}
         </header>
 
-        {/* ── Content ───────────────────────────────────────────────────────── */}
+        {/* Content */}
         <main className="flex-1">
-          {/* ─ Desktop dose-log ─ */}
+          {/* Desktop dose-log */}
           <div className={`container mx-auto py-6 lg:py-10 px-4 lg:px-6 ${desktopView === 'dose-log' ? 'hidden md:block' : 'hidden'}`}>
             <div className="space-y-6">
-              <ActiveDosesTimeline refreshTrigger={doseRefreshTrigger} />
-              <DoseStats refreshTrigger={doseRefreshTrigger} />
-              <DoseHistory refreshTrigger={doseRefreshTrigger} />
+              <ActiveDosesTimeline />
+              <DoseStats />
+              <DoseHistory />
             </div>
           </div>
 
-          {/* ─ Desktop substances ─ */}
+          {/* Desktop substances */}
           <div className={`container mx-auto py-6 lg:py-10 px-4 lg:px-6 ${desktopView === 'substances' ? 'hidden md:block' : 'hidden'}`}>
             {selectedCategory !== 'all' && (
               <div className="mb-6">
@@ -1421,84 +1518,15 @@ function HomeContent() {
               </div>
             )}
 
+            {/* PERF: SubstanceCard is memoized — won't re-render unless substance/onSelect changes */}
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredSubstances.map((substance) => {
-                const primary = getPrimaryCategory(substance)
-                const cats = getSubstanceCategories(substance)
-                const hasRouteData = substance.routeData && Object.keys(substance.routeData).length > 1
-                return (
-                  <Card
-                    key={substance.id}
-                    className="cursor-pointer hover:border-primary/50 transition-colors group"
-                    onClick={() => {
-                      setSelectedSubstance(substance)
-                      lastProcessedSubstanceRef.current = substance.id
-                      // Preserve view param if exists, otherwise just substance
-                      const viewParam = searchParams.get('view')
-                      if (viewParam) {
-                        router.push(`${pathname}?substance=${substance.id}&view=${viewParam}`)
-                      } else {
-                        router.push(`${pathname}?substance=${substance.id}`)
-                      }
-                    }}
-                  >
-                    <CardHeader className="pb-3">
-                      <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-3">
-                          {primary && (
-                            <div className={`p-2 rounded-lg shrink-0 ${categoryColors[primary]}`}>
-                              <CategoryIcon substance={substance} className="h-4 w-4" />
-                            </div>
-                          )}
-                          <div className="min-w-0">
-                            <CardTitle className="text-lg group-hover:text-primary transition-colors">
-                              {substance.name}
-                            </CardTitle>
-                            <CardDescription className="text-xs">{substance.class}</CardDescription>
-                          </div>
-                        </div>
-                        <ChevronRight className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors shrink-0" />
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">{substance.description}</p>
-                      <div className="flex flex-wrap gap-1 mb-2">
-                        {substance.commonNames.slice(0, 2).map((name, i) => (
-                          <Badge key={i} variant="secondary" className="text-xs">{name}</Badge>
-                        ))}
-                        {substance.commonNames.length > 2 && (
-                          <Badge variant="secondary" className="text-xs">+{substance.commonNames.length - 2}</Badge>
-                        )}
-                      </div>
-                      <div className="flex items-center justify-between gap-2 flex-wrap">
-                        <div className="flex flex-wrap gap-1">
-                          {cats.slice(0, 2).map((cat) => {
-                            const info = categories.find((c) => c.id === cat)
-                            return (
-                              <Badge key={cat} variant="outline" className={`text-xs ${categoryColors[cat] ?? ''}`}>
-                                {info?.name ?? cat}
-                              </Badge>
-                            )
-                          })}
-                          {cats.length > 2 && (
-                            <Badge variant="outline" className="text-xs text-muted-foreground">+{cats.length - 2}</Badge>
-                          )}
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          {hasRouteData && (
-                            <Badge variant="outline" className="text-xs border-primary/30 text-primary/70">
-                              {Object.keys(substance.routeData!).length} routes
-                            </Badge>
-                          )}
-                          <Badge variant="outline" className={riskLevelColors[substance.riskLevel]}>
-                            {substance.riskLevel.replace('-', ' ')}
-                          </Badge>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                )
-              })}
+              {filteredSubstances.map((substance) => (
+                <SubstanceCard
+                  key={substance.id}
+                  substance={substance}
+                  onSelect={handleSelectSubstance}
+                />
+              ))}
             </div>
 
             {filteredSubstances.length === 0 && (
@@ -1510,16 +1538,10 @@ function HomeContent() {
             )}
           </div>
 
-          {/* ─ Mobile: Substances tab ─ */}
+          {/* Mobile: Substances tab */}
           <div className={`${mobileTab === 'substances' ? 'block md:hidden' : 'hidden'} pb-24`}>
             <div className="px-4 pt-3 pb-1">
-              <CategoryChipRow selected={selectedCategory} onChange={(cat) => {
-              setSelectedCategory(cat)
-              // Only navigate if there are query params to clear
-              if (searchParams.toString()) {
-                router.push(pathname)
-              }
-            }} />
+              <CategoryChipRow selected={selectedCategory} onChange={handleCategoryChange} />
             </div>
 
             {selectedCategory !== 'all' && (
@@ -1530,60 +1552,15 @@ function HomeContent() {
               </div>
             )}
 
+            {/* PERF: MobileSubstanceRow is memoized */}
             <div className="px-4 space-y-3">
-              {filteredSubstances.map((substance) => {
-                const primary = getPrimaryCategory(substance)
-                const cats = getSubstanceCategories(substance)
-                return (
-                  <button
-                    key={substance.id}
-                    onClick={() => {
-                      setSelectedSubstance(substance)
-                      lastProcessedSubstanceRef.current = substance.id
-                      // Preserve view param if exists, otherwise just substance
-                      const viewParam = searchParams.get('view')
-                      if (viewParam) {
-                        router.push(`${pathname}?substance=${substance.id}&view=${viewParam}`)
-                      } else {
-                        router.push(`${pathname}?substance=${substance.id}`)
-                      }
-                    }}
-                    className="w-full text-left flex items-start gap-3 p-4 rounded-2xl border border-border bg-card hover:border-primary/40 active:scale-[0.99] transition-all"
-                  >
-                    {primary && (
-                      <div className={`p-2.5 rounded-xl shrink-0 ${categoryColors[primary]}`}>
-                        <CategoryIcon substance={substance} className="h-5 w-5" />
-                      </div>
-                    )}
-                    <div className="flex-1 min-w-0">
-                      <div className="flex items-start justify-between gap-2 mb-1">
-                        <span className="font-semibold text-base leading-tight">{substance.name}</span>
-                        <ChevronRight className="h-4 w-4 text-muted-foreground shrink-0 mt-0.5" />
-                      </div>
-                      <p className="text-xs text-muted-foreground mb-2">{substance.class}</p>
-                      <p className="text-sm text-muted-foreground line-clamp-2 mb-2 leading-relaxed">
-                        {substance.description}
-                      </p>
-                      <div className="flex flex-wrap gap-1">
-                        {cats.slice(0, 2).map((cat) => {
-                          const info = categories.find((c) => c.id === cat)
-                          return (
-                            <Badge key={cat} variant="outline" className={`text-xs ${categoryColors[cat]}`}>
-                              {info?.name ?? cat}
-                            </Badge>
-                          )
-                        })}
-                        {cats.length > 2 && (
-                          <Badge variant="outline" className="text-xs">+{cats.length - 2}</Badge>
-                        )}
-                        <Badge variant="outline" className={`text-xs ${riskLevelColors[substance.riskLevel]}`}>
-                          {substance.riskLevel.replace('-', ' ')}
-                        </Badge>
-                      </div>
-                    </div>
-                  </button>
-                )
-              })}
+              {filteredSubstances.map((substance) => (
+                <MobileSubstanceRow
+                  key={substance.id}
+                  substance={substance}
+                  onSelect={handleSelectSubstance}
+                />
+              ))}
 
               {filteredSubstances.length === 0 && (
                 <div className="text-center py-16">
@@ -1594,31 +1571,27 @@ function HomeContent() {
             </div>
           </div>
 
-          {/* ─ Mobile: Timeline tab ─ */}
+          {/* Mobile: Timeline tab */}
           <div className={`${mobileTab === 'timeline' ? 'block md:hidden' : 'hidden'} pb-24 px-4 pt-3 space-y-4`}>
-            <ActiveDosesTimeline refreshTrigger={doseRefreshTrigger} />
-            <DoseStats refreshTrigger={doseRefreshTrigger} />
+            <ActiveDosesTimeline />
+            <DoseStats />
           </div>
 
-          {/* ─ Mobile: History tab ─ */}
+          {/* Mobile: History tab */}
           <div className={`${mobileTab === 'history' ? 'block md:hidden' : 'hidden'} pb-24 px-4 pt-3`}>
-            <DoseHistory refreshTrigger={doseRefreshTrigger} />
+            <DoseHistory />
           </div>
         </main>
       </div>
 
-      {/* ── Mobile bottom nav ──────────────────────────────────────────────── */}
+      {/* Mobile bottom nav */}
       <MobileBottomNav
         active={mobileTab}
         onChange={(tab) => {
           setMobileTab(tab)
-          // Sync desktop view
           if (tab === 'substances') {
             setDesktopView('substances')
-            // Only navigate if there are query params to clear
-            if (searchParams.toString()) {
-              router.push(pathname)
-            }
+            if (searchParams.toString()) router.push(pathname)
           } else {
             setDesktopView('dose-log')
             router.push(`${pathname}?view=${tab}`)
@@ -1640,7 +1613,7 @@ function HomeContent() {
   )
 }
 
-// ─── EXPORT WITH SUSPENSE BOUNDARY ─────────────────────────────────────────────
+// ─── EXPORT WITH SUSPENSE BOUNDARY ───────────────────────────────────────────
 
 export default function Home() {
   return (
