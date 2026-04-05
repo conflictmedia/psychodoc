@@ -100,7 +100,12 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
     setDurationOverride(dose.duration ?? null)
   }, [dose])
 
-  const substanceOptions: ComboboxOption[] = substances.map(s => ({ value: s.id, label: s.name }))
+  // Include commonNames as keywords for search filtering
+  const substanceOptions: ComboboxOption[] = substances.map(s => ({ 
+    value: s.id, 
+    label: s.name,
+    keywords: s.commonNames
+  }))
   const selectedSubstance = substances.find(s => s.id === substanceId)
 
   // Interpolated estimate for the current substance+route combo
