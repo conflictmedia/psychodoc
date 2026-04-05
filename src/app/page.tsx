@@ -1431,7 +1431,7 @@ function HomeContent() {
           )}
 
           <div className="ml-auto flex items-center gap-2">
-            {desktopView === 'dose-log' && <DoseLoggerModal onLogCreated={handleDoseLogged} />}
+            <DoseLoggerModal onLogCreated={handleDoseLogged} />
             <ThemeToggle />
           </div>
         </header>
@@ -1462,6 +1462,13 @@ function HomeContent() {
                     <X className="h-4 w-4" />
                   </button>
                 )}
+              </div>
+              <div className="flex items-center justify-end mt-2">
+                <DoseLoggerModal onLogCreated={handleDoseLogged} trigger={
+                  <button className="flex items-center gap-1.5 h-8 px-3 bg-primary text-primary-foreground rounded-lg text-sm font-medium">
+                    <Plus className="h-3.5 w-3.5" />Log Dose
+                  </button>
+                } />
               </div>
             </div>
           )}
