@@ -15,13 +15,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from '@/components/ui/select'
+
 import { Textarea } from '@/components/ui/textarea'
 import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert'
@@ -88,6 +82,20 @@ const unitOptions: ComboboxOption[] = [
   { value: 'blunt', label: 'blunt' },
   { value: 'bowl', label: 'bowl' },
   { value: 'blinker', label: 'blinker' },
+]
+
+// Default route options for dose logging
+const defaultRouteOptions: ComboboxOption[] = [
+  { value: 'oral', label: 'Oral' },
+  { value: 'insufflation', label: 'Insufflation' },
+  { value: 'inhalation', label: 'Inhalation' },
+  { value: 'sublingual', label: 'Sublingual' },
+  { value: 'rectal', label: 'Rectal' },
+  { value: 'intramuscular', label: 'Intramuscular' },
+  { value: 'transdermal', label: 'Transdermal' },
+  { value: 'intravenous', label: 'Intravenous' },
+  { value: 'smoked', label: 'Smoked' },
+  { value: 'vaped', label: 'Vaped' },
 ]
 
 /** Format a unit with proper singular/plural based on amount */
@@ -355,12 +363,7 @@ export function DoseLoggerModal({
     setSetting('')
   }
 
-  const getRoutesForSubstance = () => {
-    if (selectedSubstance?.routeData) {
-      return Object.keys(selectedSubstance.routeData)
-    }
-    return ['oral', 'insufflation', 'inhalation', 'sublingual', 'rectal', 'transdermal', 'intravenous', 'smoked', 'vaped', 'intramuscular']
-  }
+
 
   const handleSubstanceChange = (value: string) => {
     const found = substances.find(s => s.id === value)
@@ -414,9 +417,10 @@ export function DoseLoggerModal({
               options={substanceOptions}
               value={substanceId}
               onChange={handleSubstanceChange}
-              placeholder="Select or type a substance..."
+              placeholder="Select from list or type custom..."
               allowCustom={true}
             />
+            <p className="text-xs text-muted-foreground">Select from list or type a custom substance</p>
           </div>
 
           {interactingSubstances.length > 0 && (
@@ -447,22 +451,23 @@ export function DoseLoggerModal({
                 options={unitOptions}
                 value={unit}
                 onChange={setUnit}
-                placeholder="Select or type a unit..."
+                placeholder="Select or type custom..."
                 allowCustom={true}
               />
+              <p className="text-xs text-muted-foreground">Type a custom unit if needed</p>
             </div>
           </div>
 
           <div className="grid gap-2">
             <Label>Route of Administration</Label>
-            <Select value={route} onValueChange={setRoute}>
-              <SelectTrigger><SelectValue /></SelectTrigger>
-              <SelectContent>
-                {getRoutesForSubstance().map((r) => (
-                  <SelectItem key={r} value={r}>{r}</SelectItem>
-                ))}
-              </SelectContent>
-            </Select>
+            <Combobox
+              options={selectedSubstance?.routeData ? Object.keys(selectedSubstance.routeData).map(r => ({ value: r, label: r })) : defaultRouteOptions}
+              value={route}
+              onChange={setRoute}
+              placeholder="Select or type custom..."
+              allowCustom
+            />
+            <p className="text-xs text-muted-foreground">Type a custom route if needed</p>
           </div>
 
           <div className="grid gap-2">
@@ -480,9 +485,10 @@ export function DoseLoggerModal({
               options={moodOptions}
               value={mood}
               onChange={setMood}
-              placeholder="Select or type a mood..."
+              placeholder="Select or type custom..."
               allowCustom={true}
             />
+            <p className="text-xs text-muted-foreground">Select or type a custom mood</p>
           </div>
 
           <div className="grid gap-2">
@@ -491,9 +497,10 @@ export function DoseLoggerModal({
               options={settingOptions}
               value={setting}
               onChange={setSetting}
-              placeholder="Select or type a setting..."
+              placeholder="Select or type custom..."
               allowCustom={true}
             />
+            <p className="text-xs text-muted-foreground">Select or type a custom setting</p>
           </div>
 
           <div className="grid gap-2">
