@@ -110,7 +110,14 @@ export const _2c_t_2: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 2C-T-2 use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown.",
     "Anecdotal reports suggest that there are no negative health effects attributed to trying this drug, but nothing can be completely guaranteed.",

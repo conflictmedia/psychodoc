@@ -147,19 +147,42 @@ export const cocaine: Substance =
       }
     }
   },
-  "interactions": [
-    "ΑMT",
-    "Opioids",
-    "Tramadol",
-    "MAOIs",
-    "DOx",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DXM",
-    "PCP",
-    "Alcohol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "ΑMT",
+      "Opioids",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DOx",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DXM",
+      "PCP",
+      "Alcohol"
+    ],
+    "uncertain": [
+      "Mushrooms",
+      "LSD",
+      "DMT",
+      "Mescaline",
+      "2C-x",
+      "Cannabis",
+      "Ketamine",
+      "MXE",
+      "Amphetamines",
+      "MDMA",
+      "Caffeine",
+      "GHB",
+      "GBL"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "Chronic cocaine use has been shown to lead to neurotoxicity, being associated with high morbidity and mortality rates. Its extended use or abuse does also cause short-term downregulation of neurotransmitters.",
     "The most potentially harmful physical effects of cocaine appear to be not neurological but cardiovascular. Severe cardiac adverse events, particularly sudden cardiac death, become a serious risk at high doses due to cocaine's blocking effect on cardiac sodium channels.",

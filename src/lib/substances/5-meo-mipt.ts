@@ -107,15 +107,31 @@ export const _5_meo_mipt: Substance =
       }
     }
   },
-  "interactions": [
-    "aMT",
-    "MAOIs",
-    "PCP",
-    "Amphetamines",
-    "Cocaine",
-    "DXM",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "aMT",
+      "MAOIs",
+      "PCP"
+    ],
+    "unsafe": [
+      "Amphetamines",
+      "Cocaine",
+      "DXM",
+      "Tramadol"
+    ],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "Cannabis",
+      "DOx",
+      "MDMA",
+      "Mescaline",
+      "NBOMe"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "Almost nothing is known about the long-term effects of 5-MeO-MiPT. Alongside of this, the exact toxic dosage is unknown. This is because 5-MeO-MiPT is a research chemical with very little history of human use.",
     "A preliminary study on mice has shown that a normal dose of 5-MeO-MiPT (0.27 mg/kg) was unable to produce any measurable toxic effects. However, doses of 5-MeO-MiPT way above the normal dosage range (2.7 mg/kg) have been shown to produce cell toxicity by triggering programmed cell death in the brain, liver and kidneys. The extent of the damage, if it occurs in other bodily tissues as well and how it is caused is not known yet.",

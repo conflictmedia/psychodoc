@@ -117,10 +117,21 @@ export const _1p_lsd: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 1P-LSD use have not been studied. This is because 1P-LSD is a research chemical with almost no history of human use.",
     "Anecdotal reports suggest that there are no negative health effects attributed to simply trying 1P-LSD by itself, at low to moderate doses, and using it very sparingly (although nothing can be completely guaranteed). Independent research should always be conducted to ensure that a combination of two or more substances is safe before consumption.",

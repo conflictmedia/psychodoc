@@ -109,15 +109,29 @@ export const n_ethylhexedrone: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "norepinephrine|noradrenergic",
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational N-ethylhexedrone use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because N-ethylhexedrone has a very brief history of human usage.",
     "Early anecdotal reports from those who have tried N-ethylhexedrone suggests that there do not seem to be any negative health effects attributed to simply trying it at low to moderate doses by itself and using it in a sparing and controlled fashion (but nothing can be completely guaranteed).",

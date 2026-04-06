@@ -95,16 +95,26 @@ export const ghb: Substance =
       }
     }
   },
-  "interactions": [
-    "Ketamine",
-    "MXE",
-    "DXM",
-    "PCP",
-    "Alcohol",
-    "Opioids",
-    "Tramadol",
-    "Benzodiazepines"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Ketamine",
+      "MXE",
+      "DXM",
+      "PCP",
+      "Alcohol",
+      "Opioids",
+      "Tramadol",
+      "Benzodiazepines"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Nitrous",
+      "Amphetamines",
+      "MDMA",
+      "Cocaine"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "GHB is considered to be a safe and non-toxic substance when used responsibly or medically. The LD50 is above the active dosage, and there is no danger of acute toxicity. However, it can become dangerous when used as a recreational drug or abused. There have been many negative reports from recreational users who have overdosed, combined GHB with alcohol or other drugs, or accidentally dosed themselves unexpectedly.",
     "One publication investigated 226 deaths attributed to GHB. Seventy-one deaths (34%) were caused by GHB alone while the other deaths were from respiratory depression caused by interaction with alcohol or other drugs.",

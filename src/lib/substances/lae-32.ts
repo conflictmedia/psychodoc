@@ -50,9 +50,18 @@ export const lae_32: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Amphetamines",
+      "Cocaine"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

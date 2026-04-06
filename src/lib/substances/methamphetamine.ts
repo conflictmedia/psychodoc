@@ -183,17 +183,37 @@ export const methamphetamine: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulants"
+    ]
+  },
   "harmReduction": [
     "There is evidence that methamphetamine causes brain damage from long-term use in humans; this damage includes adverse changes in brain structure and function, such as reductions in gray matter volume in several brain regions and adverse changes in markers of metabolic integrity.",
     "Unlike amphetamine, methamphetamine is directly neurotoxic to dopamine neurons. Moreover, methamphetamine abuse is associated with an increased risk of Parkinson's disease due to excessive pre-synaptic dopamine autoxidation, a mechanism of neurotoxicity. Similar to the neurotoxic effects on the dopamine system, methamphetamine can also result in neurotoxicity to serotonin neurons. It has been demonstrated that a high core temperature is correlated with an increase in the neurotoxic effects of methamphetamine. As a result of methamphetamine-induced neurotoxicity to dopamine neurons, chronic use may also lead to post acute withdrawals which persist beyond the withdrawal period for months, and even up to a year.",

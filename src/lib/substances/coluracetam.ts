@@ -77,10 +77,20 @@ export const coluracetam: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "racetam",
+      "nootropic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational coluracetam use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because coluracetam has very little history of human use. Anecdotal evidence from people who have tried coluracetam within the community suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

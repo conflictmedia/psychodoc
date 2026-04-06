@@ -105,10 +105,17 @@ export const _3_meo_pce: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociatives"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 3-MeO-PCE use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-MeO-PCE has very little history of human usage.",
     "3-MeO-PCE has been reported to cause psychosis, delusions, and mania at a significantly higher rate than other dissociatives such as ketamine, diphenidine, or MXE. There are a large number of experience reports online which describe states of \"psychotic delirium, amnesia, mania, and other serious consequences\" after abusing the substance.",

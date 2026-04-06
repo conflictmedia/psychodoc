@@ -100,15 +100,25 @@ export const _4f_mph: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 4F-MPH use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 4F-MPH is a research chemical with very little history of human usage. Anecdotal evidence from people who have tried 4F-MPH suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent researchshould always be done to ensure that a combination of two or more substances is safe before consumption.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

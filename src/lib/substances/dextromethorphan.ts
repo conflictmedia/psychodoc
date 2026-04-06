@@ -148,26 +148,37 @@ export const dextromethorphan: Substance =
       }
     }
   },
-  "interactions": [
-    "ΑMT",
-    "PCP",
-    "MDMA",
-    "Alcohol",
-    "GHB",
-    "GBL",
-    "Opioids",
-    "Tramadol",
-    "MAOIs",
-    "SSRIs",
-    "Antihistamines",
-    "DOx",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "Amphetamines",
-    "Cocaine",
-    "Bupropion"
-  ],
+  "interactions": {
+    "dangerous": [
+      "ΑMT",
+      "PCP",
+      "MDMA",
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Tramadol",
+      "MAOIs",
+      "SSRIs",
+      "Antihistamines"
+    ],
+    "unsafe": [
+      "DOx",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "Cocaine",
+      "Bupropion"
+    ],
+    "uncertain": [
+      "Benzodiazepines",
+      "Cannabis"
+    ],
+    "crossTolerances": [
+      "dissociatives"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational DXM use in humans has not been studied in any scientific context and the exact toxic dosage is unknown.",
     "Anecdotal evidence suggests that there do not seem to be any negative health effects attributed to simply trying DXM at low to moderate doses by itself and using it sparingly, however, many DXM users report that waiting a week between their respective plateaus before doing DXM again (one week after first plat., two weeks after 2nd plat., etc.) can potentially prevent or minimize severe damage to the kidneys and many other organs including the heart and liver due to an excess of assorted toxic chemicals in the blood stream after DXM use. This 1-4 week period gives your body time to filter out these chemicals and help get you back to baseline levels to where its safe to do again. Some more heavy users of DXM report that these chemicals can build up heavily over time if you do not follow these guidelines, which could mean waiting longer to do again after more heavy use between short periods.",

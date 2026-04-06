@@ -84,7 +84,14 @@ export const det: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational DET has not been studied in any scientific context and the exact toxic dose is unknown.",
     "This is because DET is a research chemical with a limited history of human usage.",

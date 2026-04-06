@@ -102,19 +102,32 @@ export const mephedrone: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "SNRIs",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "SNRIs",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "Almost nothing is known about the long-term effects of mephedrone due to its short history of its use. Along side of this, the exact toxic dosage is unknown.",
     "In 2010, unconfirmed reports speculated about the role mephedrone has played in the deaths of several young people in the UK. By July 2010, mephedrone had been alleged to be involved in 52 fatalities in the UK, but detected in only 38 of these cases. Of the nine that coroners had finished investigating, two were caused directly by mephedrone. The first death reported to be caused by mephedrone use was that of 46-year-old who had underlying health problems and repeatedly injected the drug. A report in Forensic Science International in stated mephedrone intoxication has been recorded as the cause of death in two cases in Scotland.",

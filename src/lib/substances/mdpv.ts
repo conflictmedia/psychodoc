@@ -90,15 +90,25 @@ export const mdpv: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "MDPV has a relatively short history of human use, with very few mentions concerning the use thereof before 2004. Although once considered a potential alternative to existing stimulants with a lower risk for toxicity, human MDPV administration has not been extensively studied in a clinical setting for many decades. Despite this, several recent studies on cases of persisting psychosis caused by chronic use of MDPV show promising rates of recovery among individuals who are treated with certain antipsychotics and first-line antihistamines. There is currently no conclusive data concerning the neurotoxicity of MDPV in the human brain.",
     "Anecdotal evidence from those who have tried MDPV in the community suggest that there are no negative health effects associated with the substance if simply taken at low doses by itself and when used sparingly (but nothing can be completely guaranteed).",

@@ -118,14 +118,31 @@ export const _25c_nbome: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Amphetamines",
-    "aMT",
-    "Cocaine",
-    "DXM",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DXM",
+      "Tramadol"
+    ],
+    "uncertain": [
+      "2C-T-x",
+      "5-MeO-xxt",
+      "Caffeine",
+      "Cannabis",
+      "DOx",
+      "MAOIs",
+      "MDMA",
+      "MXE"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "25C-NBOMe is a relatively new substance, and little is known about its pharmacological risks or its interaction with other substances. The LD50 has not yet been determined although it can be fatal at heavy dosages.",
     "It is advised that due to 25C-NBOMe's extreme potency it should not be insufflated (snorted) as this method of administration has been attributed to several fatal overdoses due to improper dosing.",

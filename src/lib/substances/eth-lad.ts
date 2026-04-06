@@ -104,10 +104,21 @@ export const eth_lad: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational ETH-LAD use in humans does not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because ETH-LAD is a research chemical with very little history of human usage.",
     "Anecdotal reports from those who have tried ETH-LAD suggests that there are no negative health effects attributed to simply trying it by itself at low to moderate doses or using it very sparingly (although nothing can be guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

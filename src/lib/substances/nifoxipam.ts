@@ -70,7 +70,14 @@ export const nifoxipam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "benzodiazepines"
+    ]
+  },
   "harmReduction": [
     "Nifoxipam likely has a low toxicity relative to dose. However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids.",
     "It is strongly recommended that one use harm reduction practices, such as volumetric dosing, when using this substance to ensure the accurate administration of the intended dose.",

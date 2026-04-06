@@ -65,10 +65,17 @@ export const _1_4_butanediol: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "1,4-Butanediol is not active in its own right; its mechanism of action stems from its identity as a prodrug of GHB, meaning that it is rapidly converted into GHB in the body.",
     "GHB is considered to be a safe and non-toxic substance when used responsibly or medically. The LD50 is above the active dosage, and there is no danger of acute toxicity when this compound is taken at appropriate dosages. However, it can be dangerous when used as a recreational drug or abused. There have been many negative reports from recreational users who have overdosed, combined GHB with alcohol or other drugs, or accidentally dosed themselves unexpectedly.",

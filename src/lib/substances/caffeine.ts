@@ -115,7 +115,21 @@ export const caffeine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [
+      "DOx",
+      "25x-NBOMe",
+      "ΑMT",
+      "PCP",
+      "Amphetamines",
+      "MDMA",
+      "Cocaine",
+      "Lithium"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Caffeine is not known to cause brain damage, and has an extremely low toxicity relative to dose. There are relatively few physical side effects associated with caffeine exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "Extreme overdose can result in death. The median lethal dose (LD50) given orally is 192 milligrams per kilogram in rats. The LD50 of caffeine in humans is dependent on individual sensitivity, but is estimated to be about 150 to 200 milligrams per kilogram of body mass or roughly 80 to 100 cups of coffee for an average adult. Though achieving lethal dose of caffeine would be difficult with regular coffee, it is easier to reach high doses with caffeine pills or dry scooping, and the lethal dose can be lower in individuals whose ability to metabolize caffeine is impaired.",

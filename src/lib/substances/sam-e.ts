@@ -73,7 +73,12 @@ export const sam_e: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "There are no clinically significant side-effects of acute SAM-e supplementation. Although side-effects are not commonly reported with SAMe, numerous studies note a small set of participants who experience mania after supplementing SAM-e. While not common, it appears to be related to SAMe supplementation for unknown reasons; it has been reported in some persons without history of mania as well and does not appear to be related to any pathological condition per se.",
     "SAM-e is also hypothesized to raise homocystine to harmful levels, but this has yet to be proven in a laboratory environment.  Still, it is advised to take Sam-e along with folate and B12.",

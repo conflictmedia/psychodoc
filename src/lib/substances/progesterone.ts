@@ -77,7 +77,12 @@ export const progesterone: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Warning: Progesterone is a naturally occuring sex hormone, changing its levels might induce gender dysphoria or premenstrual syndrome.",
     "Progesterone has relatively low toxicity relative to dose.",

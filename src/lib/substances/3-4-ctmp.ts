@@ -97,15 +97,25 @@ export const _3_4_ctmp: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 3,4-CTMP use do not seem to have been studied in any scientific context, and the exact toxic dosage is unknown. This is because 3,4-CTMP is a research chemical with very little history of human usage.",
     "Although anecdotal evidence from people who have tried 3,4-CTMP suggests that there are unlikely to be negative health effects attributed to simply trying the substance by itself at low to moderate doses, the agonist activity it displays for the 5-HT2B receptor is a cause for concern, as acute 5-HT2B agonism has been shown to result in a potentially dangerous and largely asymptomatic effect called pulmonary hypertension. Moreover, the long-term stimulation of 5-HT2B receptors has been shown to lead to fibrosis of the heart valves, which may result in stroke and/or severe, permanent heart disease.",

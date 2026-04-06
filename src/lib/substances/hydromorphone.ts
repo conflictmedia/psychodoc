@@ -102,17 +102,29 @@ export const hydromorphone: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Like most opioids, unadulterated hydromorphone does not cause many long-term complications other than psychological and physical dependence and constipation. The harmful or toxic aspects of hydromorphone's usage as a recreational substance are exclusively associated with not taking appropriate precautions in regards to its administration, overdosing, and using impure or adulterated batches of the substance.",
     "Heavy dosages of hydromorphone can result in respiratory depression, leading onto fatal or dangerous levels of oxygen deprivation. This occurs because the breathing reflex is suppressed by agonism of µ-opioid receptors - this effect is proportional to the dosage of opiates consumed.",

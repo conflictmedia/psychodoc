@@ -90,23 +90,34 @@ export const mt: Substance =
       }
     }
   },
-  "interactions": [
-    "2C-T-x",
-    "2C-x",
-    "5-MeO-xxT",
-    "Amphetamines",
-    "Cocaine",
-    "DOx",
-    "DXM",
-    "MAOIs",
-    "MDMA",
-    "Mescaline",
-    "MXE",
-    "25x-NBOMe",
-    "PCP",
-    "SSRIs",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "2C-T-x",
+      "2C-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "Cocaine",
+      "DOx",
+      "DXM",
+      "MAOIs",
+      "MDMA",
+      "Mescaline",
+      "MXE",
+      "25x-NBOMe",
+      "PCP",
+      "SSRIs",
+      "Tramadol"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Alcohol",
+      "Caffeine",
+      "Cannabis"
+    ],
+    "crossTolerances": [
+      "psychedelics"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational αMT use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because AMT is a research chemical with very little history of human usage.",
     "As a monoamine reuptake inhibitor, αMT can be dangerous when taken in excessive doses or when combined with MAOIs, RIMAs, stimulants and any substance which act as a releasing agent or reuptake inhibitor of serotonin and dopamine. There is one reported death from AMT, but it is not known how much of the substance was taken. Erowid states that they have received \"a handful of unverifiable reports of hospitalization after high-dose (over 60 mg oral) AMT ingestion.\"",

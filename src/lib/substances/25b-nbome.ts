@@ -101,14 +101,31 @@ export const _25b_nbome: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Amphetamines",
-    "aMT",
-    "Cocaine",
-    "DXM",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DXM",
+      "Tramadol"
+    ],
+    "uncertain": [
+      "2C-T-x",
+      "5-MeO-xxt",
+      "Caffeine",
+      "Cannabis",
+      "DOx",
+      "MAOIs",
+      "MDMA",
+      "MXE"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "25B-NBOMe is a relatively new substance, and little is known about its pharmacological risks or its interaction with other substances. The lethal dosage has not yet been determined. One case has been reported on where 25B-NBOMe was identified as the cause of death for a 17-year-old boy.",
     "It is advised that due to 25B-NBOMe's extreme potency it should not be insufflated as this method of administration is potentially fatal at heavy dosages.",

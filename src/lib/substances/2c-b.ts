@@ -157,10 +157,19 @@ export const _2c_b: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 2C-B use have not been studied in any scientific context, and the exact toxic dose is unknown.",
     "Anecdotal evidence suggests that there are no negative health effects attributed to simply trying it by itself at low to moderate doses or using it very sparingly (although nothing can be completely guaranteed).",

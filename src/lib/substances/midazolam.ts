@@ -62,7 +62,12 @@ export const midazolam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Benzodiazepine dependence occurs in about one-third of individuals who are treated with benzodiazepines for longer than 4 weeks, which typically results in tolerance and benzodiazepine withdrawal syndrome when the dose is reduced too rapidly. Midazolam infusions may induce tolerance and a withdrawal syndrome in a matter of days.",
     "The risk factors for dependence include dependent personality, use of a benzodiazepine that is short-acting, high potency and long-term use of benzodiazepines. Withdrawal symptoms from midazolam can range from insomnia and anxiety to seizures and psychosis. Withdrawal symptoms can sometimes resemble a person's underlying condition.",

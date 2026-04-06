@@ -89,9 +89,29 @@ export const _5f_pb_22: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DMT",
+      "DOx",
+      "LSD",
+      "Mescaline",
+      "Mushrooms",
+      "25x-NBOMe"
+    ],
+    "crossTolerances": [
+      "cannabinoids"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 5F-PB-22 use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 5F-PB-22 has very little history of human usage. Informal experiments have shown that overdose will cause physical discomfort including heart palpitations, vertigo and sedation at much lower than dangerous doses, usually causing the user to suffer large amounts of anxiety or to fall asleep.",
     "There have been many hospital reports involving 5F-PB-22, as well as cases of post-mortem analysis involving 5F-PB-22. Five deaths have been associated with the use of 5F-PB-22 in the United States.",

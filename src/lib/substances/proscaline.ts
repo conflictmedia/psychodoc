@@ -81,7 +81,14 @@ export const proscaline: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational proscaline use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. Anecdotal evidence from people who have tried proscaline within the psychedelic community suggests that there are no negative health effects attributed to trying this drug, but nothing can be completely guaranteed.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

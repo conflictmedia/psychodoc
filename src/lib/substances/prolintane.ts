@@ -81,15 +81,25 @@ export const prolintane: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational prolintane use do not seem to have been studied in any scientific context, and the exact toxic dosage is unknown. Anecdotal evidence from people who have tried prolintane within the community suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "The exact lethal dosage of prolintane is unknown, and no formal studies have been carried out in humans. The typical adult therapeutic dose of prolintane has been 10-40mg daily. In therapeutic trials, 20mg prolintant is a mild stimulant equivalent to 100mg caffeine. In a study of fatigued volunteers the administration of 20mg or 40mg prolintane produced similar, but less intense effects than 20mg d-amphetamine. In experimental studies of healthy volunteers, prolintane has little cardiovascular activity following the single dose of 20mg.",

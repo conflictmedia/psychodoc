@@ -125,10 +125,21 @@ export const dmt: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelics"
+    ]
+  },
   "harmReduction": [
     "DMT is considered to be non-addictive, is not associated with any form of neurotoxicity, and has an extremely low toxicity relative to dose. As with other psychedelic substances, there are relatively few physical side effects associated with acute DMT exposure. Various studies have shown that in reasonable doses in a careful context, it has little to no negative cognitive, psychiatric or physical consequences.",
     "However, as with psychedelics generally, DMT is thought to be able to act as a potential trigger for those with underlying psychiatric conditions. Those with a personal or family history of mental illness are advised not to use this substance unless under medical supervision.",

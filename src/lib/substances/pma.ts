@@ -72,17 +72,34 @@ export const pma: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "PMA and its relative PMMA Toxicity can be considered extremely toxic when compared to other substances such as Methamphetamine or MDMA . Toxicity Ingestion of PMA has been associated with severe tachycardia (abnormally high heart rate), seizures, dehydration, hyperthermia, and death. PMA has a relatively slow onset, causing many users to redose which causes excess toxicity.",
     "It is strongly recommended that one use harm reduction practices when using this substance."

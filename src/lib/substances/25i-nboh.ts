@@ -120,10 +120,21 @@ export const _25i_nboh: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "25I-NBOH is a relatively new substance, and little is known about its toxicity or interaction with other substances. It is assumed to pose similar acute health risks as 25I-NBOMe (see  for more information). The LD50 has not yet been determined although it is likely to be potentially fatal at heavy dosages.",
     "25I-NBOH's extreme potency means it should not be insufflated (snorted) as this method of administration has been associated with many deaths and hospitalizations with the closely related 25I-NBOMe.",

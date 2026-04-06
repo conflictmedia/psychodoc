@@ -109,7 +109,12 @@ export const zolpidem: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Zolpidem has a low toxicity relative to dose.  However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids.",
     "Zolpidem has been reported to cause psychosis, delusions and delirium at a significantly higher rate than other hallucinogens like LSD, ketamine, or DMT. There are a large number of experience reports online which describe states of delirium, amnesia, bizarre behavior, sleep walking, driving while impaired and other serious consequences after abusing the drug. In many cases this has resulted in hospitalization, arrests, car crashes, lengthy court cases and even death.",

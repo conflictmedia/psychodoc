@@ -109,17 +109,29 @@ export const heroin: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Like many other opioids, unadulterated heroin at appropriate dosages does not cause many long-term complications other than physical and psychological dependence and constipation. Outside of the extremely powerful addiction and physical dependence, the harmful or toxic aspects of opioid usage are exclusively associated with not taking the necessary precautions in regards to its administration, overdosing and using impure heroin products that contain harmful additives.",
     "Heavy dosages of heroin can result in severe respiratory depression which can result in dangerous or even fatal levels of anoxia (oxygen deprivation). This occurs because the breathing reflex is suppressed by agonism of µ-opioid receptors - this effect is proportional to the dosage of the substance consumed.",

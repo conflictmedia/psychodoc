@@ -118,14 +118,23 @@ export const myristicin: Substance =
       }
     }
   },
-  "interactions": [
-    "Opioids",
-    "DXM",
-    "DPH",
-    "Stimulants",
-    "Alcohol",
-    "Serotonin releasers"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Opioids",
+      "DXM",
+      "DPH"
+    ],
+    "unsafe": [
+      "Stimulants",
+      "Alcohol",
+      "Serotonin releasers"
+    ],
+    "uncertain": [
+      "Benzodiazepines",
+      "Depressants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Myristicin is neurotoxic and can be fatal in extremely high doses. Also myristicin causes severe dehydration. It increases side effects of myristicin.",
     "Myristicin is not known to be addictive and the desire to use it can actually decrease with use.",

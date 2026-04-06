@@ -117,10 +117,17 @@ export const diphenidine: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational diphenidine use do not appear to have been studied in any scientific context and the exact toxic dosage is unknown. This is because diphenidine has very little history of human usage.",
     "Some anecdotal reports suggest diphenidine may increase the risk of mania and psychosis. This is common with many dissociatives, particularly with those that provide stimulation such as PCP.",

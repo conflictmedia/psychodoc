@@ -67,10 +67,20 @@ export const _2m2b: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "GABA",
+      "depressants"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 2M2B use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown although the lowest recorded fatal dose in a human is 30mL. However, 2M2B is expected to be less toxic than ethanol as  it cannot be metabolized into aldehydes in the same way. Anecdotal evidence from people who have tried 2M2B within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

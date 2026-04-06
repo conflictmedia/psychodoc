@@ -118,15 +118,33 @@ export const methoxetamine: Substance =
       }
     }
   },
-  "interactions": [
-    "ΑMT",
-    "Alcohol",
-    "GHB",
-    "GBL",
-    "Opioids",
-    "Tramadol",
-    "MAOIs"
-  ],
+  "interactions": {
+    "dangerous": [
+      "ΑMT",
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Tramadol"
+    ],
+    "unsafe": [
+      "MAOIs"
+    ],
+    "uncertain": [
+      "DOx",
+      "25x-NBOMe",
+      "2C-T-x",
+      "PCP",
+      "Amphetamines",
+      "MDMA",
+      "Cocaine",
+      "Benzodiazepines",
+      "SSRIs"
+    ],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational MXE use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown.",
     "This is because MXE is a research chemical with a very brief history of human usage.",

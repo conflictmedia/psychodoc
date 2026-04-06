@@ -77,7 +77,12 @@ export const blue_lotus: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity of Blue Lotus is misunderstood and poorly researched. Only the pure alkaloids have been tested with little toxicity, however, mixing Blue Lotus with other substances could present a risk.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

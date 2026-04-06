@@ -63,7 +63,15 @@ export const piracetam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "racetam",
+      "nootropic"
+    ]
+  },
   "harmReduction": [
     "Adverse effects, although rare and of short duration are limited to anxiety, insomnia, drowsiness, headaches and agitation. It may be safe for up to 18 months in humans at doses of 3.2g daily with one year-long study in ambulatory patients with Alzheimer's using 8g daily reporting no side effects. However, a possibility for adverse drug-drug interactions persists for piracetam due to it interacting with blood in an anti-clotting manner. Therefore, caution should be taken when pairing piracetam with pharmaceutical blood thinning agents such as Warfarin or potent nutraceutical options and individuals prone to brain hemorrhaging are discouraged from using piracetam.",
     "Patients with renal insufficiency should also not use piracetam.",

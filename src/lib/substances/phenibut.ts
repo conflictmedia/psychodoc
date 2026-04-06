@@ -87,7 +87,14 @@ export const phenibut: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "GABA"
+    ]
+  },
   "harmReduction": [
     "Phenibut has a low toxicity relative to dose. However, it is Toxicity potentially lethal when mixed with depressants like alcohol, benzodiazepines or opioids.",
     "Phenibut hydrochloride is highly caustic and in sensitive users can cause intestinal discomfort and diarrhea with some lower digestive tract bleeding.",

@@ -78,9 +78,29 @@ export const jwh_018: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DMT",
+      "DOx",
+      "LSD",
+      "Mescaline",
+      "Mushrooms",
+      "25x-NBOMe"
+    ],
+    "crossTolerances": [
+      "cannabinoids"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational JWH-018 use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because the drug has very little history of human usage.",
     "JWH-018, like many synthetic cannabinoids, is a full agonist of the CB1 receptors in contrast to the partial agonist Δ9-THC. Because of this, harm mediated by CB1 receptor agonism can be more severe than its partial agonist counterparts. JWH-018 has caused seizures and convulsions, and evidence suggests this is a result of inhibiting GABA neurotransmission more effectively than Δ9-THC. JWH-018 has also been associated with strokes in two healthy adults.",

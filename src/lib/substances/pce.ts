@@ -127,10 +127,17 @@ export const pce: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The long-term use of PCE may lead to schizophrenia-like psychotic episodes, severe lasting memory loss, disorganized thinking, depression, weight loss, liver abnormalities and rhabdomyolysis (skeletal muscle breakdown).",
     "Some studies have found that, like other NMDA receptor antagonists, PCE can cause brain damage called Olney's lesions in rats. Studies conducted on rats showed that high doses of the NMDA receptor antagonist dizocilpine caused reversible vacuoles to form in certain regions of the rats' brains. All studies of Olney's lesions have only been performed on non-human animals and may not apply to humans.",

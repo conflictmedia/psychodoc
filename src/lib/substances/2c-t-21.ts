@@ -101,7 +101,14 @@ export const _2c_t_21: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "On March 9, 2004, a 22-year-old American male consumed an unknown dose of 2C-T-21 by sticking his tongue into a vial of powder he had purchased online. He developed a temperature of 108 degrees Fahrenheit (42 degrees Celsius), had a tonic-clonic seizure, and slipped into a coma before dying four days later. These symptoms are consistent with those seen in fluoroacetate poisoning, for which there is no known effective antidote.",
     "Fluoroacetate is hypothesized to be a metabolite of 2C-T-21. Sub-lethal doses of fluoroacetate take up to four days to clear from the body. As such, it is likely dangerous to take 2C-T-21 multiple days in a row as this poisonous metabolite will accumulate. Furthermore, sub-lethal doses may cause damage to tissue with high energy needs (e.g. the brain, gonads, heart, lungs, and fetus). This may account for the experience of a couple who became \"convinced that it is toxic\" in Stolaroff's book.",

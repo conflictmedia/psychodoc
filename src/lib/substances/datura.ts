@@ -132,7 +132,12 @@ export const datura: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Datura is known to be extremely unpredictable and has the potential to result in severe consequences, hospitalization or death. The toxicity and long-term health effects of regular datura usage do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because long-term datura usage is very rare and the vast majority of people who try it do not desire to repeat the experience.",
     "In traditional cultures, a great deal of experience with and detailed knowledge of datura was critical to minimize harm. Many fatal incidents result from modern users ingesting datura. For example, in the 1990s and 2000s, the United States media contained stories of adolescents and young adults dying or becoming seriously ill from intentionally ingesting datura. There are also several reports in the medical literature of deaths from D. stramonium and D. ferox intoxication. Children are especially vulnerable to atropine poisoning and their prognosis is likely to be fatal.",

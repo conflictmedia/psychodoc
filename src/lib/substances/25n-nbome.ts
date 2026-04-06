@@ -104,14 +104,31 @@ export const _25n_nbome: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Amphetamines",
-    "aMT",
-    "Cocaine",
-    "DXM",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DXM",
+      "Tramadol"
+    ],
+    "uncertain": [
+      "2C-T-x",
+      "5-MeO-xxt",
+      "Caffeine",
+      "Cannabis",
+      "DOx",
+      "MAOIs",
+      "MDMA",
+      "MXE"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "potentially fatal at heavy dosages"
   ],

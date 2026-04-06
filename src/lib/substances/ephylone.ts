@@ -93,19 +93,29 @@ export const ephylone: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "SNRIs",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "SNRIs",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Ephylone is a research chemical with a very short history of human usage. Very little is known about its long-term health effects and the exact toxic dosage is unknown.",
     "Numerous reports of hospitalizations and overdose deaths indicate that ephylone is extremely toxic at very high dosages. The DEA claimed approximately 151 ephylone-related deaths occurred in the U.S. between 2014 and 2018. Higher dosages of ephylone have been linked to serotonin syndrome, rhabdomyolysis, kidney injury, acidemia and other life-threatening symptoms.",

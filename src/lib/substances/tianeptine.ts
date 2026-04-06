@@ -69,7 +69,15 @@ export const tianeptine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "trycyclic antidepressants",
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational tianeptine use have not been studied in any scientific context, and the exact toxic dosage is unknown.",
     "Anecdotal evidence suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

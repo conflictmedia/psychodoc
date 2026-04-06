@@ -140,7 +140,14 @@ export const diphenhydramine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "deliriant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational diphenhydramine use have not been studied extensively.",
     "Diphenhydramine can be highly unpredictable, and the mechanism by which it produces hallucinations has the potential to result in serious injury, hospitalization, or death. Additionally, diphenhydramine puts users in a state where they have little control over their actions. Diphenhydramine can provoke bizarre and nonsensical behavior, which may put the user at risk.",

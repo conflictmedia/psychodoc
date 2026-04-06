@@ -80,13 +80,18 @@ export const efavirenz: Substance =
       }
     }
   },
-  "interactions": [
-    "SNRIs",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP"
-  ],
+  "interactions": {
+    "dangerous": [
+      "SNRIs",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Efavirenz has a low toxicity relative to dose. Like many HIV medications, efavirenz may cause liver toxicity at high doses or after chronic use.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

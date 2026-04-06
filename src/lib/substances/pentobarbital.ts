@@ -70,7 +70,12 @@ export const pentobarbital: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Pentobarbital likely has moderate toxicity relative to dose. However, pentobarbital is Toxicity potentially lethal when mixed with depressants like alcohol or opioids. Pentobarbital has a higher risk of death or serious adverse effects associated with concurrent depressant use than other drugs such as benzodiazepines. There have been studies linking the use of barbiturates, particularly phenobarbital, with the development of cancer .",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

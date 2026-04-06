@@ -100,10 +100,17 @@ export const mxipr: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational MXiPr use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because MXiPr has very little history of human usage.",
     "MXiPr has anecdotally been reported to produce seizures at very high dosages.",

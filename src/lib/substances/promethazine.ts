@@ -73,7 +73,12 @@ export const promethazine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "The lowest published toxic dose of promethazine in humans (oral) is 3.5 mg/kg. This means that a person weighing 70 kg can show signs of toxicity at 245 mg. The LD50 of promethazine in mice (oral) is 255 mg/kg. If applied to humans, this suggests that 50% of people weighing 70 kg would die after consuming 17.85 grams of promethazine.",

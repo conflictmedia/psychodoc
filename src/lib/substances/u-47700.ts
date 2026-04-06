@@ -67,17 +67,29 @@ export const u_47700: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "U-47700 has a high toxicity relative to its dose due to its extreme potency. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines.",
     "It is worth noting that U-47700 crystals are particularly corrosive and somewhat caustic to mucous membranes. Careless use may deteriorate the chosen routes of administration so it is important to practice routine maintenance such as soaking the sinus cavity with water prior to and following insufflation. Even if following a regular saline wash of the nasal cavity, multiday use of this substance can create bleeding sores and scabs in the septum and nasal lining. These scabs may persist for days even after all use is ceased. It is unwise to vaporize the substance as it can damage the lungs. Sublingual administration is likely to damage the skin in the mouth.",

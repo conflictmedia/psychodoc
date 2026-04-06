@@ -115,15 +115,28 @@ export const desoxypipradrol: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "Desoxypipradrol may be quantitated in blood, plasma or urine by liquid chromatography-mass spectrometry to confirm a diagnosis of poisoning in hospitalized patients or to provide evidence in a medicolegal death investigation. Blood or plasma desoxypipradrol concentrations are expected to be in a range of 10–50 μg/L in persons using the drug recreationally, >100 μg/L in intoxicated patients and >600 μg/L in victims of acute overdosage.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

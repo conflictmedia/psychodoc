@@ -59,7 +59,12 @@ export const citicoline: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Citicoline is non-addictive, is not known to cause brain damage, and has an extremely low toxicity relative to dose. Similar to many other nootropics substances, there are relatively few physical side effects associated with acute citicoline exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

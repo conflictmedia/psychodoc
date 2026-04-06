@@ -80,7 +80,12 @@ export const ephedrine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "In comparison to other stimulants, ephedrine has particularly strong effects on the cardiovascular system, and its use has been associated with heart attacks, strokes, and arrythmia.",

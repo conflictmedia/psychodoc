@@ -34,7 +34,7 @@ export interface Substance {
     negative: string[];
   };
   routeData?: Record<string, RouteDosageDuration>;
-  interactions: string[];
+  interactions: Interactions;
   harmReduction: string[];
   legality: string;
   chemistry: {
@@ -67,4 +67,11 @@ export interface CategoryInfo {
   description: string;
   icon: string;
   color: string;
+}
+
+export interface Interactions {
+  dangerous: string[];
+  unsafe: string[];
+  uncertain: string[];
+  crossTolerances: string[];
 }

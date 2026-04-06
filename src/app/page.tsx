@@ -937,17 +937,63 @@ function SubstanceDetail({
             </DropdownMenu>
           </TabsContent>
 
-          <TabsContent value="interactions" className="mt-0 px-4 py-4">
-            <p className="text-xs text-muted-foreground mb-3">
-              Substances with known dangerous interactions:
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {substance.interactions.map((interaction, i) => (
-                <Badge key={i} variant="outline" className="border-red-500/30 text-red-400">
-                  {interaction}
-                </Badge>
-              ))}
-            </div>
+          <TabsContent value="interactions" className="mt-0 px-4 py-4 space-y-4">
+            {substance.interactions.dangerous.length > 0 && (
+              <div>
+                <p className="text-xs font-medium text-red-400 mb-2 flex items-center gap-1">
+                  <AlertTriangle className="h-3 w-3" />Dangerous
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {substance.interactions.dangerous.map((interaction, i) => (
+                    <Badge key={i} variant="outline" className="border-red-500/30 text-red-400">
+                      {interaction}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+            {substance.interactions.unsafe.length > 0 && (
+              <div>
+                <p className="text-xs font-medium text-orange-400 mb-2 flex items-center gap-1">
+                  <AlertTriangle className="h-3 w-3" />Unsafe
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {substance.interactions.unsafe.map((interaction, i) => (
+                    <Badge key={i} variant="outline" className="border-orange-500/30 text-orange-400">
+                      {interaction}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+            {substance.interactions.uncertain.length > 0 && (
+              <div>
+                <p className="text-xs font-medium text-yellow-400 mb-2 flex items-center gap-1">
+                  <Info className="h-3 w-3" />Uncertain
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {substance.interactions.uncertain.map((interaction, i) => (
+                    <Badge key={i} variant="outline" className="border-yellow-500/30 text-yellow-400">
+                      {interaction}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
+            {substance.interactions.crossTolerances.length > 0 && (
+              <div>
+                <p className="text-xs font-medium text-blue-400 mb-2 flex items-center gap-1">
+                  <Activity className="h-3 w-3" />Cross-tolerances
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {substance.interactions.crossTolerances.map((interaction, i) => (
+                    <Badge key={i} variant="outline" className="border-blue-500/30 text-blue-400">
+                      {interaction}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            )}
           </TabsContent>
         </Tabs>
       </div>
@@ -1125,14 +1171,63 @@ function SubstanceDetail({
 
             <Card>
               <CardHeader><CardTitle className="text-lg">Interactions</CardTitle></CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {substance.interactions.map((interaction, i) => (
-                    <Badge key={i} variant="outline" className="border-red-500/30 text-red-400">
-                      {interaction}
-                    </Badge>
-                  ))}
-                </div>
+              <CardContent className="space-y-3">
+                {substance.interactions.dangerous.length > 0 && (
+                  <div>
+                    <p className="text-xs font-medium text-red-400 mb-2 flex items-center gap-1">
+                      <AlertTriangle className="h-3 w-3" />Dangerous
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {substance.interactions.dangerous.map((interaction, i) => (
+                        <Badge key={i} variant="outline" className="border-red-500/30 text-red-400">
+                          {interaction}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {substance.interactions.unsafe.length > 0 && (
+                  <div>
+                    <p className="text-xs font-medium text-orange-400 mb-2 flex items-center gap-1">
+                      <AlertTriangle className="h-3 w-3" />Unsafe
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {substance.interactions.unsafe.map((interaction, i) => (
+                        <Badge key={i} variant="outline" className="border-orange-500/30 text-orange-400">
+                          {interaction}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {substance.interactions.uncertain.length > 0 && (
+                  <div>
+                    <p className="text-xs font-medium text-yellow-400 mb-2 flex items-center gap-1">
+                      <Info className="h-3 w-3" />Uncertain
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {substance.interactions.uncertain.map((interaction, i) => (
+                        <Badge key={i} variant="outline" className="border-yellow-500/30 text-yellow-400">
+                          {interaction}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {substance.interactions.crossTolerances.length > 0 && (
+                  <div>
+                    <p className="text-xs font-medium text-blue-400 mb-2 flex items-center gap-1">
+                      <Activity className="h-3 w-3" />Cross-tolerances
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {substance.interactions.crossTolerances.map((interaction, i) => (
+                        <Badge key={i} variant="outline" className="border-blue-500/30 text-blue-400">
+                          {interaction}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
 

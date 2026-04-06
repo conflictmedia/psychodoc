@@ -72,7 +72,14 @@ export const temazepam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "benzodiazepines"
+    ]
+  },
   "harmReduction": [
     "Temazepam had the highest rate of drug intoxication, including overdose, among common benzodiazepines in cases with and without combination with alcohol in a 1985 study. Temazepam and nitrazepam were the two benzodiazepines most commonly detected in overdose-related deaths in an Australian study of drug deaths. A 1993 British study found temazepam to have the highest number of deaths per million prescriptions among medications commonly prescribed in the 1980s (11.9, versus 5.9 for benzodiazepines overall, taken with or without alcohol). Temazepam has a fatal toxicity index (FTI) that is higher than some tricyclic antidepressants, and has also caused overdose and death without combining it with other CNS depressants, which is almost unheard of amongst the benzodiazepine class of drugs.",
     "Another 1995 Australian study of patients admitted to hospital after benzodiazepine overdose corroborated these results, and found temazepam overdose much more likely to lead to coma than other benzodiazepines (odds ratio 1.86). The authors noted several factors, such as differences in potency, receptor affinity, and rate of absorption between benzodiazepines, could explain this higher toxicity.  Although benzodiazepines have a high therapeutic index, temazepam is one of the more dangerous of this class of drugs. The combination of alcohol or opioids and temazepam makes death by alcohol poisoning more likely.",
