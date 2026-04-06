@@ -113,7 +113,11 @@ export const doi: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational DOI do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because DOI is a research chemical with very little history of human usage.",
+    "Anecdotal reports from users suggests that there are no negative health effects attributed to simply trying it by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "DOI is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of DOI is built almost immediately after ingestion. After that, it takes about 5-7 days for the tolerance to be reduced to half and 10-14 days to be back at baseline (in the absence of further consumption). DOI presents cross-tolerance with all psychedelics, meaning that after the consumption of DOI all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

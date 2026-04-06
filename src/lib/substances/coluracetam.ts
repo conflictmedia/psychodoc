@@ -82,7 +82,10 @@ export const coluracetam: Substance =
     "Dissociatives"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational coluracetam use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because coluracetam has very little history of human use. Anecdotal evidence from people who have tried coluracetam within the community suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "The chronic use of Coluracetam can be considered as not addictive with a low potential for abuse. It does not appear to be capable of causing psychological dependence among certain users.",
+    "Tolerance to many of the effects of Coluracetam develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Coluracetam may presents cross-tolerance with all racetam nootropics, meaning that after the consumption of Coluracetam certain nootropics such as aniracetam and piracetam may have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

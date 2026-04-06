@@ -98,8 +98,13 @@ export const methaqualone: Substance =
     "Dissociatives"
   ],
   "harmReduction": [
-    "doses of over 300mg can be dangerous for first time users",
-    "safe at appropriate dosages"
+    "Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "Overdose of methaqualone can lead to seizures, coma or death. Taking doses of over 300mg can be dangerous for first time users. Depending on the state of the user's individual tolerance, doses of about 8,000mg per day can be fatal whilst others on even higher doses (of up to 20,000mg) may survive.",
+    "Although the exact lethal dosage of methaqualone has not been formally established, like many depressants, it is safe at appropriate dosages. Complications may arise when administered in excess or in combination with other depressants.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Quaaludes that are sold only for illicit recreational use now are synthesized in illegal laboratories. Illegally produced Quaaludes can contain other central nervous system depressants such as benzodiazepines or even fentanyl.",
+    "Methaqualone is extremely addictive. Tolerance to the sedative-hypnotic effects develops within a couple of days of repeated administration. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Methaqualone presents cross-tolerance with all gabaergic depressants, meaning that after the consumption of methaqualone all compounds of the same class will have a reduced effect.",
+    "Abrupt discontinuation of methaqualone following regular dosing over several days can result in a withdrawal phase which includes rebound symptoms such as increased anxiety and insomnia. It is possible to gradually reduce the dose over the course of several days, which will lengthen the duration of the withdrawal period but reduce the perceived intensity."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -123,7 +123,11 @@ export const _25d_nbome: Substance =
     "DXM",
     "Tramadol"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "25D-NBOMe is a very new substance, and very little is known about its pharmacological risks or its interaction with other substances. The LD50 has not yet been determined.  Due to 25D-NBOMe's extreme potency, it should not be insufflated (snorted) as this method of administration appears to have led to several deaths from other NBOMe compounds in the past year.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "In terms of its addictive potential, 25D-NBOMe has not been studied formally but many users experience a self-regulating quality. Also, due to its immediate tolerance build up, which lasts up to 2 - 3 weeks after the experience, it is difficult to use this substance compulsively. 25D-NBOMe presents cross-tolerance with all psychedelics, meaning that after the consumption of 25D-NBOMe all psychedelics will have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

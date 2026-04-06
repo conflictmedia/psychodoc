@@ -86,7 +86,15 @@ export const det: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational DET has not been studied in any scientific context and the exact toxic dose is unknown.",
+    "This is because DET is a research chemical with a limited history of human usage.",
+    "However, it is presumed to have a similar toxicity profile as DMT due to similarities in their chemical structure.",
+    "Anecdotal reports from those who have tried DET suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Although no formal studies have been conducted, it is believed that DET is not habit-forming and the desire to use it can actually decrease with use.",
+    "Tolerance to the effects of DET is built almost immediately after ingestion.",
+    "After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption).",
+    "DET presents cross-tolerance with all psychedelics, meaning that after the consumption of DET all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

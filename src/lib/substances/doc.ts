@@ -133,7 +133,12 @@ export const doc: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational DOC use do not seem to have been studied in any scientific context and the exact toxic dose is unknown.",
+    "Anecdotal reports suggest that there are no negative health effects attributed to simply trying DOC by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "Medical literature reports multiple physical complications associated with the use of DOC.  An individual's cause of death was reported as DOC toxicity and confirmed with GC-MS in the Journal of Analytical Toxicology. Seizures have been associated with the use of DOC in another medical journal.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "DOC is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of DOC is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). DOC presents cross-tolerance with all psychedelics, meaning that after the consumption of DOC all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

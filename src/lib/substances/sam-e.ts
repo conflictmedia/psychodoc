@@ -74,7 +74,13 @@ export const sam_e: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "There are no clinically significant side-effects of acute SAM-e supplementation. Although side-effects are not commonly reported with SAMe, numerous studies note a small set of participants who experience mania after supplementing SAM-e. While not common, it appears to be related to SAMe supplementation for unknown reasons; it has been reported in some persons without history of mania as well and does not appear to be related to any pathological condition per se.",
+    "SAM-e is also hypothesized to raise homocystine to harmful levels, but this has yet to be proven in a laboratory environment.  Still, it is advised to take Sam-e along with folate and B12.",
+    "Regardless, it is strongly recommended that one be familiar with harm reduction practices when using this substance.",
+    "SAM-e is not habit-forming with a low potential for abuse. It does not seem to be capable of causing psychological or physiological dependence among users.",
+    "Tolerance to many of the effects of S-adenosyl methionine develops over several weeks of prolonged and repeated use. This results in users having to administer increasingly larger doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption)."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

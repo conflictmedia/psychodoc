@@ -93,8 +93,15 @@ export const bromazepam: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "low toxicity",
-    "potentially lethal when mixed with depressants like alcohol or opioids"
+    "Bromazepam has a low toxicity relative to dose.  However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids. It is strongly recommended that one use harm reduction practices.",
+    "High dosage of bromazepam causes disinhibition, memory suppression, analysis depression and motor control loss. Moreover, paradoxal effects can occure and include agressivity and impulsive behaviour.",
+    "These effects can provoke contextual harms such as social reprobation due to improper behaviour, falling, being wounded, or harming someone else.",
+    "The problems associated with the long-term use of benzodiazepines (the chemical class of bromazepam) may include: impaired cognitive abilities, memory problems, mood swings, overdoses when combined with other drugs, disinhibition, depression, perceptual disturbances, depersonalization, and sexual dysfunction. However, the most important consequence of long-term use of benzodiazepines is the development of dependence.",
+    "The acute toxic dose, which means that it damages physically the body in one intake, has been estimated to 180mg (oral) for an adult, without combinaison or tolerance.",
+    "Tolerance to the behavioral effects of benzodiazepines appears within different period of times regarding the effects considered ; but in general, it appears within several days of continuous use.",
+    "The shortest period for developing dependence due to the",
+    "continuous use of benzodiazepines varies in the different",
+    "studies : from one month to six. Benzodiazepine dependence is more prevalent among women who are middle aged, separated, of low educational background, unemployed or housewives."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

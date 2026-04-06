@@ -63,7 +63,15 @@ export const n_acetylcysteine: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "The most commonly reported adverse effects for IV formulations of acetylcysteine are rash, urticaria, and pruritus(itchiness). Up to 18% of patients have been reported to experience anaphylaxis reaction, which are defined as rash, hypotension, wheezing, and/or shortness of breath.  Lower rates of anaphylactoid reactions have been reported with slower rates of infusion.",
+    "Adverse effects for inhalational formulations of acetylcysteine include nausea, vomiting, stomatitis, fever, rhinorrhea, drowsiness, clamminess, chest tightness, and bronchoconstriction. Although infrequent, bronchospasm has been reported to occur unpredictably in some patients.",
+    "Adverse effects for oral formulations of acetylcysteine have been reported to include nausea, vomiting, rash, and fever.",
+    "Large doses in a mouse model showed that acetylcysteine could potentially cause damage to the heart and lungs. They found that acetylcysteine was metabolized to S-nitroso-N-acetylcysteine (SNOAC), which increased blood pressure in the lungs and right ventricle of the heart (pulmonary artery hypertension) in mice treated with acetylcysteine. The effect was similar to that observed following a 3-week exposure to an oxygen-deprived environment (chronic hypoxia). The authors also found that SNOAC induced a hypoxia-like response in the gene expression of several important genes both in vitro and in vivo.",
+    "The implications of these findings for long-term treatment with acetylcysteine have not yet been investigated. The dose used by Palmer and colleagues was dramatically higher than that used in humans, the equivalent of about 20 grams per day. Nonetheless, positive effects on age-diminished control of respiration (the control of hypoxic ventilatory response) have been observed previously in human subjects at more moderate doses.",
+    "Although N-acetylcysteine prevented liver damage when taken before alcohol, when taken four hours after alcohol it made liver damage worse in a dose-dependent fashion.",
+    "The chronic use of Acetylcysteine does not seem to cause addiction or psychological dependence. N-Acetylcysteine's positive effects seem to be cumulative overtime."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

@@ -64,7 +64,15 @@ export const piracetam: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "Adverse effects, although rare and of short duration are limited to anxiety, insomnia, drowsiness, headaches and agitation. It may be safe for up to 18 months in humans at doses of 3.2g daily with one year-long study in ambulatory patients with Alzheimer's using 8g daily reporting no side effects. However, a possibility for adverse drug-drug interactions persists for piracetam due to it interacting with blood in an anti-clotting manner. Therefore, caution should be taken when pairing piracetam with pharmaceutical blood thinning agents such as Warfarin or potent nutraceutical options and individuals prone to brain hemorrhaging are discouraged from using piracetam.",
+    "Patients with renal insufficiency should also not use piracetam.",
+    "No fatal overdoses associated with piracetam use have been reported as of 2016. In animal models (rodents, dogs, and marmoset), an LD50 failed to be established at the dosage of 8-10g/kg.",
+    "Regardless, it is strongly recommended that one use harm reduction practices when using this substance.",
+    "The median lethal dosage (LD50) of piracetam has not been officially published as it has low abuse potential, but the typical dosage is two grams once to three times a day.",
+    "The chronic use of piracetam can be considered as not addictive with a low potential for abuse. It does not seem to be capable of causing psychological dependence among certain users.",
+    "Tolerance to many of the effects of piracetam develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Piracetam may presents cross-tolerance with all racetam nootropics, meaning that after the consumption of piracetam certain nootropics such as aniracetam and pramiracetam may have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

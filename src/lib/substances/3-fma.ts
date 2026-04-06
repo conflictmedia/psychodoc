@@ -73,7 +73,15 @@ export const _3_fma: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity and long-term health effects of human recreational 3-FMA use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-FMA has an extremely short history of human usage, becoming available only in mid-2017. Anecdotal evidence from people who have tried 3-FMA within the community suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
+    "Due to its putative serotonin-releasing and entactogenic properties, it is possible that 3-FMA may display excess activity at the 5-HT2b receptor, which, would make it cardiotoxic with long-term use as seen in other 5-HT2b agonists such as fenfluramine and MDMA.",
+    "It is perhaps worth noting that in the field of medicinal chemistry, the fluorine substitution is sometimes seen as desirable in central nervous system pharmaceutical agents, and is a common practice due to the corresponding increase in lipophilicity granted by the substitute.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "Although it still remains to be seen, the chronic use of 3-FMA likely can be considered moderately addictive with a high potential for abuse and capable of causing psychological dependence among a certain population of users. When dependence or addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of 3-FMA develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 10 days to be back at baseline (in the absence of further consumption). 3-FMA presents cross-tolerance with all dopaminergic and serotonergic stimulants and entactogens, meaning that after the consumption of 3-FMA all stimulants will have a reduced effect (including atypical stimulants one might not expect, like MDMA or amphetamine due to its reliance on dopamine and norepinephrine to exert its full euphoric effect).",
+    "Abuse of compounds within the amphetamine chemical class at high dosages for prolonged periods of time can potentially result in a stimulant psychosis that may present with a variety of symptoms (e.g., paranoia, hallucinations, or delusions). A review on treatment for amphetamine, dextroamphetamine, and methamphetamine abuse-induced psychosis states that about 5–15% of users fail to recover completely. The same review asserts that, based upon at least one trial, antipsychotic medications effectively resolve the symptoms of acute amphetamine psychosis. Psychosis very rarely arises from therapeutic use."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

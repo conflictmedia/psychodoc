@@ -90,7 +90,12 @@ export const _4f_eph: Substance =
     "MDMA",
     "Stimulants"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity and long-term health effects of recreational 4F-EPH use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 4F-EPH is a research chemical with very little history of human usage. Anecdotal evidence from people who have tried 4F-EPH suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed).",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other stimulants, the chronic use of 4F-EPH can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of 4F-EPH develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). 4F-EPH presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of 4F-EPH all stimulants will have a reduced effect."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

@@ -80,7 +80,10 @@ export const mcpp: Substance =
     "MDMA",
     "Stimulants"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "mCPP is not known to be addictive, but there are not any studies exclusively on its addiction potential."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

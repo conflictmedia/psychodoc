@@ -108,7 +108,11 @@ export const _5_meo_dmt: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational 5-MeO-DMT do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 5-MeO-DMT has a limited history of documented human usage.",
+    "Anecdotal evidence suggests that there are unlikely to be any negative health effects attributed to simply trying it by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Like other serotonergic psychedelics, 5-MeO-DMT is considered to be non-addictive with a low abuse potential. There are no literature reports of successful attempts to train animals to self-administer 5-MeO-DMT — an animal model predictive of abuse liability — indicating that it does not have the necessary pharmacology to either initiate or maintain dependence.",
+    "Tolerance to the effects of 5-MeO-DMT is built almost immediately after ingestion. After that, it takes about 1 hour for the tolerance to be reduced to half and 2 hours to be back at baseline (in the absence of further consumption). 5-MeO-DMT does not have a cross-tolerance with other psychedelics, meaning that after the consumption of 5-MeO-DMT psychedelics will not have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -124,7 +124,14 @@ export const desoxypipradrol: Substance =
     "MDMA",
     "Stimulants"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "Desoxypipradrol may be quantitated in blood, plasma or urine by liquid chromatography-mass spectrometry to confirm a diagnosis of poisoning in hospitalized patients or to provide evidence in a medicolegal death investigation. Blood or plasma desoxypipradrol concentrations are expected to be in a range of 10–50 μg/L in persons using the drug recreationally, >100 μg/L in intoxicated patients and >600 μg/L in victims of acute overdosage.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "In terms of its tolerance, desoxypipradrol can be used for multiple days in a row for extended periods of time. Acute tolerance to many of the effects of desoxypipradrol develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). desoxypipradrol presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of desoxypipradrol all stimulants will have a reduced effect.",
+    "As with other stimulants, the chronic use of desoxypipradrol can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "User reports suggest that compared to many other stimulants, desoxypipradrol has some unique and atypical hazards that can accompany its misuse -- especially when it is eye-balled, not dosed volumetrically, or otherwise handled without the proper degree of caution. Desoxypipradrol, like other stimulants, increases dopamine levels in the brain which can lead to severe manic psychosis in the short-term in addition to persisting dopamine receptor down regulation in the long-term.",
+    "User reports indicate that chronic abuse or single exposure overdose of desoxypipradrol can potentially lead to psychosis more readily than the vast majority of stimulants. Psychotic symptoms from desoxypipradrol can include  hearing voices, visual hallucinations, urges to harm oneself, severe anxiety, mania, grandiosity, paranoid delusions, confusion, increased aggression, and irritability."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

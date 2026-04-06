@@ -93,7 +93,13 @@ export const _5f_pb_22: Substance =
     "Lithium"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational 5F-PB-22 use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 5F-PB-22 has very little history of human usage. Informal experiments have shown that overdose will cause physical discomfort including heart palpitations, vertigo and sedation at much lower than dangerous doses, usually causing the user to suffer large amounts of anxiety or to fall asleep.",
+    "There have been many hospital reports involving 5F-PB-22, as well as cases of post-mortem analysis involving 5F-PB-22. Five deaths have been associated with the use of 5F-PB-22 in the United States.",
+    "It has often been recommended that those with severe pre-existing mental conditions should not ingest these substances due to the way they strongly increase one's current state of mind and emotions. Also, like THC, prolonged usage of synthetic cannabinoids may increase one's disposition to mental illness and psychosis, particularly in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of schizophrenia).",
+    "As synthetic cannabinoids are active in the milligram range (with below 5mg being a common dose), it is important to use proper precautions when dosing to avoid a negative experience.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other synthetic cannibanoids, the chronic use of 5F-PB-22 can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of 5F-PB-22 develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). 5F-PB-22 presents cross-tolerance with all cannabinoids, meaning that after the consumption of 5F-PB-22 all cannabinoidss will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

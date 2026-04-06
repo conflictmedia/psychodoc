@@ -123,7 +123,16 @@ export const _1v_lsd: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "extremely low toxicity relative to dose"
+    "The toxicity and long-term health effects of recreational 1V-LSD use have not been studied. This is because 1V-LSD is a research chemical with almost no history of human use.",
+    "Anecdotal reports suggest that there are no negative health effects attributed to simply trying 1V-LSD by itself, at low to moderate doses, and using it very sparingly (although nothing can be completely guaranteed). Independent research should always be conducted to ensure that a combination of two or more substances is safe before consumption.",
+    "Based on its similarity to LSD, 1V-LSD is assumed to be physiologically well-tolerated with a extremely low toxicity relative to dose. There are relatively few physical side effects that have been reported following acute 1V-LSD exposure.",
+    "However, as with LSD and psychedelics in general, it is likely that 1V-LSD can act as a trigger for those with underlying mental disorders. Those with a personal or family history of mental illness are generally advised not to use this substance, particularly when outside of a supervised medical setting.",
+    "It is strongly recommended that one uses harm reduction practices when using this substance.",
+    "1V-LSD has no known toxic dose. However, higher doses increase the risk of adverse psychological reactions. These reactions include anxiety, delusions, panic attacks and, more rarely, seizures. Medical attention is usually not needed except in the case of severe psychotic episodes or the ingestion of fake acid (such as 25i-NBOMe or DOB). Administration of benzodiazepines or antipsychotics can help to relieve the acute negative cognitive effects of 1V-LSD.",
+    "Although no formal studies have been conducted, it is assumed that like LSD itself, 1V-LSD is non-addictive with a low abuse potential.",
+    "There are no literature reports of successful attempts to train animals to self-administer LSD — an animal model predictive of abuse liability — indicating that it does not have the necessary pharmacology to either initiate or maintain dependence.",
+    "Likewise, there is virtually no withdrawal syndrome when chronic use of LSD is stopped. It is assumed that 1V-LSD shares these properties with LSD.",
+    "Tolerance to the effects of 1V-LSD is built almost immediately after ingestion. After that, it takes about 5-7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). 1V-LSD produces cross-tolerance with all psychedelics, meaning that after the use of 1V-LSD they will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

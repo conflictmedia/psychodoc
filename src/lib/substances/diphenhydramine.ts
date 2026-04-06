@@ -142,7 +142,18 @@ export const diphenhydramine: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "fatal at amounts close to or exceeding 2 grams"
+    "The toxicity and long-term health effects of recreational diphenhydramine use have not been studied extensively.",
+    "Diphenhydramine can be highly unpredictable, and the mechanism by which it produces hallucinations has the potential to result in serious injury, hospitalization, or death. Additionally, diphenhydramine puts users in a state where they have little control over their actions. Diphenhydramine can provoke bizarre and nonsensical behavior, which may put the user at risk.",
+    "Anecdotal reports suggest that regular use of diphenhydramine can have profound effects on one's kidneys and bladder, with the potential to result in issues similar to that of ketamine cystitis.",
+    "Cumulative diphenhydramine use has been tentatively linked to an increased risk of developing dementia.",
+    "Some chronic users also report the worsening of mental illnesses (e.g. depression, anxiety disorders, schizophrenia)",
+    "The overdose threshold for diphenhydramine is commonly held to be around 1000 milligrams; however, sensitive individuals or individuals taking other drugs alongside it can overdose with less. The main effects of an overdose are similar to those of heavy doses. Effects include delirium, psychosis, anxiety, confusion, hypotension, dryness, urinary retention, dizziness, dilated pupils and increased heart rate. Some of the more serious side effects at these doses include an even higher risk of seizures and dangerous cardiovascular effects such as arrhythmia (abnormal heartbeat).",
+    "The user may be completely unable to distinguish reality from hallucinations. For this reason, there is a significant risk of the user responding to a delusional environment and injuring themselves or others, as well as the possibility of engaging in too much physical activity which can further strain the heart or cause rhabdomyolysis. Individuals experiencing delusions should, if possible, not be agitated. The first line of treatment for overdose should be benzodiazepines, although medical attention should always be sought.",
+    "Diphenhydramine can become fatal at amounts close to or exceeding 2 grams. This can result in death, especially when combined with most stimulants, depressants, and MAOIs.",
+    "Some anecdotal reports suggest that diphenhydramine causes psychosis and delirium at a significantly higher rate than other hallucinogens (i.e. psychedelics and dissociative).  There are a large number of experience reports online that describe states of psychotic delirium, amnesia, and other serious consequences after abusing the substance. In many cases, it has resulted in hospitalization and death.",
+    "The recreational use of diphenhydramine is generally not advised. If deciding to use this substance, one should use extreme caution and harm reduction practices, such as having a sober trip sitter.",
+    "Diphenhydramine produces dependence with chronic use. In comparison to other hallucinogens, DPH has been reported to have significantly less abuse potential than other hallucinogens. Most people who try it do not wish to repeat the experience.",
+    "Tolerance to many of the effects of DPH develops with repeated use. Users have to administer increasingly large doses to achieve the impact. After that, it takes about 1 - 2 weeks for tolerance to return to baseline (in the absence of further consumption). DPH presents cross-tolerance with all deliriants, meaning that after the consumption of DPH, all deliriants will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

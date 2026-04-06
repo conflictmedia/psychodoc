@@ -729,7 +729,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                               opacity: isDoseActive ? 1 : 0.4,
                             }}
                           />
-                          <span>{formatted.amount}{formatUnit(formatted.unit, d.amount)}</span>
+                          <span>{formatted.amount} {formatUnit(formatted.unit, d.amount)}</span>
                           <span className="text-muted-foreground">{rg.route}</span>
 
                           {/* #5 — Phase progress indicator bar at bottom of chip */}

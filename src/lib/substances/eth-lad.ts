@@ -109,7 +109,12 @@ export const eth_lad: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational ETH-LAD use in humans does not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because ETH-LAD is a research chemical with very little history of human usage.",
+    "Anecdotal reports from those who have tried ETH-LAD suggests that there are no negative health effects attributed to simply trying it by itself at low to moderate doses or using it very sparingly (although nothing can be guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "ETH-LAD is not habit-forming and the desire to use it can actually decrease with use. As with most psychedelics, it is generally considered to have a built-in, self-regulating aspect to it, although cases of its abuse have been reported.",
+    "Tolerance to the effects of ETH-LAD builds almost immediately after ingestion. After that, it takes about 5-7 days for the tolerance to be reduced to half and 14 days to return to baseline (in the absence of further consumption). ETH-LAD presents cross-tolerance with all psychedelics, meaning that after the consumption of ETH-LAD all psychedelics will display a reduced effect.",
+    "While ETH-LAD has no known toxic dosage, many anecdotal reports suggest this compound to be harsher to handle in overdoses when compared to LSD or other lysergamides. Overdose effects can already start in the heavy dose range and are described as being particularly uncomfortable and bizarre. Some of these effects include anxiety, delusions, confusion, panic attacks, severe nausea and body load, and more rarely seizures. Medical attention is usually only needed if suspected of severe psychotic episodes or “fake acid” (such as 25i-NBOMe or DOB). Administration of benzodiazepines or antipsychotics can help to relieve the negative cognitive effects."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
