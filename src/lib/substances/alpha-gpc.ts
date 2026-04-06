@@ -61,7 +61,12 @@ export const alpha_gpc: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Alpha-GPC is non-addictive, is not known to cause harm, and has an extremely low toxicity relative to dose. Similar to many other nootropic substances, there are relatively few physical side effects associated with acute choline exposure. Various studies have shown that in reasonable doses in a particular context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "Regardless, it is strongly recommended that one is familiar with and uses harm reduction practices when using this substance.",

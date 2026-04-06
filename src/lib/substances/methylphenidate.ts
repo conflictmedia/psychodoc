@@ -91,15 +91,25 @@ export const methylphenidate: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

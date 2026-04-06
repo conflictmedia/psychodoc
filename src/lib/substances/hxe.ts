@@ -112,7 +112,14 @@ export const hxe: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational HXE use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because HXE has very little history of human usage.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

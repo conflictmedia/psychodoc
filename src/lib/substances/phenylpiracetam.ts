@@ -75,7 +75,15 @@ export const phenylpiracetam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "racetam",
+      "nootropic"
+    ]
+  },
   "harmReduction": [
     "Several studies suggest that this substance is safe even when high doses are consumed for a long period of time although it is worth noting that the exact toxic dosage is unknown. Anecdotal evidence from those within the community who have tried phenylpiracetam suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

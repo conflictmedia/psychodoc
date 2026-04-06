@@ -124,7 +124,16 @@ export const pregabalin: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [
+      "Oxycodone",
+      "SSRI",
+      "MDMA"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Pregabalin likely has a low toxicity relative to dose. However, it is potentially lethal when mixed with depressants like alcohol or opioids.",
     "Pregabalin has been shown to induce and or increase the risk of seizures at recreational dosages. There is little evidence showing there is a concern at medical dosages (600mg and under). This risk may be increased when mixed with other drugs that lower seizure threshold. Caution is recommended when using doses of higher than 600mg. Reducing various susceptibility factors may also be beneficial in lowering this risk. Susceptibility factors may include things such as low sodium, lack of sleep, and intensive physical activity.",

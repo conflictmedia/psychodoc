@@ -111,22 +111,34 @@ export const fentanyl: Substance =
       }
     }
   },
-  "interactions": [
-    "SNRIs",
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP"
-  ],
+  "interactions": {
+    "dangerous": [
+      "SNRIs",
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Non-medical use of fentanyl by individuals without opiate tolerance can be very dangerous and has resulted in numerous deaths. It is potentially fatal at heavy dosages and even those with opiate tolerances are at high risk for overdoses. Once the fentanyl is in the user's system, it is extremely difficult to stop its course because of the nature of absorption. Because of the extremely high strength of pure fentanyl powder, it is very difficult to dilute appropriately, and often the resulting mixture may be far too strong and, therefore, very dangerous. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines.",
     "Like most opioids, pure fentanyl at appropriate dosages does not cause many long-term complications other than dependence and constipation. Outside of the extremely powerful addiction and physical dependence, the harmful or toxic aspects of opioid usage are exclusively associated with not taking the necessary precautions in regards to its administration, overdosing and using impure products.",

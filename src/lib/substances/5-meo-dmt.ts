@@ -98,15 +98,29 @@ export const _5_meo_dmt: Substance =
       }
     }
   },
-  "interactions": [
-    "aMT",
-    "MAOIs",
-    "PCP",
-    "Amphetamines",
-    "Cocaine",
-    "DXM",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "aMT",
+      "MAOIs",
+      "PCP"
+    ],
+    "unsafe": [
+      "Amphetamines",
+      "Cocaine",
+      "DXM",
+      "Tramadol"
+    ],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "Cannabis",
+      "DOx",
+      "MDMA",
+      "Mescaline",
+      "NBOMe"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 5-MeO-DMT do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 5-MeO-DMT has a limited history of documented human usage.",
     "Anecdotal evidence suggests that there are unlikely to be any negative health effects attributed to simply trying it by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

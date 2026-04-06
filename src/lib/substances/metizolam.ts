@@ -63,7 +63,15 @@ export const metizolam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "thienzodiazepines",
+      "benzodiazepines"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational metizolam use have not been studied in any scientific context and the exact toxic dosage is unknown. This is because metizolam is a research chemical with very little history of human usage. Anecdotal evidence from people within the psychonaut community who have tried metizolam suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "It is strongly recommended that one use harm reduction practices, such as volumetric dosing, when using this substance to ensure the accurate administration of the intended dose.",

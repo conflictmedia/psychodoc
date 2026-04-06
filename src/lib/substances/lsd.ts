@@ -133,13 +133,24 @@ export const lsd: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol",
-    "Deliriants",
-    "Tricyclic antidepressants",
-    "Ritonavir"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol",
+      "Deliriants",
+      "Tricyclic antidepressants",
+      "Ritonavir"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelics"
+    ]
+  },
   "harmReduction": [
     "Numerous studies have found that LSD is physiologically well-tolerated and has an extremely low toxicity relative to dose. There is no evidence for long-lasting effects on the brain or other organs and there are no documented deaths attributed to the direct effects of LSD toxicity.",
     "However, it is worth noting that while LSD as a chemical may not be capable of causing direct bodily toxicity or death, its improper use can still present serious hazards.",

@@ -90,7 +90,18 @@ export const nitrous: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Tramadol"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The exact toxic dosage is unknown. Potential problems include:",
     "Nitrous temporarily inhibits methionine synthase, a B12-dependant enzyme responsible for many important functions in the body. Heavy and frequent long-term use can deplete vitamin B12 in the body and lead to serious and unpleasant neurological problems. Users may experience numbness and tingling in the fingers, toes, lips, et al. In more severe cases, there will be numbness of all extremities. Taking B12 supplements, especially in combination with a multivitamin and complete amino acid supplements, may help alleviate this problem. If one experiences these symptoms, nitrous use should be ceased immediately, and if the symptoms persist, medical attention should be sought after.",

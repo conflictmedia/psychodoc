@@ -90,15 +90,28 @@ export const eth_cat: Substance =
       }
     }
   },
-  "interactions": [
-    "MAOIs",
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "MAOIs",
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational ETH-CAT use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because ETH-CAT has very little history of human usage. Anecdotal reports from people within the community who have tried ETH-CAT suggest that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (although nothing can be completely guaranteed). Others have commented that its d-isomer form is virtually similar to the effects of d-isomer amphetamine, and has thus far shown little reason to suspect that its toxicity is radically different (though this has yet to be scientifically validated).",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

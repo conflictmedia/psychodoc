@@ -105,10 +105,17 @@ export const ephenidine: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational ephenidine use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because ephenidine has very little history of human usage.",
     "Anecdotal reports from those who have tried ephenidine suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

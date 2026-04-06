@@ -57,15 +57,28 @@ export const n_methylbisfluoromodafinil: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "modafanil",
+      "analog"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational N-methylbisfluoromodafinil use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because N-methylbisfluoromodafinil has very little history of human usage. Anecdotal evidence from people who have tried N-methylbisfluoromodafinil within the community suggests that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

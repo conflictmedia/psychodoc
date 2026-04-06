@@ -73,10 +73,19 @@ export const clonazepam: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "benzodiazepines"
+    ]
+  },
   "harmReduction": [
     "Clonazepam has a low toxicity relative to dose.  However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

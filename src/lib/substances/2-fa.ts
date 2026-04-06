@@ -81,17 +81,37 @@ export const _2_fa: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 2-FA use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 2-FA has very little history of human usage. Anecdotal evidence from people who have tried 2-FA within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed). Others have commented that its d-isomer form is virtually similar to the effects of d-amphetamine, and thus far little has been shown to give reason to suspect that its toxicity is radically different (though future evidence to the contrary may prove otherwise).",
     "It is perhaps worth noting that in the field of medicinal chemistry, the fluorine substitution is sometimes seen as desirable in central nervous system pharmaceutical agents, and is a common practice due to the corresponding increase in lipophilicity granted by the substitute.",

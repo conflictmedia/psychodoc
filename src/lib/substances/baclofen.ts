@@ -85,18 +85,25 @@ export const baclofen: Substance =
       }
     }
   },
-  "interactions": [
-    "Dissociatives",
-    "Stimulants",
-    "Alcohol",
-    "Benzodiazepines",
-    "Barbiturates",
-    "GHB",
-    "GBL",
-    "Methaqualone",
-    "Opioids",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Dissociatives",
+      "Stimulants",
+      "Alcohol",
+      "Benzodiazepines",
+      "Barbiturates",
+      "GHB",
+      "GBL",
+      "Methaqualone",
+      "Opioids",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "GABA"
+    ]
+  },
   "harmReduction": [
     "Baclofen has a low toxicity relative to dose. However, it is Toxicity potentially lethal when mixed with depressants like alcohol, benzodiazepines or opioids.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

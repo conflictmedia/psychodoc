@@ -90,7 +90,12 @@ export const methcathinone: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

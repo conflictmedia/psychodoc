@@ -87,17 +87,29 @@ export const buprenorphine: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Buprenorphine has a low toxicity relative to dose: the ceiling dose for buprenorphine is usually between 16mg and 32mg, and anything above this will not produce an increase in respiratory depression (the primary cause of death in opioid overdose is severe respiratory depression, leading to respiratory collapse).  Thus increasing the dose of buprenorphine above this level will not continue to increase risk of death in a fashion similar to other μ-opioid receptor agonists.  As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss.",
     "Regardless of the ceiling dose, an important distinction has to be made in the dose used in opioid naive individuals and opioid experienced individuals. Even low doses in individuals with no tolerance can cause unpleasant side-effects like dizziness, loss of balance, and vomiting. Because of the long half-life of buprenorphine, these side-effects can last a long while in opioid naive individuals which creates the risk of severe dehydration from uncontrollable vomiting.",

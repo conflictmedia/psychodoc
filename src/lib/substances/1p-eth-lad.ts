@@ -83,10 +83,21 @@ export const _1p_eth_lad: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 1P-ETH-LAD use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 1P-ETH-LAD is a research chemical with very little history of human usage.",
     "Anecdotal reports from those who have tried 1P-ETH-LAD suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed).",

@@ -82,22 +82,34 @@ export const acetylfentanyl: Substance =
       }
     }
   },
-  "interactions": [
-    "SNRIs",
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP"
-  ],
+  "interactions": {
+    "dangerous": [
+      "SNRIs",
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Fentanyl analogs have killed hundreds of people throughout Europe and the former Soviet republics since the most recent resurgence in use began in Estonia in the early 2000s, and novel derivatives continue to appear.",
     "The United States Drug Enforcement Administration reported in July of 2015 that at least 52 confirmed fatalities involving acetylfentanyl in the United States had occurred between 2013-2015. Ten fatalities attributed to acetylfentanyl overdose were reported during March of 2013 alone in Rhode Island.",

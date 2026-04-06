@@ -66,7 +66,15 @@ export const hexedrone: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "Since hexedrone has been insufficiently studied and most data consists of speculation and user experiences, one should be especially cautious when it comes to the risks and harm this substance may pose, especially in terms of seriouslong-term  health hazards.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

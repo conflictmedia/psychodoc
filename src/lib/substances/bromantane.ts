@@ -67,7 +67,12 @@ export const bromantane: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The LD50 of bromantane in mice has been established at 8100 mg/kg.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

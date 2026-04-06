@@ -67,7 +67,15 @@ export const adrafinil: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "benzhydryl",
+      "nootropic|nootropics"
+    ]
+  },
   "harmReduction": [
     "The long-term safety and effectiveness of modafinil (adrafinil's active component) as a drug of regular usage have not been determined. Anecdotal reports from people who have tried modafinil within the community suggest that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "Adrafinil is more harmful than modafinil due to slight hepatotoxicity, as adrafinil must be processed by the liver. Stomach pain, skin irritation, anxiety, and elevated liver enzymes may occur with prolonged use and have been associated with Adrafinil, specifically.",

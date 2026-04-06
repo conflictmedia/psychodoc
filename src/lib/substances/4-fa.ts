@@ -110,17 +110,37 @@ export const _4_fa: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulants"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term effects of recreational 4-FA use have only scarcely been studied because 4-FA has very little history of human usage. Anecdotal evidence, as well as several case reports, suggest there is a small to moderate individual health risk associated with the use of 4-FA. Among these, it appears there is an especially a high risk for acute cardiovascular toxicity. Some people in the Netherlands, only using a moderate dose, have died due to cardiac arrest or suffered severe brain damage due to a stroke. The mechanism of this acute toxicity is not yet known, but it seems as though the stroke starts off as an intense headache or even a migraine attack, that slowly worsens.",
     "The LD50 (mouse; i.p.) of 4-FA is 46 mg/kg. 4-FA does not cause long-lasting depletion of brain serotonin unlike MDMA or 4-FA's analogs 4-CA and 4-BA.",

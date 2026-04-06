@@ -100,15 +100,28 @@ export const _3_fpm: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 3-FPM use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-FPM has very little history of human usage.",
     "Anecdotal evidence suggests that 3-FPM is relatively well-tolerated, with most users encountering few side-effects at low to moderate doses. However, several users have encountered serious flu-like symptoms on the comedown of 3-FPM, consisting of muscle and joint aches, fever and chills, and headaches, sometimes with migraine auras present. This is speculated to be systemic inflammation induced by 3-FPM. Therefore new users should exercise great caution in dosing to gauge their own physiological response to 3-FPM.",

@@ -117,10 +117,21 @@ export const _1cp_lsd: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 1cP-LSD use have not been studied. This is because 1cP-LSD is a research chemical with almost no history of human use.",
     "However, as with LSD and psychedelics in general, it is likely that 1cP-LSD can act as a trigger for those with underlying mental disorders. Those with a personal or family history of mental illness are generally advised not to use this substance, particularly when outside of a supervised medical setting.",

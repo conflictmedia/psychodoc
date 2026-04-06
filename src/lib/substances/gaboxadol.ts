@@ -91,7 +91,12 @@ export const gaboxadol: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Since Gaboxadol is a GABAA agonist, it may be harmful to combine it with other GABAergic depressants such as benzodiazepines or barbiturates.",
     "Gaboxadol is not known to be addictive or dependence-forming, and reports even show that desire to redose goes down with usage, though there is no research on this topic.",

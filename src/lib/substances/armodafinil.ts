@@ -72,16 +72,29 @@ export const armodafinil: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "Hormonal birth control",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs",
+      "Hormonal birth control"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "benzhydryl",
+      "nootropic"
+    ]
+  },
   "harmReduction": [
     "The long-term safety and effectiveness of armodafinil has not been determined.",
     "Anecdotal evidence suggests a lack of adverse health effects when sparingly used at small to moderate doses, although this must not be assumed. This compound is a commonly prescribed prescription medication, thus is considerably less likely to have adverse health effects than that of a typical research chemical.",

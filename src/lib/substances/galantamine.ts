@@ -63,7 +63,12 @@ export const galantamine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Galantamine is non-addictive, is not known to cause harm in reasonable doses, and has an extremely low toxicity relative to dose. Various studies have shown that in reasonable doses in a careful context, it presents few negative cognitive, psychiatric or toxic physical consequences, though some exist.",
     "It is strongly recommended that one be familiar with harm reduction practices when using this drug.",

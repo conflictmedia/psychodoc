@@ -102,17 +102,34 @@ export const lisdexamfetamine: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

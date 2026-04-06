@@ -86,14 +86,19 @@ export const _5_hydroxytryptophan: Substance =
       }
     }
   },
-  "interactions": [
-    "SSRIs",
-    "SNRIs",
-    "Serotonin releasers",
-    "MAOIs",
-    "Tricyclic antidepressants",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "SSRIs",
+      "SNRIs",
+      "Serotonin releasers",
+      "MAOIs",
+      "Tricyclic antidepressants",
+      "Tramadol"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Due to the conversion of 5-HTP into serotonin by the liver, with prolonged use, there may be a significant risk of heart valve disease from serotonin's effect on the heart, which is thought to be due to agonism of the 5-HT2B receptors present on it.",
     "It has been suggested that 5-HTP may cause eosinophilia-myalgia syndrome (EMS), a serious condition which results in extreme muscle tenderness, myalgia, and blood abnormalities. However, there is evidence to show that EMS was likely caused by a contaminant in certain 5-HTP supplements instead of the substance itself."

@@ -68,9 +68,29 @@ export const sts_135: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DMT",
+      "DOx",
+      "LSD",
+      "Mescaline",
+      "Mushrooms",
+      "25x-NBOMe"
+    ],
+    "crossTolerances": [
+      "cannabinoids"
+    ]
+  },
   "harmReduction": [
     "exact toxic dosage is unknown"
   ],

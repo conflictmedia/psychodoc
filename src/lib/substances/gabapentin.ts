@@ -73,10 +73,15 @@ export const gabapentin: Substance =
       }
     }
   },
-  "interactions": [
-    "Opioids",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Opioids",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "GABApentin has a low toxicity relative to dose. The most common side effects of gabapentin in adult patients include dizziness, fatigue, drowsiness, weight gain, and peripheral edema (swelling of extremities). Gabapentin may also produce sexual dysfunction in some patients whose symptoms of which may include loss of libido, inability to reach orgasm, and erectile dysfunction. Gabapentin should be used carefully in patients with renal impairment due to possible accumulation and toxicity.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

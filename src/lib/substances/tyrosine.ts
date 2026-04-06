@@ -71,15 +71,27 @@ export const tyrosine: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine"
+    ]
+  },
   "harmReduction": [
     "Tyrosine is physically safe, is not known to cause brain damage, and has an extremely low toxicity relative to dose. Similar to many other nootropic drugs, there are relatively few physical side effects associated with acute tyrosine exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "However, it is still strongly recommended that one use harm reduction practices when using this drug.",

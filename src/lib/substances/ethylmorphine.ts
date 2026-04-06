@@ -67,17 +67,29 @@ export const ethylmorphine: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Ethylmorphine has a low toxicity relative to dose. However, despite its relatively low toxicity for an opioid, at least one death has been attributed to oral consumption of ethylmorphine alone, without the presence of other depressants. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

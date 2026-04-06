@@ -70,7 +70,12 @@ export const secobarbital: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Secobarbital likely has moderate toxicity relative to dose. However, secobarbital is [[Toxicity potentially lethal when mixed with depressants like alcohol or opioids. Secobarbital has a higher risk of death or serious adverse effects associated with concurrent depressant use than other drugs such as benzodiazepines. There have been studies linking the use of barbiturates, particularly phenobarbital, with the development of cancer.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

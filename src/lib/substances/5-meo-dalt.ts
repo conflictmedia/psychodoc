@@ -94,15 +94,31 @@ export const _5_meo_dalt: Substance =
       }
     }
   },
-  "interactions": [
-    "aMT",
-    "MAOIs",
-    "PCP",
-    "Amphetamines",
-    "Cocaine",
-    "DXM",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "aMT",
+      "MAOIs",
+      "PCP"
+    ],
+    "unsafe": [
+      "Amphetamines",
+      "Cocaine",
+      "DXM",
+      "Tramadol"
+    ],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "Cannabis",
+      "DOx",
+      "MDMA",
+      "Mescaline",
+      "NBOMe"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 5-MeO-DALT use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 5-MeO-DALT is a research chemical with very little history of human usage.",
     "Anecdotal reports from those who have tried 5-MeO-DALT suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

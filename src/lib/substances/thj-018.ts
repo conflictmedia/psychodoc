@@ -73,9 +73,29 @@ export const thj_018: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DMT",
+      "DOx",
+      "LSD",
+      "Mescaline",
+      "Mushrooms",
+      "25x-NBOMe"
+    ],
+    "crossTolerances": [
+      "cannabinoids"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational THJ-018 use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because THJ-018 has very little history of human usage. Anecdotal evidence from people who have tried THJ-018 within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed). Informal experiments have shown that overdose will cause physical discomfort including heart palpitations, vertigo and sedation at much lower than dangerous doses, usually causing the user to suffer large amounts of anxiety or to fall asleep.",
     "It has often been recommended that those with severe pre-existing mental conditions should not ingest these substances due to the way they strongly increase one's current state of mind and emotions. Also, like THC, prolonged usage of synthetic cannabinoids may increase one's disposition to mental illness and psychosis, particularly in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of schizophrenia).",

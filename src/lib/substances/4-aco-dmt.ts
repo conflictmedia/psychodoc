@@ -120,10 +120,21 @@ export const _4_aco_dmt: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of 4-AcO-DMT have not been studied and the exact toxic dose is unknown.",
     "This is because 4-AcO-DMT is a research chemical with a very short history of human usage.",

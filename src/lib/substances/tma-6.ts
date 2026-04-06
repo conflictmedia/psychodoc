@@ -82,13 +82,20 @@ export const tma_6: Substance =
       }
     }
   },
-  "interactions": [
-    "SNRIs",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP"
-  ],
+  "interactions": {
+    "dangerous": [
+      "SNRIs",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational TMA-6 use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because TMA-6 has very little history of human usage. Anecdotal evidence from people within the psychonaut community who have tried TMA-6 suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "Though largely unstudied TMA-6 is largely considered to be not habit-forming and the desire to use it can actually decrease with consumption. It is most often self-regulating.",

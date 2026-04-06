@@ -68,22 +68,34 @@ export const dextropropoxyphene: Substance =
       }
     }
   },
-  "interactions": [
-    "SNRIs",
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP"
-  ],
+  "interactions": {
+    "dangerous": [
+      "SNRIs",
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Dextropropoxyphene has a high toxicity relative to dose. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines and generally has a wider range of substances which it is  in comparison to other opioids. Dextropropoxyphene is known to lower the seizure threshold. It should not be taken during  as this can potentially cause seizures. Dextropropoxyphene is known to cause potentially fatal heart arrhythmias, and it is discouraged to take in very heavy doses or several days in a row.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

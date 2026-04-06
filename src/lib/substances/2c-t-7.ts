@@ -122,7 +122,14 @@ export const _2c_t_7: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "As of August 2007, there have been at least three reported deaths associated with the use of 2C-T-7. These incidents occurred with insufflated doses of 30 mg or more, or in combination with stimulants such as MDMA,. There have also been a number of reports describing concerning physical side effects and hospitalizations, typically following insufflation.",
     "It is strongly discouraged to administer 2C-T-7 non-orally because this can cause vomiting, numerous negative side effects, or death at high doses. In Erowid's Fall 2000 2C-T-7 survey, it was reported that the insufflation of 2C-T-7 resulted in more negative side effects than oral administration.",

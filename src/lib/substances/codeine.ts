@@ -71,17 +71,29 @@ export const codeine: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Codeine has a low toxicity relative to dose. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. Some people may also have an allergic reaction to codeine, such as the swelling of skin and rashes. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

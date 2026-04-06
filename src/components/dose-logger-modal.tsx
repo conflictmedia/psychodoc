@@ -545,16 +545,30 @@ export function DoseLoggerModal({
     const interactions = new Set<string>()
     const escapeRegExp = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 
+    // Flatten all interaction strings from the new structured format
+    const flatInteractions = (sub: any): string[] => {
+      if (!sub?.interactions) return []
+      return [
+        ...(sub.interactions.dangerous || []),
+        ...(sub.interactions.unsafe || []),
+        ...(sub.interactions.uncertain || []),
+      ]
+    }
+
+    const matchAny = (interactionList: string[], keywords: string[]): boolean => {
+      return interactionList.some(i => keywords.some(k => {
+        try { return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(i.toLowerCase()) }
+        catch { return i.toLowerCase().includes(k) }
+      }))
+    }
+
     for (const dose of activeDoses) {
       if (dose.substanceId === selectedSubstance.id) continue
       const activeSubstance = substances.find(s => s.id === dose.substanceId || s.name === dose.substanceName)
 
       if (!activeSubstance) {
         const activeNameLower = dose.substanceName.toLowerCase()
-        const hits = selectedSubstance.interactions?.some(i => {
-          try { return new RegExp(`\\b${escapeRegExp(activeNameLower)}\\b`, 'i').test(i.toLowerCase()) }
-          catch { return i.toLowerCase().includes(activeNameLower) }
-        })
+        const hits = matchAny(flatInteractions(selectedSubstance), [activeNameLower])
         if (hits) interactions.add(dose.substanceName)
         continue
       }
@@ -565,14 +579,8 @@ export function DoseLoggerModal({
       const activeKw    = keywords(activeSubstance)
       const selectedKw  = keywords(selectedSubstance)
 
-      const fwd = selectedSubstance.interactions?.some(i => activeKw.some(k => {
-        try { return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(i.toLowerCase()) }
-        catch { return i.toLowerCase().includes(k) }
-      }))
-      const rev = activeSubstance.interactions?.some(i => selectedKw.some(k => {
-        try { return new RegExp(`\\b${escapeRegExp(k)}\\b`, 'i').test(i.toLowerCase()) }
-        catch { return i.toLowerCase().includes(k) }
-      }))
+      const fwd = matchAny(flatInteractions(selectedSubstance), activeKw)
+      const rev = matchAny(flatInteractions(activeSubstance), selectedKw)
 
       if (fwd || rev) interactions.add(activeSubstance.name)
     }

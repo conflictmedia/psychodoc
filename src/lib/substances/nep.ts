@@ -103,19 +103,32 @@ export const nep: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "SNRIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs",
+      "SNRIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational NEP use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because NEP has an extremely brief history of human usage. Early anecdotal evidence from people who have tried NEP within the community suggests that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it in a sparing and controlled fashion (but nothing can be completely guaranteed)",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

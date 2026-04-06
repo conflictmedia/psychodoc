@@ -291,7 +291,7 @@ export {
 } from './substances';
 
 // Import for helper functions
-import { Substance, SubstanceCategory } from './types';
+import { Substance, SubstanceCategory } from '../types';
 import {
   _1_3_butanediol,
   _1p_eth_lad,

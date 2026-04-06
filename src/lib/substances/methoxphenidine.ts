@@ -75,11 +75,18 @@ export const methoxphenidine: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Stimulants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Stimulants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational MXP use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because MXP has very little history of human usage.",
     "Anecdotal reports from those who have tried this substance that there do not seem to be any negative health effects attributed to simply trying it by itself at low to moderate doses and using it sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

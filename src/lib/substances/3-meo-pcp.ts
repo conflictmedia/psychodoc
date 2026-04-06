@@ -139,10 +139,17 @@ export const _3_meo_pcp: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 3-MeO-PCP use has not been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-MeO-PCP has very short history of human usage.",
     "There is one death involving this substance recorded in the medical literature. In this case, the individual's cause of death was determined to be from a combination of 3-MeO-PCP, amphetamine, and diphenhydramine.",

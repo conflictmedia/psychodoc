@@ -78,10 +78,17 @@ export const _3_ho_pce: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 3-HO-PCE use has not been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-HO-PCE has a very short history of human usage.",
     "Early reports have characterized the chronic use of 3-HO-PCE as moderately addictive with a moderate potential for adverse side effects such as psychosis. In comparison to other dissociatives, 3-HO-PCE has been reported to be more potentially habit-forming than MXE, diphenidine, ephenidine, DCK, and ketamine. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",

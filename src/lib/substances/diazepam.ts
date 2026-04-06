@@ -75,11 +75,18 @@ export const diazepam: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives",
+      "Stimulants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "benzodiazepines"
+    ]
+  },
   "harmReduction": [
     "Diazepam has a low toxicity relative to dose.  However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids.",
     "It is strongly recommended that one use harm reduction practices, such as volumetric dosing, when using this substance to ensure the administration of the intended dose.",

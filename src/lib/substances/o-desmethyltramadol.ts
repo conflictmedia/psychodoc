@@ -98,22 +98,34 @@ export const o_desmethyltramadol: Substance =
       }
     }
   },
-  "interactions": [
-    "SNRIs",
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP"
-  ],
+  "interactions": {
+    "dangerous": [
+      "SNRIs",
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "O-DSMT has a moderate potential toxicity relative to its dose due to its potency. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines.",
     "O-DSMT has recently been marketed as a currently legal substitute for illegal opioid drugs, either in powder form or mixed into various other preparations. One such blend was sold under the brand Krypton and contains powdered kratom leaf (Mitragyna speciosa) laced with O-DSMT and was reportedly linked to at least 9 accidental deaths from overdose during 2010–2011.",

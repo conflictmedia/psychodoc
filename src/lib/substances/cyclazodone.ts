@@ -103,14 +103,27 @@ export const cyclazodone: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational cyclazodone use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because cyclazodone has a very limited history of human usage.",
     "Another compound related in structure, 4-methylaminorex, is associated with pulmonary hypertension; though, it is reported to induce far stronger stimulation than that of cyclazodone.",

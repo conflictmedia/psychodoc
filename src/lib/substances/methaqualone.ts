@@ -93,10 +93,20 @@ export const methaqualone: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "GABA|gabaergic",
+      "depressants"
+    ]
+  },
   "harmReduction": [
     "Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "Overdose of methaqualone can lead to seizures, coma or death. Taking doses of over 300mg can be dangerous for first time users. Depending on the state of the user's individual tolerance, doses of about 8,000mg per day can be fatal whilst others on even higher doses (of up to 20,000mg) may survive.",

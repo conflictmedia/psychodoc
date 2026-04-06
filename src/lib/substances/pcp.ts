@@ -144,23 +144,35 @@ export const pcp: Substance =
       }
     }
   },
-  "interactions": [
-    "2C-T-x",
-    "ΑMT",
-    "5-MeO-xxT",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Tramadol",
-    "MAOIs",
-    "DOx",
-    "Amphetamines",
-    "MDMA",
-    "Cocaine",
-    "Alcohol",
-    "Benzodiazepines",
-    "SSRIs"
-  ],
+  "interactions": {
+    "dangerous": [
+      "2C-T-x",
+      "ΑMT",
+      "5-MeO-xxT",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Tramadol",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DOx",
+      "Amphetamines",
+      "MDMA",
+      "Cocaine",
+      "Alcohol",
+      "Benzodiazepines",
+      "SSRIs"
+    ],
+    "uncertain": [
+      "MXE",
+      "Caffeine",
+      "Opioids"
+    ],
+    "crossTolerances": [
+      "dissociative|dissociatives"
+    ]
+  },
   "harmReduction": [
     "The long-term use of PCP may lead to schizophrenia-like psychotic episodes, severe lasting memory loss, disorganized thinking, depression, weight loss, liver abnormalities and rhabdomyolysis (skeletal muscle breakdown).",
     "It is very strongly recommended that one use extreme caution and harm reduction practices when using this substance. For example,",

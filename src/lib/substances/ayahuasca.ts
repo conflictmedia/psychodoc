@@ -134,7 +134,12 @@ export const ayahuasca: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "LD50 is around 50 times a regular dose"
   ],

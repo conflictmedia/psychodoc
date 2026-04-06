@@ -60,11 +60,17 @@ export const grayanotoxin: Substance =
       }
     }
   },
-  "interactions": [
-    "Opioids",
-    "Cholinergics",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Opioids"
+    ],
+    "unsafe": [
+      "Cholinergics",
+      "Depressants"
+    ],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "It is strongly recommended that one use harm reduction practices when using this substance."
   ],

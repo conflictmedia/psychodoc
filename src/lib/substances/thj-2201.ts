@@ -74,9 +74,29 @@ export const thj_2201: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DMT",
+      "DOx",
+      "LSD",
+      "Mescaline",
+      "Mushrooms",
+      "25x-NBOMe"
+    ],
+    "crossTolerances": [
+      "cannabinoids"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational THJ-2201 use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because THJ-2201 has very little history of human usage. Anecdotal evidence from people who have tried THJ-2201 within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "Informal experiments have shown that overdose will cause physical discomfort including heart palpitations, vertigo and sedation at much lower than dangerous doses, usually causing the user to suffer moderate to severe anxiety or fall asleep.",

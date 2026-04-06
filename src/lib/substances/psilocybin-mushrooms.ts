@@ -98,10 +98,21 @@ export const psilocybin_mushrooms: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "Lithium"
-  ],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [
+      "Tramadol",
+      "Lithium"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Amphetamines",
+      "Cocaine"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "Numerous studies have found that psilocybin mushrooms are physiologically well-tolerated and has an extremely low toxicity relative to dose. There is no evidence for long-lasting effects on the brain or other organs and there are no documented deaths attributed to the direct effects of psilocybin mushrooms toxicity.",
     "However, it is worth noting that while they may not be capable of causing direct bodily toxicity or death, their use can still present serious hazards.",

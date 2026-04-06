@@ -76,19 +76,32 @@ export const butylone: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "SNRIs",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "SNRIs",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational butylone use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because butylone has very little history of human usage. Anecdotal evidence from people who have tried butylone within the community suggests that there do not seem to be strong adverse effects attributed to using this substance at low to moderate doses and sparingly.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

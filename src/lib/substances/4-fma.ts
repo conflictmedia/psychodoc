@@ -98,17 +98,37 @@ export const _4_fma: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "Do not use 4-FMA if you have a history of heart-related issues or experience severe headache after its use. We have been made aware of a report released by Trimbos-instituut and Nationaal Vergiftigingen Informatie Centrum (NVIC), describing incidents of strokes after an increased use of the closely related analogue 4-FA, and there is no reason this does not apply to 4-FMA as well. In addition to the common amphetamine-like effects (agitation, anxiety, tachycardia, hypertension, chest pain et al.), serious cardio- and cerebrovascular complications have been reported, including rhythm (sinus arrhythmia, ventricular extrasystoles (bigeminy), conduction disturbances) and acute cardiac failure. Although a causal relationship has not been confirmed, when presented with a severe headache and lateralization after 4-FA usage, a medical evaluation at an emergency department should be conducted immediately.",
     "The toxicity and long-term health effects of recreational 4-FMA use has not been studied in any scientific context and the exact toxic dosage is unknown. This is because 4-FMA has very little history of human usage. Anecdotal evidence suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",

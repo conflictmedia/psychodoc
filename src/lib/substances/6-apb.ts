@@ -110,19 +110,32 @@ export const _6_apb: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "SNRIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs",
+      "SNRIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "Due to only having a short history of human use, the toxicity and harm potential is not exactly known. Due to its similarity to MDMA, it is likely that the administration of repeated or high dosages of 6-APB may be both neurotoxic and cardiotoxic in some form.",
     "The exact toxic dosage is unknown. It is strongly recommended that one use harm reduction practices when using this substance.",

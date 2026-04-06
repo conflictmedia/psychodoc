@@ -69,17 +69,29 @@ export const hydrocodone: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Hydrocodone has not been shown to be toxic and is physically benign at reasonable dosages. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. Some people may also have an allergic reaction to hydrocodone, such as the swelling of skin and rashes. It is potentially fatal at heavy dosages.",
     "Like most opioids, unadulterated hydrocodone at appropriate dosages does not cause many long-term complications other than dependence and constipation. Outside of the extremely powerful addiction and physical dependence, the harmful or toxic aspects of opioid usage are exclusively associated with not taking the necessary precautions in regards to its administration, overdosing and using impure products. Hydrocodone commonly being mixed with acetaminophen (paracetamol) however can complicate the drug’s safety profile due to acetaminophen’s toxicity on the liver.",

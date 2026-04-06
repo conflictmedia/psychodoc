@@ -70,10 +70,19 @@ export const lsz: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational LSZ do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because LSZ is a research chemical with very little history of human usage. Anecdotal evidence from people within the psychonaut community who have tried LSZ suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

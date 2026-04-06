@@ -70,10 +70,17 @@ export const clonidine: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

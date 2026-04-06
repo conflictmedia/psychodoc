@@ -116,17 +116,37 @@ export const _2_fma: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 2-FMA use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 2-FMA has a very limited history of human usage.",
     "Anecdotal reports from those who have tried 2-FMA suggest that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself or using it sparingly (but nothing can be completely guaranteed).",

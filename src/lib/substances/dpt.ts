@@ -150,7 +150,12 @@ export const dpt: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational DPT do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because DPT is a research chemical with very little history of human usage. There has been one death associated with the use DPT and seizures, but the dose is unknown.",
     "Anecdotal reports from those who have taken DPT suggests that negative health effects are not likely to occur from simply trying it by itself at low to moderate doses and using it sparingly (although nothing can be guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

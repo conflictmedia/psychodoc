@@ -112,23 +112,40 @@ export const alcohol: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Opioids",
-    "Tramadol",
-    "Cocaine",
-    "MAOIs",
-    "PCP",
-    "ALDH2 inhibitors",
-    "Hepatotoxic drugs"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Opioids",
+      "Tramadol"
+    ],
+    "unsafe": [
+      "Cocaine",
+      "MAOIs",
+      "PCP",
+      "ALDH2 inhibitors",
+      "Hepatotoxic drugs"
+    ],
+    "uncertain": [
+      "Stimulants",
+      "Cannabis",
+      "Amphetamines",
+      "AMT",
+      "MDMA",
+      "Nitrous",
+      "SSRIs"
+    ],
+    "crossTolerances": [
+      "GABA",
+      "depressants"
+    ]
+  },
   "harmReduction": [
     "The sensible use of alcohol in the short term is extremely unlikely to have any positive or detrimental effects on one's physical health. However, despite the widespread use and alcohol's legality in most countries, many medical sources tend to describe any level of alcohol intoxication as a form of poisoning due to ethanol's damaging effects on the body in large doses.",
     "The long-term effects of alcohol consumption range from cardioprotective health benefits for low to moderate alcohol consumption in industrialized societies with higher rates of cardiovascular disease to severe detrimental effects in cases of chronic alcohol abuse.",

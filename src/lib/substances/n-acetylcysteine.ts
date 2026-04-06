@@ -62,7 +62,12 @@ export const n_acetylcysteine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The most commonly reported adverse effects for IV formulations of acetylcysteine are rash, urticaria, and pruritus(itchiness). Up to 18% of patients have been reported to experience anaphylaxis reaction, which are defined as rash, hypotension, wheezing, and/or shortness of breath.  Lower rates of anaphylactoid reactions have been reported with slower rates of infusion.",
     "Adverse effects for inhalational formulations of acetylcysteine include nausea, vomiting, stomatitis, fever, rhinorrhea, drowsiness, clamminess, chest tightness, and bronchoconstriction. Although infrequent, bronchospasm has been reported to occur unpredictably in some patients.",

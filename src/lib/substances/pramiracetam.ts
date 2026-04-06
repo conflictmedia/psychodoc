@@ -62,7 +62,15 @@ export const pramiracetam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "racetam",
+      "nootropic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of pramiracetam use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because pramiracetam has very little history of human usage. Anecdotal evidence from people who have tried pramiracetam within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "There are anecdotal reports of users experiencing painful chemical burns caused by ingesting pramiracetam powder sublingually. Other routes of administration do not seem to cause the same effects.",

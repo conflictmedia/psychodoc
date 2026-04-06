@@ -73,19 +73,32 @@ export const _5_mapb: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "SNRIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs",
+      "SNRIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 5-MAPB use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 5-MAPB has very little history of human usage. Anecdotal evidence from people who have tried 5-MAPB within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "5-MAPB's notable agonism at the serotonin-2b (5-HT2b) receptor (which has been associated with cardiovalvulopathy) suggests that it would be cardiotoxic with long-term use, as seen in other 5-HT2B agonists such as fenfluramine and MDMA.",

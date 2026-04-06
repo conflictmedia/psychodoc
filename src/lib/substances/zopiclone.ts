@@ -73,7 +73,14 @@ export const zopiclone: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "benzodiazepines"
+    ]
+  },
   "harmReduction": [
     "Zopiclone is generally thought to have a low toxicity relative to dose. However, it is Toxicity potentially lethal when mixed with depressants like benzodiazepines, alcohol or opioids. When combined with one or several of these substances the already existing chance of a having a \"black-out\" is significantly increased, leaving the user with very little to no memory of the events that occurred whilst under the influence of zopiclone alone or combined with most other CNS depressants.",
     "Some users have reported taking zopiclone in combination with alcohol in an attempt to treat hangovers with varying degrees of success.",

@@ -106,7 +106,12 @@ export const nicotine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Nicotine has an Toxicity estimated oral LD50 of 6.5 - 13 mg/kg in humans, which is much lower than many other common stimulants. It is unlikely that overdose can be achieved by smoking tobacco. However, coadministration with other sources of nicotine such as patches or gum may potentially be dangerous.",
     "Nicotine readily passes through the dermis and into the bloodstream upon contact with skin, so safety precautions should be taken when handling it in its pure form.",

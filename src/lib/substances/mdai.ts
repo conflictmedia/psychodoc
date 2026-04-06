@@ -77,19 +77,31 @@ export const mdai: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "SNRIs",
-    "MAOIs",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "SNRIs",
+      "MAOIs",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "entactogens"
+    ]
+  },
   "harmReduction": [
     "MDAI and other similar drugs have been widely used in scientific research as they are able to replicate many of the effects of MDMA, but without causing the associated neurotoxicity.",
     "No tests have been performed on cardiovascular toxicity.",

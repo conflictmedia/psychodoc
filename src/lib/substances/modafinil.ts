@@ -62,17 +62,30 @@ export const modafinil: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "Hormonal Birth Control",
-    "CYP2C19-substrates",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs",
+      "Hormonal Birth Control",
+      "CYP2C19-substrates"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "benzhydryl",
+      "nootropic|nootropics"
+    ]
+  },
   "harmReduction": [
     "The long-term safety and effectiveness of modafinil as a drug of regular usage have not been determined.",
     "Anecdotal reports from people who have tried modafinil suggest that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself or using it sparingly (but nothing can be completely guaranteed).",

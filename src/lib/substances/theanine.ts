@@ -61,7 +61,12 @@ export const theanine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Theanine is non-addictive, is not known to cause brain damage, and has an extremely low toxicity relative to dose. There are relatively few physical side effects associated with acute theanine exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

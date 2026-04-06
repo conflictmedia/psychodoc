@@ -123,24 +123,35 @@ export const rolicyclidine: Substance =
       }
     }
   },
-  "interactions": [
-    "2C-T-x",
-    "ΑMT",
-    "5-MeO-xxT",
-    "GHB",
-    "GBL",
-    "Tramadol",
-    "MAOIs",
-    "Opioids",
-    "DOx",
-    "Amphetamines",
-    "MDMA",
-    "Cocaine",
-    "Alcohol",
-    "Benzodiazepines",
-    "SSRIs",
-    "DXM"
-  ],
+  "interactions": {
+    "dangerous": [
+      "2C-T-x",
+      "ΑMT",
+      "5-MeO-xxT",
+      "GHB",
+      "GBL",
+      "Tramadol",
+      "MAOIs",
+      "Opioids"
+    ],
+    "unsafe": [
+      "DOx",
+      "Amphetamines",
+      "MDMA",
+      "Cocaine",
+      "Alcohol",
+      "Benzodiazepines",
+      "SSRIs",
+      "DXM"
+    ],
+    "uncertain": [
+      "MXE",
+      "Caffeine"
+    ],
+    "crossTolerances": [
+      "dissociative|dissociatives"
+    ]
+  },
   "harmReduction": [],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

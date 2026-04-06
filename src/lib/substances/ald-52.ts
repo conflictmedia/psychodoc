@@ -118,10 +118,21 @@ export const ald_52: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational ALD-52 use do not appear to have been studied in any scientific context and the exact toxic dose is unknown. This is because ALD-52 is a research chemical with a very limited history of human use.",
     "Anecdotal evidence from people within the community who have tried ALD-52 suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (although nothing can be completely guaranteed). Independent research should always be conducted to ensure that a combination of two or more substances is safe before consumption.",

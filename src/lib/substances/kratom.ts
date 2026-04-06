@@ -68,17 +68,29 @@ export const kratom: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Kratom has a low toxicity relative to dose. Like most opioids, safe usage of kratom is not known to cause any dangerous long-term complications. Heavy dosages of kratom can result in increased respiratory depression, leading onto fatal or dangerous levels of anoxia (oxygen deprivation). This is significantly less powerful than the respiratory depression of heroin or morphine. This occurs because the breathing reflex is suppressed by agonism of µ-opioid receptors proportional to the dosage consumed.",
     "It is likely impossible to achieve this using kratom in its standard leaf form as the nausea ceiling makes it difficult to consume high enough dosages without vomiting. A pure extract or tincture, however, may be potent enough to cause lethal respiratory depression at appropriate dosages, although oral administration of pure mitragynine to mice in dosages up to 920 mg/kg did not produce lethal respiratory depression. However, kratom can be fatal when it is combined with other depressants such as alcohol or benzodiazepines.",

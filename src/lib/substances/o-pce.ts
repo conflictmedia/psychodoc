@@ -113,10 +113,17 @@ export const o_pce: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational O-PCE use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because O-PCE has very little history of human usage. Anecdotal evidence from people who have tried O-PCE within the community suggests that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "O-PCE shares a close structural relationship to deschloroketamine (O-PCM) and ketamine (2-Cl-O-PCM), which has been speculated to have immuno-modulative properties. It is not known whether O-PCE also has these properties due to the lack of sufficient scientific research. However, the possibility should be kept in mind because prolonged use could potentially pose a serious threat to one's health and immune system.",

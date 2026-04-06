@@ -92,17 +92,29 @@ export const morphine: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants",
+      "MAOIs",
+      "Nitrous",
+      "PCP"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Like most opioids, unadulterated morphine does not cause many long-term complications other than dependence and constipation. Outside of the extremely powerful addiction and physical dependence, the harmful or toxic aspects of morphine usage are exclusively associated with not taking appropriate precautions in regards to its administration, overdosing and using impure products.",
     "Heavy dosages of morphine can result in respiratory depression, leading onto fatal or dangerous levels of anoxia (oxygen deprivation). This occurs because the breathing reflex is suppressed by agonism of µ-opioid receptors proportional to the dosage consumed.",

@@ -91,10 +91,19 @@ export const _2c_c: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 2C-C use do not appear to have been studied in any scientific context and the exact toxic dose is unknown. This is because 2C-C is a research chemical with a limited history of human use.",
     "Anecdotal reports from those who have tried this compound suggest that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (although nothing can be completely guaranteed). Independent research should always be conducted to ensure that a combination of two or more substances is safe before consumption.",

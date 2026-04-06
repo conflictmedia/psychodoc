@@ -122,10 +122,24 @@ export const mescaline: Substance =
       }
     }
   },
-  "interactions": [
-    "ΑMT",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "ΑMT"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "5-MeO-xxT",
+      "Cannabis",
+      "Amphetamines",
+      "Cocaine",
+      "MAOIs"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational mescaline use does not appear to have been studied in any scientific context and the exact toxic dose is unknown. However, there are no known fatal overdoses within the scientific literature.",
     "Anecdotal reports suggest that there are no negative health effects attributed to simply trying mescaline by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed).",

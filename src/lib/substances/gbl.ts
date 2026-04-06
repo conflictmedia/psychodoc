@@ -97,16 +97,26 @@ export const gbl: Substance =
       }
     }
   },
-  "interactions": [
-    "Ketamine",
-    "MXE",
-    "DXM",
-    "PCP",
-    "Alcohol",
-    "Opioids",
-    "Tramadol",
-    "Benzodiazepines"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Ketamine",
+      "MXE",
+      "DXM",
+      "PCP",
+      "Alcohol",
+      "Opioids",
+      "Tramadol",
+      "Benzodiazepines"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Nitrous",
+      "Amphetamines",
+      "MDMA",
+      "Cocaine"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "GBL is not active in its own right; its mechanism of action stems from its identity as a prodrug of GHB, meaning that it is rapidly converted into GHB in the body.",
     "GBL is not considered to be as safe as GHB used responsibly or medicinally, since it is theorized to display additional toxic effects on the body in difference to GHB. The LD50 is above the active dosage, and there is no danger of acute toxicity. However, it can become dangerous when used as a recreational drug, abused, or in combination with other drugs. There have been many negative reports from recreational users who have overdosed, combined GBL with alcohol or other drugs, or accidentally dosed themselves unexpectedly or way above the common dosage range.",

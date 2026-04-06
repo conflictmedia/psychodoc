@@ -80,10 +80,17 @@ export const _3_ho_pcp: Substance =
       }
     }
   },
-  "interactions": [
-    "Stimulants",
-    "Depressants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Stimulants",
+      "Depressants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 3-HO-PCP use have not been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-HO-PCP has an extremely brief history of human usage.",
     "While evidence is lacking, early reports suggest that the chronic use of 3-HO-PCP is likely to be moderately addictive with a high potential for adverse side effects such as psychosis. As with the closely related analog 3-MeO-PCP, reports suggest that 3-HO-PCP may be more habit-forming than dissociatives such as MXE, diphenidine, ephenidine, DCK, and ketamine. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",

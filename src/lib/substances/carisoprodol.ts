@@ -66,10 +66,17 @@ export const carisoprodol: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Carisoprodol likely has moderate toxicity relative to dose. However, carisoprodol is Toxicity potentially lethal when mixed with depressants like alcohol or opioids. Carisoprodol has been taken off the market is several countries such as Sweden and Indonesia due to side effects and abuse.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

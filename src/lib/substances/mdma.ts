@@ -129,16 +129,38 @@ export const mdma: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "MAOIs",
-    "DXM",
-    "25x-NBOMe",
-    "PCP",
-    "Serotonin releasers",
-    "2C-T-x",
-    "5-HTP"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "MAOIs",
+      "DXM"
+    ],
+    "unsafe": [
+      "25x-NBOMe",
+      "PCP",
+      "Serotonin releasers",
+      "2C-T-x",
+      "5-HTP"
+    ],
+    "uncertain": [
+      "5-MeO-xxT",
+      "Alcohol",
+      "Cocaine",
+      "DOx",
+      "GHB",
+      "GBL",
+      "MXE",
+      "ΑMT",
+      "Protease Inhibitors",
+      "SSRIs",
+      "SNRIs"
+    ],
+    "crossTolerances": [
+      "dopaminergic",
+      "serotonergic",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The short-term physical health risks of MDMA consumption include dehydration, bruxism, insomnia, hyperthermia, and hyponatremia. MDMA generally does not cause any serious or life threatening effects by itself unless it is associated with other extraneous factors such as exposure to prolonged high ambient temperature and humidity, prolonged physical activities, poor intake of water and lack of acclimatization.",
     "Continuous activity without sufficient rest or rehydration may cause the user's body temperature to rise to dangerous levels, and loss of fluid via excessive sweating puts the body at further risk as the stimulating and euphoric qualities of MDMA may cause the user to become oblivious to their physical condition.",

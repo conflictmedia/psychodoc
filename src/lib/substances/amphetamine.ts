@@ -143,17 +143,37 @@ export const amphetamine: Substance =
       }
     }
   },
-  "interactions": [
-    "Tramadol",
-    "aMT",
-    "MAOIs",
-    "DXM",
-    "PCP",
-    "25x-NBOMe",
-    "2C-T-x",
-    "5-MeO-xxT",
-    "DOx"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Tramadol",
+      "aMT",
+      "MAOIs"
+    ],
+    "unsafe": [
+      "DXM",
+      "PCP",
+      "25x-NBOMe",
+      "2C-T-x",
+      "5-MeO-xxT",
+      "DOx"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Cocaine",
+      "Cannabis",
+      "Caffeine",
+      "Ketamine",
+      "Methoxetamine",
+      "Psychedelics"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "As of March 2014, there is no evidence that amphetamine is directly neurotoxic in humans. However, high-dose amphetamine can cause indirect neurotoxicity as a result of increased oxidative stress from reactive oxygen species and autoxidation of dopamine.",
     "In rodents and primates, sufficiently high doses of amphetamine causes damage to dopamine neurons, characterized as reduced transporter and receptor function. Animal models of neurotoxicity from high-dose amphetamine exposure indicate that the occurrence of hyperpyrexia (i.e., core body temperature ≥ 40 °C) is necessary for the development of amphetamine-induced neurotoxicity.",

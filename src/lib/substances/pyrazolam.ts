@@ -60,7 +60,14 @@ export const pyrazolam: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "benzodiazepines"
+    ]
+  },
   "harmReduction": [
     "Pyrazolam likely has a low toxicity relative to dose. However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids.",
     "It is strongly recommended that one use harm reduction practices when using this substance.",

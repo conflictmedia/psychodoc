@@ -82,10 +82,21 @@ export const _4_ho_ept: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 4-HO-EPT use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 4-HO-EPT is a research chemical with very little history of human usage.",
     "Anecdotal evidence from people within the community who have tried 4-HO-EPT suggests that there are no negative health effects attributed to simply trying the it by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",

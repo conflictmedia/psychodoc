@@ -107,10 +107,21 @@ export const _4_aco_det: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [
+      "Tramadol"
+    ],
+    "uncertain": [
+      "Cannabis",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "psychedelic"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational 4-AcO-DET has not been studied in any scientific context and the exact toxic dose is unknown.",
     "This is because 4-AcO-DET is a research chemical with a very limited history of human usage.",

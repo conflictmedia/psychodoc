@@ -87,11 +87,16 @@ export const bromazepam: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives",
+      "Stimulants"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Bromazepam has a low toxicity relative to dose.  However, it is Toxicity potentially lethal when mixed with depressants like alcohol or opioids. It is strongly recommended that one use harm reduction practices.",
     "High dosage of bromazepam causes disinhibition, memory suppression, analysis depression and motor control loss. Moreover, paradoxal effects can occure and include agressivity and impulsive behaviour.",

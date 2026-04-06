@@ -77,10 +77,17 @@ export const tizanidine: Substance =
       }
     }
   },
-  "interactions": [
-    "Depressants",
-    "Dissociatives"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Depressants",
+      "Dissociatives"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Stimulants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "It is strongly recommended that one use harm reduction practices when using this substance.",
     "While no long term studies of tizanidine use in humans have been done, studies done in animals indicate no signs of long term carcinogenicity. However, tizanidine has been shown to have a developmental effect on young rats.",

@@ -71,9 +71,29 @@ export const jwh_073: Substance =
       }
     }
   },
-  "interactions": [
-    "Lithium"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Lithium"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "2C-T-x",
+      "2C-x",
+      "5-MeO-xxT",
+      "Amphetamines",
+      "aMT",
+      "Cocaine",
+      "DMT",
+      "DOx",
+      "LSD",
+      "Mescaline",
+      "Mushrooms",
+      "25x-NBOMe"
+    ],
+    "crossTolerances": [
+      "cannabinoids"
+    ]
+  },
   "harmReduction": [
     "JWH-073, like other cannabinoids, has also been known to exacerbate pre-existing psychological disorders causing intense paranoia, anxiety and agitation; however, Δ9-THC itself has been known to do this as well.",
     "It has often been recommended that those with severe pre-existing mental conditions should not ingest these substances due to the way they strongly increase one's current state of mind and emotions. Also, like THC, prolonged usage of synthetic cannabinoids may increase one's disposition to mental illness and psychosis, particularly in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of schizophrenia).",

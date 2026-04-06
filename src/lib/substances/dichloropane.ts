@@ -96,9 +96,17 @@ export const dichloropane: Substance =
       }
     }
   },
-  "interactions": [
-    "MAOIs"
-  ],
+  "interactions": {
+    "dangerous": [
+      "MAOIs"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "dopamine",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational dichloropane use has not been studied in any scientific context and the exact toxic dosage is unknown. This is because dichloropane has very little history of human usage. In terms of neurotoxicity (as defined by the damage or death of cells in the brain in response to over-excitation or reactive oxidation caused by drugs), it is reasonable to assume that like other stimulants which work principally through reuptake inhibition (e.g. cocaine), dichloropane should not exhibit these effects unlike certain other substances such as methamphetamine, which have suspected mechanisms of direct neurotoxicity. The extended use or abuse of dichloropane, however, is likely to cause both short and down-term down regulation of the receptors of the major neurotransmitter (monoamine) systems it interacts with. However, this still remains a subject of active inquiry.",
     "Due to its structural similarity to cocaine, it is worth noting that the most potentially harmful physical effects of dichloropane could not be neurological but cardiovascular. For example, severe cardiac adverse events, particularly sudden cardiac death, become a serious risk at high doses for cocaine due to cocaine's blocking effect on cardiac sodium channels, and it is possible that dichloropane may share this risk despite not having topical anesthetic activity. Moreover, long-term cocaine usage may result in Cocaine-Related Cardiomyopathy.  It is as of yet unknown whether dichloropane presents similar risks, but it is reasonable to assume that it might, and thus should be approached with additional caution.",

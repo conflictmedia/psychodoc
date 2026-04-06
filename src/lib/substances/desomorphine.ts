@@ -69,7 +69,14 @@ export const desomorphine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Like most opioids, unadulterated desomorphine does not cause many long-term complications other than dependence and constipation. Outside of the extremely powerful addiction and physical dependence potential, the harmful or toxic aspects of desomorphine usage are exclusively associated with not taking appropriate precautions in regards to its administration, overdosing and using impure products derived from low-quality black-market self-manufacture.",
     "Animal studies comparing pure desomorphine to morphine showed it to have increased toxicity, more potent relief of pain, higher levels of sedation, decreased respiration, and increased digestive activity",

@@ -70,7 +70,12 @@ export const creatine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "There are no clinically significant side-effects of creatine supplementation acutely. Numerous trials have been conducted in humans with varying dosages, and the side-effects have been limited to gastrointestinal distress (from too much creatine consumption at once) and cramping (from insufficient hydration).",
     "Studies that use a dosage range typical of creatine supplementation (in the range of 5g a day following an acute loading period) note increases to total body water of 6.2% (3.74lbs) over nine weeks, and 1.1kg (2.42 lbs) over 42 days. This effect may be responsible for creatine's capability to increase perceived body weight.",

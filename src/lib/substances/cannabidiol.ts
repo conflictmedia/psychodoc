@@ -59,7 +59,12 @@ export const cannabidiol: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "According to clinical studies, cannabidiol is well-tolerated and shows little to no toxicity.",
     "In a 2011 literature review, CBD was found to not alter physiological parameters such as heart rate, blood pressure, and body temperature. Moreover, psychological and psychomotor functions are not adversely affected. Chronic use and high doses of up to 1500  mg per day have been repeatedly shown to be well tolerated by humans. As a result, it is considered to have a good safety profile. However, this information should be interpreted cautiously as cannabidiol has been subject to relatively few human studies; further research is needed to fully establish its safety profile.",

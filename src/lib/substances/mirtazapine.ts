@@ -92,7 +92,14 @@ export const mirtazapine: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [
+      "Antidepressants"
+    ],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "Mirtazapine is not known to cause brain damage, and has extremely low toxicity relative to dose. Similar to other psychedelic drugs, there are relatively few physical side effects associated with mirtazapine exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
     "Mirtazapine is not habit-forming when used as a hallucinogen and the desire to use it can actually decrease with use. It is most often self-regulating.",

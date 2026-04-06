@@ -160,13 +160,27 @@ export const ketamine: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "GHB",
-    "GBL",
-    "Opioids",
-    "Tramadol"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "GHB",
+      "GBL",
+      "Opioids",
+      "Tramadol"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "Amphetamines",
+      "Cocaine",
+      "Benzodiazepines",
+      "MAOIs",
+      "Trazodone",
+      "Grapefruit"
+    ],
+    "crossTolerances": [
+      "dissociative"
+    ]
+  },
   "harmReduction": [
     "Some users have reported positive experience with .",
     "It is strongly advised to use harm reduction practices if using this substance.",

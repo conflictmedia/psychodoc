@@ -99,21 +99,35 @@ export const mdea: Substance =
       }
     }
   },
-  "interactions": [
-    "25x-NBOMe",
-    "25x-NBOH",
-    "Tramadol",
-    "MAOIs",
-    "SNRIs",
-    "Stimulants",
-    "Cocaine",
-    "Serotonin releasers",
-    "SSRIs",
-    "5-HTP",
-    "DXM",
-    "MDMA",
-    "Stimulants"
-  ],
+  "interactions": {
+    "dangerous": [
+      "25x-NBOMe",
+      "25x-NBOH",
+      "Tramadol",
+      "MAOIs",
+      "SNRIs",
+      "Stimulants",
+      "Cocaine",
+      "Serotonin releasers",
+      "SSRIs",
+      "5-HTP"
+    ],
+    "unsafe": [
+      "DXM",
+      "MDMA",
+      "Stimulants"
+    ],
+    "uncertain": [
+      "Alcohol",
+      "MXE",
+      "Dissociatives"
+    ],
+    "crossTolerances": [
+      "dopamine",
+      "serotonin|serotonergic",
+      "stimulant"
+    ]
+  },
   "harmReduction": [
     "Short-term physical health risks of MDEA consumption include dehydration, insomnia, hyperthermia, and hyponatremia. Continuous activity without sufficient rest or rehydration may cause body temperature to rise to dangerous levels, and loss of fluid via excessive perspiration puts the body at further risk as the stimulatory and euphoric qualities of the drug may render the user oblivious to their energy expenditure for quite some time. Diuretics such as alcohol may exacerbate these risks further.",
     "The exact toxic dosage is unknown, but considered to be far greater than its active dose.",

@@ -80,17 +80,31 @@ export const tramadol: Substance =
       }
     }
   },
-  "interactions": [
-    "Cocaine",
-    "DXM",
-    "GHB",
-    "GBL",
-    "MAOIs",
-    "Grapefruit",
-    "MDMA",
-    "aMT",
-    "2C-T-x"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Cocaine",
+      "DXM",
+      "GHB",
+      "GBL",
+      "MAOIs",
+      "Grapefruit",
+      "MDMA",
+      "aMT"
+    ],
+    "unsafe": [
+      "2C-T-x"
+    ],
+    "uncertain": [
+      "Benzodiazepines",
+      "MXE",
+      "Alcohol",
+      "Nitrous",
+      "Amphetamines"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "Tramadol has a low toxicity relative to dose. As with all opioids, long-term effects can vary but can include diminished libido, apathy and memory loss. It is also Toxicity potentially lethal when mixed with depressants like alcohol or benzodiazepines and generally has a wider range of substances which it is  in comparison to other opioids. It should not be taken during  as this can potentially cause seizures.",
     "It is strongly recommended that one use harm reduction practices when using this drug.",

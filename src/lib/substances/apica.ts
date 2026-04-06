@@ -70,7 +70,14 @@ export const apica: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "cannabinoids"
+    ]
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of recreational APICA use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because APICA has very little history of human usage. Anecdotal evidence from people who have tried APICA within the community suggests that there do not seem to be any negative health effects attributed to simply trying this substance at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "It is advised that those with severe pre-existing mental conditions should not ingest these substances due to the way they strongly amplify one's current state of mind and emotions. Also, as with THC and cannabis, prolonged usage of synthetic cannabinoids including APICA may increase one's disposition to mental illness and psychosis, particularly in vulnerable individuals with risk factors for psychotic illnesses (like a past or family history of schizophrenia).",

@@ -62,9 +62,17 @@ export const aniracetam: Substance =
       }
     }
   },
-  "interactions": [
-    "MAOIs"
-  ],
+  "interactions": {
+    "dangerous": [
+      "MAOIs"
+    ],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": [
+      "racetam",
+      "nootropic"
+    ]
+  },
   "harmReduction": [
     "Several studies suggest that this substance is safe even when high doses are consumed for a long period of time. although it is worth noting that the exact toxic dosage is unknown. Anecdotal evidence from people who have tried aniracetam within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly. However, nothing can be completely guaranteed.",
     "Despite its presumed safety, it is still strongly recommended that one use harm reduction practices when using this drug.",

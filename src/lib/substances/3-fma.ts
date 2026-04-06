@@ -72,7 +72,12 @@ export const _3_fma: Substance =
       }
     }
   },
-  "interactions": [],
+  "interactions": {
+    "dangerous": [],
+    "unsafe": [],
+    "uncertain": [],
+    "crossTolerances": []
+  },
   "harmReduction": [
     "The toxicity and long-term health effects of human recreational 3-FMA use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-FMA has an extremely short history of human usage, becoming available only in mid-2017. Anecdotal evidence from people who have tried 3-FMA within the community suggests that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
     "Due to its putative serotonin-releasing and entactogenic properties, it is possible that 3-FMA may display excess activity at the 5-HT2b receptor, which, would make it cardiotoxic with long-term use as seen in other 5-HT2b agonists such as fenfluramine and MDMA.",
