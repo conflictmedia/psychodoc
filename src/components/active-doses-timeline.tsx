@@ -91,20 +91,23 @@ function computeTooltipAtProgress(
   const allIntensities: number[] = []
 
   for (const rg of group.routes) {
-    const offsetMins = (rg.primary.doseTime.getTime() - group.windowStart.getTime()) / 60_000
-    const localMins = globalMins - offsetMins
-    const localProgress = (localMins / rg.primary.timings.totalDuration) * 100
+    // Process ALL doses in this route, not just the primary one
+    for (const dose of rg.doses) {
+      const offsetMins = (dose.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+      const localMins = globalMins - offsetMins
+      const localProgress = (localMins / dose.timings.totalDuration) * 100
 
-    if (localProgress >= 0 && localProgress <= 100) {
-      const intensity = intensityAt(localProgress, rg.primary.timings)
-      const phase = phaseNameAt(localProgress, rg.primary.timings)
-      routeIntensities.push({
-        route: rg.route,
-        intensity,
-        phase,
-        paletteIndex: rg.paletteIndex,
-      })
-      allIntensities.push(intensity)
+      if (localProgress >= 0 && localProgress <= 100) {
+        const intensity = intensityAt(localProgress, dose.timings)
+        const phase = phaseNameAt(localProgress, dose.timings)
+        routeIntensities.push({
+          route: rg.route,
+          intensity,
+          phase,
+          paletteIndex: rg.paletteIndex,
+        })
+        allIntensities.push(intensity)
+      }
     }
   }
 
