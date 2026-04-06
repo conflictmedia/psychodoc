@@ -247,7 +247,7 @@ export function DoseMarker({
           fill={hex}
           aria-hidden="true"
         >
-          {formattedDose.amount}{formattedDose.unit}
+          {formattedDose.amount} {formattedDose.unit}
         </text>
       )}
     </g>
