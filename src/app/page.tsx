@@ -30,6 +30,7 @@ import {
   MinusCircle,
   XCircle,
   Activity,
+  Shuffle,
   Plus,
   Syringe,
   Github,
@@ -1170,7 +1171,18 @@ function SubstanceDetail({
             </Card>
 
             <Card>
-              <CardHeader><CardTitle className="text-lg">Interactions</CardTitle></CardHeader>
+              <CardHeader className="flex flex-row items-center justify-between space-y-0">
+                <CardTitle className="text-lg">Interactions</CardTitle>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={() => router.push(`/interactions?substances=${substance.id}`)}
+                  className="gap-1.5 text-xs"
+                >
+                  <Shuffle className="h-3 w-3" />
+                  Full Checker
+                </Button>
+              </CardHeader>
               <CardContent className="space-y-3">
                 {substance.interactions.dangerous.length > 0 && (
                   <div>
@@ -1487,6 +1499,14 @@ function HomeContent() {
               >
                 <Shield className="h-4 w-4" />
                 Harm Reduction
+              </Button>
+              <Button
+                variant="ghost"
+                className="w-full justify-start gap-2 text-purple-500 hover:text-purple-400 hover:bg-purple-500/10"
+                onClick={() => router.push('/interactions/')}
+              >
+                <Shuffle className="h-4 w-4" />
+                Interaction Checker
               </Button>
               <Separator className="my-3" />
               {categories.map((category) => {
