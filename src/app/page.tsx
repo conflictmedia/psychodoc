@@ -1385,6 +1385,14 @@ function HomeContent() {
                 <Activity className="h-4 w-4" />
                 Dose Log
               </Button>
+              <Button
+                variant="ghost"
+                className="w-full justify-start gap-2 text-orange-500 hover:text-orange-400 hover:bg-orange-500/10"
+                onClick={() => router.push('/harm-reduction/')}
+              >
+                <Shield className="h-4 w-4" />
+                Harm Reduction
+              </Button>
               <Separator className="my-3" />
               {categories.map((category) => {
                 const Icon = categoryIcons[category.id]
@@ -1470,6 +1478,15 @@ function HomeContent() {
           )}
 
           <div className="ml-auto flex items-center gap-2">
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 shrink-0"
+              onClick={() => router.push('/harm-reduction/')}
+              title="Harm Reduction Resources"
+            >
+              <Shield className="h-4 w-4" />
+            </Button>
             {desktopView === 'dose-log' && <DoseLoggerModal onLogCreated={handleDoseLogged} />}
             <ThemeToggle />
           </div>
@@ -1480,6 +1497,13 @@ function HomeContent() {
           <div className="flex items-center gap-3 px-4 h-12">
             <Image src="logo.png" alt="Drugucopia" width={28} height={28} className="rounded-lg" />
             <span className="font-bold text-base flex-1">Drugucopia</span>
+            <button
+              onClick={() => router.push('/harm-reduction/')}
+              className="p-2 rounded-lg hover:bg-muted transition-colors"
+              title="Harm Reduction Resources"
+            >
+              <Shield className="h-4 w-4" />
+            </button>
             <ThemeToggle />
           </div>
 
