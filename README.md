@@ -13,21 +13,11 @@ Recreational substance information repository and locally stored dose logger
 - Mood, Setting, Additional notes for entries
 - Log any substance not just the ones in the repo
 - Sync via Firestore secret room and password, so you can sync to multiple devices. E2E encrypted & hashed room names.
-
+- Harm Reduction resources
 
 ## Wrong info or want to supply data for the repo?
 
 Please create an issue using one of the templates with as much info as you have for the substance you want or with corrected information for an existing substance!
 
-### Know what you're doing?
+## [TODO](https://github.com/conflictmedia/drugucopia/issues)
 
-Fork the repo and submit PRs with entries/changes! All substance information is stored in: `src/lib/substances/[category].ts`
-  
-
-## TODO:
-
-see Issues but right now the biggest problem is missing duration and dose data for some substances. Working on adding user expierence derived data that Tripsit has collected.
-
-
-## DEMOS
-[demo_of_site-04-04-2026.webm](https://github.com/user-attachments/assets/052c6992-1535-46cd-bd94-86ad96f77859)
