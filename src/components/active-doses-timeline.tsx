@@ -997,6 +997,9 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                               const isPrimary = d === rg.primary
                               const isEnded = d.status.phase === 'ended'
                               const currentGlobalIdx = globalDoseIdx++
+                              // When a dose is isolated, treat it as primary for styling
+                              const isIsolated = selectedDose === doseId.toString()
+                              const shouldBeBright = isPrimary || isIsolated || (selectedDose && globalTotal === 1)
 
                               return (
                                 <g key={doseId} opacity={isEnded ? 0.35 : 1}>
@@ -1005,14 +1008,14 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                                     d={curve}
                                     fill="none"
                                     stroke={palette.stroke}
-                                    strokeWidth={isPrimary ? 2.5 : 1.5}
+                                    strokeWidth={shouldBeBright ? 2.5 : 1.5}
                                     strokeLinecap="round"
                                     strokeLinejoin="round"
-                                    opacity={isPrimary ? 0.9 : 0.5}
+                                    opacity={shouldBeBright ? 0.9 : 0.5}
                                   />
                                   <DoseMarker
                                     d={d}
-                                    isPrimary={isPrimary}
+                                    isPrimary={shouldBeBright}
                                     groupKey={group.key}
                                     hex={palette.stroke}
                                     offsetMins={doseOffset}
