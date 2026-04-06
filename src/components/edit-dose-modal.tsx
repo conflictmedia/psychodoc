@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useMemo, useCallback } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { format } from 'date-fns'
 import {
   Dialog,
@@ -16,7 +16,7 @@ import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
 import { Textarea } from '@/components/ui/textarea'
 import { Combobox, type ComboboxOption } from '@/components/ui/combobox'
-import { Loader2, Pencil, Zap } from 'lucide-react'
+import { Loader2, Pencil } from 'lucide-react'
 import { formatUnit } from './dose-logger-modal'
 import { substances } from '@/lib/substances/index'
 import { useToast } from '@/hooks/use-toast'
@@ -81,197 +81,94 @@ const UNIT_ALIASES: Record<string, string> = {
   'grams': 'g', 'gram': 'g',
   'milliliters': 'ml', 'milliliter': 'ml', 'mls': 'ml',
   'drops': 'drop', 'puffs': 'puff', 'tabs': 'tab', 'tablets': 'tab',
-  'capsules': 'capsule', 'pills': 'pill', 'hits': 'hit',
+  'capsules': 'capsule', 'pills': 'capsule', 'hits': 'hit',
   'lines': 'line', 'drinks': 'drink', 'shots': 'shot',
   'joints': 'joint', 'blunts': 'blunt', 'bowls': 'bowl', 'blinkers': 'blinker',
+}
+
+/** Units that imply a specific route of administration */
+const UNIT_TO_ROUTE: Record<string, string> = {
+  'joint': 'smoked',
+  'blunt': 'smoked',
+  'bowl': 'smoked',
+  'bong': 'smoked',
+  'dab': 'smoked',
+  'blinker': 'smoked',
+  'puff': 'smoked',
+  'pill': 'oral',
+  'capsule': 'oral',
+  'tablet': 'oral',
+  'line': 'insufflated',
+  
+}
+
+/**
+ * Try to resolve a partial unit string to a known unit.
+ * Fuzzy matches prefixes like "join" → "joint", "blun" → "blunt".
+ */
+function resolveUnitFuzzy(typed: string): string | null {
+  const lower = typed.toLowerCase().trim()
+  if (!lower || lower.length < 2) return null
+
+  // Direct match
+  if (KNOWN_UNITS.includes(lower)) return lower
+
+  // Alias match
+  if (UNIT_ALIASES[lower]) return UNIT_ALIASES[lower]
+
+  // Fuzzy: check if typed is a prefix of any known unit
+  const prefixMatches = KNOWN_UNITS.filter(u => u.startsWith(lower))
+  if (prefixMatches.length === 1) {
+    return prefixMatches[0]
+  }
+  if (prefixMatches.length > 1) {
+    // Sort by length and return the shortest match
+    prefixMatches.sort((a, b) => a.length - b.length)
+    return prefixMatches[0]
+  }
+
+  // Fuzzy: check if typed is a prefix of any alias value
+  for (const [alias, canonical] of Object.entries(UNIT_ALIASES)) {
+    if (alias.startsWith(lower)) {
+      return canonical
+    }
+  }
+
+  return null
 }
 
 function parseAmountUnit(input: string): { amount: string; unit: string | null } {
   const trimmed = input.trim()
   if (!trimmed) return { amount: '', unit: null }
 
-  const match = trimmed.match(/^([\-\+]?\d*\.?\d+)(?:\s*([a-zA-Zμμ]+))?$/)
+  const match = trimmed.match(/^([\-\+]?\d*\.?\d+)(?:\s*([a-zA-Zμ]+))?$/)
   if (match) {
     const amountStr = match[1]
     const unitStr = match[2]
     if (!unitStr) return { amount: amountStr, unit: null }
 
     const lower = unitStr.toLowerCase()
+    
+    // Direct match
     if (KNOWN_UNITS.includes(lower)) return { amount: amountStr, unit: lower }
+    
+    // Alias match
     if (UNIT_ALIASES[lower]) return { amount: amountStr, unit: UNIT_ALIASES[lower] }
+    
+    // Fuzzy match for partial units (e.g., "join" → "joint", "blun" → "blunt")
+    const fuzzyMatch = resolveUnitFuzzy(lower)
+    if (fuzzyMatch) return { amount: amountStr, unit: fuzzyMatch }
+    
     return { amount: amountStr, unit: lower }
   }
 
   return { amount: trimmed, unit: null }
 }
 
-/* ------------------------------------------------------------------ */
-/*  Quick Input Parser - Extract substance, amount, unit from string   */
-/* ------------------------------------------------------------------ */
-
-/** Known routes for auto-matching */
-const KNOWN_ROUTES = ['oral', 'insufflation', 'inhalation', 'sublingual', 'rectal', 'intramuscular', 'transdermal', 'intravenous', 'smoked', 'vaped', 'snorted', 'nasal', 'subq', 'subcutaneous']
-
-/** Route aliases */
-const ROUTE_ALIASES: Record<string, string> = {
-  'shot': 'shot',
-  'joint': 'smoked',
-  'blunt': 'smoked',
-  'bowl': 'smoked',
-  'pill': 'oral',
-  'capsule': 'oral',
-  'tablet': 'oral',
-  'blinker': 'smoked',
-  'snorted': 'insufflated',
-  'snort': 'insufflated',
-  'nasal': 'insufflated',
-  'nose': 'insufflated',
-  'smoked': 'smoked',
-  'vaped': 'vaped',
-  'vape': 'vaped',
-  'iv': 'intravenous',
-  'im': 'intramuscular',
-  'subq': 'sublingual',
-  'subcutaneous': 'sublingual',
-  'under tongue': 'sublingual',
-  'anal': 'rectal',
-  'boofed': 'rectal',
-  'boof': 'rectal',
-  'patch': 'transdermal',
-  'eat': 'oral',
-  'eaten': 'oral',
-  'drink': 'oral',
-  'drank': 'oral',
-}
-
-function parseQuickInput(
-  input: string,
-  substanceList: typeof substances
-): { substanceName: string; substanceId: string; amount: string; unit: string | null; route: string | null } {
-  const trimmed = input.trim()
-  if (!trimmed) return { substanceName: '', substanceId: '', amount: '', unit: null, route: null }
-
-  // First, try to extract route from the input
-  let extractedRoute: string | null = null
-  let routeIndex = -1
-  let routeLength = 0
-
-  // Check for known routes in the input (case-insensitive)
-  const lowerTrimmed = trimmed.toLowerCase()
-  for (const knownRoute of [...KNOWN_ROUTES, ...Object.keys(ROUTE_ALIASES)]) {
-    const regex = new RegExp(`\\b${knownRoute}\\b`, 'i')
-    const routeMatch = lowerTrimmed.match(regex)
-    if (routeMatch && routeMatch.index !== undefined) {
-      // Prefer longer matches (e.g., "insufflation" over "nasal")
-      if (routeMatch[0].length > routeLength) {
-        extractedRoute = ROUTE_ALIASES[knownRoute] || knownRoute
-        routeIndex = routeMatch.index
-        routeLength = routeMatch[0].length
-      }
-    }
-  }
-
-  // Remove route from input for further parsing
-  let inputWithoutRoute = trimmed
-  if (extractedRoute && routeIndex >= 0) {
-    inputWithoutRoute = (trimmed.slice(0, routeIndex) + trimmed.slice(routeIndex + routeLength)).replace(/\s+/g, ' ').trim()
-  }
-
-  const amountWithUnitRegex = /(\d*\.?\d+)\s*([a-zA-Zμμ]+)?/g
-
-  let match
-  let amountStr = ''
-  let unitStr: string | null = null
-  let amountIndex = -1
-  let amountLength = 0
-
-  while ((match = amountWithUnitRegex.exec(inputWithoutRoute)) !== null) {
-    const num = match[1]
-    const unit = match[2]
-
-    if (num.length === 1 && !unit) continue
-
-    amountStr = num
-    unitStr = unit || null
-    amountIndex = match.index
-    amountLength = match[0].length
-    break
-  }
-
-  if (!amountStr) {
-    const found = substanceList.find(s =>
-      s.name.toLowerCase() === inputWithoutRoute.toLowerCase() ||
-      s.commonNames?.some(cn => cn.toLowerCase() === inputWithoutRoute.toLowerCase()) ||
-      s.aliases?.some(a => a.toLowerCase() === inputWithoutRoute.toLowerCase())
-    )
-    if (found) {
-      return { substanceName: found.name, substanceId: found.id, amount: '', unit: null, route: extractedRoute }
-    }
-    return { substanceName: inputWithoutRoute, substanceId: '', amount: '', unit: null, route: extractedRoute }
-  }
-
-  let resolvedUnit: string | null = null
-  if (unitStr) {
-    const lower = unitStr.toLowerCase()
-    if (KNOWN_UNITS.includes(lower)) {
-      resolvedUnit = lower
-    } else if (UNIT_ALIASES[lower]) {
-      resolvedUnit = UNIT_ALIASES[lower]
-    } else {
-      resolvedUnit = lower
-    }
-  }
-
-  const beforeAmount = inputWithoutRoute.slice(0, amountIndex).trim()
-  const afterAmount = inputWithoutRoute.slice(amountIndex + amountLength).trim()
-  let potentialSubstance = (beforeAmount + ' ' + afterAmount).trim()
-
-  let substanceName = potentialSubstance
-  let substanceId = ''
-
-  if (potentialSubstance) {
-    const lower = potentialSubstance.toLowerCase()
-
-    const exactMatch = substanceList.find(s =>
-      s.name.toLowerCase() === lower ||
-      s.commonNames?.some(cn => cn.toLowerCase() === lower) ||
-      s.aliases?.some(a => a.toLowerCase() === lower)
-    )
-
-    if (exactMatch) {
-      substanceName = exactMatch.name
-      substanceId = exactMatch.id
-    } else {
-      const partialMatch = substanceList.find(s => {
-        const nameLower = s.name.toLowerCase()
-        return nameLower.includes(lower) || lower.includes(nameLower) ||
-          s.commonNames?.some(cn => {
-            const cnLower = cn.toLowerCase()
-            return cnLower.includes(lower) || lower.includes(cnLower)
-          }) ||
-          s.aliases?.some(a => {
-            const aLower = a.toLowerCase()
-            return aLower.includes(lower) || lower.includes(aLower)
-          })
-      })
-
-      if (partialMatch) {
-        substanceName = partialMatch.name
-        substanceId = partialMatch.id
-      }
-    }
-  }
-
-  return { substanceName, substanceId, amount: amountStr, unit: resolvedUnit, route: extractedRoute }
-}
-
 export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseModalProps) {
   const { toast } = useToast()
   const { updateDose } = useDoseStore()
   const [loading, setLoading] = useState(false)
-
-  // Quick input state
-  const [quickInput, setQuickInput] = useState('')
 
   const [substanceId, setSubstanceId] = useState(dose.substanceId)
   const [substanceName, setSubstanceName] = useState(dose.substanceName)
@@ -352,32 +249,12 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
     setAmount(parsed.amount)
     if (parsed.unit) {
       setUnit(parsed.unit)
+      // Auto-set route if this unit implies one
+      if (UNIT_TO_ROUTE[parsed.unit]) {
+        setRoute(UNIT_TO_ROUTE[parsed.unit])
+      }
     }
   }
-
-  /* ── Quick Input handler - parses substance + amount + unit from single string ─── */
-  const handleQuickInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    setQuickInput(value)
-
-    // Parse the input
-    const parsed = parseQuickInput(value, substances)
-
-    // Update all relevant fields
-    if (parsed.substanceName) {
-      setSubstanceName(parsed.substanceName)
-      setSubstanceId(parsed.substanceId || `custom-${Date.now()}`)
-    }
-    if (parsed.amount) {
-      setAmount(parsed.amount)
-    }
-    if (parsed.unit) {
-      setUnit(parsed.unit)
-    }
-    if (parsed.route) {
-      setRoute(parsed.route)
-    }
-  }, [])
 
   const handleSave = async () => {
     if (!substanceName || !amount) {
@@ -436,33 +313,6 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
         </DialogHeader>
         <form onSubmit={onSubmit}>
           <div className="grid gap-4 py-4">
-            {/* ── Quick Input Field ─────────────────────────────────────── */}
-            <div className="grid gap-2">
-              <Label className="flex items-center gap-2">
-                <Zap className="h-4 w-4 text-yellow-500" />
-                Quick Input
-              </Label>
-              <Input
-                type="text"
-                placeholder="e.g. &quot;Caffeine 100 mg oral&quot;, &quot;LSD 100ug sublingual&quot;, &quot;2 tabs MDMA insufflated&quot;"
-                value={quickInput}
-                onChange={handleQuickInputChange}
-                className="text-base"
-              />
-              <p className="text-xs text-muted-foreground">
-                Type substance + amount + unit + route to auto-fill all fields below
-              </p>
-            </div>
-
-            {/* ── Divider when quick input has content ───────────────────── */}
-            {quickInput && (substanceName || amount) && (
-              <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                <div className="h-px flex-1 bg-border" />
-                <span>Auto-filled from quick input</span>
-                <div className="h-px flex-1 bg-border" />
-              </div>
-            )}
-
             <div className="grid gap-2">
               <Label>Substance</Label>
               <Combobox
@@ -480,10 +330,12 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
                 <Input
                   type="text"
                   inputMode="decimal"
-                  placeholder="e.g., 100, 2.5"
+                  step="0.1"
+                  placeholder="e.g., 100 or 5 mg"
                   value={amount}
-                  onChange={(e) => setAmount(e.target.value)}
+                  onChange={handleAmountChange}
                 />
+                <p className="text-xs text-muted-foreground">Type a unit after the amount (e.g. &quot;5 mg&quot;) to auto-select it</p>
               </div>
               <div className="grid gap-2">
                 <Label>Unit</Label>
