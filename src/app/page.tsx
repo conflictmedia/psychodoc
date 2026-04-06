@@ -561,8 +561,8 @@ function MobileBottomNav({
   ]
 
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-background/95 backdrop-blur border-t border-border pb-[env(safe-area-inset-bottom)]">
-      <div className="flex touch-manipulation">
+    <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-background/95 backdrop-blur border-t border-border safe-area-pb">
+      <div className="flex">
         {items.map(({ id, label, icon: Icon }) => {
           const isLog = id === 'log'
           const isActive = active === id
@@ -570,8 +570,8 @@ function MobileBottomNav({
           if (isLog) {
             const btn = (
               <button
-                type="button"
-                className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation"
+                key={id}
+                className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5"
               >
                 <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-sm">
                   <Icon className="h-5 w-5 text-primary-foreground" />
@@ -585,9 +585,8 @@ function MobileBottomNav({
           return (
             <button
               key={id}
-              type="button"
               onClick={() => onChange(id)}
-              className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation"
+              className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5"
             >
               <span
                 className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors ${
@@ -656,10 +655,12 @@ function SubstanceDetail({
   substance,
   onBack,
   onDoseLogged,
+  onCategoryClick,
 }: {
   substance: Substance
   onBack: () => void
   onDoseLogged: () => void
+  onCategoryClick?: (category: SubstanceCategory) => void
 }) {
   const [selectedRoute, setSelectedRoute] = useState<string | null>(null)
   const primary = getPrimaryCategory(substance)
@@ -742,7 +743,16 @@ function SubstanceDetail({
               <div className="flex flex-wrap gap-1 mt-2">
                 {cats.map((cat) => {
                   const info = categories.find((c) => c.id === cat)
-                  return (
+                  return onCategoryClick ? (
+                    <button
+                      key={cat}
+                      onClick={() => onCategoryClick(cat)}
+                      className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium border transition-colors hover:brightness-125 cursor-pointer ${categoryColors[cat]}`}
+                    >
+                      {info?.name ?? cat}
+                      <ChevronRight className="h-2.5 w-2.5 opacity-50" />
+                    </button>
+                  ) : (
                     <Badge key={cat} variant="outline" className={`text-xs ${categoryColors[cat]}`}>
                       {info?.name ?? cat}
                     </Badge>
@@ -1062,7 +1072,25 @@ function SubstanceDetail({
                   {primary && <CategoryIcon substance={substance} className="h-4 w-4 text-muted-foreground mt-0.5" />}
                   <div>
                     <p className="text-sm text-muted-foreground">{cats.length > 1 ? 'Categories' : 'Category'}</p>
-                    <CategoryBadges substance={substance} className="mt-1" />
+                    <div className="flex flex-wrap gap-1 mt-1">
+                      {cats.map((cat) => {
+                        const info = categories.find((c) => c.id === cat)
+                        return onCategoryClick ? (
+                          <button
+                            key={cat}
+                            onClick={() => onCategoryClick(cat)}
+                            className={`inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium border transition-colors hover:brightness-125 cursor-pointer ${categoryColors[cat] ?? ''}`}
+                          >
+                            {info?.name ?? cat}
+                            <ChevronRight className="h-2.5 w-2.5 opacity-50" />
+                          </button>
+                        ) : (
+                          <Badge key={cat} variant="outline" className={categoryColors[cat] ?? ''}>
+                            {info?.name ?? cat}
+                          </Badge>
+                        )
+                      })}
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">
@@ -1195,6 +1223,15 @@ function HomeContent() {
     }
   }, [searchParams, router, pathname])
 
+  const handleCategoryClickFromDetail = useCallback((category: SubstanceCategory) => {
+    setSelectedSubstance(null)
+    lastProcessedSubstanceRef.current = null
+    setSelectedCategory(category)
+    setDesktopView('substances')
+    setMobileTab('substances')
+    router.push(pathname)
+  }, [router, pathname])
+
   // PERF: filter runs on deferredQuery, not the live input value
   const filteredSubstances = useMemo(() => {
     let result = substances
@@ -1246,6 +1283,7 @@ function HomeContent() {
           substance={selectedSubstance}
           onBack={handleBackFromDetail}
           onDoseLogged={handleDoseLogged}
+          onCategoryClick={handleCategoryClickFromDetail}
         />
         <MobileBottomNav
           active={mobileTab}
