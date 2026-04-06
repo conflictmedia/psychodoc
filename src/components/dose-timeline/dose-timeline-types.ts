@@ -9,6 +9,7 @@ export interface PhaseTimings {
   comeupEnd: number
   peakEnd: number
   offsetEnd: number
+  afterglowDuration: number
   afterglowEnd: number
   totalDuration: number
 }

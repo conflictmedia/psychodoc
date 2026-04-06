@@ -33,21 +33,6 @@ import { formatDoseAmount } from '@/lib/utils'
 /* ================================================================== */
 /*  Shared helper — defined once in this file                          */
 /* ================================================================== */
-
-/**
- * Returns true if any dose in the group is still active
- * (i.e., not in `ended` or `not_started` state).
- */
-function hasIncompletePhases(group: SubstanceGroup): boolean {
-  return group.routes.some((route) =>
-    route.doses.some((dose) => {
-      const phase = dose.status.phase
-      return phase !== 'ended' && phase !== 'not_started'
-    }),
-  )
-}
-
-/* ================================================================== */
 /*  Touch-tooltip state type                                           */
 /* ================================================================== */
 
@@ -83,7 +68,7 @@ function PhaseProgressBar({
 
   return (
     <div className="flex h-1.5 rounded-full overflow-hidden mt-2">
-      {(['onset', 'comeup', 'peak', 'offset', 'afterglow'] as const).map((phase) => {
+      {(['onset', 'comeup', 'peak', 'offset'] as const).map((phase) => {
         const timingEnd =
           phase === 'onset'
             ? timings.onsetEnd
@@ -91,12 +76,7 @@ function PhaseProgressBar({
               ? timings.comeupEnd
               : phase === 'peak'
                 ? timings.peakEnd
-                : phase === 'offset'
-                  ? timings.offsetEnd
-                  : timings.afterglowEnd
-
-        // Skip afterglow segment if there is none
-        if (phase === 'afterglow' && timings.afterglowEnd <= timings.offsetEnd) return null
+                : timings.offsetEnd
 
         const widthPct = Math.max(2, (timingEnd / timings.totalDuration) * 100)
         const colorEntry = phaseColors[phase]
@@ -131,9 +111,30 @@ function DoseBreakdownItem({
   routeHex: string
 }) {
   const formatted = formatDoseAmount(dose.amount, dose.unit)
-  const phaseColor = markerHex[dose.status.phase]
-  const isActive = dose.status.phase !== 'not_started' && dose.status.phase !== 'ended'
-  const doseProgress = dose.status.overallProgress
+
+  // Calculate current phase using fresh timing
+  const now = Date.now()
+  const elapsedMins = (now - dose.doseTime.getTime()) / 60_000
+  let currentPhase: string = 'onset'
+  if (elapsedMins < 0) {
+    currentPhase = 'not_started'
+  } else if (elapsedMins >= dose.timings.offsetEnd) {
+    currentPhase = 'ended'
+  } else if (elapsedMins >= dose.timings.peakEnd) {
+    currentPhase = 'offset'
+  } else if (elapsedMins >= dose.timings.comeupEnd) {
+    currentPhase = 'peak'
+  } else if (elapsedMins >= dose.timings.onsetEnd) {
+    currentPhase = 'comeup'
+  }
+
+  const phaseColor = markerHex[currentPhase as keyof typeof markerHex] || markerHex['onset']
+  const isActive = currentPhase !== 'not_started' && currentPhase !== 'ended'
+  const doseProgress = Math.min(100, Math.max(0, (elapsedMins / dose.timings.totalDuration) * 100))
+
+  // Afterglow duration for badge
+  const afterglowDuration = dose.timings.afterglowDuration ?? (dose.timings.afterglowEnd > dose.timings.offsetEnd ? dose.timings.afterglowEnd - dose.timings.offsetEnd : 0)
+  const hasAfterglow = afterglowDuration > 0
 
   return (
     <div className="flex items-center gap-2 py-1">
@@ -146,13 +147,19 @@ function DoseBreakdownItem({
 
       {/* Dose amount + phase label */}
       <div className="flex-1 min-w-0">
-        <div className="flex items-baseline gap-1.5">
+        <div className="flex items-baseline gap-1.5 flex-wrap">
           <span className="text-xs font-semibold text-foreground truncate">
             {formatted.amount}{formatted.unit}
           </span>
-          <span className={`text-[10px] ${phaseColors[dose.status.phase].text}`}>
-            {formatPhaseName(dose.status.phase)}
+          <span className={`text-[10px] ${phaseColors[currentPhase as keyof typeof phaseColors]?.text || ''}`}>
+            {formatPhaseName(currentPhase)}
           </span>
+          {/* Afterglow badge */}
+          {hasAfterglow && (
+            <span className="inline-flex items-center gap-0.5 px-1 py-0 rounded text-[8px] bg-amber-500/20 text-amber-600 dark:text-amber-400">
+              ✨ {formatMinutes(afterglowDuration)}
+            </span>
+          )}
         </div>
 
         {/* Mini progress bar */}
@@ -189,19 +196,35 @@ function DoseBreakdownItem({
 export function MobilePhaseBar({ group, className = '' }: MobilePhaseBarProps) {
   /* ---- Derived state ---- */
   const primaryDose = group.primary
-  const isLive = hasIncompletePhases(group)
 
-  // Derive "now" from dose status (same time source as markers) to prevent drift
+  // Check if any dose is still active using FRESH time calculation
+  // This is more reliable than checking cached status.phase
+  const isLive = useMemo(() => {
+    const now = Date.now()
+    return group.routes.some((route) =>
+      route.doses.some((dose) => {
+        const elapsedMins = (now - dose.doseTime.getTime()) / 60_000
+        return elapsedMins < dose.timings.offsetEnd
+      }),
+    )
+  }, [group.routes])
+
+  // Derive "now" from fresh time calculation to prevent drift
   const nowProgress = useMemo(() => {
     if (!isLive) return -1
+    const now = Date.now()
+    // Find any active dose using fresh time calculation
     const activeDose = group.routes
       .flatMap(rg => rg.doses)
-      .find(d => d.status.phase !== 'ended' && d.status.phase !== 'not_started')
+      .find(d => {
+        const elapsedMins = (now - d.doseTime.getTime()) / 60_000
+        return elapsedMins < d.timings.offsetEnd
+      })
     if (!activeDose) return -1
-    const elapsedMins = activeDose.timings.totalDuration - activeDose.status.totalRemaining
+    const elapsedMins = (now - activeDose.doseTime.getTime()) / 60_000
     const doseOffsetMins = (activeDose.doseTime.getTime() - group.windowStart.getTime()) / 60_000
     return (doseOffsetMins + elapsedMins) / group.windowDuration * 100
-  }, [isLive, group.routes, group.windowStart.getTime(), group.windowDuration])
+  }, [isLive, group.routes, group.windowStart, group.windowDuration])
 
   /* ---- Touch-to-inspect state ---- */
   const [touchInspect, setTouchInspect] = useState<TouchInspect | null>(null)
@@ -268,11 +291,16 @@ export function MobilePhaseBar({ group, className = '' }: MobilePhaseBarProps) {
   }, [group])
 
   /* ---- Active routes count for intensity display ---- */
-  const activeRoutes = group.routes.filter((r) =>
-    r.doses.some(
-      (d) => d.status.phase !== 'not_started' && d.status.phase !== 'ended',
-    ),
-  )
+  // Use fresh timing to check active routes
+  const activeRoutes = useMemo(() => {
+    const now = Date.now()
+    return group.routes.filter((r) =>
+      r.doses.some((d) => {
+        const elapsedMins = (now - d.doseTime.getTime()) / 60_000
+        return elapsedMins >= 0 && elapsedMins < d.timings.offsetEnd
+      }),
+    )
+  }, [group.routes])
 
   /* ---- Compute current combined intensity ---- */
   const currentIntensity = useMemo(() => {
@@ -302,27 +330,47 @@ export function MobilePhaseBar({ group, className = '' }: MobilePhaseBarProps) {
           <h3 className="text-sm font-semibold text-foreground leading-tight">
             {group.substanceName}
           </h3>
-          <div className="flex items-center gap-2 mt-0.5">
-            <span
-              className={`inline-flex items-center gap-1 text-xs ${phaseColors[primaryDose.status.phase].text}`}
-            >
-              <span
-                className="inline-block w-1.5 h-1.5 rounded-full"
-                style={{ backgroundColor: markerHex[primaryDose.status.phase] }}
-              />
-              {formatPhaseName(primaryDose.status.phase)}
-            </span>
-            {isLive && primaryDose.status.totalRemaining > 0 && (
-              <span className="text-xs text-muted-foreground">
-                {formatMinutes(primaryDose.status.totalRemaining)} remaining
-              </span>
-            )}
-            {currentIntensity !== null && (
-              <span className="text-xs font-medium text-foreground/70">
-                {currentIntensity}% intensity
-              </span>
-            )}
-          </div>
+          {/* Calculate primary dose phase using fresh timing */}
+          {(() => {
+            const now = Date.now()
+            const primaryElapsedMins = (now - primaryDose.doseTime.getTime()) / 60_000
+            let primaryPhase: string = 'onset'
+            if (primaryElapsedMins < 0) {
+              primaryPhase = 'not_started'
+            } else if (primaryElapsedMins >= primaryDose.timings.offsetEnd) {
+              primaryPhase = 'ended'
+            } else if (primaryElapsedMins >= primaryDose.timings.peakEnd) {
+              primaryPhase = 'offset'
+            } else if (primaryElapsedMins >= primaryDose.timings.comeupEnd) {
+              primaryPhase = 'peak'
+            } else if (primaryElapsedMins >= primaryDose.timings.onsetEnd) {
+              primaryPhase = 'comeup'
+            }
+            const primaryRemaining = primaryDose.timings.offsetEnd - primaryElapsedMins
+            return (
+              <div className="flex items-center gap-2 mt-0.5">
+                <span
+                  className={`inline-flex items-center gap-1 text-xs ${phaseColors[primaryPhase as keyof typeof phaseColors]?.text || ''}`}
+                >
+                  <span
+                    className="inline-block w-1.5 h-1.5 rounded-full"
+                    style={{ backgroundColor: markerHex[primaryPhase as keyof typeof markerHex] || markerHex['onset'] }}
+                  />
+                  {formatPhaseName(primaryPhase)}
+                </span>
+                {isLive && primaryRemaining > 0 && (
+                  <span className="text-xs text-muted-foreground">
+                    {formatMinutes(primaryRemaining)} remaining
+                  </span>
+                )}
+                {currentIntensity !== null && (
+                  <span className="text-xs font-medium text-foreground/70">
+                    {currentIntensity}% intensity
+                  </span>
+                )}
+              </div>
+            )
+          })()}
         </div>
         {activeRoutes.length > 1 && (
           <span className="text-[10px] text-muted-foreground">

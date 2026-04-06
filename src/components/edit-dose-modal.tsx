@@ -109,12 +109,64 @@ function parseAmountUnit(input: string): { amount: string; unit: string | null }
 /*  Quick Input Parser - Extract substance, amount, unit from string   */
 /* ------------------------------------------------------------------ */
 
+/** Known routes for auto-matching */
+const KNOWN_ROUTES = ['oral', 'insufflation', 'inhalation', 'sublingual', 'rectal', 'intramuscular', 'transdermal', 'intravenous', 'smoked', 'vaped', 'snorted', 'nasal', 'subq', 'subcutaneous']
+
+/** Route aliases */
+const ROUTE_ALIASES: Record<string, string> = {
+  'snorted': 'insufflation',
+  'nasal': 'insufflation',
+  'nose': 'insufflation',
+  'smoked': 'smoked',
+  'vaped': 'vaped',
+  'vape': 'vaped',
+  'iv': 'intravenous',
+  'im': 'intramuscular',
+  'subq': 'sublingual',
+  'subcutaneous': 'sublingual',
+  'under tongue': 'sublingual',
+  'anal': 'rectal',
+  'boofed': 'rectal',
+  'boof': 'rectal',
+  'patch': 'transdermal',
+  'eat': 'oral',
+  'eaten': 'oral',
+  'drink': 'oral',
+  'drank': 'oral',
+}
+
 function parseQuickInput(
   input: string,
   substanceList: typeof substances
-): { substanceName: string; substanceId: string; amount: string; unit: string | null } {
+): { substanceName: string; substanceId: string; amount: string; unit: string | null; route: string | null } {
   const trimmed = input.trim()
-  if (!trimmed) return { substanceName: '', substanceId: '', amount: '', unit: null }
+  if (!trimmed) return { substanceName: '', substanceId: '', amount: '', unit: null, route: null }
+
+  // First, try to extract route from the input
+  let extractedRoute: string | null = null
+  let routeIndex = -1
+  let routeLength = 0
+
+  // Check for known routes in the input (case-insensitive)
+  const lowerTrimmed = trimmed.toLowerCase()
+  for (const knownRoute of [...KNOWN_ROUTES, ...Object.keys(ROUTE_ALIASES)]) {
+    const regex = new RegExp(`\\b${knownRoute}\\b`, 'i')
+    const routeMatch = lowerTrimmed.match(regex)
+    if (routeMatch && routeMatch.index !== undefined) {
+      // Prefer longer matches (e.g., "insufflation" over "nasal")
+      if (routeMatch[0].length > routeLength) {
+        extractedRoute = ROUTE_ALIASES[knownRoute] || knownRoute
+        routeIndex = routeMatch.index
+        routeLength = routeMatch[0].length
+      }
+    }
+  }
+
+  // Remove route from input for further parsing
+  let inputWithoutRoute = trimmed
+  if (extractedRoute && routeIndex >= 0) {
+    inputWithoutRoute = (trimmed.slice(0, routeIndex) + trimmed.slice(routeIndex + routeLength)).replace(/\s+/g, ' ').trim()
+  }
 
   const amountWithUnitRegex = /(\d*\.?\d+)\s*([a-zA-Zμμ]+)?/g
 
@@ -124,7 +176,7 @@ function parseQuickInput(
   let amountIndex = -1
   let amountLength = 0
 
-  while ((match = amountWithUnitRegex.exec(trimmed)) !== null) {
+  while ((match = amountWithUnitRegex.exec(inputWithoutRoute)) !== null) {
     const num = match[1]
     const unit = match[2]
 
@@ -139,14 +191,14 @@ function parseQuickInput(
 
   if (!amountStr) {
     const found = substanceList.find(s =>
-      s.name.toLowerCase() === trimmed.toLowerCase() ||
-      s.commonNames?.some(cn => cn.toLowerCase() === trimmed.toLowerCase()) ||
-      s.aliases?.some(a => a.toLowerCase() === trimmed.toLowerCase())
+      s.name.toLowerCase() === inputWithoutRoute.toLowerCase() ||
+      s.commonNames?.some(cn => cn.toLowerCase() === inputWithoutRoute.toLowerCase()) ||
+      s.aliases?.some(a => a.toLowerCase() === inputWithoutRoute.toLowerCase())
     )
     if (found) {
-      return { substanceName: found.name, substanceId: found.id, amount: '', unit: null }
+      return { substanceName: found.name, substanceId: found.id, amount: '', unit: null, route: extractedRoute }
     }
-    return { substanceName: trimmed, substanceId: '', amount: '', unit: null }
+    return { substanceName: inputWithoutRoute, substanceId: '', amount: '', unit: null, route: extractedRoute }
   }
 
   let resolvedUnit: string | null = null
@@ -161,8 +213,8 @@ function parseQuickInput(
     }
   }
 
-  const beforeAmount = trimmed.slice(0, amountIndex).trim()
-  const afterAmount = trimmed.slice(amountIndex + amountLength).trim()
+  const beforeAmount = inputWithoutRoute.slice(0, amountIndex).trim()
+  const afterAmount = inputWithoutRoute.slice(amountIndex + amountLength).trim()
   let potentialSubstance = (beforeAmount + ' ' + afterAmount).trim()
 
   let substanceName = potentialSubstance
@@ -201,7 +253,7 @@ function parseQuickInput(
     }
   }
 
-  return { substanceName, substanceId, amount: amountStr, unit: resolvedUnit }
+  return { substanceName, substanceId, amount: amountStr, unit: resolvedUnit, route: extractedRoute }
 }
 
 export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseModalProps) {
@@ -313,6 +365,9 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
     if (parsed.unit) {
       setUnit(parsed.unit)
     }
+    if (parsed.route) {
+      setRoute(parsed.route)
+    }
   }, [])
 
   const handleSave = async () => {
@@ -380,13 +435,13 @@ export function EditDoseModal({ dose, open, onOpenChange, onSaved }: EditDoseMod
               </Label>
               <Input
                 type="text"
-                placeholder="e.g. &quot;Caffeine 100 mg&quot;, &quot;LSD 100ug&quot;, &quot;2 tabs MDMA&quot;"
+                placeholder="e.g. &quot;Caffeine 100 mg oral&quot;, &quot;LSD 100ug sublingual&quot;, &quot;2 tabs MDMA insufflated&quot;"
                 value={quickInput}
                 onChange={handleQuickInputChange}
                 className="text-base"
               />
               <p className="text-xs text-muted-foreground">
-                Type substance + amount + unit to auto-fill all fields below
+                Type substance + amount + unit + route to auto-fill all fields below
               </p>
             </div>
 
