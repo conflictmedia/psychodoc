@@ -82,18 +82,21 @@ interface ActiveDosesTimelineProps {
 
 function computeTooltipAtProgress(
   progress: number,
-  group: SubstanceGroup,
+  routes: RouteGroup[],
+  windowStart: Date,
+  windowDuration: number,
+  primaryTimings: PhaseTimings,
 ): TooltipData | null {
   if (progress < 0 || progress > 100) return null
 
-  const globalMins = (progress / 100) * group.windowDuration
+  const globalMins = (progress / 100) * windowDuration
   const routeIntensities: RouteIntensitySnapshot[] = []
   const allIntensities: number[] = []
 
-  for (const rg of group.routes) {
+  for (const rg of routes) {
     // Process ALL doses in this route, not just the primary one
     for (const dose of rg.doses) {
-      const offsetMins = (dose.doseTime.getTime() - group.windowStart.getTime()) / 60_000
+      const offsetMins = (dose.doseTime.getTime() - windowStart.getTime()) / 60_000
       const localMins = globalMins - offsetMins
       const localProgress = (localMins / dose.timings.totalDuration) * 100
 
@@ -114,9 +117,9 @@ function computeTooltipAtProgress(
   const combined = combinedIntensityAt(allIntensities)
   const primaryPhase = routeIntensities.length > 0
     ? routeIntensities[0].phase
-    : phaseNameAt(progress, group.primary.timings)
+    : phaseNameAt(progress, primaryTimings)
 
-  const absoluteDate = addMinutes(group.windowStart, globalMins)
+  const absoluteDate = addMinutes(windowStart, globalMins)
 
   return {
     phase: primaryPhase,
@@ -194,12 +197,11 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   const [tooltips, setTooltips] = useState<Record<string, TooltipData>>({})
   const [expandedGroup, setExpandedGroup] = useState<string | null>(null)
   const [selectedRoutes, setSelectedRoutes] = useState<Record<string, string | null>>({})
-  const [focusedDoseId, setFocusedDoseId] = useState<string | null>(null)
+  const [selectedDoses, setSelectedDoses] = useState<Record<string, string | null>>({}) // dose isolation
   const [tooltipX, setTooltipX] = useState<Record<string, number>>({})
 
   const svgRefs = useRef<Record<string, SVGSVGElement | null>>({})
   const rafRefs = useRef<Record<string, number | null>>({})
-  const focusTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   /* ---------------------------------------------------------------- */
   /*  Effects                                                          */
@@ -209,13 +211,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   useEffect(() => {
     const id = setInterval(() => setTick(t => t + 1), 60_000)
     return () => clearInterval(id)
-  }, [])
-
-  // Cleanup focus timer on unmount
-  useEffect(() => {
-    return () => {
-      if (focusTimerRef.current !== null) clearTimeout(focusTimerRef.current)
-    }
   }, [])
 
   /* ---------------------------------------------------------------- */
@@ -332,7 +327,10 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
   const handleMouseMove = useCallback((
     e: React.MouseEvent<SVGSVGElement>,
     groupKey: string,
-    group: SubstanceGroup,
+    routes: RouteGroup[],
+    windowStart: Date,
+    windowDuration: number,
+    primaryTimings: PhaseTimings,
   ) => {
     const svgEl = svgRefs.current[groupKey]
     if (!svgEl) return
@@ -367,7 +365,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     }
 
     rafRefs.current[groupKey] = requestAnimationFrame(() => {
-      const data = computeTooltipAtProgress(progress, group)
+      const data = computeTooltipAtProgress(progress, routes, windowStart, windowDuration, primaryTimings)
       if (data) {
         setTooltips(prev => ({ ...prev, [groupKey]: data }))
       }
@@ -397,13 +395,22 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
       }
       return { ...prev, [groupKey]: route }
     })
+    // Clear dose isolation when changing route
+    setSelectedDoses(prev => ({ ...prev, [groupKey]: null }))
   }, [])
 
-  // Highlight a dose on the graph for 3 seconds
-  const handleDoseChipClick = useCallback((doseId: string) => {
-    if (focusTimerRef.current !== null) clearTimeout(focusTimerRef.current)
-    setFocusedDoseId(doseId)
-    focusTimerRef.current = setTimeout(() => setFocusedDoseId(null), 3_000)
+  // Toggle dose isolation (click to isolate, click again to show all)
+  const handleDoseChipClick = useCallback((groupKey: string, doseId: string) => {
+    // If shift is held, do the old focus behavior instead
+    setSelectedDoses(prev => {
+      const current = prev[groupKey]
+      if (current === doseId) {
+        return { ...prev, [groupKey]: null }
+      }
+      return { ...prev, [groupKey]: doseId }
+    })
+    // Clear route isolation when isolating a dose
+    setSelectedRoutes(prev => ({ ...prev, [groupKey]: null }))
   }, [])
 
   /* ---------------------------------------------------------------- */
@@ -484,9 +491,24 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
             const tooltip = tooltips[group.key]
             const tooltipScreenX = tooltipX[group.key]
             const selectedRoute = selectedRoutes[group.key]
-            const visibleRoutes = selectedRoute
-              ? group.routes.filter(r => r.route.toLowerCase() === selectedRoute)
-              : group.routes
+            const selectedDose = selectedDoses[group.key]
+
+            // Filter by route or by specific dose
+            const visibleRoutes = (() => {
+              if (selectedDose) {
+                // Find the route that contains the selected dose
+                return group.routes
+                  .map(rg => ({
+                    ...rg,
+                    doses: rg.doses.filter(d => (d.id ?? d.doseTime.getTime().toString()) === selectedDose),
+                  }))
+                  .filter(rg => rg.doses.length > 0)
+              }
+              if (selectedRoute) {
+                return group.routes.filter(r => r.route.toLowerCase() === selectedRoute)
+              }
+              return group.routes
+            })()
 
             const bandTimings = visibleRoutes.length > 0
               ? visibleRoutes[0].primary.timings
@@ -498,6 +520,8 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
 
             const primaryDose = group.primary
             const isMultiRoute = group.routes.length > 1
+            const totalDoses = group.routes.reduce((sum, rg) => sum + rg.doses.length, 0)
+            const isMultiDose = totalDoses > 1
 
             const nowProgress = (() => {
               if (!allActive) return -1
@@ -535,9 +559,6 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
 
             // Category accent color
             const catColor = getCategoryColor(group.categories)
-
-            // Total doses across all visible routes
-            const totalDoses = visibleRoutes.reduce((sum, r) => sum + r.doses.length, 0)
 
             /* ====================================================== */
             /*  Per-group render                                       */
@@ -644,21 +665,21 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
 
                 {/* ── Dose breakdown chips with phase progress indicators (#5) ── */}
                 <div className="flex items-center gap-1.5 flex-wrap">
-                  {visibleRoutes.map(rg => {
+                  {group.routes.map(rg => {
                     const palette = ROUTE_PALETTE[rg.paletteIndex % ROUTE_PALETTE.length]
                     return rg.doses.map(d => {
                       const doseId = d.id ?? d.doseTime.getTime().toString()
-                      const isFocused = focusedDoseId === doseId
+                      const isIsolated = selectedDose === doseId
                       const formatted = formatDoseAmount(d.amount, d.unit)
                       const isDoseActive = d.status.phase !== 'not_started' && d.status.phase !== 'ended'
 
                       return (
                         <button
                           key={`${rg.route}-${doseId}`}
-                          onClick={() => handleDoseChipClick(doseId)}
+                          onClick={() => handleDoseChipClick(group.key, doseId)}
                           className={`relative inline-flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-medium border transition-all ${
-                            isFocused
-                              ? 'ring-2 ring-purple-500/50 border-purple-500/50'
+                            isIsolated
+                              ? 'ring-2 ring-purple-500/50 border-purple-500/50 bg-purple-500/10'
                               : 'border-border hover:border-border/80'
                           }`}
                           style={{ color: palette.stroke }}
@@ -689,6 +710,15 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       )
                     })
                   })}
+                  {/* Show all button when a dose is isolated */}
+                  {selectedDose && (
+                    <button
+                      onClick={() => handleDoseChipClick(group.key, selectedDose)}
+                      className="text-[10px] text-muted-foreground hover:text-foreground ml-1"
+                    >
+                      Show all
+                    </button>
+                  )}
                 </div>
 
                 {/* ── SVG Graph ── */}
@@ -700,7 +730,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                     role="img"
                     aria-label={`Intensity timeline for ${group.substanceName}`}
                     tabIndex={0}
-                    onMouseMove={e => handleMouseMove(e, group.key, group)}
+                    onMouseMove={e => handleMouseMove(e, group.key, visibleRoutes, group.windowStart, group.windowDuration, group.primary.timings)}
                     onMouseLeave={() => handleMouseLeave(group.key)}
                     onKeyDown={e => {
                       // #7 — Keyboard accessibility: arrow keys move tooltip, Escape clears
@@ -711,7 +741,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         const newProgress = currentTip
                           ? Math.max(0, Math.min(100, currentTip.progress + (e.key === 'ArrowRight' ? step : -step)))
                           : 50
-                        const data = computeTooltipAtProgress(newProgress, group)
+                        const data = computeTooltipAtProgress(newProgress, visibleRoutes, group.windowStart, group.windowDuration, group.primary.timings)
                         if (data) {
                           setTooltips(prev => ({ ...prev, [group.key]: data }))
                           // Compute screen-space X for the tooltip div
@@ -987,7 +1017,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                                     hex={palette.stroke}
                                     offsetMins={doseOffset}
                                     windowDuration={group.windowDuration}
-                                    isFocused={focusedDoseId === doseId.toString()}
+                                    isFocused={selectedDose === doseId.toString()}
                                     isMultiDose={globalTotal > 1}
                                     doseIndex={currentGlobalIdx}
                                   />
@@ -1120,10 +1150,10 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                         {/* Per-route intensity bars */}
                         {tooltip.routeIntensities && tooltip.routeIntensities.length > 1 && (
                           <div className="space-y-1">
-                            {tooltip.routeIntensities.map(ri => {
+                            {tooltip.routeIntensities.map((ri, idx) => {
                               const palette = ROUTE_PALETTE[ri.paletteIndex % ROUTE_PALETTE.length]
                               return (
-                                <div key={ri.route} className="flex items-center gap-2">
+                                <div key={`${ri.route}-${idx}`} className="flex items-center gap-2">
                                   <span className="text-[10px] font-medium text-white/50 w-20 shrink-0 truncate capitalize">
                                     {ri.route}
                                   </span>
