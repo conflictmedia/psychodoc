@@ -561,8 +561,8 @@ function MobileBottomNav({
   ]
 
   return (
-    <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-background/95 backdrop-blur border-t border-border safe-area-pb">
-      <div className="flex">
+    <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 bg-background/95 backdrop-blur border-t border-border pb-[env(safe-area-inset-bottom)]">
+      <div className="flex touch-manipulation">
         {items.map(({ id, label, icon: Icon }) => {
           const isLog = id === 'log'
           const isActive = active === id
@@ -570,8 +570,8 @@ function MobileBottomNav({
           if (isLog) {
             const btn = (
               <button
-                key={id}
-                className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5"
+                type="button"
+                className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation"
               >
                 <span className="w-10 h-10 rounded-full bg-primary flex items-center justify-center shadow-sm">
                   <Icon className="h-5 w-5 text-primary-foreground" />
@@ -585,8 +585,9 @@ function MobileBottomNav({
           return (
             <button
               key={id}
+              type="button"
               onClick={() => onChange(id)}
-              className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5"
+              className="flex-1 flex flex-col items-center justify-center py-2 gap-0.5 touch-manipulation"
             >
               <span
                 className={`w-8 h-8 rounded-xl flex items-center justify-center transition-colors ${
@@ -1431,7 +1432,7 @@ function HomeContent() {
           )}
 
           <div className="ml-auto flex items-center gap-2">
-            <DoseLoggerModal onLogCreated={handleDoseLogged} />
+            {desktopView === 'dose-log' && <DoseLoggerModal onLogCreated={handleDoseLogged} />}
             <ThemeToggle />
           </div>
         </header>
@@ -1462,13 +1463,6 @@ function HomeContent() {
                     <X className="h-4 w-4" />
                   </button>
                 )}
-              </div>
-              <div className="flex items-center justify-end mt-2">
-                <DoseLoggerModal onLogCreated={handleDoseLogged} trigger={
-                  <button className="flex items-center gap-1.5 h-8 px-3 bg-primary text-primary-foreground rounded-lg text-sm font-medium">
-                    <Plus className="h-3.5 w-3.5" />Log Dose
-                  </button>
-                } />
               </div>
             </div>
           )}

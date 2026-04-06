@@ -52,7 +52,7 @@ import {
 } from './dose-timeline/dose-timeline-types'
 import {
   phaseColors, phaseIcons, ROUTE_PALETTE,
-  SVG_W, SVG_H, PL, PT, GW, GH, PHASE_BANDS, ENDED_DOSE_RETENTION_MINS,
+  SVG_W, SVG_H, PL, PT, GW, GH, PHASE_BANDS,
   NOW_INDICATOR, markerHex,
 } from './dose-timeline/dose-timeline-constants'
 import {
@@ -240,23 +240,26 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
       .sort((a, b) => a.doseTime.getTime() - b.doseTime.getTime())
   }, [doses, tick, refreshTrigger])
 
-  // Step 2: remove ended doses that have exceeded the retention window
+  // Step 2: pass through doses (ended filtering happens in groups for fresh time check)
   const enriched = useMemo(() => {
-    const now = Date.now()
-    return baseDoses.filter(d => {
-      if (d.status.phase === 'ended') {
-        const endedAt = d.doseTime.getTime() + d.timings.afterglowEnd * 60_000
-        if (now - endedAt > ENDED_DOSE_RETENTION_MINS * 60_000) return false
-      }
-      return true
-    })
-  }, [baseDoses, tick])
+    return baseDoses
+  }, [baseDoses])
 
   // Step 3: group by substance → route, compute display window
+  // Also filter out ended doses here to ensure fresh time check
+  // IMPORTANT: tick is in dependencies to force re-render when doses end
   const groups = useMemo(() => {
+    const now = Date.now()
+
+    // Filter out ended doses (dose ends when offset phase ends)
+    const activeDoses = enriched.filter(d => {
+      const elapsedMins = (now - d.doseTime.getTime()) / 60_000
+      return elapsedMins < d.timings.offsetEnd
+    })
+    
     const bySubstance = new Map<string, EnrichedDose[]>()
 
-    for (const d of enriched) {
+    for (const d of activeDoses) {
       const key = d.substanceName.toLowerCase()
       if (!bySubstance.has(key)) bySubstance.set(key, [])
       bySubstance.get(key)!.push(d)
@@ -317,7 +320,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
     // Sort groups by earliest dose time
     result.sort((a, b) => a.primary.doseTime.getTime() - b.primary.doseTime.getTime())
     return result
-  }, [enriched])
+  }, [enriched, tick])
 
   /* ---------------------------------------------------------------- */
   /*  Handlers                                                         */
@@ -519,8 +522,13 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
               ? (visibleRoutes[0].primary.doseTime.getTime() - group.windowStart.getTime()) / 60_000
               : 0
 
+            // Check if any dose is still active using FRESH time calculation
+            const now = Date.now()
             const allActive = group.routes.some(rg =>
-              rg.doses.some(d => d.status.phase !== 'ended' && d.status.phase !== 'not_started'),
+              rg.doses.some(d => {
+                const elapsedMins = (now - d.doseTime.getTime()) / 60_000
+                return elapsedMins < d.timings.offsetEnd
+              }),
             )
 
             const primaryDose = group.primary
@@ -530,12 +538,15 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
 
             const nowProgress = (() => {
               if (!allActive) return -1
-              // Find any active dose and compute its global progress the same way DoseMarker does
+              // Find any active dose using fresh time calculation
               const activeDose = group.routes
                 .flatMap(rg => rg.doses)
-                .find(d => d.status.phase !== 'ended' && d.status.phase !== 'not_started')
+                .find(d => {
+                  const elapsedMins = (now - d.doseTime.getTime()) / 60_000
+                  return elapsedMins < d.timings.offsetEnd
+                })
               if (!activeDose) return -1
-              const elapsedMins = activeDose.timings.totalDuration - activeDose.status.totalRemaining
+              const elapsedMins = (now - activeDose.doseTime.getTime()) / 60_000
               const doseOffsetMins = (activeDose.doseTime.getTime() - group.windowStart.getTime()) / 60_000
               return (doseOffsetMins + elapsedMins) / group.windowDuration * 100
             })()
@@ -546,11 +557,14 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
               if (!allActive || nowProgress <= 0 || nowProgress >= 100) return null
               const activeDoses = group.routes
                 .flatMap(rg => rg.doses)
-                .filter(d => d.status.phase !== 'ended' && d.status.phase !== 'not_started')
+                .filter(d => {
+                  const elapsedMins = (now - d.doseTime.getTime()) / 60_000
+                  return elapsedMins < d.timings.offsetEnd
+                })
               if (activeDoses.length === 0) return null
               const intensities = activeDoses.map(d => {
-                const elapsed = d.timings.totalDuration - d.status.totalRemaining
-                const prog = (elapsed / d.timings.totalDuration) * 100
+                const elapsedMins = (now - d.doseTime.getTime()) / 60_000
+                const prog = (elapsedMins / d.timings.totalDuration) * 100
                 return intensityAt(prog, d.timings)
               })
               return Math.round(combinedIntensityAt(intensities))
@@ -594,17 +608,32 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       )}
                     </h3>
 
-                    {/* Phase badge */}
-                    <Badge
-                      variant="outline"
-                      className={`${phaseColors[primaryDose.status.phase].border} ${phaseColors[primaryDose.status.phase].text} text-[10px] px-1.5 py-0`}
-                    >
-                      {(() => {
-                        const PhaseIcon = phaseIcons[primaryDose.status.phase]
-                        return <PhaseIcon className="h-3 w-3 mr-0.5" />
-                      })()}
-                      {formatPhaseName(primaryDose.status.phase)}
-                    </Badge>
+                    {/* Phase badge - use fresh timing calculation */}
+                    {(() => {
+                      const primaryElapsedMins = (now - primaryDose.doseTime.getTime()) / 60_000
+                      let primaryPhase: PhaseName = 'onset'
+                      if (primaryElapsedMins < 0) {
+                        primaryPhase = 'not_started' as PhaseName
+                      } else if (primaryElapsedMins >= primaryDose.timings.offsetEnd) {
+                        primaryPhase = 'ended' as PhaseName
+                      } else if (primaryElapsedMins >= primaryDose.timings.peakEnd) {
+                        primaryPhase = 'offset'
+                      } else if (primaryElapsedMins >= primaryDose.timings.comeupEnd) {
+                        primaryPhase = 'peak'
+                      } else if (primaryElapsedMins >= primaryDose.timings.onsetEnd) {
+                        primaryPhase = 'comeup'
+                      }
+                      const PrimaryPhaseIcon = phaseIcons[primaryPhase] || phaseIcons['onset']
+                      return (
+                        <Badge
+                          variant="outline"
+                          className={`${phaseColors[primaryPhase]?.border || ''} ${phaseColors[primaryPhase]?.text || ''} text-[10px] px-1.5 py-0`}
+                        >
+                          <PrimaryPhaseIcon className="h-3 w-3 mr-0.5" />
+                          {formatPhaseName(primaryPhase)}
+                        </Badge>
+                      )
+                    })()}
 
                     {/* Estimated duration badge (when phases are incomplete) */}
                     {hasIncompletePhases(primaryDose.duration) && (
@@ -676,7 +705,10 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                       const doseId = d.id ?? d.doseTime.getTime().toString()
                       const isIsolated = selectedDose === doseId
                       const formatted = formatDoseAmount(d.amount, d.unit)
-                      const isDoseActive = d.status.phase !== 'not_started' && d.status.phase !== 'ended'
+                      // Use fresh timing for active check
+                      const elapsedMinsForDose = (now - d.doseTime.getTime()) / 60_000
+                      const isDoseActive = elapsedMinsForDose >= 0 && elapsedMinsForDose < d.timings.offsetEnd
+                      const doseProgress = (elapsedMinsForDose / d.timings.totalDuration) * 100
 
                       return (
                         <button
@@ -705,7 +737,7 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                             <div
                               className="absolute bottom-0 left-0 h-0.5 rounded-full transition-all duration-500"
                               style={{
-                                width: `${d.status.progress}%`,
+                                width: `${Math.min(100, Math.max(0, doseProgress))}%`,
                                 background: palette.stroke,
                                 opacity: 0.6,
                               }}
@@ -1008,7 +1040,9 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                               const curve = curvePath(d.timings, doseOffset, group.windowDuration)
                               const area = areaPath(d.timings, doseOffset, group.windowDuration)
                               const isPrimary = d === rg.primary
-                              const isEnded = d.status.phase === 'ended'
+                              // Use fresh timing to check if dose has ended
+                              const doseElapsedMins = (now - d.doseTime.getTime()) / 60_000
+                              const isEnded = doseElapsedMins >= d.timings.offsetEnd
                               const currentGlobalIdx = globalDoseIdx++
                               // When a dose is isolated, treat it as primary for styling
                               const isIsolated = selectedDose === doseId.toString()
@@ -1253,43 +1287,65 @@ export function ActiveDosesTimeline({ refreshTrigger }: ActiveDosesTimelineProps
                           {/* Dose cards */}
                           {rg.doses.map(d => {
                             const doseId = d.id ?? d.doseTime.getTime()
-                            const PhaseIcon = phaseIcons[d.status.phase]
+
+                            // Calculate current phase using fresh timing
+                            const elapsedMinsForDose = (now - d.doseTime.getTime()) / 60_000
+                            let currentPhase: PhaseName = 'onset'
+                            if (elapsedMinsForDose < 0) {
+                              currentPhase = 'not_started' as PhaseName
+                            } else if (elapsedMinsForDose >= d.timings.offsetEnd) {
+                              currentPhase = 'ended' as PhaseName
+                            } else if (elapsedMinsForDose >= d.timings.peakEnd) {
+                              currentPhase = 'offset'
+                            } else if (elapsedMinsForDose >= d.timings.comeupEnd) {
+                              currentPhase = 'peak'
+                            } else if (elapsedMinsForDose >= d.timings.onsetEnd) {
+                              currentPhase = 'comeup'
+                            }
+                            const PhaseIcon = phaseIcons[currentPhase] || phaseIcons['onset']
+
+                            // Afterglow duration for badge display (not in timeline)
+                            const afterglowDuration = d.timings.afterglowDuration ?? (d.timings.afterglowEnd > d.timings.offsetEnd ? d.timings.afterglowEnd - d.timings.offsetEnd : 0)
+                            const hasAfterglow = afterglowDuration > 0
 
                             const phases: { key: string; end: number }[] = [
                               { key: 'onset',     end: d.timings.onsetEnd  },
                               { key: 'comeup',    end: d.timings.comeupEnd },
                               { key: 'peak',      end: d.timings.peakEnd   },
                               { key: 'offset',    end: d.timings.offsetEnd },
-                              ...(d.timings.afterglowEnd > d.timings.offsetEnd
-                                ? [{ key: 'afterglow', end: d.timings.afterglowEnd }]
-                                : []),
                             ]
 
-                            const phaseOrder = ['onset', 'comeup', 'peak', 'offset', 'afterglow']
+                            const phaseOrder = ['onset', 'comeup', 'peak', 'offset']
 
                             return (
                               <div key={doseId} className="ml-4 space-y-1">
                                 {/* Dose amount header */}
-                                <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground">
+                                <div className="flex items-center gap-1.5 text-[10px] text-muted-foreground flex-wrap">
                                   <span className="font-medium text-foreground">
                                     {formatDoseAmount(d.amount, d.unit).amount}
                                     {formatUnit(d.unit, d.amount)}
                                   </span>
                                   <span>·</span>
                                   <span>{format(d.doseTime, 'h:mm a')}</span>
-                                  <span className={`inline-flex items-center gap-0.5 ${phaseColors[d.status.phase].text}`}>
+                                  <span className={`inline-flex items-center gap-0.5 ${phaseColors[currentPhase]?.text || ''}`}>
                                     <PhaseIcon className="h-3 w-3" />
-                                    {formatPhaseName(d.status.phase)}
+                                    {formatPhaseName(currentPhase)}
                                   </span>
+                                  {/* Afterglow badge */}
+                                  {hasAfterglow && (
+                                    <span className="inline-flex items-center gap-0.5 px-1 py-0 rounded text-[9px] bg-amber-500/20 text-amber-600 dark:text-amber-400">
+                                      ✨ {formatMinutes(afterglowDuration)} afterglow
+                                    </span>
+                                  )}
                                 </div>
 
                                 {/* Phase detail cards */}
                                 {phases.map((p, pi) => {
                                   const start = pi === 0 ? 0 : phases[pi - 1].end
                                   const duration = Math.max(0, Math.round(p.end - start))
-                                  const isActive = d.status.phase === p.key
-                                  const currentPhaseIdx = phaseOrder.indexOf(d.status.phase)
-                                  const isPast = d.status.phase !== 'not_started' && d.status.phase !== 'ended'
+                                  const isActive = currentPhase === p.key
+                                  const currentPhaseIdx = phaseOrder.indexOf(currentPhase)
+                                  const isPast = currentPhase !== 'not_started' && currentPhase !== 'ended'
                                     ? currentPhaseIdx > pi
                                     : false
 

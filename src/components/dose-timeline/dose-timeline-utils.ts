@@ -130,13 +130,35 @@ function buildTimings(
   afterglow: number,
   total?: number,
 ): PhaseTimings {
-  const onsetEnd      = onset
-  const comeupEnd     = onsetEnd + comeup
-  const peakEnd       = comeupEnd + peak
-  const offsetEnd     = peakEnd + offset
+  // Calculate the sum of individual phases
+  const phaseSum = onset + comeup + peak + offset
+  
+  // If total is provided and is shorter than the sum of phases,
+  // scale all phases proportionally to fit within total
+  // This handles inconsistent substance data where phases sum > total
+  let finalOnset = onset
+  let finalComeup = comeup
+  let finalPeak = peak
+  let finalOffset = offset
+  
+  if (total && total > 0 && total < phaseSum) {
+    const scale = total / phaseSum
+    finalOnset = Math.max(onset * scale, 0.01)
+    finalComeup = Math.max(comeup * scale, 0.01)
+    finalPeak = Math.max(peak * scale, 0.01)
+    finalOffset = Math.max(offset * scale, 0.01)
+  }
+  
+  const onsetEnd      = finalOnset
+  const comeupEnd     = onsetEnd + finalComeup
+  const peakEnd       = comeupEnd + finalPeak
+  const offsetEnd     = peakEnd + finalOffset
   const afterglowEnd  = afterglow > 0 ? offsetEnd + afterglow : offsetEnd
-  const totalDuration = (total != null && total > 0) ? total : offsetEnd
-  return { onsetEnd, comeupEnd, peakEnd, offsetEnd, afterglowEnd, totalDuration }
+  
+  // Timeline ends at offsetEnd (which now respects the total if it was shorter)
+  const totalDuration = offsetEnd
+  
+  return { onsetEnd, comeupEnd, peakEnd, offsetEnd, afterglowEnd, totalDuration, afterglowDuration: afterglow }
 }
 
 /* ================================================================== */
@@ -157,7 +179,8 @@ export function getPhaseStatus(doseTime: Date, timings: PhaseTimings): PhaseStat
     }
   }
 
-  if (elapsed >= timings.afterglowEnd) {
+  // Timeline ends when offset phase ends (not afterglow)
+  if (elapsed >= timings.offsetEnd) {
     return {
       phase: 'ended',
       progress: 100,
@@ -169,25 +192,19 @@ export function getPhaseStatus(doseTime: Date, timings: PhaseTimings): PhaseStat
   }
 
   const overall = (elapsed / timings.totalDuration) * 100
-  const hasAfterglow = timings.afterglowEnd > timings.offsetEnd
   const phases: { name: PhaseStatus['phase']; start: number; end: number }[] = [
     { name: 'onset',     start: 0,                end: timings.onsetEnd  },
     { name: 'comeup',    start: timings.onsetEnd,  end: timings.comeupEnd },
     { name: 'peak',      start: timings.comeupEnd, end: timings.peakEnd   },
     { name: 'offset',    start: timings.peakEnd,   end: timings.offsetEnd },
-    { name: 'afterglow', start: timings.offsetEnd, end: timings.afterglowEnd },
   ]
 
   for (const p of phases) {
-    // Skip afterglow if there is none
-    if (p.name === 'afterglow' && !hasAfterglow) continue
-
-    if (elapsed < p.end || p.name === (hasAfterglow ? 'afterglow' : 'offset')) {
+    if (elapsed < p.end || p.name === 'offset') {
       const dur     = Math.max(p.end - p.start, 1)
       const inPhase = elapsed - p.start
       return {
         phase: p.name,
-        hasAfterglow,
         progress: Math.min(100, (inPhase / dur) * 100),
         overallProgress: overall,
         timeInPhase: inPhase,
@@ -292,8 +309,7 @@ export function phaseNameAt(progress: number, t: PhaseTimings): PhaseName {
   if (mins <= t.onsetEnd)  return 'onset'
   if (mins <= t.comeupEnd) return 'comeup'
   if (mins <= t.peakEnd)   return 'peak'
-  if (mins <= t.offsetEnd) return 'offset'
-  return 'afterglow'
+  return 'offset'  // Timeline ends at offset, no afterglow phase
 }
 
 export function phaseEnd(key: string, t: PhaseTimings): number {
@@ -315,7 +331,7 @@ export function phaseStart(key: string, t: PhaseTimings): number {
 }
 
 export function isPhasePast(check: string, current: string): boolean {
-  const order: string[] = ['onset', 'comeup', 'peak', 'offset', 'afterglow']
+  const order: string[] = ['onset', 'comeup', 'peak', 'offset']
   return order.indexOf(check) < order.indexOf(current)
 }
 
@@ -512,15 +528,12 @@ export function buildTimeMarkers(windowDuration: number, windowStart: Date): Tim
 
 export function getPhaseBandRanges(t: PhaseTimings): PhaseBandRange[] {
   const total = Math.max(t.totalDuration, 1)
-  const hasAfterglow = t.afterglowEnd > t.offsetEnd
+  // Afterglow is shown as a badge only, not in timeline
   return [
     { startFrac: 0,                     endFrac: t.onsetEnd  / total, phase: 'onset'  },
     { startFrac: t.onsetEnd  / total,   endFrac: t.comeupEnd / total, phase: 'comeup' },
     { startFrac: t.comeupEnd / total,   endFrac: t.peakEnd   / total, phase: 'peak'   },
     { startFrac: t.peakEnd   / total,   endFrac: t.offsetEnd / total, phase: 'offset' },
-    ...(hasAfterglow
-      ? [{ startFrac: t.offsetEnd / total, endFrac: t.afterglowEnd / total, phase: 'afterglow' as PhaseName }]
-      : []),
   ]
 }
 
