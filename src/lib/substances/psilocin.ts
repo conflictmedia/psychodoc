@@ -102,7 +102,11 @@ export const psilocin: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "extremely low toxicity"
+    "Psilocin is non-addictive, is not known to cause brain damage, and has an extremely low toxicity relative to dose. Similar to other psychedelic drugs, there are relatively few physical side effects associated with acute psilocin exposure. Various studies have shown that in reasonable doses in a careful context, it presents little to no negative cognitive, psychiatric or toxic physical consequences.",
+    "The toxicity of psilocybin and psilocin is extremely low. In rats, the median lethal dose (LD50) of psilocybin when administered orally is 280 milligrams per kilogram (mg/kg). Psilocybin comprises approximately 1% of the weight of Psilocybe cubensis mushrooms and so nearly 1.7 kilograms (3.7 lb) of dried mushrooms or 17 kilograms (37 lb) of fresh mushrooms would be required for a 60 kilogram (130 lb) person to reach the 280 mg/kg LD50 value of rats. Based on the results of animal studies, the lethal dose of psilocybin has been extrapolated to be 6 grams, 1000 times greater than the effective dose of 6 milligrams.",
+    "Despite its lack of physical toxicity, however, it is still strongly recommended that one use  if choosing to use this substance.",
+    "Psilocin is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of psilocin is built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). Psilocin presents cross-tolerance with all psychedelics, meaning that after the consumption of psilocin all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

@@ -58,7 +58,9 @@ export const mephenaqualone: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity profile of mephenaqualone is not well-documented, but it is assumed to be similar to that of methaqualone. Overdosing on mephenaqualone can lead to severe sedation, respiratory depression, and potentially life-threatening symptoms. As with all CNS depressants, combining mephenaqualone with other depressants like alcohol or benzodiazepines significantly increases the risk of overdose and fatal respiratory depression."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

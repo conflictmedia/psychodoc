@@ -75,8 +75,8 @@ export const pmma: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "can be considered extremely toxic when compared to other substances such as Methamphetamine or MDMA",
-    "Ingestion of PMMA has been associated with severe tachycardia (abnormally high heart rate), seizures, hyperthermia, and death"
+    "PMMA and its relative PMA Toxicity can be considered extremely toxic when compared to other substances such as Methamphetamine or MDMA . Toxicity Ingestion of PMMA has been associated with severe tachycardia (abnormally high heart rate), seizures, dehydration, hyperthermia, and death. PMMA has a relatively slow onset, causing many users to redose which causes excess toxicity.",
+    "It is strongly recommended that one use harm reduction practices if choosing to use this substance."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

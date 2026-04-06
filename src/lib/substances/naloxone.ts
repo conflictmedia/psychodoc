@@ -105,7 +105,11 @@ export const naloxone: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "Naloxone is considered not habit-forming. When naloxone is administered in an opioid overdose, the individual will go through immediate withdrawal. Sudden opioid withdrawal may be life-threatening in extreme cases. Symptoms of opioid withdrawal may include, but are not limited to agitation, nausea, psychosis, temperature regulation suppression, anxiety, physical fatigue, excessive yawning, sweating, dehydration, and pupil dilation.",
+    "It has been noted that naloxone may be needed in higher dosages depending on the opioid that was consumed. It is not uncommon for several doses of naloxone to be administered in overdose cases involving fentanyl or one of its many analogs. If an individual does not have opioids in their system when naloxone is administered, it may cause dehydration and nausea.",
+    "It is strongly recommended that one use harm reduction practices when using this substance."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

@@ -104,7 +104,13 @@ export const _5_meo_dalt: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational 5-MeO-DALT use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because 5-MeO-DALT is a research chemical with very little history of human usage.",
+    "Anecdotal reports from those who have tried 5-MeO-DALT suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "5-MeO-DALT is not habit-forming, and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of 5-MeO-DALT is built almost immediately after ingestion.",
+    "After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption).",
+    "5-MeO-DALT presents cross-tolerance with all psychedelics, meaning that after the consumption of 5-MeO-DALT all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

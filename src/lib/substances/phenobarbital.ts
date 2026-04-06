@@ -72,8 +72,12 @@ export const phenobarbital: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "moderate toxicity",
-    "potentially lethal when mixed with depressants like alcohol or opioids"
+    "Phenobarbital likely has moderate toxicity relative to dose. However, phenobarbital is Toxicity potentially lethal when mixed with depressants like alcohol or opioids. Phenobarbital has a higher risk of death or serious adverse effects associated with concurrent depressant use than other drugs such as benzodiazepines. There have been studies linking the use of barbiturates, particularly phenobarbital, with the development of cancer .",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "Phenobarbital is extremely physically and psychologically addictive. Barbiturate withdrawal is medically serious and can potentially cause a life-threatening withdrawal syndrome that can cause seizures, psychosis, and death. Drugs which lower the seizure threshold such as tramadol and amphetamine should be avoided during withdrawal.",
+    "Tolerance will develop to the sedative-hypnotic effects of phenobarbital after prolonged use. It is unknown exactly how long it takes for tolerance to reach baseline. Phenobarbital presents cross-tolerance with all barbiturates, meaning that after its consumption all barbiturates will have a reduced effect.",
+    "Barbiturate overdose may occur when a barbiturate is taken in extremely heavy quantities or concurrently with other depressants. This is particularly dangerous with other GABAergic depressants such as benzodiazepines and alcohol since they work in a similar fashion, but bind to distinct allosteric sites on the GABAA receptor, thus their effects potentiate one another. Benzodiazepines increase the frequency in which the chlorine ion pore opens on the GABAA receptor while barbiturates increase the duration in which they are open, meaning when both are consumed, the ion pore will open more frequently and stay open longer. Barbiturate overdose is a medical emergency that may lead to a coma, permanent brain injury or death if not treated promptly and properly. Barbiturate overdose has an increased frequency of serious adverse effects when compared to other depressants.",
+    "Symptoms of a barbiturate overdose may include severe thought deceleration, slurred speech, confusion, delusions, respiratory depression, coma or death."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

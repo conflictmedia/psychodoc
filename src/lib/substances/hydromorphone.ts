@@ -113,7 +113,17 @@ export const hydromorphone: Substance =
     "Tramadol",
     "Grapefruit"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "Like most opioids, unadulterated hydromorphone does not cause many long-term complications other than psychological and physical dependence and constipation. The harmful or toxic aspects of hydromorphone's usage as a recreational substance are exclusively associated with not taking appropriate precautions in regards to its administration, overdosing, and using impure or adulterated batches of the substance.",
+    "Heavy dosages of hydromorphone can result in respiratory depression, leading onto fatal or dangerous levels of oxygen deprivation. This occurs because the breathing reflex is suppressed by agonism of µ-opioid receptors - this effect is proportional to the dosage of opiates consumed.",
+    "Hydromorphone can also cause nausea and vomiting; a significant number of deaths attributed to opioid overdose are caused by aspiration of vomit by an unconscious victim. This is when an unconscious or semi-conscious user who is lying on their back vomits into their mouth and unknowingly suffocates on their own vomit. It can be prevented by ensuring that one is lying on their side with their head tilted downwards so that the airways cannot be blocked in the event of vomiting while unconscious (also known as the recovery position).",
+    "Opioid overdoses can be fatal if not treated immediately by calling the local emergency medical services and administering an opioid antagonist such as naloxone to the overdosed user.",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "As with other opiate-based painkillers, the chronic use of hydromorphone can be considered extremely addictive and is capable of causing both physical and psychological dependence. When physical dependence has developed,  may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of hydromorphone develops with prolonged use, including therapeutic effects. This results in users having to administer increasingly large doses to achieve the same effects. The rate at which this occurs develops at different rates for different effects with tolerance to the constipation-inducing effects developing particularly slowly. Hydromorphone presents cross-tolerance with all other opioids, meaning that after the consumption of hydromorphone all opioids will have a reduced effect.",
+    "The risk of fatal opioid overdoses rise sharply after a period of cessation and relapse, largely because of reduced physical tolerance to the depressant effects of the opioid. To account for this lack of tolerance, it is safer for a user that has been sober for an extended period of time to only dose a fraction of one's usual dosage when using again. It has also been found that the environment one is in can play a role in opioid tolerance.",
+    "In one study, rats with the same history of heroin administration were significantly more likely to die after receiving their dose in an environment not associated with the drug in contrast to a familiar environment. Because of the structral and chemical similarity of hydromorphone and heroin, it can be assumed that the same interaction between physical tolerance and the environment occurs in hydromorphone use."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

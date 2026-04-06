@@ -93,7 +93,14 @@ export const mirtazapine: Substance =
     }
   },
   "interactions": [],
-  "harmReduction": [],
+  "harmReduction": [
+    "Mirtazapine is not known to cause brain damage, and has extremely low toxicity relative to dose. Similar to other psychedelic drugs, there are relatively few physical side effects associated with mirtazapine exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
+    "Mirtazapine is not habit-forming when used as a hallucinogen and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of mirtazapine are built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption).",
+    "Mirtazapine is considered to be relatively safe in the event of an overdose, although it is considered slightly more toxic in overdose than most of the SSRIs (except citalopram). Unlike the TCAs, mirtazapine showed no significant cardiovascular adverse effects at 7 to 22 times the maximum recommended dose. Case reports of overdose with as much as 30 to 50 times the standard dose described the drug as relatively nontoxic, compared to TCAs.",
+    "Twelve reported fatalities have been attributed to mirtazapine overdose. The fatal toxicity index (deaths per million prescriptions) for mirtazapine is 3.1 (95% CI: 0.1 to 17.2). This is similar to that observed with SSRIs.",
+    "It is strongly recommended that one use harm reduction practices when using this substance."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

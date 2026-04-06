@@ -52,7 +52,10 @@ export const choline_bitartrate: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "extremely low toxicity"
+    "As choline is a natural precursor to acetylcholine which is naturally found in the body, it is well tolerated and therefore unlikely to be harmful in any way. Choline is non-addictive, is not known to cause brain damage, and has an extremely low toxicity relative to dose. Similar to many other nootropics substances, there are relatively few physical side effects associated with acute choline exposure. Various studies have shown that in reasonable doses in a careful context, it presents no negative cognitive, psychiatric or toxic physical consequences of any sort.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Choline is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of choline are built after prolonged and repeated usage. After that, it takes about 7 days for the tolerance to be reduced to half and 14 days to be back at baseline (in the absence of further consumption). Choline presents cross-tolerance with no other known compounds, meaning that after the consumption of choline, other psychoactive compounds will not have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

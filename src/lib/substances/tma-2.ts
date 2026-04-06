@@ -85,7 +85,10 @@ export const tma_2: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "toxic dose is unknown"
+    "Toxicity studies in rats have been showed TMA-2 doses of 80 mg/kg induced frequent clonic convulsions. A dose of 120 mg/kg was associated with fatal toxic effects. It was estimated that the LD50 of mice to be 180mg/kg.",
+    "The toxicity and long-term health effects of recreational TMA-2 use do not seem to have been studied in any scientific context and the exact toxic dose is unknown. This is because TMA-2 has very little history of human usage. Anecdotal evidence from people within the psychonaut community who have tried TMA-2 suggests that there are no negative health effects attributed to simply trying the drug by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "TMA-2 is not habit-forming and the desire to use it can actually decrease with use. It is most often self-regulating.",
+    "Tolerance to the effects of TMA-2 are built almost immediately after ingestion. After that, it takes about 3 days for the tolerance to be reduced to half and 7 days to be back at baseline (in the absence of further consumption). TMA-2 presents cross-tolerance with all psychedelics, meaning that after the consumption of TMA-2 all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

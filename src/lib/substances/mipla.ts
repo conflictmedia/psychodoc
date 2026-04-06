@@ -115,7 +115,14 @@ export const mipla: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational MiPLA use has not been studied in any scientific context and the exact toxic dose is unknown. This is because MiPLA is a research chemical with very little history of human usage.",
+    "The current body of anecdotal reports suggests that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (but nothing can be completely guaranteed). Independent research should always be done to ensure that a combination of two or more substances is safe before consumption.",
+    "However, as is the case for LSD, it is possible that MiPLA can act as a potential trigger for those with underlying psychiatric conditions. Those with a personal or family history of mental illness are generally advised not to use this substance, particularly outside of a supervised medical setting.",
+    "It is strongly recommended that one uses harm reduction practices when using this substance.",
+    "The LD50 of MiPLA is unknown. Adverse psychological reactions may be more likely to occur at higher doses. Some of these include anxiety, delusions, panic attacks and (more rarely) seizures. Medical attention is usually only needed in the case of severe psychotic episodes or “fake acid” (a counterfeit substance such as 25x-NBOMe or DOx). Administration of benzodiazepines or antipsychotics can help to relieve the negative psychological effects of MiPLA.",
+    "Like other serotonergic psychedelics, MiPLA is believed to have a low potential for abuse and dependence. This is owing to its structural and pharmacological similarities with LSD. See  to learn more about the dependence and abuse potential of LSD. It should be noted that all claims related to the abuse potential of MiPLA are preliminary and based on anecdotal (as opposed to clinical) evidence and should be interpreted with caution.",
+    "As with LSD, tolerance to the effects of MiPLA forms almost immediately after ingestion. After that, it is assumed to take about 5-7 days for the tolerance to be reduced to half and 14 days to be return to baseline (in the absence of further consumption).",
+    "Due to its activity at the 5-HT2A receptor, MiPLA produces cross-tolerance with all psychedelics, meaning that after the consumption of MiPLA all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

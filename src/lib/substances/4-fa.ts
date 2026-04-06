@@ -121,7 +121,15 @@ export const _4_fa: Substance =
     "5-MeO-xxT",
     "DOx"
   ],
-  "harmReduction": [],
+  "harmReduction": [
+    "The toxicity and long-term effects of recreational 4-FA use have only scarcely been studied because 4-FA has very little history of human usage. Anecdotal evidence, as well as several case reports, suggest there is a small to moderate individual health risk associated with the use of 4-FA. Among these, it appears there is an especially a high risk for acute cardiovascular toxicity. Some people in the Netherlands, only using a moderate dose, have died due to cardiac arrest or suffered severe brain damage due to a stroke. The mechanism of this acute toxicity is not yet known, but it seems as though the stroke starts off as an intense headache or even a migraine attack, that slowly worsens.",
+    "The LD50 (mouse; i.p.) of 4-FA is 46 mg/kg. 4-FA does not cause long-lasting depletion of brain serotonin unlike MDMA or 4-FA's analogs 4-CA and 4-BA.",
+    "It is also worth noting that 4-FA is particularly caustic in comparison to other compounds and can, therefore, cause chemical burns within the nasal passage and throat if it is insufflated. This method of administration is discouraged.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "As with other stimulants, the chronic use of 4-FA can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of 4-FA develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). This is how long it takes to reduce the tolerance for the stimulating effects. Tolerance for the entactogenic effects may take a longer period to reduce. 4-FA presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of 4-FA all stimulants will have a reduced effect.",
+    "4-FA, like other stimulants, can result in a stimulant psychosis that may present with a variety of symptoms (e.g., paranoia, hallucinations, or delusions). A review on treatment for amphetamine, dextroamphetamine, and methamphetamine abuse-induced psychosis states that about 5–15% of users fail to recover completely. The same review asserts that, based upon at least one trial, antipsychotic medications effectively resolve the symptoms of acute amphetamine psychosis."
+  ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
     "formula": "Unknown",

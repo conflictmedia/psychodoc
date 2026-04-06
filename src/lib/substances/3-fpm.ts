@@ -110,7 +110,11 @@ export const _3_fpm: Substance =
     "Stimulants"
   ],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational 3-FPM use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because 3-FPM has very little history of human usage.",
+    "Anecdotal evidence suggests that 3-FPM is relatively well-tolerated, with most users encountering few side-effects at low to moderate doses. However, several users have encountered serious flu-like symptoms on the comedown of 3-FPM, consisting of muscle and joint aches, fever and chills, and headaches, sometimes with migraine auras present. This is speculated to be systemic inflammation induced by 3-FPM. Therefore new users should exercise great caution in dosing to gauge their own physiological response to 3-FPM.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "As with other stimulants, the chronic use of 3-FPM can be considered moderately addictive with a high potential for abuse and is capable of causing psychological dependence among certain users. When addiction has developed, cravings and withdrawal effects may occur if a person suddenly stops their usage.",
+    "Tolerance to many of the effects of 3-FPM develops with prolonged and repeated use. This results in users having to administer increasingly large doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). 3-FPM presents cross-tolerance with all dopaminergic stimulants, meaning that after the consumption of 3-FPM all stimulants will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

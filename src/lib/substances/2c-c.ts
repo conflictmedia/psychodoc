@@ -96,7 +96,11 @@ export const _2c_c: Substance =
     "Tramadol"
   ],
   "harmReduction": [
-    "toxic dose is unknown"
+    "The toxicity and long-term health effects of recreational 2C-C use do not appear to have been studied in any scientific context and the exact toxic dose is unknown. This is because 2C-C is a research chemical with a limited history of human use.",
+    "Anecdotal reports from those who have tried this compound suggest that there are no negative health effects attributed to simply trying the substance by itself at low to moderate doses and using it very sparingly (although nothing can be completely guaranteed). Independent research should always be conducted to ensure that a combination of two or more substances is safe before consumption.",
+    "It is strongly recommended that one use harm reduction practices when using this substance.",
+    "Although no formal studies have been conducted, it is not unreasonable to assume that like psychedelics in general, 2C-C is not habit-forming and that the desire to use it can actually decrease with use.",
+    "Tolerance to the effects of 2C-C is not built almost immediately after ingestion. Similar to 2C-B there seems to be no apparent tolerance buildup if used repeatedly for a few days. 2C-C does however produce cross-tolerance with other serotonergic psychedelics, meaning that after the use of 2C-C all psychedelics will have a reduced effect."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {

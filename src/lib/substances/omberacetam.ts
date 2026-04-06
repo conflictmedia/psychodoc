@@ -84,7 +84,12 @@ export const omberacetam: Substance =
   },
   "interactions": [],
   "harmReduction": [
-    "exact toxic dosage is unknown"
+    "The toxicity and long-term health effects of recreational omberacetam use do not seem to have been studied in any scientific context and the exact toxic dosage is unknown. This is because omberacetam has very little history of human usage. Anecdotal evidence from people who have tried omberacetam within the community suggest that there do not seem to be any negative health effects attributed to simply trying this drug at low to moderate doses by itself and using it sparingly (but nothing can be completely guaranteed).",
+    "It is strongly recommended that one use harm reduction practices when using this drug.",
+    "High doses of omberacetam (above 20 mg) can cause short-term memory loss, brain fog, irritability, sleep disturbances, and headache.",
+    "The chronic use of omberacetam can be considered as non-addictive with a low potential for abuse. It does not seem to be capable of causing psychological dependence among users.",
+    "Tolerance to many of the effects of omberacetam develops over several weeks of prolonged and repeated use. This results in users having to administer increasingly larger doses to achieve the same effects. After that, it takes about 3 - 7 days for the tolerance to be reduced to half and 1 - 2 weeks to be back at baseline (in the absence of further consumption). Omberacetam may present cross-tolerance with all racetam nootropics, meaning that after the consumption of omberacetam certain nootropics such as coluracetam and piracetam may have a reduced effect.",
+    "Psychedelics - Anecdotal reports suggest that combining psychedelics with omberacetam strongly intensifies psychedelics effects. Independent research and caution are strongly advised before using these drugs in combination."
   ],
   "legality": "Legal status varies by jurisdiction. Check local laws.",
   "chemistry": {
