@@ -18,6 +18,7 @@ import {
   Timer,
   ExternalLink,
   BookOpen,
+  Shuffle,
   type LucideIcon,
 } from 'lucide-react'
 import { ThemeToggle } from '@/components/theme-toggle'
@@ -326,6 +327,17 @@ export default function HarmReductionPage() {
             <Badge variant="outline" className="bg-red-500/10 border-red-500/20 text-red-400 text-xs">
               {dangerousInteractions.length} known dangerous combos
             </Badge>
+            <div className="ml-auto">
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => router.push('/interactions')}
+                className="gap-1.5 text-xs"
+              >
+                <Shuffle className="h-3 w-3" />
+                Full Checker
+              </Button>
+            </div>
           </div>
           <div className="space-y-3 max-h-[600px] overflow-y-auto pr-1">
             {dangerousInteractions.map((interaction, i) => (
