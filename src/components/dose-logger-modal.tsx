@@ -233,15 +233,145 @@ const ROUTE_ALIASES: Record<string, string> = {
 }
 
 /**
+ * Evaluate a math expression found in the quick input.
+ * Supports patterns like:
+ *   "15 pills * 15mg"        → { result: 225, unit: "mg" }
+ *   "3 tabs * 100ug"         → { result: 300, unit: "μg" }
+ *   "2.5 capsules x 25 mg"   → { result: 62.5, unit: "mg" }
+ *   "5 * 10mg"               → { result: 50, unit: "mg" }
+ *   "2 pills + 1 pill * 50mg"→ { result: 100, unit: "mg" }
+ *
+ * Operators supported: *, x, ×, +, -, /
+ * Returns null if no valid math expression is found.
+ */
+export function evaluateMathExpression(
+  input: string
+): { result: number; unit: string; expression: string; matchStart: number; matchLength: number } | null {
+  if (!input) return null
+
+  // Match: number [unit] operator number [unit] [operator number [unit]] ...
+  // Supports *, x, ×, +, -, / as operators (with optional spaces)
+  // Also supports trailing words like "each" which are ignored
+  const mathRegex =
+    '(\\d+\\.?\\d*)' +           // first number
+    '(?:\\s*[a-zA-Zμμ]+)?' +      // optional first unit
+    '\\s*([*x×+\-/])' +         // operator
+    '\\s*(\\d+\\.?\\d*)' +      // second number
+    '(?:\\s*[a-zA-Zμμ]+)?' +      // optional second unit
+    '(?:\\s+each)?' +             // optional trailing "each"
+    '(?:\\s*([*x×+\-/])' +       // optional chain operator
+    '\\s*(\\d+\\.?\\d*)' +      // optional chain number
+    '(?:\\s*[a-zA-Zμμ]+)?' +      // optional chain unit
+    ')?'
+
+  const regex = new RegExp(mathRegex, 'i')
+  const match = input.match(regex)
+
+  if (!match) return null
+
+  const matchStart = match.index ?? 0
+  const matchLength = match[0].length
+
+  // Extract components
+  const num1 = parseFloat(match[1])
+  const op1 = match[2]
+  const num2 = parseFloat(match[3])
+  const chainOp = match[4]
+  const chainNum = match[5]
+
+  if (isNaN(num1) || isNaN(num2)) return null
+
+  // Resolve the unit — prefer the second (result) unit, fall back to first
+  let resolvedUnit = ''
+
+  // Re-extract the raw unit strings from the match for resolution
+  const unit1Match = match[0].match(/^(\d+\.?\d*)\s*([a-zA-Zμμ]+)/)
+  const afterOp = match[0].split(/[\*x×+\-\/]/).slice(1).join('')
+  const unit2Match = afterOp.match(/(\d+\.?\d*)\s*([a-zA-Zμμ]+)/)
+
+  let rawUnit1 = unit1Match?.[2]?.toLowerCase() || ''
+  let rawUnit2 = unit2Match?.[2]?.toLowerCase() || ''
+
+  // If the first unit is a count unit (pills, tabs, capsules, etc.) and second is a
+  // measurement unit (mg, ug, etc.), the result unit should be the measurement unit
+  const countUnits = new Set([
+    'pill', 'pills', 'tab', 'tabs', 'tablet', 'tablets', 'capsule', 'capsules',
+    'drop', 'drops', 'puff', 'puffs', 'hit', 'hits', 'serving', 'servings',
+  ])
+
+  const isCount1 = rawUnit1 && (countUnits.has(rawUnit1) || (UNIT_ALIASES[rawUnit1] && countUnits.has(UNIT_ALIASES[rawUnit1])))
+  const isCount2 = rawUnit2 && (countUnits.has(rawUnit2) || (UNIT_ALIASES[rawUnit2] && countUnits.has(UNIT_ALIASES[rawUnit2])))
+
+  // Determine the result unit
+  if (rawUnit2 && !isCount2) {
+    // Second unit is a measurement — that's the result unit
+    resolvedUnit = UNIT_ALIASES[rawUnit2] || rawUnit2
+    // Fuzzy match
+    const fuzzy = resolveUnitFuzzy(rawUnit2)
+    if (fuzzy) resolvedUnit = fuzzy
+  } else if (rawUnit1 && !isCount1) {
+    // First unit is a measurement, second is count or absent
+    resolvedUnit = UNIT_ALIASES[rawUnit1] || rawUnit1
+    const fuzzy = resolveUnitFuzzy(rawUnit1)
+    if (fuzzy) resolvedUnit = fuzzy
+  }
+
+  // Perform the calculation
+  let result: number
+  switch (op1.toLowerCase()) {
+    case '*': case 'x': case '×':
+      result = num1 * num2
+      break
+    case '+':
+      result = num1 + num2
+      break
+    case '-':
+      result = num1 - num2
+      break
+    case '/':
+      if (num2 === 0) return null
+      result = num1 / num2
+      break
+    default:
+      return null
+  }
+
+  // Handle chained operations (e.g., "2 + 3 * 10mg")
+  if (chainOp && chainNum) {
+    const chainVal = parseFloat(chainNum)
+    if (!isNaN(chainVal)) {
+      switch (chainOp.toLowerCase()) {
+        case '*': case 'x': case '×': result *= chainVal; break
+        case '+': result += chainVal; break
+        case '-': result -= chainVal; break
+        case '/': result /= chainVal; break
+      }
+    }
+  }
+
+  // Clean up floating point: avoid unnecessary decimals
+  const cleanResult = parseFloat(result.toPrecision(12))
+
+  return {
+    result: cleanResult,
+    unit: resolvedUnit,
+    expression: match[0].trim(),
+    matchStart,
+    matchLength,
+  }
+}
+
+/**
  * Parse a quick input string like "Caffeine 100 mg oral", "100mg LSD sublingual", "2 tabs MDMA insufflation"
  * Returns extracted substance name, amount, unit, and route.
+ * Now supports math expressions like "DXM 15 pills * 15mg".
  */
 function parseQuickInput(
   input: string,
   substanceList: typeof substances
-): { substanceName: string; substanceId: string; amount: string; unit: string | null; route: string | null; categories: string[] } {
+): { substanceName: string; substanceId: string; amount: string; unit: string | null; route: string | null; categories: string[]; mathResult: { result: number; unit: string; expression: string } | null } {
   const trimmed = input.trim()
-  if (!trimmed) return { substanceName: '', substanceId: '', amount: '', unit: null, route: null, categories: [] }
+  if (!trimmed) return { substanceName: '', substanceId: '', amount: '', unit: null, route: null, categories: [], mathResult: null }
 
   // First, try to extract route from the input
   let extractedRoute: string | null = null
@@ -272,6 +402,83 @@ function parseQuickInput(
     inputWithoutRoute = (trimmed.slice(0, routeIndex) + trimmed.slice(routeIndex + routeLength)).replace(/\s+/g, ' ').trim()
   }
 
+  // ── Try to detect and evaluate a math expression ─────────────────────
+  const mathEval = evaluateMathExpression(inputWithoutRoute)
+
+  if (mathEval) {
+    // Remove the matched math expression from the input to get the substance name
+    const beforeMath = inputWithoutRoute.slice(0, mathEval.matchStart).trim()
+    const afterMath = inputWithoutRoute.slice(mathEval.matchStart + mathEval.matchLength).trim()
+    const potentialSubstance = (beforeMath + ' ' + afterMath).replace(/\s+/g, ' ').trim()
+
+    // Try to match substance
+    let substanceName = potentialSubstance
+    let substanceId = ''
+    let categories: string[] = []
+
+    if (potentialSubstance) {
+      const lower = potentialSubstance.toLowerCase()
+      const exactMatch = substanceList.find(s =>
+        s.name.toLowerCase() === lower ||
+        s.commonNames?.some(cn => cn.toLowerCase() === lower) ||
+        s.aliases?.some(a => a.toLowerCase() === lower)
+      )
+
+      if (exactMatch) {
+        substanceName = exactMatch.name
+        substanceId = exactMatch.id
+        const raw = exactMatch as any
+        categories = Array.isArray(raw.categories) && raw.categories.length > 0
+          ? raw.categories
+          : typeof raw.category === 'string' && raw.category && raw.category !== 'unknown'
+          ? [raw.category]
+          : []
+      } else {
+        const partialMatch = substanceList.find(s => {
+          const nameLower = s.name.toLowerCase()
+          return nameLower.includes(lower) || lower.includes(nameLower) ||
+            s.commonNames?.some(cn => {
+              const cnLower = cn.toLowerCase()
+              return cnLower.includes(lower) || lower.includes(cnLower)
+            }) ||
+            s.aliases?.some(a => {
+              const aLower = a.toLowerCase()
+              return aLower.includes(lower) || lower.includes(aLower)
+            })
+        })
+
+        if (partialMatch) {
+          substanceName = partialMatch.name
+          substanceId = partialMatch.id
+          const raw = partialMatch as any
+          categories = Array.isArray(raw.categories) && raw.categories.length > 0
+            ? raw.categories
+            : typeof raw.category === 'string' && raw.category && raw.category !== 'unknown'
+            ? [raw.category]
+            : []
+        }
+      }
+    }
+
+    // If math result has a unit, check if it implies a route
+    if (mathEval.unit && UNIT_TO_ROUTE[mathEval.unit]) {
+      unitImpliedRoute = UNIT_TO_ROUTE[mathEval.unit]
+    }
+
+    const formattedResult = mathEval.result % 1 === 0 ? mathEval.result.toString() : mathEval.result.toFixed(1).replace(/\.0$/, '')
+
+    return {
+      substanceName,
+      substanceId,
+      amount: formattedResult,
+      unit: mathEval.unit || null,
+      route: extractedRoute || unitImpliedRoute,
+      categories,
+      mathResult: { result: mathEval.result, unit: mathEval.unit, expression: mathEval.expression },
+    }
+  }
+
+  // ── Standard parsing (no math expression detected) ───────────────────
   // Pattern: Try to find a numeric amount with optional unit anywhere in the string
   // Match patterns like: "100", "100mg", "2.5g", "2 tabs", etc.
   const amountWithUnitRegex = /(\d*\.?\d+)\s*([a-zA-Zμ]+)?/g
@@ -311,9 +518,9 @@ function parseQuickInput(
         : typeof raw.category === 'string' && raw.category && raw.category !== 'unknown'
         ? [raw.category]
         : []
-      return { substanceName: found.name, substanceId: found.id, amount: '', unit: null, route: extractedRoute, categories: cats }
+      return { substanceName: found.name, substanceId: found.id, amount: '', unit: null, route: extractedRoute, categories: cats, mathResult: null }
     }
-    return { substanceName: inputWithoutRoute, substanceId: '', amount: '', unit: null, route: extractedRoute, categories: [] }
+    return { substanceName: inputWithoutRoute, substanceId: '', amount: '', unit: null, route: extractedRoute, categories: [], mathResult: null }
   }
 
   // Resolve unit with fuzzy matching
@@ -400,7 +607,7 @@ function parseQuickInput(
     }
   }
 
-  return { substanceName, substanceId, amount: amountStr, unit: resolvedUnit, route: extractedRoute || unitImpliedRoute, categories }
+  return { substanceName, substanceId, amount: amountStr, unit: resolvedUnit, route: extractedRoute || unitImpliedRoute, categories, mathResult: null }
 }
 
 /** Format a unit with proper singular/plural based on amount */
@@ -440,6 +647,7 @@ export function DoseLoggerModal({
 
   // Quick input state - single field that can parse substance + amount + unit
   const [quickInput, setQuickInput] = useState('')
+  const [mathResult, setMathResult] = useState<{ result: number; unit: string; expression: string } | null>(null)
 
   const [substanceId, setSubstanceId] = useState(preselectedSubstanceId || '')
   const [substanceName, setSubstanceName] = useState(preselectedSubstanceName || '')
@@ -487,6 +695,9 @@ export function DoseLoggerModal({
 
     // Parse the input
     const parsed = parseQuickInput(value, substances)
+
+    // Update math result for preview
+    setMathResult(parsed.mathResult)
 
     // Update all relevant fields
     if (parsed.substanceName) {
@@ -662,6 +873,7 @@ export function DoseLoggerModal({
 
   const resetForm = () => {
     setQuickInput('')
+    setMathResult(null)
     if (!preselectedSubstanceId) {
       setSubstanceId('')
       setSubstanceName('')
@@ -732,15 +944,38 @@ export function DoseLoggerModal({
               </Label>
               <Input
                 type="text"
-                placeholder="e.g. &quot;THC 1 joint&quot;, &quot;Caffeine 100 mg oral&quot;, &quot;2 tabs LSD&quot;"
+                placeholder='e.g. "THC 1 joint", "Caffeine 100 mg oral", "15 pills * 15mg DXM"'
                 value={quickInput}
                 onChange={handleQuickInputChange}
                 className="text-base"
               />
               <p className="text-xs text-muted-foreground">
-                Type substance + amount + unit (+ optional route) to auto-fill all fields below
+                Type substance + amount + unit (+ optional route). Supports math: &quot;15 pills * 15mg DXM&quot;
               </p>
             </div>
+
+            {/* ── Math calculation preview ────────────────────────────────── */}
+            {mathResult && (
+              <div className="flex items-center gap-3 px-4 py-3 rounded-lg bg-emerald-500/10 border border-emerald-500/25">
+                <div className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500/20 shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-4 w-4 text-emerald-500">
+                    <rect width="8" height="8" x="8" y="8" rx="1" />
+                    <path d="M6 10H2v4h4" />
+                    <path d="M18 10h4v4h-4" />
+                    <path d="M10 6V2h4v4" />
+                    <path d="M10 18v4h4v-4" />
+                  </svg>
+                </div>
+                <div className="min-w-0">
+                  <p className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">
+                    Calculation: {mathResult.expression}
+                  </p>
+                  <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">
+                    = {mathResult.result} {mathResult.unit}
+                  </p>
+                </div>
+              </div>
+            )}
 
             {/* ── Divider when quick input has content ───────────────────── */}
             {quickInput && (substanceName || amount) && (
