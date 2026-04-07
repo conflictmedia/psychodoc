@@ -76,17 +76,29 @@ export const _7_hydroxymitragynine: Substance =
       }
     }
   },
-  "interactions": [
-    "Alcohol",
-    "Benzodiazepines",
-    "DXM",
-    "GHB",
-    "GBL",
-    "Ketamine",
-    "MXE",
-    "Tramadol",
-    "Grapefruit"
-  ],
+  "interactions": {
+    "dangerous": [
+      "Alcohol",
+      "Benzodiazepines",
+      "DXM",
+      "GHB",
+      "GBL",
+      "Ketamine",
+      "MXE",
+      "Tramadol",
+      "Grapefruit"
+    ],
+    "unsafe": [],
+    "uncertain": [
+      "MAOIs",
+      "Nitrous",
+      "PCP",
+      "Stimulants"
+    ],
+    "crossTolerances": [
+      "opioids"
+    ]
+  },
   "harmReduction": [
     "low toxicity"
   ],
