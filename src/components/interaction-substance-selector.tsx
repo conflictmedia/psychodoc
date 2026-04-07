@@ -160,8 +160,9 @@ export function InteractionSubstanceSelector({
           break
         case 'Enter':
           e.preventDefault()
-          if (activeIndex >= 0 && activeIndex < displayResults.length) {
-            handleSelect(displayResults[activeIndex].substance.id)
+          const idx = activeIndex >= 0 ? activeIndex : 0
+          if (idx < displayResults.length) {
+            handleSelect(displayResults[idx].substance.id)
           }
           break
         case 'Escape':
