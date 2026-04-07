@@ -1497,8 +1497,8 @@ export function searchSubstances(query: string): Substance[] {
   
   return substances.filter(s =>
     s.name.toLowerCase().includes(lowerQuery) ||
-    s.commonNames.some(n => n.toLowerCase().includes(lowerQuery)) ||
-    s.aliases.some(a => a.toLowerCase().includes(lowerQuery)) ||
+    (s.commonNames || []).some((n: string) => n.toLowerCase().includes(lowerQuery)) ||
+    (s.aliases || []).some((a: string) => a.toLowerCase().includes(lowerQuery)) ||
     s.description.toLowerCase().includes(lowerQuery)
   );
 }
