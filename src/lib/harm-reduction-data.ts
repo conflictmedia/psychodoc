@@ -377,9 +377,15 @@ export const dangerousInteractions: DangerousInteraction[] = [
     category: ['opioids', 'depressants'],
   },
   {
-    substances: ['Ketamine', 'Stimulants'],
+    substances: ['Ketamine', 'Cocaine'],
     risk: 'high',
-    description: 'Extreme cardiovascular strain. Combining ketamine with stimulants places significant stress on the heart and vascular system, potentially leading to hypertension, tachycardia, and in severe cases, heart attack or stroke. The opposing effects can also cause confusion about your actual level of intoxication.',
+    description: 'Extreme cardiovascular strain. Combining ketamine with cocaine places significant stress on the heart and vascular system, potentially leading to hypertension, tachycardia, and in severe cases, heart attack or stroke. The opposing effects can also cause confusion about your actual level of intoxication. Note: ketamine is commonly and reasonably safely combined with empathogens like MDMA ("kitty flipping") at moderate doses — the primary risk is with strong dopaminergic stimulants.',
+    category: ['dissociatives', 'stimulants'],
+  },
+  {
+    substances: ['Ketamine', 'Amphetamines'],
+    risk: 'high',
+    description: 'Extreme cardiovascular strain. Combining ketamine with strong stimulants like amphetamine or methamphetamine places significant stress on the heart and vascular system, potentially leading to hypertension, tachycardia, and in severe cases, heart attack or stroke. The opposing effects can also cause confusion about your actual level of intoxication.',
     category: ['dissociatives', 'stimulants'],
   },
   {

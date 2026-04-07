@@ -160,8 +160,8 @@ function InteractionsPageInner() {
                     onClick={handleSelectionChange}
                   />
                   <QuickCombo
-                    label="Ketamine + Stimulants"
-                    ids={['ketamine', 'mdma']}
+                    label="Ketamine + Cocaine"
+                    ids={['ketamine', 'cocaine']}
                     onClick={handleSelectionChange}
                   />
                   <QuickCombo
