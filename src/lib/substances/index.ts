@@ -1503,6 +1503,212 @@ export function searchSubstances(query: string): Substance[] {
   );
 }
 
+/**
+ * Search substances with relevance ranking and fuzzy matching.
+ * Returns results sorted by relevance score (highest first).
+ * 
+ * Scoring tiers:
+ *  1000 — Exact name match
+ *   800 — Name starts with query
+ *   700 — Exact common name or alias match
+ *   600 — Common name or alias starts with query
+ *   400 — Name contains query as a whole word
+ *   300 — Common name / alias contains query as a whole word
+ *   200 — Name contains query as substring
+ *   150 — Common name / alias contains query as substring
+ *   100 — Class contains query
+ *    80 — Category contains query
+ *    50 — Description contains query
+ *   -10 — Fuzzy match (Levenshtein distance, bonus for closer match)
+ */
+export function searchSubstancesRanked(
+  query: string,
+  options?: {
+    categoryFilter?: string | null;
+    limit?: number;
+  }
+): { substance: Substance; score: number; matchField: string }[] {
+  const lowerQuery = query.toLowerCase().trim();
+  if (!lowerQuery) return [];
+
+  const { categoryFilter, limit = 50 } = options || {};
+  const scored: { substance: Substance; score: number; matchField: string }[] = [];
+
+  for (const s of substances) {
+    // Apply category filter early
+    if (categoryFilter && !(s.categories || []).includes(categoryFilter as any)) {
+      continue;
+    }
+
+    let bestScore = 0;
+    let bestField = '';
+
+    // 1. Exact name match
+    if (s.name.toLowerCase() === lowerQuery) {
+      bestScore = 1000;
+      bestField = 'name';
+    }
+    // 2. Name starts with query
+    else if (s.name.toLowerCase().startsWith(lowerQuery)) {
+      bestScore = 800;
+      bestField = 'name';
+    }
+
+    // 3. Exact common name / alias
+    if (bestScore < 700) {
+      const allNames = [...(s.commonNames || []), ...(s.aliases || [])];
+      for (const n of allNames) {
+        const nLower = n.toLowerCase();
+        if (nLower === lowerQuery && bestScore < 700) {
+          bestScore = 700;
+          bestField = n.length <= 15 ? n : 'name';
+          break;
+        }
+        if (nLower.startsWith(lowerQuery) && bestScore < 600) {
+          bestScore = 600;
+          bestField = n.length <= 15 ? n : 'name';
+        }
+      }
+    }
+
+    // 4. Word-boundary match in name
+    if (bestScore < 400) {
+      const wordRe = new RegExp(`(?:^|\\s)${escapeSearchRegex(lowerQuery)}`, 'i');
+      if (wordRe.test(s.name)) {
+        bestScore = 400;
+        bestField = 'name';
+      }
+    }
+
+    // 5. Word-boundary match in common names / aliases
+    if (bestScore < 300) {
+      const allNames = [...(s.commonNames || []), ...(s.aliases || [])];
+      for (const n of allNames) {
+        const wordRe = new RegExp(`(?:^|\\s)${escapeSearchRegex(lowerQuery)}`, 'i');
+        if (wordRe.test(n) && bestScore < 300) {
+          bestScore = 300;
+          bestField = n.length <= 15 ? n : 'name';
+          break;
+        }
+      }
+    }
+
+    // 6. Substring in name
+    if (bestScore < 200) {
+      if (s.name.toLowerCase().includes(lowerQuery)) {
+        bestScore = 200;
+        bestField = 'name';
+      }
+    }
+
+    // 7. Substring in common names / aliases
+    if (bestScore < 150) {
+      const allNames = [...(s.commonNames || []), ...(s.aliases || [])];
+      for (const n of allNames) {
+        if (n.toLowerCase().includes(lowerQuery) && bestScore < 150) {
+          bestScore = 150;
+          bestField = n.length <= 15 ? n : 'name';
+          break;
+        }
+      }
+    }
+
+    // 8. Class match
+    if (bestScore < 100) {
+      if (s.class && s.class.toLowerCase().includes(lowerQuery)) {
+        bestScore = 100;
+        bestField = 'class';
+      }
+    }
+
+    // 9. Category match
+    if (bestScore < 80) {
+      if ((s.categories || []).some((c: string) => c.toLowerCase().includes(lowerQuery))) {
+        bestScore = 80;
+        bestField = 'category';
+      }
+    }
+
+    // 10. Description match
+    if (bestScore < 50) {
+      if (s.description && s.description.toLowerCase().includes(lowerQuery)) {
+        bestScore = 50;
+        bestField = 'description';
+      }
+    }
+
+    // 11. Fuzzy matching (Levenshtein) — only for queries 3+ chars
+    if (bestScore < 1 && lowerQuery.length >= 3) {
+      const nameLower = s.name.toLowerCase();
+      // Check against name
+      const nameDist = levenshtein(lowerQuery, nameLower);
+      if (nameDist <= Math.max(1, Math.floor(lowerQuery.length / 3))) {
+        const fuzzyScore = -10 + (lowerQuery.length - nameDist) * 2;
+        if (fuzzyScore > bestScore) {
+          bestScore = fuzzyScore;
+          bestField = 'name';
+        }
+      }
+      // Also check common names / aliases
+      const allNames = [...(s.commonNames || []), ...(s.aliases || [])];
+      for (const n of allNames) {
+        const nLower = n.toLowerCase();
+        // For fuzzy on names, check if query is a prefix (with tolerance)
+        if (nLower.length >= lowerQuery.length) {
+          const prefix = nLower.substring(0, lowerQuery.length);
+          const prefixDist = levenshtein(lowerQuery, prefix);
+          if (prefixDist <= Math.max(1, Math.floor(lowerQuery.length / 3))) {
+            const fuzzyScore = -10 + (lowerQuery.length - prefixDist);
+            if (fuzzyScore > bestScore) {
+              bestScore = fuzzyScore;
+              bestField = n.length <= 15 ? n : 'name';
+            }
+          }
+        }
+      }
+    }
+
+    if (bestScore > 0) {
+      scored.push({ substance: s, score: bestScore, matchField: bestField });
+    }
+  }
+
+  // Sort by score descending
+  scored.sort((a, b) => b.score - a.score);
+
+  return limit > 0 ? scored.slice(0, limit) : scored;
+}
+
+/** Simple Levenshtein distance for fuzzy matching */
+function levenshtein(a: string, b: string): number {
+  const m = a.length;
+  const n = b.length;
+  if (m === 0) return n;
+  if (n === 0) return m;
+
+  // Use single-row optimization
+  let prev = Array.from({ length: n + 1 }, (_, i) => i);
+  for (let i = 1; i <= m; i++) {
+    const curr = new Array(n + 1);
+    curr[0] = i;
+    for (let j = 1; j <= n; j++) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      curr[j] = Math.min(
+        prev[j] + 1,       // deletion
+        curr[j - 1] + 1,   // insertion
+        prev[j - 1] + cost  // substitution
+      );
+    }
+    prev = curr;
+  }
+  return prev[n];
+}
+
+/** Escape special regex characters for use in RegExp */
+function escapeSearchRegex(s: string): string {
+  return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 export function getAllSubstanceIds(): string[] {
   return substances.map(s => s.id);
 }

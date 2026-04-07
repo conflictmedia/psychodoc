@@ -156,11 +156,8 @@ function checkCuratedPairs(
       // Check if any curated substance string matches this substance's keywords
       for (const curatedSub of curated.substances) {
         const curatedLower = curatedLower_normalized(curatedSub);
-        const matches = keywords.some(
-          (kw) =>
-            kw === curatedLower ||
-            kw.includes(curatedLower) ||
-            curatedLower.includes(kw)
+        const matches = keywords.some((kw) =>
+          curatedMatch(kw, curatedLower)
         );
         if (matches && !matchedSubs.includes(sub)) {
           matchedSubs.push(sub);
@@ -201,6 +198,40 @@ function curatedLower_normalized(s: string): string {
   return s
     .toLowerCase()
     .replace(/[^a-z0-9]/g, '');
+}
+
+/**
+ * Match a substance keyword against a curated interaction substance string.
+ *
+ * Uses a tiered approach to avoid false positives:
+ *  1. Exact match:          kw === curated  (e.g., "cocaine" = "cocaine")
+ *  2. Keyword contains curated: kw.includes(curated)  (e.g., "methamphetamine" contains "meth")
+ *  3. Curated prefix of keyword with gap ≥ 3:  curated starts with kw and has 3+ extra chars
+ *     (e.g., "ghbgbl" starts with "ghb" — compound abbreviation)
+ *  4. Curated contains keyword with gap ≥ 3:
+ *     (e.g., "dextromethorphandxm" contains "dxm")
+ *
+ * The gap ≥ 3 constraint prevents "amphetamines" from matching "amphetamine"
+ * (only 1 char difference) while still allowing "ghbgbl" to match "ghb" (3 char gap).
+ */
+function curatedMatch(kw: string, curatedLower: string): boolean {
+  // 1. Exact match
+  if (kw === curatedLower) return true;
+
+  // 2. Keyword contains curated string (e.g., "methamphetamine" contains "meth")
+  if (kw.includes(curatedLower)) return true;
+
+  // For the remaining checks, require a minimum length gap of 3 chars
+  // to avoid near-matches like "amphetamines" ≈ "amphetamine"
+  const minGap = 3;
+
+  // 3. Curated string starts with keyword — compound abbreviations
+  if (curatedLower.startsWith(kw) && curatedLower.length >= kw.length + minGap) return true;
+
+  // 4. Curated string contains keyword — with length gap constraint
+  if (curatedLower.includes(kw) && curatedLower.length >= kw.length + minGap) return true;
+
+  return false;
 }
 
 // ─── MAIN CHECK FUNCTION ───────────────────────────────────────────────────
